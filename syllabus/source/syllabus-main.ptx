@@ -7,11 +7,11 @@
         </p>
     </introduction>
 	
-	<xi:include href="./ma311-general-info.ptx" />
-	<xi:include href="./ma311-grades-coursework.ptx" />
-	<xi:include href="./ma311-resources.ptx" />
-	<xi:include href="./ma311-topics.ptx" />
-	<xi:include href="./ma311-policies.ptx" />
+	<xi:include href="./general-info.ptx" />
+	<xi:include href="./grades-coursework.ptx" />
+	<xi:include href="./resources.ptx" />
+	<xi:include href="./topics.ptx" />
+	<xi:include href="./policies.ptx" />
     <xi:include href="./common/workforgrade.ptx" />
     <xi:include href="./common/attendance.ptx" />
     <xi:include href="./common/accessibility.ptx" />

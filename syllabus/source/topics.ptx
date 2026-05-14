@@ -23,7 +23,7 @@
 		</paragraphs>
 	</introduction>
 
-	<subsection label="ma311-core-topics">
+	<subsection xml:id="ma311-core-topics">
 		<title>Core Topics</title>
 		<p>
 			There are 7 core topics that represent the most essential concepts of the course. To demonstrate proficiency in a core topic, you must pass it twice, with at least one pass occurring on an in-class ODP. Out-of-class ODPs usually offer each core topic three times, so you have multiple chances to succeed. If you do not pass a topic outside class, you can still demonstrate proficiency through in-class attempts.
@@ -162,7 +162,7 @@
 		</table>
 	</subsection>
 
-	<subsection label="ma311-secondary-topics">
+	<subsection xml:id="ma311-secondary-topics">
 		<title>Secondary Topics</title>
 
 		<p>

@@ -8,7 +8,8 @@
 		<subtitle>Ordinary Differential Equations - Spring 2026</subtitle>
 
 		<xi:include href="./common/frontmatter.ptx" />
-		<xi:include href="./ma311-syllabus-main.ptx"/>
+		<xi:include href="./syllabus-main.ptx"/>
+		<xi:include href="./schedule.ptx"/>
 	
 	</book>
 </pretext>
