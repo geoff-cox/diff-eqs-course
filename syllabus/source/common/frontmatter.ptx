@@ -1,0 +1,31 @@
+<frontmatter label="frontmatter">
+	<bibinfo>
+		<author>
+			<personname>Dr. Geoffrey Cox (LTC)</personname>
+			<department>Applied Mathematics</department>
+			<institution>Virginia Military Institute</institution>
+			<email>coxgeoff@vmi.edu</email>
+			<support>
+				<ul marker="">
+					<li>Office: <m>\hspace{0.2cm}</m> MA 425 <m>\hspace{1.4cm}</m></li>
+					<li><p>Office Hours: <m>\hspace{2.0cm}</m>
+							<ul marker="">
+								<li>MWF 1200-1330,</li>
+								<li>MWF 1430-1600,</li>
+								<li>By Appointment</li>
+							</ul>
+						</p>
+					</li>
+				</ul>
+			</support>
+		</author>
+		<date>
+			Last Updated: <today />
+		</date>
+	</bibinfo>
+		
+	<titlepage>
+		<titlepage-items/>
+	</titlepage>
+
+</frontmatter>

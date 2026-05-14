@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
+	<bibinfo>
+		<author>
+			<personname>Spring 2026</personname>
+			<department>Applied Mathematics</department>
+			<institution>Virginia Military Institute</institution>
+		</author>
+		<date>
+			Last Updated: <today />
+		</date>
+	</bibinfo>
+
+	<titlepage>
+		<titlepage-items/>
+		<p>
+			This is the Course Homepage for MA 311: Differential Equations
+		</p>
+	</titlepage>
+
+</frontmatter>

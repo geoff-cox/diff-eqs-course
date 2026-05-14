@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+	<xi:include href="./common/docinfo.ptx" />
+
+	<book xml:id="ma311-homepage">
+		<title>MA 311</title>
+		<subtitle>Ordinary Differential Equations - Spring 2026</subtitle>
+
+		<xi:include href="./common/frontmatter.ptx" />
+		<xi:include href="./ma311-syllabus-main.ptx"/>
+	
+	</book>
+</pretext>
