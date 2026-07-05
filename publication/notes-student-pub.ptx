@@ -3,8 +3,10 @@
 	Publication file for the STUDENT copy of the Guided Lecture Notes.
 	Difference from the instructor copy: worksheet exercise solutions are
 	HIDDEN here (exercise-worksheet solution="no"). Instructor-only
-	<commentary> blocks are additionally gated by the `commentary`
-	stringparam, which is set to "no" on this target in project.ptx.
+	<commentary component="instructor"> blocks are dropped here because
+	"instructor" is NOT listed in this file's <source><version include="notes"/>
+	(the component/version mechanism, since PreTeXt 2.43.1 removed the older
+	`commentary` stringparam that CLAUDE.md §4 describes).
 -->
 <publication>
 
