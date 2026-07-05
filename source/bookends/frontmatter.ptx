@@ -7,15 +7,23 @@
 			<email>coxgeoff@vmi.edu</email>
 			<support>
 				<ul marker="">
-					<li>Office: <m>\hspace{0.2cm}</m> MA 425 <m>\hspace{1.4cm}</m></li>
 					<li>
-            <p>Office Hours: <m>\hspace{2.0cm}</m>
-							<ul marker="">
-								<li>MWF 1200-1330,</li>
-								<li>MWF 1430-1600,</li>
-								<li>By Appointment</li>
-							</ul>
-						</p>
+						<sidebyside widths="14% 20%" margins="33% 33%">
+							<p>Office:</p>
+							<p>MA 425</p>
+						</sidebyside>
+					</li>
+					<li>
+						<sidebyside widths="16% 28%" margins="28% 28%">
+							<p>Office Hours:</p>
+							<p>
+								<ul marker="">
+									<li>MWF 1200-1330,</li>
+									<li>MWF 1430-1600,</li>
+									<li>By Appointment</li>
+								</ul>
+							</p>
+						</sidebyside>
 					</li>
 				</ul>
 			</support>
