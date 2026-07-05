@@ -8,7 +8,7 @@
 		<subtitle>Ordinary Differential Equations - Fall 2026</subtitle>
 
     <xi:include href="./bookends/frontmatter.ptx" />
-		<xi:include href="./syllabus.ptx"/>
+		<xi:include href="./homepage/syllabus.ptx"/>
 		<!-- <xi:include href="./schedule.ptx"/> -->
 	
 	</article>
