@@ -7,7 +7,7 @@
 		<subtitle>Guided Lecture Notes</subtitle>
 
     <xi:include href="./bookends/frontmatter.ptx" />
-		<xi:include href="./notes/sec-TOPICNAME.ptx"/>
+		<xi:include href="./notes/ws-intro-classification.ptx"/>
 
 	</article>
 </pretext>

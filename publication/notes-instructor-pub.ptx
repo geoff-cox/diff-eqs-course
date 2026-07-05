@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Publication file for the INSTRUCTOR copy of the Guided Lecture Notes.
+	Difference from the student copy: worksheet exercise solutions are
+	SHOWN here (exercise-worksheet solution="yes"). Instructor-only
+	<commentary> blocks are additionally revealed by the `commentary`
+	stringparam, which is set to "yes" on this target in project.ptx.
+-->
+<publication>
+
+	<source>
+		<directories external="notes/assets" generated="notes/generated-assets" />
+		<!-- "instructor" IS listed, so <commentary component="instructor"> is kept. -->
+		<version include="notes instructor" />
+	</source>
+
+	<common>
+		<chunking level="1" />
+		<tableofcontents level="2" />
+		<!-- Worksheet solutions are revealed on the instructor copy. -->
+		<exercise-inline statement="yes" hint="yes" answer="yes" solution="yes" />
+		<exercise-divisional statement="yes" hint="yes" answer="yes" solution="yes" />
+		<exercise-worksheet statement="yes" hint="yes" answer="yes" solution="yes" />
+		<exercise-reading statement="yes" hint="yes" answer="yes" solution="yes" />
+		<!-- Style of fill-in-the-blanks -->
+		<fillin textstyle="underline" mathstyle="shade" />
+	</common>
+
+	<numbering>
+		<divisions chapter-start="1" level="2" />
+		<blocks level="1" />
+		<projects level="1" />
+		<equations level="1" />
+		<footnotes level="1" />
+	</numbering>
+
+	<html>
+		<platform host="web"/>
+		<search variant="default" />
+		<toc focused="yes" preexpanded-levels="4" />
+		<navigation logic="tree" upbutton="yes" />
+		<calculator model="none" activecode="none" />
+	</html>
+
+</publication>

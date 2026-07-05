@@ -14,5 +14,30 @@
       output-dir="homepage"
       deploy-dir="homepage">
     </target>
+    <!--
+      Student vs. instructor Guided Lecture Notes. The two targets share the
+      same source (notes.ptx) and differ only in their publication file:
+        * worksheet <exercise> solutions: hidden for students, shown for
+          instructors (exercise-worksheet solution="no|yes");
+        * instructor-only <commentary component="instructor"> blocks: gated by
+          the publication's <source><version include="..."/> (the "commentary"
+          stringparam that older PreTeXt used for this was removed in 2.43.1).
+    -->
+    <target
+      name="notes-student"
+      format="html"
+      source="notes.ptx"
+      publication="notes-student-pub.ptx"
+      output-dir="notes-student"
+      deploy-dir="notes/student">
+    </target>
+    <target
+      name="notes-instructor"
+      format="html"
+      source="notes.ptx"
+      publication="notes-instructor-pub.ptx"
+      output-dir="notes-instructor"
+      deploy-dir="notes/instructor">
+    </target>
   </targets>
 </project>

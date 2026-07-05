@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "What Is a Differential Equation?" + "Classification"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c0-whats-a-de/sec-connection-to-alg-calc.ptx
+		c0-whats-a-de/sec-de-defn.ptx
+		c0-whats-a-de/sec-variables.ptx
+		c0-whats-a-de/sec-terms-coeffs.ptx
+		c1-classification/sec-order.ptx
+		c1-classification/sec-linear-terms.ptx
+		c1-classification/sec-linearity.ptx
+	Old deck: source/notes/latex/ 01 intro-topics folder
+
+	Guided-notes mechanisms (see CLAUDE.md §4):
+	  * <fillin characters="N"/>  -> an in-prose blank shown in BOTH builds.
+	    The answer NEVER lives inside the tag; it is revealed in a following
+	    <commentary> block. One <commentary> collects the answers for a group
+	    of blanks, in order.
+	  * <commentary component="instructor">
+	                              -> instructor-only block. In PreTeXt 2.43.1
+	    (the pinned CLI) the old `commentary` stringparam is gone; visibility
+	    is now controlled by the component/version mechanism: the block is kept
+	    only when "instructor" appears in the publication file's
+	    <source><version include="..."/>. The instructor target's publication
+	    lists it; the student target's does not.
+	  * <exercise> + <solution>   -> multi-step guided computations whose
+	    solution hides on the student copy (exercise-worksheet solution="no")
+	    and shows on the instructor copy (solution="yes").
+	  * <example>                 -> read-along only; its solution shows in
+	    BOTH builds, so it is reserved for illustrations with nothing hidden.
+-->
+<worksheet xml:id="ws-intro-classification" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>What Is a Differential Equation? Naming Its Parts and Classifying It</title>
+
+	<objectives>
+		<introduction>
+			<p>
+				This worksheet is the in-class companion to the sections you have
+				already read on Runestone. By the end of our meeting(s) you should be
+				able to:
+			</p>
+		</introduction>
+		<ul>
+			<li><p><term>Identify</term> whether an equation is a differential equation, and name its dependent and independent variables.</p></li>
+			<li><p><term>Label</term> the terms, free term, and coefficients of a differential equation.</p></li>
+			<li><p><term>Determine</term> the order of a differential equation from its highest derivative.</p></li>
+			<li><p><term>Classify</term> individual terms as linear or nonlinear.</p></li>
+			<li><p><term>Decide</term> whether a whole differential equation is linear or nonlinear.</p></li>
+			<li><p><term>Apply</term> these labels to differential equations that model real systems.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : What is a DE? Variables, terms, coefficients                 -->
+	<!-- ==================================================================== -->
+	<page>
+		<title>What Is a Differential Equation?</title>
+
+		<p>
+			In algebra you solved equations like <m>y + 2t = 11</m> for a
+			<em>number</em> <m>y</m>. A differential equation asks a harder question:
+			it hands you information about a function <em>and its derivatives</em> and
+			asks you to find the whole <em>function</em>. For instance, isolating the
+			derivative in <m>y' + 2t = 11</m> gives <m>y' = 11 - 2t</m>, and the job is
+			to find a function whose derivative is <m>11 - 2t</m>.
+		</p>
+
+		<!-- Reading check: one paragraph of blanks, then ONE commentary. -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p>
+						A differential equation is an equation that involves one or more
+						<fillin characters="12"/> of an unknown function.
+					</p>
+				</li>
+				<li>
+					<p>
+						For an equation to be a differential equation it must contain both a
+						derivative and an <fillin characters="12"/> sign.
+					</p>
+				</li>
+				<li>
+					<p>
+						If the unknown function depends on a single variable the equation is
+						an <fillin characters="4"/> (ordinary differential equation); if it
+						depends on more than one variable it is a <fillin characters="4"/>
+						(partial differential equation). In this course, <q>differential
+						equation</q> always means <fillin characters="4"/>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<commentary component="instructor">
+			<p>
+				<term>Answers, in order:</term> (1) derivatives; (2) equals; (3) ODE,
+				PDE, ODE. Watch for the two things every differential equation needs at
+				once&#8212;a derivative <em>and</em> an equals sign; an expression like
+				<m>\frac{d^2 y}{dx^2} + 2\frac{dy}{dx}</m> is not a differential equation
+				because it has no equals sign.
+			</p>
+		</commentary>
+
+		<exercise xml:id="ws-ic-ex-antideriv">
+			<title>Your turn: back to calculus</title>
+			<statement>
+				<p>
+					Solve the differential equation <m>y' = 11 - 2t</m> by finding a
+					function <m>y</m> whose derivative is <m>11 - 2t</m>. Why is there more
+					than one answer?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Antidifferentiate both sides: <m>y = 11t - t^2 + C</m>. Every choice of
+					the constant <m>C</m> gives a function whose derivative is
+					<m>11 - 2t</m>, so a first-order differential equation has a whole
+					<em>family</em> of solutions rather than a single one. This is the
+					recurring theme of the course: solving a differential equation means
+					recovering a function, and the arbitrary constant is the fingerprint of
+					the integration we did to get there.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ic-ex-variables">
+			<title>Dependent vs. independent variables</title>
+			<statement>
+				<p>
+					For each differential equation, name the dependent variable (the
+					unknown function we solve for) and the independent variable (the one it
+					is differentiated with respect to):
+					<me>
+						\frac{dP}{ds} + \frac{P}{s^2} = 17s, \qquad
+						u'' + t^2 u = 0, \qquad
+						Q'' = 11Q.
+					</me>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					The derivative tells you which variable is which&#8212;the dependent
+					variable is the one being differentiated.
+					<ul marker="square">
+						<li><p><m>dP/ds</m> means <m>P</m> changes as <m>s</m> changes: dependent <m>P</m>, independent <m>s</m>.</p></li>
+						<li><p><m>u''</m> is a derivative of <m>u</m> with respect to <m>t</m>: dependent <m>u</m>, independent <m>t</m>.</p></li>
+						<li><p><m>Q''</m> shows <m>Q</m> is the dependent variable; no independent variable is named, so you may call it whatever you like (say <m>t</m>).</p></li>
+					</ul>
+				</p>
+			</solution>
+		</exercise>
+
+		<p>
+			<term>Vocabulary for the parts of an equation.</term> Before we can
+			classify equations we need names for their pieces. Fill in the blanks.
+			<ol>
+				<li>
+					<p>
+						A <term>term</term> is any piece of a differential equation separated
+						from the others by <fillin characters="18"/> signs.
+					</p>
+				</li>
+				<li>
+					<p>
+						A <term>free term</term> is a term that does <em>not</em> involve the
+						<fillin characters="10"/> variable or its derivatives. Every equation
+						has one, even a hidden <m><fillin characters="2"/></m>: for example
+						<m>y' = -3y</m> is really <m>y' + 3y = 0</m>.
+					</p>
+				</li>
+				<li>
+					<p>
+						A <term>coefficient</term> is a constant or a function of the
+						<fillin characters="12"/> variable that multiplies the dependent
+						variable or one of its derivatives.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<commentary component="instructor">
+			<p>
+				<term>Answers, in order:</term> (1) plus or minus (addition or
+				subtraction); (2) dependent, and the hidden free term is <m>0</m>;
+				(3) independent. A useful mantra: a free term is <em>free of the
+				dependent variable</em>, and a coefficient may never contain the
+				dependent variable.
+			</p>
+		</commentary>
+
+		<exercise xml:id="ws-ic-ex-terms-coeffs">
+			<title>Terms, free term, and coefficients</title>
+			<statement>
+				<p>
+					The dependent variable below is <m>y</m>:
+					<me>
+						\frac{3}{x}\,y^{(6)} + 5.3\,y'' + x^2 y' + y = \tfrac12\ln(x).
+					</me>
+					(a) List the five terms. (b) Which is the free term? (c) Give the
+					coefficient of <m>y^{(6)}</m>, of <m>y''</m>, of <m>y'</m>, and of
+					<m>y</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) The terms are <m>\frac{3}{x}y^{(6)}</m>, <m>5.3\,y''</m>,
+					<m>x^2 y'</m>, <m>y</m>, and <m>\frac12\ln(x)</m>.
+				</p>
+				<p>
+					(b) The free term is <m>\frac12\ln(x)</m>: it contains the independent
+					variable <m>x</m> but none of <m>y</m> or its derivatives. (Notice a
+					free term need not be constant&#8212;this is why <q>constant term</q> is
+					a misleading name.)
+				</p>
+				<p>
+					(c) Reading off the multipliers of the dependent variable and its
+					derivatives: coefficient of <m>y^{(6)}</m> is <m>\frac{3}{x}</m>, of
+					<m>y''</m> is <m>5.3</m>, of <m>y'</m> is <m>x^2</m>, and of <m>y</m> is
+					<m>1</m>.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Classification (order and linearity)                         -->
+	<!-- ==================================================================== -->
+	<page>
+		<title>Classifying a Differential Equation: Order and Linearity</title>
+
+		<p>
+			Once we can name the parts of an equation, two labels let us predict which
+			solution methods will work: its <term>order</term> and whether it is
+			<term>linear</term>. We build both up on this page.
+		</p>
+
+		<p>
+			<term>Reading check.</term> Fill in each blank.
+			<ol>
+				<li>
+					<p>
+						The <term>order</term> of a differential equation is the
+						<fillin characters="12"/> derivative of the dependent variable that
+						appears in it.
+					</p>
+				</li>
+				<li>
+					<p>
+						A single term is <term>linear</term> if it has one of the forms
+						<m>a(t)</m>, <m>a(t)\,y</m>, or <m>a(t)\,y^{(n)}</m>, where the
+						coefficient <m>a(t)</m> depends on the <fillin characters="12"/>
+						variable only. The coefficient <fillin characters="12"/> (does / does
+						not) affect linearity, no matter how complicated it looks.
+					</p>
+				</li>
+				<li>
+					<p>
+						A whole differential equation is linear when <fillin characters="8"/>
+						term is linear; it is nonlinear as soon as <fillin characters="12"/>
+						term is nonlinear.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<commentary component="instructor">
+			<p>
+				<term>Answers, in order:</term> (1) highest; (2) independent, does not;
+				(3) every, one (a single). The headline for linearity: one nonlinear
+				term is enough to make the entire equation nonlinear&#8212;linearity is
+				an all-or-nothing property of the equation.
+			</p>
+		</commentary>
+
+		<exercise xml:id="ws-ic-ex-order">
+			<title>Reading off the order</title>
+			<statement>
+				<p>
+					Give the order of each equation:
+					<me>
+						\frac{d^2 A}{dt^2} + \frac{dA}{dt} + A = 17, \qquad
+						w^6 + \sin\!\big(w^{(5)}\big) = 0.
+					</me>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					The first is <term>second-order</term>: the highest derivative of
+					<m>A</m> is <m>d^2A/dt^2</m>.
+				</p>
+				<p>
+					The second is <term>fifth-order</term>. Do not confuse the exponent in
+					<m>w^6</m> (that is <m>w</m> raised to the sixth power, not a sixth
+					derivative) with a derivative; only derivatives set the order. And the
+					<m>\sin(\cdot)</m> wrapper does not change the order&#8212;the highest
+					derivative inside is still <m>w^{(5)}</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ic-ex-linear-terms">
+			<title>Term-by-term: linear or nonlinear?</title>
+			<statement>
+				<p>
+					Take <m>y</m> as the dependent variable and <m>t</m> as the
+					independent variable. Label each term of
+					<me>
+						y\,\frac{d^5 y}{dt^5} + 2t^3\,\frac{d^2 y}{dt^2}
+						+ \ln\!\left(\frac{dy}{dt}\right) + y^2 = t^3
+					</me>
+					as linear or nonlinear, and say which rule it breaks.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<ul marker="square">
+						<li><p><m>y\,\dfrac{d^5y}{dt^5}</m>: <em>nonlinear</em>&#8212;the dependent variable and one of its derivatives are multiplied together.</p></li>
+						<li><p><m>2t^3\,\dfrac{d^2y}{dt^2}</m>: <em>linear</em>&#8212;it has the form <m>a(t)\,y''</m>; the messy coefficient <m>2t^3</m> is irrelevant.</p></li>
+						<li><p><m>\ln\!\left(\dfrac{dy}{dt}\right)</m>: <em>nonlinear</em>&#8212;a derivative sits inside a nonlinear function.</p></li>
+						<li><p><m>y^2</m>: <em>nonlinear</em>&#8212;the dependent variable is raised to a power other than one.</p></li>
+						<li><p><m>t^3</m>: <em>linear</em> (in fact a free term)&#8212;no dependent variable appears.</p></li>
+					</ul>
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ic-ex-linearity">
+			<title>Is the whole equation linear?</title>
+			<statement>
+				<p>
+					Decide whether each equation is linear or nonlinear, and justify with
+					one sentence:
+					<me>
+						y^{(5)} + \frac{y'}{x^2} + 5y = \ln x, \qquad
+						P^{(6)} + \frac{m P'}{P} = (m - 1)^2.
+					</me>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					The first is <term>linear</term>: every term involving <m>y</m> or its
+					derivatives has the form <m>a(x)\,y^{(n)}</m>&#8212;here <m>y^{(5)}</m>,
+					<m>\frac{1}{x^2}y'</m>, and <m>5y</m>&#8212;while <m>\ln x</m> is a free
+					term. Its coefficients being functions of <m>x</m> is fine.
+				</p>
+				<p>
+					The second is <term>nonlinear</term>. The term <m>\frac{mP'}{P}</m> has
+					the dependent variable <m>P</m> in both the numerator and the
+					denominator, so <m>P</m> and <m>P'</m> are effectively multiplied/divided
+					together. One offending term is enough: the whole equation is nonlinear.
+					(Here <m>m</m> is a parameter, not the dependent variable, so
+					<m>(m-1)^2</m> is just a free term.)
+				</p>
+			</solution>
+		</exercise>
+
+		<!-- Extension the book does not work out: classify modeling equations. -->
+		<exercise xml:id="ws-ic-ex-modeling">
+			<title>Looking past the book: classifying models</title>
+			<statement>
+				<p>
+					Classification is the first thing we do to any model we meet later in
+					the course. For each equation below, give its <em>order</em> and say
+					whether it is <em>linear</em> or <em>nonlinear</em>. Assume the letter
+					on the derivative is the dependent variable.
+					<ol>
+						<li><p>Population growth: <m>\dfrac{dP}{dt} = rP</m></p></li>
+						<li><p>Logistic growth: <m>\dfrac{dP}{dt} = rP\left(1 - \dfrac{P}{K}\right)</m></p></li>
+						<li><p>Damped spring&#8211;mass: <m>m\dfrac{d^2 y}{dt^2} + c\dfrac{dy}{dt} + ky = 0</m></p></li>
+						<li><p>Pendulum, large swings: <m>\dfrac{d^2\theta}{dt^2} + \dfrac{g}{L}\sin\theta = 0</m></p></li>
+					</ol>
+				</p>
+			</statement>
+			<hint>
+				<p>
+					<m>r</m>, <m>K</m>, <m>m</m>, <m>c</m>, <m>k</m>, <m>g</m>, and
+					<m>L</m> are constants (parameters), not the dependent variable. Look
+					only at how the dependent variable and its derivatives appear.
+				</p>
+			</hint>
+			<solution>
+				<p>
+					<ol>
+						<li><p><term>First-order, linear.</term> It is <m>P' - rP = 0</m>; the term <m>rP</m> has the form <m>a\,P</m>.</p></li>
+						<li><p><term>First-order, nonlinear.</term> Expanding the right side gives a <m>-\frac{r}{K}P^2</m> term&#8212;the dependent variable is squared.</p></li>
+						<li><p><term>Second-order, linear.</term> Each term is a constant times <m>y</m>, <m>y'</m>, or <m>y''</m>; damping adds a first-derivative term but keeps it linear.</p></li>
+						<li><p><term>Second-order, nonlinear.</term> The dependent variable <m>\theta</m> sits inside <m>\sin(\cdot)</m>. (For small swings we replace <m>\sin\theta \approx \theta</m>, which <em>linearizes</em> the model&#8212;a trick we will use again.)</p></li>
+					</ol>
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Order and linearity are the two labels we will read off <em>first</em>
+				for every new equation, because together they decide which technique to
+				reach for. Next we turn to what it even means to <em>solve</em> a
+				differential equation&#8212;how to check that a candidate function really
+				satisfies the equation, and how an initial condition pins down the one
+				solution we want out of the whole family.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
