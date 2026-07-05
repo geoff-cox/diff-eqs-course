@@ -1,13 +1,12 @@
 {
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python-envs.workspaceSearchPaths": [
+    "./.venv"
+  ],
   "xml.fileAssociations": [
     {
       "pattern": "**/source/**.ptx",
-      "systemId": "/home/gcox/.vscode-server/extensions/oscarlevin.pretext-tools-0.36.1/assets/schema/pretext.rng"
+      "systemId": "/home/gcox/.vscode-server/extensions/oscarlevin.pretext-tools-0.38.1/assets/schema/pretext.rng"
     }
-  ],
-  "terminal.integrated.env.linux": {
-      "VIRTUAL_ENV": "/home/gcox/pretext-venv",
-      "PATH": "/home/gcox/pretext-venv/bin:${env:PATH}"
-  },
-  "terminal.integrated.defaultProfile.linux": "bash"
+  ]
 }

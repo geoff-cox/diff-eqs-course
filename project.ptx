@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- This file, the project manifest, provides the overall configuration for your PreTeXt project. To edit the content of your document, open `source/main.ptx`. See https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest. -->
-<project ptx-version="2">
+<project 
+  ptx-version="2"
+  >
   <targets>
     <target 
-      name="web" format="html" source="main.ptx"
-      publication="publication.ptx" deploy-dir="ma311">
-      <stringparams author.deprecations.all="yes"/>
+      name="homepage" 
+      format="html" 
+      source="homepage.ptx"
+      publication="homepage-pub.ptx" 
+      deploy-dir="homepage">
     </target>
-    <!-- <target
-      name="pdf" format="pdf" source="course-main.ptx"
-      output-filename="exercises.pdf" publication="publication.ptx"/> -->
   </targets>
 </project>
