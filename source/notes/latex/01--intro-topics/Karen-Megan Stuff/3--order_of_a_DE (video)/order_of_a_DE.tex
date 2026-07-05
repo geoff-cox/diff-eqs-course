@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+%\includegraphics[scale = 0.65, trim = 1in 3.25in 1in 3in]{blank_axes.pdf}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Order of an ODE}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Classifying DEs:  order}
+\doublespacing
+\noindent  The next idea might be easier to understand if we consider an analogous situation that has nothing
+to do with differential equations.  Consider the
+two equations below.\\ \vspace{0.5cm}
+%	\[ x^2 - 7x  - 6 = 0 \hspace{1cm} e^{4x} = 2^{7x-8} \]
+
+\noindent  How might you go about solving the first equation? \\ \vspace{0.5in}
+%One option might be to factor the equation
+%and then use properties of products that equal zero.  Another option would be to use the quadratic formula, and
+%there are other viable options, as well.\\
+
+\noindent Now consider the second equation.  Would it be appropriate to use the quadratic formula to solve it?
+Why not?  The quadratic formula is great, but it does not solve every type of algebraic equation.  When we 
+solve an algebraic equation, we need to inspect it and to decide which solution technique is appropriate.  
+The same is true for differential equations.  We will study several different solution techniques for solving 
+DEs.  Each solution technique can only be applied to certain types of DEs.  Thus, our first job is to figure
+out %how to distinguish one DE from another.\\
+\line(1,0){450}.\\
+
+\noindent  The first distinguishing factor for DEs is the %{\bf order of  DE}
+\line(1,0){200}, which refers to the \\ \\%highest derivative that appears in the equation.  
+\line(1,0){500}.\\
+
+\noindent {\bf Example 1:}  Consider the DE\\ \\
+
+%	\[ x^2y'' + y''' = \sin x + y^8 \]
+\noindent This DE is said to be %a third-order DE 
+\line(1,0){125}\, because 
+%the highest derivative that appears in the equation is a third derivative.  
+\line(1,0){250}.
+
+\noindent Do not be thrown off by the exponent 8 here that is indicating the dependent variable is to the
+8th power; this has nothing to do with the order of the DE.\\
+
+\noindent  {\bf Example 2:}  Consider the DE\\ \\
+
+%	\[ \frac{d^2A}{dt^2} + \frac{dA}{dt} + A = 17 \]
+\noindent The highest derivative is a %second derivative
+\line(1,0){200}, so we say this is a \\ \\%second order DE
+\line(1,0){300}.  \\
+Notice that in this notation, the exponent can be used to indicate the second derivative.\\ \vspace{0.5cm}
+
+
+\noindent  We have seen two different notations to indicate the derivative here. The prime notation is
+quite common, but if one wants to indicate the 8th derivative using the prime notation, it gets rather
+annoying.  The shorthand notation to avoid this situation is to write the dependent variable 
+as what appears to be raised to a power that is in parentheses, as in %$y^{(8)}.$  
+\line(1,0){100}. This notation means
+the 8th derivative, not $y$ to the 8th power.\\
+
+\end{document}

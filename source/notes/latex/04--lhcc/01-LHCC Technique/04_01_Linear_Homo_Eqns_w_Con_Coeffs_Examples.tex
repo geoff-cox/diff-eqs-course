@@ -1,0 +1,207 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{04} \def\SEC{01} \def\SEM{S} \def\YEAR{2020} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\input{\PATHTOHEADERS/TestQuizPackageHeader.tex}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.8 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\newcounter{ProbNum}
+\setcounter{ProbNum}{0}
+\def\NEWPROB{\stepcounter{ProbNum} {\noindent \arabic{ProbNum}. \,\,}}
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Linear Homogeneous Differential Equations with Constant Coefficients \\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+\NEWPROB Find all values of $m$ such that $y = e^{mx}$ is a solution to $$\D \frac{d^2 y}{dx^2} + 6 \frac{dy}{dx} + 5y = 0.$$
+
+\vspace{8.2cm}
+	
+\NEWPROB  Solve the following quadratic equations.
+\begin{enumerate}[(a)]
+	\item  $\D 4x^2 + 12x + 9 = 0$ \label{double}
+	\vspace{3.8cm}
+	\item  $\D 2x^2 - 9x - 35 = 0$
+	\vspace{3.8cm}
+	\item  $\D x^2 - 4x + 13 = 0.$
+\end{enumerate}
+	
+	
+%\NEWPROB  {\it Polynomial long division.}  Perform each division.
+%	\begin{enumerate}[(a)]
+%	\item  $\D (x^3 - x^2 - 34x - 56) \div (x+2)$\\
+%	\item  $\D (x^3 - 3x^2 - 4x + 12) \div (x-3)$\\
+%	%\item  $\D (x^3 + x^2 - x - 1) \div (x+1)$\\
+%	\end{enumerate}
+%	
+%\NEWPROB  Use the results from the previous question to help you with these questions.
+%	\begin{enumerate}[(a)]
+%	\item  Find all solutions to the equation $x^3 - x^2 - 34x + -56= 0$ given that $x = -2$ is one solution. \\
+%	\item  Find all solutions to the equation $x^3 - 3x^2 - 4x + 12 = 0$ given that $x = 3$ is one solution.\\ 
+%	\item  Find all solutions to the equation $x^3 + x^2 - x - 1 = 0$ given that $x = -1$ is one solution. 
+%	\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+%\NEWPROB  Classify the following differential equations.
+%\renewcommand{\arraystretch}{1.5}
+%
+%	\begin{center}
+%	\setlength{\extrarowheight}{-0.25cm}
+%	\begin{tabular}{|c|p{0.4in}|c|c|c|c|c|}
+%	\hline
+%		&&&&&&\\
+%		Differential & Order & Linear? & Independent & Dependent & Homogeneous? & Term that makes the DE \\
+%		Equation	 & 		 & 		   & Variable 	 & Variable  & & Non-Homogeneous \\
+%	\hline
+%	\hline
+%										&&&&&&\\
+%		$\D \frac{dy}{dt}=\cos(y)$	    &&&&&&\\
+%										&&&&&&\\
+%	\hline
+%										&&&&&&\\
+%		$\D \dddot{y}-\ddot{y}y=0$		&&&&&&\\
+%										&&&&&&\\
+%	\hline
+%										&&&&&&\\
+%		$\D y'' +3y' = y$	            &&&&&&\\
+%										&&&&&&\\
+%	\hline
+%										&&&&&&\\
+%		$\D \frac{d^2x}{dt^2} + 3x = 0$	&&&&&&\\
+%										&&&&&&\\
+%	\hline
+%										&&&&&&\\
+%		$\D \vphantom{\frac{d}{d}} \frac{dy}{dx}=x+xy$	&&&&&&\\
+%										&&&&&&\\
+%	\hline
+%										&&&&&&\\
+%		$\D \frac{dx}{dy}=x+xy$	    &&&&&&\\
+%										&&&&&&\\
+%	\hline
+%	\end{tabular}
+%	\end{center}
+
+\NEWPROB Find the general solution for the following.
+\begin{enumerate}[(a)]
+	\item  $4y'' -36y = 0.$ \label{Q1}\\		%distinct real roots
+	\vspace{10.7cm}
+	\item  $4y'' -36y' = 0$\\				%distinct real roots
+
+\newpage
+\thispagestyle{empty}
+
+	\item  $y''- y' - 11y = 0$\\	%distinct real roots
+	\vspace{6.0cm}
+	\item  $\D 2\frac{d^2 \theta}{dt^2} -6\frac{d\theta}{dt} - 8\theta = 0$\\ \label{Q2c}	%distinct real roots
+\end{enumerate}
+
+\vspace{6.0cm}
+	
+\NEWPROB Solve the following initial value problem.	
+	$$\D 4y'' -36y = 0, \hspace{1cm} y(0) = 4, \hspace{1cm} y'(0) = -6 $$\\
+	
+\newpage
+\thispagestyle{empty}
+
+%\NEWPROB Solve the following boundary value problem.
+%	\[ y'' - y = 0, \hspace{1cm} y(0) = 1, \hspace{1cm} y(1) = 2e- \frac{1}{e}\]
+
+%\vspace{7.2cm}
+
+\NEWPROB Solve \quad $\D w'' + 6w' + 9w = 0$\\	%repeated real roots
+
+\vspace{9.2cm}
+
+\NEWPROB Solve the following initial value problem.
+	%\begin{enumerate}
+	%\item  $y''+2y'-8y = 0, \hspace{0.5cm} y(0) = 3, \hspace{0.5cm} y'(0) = -12$\\	%distinct real
+	%\item  
+	\[ \frac{d^2z}{dx^2} - 4\frac{dz}{dx} + 4z = 0, \hspace{0.5cm} z(1) = 1, \hspace{0.5cm} z'(1) = 1\]
+						%repeated real roots
+	%\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB Solve the following DEs.
+	\begin{enumerate}[(a)]
+	\item  $y'' + 4y' + 53y = 0$\\
+	\vspace{10.0cm}
+	\item  $z''=-36z$\\
+	\end{enumerate}
+
+\vspace{7.5cm}
+
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB Solve the following DEs.
+	\begin{enumerate}[(a)]
+	\item  $\D y'' = -24y' - 144y$ \\	%repeated real
+	\vspace{11.0cm}
+	\item  $\D \frac{d^2w}{dx^2} - 49w = 0$\\	%distinct real	
+
+\newpage
+\thispagestyle{empty}
+	
+	\item  $\D \frac{d^2w}{dx^2} + 49w = 0$\\	%complex
+	\vspace{11.0cm}
+	\item  $y''' + 5y'' - 14y' = 0$\\				%distinct real roots
+	\end{enumerate}
+	
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB Find the differential equation that corresponds to the following solution. Include initial conditions.
+	\begin{enumerate}[(a)]
+	\item  $\D W=e^x+2e^{-3x}$\\	
+	\vspace{10.0cm}
+	\item  $\D y=e^{1.2t}-e^{-2t}+3te^{-2t}$\\
+	\end{enumerate}
+	
+\newpage
+\thispagestyle{empty}
+
+%\NEWPROB  Solve the following differential equation.
+%	\[ \frac{d^2y}{dt^2} - 3y = 0\]
+%	\vfill
+%	
+%\NEWPROB  Solve the following initial value problem.
+%	\[ \frac{d^2y}{dt^2} + 3y = 0, \hspace{0.5cm} y(0) = 5, \hspace{0.5cm} y'(0) = \sqrt{3} \]
+%	\vfill
+
+\end{document}

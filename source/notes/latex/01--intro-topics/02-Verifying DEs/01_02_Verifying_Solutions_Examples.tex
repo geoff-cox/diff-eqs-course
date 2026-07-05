@@ -1,0 +1,222 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{01} \def\SEC{01} \def\SEM{S} \def\YEAR{2018} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\input{\PATHTOHEADERS/TestQuizPackageHeader.tex}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.5 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Verifying Solutions of Differential Equations \\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+\noindent 1. For each of the following differential equations, verify whether the given function is a solution of the differential equation. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}[(a)]
+\item  $\D y' + 5y = 0; \quad y(x)=e^{-5x}$ \\
+
+\vfill
+
+\item  $\D (\sin \theta)T'' - (\cos \theta)T' = -1; \quad T(\theta)=\sin(\theta)$\\
+
+\vfill
+
+\newpage
+\thispagestyle{empty}
+
+\item  $\D (\sin \theta)T'' - T\,T' = -1; \quad T(\theta)=\cos(\theta)$\\
+
+\vfill
+
+\item  $\D \frac{d^2R}{dt^2} = \frac{2}{R^3}; \quad R(t)=\frac{1}{t}$\\
+
+\vfill
+
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\noindent 2. For each of the following differential equations, verify whether the given family of functions are solutions of the differential equation. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[(a)]
+\item  $\D \frac{dP}{dt}=P(1-P); \quad P(t)=\frac{c_1e^t}{1+c_1e^t}$ \\
+
+\vfill
+
+\item  $\D x^3y'''+2x^2y''-xy'+y=12x^2; \quad y(x)=c_1x^{-1}+c_2x+c_3x\ln x+4x^2$ \\
+
+\vfill
+
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\noindent 3. For each of the following differential equations, find values of $m$ such that $\D y(t)=e^{mt}$ is a solution to the equation. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+\item  $\D 5y' = 2y$ \\
+
+\item  $\D 2y''+7y'-4y=0$ \\
+\end{enumerate}
+\end{multicols}
+
+\vfill
+
+\noindent 4. Find values of $m$ such that $\D y(t)=x^{m}$ is a solution to the differential equation \, $\D x^2\,y''-7xy'+15y=0$. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vfill
+
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+
+\noindent 4. Determine if the following differential equations have any constant solutions. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}[(a)]
+
+\item  $\D y'=y^2+2y-3$ \\
+
+\vfill
+
+\item  $\D (1-y)y'=1$ \\
+
+\vfill
+
+\item  $\D y''+4y'+6y=10$ \\
+
+\vfill
+
+\end{enumerate}
+
+
+\thispagestyle{empty}
+\newpage
+\thispagestyle{empty}
+
+%\newpage
+%\noindent  Answers:
+%\begin{multicols}{2}
+%\begin{enumerate}[1.]
+%\item  $\D (1 - x)y'' - 4xy' + 5y = \cos x$
+%	\begin{itemize}
+%	\item $y$
+%	\item $x$
+%	\item 2nd order
+%	\item linear
+%	\end{itemize}
+%
+%\vspace{1.1cm}
+%
+%\item  $\D x \frac{d^3y}{dx^3} - \left( \frac{dy}{dx} \right)^4 + y = 0$
+%	\begin{itemize}
+%	\item $y$
+%	\item $t$
+%	\item 3rd order
+%	\item nonlinear
+%	\item $\D \left( \frac{dy}{dx} \right)^4$
+%	\end{itemize}
+%
+%\vspace{1.1cm}
+%
+%\item  $\D t^5 y^{(4)} - t^3 y'' + 6y = 0$
+%	\begin{itemize}
+%	\item $x$
+%	\item $t$
+%	\item 4th order
+%	\item linear
+%	\end{itemize}
+%
+%\vspace{1.1cm}
+%
+%\item  $\D \frac{d^2u}{dr^2} + \frac{du}{dr} + u = \cos(r+u) $
+%	\begin{itemize}
+%	\item $u$
+%	\item $r$
+%	\item 2nd order
+%	\item nonlinear
+%	\item $\D \cos(r+u)$
+%	\end{itemize}
+%
+%\vspace{1.1cm}
+%
+%\item  $\D \frac{d^2y}{dx^2} = \sqrt{1 + \left(\D \frac{dy}{dx}  \right)^2} $
+%	\begin{itemize}
+%	\item $y$
+%	\item $x$
+%	\item 2nd order
+%	\item nonlinear
+%	\item $\D \sqrt{1 + \left(\D \frac{dy}{dx}  \right)^2}$
+%	\end{itemize}
+%
+%\vspace{1.1cm}
+%
+%\item  $\D \frac{d^2R}{dt^2} = -\frac{k}{R^2}$
+%	\begin{itemize}
+%	\item $R$
+%	\item $t$
+%	\item 2nd order 
+%	\item nonlinear
+%	\item $\D -\frac{k}{R^2}$
+%	\end{itemize}
+%
+%\vspace{1.1cm}
+%
+%\item  $\D (\sin \theta)y''' - (\cos \theta)y' = 2$
+%	\begin{itemize}
+%	\item $y$
+%	\item $\theta$
+%	\item 3rd order
+%	\item linear
+%	\end{itemize}
+%
+%\vspace{1.1cm}
+%
+%\item  $\D \ddot{x} - \left( 1 - \frac{\dot{x}^2}{3} \right)\dot{x} + x = 0$
+%	\begin{itemize}
+%	\item $x$
+%	\item $t$
+%	\item 2nd order
+%	\item nonlinear
+%	\item $\D \left( 1 - \frac{\dot{x}^2}{3} \right)\dot{x}$
+%	\end{itemize}
+%\end{enumerate}
+%\end{multicols}
+
+\end{document}

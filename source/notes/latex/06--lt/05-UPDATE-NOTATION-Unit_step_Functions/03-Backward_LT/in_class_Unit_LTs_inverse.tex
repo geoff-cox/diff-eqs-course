@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Inverse Laplace Transforms involving Unit Step Functions}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+\ben
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Find the inverse Laplace transform of each function.
+	\ben
+
+	\item	$\displaystyle W(s) = e^{-6s}\frac{1}{(s-2)^2}$\\
+			\vfill
+			%\[ w(t) = (t-6)e^{2(t-6)}U(t-6) \]
+	\item	$\displaystyle Z(s) = \frac{se^{-2s}}{s^2 + 16}$\\
+			 \vfill
+			%\[ z(t) = \cos\big(4(t-2)\big) U(t-2) \]
+					
+\newpage
+
+	\item	$\displaystyle A(s) = e^{-3s}\cdot \frac{s-5}{s^2 - 4s + 29}$\\
+			 \vfill
+			%\[ a(t) = \left[e^{2(t-3)}\cos\big( 5(t-3) \big)
+			%		- \frac{3}{5}e^{2(t-3)}\sin\big( 5(t-3) \big) \right]U(t-3) \]
+	\item	$\displaystyle Y(s) = \frac{17se^{-4s} + 16e^{-4s}}{s^2 + 2s}$\\
+			 \vfill
+			%\[ y(t) = \big( 8 + 9e^{-2(t-4)} \big)U(t-4)\]				
+	\een
+
+
+\een
+
+
+\end{document}

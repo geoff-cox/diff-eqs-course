@@ -1,0 +1,258 @@
+\pagestyle{empty}
+\showto{answers}{\mbox{}\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}
+\begin{center}  \sc{Differential Equations\\
+   \vspace{0.25cm}
+
+   Euler's Method for Systems and Higher Order DEs}
+\end{center}
+\noindent\rule{7in}{0.4pt} \vspace{0.25cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\includegraphics[scale = 0.65, trim = 1in 3.25in 1in 3in]{blank_axes.pdf}
+%\noindent  Recall that we previously studied the DE $\ds \frac{dy}{dx} = y^2 - y^4,$ which has the
+%slope field that appears below.\\
+% \begin{center}
+%  \includegraphics[scale = 0.35, trim = 0in 0in 0in 0in]{figs/DE_D.eps}\\
+% \end{center}
+%
+%\noindent  Here
+
+\noindent  We're going to extend our knowledge of Euler's Method so that we can use numerical
+methods for a wide range of problems.\\
+
+\noindent Before we begin, let's write down what we know about Euler's Method:\\ \vspace{1.5in}
+
+\noindent  In particular, we can use Euler's Method to solve a single, \line(1,0){150} differential
+ equation with an initial condition.\\
+
+\noindent  Let's think about how we might find a {\bf numerical solution for a system} of first-order
+differential equations.
+
+\ben
+\item  Consider the system of differential equations below,
+ \begin{align*}
+ \frac{dx}{dt} &= 3x^2 + 2y,\\
+ \frac{dy}{dt} &= x-t,\\
+ \end{align*}
+ with initial conditions $x(0) = 1,$ \hspace{0.25cm} $y(0) = -2.$
+
+ \ben
+ \item  Identify the independent and dependent variables that appear in the system.\\ \vspace{0.5in}
+
+ \item  Can we solve this system using methods we've already learned?  Why or why not?
+  \\ \vspace{1in}
+\newpage
+ \item  Use one step of Euler's Method to approximate $x(0.5)$ and $y(0.5).$\\ \vspace{2in}
+
+  % t_0 = 0
+  % x_0 = 1
+  % y_0 = -2
+  %
+  % \Delta_t = 0.5
+  %
+  % t_1 &= t_0 + Delta_t
+  %  &= 5
+  %
+  % x_1  &= x_0 + \Delta_t\cdot f_1(x_0, y_0)
+  %  &= 1 + 0.5 * (3*x_0^2 + 2*y_0)
+  %  &= 1 + 0.5 * (3*1^2 + 2*(-2) )
+  %  &= 0.5
+  %
+  % y_1 &= y_0 + \Delta_t\cdot f_2(x_0, y_0)
+  %  &= -2 + 0.5 * (x_0 - t_0)
+  %  &= -2 + 0.5 * (1 - 0)
+  %  &= -1.5
+  %
+  % ==> x(0.5) \approx 0.5
+  %  y(0.5) \approx -1.5
+
+ \item  Use two steps of Euler's Method to approximate $x(0.5)$ and $y(0.5).$\\ \vfill
+
+  % t_0 = 0
+  % x_0 = 1
+  % y_0 = -2
+  %
+  % \Delta_t = 0.25
+  %
+  % t_1 &= t_0 + Delta_t
+  %  &= 0 + 0.25
+  %
+  % x_1  &= x_0 + \Delta_t\cdot f_1(x_0, y_0)
+  %  &= 1 + 0.25 * (3*x_0^2 + 2*y_0)
+  %  &= 1 + 0.25 * (3*1^2 + 2*(-2) )
+  %  &= 0.75
+  %
+  % y_1 &= y_0 + \Delta_t\cdot f_2(x_0, y_0)
+  %  &= -2 + 0.25 * (x_0 - t_0)
+  %  &= -2 + 0.25 * (1 - 0)
+  %  &= -1.75
+  %
+  % t_2 &= t_1 + Delta_t
+  %  &= 0.25 + 0.25
+  %  &= 0.5
+  %
+  % x_2  &= x_1 + \Delta_t\cdot f_1(x_0, y_0)
+  %  &= 0.75 + 0.25 * (3*x_1^2 + 2*y_1)
+  %  &= 0.75 + 0.25 * (3*(0.75)^2 + 2*(-1.75) )
+  %  &= 0.2969
+  %
+  % y_2 &= y_1 + \Delta_t\cdot f_2(x_1, y_1)
+  %  &= -1.75 + 0.25 * (x_1 - t_1)
+  %  &= -1.75 + 0.25 * (0.75 - 0.25)
+  %  &= -1.6250
+  %
+
+ \een
+\een
+
+\noindent  So now we know how to use Euler's Method to solve
+ \begin{itemize}
+ \item  a single, first-order differential equation (with an initial condition)
+ \item {\it systems} of first-order differential equations (with initial conditions).
+ \end{itemize}
+
+\noindent  What if we have a higher-order DE, and we can't use any of the solution techniques
+we have studied so far?  Is there some way we can leverage this numerical technique to get a
+solution?  Turns out there is!  We just need to use a simple change of variables called
+{\bf reduction of order.}\\ \vspace{1cm}
+
+\newpage
+\ben[resume]
+\item  Consider the following IVP:
+ \[ ty' + y^2 + y''= e^t, \hspace{1cm} y(0) = 4, \hspace{1cm} y'(0) = -3. \]
+
+ \ben
+ \item  Classify the DE.  What is the independent variable?  What is the dependent
+  variable?  What is the order of the DE?  Is it linear or nonlinear?\\ \vspace{1in}
+
+ \item  Which solution techniques have we studied that we might be able to use for
+  this DE?  Why can't we use them to solve this DE?\\ \vspace{1in}
+
+ \item  Consider the following change of variables:
+  \[ u = y, \hspace{1cm} v = y'. \]
+
+  \ben
+  \item  What is the relationship between $u$ and $v$?\\ \vspace{1in}
+
+  \item  Rewrite the DE in terms of the new variables $u$ and $v.$
+   Use the fewest derivatives you possibly can.\\ \vspace{1in}
+
+  \item  Write the initial conditions in terms of the new variables $u$ and $v.$\\ \vspace{1in}
+  \een
+\newpage
+ \item  Combine your answers from the previous question--rearranging the terms if needed--
+  to write down a system of two first-order DEs with two initial conditions for which
+  we can use Euler's Method.\\ \vspace{1in} \label{system_Q}
+
+  {\it Note:} We reduced one second-order DE to a system of two first-order DEs.
+  This process of reducing a higher-order DE to a system of first-order DEs is called
+  {\bf reduction of order.}\\
+
+ \item  Use two steps of Euler's Method with $\Delta t = 0.5$ to solve the system you
+  wrote down in question \ref{system_Q}.\\ \vfill
+
+ \item  What does your answer mean in terms of the original DE?  Translate your results
+  back to the original dependent variable $y$.\\ \vspace{2cm}
+ \een
+
+\newpage
+\item  Use Euler's Method to approximate $y(1.2)$ where $y$ is the solution of the IVP
+ \[ x^2 y'' - 2xy' + 2y = 0, \hspace{1cm} y(1) = 4, \hspace{1cm} y'(1) = 9. \]
+ Use $\Delta x = 0.1.$
+
+\newpage
+\item  {\it More practice of reduction of order.}  Reduce each of the following
+ to a system of first-order differential equations.
+ \ben
+ \item  $\ds z''' + z'' = t^3$\\ \vfill
+
+ \item  $\ds x'' + y' = 9$\\
+
+  $\ds y'' - 2xy = t\sin t$\\ \vfill
+ \een
+\een
+\vfill
+\noindent  {\bf Summary:}
+\begin{itemize}
+\item  Analytic solutions are exact solutions, and having {\it the} exact solution is usually
+ the gold standard we aim for...
+\item ...but...we only have a finite number of techniques to solve differential equations, and there
+ are far more differential equations for which we have no analytic solution technique.
+\item  In many instances, we are content with a {\bf numerical solution,} where we approximate the
+ value of the solution.  Numerical solutions can be generated quickly and can solve DEs
+ and systems of DEs when we can't find analytic solutions.
+\item  {\bf Euler's Method} is an example of one numerical solution technique.  It gives a crude
+ approximation based on the idea of tangent lines
+\item  Euler's Method works for first-order DEs and systems of first-order DEs.  If we have a higher
+ order DE or system, we can make a change of variables we call {\bf reduction of order} so
+ that we can use Euler's Method.
+\item  MANY of the other commonly used numerical solution algorithms (including those used
+ in the solvers of the best software available) are variations on Euler's Method.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\ben
+\item  \ben
+ \item  independent variable:  $t$\\
+  dependent variables:  $x$ and $y$\\
+
+ \item  no solution technique we've learned so far works for nonlinear systems (and since
+  one of the dependent variables, $x,$ is squared in the first DE, this is a nonlinear
+  system)\\
+
+ \item  $x(0.5) \approx 0.5$\\
+  $y(0.5) \approx -1.5$\\
+
+ \item  $x(0.5) \approx 0.2969$\\
+  $y(0.5) \approx  -1.6250$\\
+ \een
+
+\item  \ben
+ \item  independent variable: $t$\\
+  dependent variable:  $y$
+  order of the DE:  2nd order
+  linear or nonlinear:  nonlinear (because the dependent variable is squared)\\
+
+ \item  For a second order equation, we can use the method of undetermined coefficients
+  or Laplace transforms.  Neither is appropriate because this DE does not have
+  constant coefficients.\\
+
+ \item  \ben
+  \item  $u' = v$
+
+  \item  $\ds  t\cdot v + u^2 + v'= e^t$
+
+  \item  $u(0) = 4$\\
+   $v(0) = -3$\\
+  \een
+
+ \item  $u' = v, \hspace{1cm} u(0) = 4,$\\
+  $v' = e^t - tv - u^2, \hspace{1cm}, v(0) = -3$\\
+
+ \item  $t_0 = 0,$ \hspace{0.5cm} $u_0 = 4,$\hspace{0.5cm} $v_0 = -3$\\
+  $t_1 = 0.5,$ \hspace{0.5cm} $u_1 = 2.5,$\hspace{0.5cm} $v_1 = -10.5$\\
+  $t_2 = 1,$ \hspace{0.5cm} $u_2 = -2.75,$\hspace{0.5cm} $v_2 = -10.1756$\\
+
+ \item  $y(0.5) \approx 2.5,$\\
+  $y(1) \approx -2.75$\\
+ \een
+
+\item  $y(1.2) \approx 5.9$\\
+
+\item  \ben
+ \item  $u' = v$\\
+  $v' = w$\\
+  $w' = t^3 - w$\\
+
+ \item  $u' = v$\\
+  $v' = 9 - z$\\
+  $w' = z$\\
+  $z' = t + 2uw$\\
+ \een
+\een
+
+}

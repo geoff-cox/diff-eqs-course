@@ -1,0 +1,203 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{01} \def\SEC{02} \def\SEM{S} \def\YEAR{2018} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\input{\PATHTOHEADERS/TestQuizPackageHeader.tex}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.8 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Integration Factor \\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+%\noindent 1. {\it Product Rule Review.}
+%
+%\begin{enumerate}[(a)]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\item    Write down the product rule.
+%
+%	$\D \frac{d}{dx}\Big( f(x)\cdot g(x) \Big) = $
+%
+%\vspace{0.2cm}
+%
+%\item  Evaluate the following derivatives.
+%	\begin{enumerate}[(i)]
+%	\vspace{0.5cm}
+%	\item  $\D \frac{d}{dx}\Big( e^x\cos x \Big)$
+%	\vspace{0.5cm}
+%	\item  $\D \frac{d}{dx}\Big( x^5\ln x \Big)$
+%	\vspace{0.5cm}
+%	\item  $\D \frac{d}{dx}\Big( x\arctan x \Big)$\\
+%	\end{enumerate}
+%	
+%\item  Given that $y$ is a function of $x$, use the product rule to rewrite the following:
+%
+%		$\D \frac{d}{dx}\Big( \cos x \cdot y(x) \Big) = $\\
+%	
+%\vspace{0.2cm}
+%	
+%\item Given that $z$ is a function of $t$, use the product rule to rewrite the following:
+%
+%		$\D \frac{d}{dt}\Big( e^{5t} \cdot z \Big) = $\\
+%		
+%\vspace{0.2cm}
+%
+%\item  Now let's look at the product rule ``in the other direction"...  Or we can think about this
+%	as ``un-doing" the product rule.
+%	
+%	Rewrite each of the following as the derivative of a product:
+%	\begin{enumerate}[(i)]
+%	\vspace{0.5cm}
+%	\item  $\D x^{-4} \frac{dy}{dx} - 4x^{-5}y = \frac{d}{dx}\Big( \hspace{2cm} \Big)$
+%	\vspace{0.5cm}
+%	\item  $\D e^{-3x} y' - 3e^{-3x}y = \frac{d}{dx}\Big( \hspace{2cm} \Big)$
+%	\vspace{0.5cm}
+%	\item  $\D \sec(\theta) \frac{dr}{d\theta} + \sec(\theta) \tan(\theta) r 
+%					= \frac{d}{d\theta}\Big( \hspace{2cm} \Big)$
+%	\end{enumerate}
+%
+%\vspace{0.2cm}
+%
+%\item    Given that $Y$ is a function of $t$, use the product rule to rewrite the following.
+%
+%		$\D \frac{d}{dt}\Big( \sin(2t) \cdot Y \Big) = $\\
+%	
+%\item   Rewrite the following as the derivative of a product.
+%
+%		$\D \ln x\cdot  \frac{dz}{dx} + \frac{1}{x}\cdot z = $
+%
+%\end{enumerate}
+
+%\newpage
+%\thispagestyle{empty}
+
+%\begin{enumerate}[1.]
+%\setcounter{enumi}{1}
+%\item  Compute the following integrals
+%	\begin{enumerate}
+%	\item  $\D \int \frac{dy}{dx} \, dx $\\
+%	\vspace{0.6cm}
+%	\item  $\D \int \frac{d}{dx}\left[y\sin x\right] \, dx $\\
+%	\vspace{0.6cm}
+%	\item  $\D \int \frac{d}{dt}\left[P(t)\sqrt{t+1}\,\right] \, dt $\\
+%	\vspace{0.6cm}
+%	\end{enumerate}
+%\item  Solve the differential equations by integrating both sides of the equation with respect to the appropriate variable
+%	\begin{enumerate}
+%	\item  $\D \frac{dy}{dx} = e^{2x}$\\
+%	\vspace{3.6cm}
+%	\item  $\D \frac{d}{dx}\left[y\sin x\right] = \cos^2x \sin x$\\
+%	\vspace{5.6cm}
+%	\item  $\D \frac{d}{dt}\left[P(t)\sqrt{t+1}\,\right] = \frac{2}{1+4t^2}$\\
+%	\vspace{0.6cm}
+%	\end{enumerate}
+%\end{enumerate}
+
+
+%\newpage
+%\thispagestyle{empty}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{0}
+\item  For each of the DEs below, (i) write the DE in standard form, (ii) determine the integrating factor, and (iii) find the general solution.
+	\begin{enumerate}
+	\item  $\D \frac{dy}{dx} - y = e^{3x}$\\
+
+\newpage
+\thispagestyle{empty}
+
+	\item  $\D \frac{dy}{dx} = \frac{y}{x} + 2x + 1$\\
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{4}
+\item  Find the general solution for each of the following DEs.
+	\begin{enumerate}
+	\item  $\D \frac{dr}{d\theta} + r\tan \theta = \sec \theta$\\
+
+\newpage
+\thispagestyle{empty}
+
+	\item  $\D y\frac{dx}{dy} + 2x = 5y^3$\\
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{5}
+\item    Solve each initial value problem.
+	\begin{enumerate}
+	\item  $\D \frac{dy}{dx} - \frac{y}{x} = xe^x,$ \hspace{0.5cm} $y(1) = e-1$\\
+
+\newpage
+\thispagestyle{empty}
+
+	\item  $\D  e^t z' = 1 - 4e^t z,$ \hspace{0.5cm} $\D z(0) = \frac{4}{3}$\\
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+	
+\begin{enumerate}[1.]
+\setcounter{enumi}{6}
+\item  For each differential equation below, identify whether they can be solved by separating variables (SV) and/or using an integrating factor (IF). You do not need to solve any of the equations.
+	\begin{multicols}{2}
+	\begin{enumerate}
+	\item  $\D x^2 \frac{dy}{dx} + \cos x = y$\\ 	%integrating factor only
+	\vspace{6.2cm}
+	\item  $\D \frac{dx}{dt} + xt = e^x$\\			%neither
+	\vspace{6.2cm}
+	%\item  $\D x\frac{dx}{dt} + t^2 x = \sin t$\\		%neither
+	\item  $\D (t^2 + 1) \frac{dy}{dt} = yt - y$\\		%both
+	\vspace{6.2cm}
+	\item  $\D \frac{dy}{dt} - y^2 t = t$\\			%separable only
+	\vspace{6.2cm}
+	\end{enumerate}
+	\end{multicols}
+	\begin{enumerate}
+	\item[(e)]  $\D 3r = \frac{dr}{d\theta} - \theta^3$	%integrating factor only
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\end{document}

@@ -1,0 +1,157 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{05} \def\SEC{01} \def\SEM{S} \def\YEAR{2018} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\usepackage{mathrsfs}
+
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+
+\newcommand{\LAP}[1]{\mathscr{L}\{#1\}}
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.8 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\begin{document}
+
+	\pagestyle{empty}
+
+	\noindent\rule{7.6in}{0.4pt}
+
+	\begin{center}  \sc{Differential Equations\\
+				\vspace{0.25cm}
+				
+				Systems and Higher Order DEs}
+	\end{center}
+
+	\noindent\rule{7in}{0.4pt} \vspace{0.25cm}
+		
+	\noindent  What if we have a higher-order DE, and we can't use any of the solution techniques
+	we have studied so far?  Is there some way we can leverage this numerical technique to get a 
+	solution?  Turns out there is!  We just need to use a simple change of variables called
+	\textbf{reduction of order.}
+
+	\medskip
+
+	\begin{enumerate}
+		\item  Consider the following IVP:
+		
+		\[ 
+			ty' + y^2 + y''= e^t,\quad y(0) = 4,\quad y'(0) = -3.
+		\]
+		\smallskip
+		
+		\begin{enumerate}
+
+			\item What is the independent variable?
+			\bigskip
+
+			\item What is the dependent variable?
+			\bigskip
+
+			\item What is the order of the DE?
+			\bigskip
+
+			\item Is it linear or nonlinear?
+			\bigskip
+			
+			\item Consider the following change of variables:
+			\[
+				u = y,\qquad v = y'.
+			\]
+			
+			\begin{enumerate}
+				\item What is the relationship between $u$ and $v$?
+				\vfill
+				
+				\item Rewrite the DE in terms of the new variables $u$ and $v.$
+				\vfill
+				
+				\item Write the initial conditions in terms of the new variables $u$ and $v.$
+				\vfill
+			\end{enumerate}
+
+		\end{enumerate}
+
+		\newpage
+
+		\begin{enumerate}
+
+			\item Reduce each of the following to a system of first-order differential equations.
+			\bigskip
+
+			\begin{enumerate}
+				\item \(z''' + z'' = t^3\)
+				\vfill
+				
+				\item \(x'' + y' = 9\)
+				\vfill
+
+				\item \(y'' - 2xy = t\sin t\)
+				\vfill
+			\end{enumerate}
+			
+		\end{enumerate}
+
+	\end{enumerate}
+\end{document}

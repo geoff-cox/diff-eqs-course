@@ -1,0 +1,330 @@
+\documentclass[12pt]{article}
+
+\usepackage{filecontents}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	NOTE:
+%					You MUST use sepdflatex (or sepdflatexmk) when you typeset.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  If your document has only "teacher" and "student" versions, then you need not make the changes 
+%  described here.
+%
+%  However, if you want different and/or more versions, you'll need to consider changes to four areas:
+%
+% (1)  In the bulk of the document (immediately below), use the command \showto to indicate your 
+%       audience.
+%
+%  (2)  Edit the output file names.  See flags below.
+%
+%  (3)  Edit the names of the audiences.  See flags below.
+%
+%  (4)  Edit the "current" audience.  See flags below.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Below is the bulk of your document.  Use \showto to indicate audience
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{filecontents*}{template.tex}
+\pagestyle{empty}
+
+\showto{answers}{\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}
+\begin{center}
+{\sc 
+\noindent Differential Equations\\
+ DEs Practice Problems Set \DEPPSetNum\ 							%CHANGE NUMBER BELOW********
+}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+\noindent Submit solutions for extra credit by 1600 \ECDueDate\\
+\noindent Corresponding Performance Quiz due by 1600 \PQDueDate\\
+
+\vspace{0.5cm}
+
+%intro to LTs / basic LTs.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{The Definition of Laplace Transform}
+
+\noindent  As a reminder, the Laplace Transform of function $f(t)$ is a function $F(s)$ as follows:
+	\[ F(s) = \L\{ f(t) \} = \int_0^{\infty}e^{-st}f(t) dt, \]
+	provided this integral is finite.\\
+	
+\begin{DEPP}
+\item    Use the definition of Laplace Transform (above) to find the Laplace Transform of $h(t) = 7t.$  
+	Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+
+\item    Use the definition of Laplace Transform (above) to find the Laplace Transform of $w(t) = e^{kt},$ 
+	where $k$ is some constant.  Include appropriate restrictions on $s$ to guarantee the
+	convergence of the integral.\\
+	
+\item   Use the definition of Laplace Transform (above) to find the Laplace Transform of $y(t) = 7t + e^{5t}.$
+		Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+
+\item  Use the definition of Laplace Transform (above) to find the Laplace Transform of  the function
+	\[d(t) = \left\{ \begin{array}{ll}	0,	& t<0\\
+							7,	& 0 \le t < 3\\
+							0,	& t \ge 3\\
+							\end{array} \right.\]  %= 7U(t) - 7U(t-3)
+	Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+	
+	{\it Note:  This is a really important skill!  If we can take the Laplace Transform of 
+	piecewise-defined functions like this one, then we can solve differential equations that
+	we couldn't solve before!)}\\
+%\item    $\ds H(s) = \frac{7}{s^2},$ $s>0$\\
+%
+%\item    $\ds W(s) = \frac{1}{s-k},$  $s > k$	\\
+%
+%\item   $\ds Y(s) = \frac{2}{s^2} + \frac{1}{s-5},$  $s>5$
+
+%\item  $\ds D(s) = \frac{7}{s} - \frac{7e^{-3s}}{s}$
+\end{DEPP}
+\newpage
+\subsection*{Using Table to Find LTs}
+\begin{DEPP}[resume]
+\item  Use the table and properties provided to determine the Laplace transform of each function.
+Include resulting restrictions on $s.$
+	\ben[label=(\alph*)]
+	\item  $\ds f(t) = e^{-2t}\sin(2t) + t^2 e^{3t}$\\ 
+	\item  $\ds g(t) = t^3 e^{-9t}$\\
+	\item  $\ds h(t) = e^{2t} - t^3 + t^2 - \sin (5t)$\\
+	\item  $\ds q(t) = 8t\cos(6t) + e^{3t}\sin(4t)$\\
+	\item  $\ds f(t) = t^2 \sin(3t)$\\
+	\een	
+%\item  \ben [label=(\alph*)]
+%	\item  $\ds F(s) = \frac{2}{(s+2)^2 + 4} + \frac{2}{(s-3)^3}, \hspace{0.25cm}s>3$\\
+%	\item  $\ds G(s) = \frac{6}{(s+9)^4}, \hspace{0.25cm}s>-9$\\
+%	\item  $\ds H(s) = \frac{1}{s-2} - \frac{6}{s^4} + \frac{2}{s^3} - \frac{5}{s^2 + 25},\hspace{0.25cm}s>2$\\
+%	\item  $\ds Q(s) = \frac{8(s^2-36)}{(s^2 + 36)^2} + \frac{4}{(s-3)^2 + 16}, \hspace{0.25cm}s>3$\\
+%	\item  $\ds F(s) = \frac{18(s^2 - 3)}{(s^2+9)^3},\hspace{0.25cm}s>0$\\
+%	\een
+\end{DEPP}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{DEPP}
+\item    $\ds H(s) = \frac{7}{s^2},$ $s>0$\\
+
+\item    $\ds W(s) = \frac{1}{s-k},$  $s > k$	\\
+
+\item   $\ds Y(s) = \frac{2}{s^2} + \frac{1}{s-5},$  $s>5$\\
+
+\item  $\ds D(s) = \frac{7}{s} - \frac{7e^{-3s}}{s},$  $s>0$\\
+
+\item  \ben [label=(\alph*)]
+	\item  $\ds F(s) = \frac{2}{(s+2)^2 + 4} + \frac{2}{(s-3)^3}, \hspace{0.25cm}s>3$\\
+	\item  $\ds G(s) = \frac{6}{(s+9)^4}, \hspace{0.25cm}s>-9$\\
+	\item  $\ds H(s) = \frac{1}{s-2} - \frac{6}{s^4} + \frac{2}{s^3} - \frac{5}{s^2 + 25},\hspace{0.25cm}s>2$\\
+	\item  $\ds Q(s) = \frac{8(s^2-36)}{(s^2 + 36)^2} + \frac{4}{(s-3)^2 + 16}, \hspace{0.25cm}s>3$\\
+	\item  $\ds F(s) = \frac{18(s^2 - 3)}{(s^2+9)^3},\hspace{0.25cm}s>0$\\
+	\een
+\end{DEPP}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+%\mbox{}\newpage		%If needed
+
+\showto{answers}{\mbox{}\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}\\
+
+{\sc 
+\noindent Differential Equations 						\showto{student}{\hfill Name:  \line(1,0){200}}\\
+DEs Performance Quiz  \DEPPSetNum\			\showto{student}{\hfill HR:  \line(1,0){200}}\\
+Due by 1600 \PQDueDate \showto{student}{\hfill Circle your section: \hspace{0.73in}\mbox{}\\
+														\mbox{} \hfill MWF1000
+															\hspace{0.5cm}MWF1300 \hspace{0.5cm}TR0925
+															\hspace{0.5cm}TR1050}\\
+}
+
+\noindent\rule{7in}{0.4pt}
+\vspace{0.5cm}
+
+\noindent  For this Performance Quiz, you are permitted to use your own notes/work and your
+textbook, but you are NOT AUTHORIZED to seek help from anyone
+other than MAJ Libertini or MAJ Bliss.\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{PQ}
+\item   {\bf Use the definition of Laplace Transform} to find the Laplace Transform of 
+
+		\[y(t) = \left\{ \begin{array}{ll}	0,	& t<4\\
+								6,	& t \ge 4\\
+							\end{array} \right.\]   	%=6U(t-4)
+		
+		Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+		
+		{\it Note:  Credit will only be assigned for work that demonstrates how the definition was
+		used to find the LT.}\\
+\vfill
+\begin{center}{\it (There's more on the back!)}
+\end{center}		
+\newpage		
+\item  Use the table and properties provided to determine the Laplace transform of each function.
+Include resulting restrictions on $s.$
+	\ben[label=(\alph*)]
+	\item  $\ds g(t) = 17t^3 - 9te^{-4t}$\\ \vfill
+	\item  $\ds h(t) = t^2 \cos(8t)$\\ \vfill
+	\een	
+\end{PQ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{PQ}
+\item  $\ds Y(s) = \frac{6e^{-4s}}{s},$  $s>0$
+		
+\item  \ben[label=(\alph*)]
+	\item  $\ds G(s) = \frac{102}{s^4} - \frac{9}{(s+4)^2},$ $s>0$\\
+	
+	\item  $\ds H(s) = -16 \cdot \frac{64-3s^2}{(s^2+64)^3}$
+		%H(s)	= (-1)^2 *d^2/ds^2[8/(s^2 + 64)]
+		%		= d/ds[( (s^2+64)(0) - 8(2s)) / (s^2+64)^2]
+		%		= -16*d/ds[s / (s^2+64)^2]
+		%		= -16 * [ ( (s^2+64)^2 - s*2(s^2+64)(2s) ) / (s^2+64)^4]
+		%		= -16 * [ ( (s^2 + 64) - 4s^2 ) / (s^2+64)^3]
+		%		= -16 * [ ( -3s^2 + 64) / (s^2+64)^3]
+	\een	
+\end{PQ}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{filecontents*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  This stuff tells LaTeX to produce multiple versions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\conditionmacro\undefined
+  \immediate\write18{%
+    pdflatex --jobname="answers_\jobname"			%EDIT (2) HERE AS NEEDED
+    "\gdef\string\conditionmacro{1}\string\input\space\jobname"  
+  }%
+  \immediate\write18{%
+    pdflatex --jobname="\jobname"						%EDIT (2) HERE AS NEEDED
+    "\gdef\string\conditionmacro{2}\string\input\space\jobname"
+ }%
+%  \immediate\write18{%
+%    pdflatex --jobname="solutions_\jobname"
+%    "\gdef\string\conditionmacro{3}\string\input\space\jobname"
+%  }%
+  \expandafter\stop
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here's the preamble.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\usepackage{mathrsfs}
+\renewcommand{\L}{\mathscr{L}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+
+
+\newcommand\DEPPSetNum{9}									%CHANGE NUMBER HERE, TOO********
+\newcommand\ECDueDate{Monday, 27 March}
+\newcommand\PQDueDate{Wednesday, 29 March}
+
+\newlist{DEPP}{enumerate}{1}
+\setlist[DEPP]{label = \DEPPSetNum.\arabic*.}
+
+\newlist{PQ}{enumerate}{1}
+\setlist[PQ]{label = PQ\DEPPSetNum.\arabic*.}											
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here we tell LaTeX the names of the various audience categories it should be prepared for.
+%  Add more and/or edit as needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multiaudience}
+\SetNewAudience{answers}									%EDIT (3) HERE AS NEEDED
+\SetNewAudience{student}									%EDIT (3) HERE AS NEEDED
+%\SetNewAudience{solutions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here's where we tell LaTeX what needs to go into each document.  First, we tell it which 
+%  audience it should use, and then we send it up to the "bulk" of the document above.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifnum\conditionmacro=1 
+	\def\CurrentAudience{answers}							%EDIT (4) HERE AS NEEDED
+	\include{template}
+\fi 
+
+\ifnum\conditionmacro=2 
+	\def\CurrentAudience{student}							%EDIT (4) HERE AS NEEDED
+	\include{template}
+\fi
+
+%\ifnum\conditionmacro=3 
+%	\def\CurrentAudience{solutions}						%EDIT (4) HERE AS NEEDED
+%	\include{template}
+%\fi
+
+\end{document}

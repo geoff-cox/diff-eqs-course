@@ -1,0 +1,160 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Forward Laplace Transforms}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+
+\ben
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Consider the DE $y'' - 3y' + 8y = f(t),$ where
+	$\displaystyle f(t) = \left\{\begin{array}{ll} 0, & t<2,\\
+							t,	& t \ge 2.
+					\end{array} \right.$
+		\ben
+		\item Classify the DE: find the order, is it linear or nonlinear, is it homogeneous, does it have constant coefficients. \vfill
+			%second order, linear, nonhomogeneous, constant coefficients\\
+		\item Which solution techniques might we use to solve this DE?\\ \vfill
+			%We cannot use undetermined coefficients because the function $f(t)$ is discontinuous.  We can (and
+				%will later) solve this DE via Laplace transforms.\\
+		\een
+
+\item What is the definition of the Laplace transform of a function $g(t)$?\\ \vfill
+			%$\displaystyle G(s) = \int_0^{\infty} e^{-st}g(t)dt$\\
+
+\item Which of the following are correct notation for showing that the Laplace transforms of $g(t) = e^{5t}$
+	is $\displaystyle \frac{1}{s-5}$?\\
+	\ben
+		\item $G(s)$
+		\item $\L[ e^{5t} ]$
+		\item $\int e^{5t} dt$
+		\item $g(s)$
+		\item $\L\{ g(t) \}$
+		\item $\L \Big(g(t) \Big)$
+	\een
+			%The following are correct notation:  (a) and (e)
+
+\newpage
+
+\item Use the provided table of Laplace transforms to find the Laplace transform of each function.
+	Name your answer appropriately (capital letter, function of $s$).
+	\ben
+	\item $r(t) = -5t^2 e^{4t}$\\ \vfill
+		%\[ R(s) = -\frac{10}{(s-4)^3} \]
+	\item $y(t) = -11\sin(9t) - 4t^4$\\ \vfill
+		%\[ Y(s) = -\frac{99}{s^2 + 81} - \frac{96}{s^5} \]
+	\item $x(t) = e^{6t} \cos(2t)$\\ \vfill
+		%\[ X(s) = \frac{s-6}{(s-6)^2 + 4} \]
+	\item $z(t) = 4t^3 - 7t^2 - 19$\\ \vfill
+		%\[ Z(s) = \frac{24}{s^4} - \frac{14}{s^3} - \frac{19}{s} \]
+	\een
+
+\newpage
+
+\item	\ben
+	\item Find the Laplace transform of $b(t) = t.$\\ \vfill
+		%\[ B(s) = \frac{1}{s^2} \]
+	\item Find $\L\left\{ \sin(8t) \right\}$\\ \vfill
+		%\[ \L\left\{ \sin(8t) \right\} = \frac{8}{s^2 + 64} \]
+	\item Find $Q(s)$ if $q(t) = t + \sin(8t).$\\ \vfill
+		%\[ Q(s) = \frac{1}{s^2} + \frac{8}{s^2 + 64} \]
+	\item Find $W(s)$ if $w(t) = t \sin(8t).$\\
+		{\it Hint: we cannot simply multiply the Laplace transform of $t$ and the Laplace transform of $\sin(8t)$.}\\ \vfill
+		%\[W(s) = \frac{16s}{(s^2 + 64)^2}\]
+	\item Why can't we simply multiply the Laplace transform of $t$ and the Laplace transform of $\sin(8t)$ 
+		in order to find $\L \left\{ t \sin(8t) \right\}$? Be specific.\\ \vfill
+		%The definition of LT involves an integral, and we know that the integral of a product is not 
+			%equal to the product of integrals.
+				%\begin{align*}
+				%\L \left\{ t \sin(8t) \right\}	&= \int_0^{\infty} e^{-st}t \sin(8t) dt\\
+				%					&\\
+				%\L \left\{ t \right\} \cdot \L \left\{ \sin(8t) \right\}	
+				%					&= \int_0^{\infty} e^{-st}t dt \cdot \int_0^{\infty} e^{-st}\sin(8t) dt\\
+				%\end{align*}
+				%Note that these quantities are not equal to each other.\\
+	\een
+
+
+\newpage
+
+\item	Suppose we are solving a fourth-order DE for an unknown function $y(t)$, and we have the 
+		following initial conditions.
+			\[ y(0) = -3, \hspace{0.5cm} y'(0) = 2, \hspace{0.5cm} y''(0) = 7. \]
+	\ben
+	%---------------------------------------------------------------------
+	\item Find the Laplace transform of $y'(t)$. Your answer should have Y(s) in it.\\
+		{\it Hint:  Use L10.}\\ \vfill
+		%\[ \L\{ y'(t) \} = sY(s) +3 \]
+	\item Find the Laplace transform of $y''(t)$. \\ \vfill
+		%\[ \L\{ y''(t) \} = s^2Y(s) + 3s - 2 \]
+	\item Find the Laplace transform of $y'''(t)$. \\ \vfill
+		%\[ \L\{ y'''(t) \} = s^3Y(s) + 3s^2 - 2s -7 \]
+	\item Find the Laplace transform of $y'' - 2y' + 8y$. \\ \vfill
+		%\[ \L\{ y'' - 2y' + 8y \} %= [s^2Y(s) + 3s - 2] - 2[sY(s) +3] + 8Y(s)
+			%				= s^2 Y(s) - 2sY(s) + 8Y(s) + 3s -8 \]
+	\een
+
+\een
+
+\end{document}

@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+%\includegraphics[scale = 0.65, trim = 1in 3.25in 1in 3in]{blank_axes.pdf}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Family of Solutions}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Family of solutions, number of constants}
+\doublespacing
+
+\noindent  We can actually use Example 3 in the previous section to start developing a couple of 
+other definitions.  Recall that we showed that for any choice of constants $c_1$ and $c_2$, the function
+$y = c_1e^{-3t} + c_2e^{4t}$ is a solution to the DE $y'' - y' - 12y = 0.$  Suppose we choose $c_1 = 2$
+and $c_2 = 0.$  Then we have $y = 2e^{-3t}$.  In Example 3 we showed that this was a solution, but 
+it turns out this was just a specific case of the solution $y = c_1e^{-3t} + c_2e^{4t}$.  Can you see that 
+the other solution in Example 3, $y = e^{4t}$, is also just a specific case of the solution 
+$y = c_1e^{-3t} + c_2e^{4t}$?\\
+
+\noindent  It turns out that, as demonstrated in Example 3, \\ %DEs generally have an infinite number of 
+%solutions.  
+\line(1,0){500}. \\ When we solve DEs, we want to know about all of these solutions.\\
+
+\noindent In the context of Example 3, the function $y = c_1e^{-3t} + c_2e^{4t}$ represents the 
+%{\bf family of solutions} 
+\line(1,0){200}\\ 
+of the DE $y'' - y' - 12y = 0.$  Another term we use for the family of solutions is the 
+%{\bf general solution}.  
+\line(1,0){160}. \\
+That means that the following are equivalent ways to ask exactly the same
+question:
+	\begin{itemize}
+	\item  \mbox{}\\
+	%Solve the DE $y'' - y' - 12y = 0.$
+	\item  \mbox{}\\
+	%Find the family of solutions for $y'' - y' - 12y = 0.$
+	\item  \mbox{}\\
+	%Find the general solution to $y'' - y' - 12y = 0.$
+	\end{itemize}
+\noindent  While we have not yet discussed {\it how} to find the solution, the correct answer to
+all three of these would be $y = c_1e^{-3t} + c_2e^{4t}$ (as we demonstrated in Example 3).
+%Margin note??  Note that  the ``$y=$'' is not optional.  The solution to a DE should be a function,
+%and we need to include the dependent variable to make it clear to the reader that this is a
+%function and not an expression.
+\\
+
+\noindent  Notice in Example 3 that the DE $y'' - y' - 12y = 0$ is a second order DE, and that the
+general solution contains two constants.  This is not a coincidence; the order of the DE 
+typically dictates how many generic constants are in the solution.  \line(1,0){375}\\ \\
+\line(1,0){500}\\ \\
+\line(1,0){500}\\
+%The solution to a first order DE will generally have one 
+%constant; the solution to a second order DE will have two constants; etc.\\
+
+
+\end{document}

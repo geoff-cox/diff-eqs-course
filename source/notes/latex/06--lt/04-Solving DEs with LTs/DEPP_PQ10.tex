@@ -1,0 +1,340 @@
+\documentclass[12pt]{article}
+
+\usepackage{filecontents}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	NOTE:
+%					You MUST use sepdflatex (or sepdflatexmk) when you typeset.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  If your document has only "teacher" and "student" versions, then you need not make the changes 
+%  described here.
+%
+%  However, if you want different and/or more versions, you'll need to consider changes to four areas:
+%
+% (1)  In the bulk of the document (immediately below), use the command \showto to indicate your 
+%       audience.
+%
+%  (2)  Edit the output file names.  See flags below.
+%
+%  (3)  Edit the names of the audiences.  See flags below.
+%
+%  (4)  Edit the "current" audience.  See flags below.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Below is the bulk of your document.  Use \showto to indicate audience
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{filecontents*}{template.tex}
+\pagestyle{empty}
+
+\showto{answers}{\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}
+\begin{center}
+{\sc 
+\noindent Differential Equations\\
+ DEs Practice Problems Set \DEPPSetNum\ 							%CHANGE NUMBER BELOW********
+}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+\noindent Submit solutions for extra credit by 1600 \ECDueDate\\
+\noindent Corresponding Performance Quiz due by 1600 \PQDueDate\\
+
+\vspace{0.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Inverse Laplace Transforms}
+\begin{DEPP}
+\item  (Level 1) Find the inverse Laplace transform of each function.
+	\ben[label=(\alph*)]
+	\begin{multicols}{2}
+	\item $\ds F(s) = \frac{6}{(s-1)^4}$\\
+	\item $\ds X(s) = \frac{1}{s^5}$\\
+	\item $\ds G(s) = \frac{4}{s^2 + 9}$\\
+	\item $\ds Y(s) = \frac{5s}{s^2 + 7}$\\
+	\item $\ds R(s) = \frac{3}{(2s+5)^3}$\\
+	\item $\ds X(s) = \frac{21}{(s+2)^2 + 16}$\\
+	\item $\ds F(s) = \frac{10}{s-10}$\\
+	\item $\ds Q(s) = \frac{7s+7}{(s+1)^2 + 12}$\\
+	\end{multicols}
+	\een
+	\vspace{0.25cm}
+	
+\item  (Level 2) Find the inverse Laplace transform of each function.
+	\ben[label=(\alph*)]
+	\begin{multicols}{2}
+	\item $\ds G(s) = \frac{1}{s^2 + 4s + 8}$\\
+	\item $\ds F(s) = \frac{2s+16}{s^2 + 4s + 13}$\\
+	\item $\ds Y(s) = \frac{3s-15}{2s^2 - 4s + 8}$\\
+	\item $\ds Q(s) = \frac{1}{s^2 + 6s + 9}$\\
+	\item $\ds H(s) = \frac{5}{s-6} - \frac{6s}{s^2 + 9} + \frac{3}{2s^2 + 8s + 10}$\\
+	\item $\ds X(s) = \frac{7s-4}{s^2 + 36}$\\
+	\item $\ds G(s) = \frac{2s-19}{s^2 - 4s+13} + \frac{5}{s-1}$\\
+	\item $\ds F(s) = \frac{s}{s^2 + 6s + 11}$\\ 
+	\end{multicols}
+	\een
+	\vspace{0.25cm}
+	
+\item  (Level 3) Find the inverse Laplace transform of each function.
+	\ben[label=(\alph*)]
+	\item $\ds X(s) = \frac{6s^2 - 13s + 2}{s^3 - 7s^2 + 6s}$\\
+	\item $\ds I(s) = \frac{5s^2 + 34s + 53}{(s+3)^2(s+1)}$\\
+	\item $\ds F(s) = \frac{7s^3 - 2s^2 - 3s + 6}{s^3(s-2)}$\\ 
+	\een
+\newpage
+
+\item  Solve each equation for $F(s),$ then find $\L^{-1}\{ F(s) \}.$
+	\ben[label=(\alph*)]
+	\item  $\ds s^2 F(s) - 4F(s) = \frac{5}{s+1}$\\
+	\item  $ \ds s^2 F(s) + sF(s) - 6F(s) = \frac{s^2 + 4}{s^2 + s}$\\ \vspace{0.5cm}
+	\een
+
+\end{DEPP}
+
+\subsection*{Solving DEs with Laplace Transforms}
+\begin{DEPP}[resume]
+\item  Use Laplace transforms to find the solution $y(t)$ for the initial value problem
+	\[y''-2y'+5y = -8e^{-t}, \hspace{0.5cm}y(0) = 2, \hspace{0.5cm} y'(0) = 12.\] 
+	\vspace{0.25cm}
+
+\item  Use Laplace transforms to find the solution $y(t)$ for the initial value problem
+	\[y'''+4y''+y' -6y = -12, \hspace{0.5cm}y(0) = 1, \hspace{0.5cm} y'(0) = 4, \hspace{0.5cm}y''(0) = -2.\] 
+	\vspace{0.25cm}
+\end{DEPP}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{DEPP}
+\item  \ben[label=(\alph*)]
+	\item $\ds f(t) = t^3 e^t$\\
+	\item $\ds x(t) = \frac{1}{24}t^4$\\
+	\item $\ds g(t) = \frac{4}{3}\sin(3t)$\\
+	\item $\ds y(t) = 5 \cos(\sqrt{7}t)$\\
+	\item $\ds r(t) = \frac{3}{16}t^2e^{-\frac{5}{2}t}$\\
+	\item $\ds x(t) = \frac{21}{4} e^{-2t} \sin(4t)$\\
+	\item $\ds f(t) = 10e^{10t}$\\
+	\item $\ds q(t) = 7e^{-t}\cos(2\sqrt{3}t)$\\ %\vspace{0.5cm}
+	\een
+	
+\item  \ben[label=(\alph*)]
+	\item $\ds g(t) = \frac{1}{2}e^{-2t}\sin(2t)$\\
+	\item $\ds f(t) = 2e^{-2t}\cos(3t) + 4e^{-2t}\sin(3t)$\\
+	\item $\ds y(t) = \frac{3}{2}e^t\cos(\sqrt{3} t) - 2\sqrt{3}e^t\sin(\sqrt{3} t) $\\
+	\item $\ds q(t) = te^{-3t}$\\
+	\item $\ds h(t) = 5e^{6t} - 6\cos(3t) + \frac{3}{2}e^{-2t}\sin t$\\
+	\item $\ds x(t) = 7\cos(6t) - \frac{2}{3}\sin(6t)$\\
+	\item $\ds g(t) = 2e^{2t}\cos(3t) - 5e^{2t}\sin(3t) + 5e^t$\\
+	\item $\ds f(t) = e^{-3t}\cos(\sqrt{2} t) - \frac{3}{\sqrt{2}}e^{-3t}\sin(\sqrt{2} t)$\\ %\vspace{0.5cm}
+	\een
+	
+\item  \ben[label=(\alph*)]
+	\item $\ds x(t) = e^t + \frac{14}{3}e^{6t} + \frac{1}{3}$\\
+	\item $\ds i(t) = -e^{-3t} + 2te^{-3t} + 6e^{-t}$\\
+	\item $\ds f(t) = 6e^{2t} + 1 - \frac{3}{2}t^2$\\ %\vspace{0.5cm}
+	\een
+\newpage
+\item  \ben[label=(\alph*)]
+	\item  $\ds f(t) = \frac{5}{4}e^{-2t} - \frac{5}{3}e^{-t} + \frac{5}{12}e^{2t}$\\
+	\item  $ \ds f(t) = -\frac{13}{30}e^{-3t} + \frac{5}{6}e^{-t} + \frac{4}{15}e^{2t} - \frac{2}{3}$\\ %\vspace{1cm}
+	\een
+
+\item  $\ds y(t) = -e^{-t} + 3e^t \cos(2t) + 4e^t \sin(2t)$\\
+
+\item  $\ds y(t) = e^{-3t} - 3e^{-2t} + e^t + 2$
+
+\end{DEPP}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+%\mbox{}\newpage		%If needed
+
+\showto{answers}{\mbox{}\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}\\
+
+{\sc 
+\noindent Differential Equations 						\showto{student}{\hfill Name:  \line(1,0){200}}\\
+DEs Performance Quiz  \DEPPSetNum\					\showto{student}{\hfill HR:  \line(1,0){200}}\\
+Due by 1600 \PQDueDate  \showto{student}{\hfill Circle your section: \hspace{0.73in}\mbox{}\\
+														\mbox{} \hfill MWF1000
+															\hspace{0.5cm}MWF1300 \hspace{0.5cm}TR0925
+															\hspace{0.5cm}TR1050}\\
+}
+\noindent\rule{7in}{0.4pt}
+\vspace{0.5cm}
+
+\noindent  For this Performance Quiz, you are permitted to use your own notes/work and your
+textbook, but you are NOT AUTHORIZED to seek help from anyone
+other than MAJ Libertini or MAJ Bliss.\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{PQ}
+\item    Find the inverse Laplace transform of  $W(s) = \ds \frac{-2s+6}{s^2 + 4}.$\\ \vspace{2in}
+
+\item    Evaluate \hspace{0.25cm}$\ds \L^{-1}\left\{ \frac{s^2 + 6s + 9}{(s+4)(s-1)(s-2)} \right\}$.\\ \label{Q2}
+
+	{\it  Note:  If you've answered correctly, some of the coefficients will be fractions.}\\ \vfill
+	
+\begin{center} (There's more on the back!)
+\end{center}
+\newpage	
+\item    USE LAPLACE TRANSFORMS to solve the following IVP.
+	\[ y'' - 3y' + 2y = e^{-4t}, \hspace{0.5cm} y(0) = 1, \hspace{0.25cm} y'(0) = 5. \]
+	
+	{\it  Hint:  Your work from question \ref{Q2} should be helpful in answering this question!}\\ \vfill
+	
+\end{PQ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{PQ}
+\item    $\ds w(t) = -2\cos(2t) + 3\sin(2t)$\\
+
+\item    $\ds \frac{1}{30}e^{-4t} - \frac{16}{5}e^t + \frac{25}{6}e^{2t}$\\
+	
+\item    $\ds y(t) = \frac{1}{30}e^{-4t} - \frac{16}{5}e^t + \frac{25}{6}e^{2t}$\\
+	
+\end{PQ}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{filecontents*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  This stuff tells LaTeX to produce multiple versions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\conditionmacro\undefined
+  \immediate\write18{%
+    pdflatex --jobname="answers_\jobname"			%EDIT (2) HERE AS NEEDED
+    "\gdef\string\conditionmacro{1}\string\input\space\jobname"  
+  }%
+  \immediate\write18{%
+    pdflatex --jobname="\jobname"						%EDIT (2) HERE AS NEEDED
+    "\gdef\string\conditionmacro{2}\string\input\space\jobname"
+ }%
+%  \immediate\write18{%
+%    pdflatex --jobname="solutions_\jobname"
+%    "\gdef\string\conditionmacro{3}\string\input\space\jobname"
+%  }%
+  \expandafter\stop
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here's the preamble.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\usepackage{mathrsfs}
+\renewcommand{\L}{\mathscr{L}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+
+
+\newcommand\DEPPSetNum{10}									%CHANGE NUMBER HERE, TOO********
+\newcommand\ECDueDate{Friday, 31 March}
+\newcommand\PQDueDate{Wednesday, 5 April}
+
+\newlist{DEPP}{enumerate}{1}
+\setlist[DEPP]{label = \DEPPSetNum.\arabic*.}
+
+\newlist{PQ}{enumerate}{1}
+\setlist[PQ]{label = PQ\DEPPSetNum.\arabic*.}											
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here we tell LaTeX the names of the various audience categories it should be prepared for.
+%  Add more and/or edit as needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multiaudience}
+\SetNewAudience{answers}									%EDIT (3) HERE AS NEEDED
+\SetNewAudience{student}									%EDIT (3) HERE AS NEEDED
+%\SetNewAudience{solutions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here's where we tell LaTeX what needs to go into each document.  First, we tell it which 
+%  audience it should use, and then we send it up to the "bulk" of the document above.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifnum\conditionmacro=1 
+	\def\CurrentAudience{answers}							%EDIT (4) HERE AS NEEDED
+	\include{template}
+\fi 
+
+\ifnum\conditionmacro=2 
+	\def\CurrentAudience{student}							%EDIT (4) HERE AS NEEDED
+	\include{template}
+\fi
+
+%\ifnum\conditionmacro=3 
+%	\def\CurrentAudience{solutions}						%EDIT (4) HERE AS NEEDED
+%	\include{template}
+%\fi
+
+\end{document}

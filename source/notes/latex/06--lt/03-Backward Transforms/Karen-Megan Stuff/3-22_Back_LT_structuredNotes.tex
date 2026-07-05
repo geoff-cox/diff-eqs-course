@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{9in}
+
+% do not indent outermost itemize environ
+%\setlength{\leftmargini}{0in}
+%
+%\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\newcommand{\ds}{\displaystyle}
+\renewcommand{\Re}{\mbox{Re}}
+\renewcommand{\Im}{\mbox{Im}}
+\newcommand{\Arg}{\mbox{Arg}}
+\newcommand{\Ln}{\mbox{Ln}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\arraystretch}{1.5}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\renewcommand{\L}{\mathscr{L}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+
+\pagestyle{empty}
+\begin{document}
+%\doublespacing
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Inverse Laplace Transforms}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent  We will use this method to solve LHCC and LNCC differential equations.   In order to get the solution, we will need to be able to turn the algebraic equation we get back into the appropriate form by taking inverse Laplace transforms.
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Reminder of Laplace Transforms Ideas}
+
+\noindent The general idea behind Laplace transforms is to use algebra instead of calculus to solve the differential equation.  In order to do this, we will first need to transform the original DE using forward LTs.  Then once we have completed the algebra, we will use inverse LTs to convert our equation into the solution of the DE.
+
+\vspace{2in}
+
+ 
+\section*{Example 1}
+\noindent Find the inverse Laplace transform of $\displaystyle{ F(s) = \frac{24}{s^5}}$. 
+
+\newpage
+
+\section*{Example 2}
+\noindent Find $\displaystyle{ \mathscr{L} \{ \frac{7}{s^2+25} \}}$. 
+\vfill
+
+\section*{Example 3}
+\noindent Find the inverse Laplace transform of $\displaystyle{H(s) = \frac{s-1}{s^2-2s+5}}$. 
+\vfill
+\newpage
+
+\section*{Example 4}
+\noindent Find the inverse Laplace transform of $\displaystyle{P(s) = \frac{3s+2}{s^2+2s+10}}$.
+\newpage
+
+\section*{Example 5}
+\noindent Find $\displaystyle{\mathscr{L} \{ \frac{s+9}{s^2-2s-3} \}}$. 
+\newpage
+
+\phantom{a}
+\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

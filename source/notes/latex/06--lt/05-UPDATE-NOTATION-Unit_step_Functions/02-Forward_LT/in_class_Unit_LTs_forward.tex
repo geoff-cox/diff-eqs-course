@@ -1,0 +1,152 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Forward Laplace Transforms with Unit Step Functions}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+
+
+\ben
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Find the Laplace transform of each function.
+	\ben
+	\item	$w(t) = 5 - 5U(t-7)$\\ \vfill
+			%\[ W(s) = \frac{5}{s} - \frac{5e^{-7s}}{s} \]
+	\item	$g(t) = t^6e^{-5t} - U(t) + 19U(t+4)$ \vfill
+			%\[ G(s) = \frac{6!}{s^7} - \frac{1}{s} + \frac{19e^{4s}}{s}\]					
+	\een
+
+\item Cadet C. Onfused is taking the Laplace transform of the function $r(t) = t^2U(t-3),$ as follows.
+		\[ R(s) = \frac{2!}{s^{2+1}}\frac{e^{-3s}}{s} = \frac{2e^{-3s}}{s^4} \]
+	
+	\ben
+	\item	What is wrong with his work?\\ 
+			 \vspace{1in}
+			%\[ \L\{  t^2U(t-3) \} \ne \L\{  t^2 \} \cdot \L\{  U(t-3) \}  \]
+	\item	Find the Laplace transform of the function $r(t).$\\
+			\vspace{2.5in}
+			%\[ R(s) = e^{-3s}\left( \frac{2}{s^3} + \frac{6}{s^2} + \frac{9}{s} \right) \]					
+	\een
+
+
+\newpage
+
+\item Cadet C. Onfused is taking the Laplace transform of the function $m(t) = e^{-5t} - 17e^{-5t}U(t-2),$ as follows.
+		\begin{align*} f(t)	&= e^{-5t}\\
+						&\\
+					M(s)	&= \L\{ e^{-5t} - 17e^{-5t}U(t-2) \}\\
+						&= \L\{ e^{-5t}\} - 17\L\{ e^{-5t}U(t-2) \}\\
+						&= \L\{ e^{-5t}\} - 17\L\{ f(t)U(t-2) \}\\
+						&= \frac{1}{s+5} - 17 e^{-2s}\L\{ f(t+2)\}\\
+						&= \frac{1}{s+5} - 17 e^{-2s}\L\{ e^{-5t} + 2\}\\
+						&= \frac{1}{s+5} - 17 e^{-2s}\left(\frac{1}{s+5} + \frac{2}{s} \right)\\
+		\end{align*}
+	
+	\ben
+	\item	What is wrong with his work?\\ 
+			\vspace{1in}
+			%\[ f(t+2) \ne e^{-5t} + 2 \]
+	\item	Find the Laplace transform of the function $m(t).$\\
+			\vspace{2.5in}
+			%\[ M(s) = \frac{1}{s+5} - \frac{17 e^{-2s}e^{-10}}{s+5}  \]					
+	\een
+
+
+
+\newpage
+
+
+\item Consider the function $y(t) = (9-t)U(t-7) - (9-t)U(t-14).$
+	\ben
+	\item Sketch the function $y(t).$
+		 
+			\begin{center}
+			\includegraphics[scale = 0.6]{figs/blank_axes.png}
+			\end{center}					
+
+	\item	Find the Laplace transform of $y(t)$.\\
+			\vfill
+			%\[ Y(s) = e^{-7s}\left( \frac{2}{s} - \frac{1}{s^2} \right)
+			%		- e^{-14s}\left( -\frac{5}{s} - \frac{1}{s^2} \right) \]
+					
+	\een
+
+\newpage
+
+
+\item Find the Laplace transform of each function.
+	\ben
+
+	\item $g(t) = (t-1)e^{3t}U(t) - (t-1)e^{3t}U(t-10)$\\
+		 \vfill
+			%\[ G(s) = \frac{1}{(s-3)^2} - \frac{1}{s-3} 
+			%		- e^{-10s}e^{30}\left( \frac{1}{(s-3)^2} + \frac{9}{s-3} \right) \]
+	\item $k(t) = 9 - 9U(t-2) + (t^2 - 4)U(t-5)$\\
+			\vfill
+			%\[ K(s) = \frac{9}{s} - \frac{9e^{-2s}}{s} 
+			%		+ e^{-5s}\left( \frac{2}{s^3} + \frac{10}{s^2} + \frac{21}{s} \right)\] 					
+	\een
+
+\een
+\end{document}

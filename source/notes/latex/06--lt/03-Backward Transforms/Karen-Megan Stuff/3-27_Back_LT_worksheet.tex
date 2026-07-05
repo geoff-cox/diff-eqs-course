@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Inverse Laplace Transforms}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+\ben
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Which of the following are correct notation for showing that the inverse Laplace transform of 
+	$\displaystyle \frac{1}{s-5}$ is $g(t) = e^{5t}$
+	\ben
+		\item $G(s) = e^{5t}$
+		\item $\L^{-1}[ e^{5t} ] = \frac{1}{s-5}$
+		\item $g(s) = \L^{-1}\{ g(t) \}$
+		\item $\frac{1}{s-5} = \L^{-1}\{ g(t) \}$
+		\item $\L\{ \frac{1}{s-5} \} = e^{5t}$
+		\item $\L^{-1}\{ G(s) \} = g(t)$
+	\een
+			%The following are correct notation:  (f)
+
+\item Find the inverse LT of each function.  Use proper notation, as in this example.
+	\begin{align*}
+	B(s)	= \frac{1}{s} \Rightarrow \hspace{0.5cm}b(t)	&= \L^{-1}\{ B(s) \}\\
+					&=  \L^{-1}\left\{ \frac{1}{s} \right\}\\
+					&= 1
+	\end{align*} 
+	\ben
+	\item $\displaystyle Y(s) = \frac{12}{s-6} - \frac{8}{s^2 + 16}$\\ \vfill
+		%\[ y(t) = 12e^{6t} - 2\sin(4t) \]
+	\item $\displaystyle R(s) = \frac{7}{(s - 3)^2 + 9}$\\ \vfill
+		%\[ r(t) = \frac{7}{3}e^{3t} \sin(3t) \]
+  \een
+
+\newpage
+
+\item Find the inverse LT of each function using proper notation.
+  \ben
+	\item $\displaystyle G(s) = \frac{9}{s^4} - \frac{1}{8s + 5}$\\ \vfill
+		%\[ g(t) = \frac{3}{2}t^3 - \frac{1}{8}e^{-\frac{5}{8}t} \]
+	\item $\displaystyle Q(s) = \frac{s - 5}{s^2 + 3}$\\ \vfill
+		%\[ q(t) = \cos(\sqrt{3} t) - \frac{5}{\sqrt{3}}\sin(\sqrt{3}t) \]
+	\item $\displaystyle X(s) = \frac{1}{s^2 - 4s + 8}$\\ \vfill
+		%\[ x(t) = \frac{1}{2}e^{2t}\sin(2t) \]
+	\een 
+	
+\newpage
+
+\item Find the inverse LT of each function using proper notation.
+  \ben
+  \item $\displaystyle A(s) = \frac{2s - 8}{s^2 + 4s + 29}$\\ \vfill
+		%\[ a(t) = 2e^{-2t}\cos(5t) - \frac{12}{5}e^{-2t}\sin(5t) \]	
+	\item $\displaystyle P(s) = \frac{11s-34}{s^2 - 3s - 10}$\\ \vfill \vfill
+		%\[ p(t) = 3e^{5t} + 8e^{-2t} \]
+	\een	
+	
+	
+\newpage
+
+\item Using proper notation, find the inverse LT of $\displaystyle F(s) = \frac{11s^2 +2s-16}{s^2(s+2)}$.\\
+		%\[ r(t) = 5-8t+6e^{-2t} \]	
+		
+\newpage		
+		
+\item Consider the equation $s^2X(s) - s - 10 - 5sX(s) = 0$, where $X(s)$ is an unknown function.
+	\ben
+	\item Solve for $X(s).$\\ \vfill
+		%\[ X(s) = \frac{s+10}{s^2 - 5s} \]
+	\item Take the inverse LT of $X(s).$\\ \vfill \vfill
+		%\[ x(t) = -2 + 3e^{5t} \]
+	\een
+	
+
+\een
+
+\end{document}

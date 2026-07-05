@@ -1,0 +1,173 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc 
+Differential Equations\\
+Intro to DEs Practice Problems Part 1	\\
+}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ben
+\item \ben
+	\item What is a differential equation?\\ \vspace{0.75cm}
+
+			%A DE is an equation that contains a derivative or derivatives of an unknown functions.\\
+
+	\item What are we trying to do when we solve a DE?  That is, what is the goal?  What are 
+		we hoping to find?\\ \vspace{0.75cm}
+
+			%When we solve a DE, we want to find the unknown function that satisfies the DE.  That is,
+			%we want to find a function such that if we take its derivative(s) and substitute back
+			%into the DE, the equation is true.\\
+
+	\een
+	
+\item  Determine if the function $y = e^{-3x} + 2x + 3$ is a solution to the differential equation
+	\[ y'-11 = 6x-3y. \]
+
+
+\newpage
+
+\item  \ben
+	\item For each DE, identify the independent variable, the dependent variable, the order of the DE,
+		and determine whether the DE is linear or nonlinear.\\
+		
+		\begin{center}
+		\begin{tabular}{|c|c|p{1.25cm}|p{1.25cm}|p{1.5cm}|c|}
+		\hline
+			&		& indep	& dep	&		& mark L for linear\\
+			& DE		& var		& var		& order	& or N for nonlinear\\
+		\hline \hline
+			&		&		&		&		&\\
+		A	& $\ds (1 - x)y'' - 4xy' + 5y = \cos x$
+					&		&		&		&\\
+			&		&		&		&		&\\
+		\hline
+			&		&		&		&		&\\
+		B	& $\ds x \frac{d^3y}{dx^3} - \left( \frac{dy}{dx} \right)^4 + y = 0$
+					&		&		&		&\\
+			&		&		&		&		&\\
+		\hline
+			&		&		&		&		&\\
+		C	& $\ds t^5 y^{(4)} - t^3 y'' + 6y = 0$
+					&		&		&		&\\
+			&		&		&		&		&\\
+		\hline
+			&		&		&		&		&\\
+		D	& $\ds \frac{d^2u}{dr^2} + \frac{du}{dr} + u = \cos(r+u)$
+					&		&		&		&\\
+			&		&		&		&		&\\
+		\hline
+			&		&		&		&		&\\
+		E	& $\ds \frac{d^2R}{dt^2} = -\frac{k}{R}$
+					&		&		&		&\\
+			&		&		&		&		&\\
+		\hline
+			&		&		&		&		&\\
+		F	& $\ds (\sin \theta)y''' - (\cos \theta)y' = 2$
+					&		&		&		&\\
+			&		&		&		&		&\\
+		\hline
+			&		&		&		&		&\\
+		G	& $\ds x' - \left( 1 - \frac{x}{3} \right)x' + x = 0$
+					&		&		&		&\\
+			&		&		&		&		&\\
+		\hline
+		\end{tabular}
+		\end{center}
+
+%A	& $\ds (1 - x)y'' - 4xy' + 5y = \cos x$	& $x$	& $y$	& 2		& L\\
+%B	& $\ds x \frac{d^3y}{dx^3} - \left( \frac{dy}{dx} \right)^4 + y = 0$ & $x$	& $y$	& 3		& N\\
+%C	& $\ds t^5 y^{(4)} - t^3 y'' + 6y = 0$ & $t$		& $y$ 	& 4		& L\\
+%D	& $\ds \frac{d^2u}{dr^2} + \frac{du}{dr} + u = \cos(r+u)$ & $r$	& $u$	& 2		& N\\
+%E	& $\ds \frac{d^2R}{dt^2} = -\frac{k}{R}$ & $t$		& $R$	& 2		& N\\
+%F	& $\ds (\sin \theta)y''' - (\cos \theta)y' = 2$ & $\theta$	& $y$	& 3		& L\\
+%G	& $\ds x' - \left( 1 - \frac{x}{3} \right)x' + x = 0$ & unknown& $x$	& 1		& N\\
+
+	\item For each DE above that you marked nonlinear, identify the terms/factors that make the DE
+		nonlinear and carefully explain why the DE is nonlinear.  Be specific.\\
+
+%B:  nonlinear because the derivative is raised to a power in the term $\ds \left( \frac{dy}{dx} \right)^4$\\			
+%D:  nonlinear because the dependent variable $u$ is inside a function in the term $\cos(r+u)$\\
+%E:  nonlinear because in the term $\ds -\frac{k}{R}$, the dependent variable $R$ is in the denominator, so it is effectively raised to the $-1$ power.\\
+%G: nonlinear because if we expand the term $\ds \left( 1 - \frac{x}{3} \right)x'$, we have the product of the dependent variable $x$ and its derivative.\\
+	\een
+\newpage
+
+\item Consider the DE $x'' - 6x' + 9x = 0$.  Determine whether each of the following is or is not a solution
+	to the DE.  Assume $c$ is a constant.
+	\ben
+	\item $x = ce^{-5t}$\\ \vfill
+			%not a solution\\
+	\item $x = ce^{3t}$\\ \vfill
+			%is a solution\\
+	\item $x = cte^{3t}$\\ \vfill
+			%is a solution\\
+	\een
+	
+\newpage
+\item Find the value(s) of $r$ such that $y = e^{rx}$ is a solution to the DE $y'' - 5y' + 6y = 0.$\\
+		
+			%$r = 2, 3$\\
+
+\een
+\end{document}

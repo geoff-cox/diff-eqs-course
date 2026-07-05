@@ -1,0 +1,192 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+%\includegraphics[scale = 0.65, trim = 1in 3.25in 1in 3in]{blank_axes.pdf}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+General Solution Versus Particular Solution}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{General Solution vs. Particular Solution}
+\doublespacing
+
+\noindent  Sometimes, in addition to the DE itself (an equation that contains an unknown function), 
+we actually have some additional information about the solution (i.e., the unknown function) itself.  
+Here we discuss how to use this additional information and what it means.\\
+
+%Maybe a different example?
+\noindent  If we are studying the spread of a disease, for example, we may want to know
+how many people will be infected at some point in the future given that we know how many people
+are infected today.  In this case, we might have some information about the rate at which the
+disease spreads, and this can help write a differential equation, because {\it rate} is associated with 
+the derivative.  The number of people infected today is extra information about the solution.  If
+%$I(t)$ represents the number of people infected at time $t$
+\line(1,0){300} \line(1,0){300}, and there are 12 people infected today,
+which we might think of as time %$t = 0,$
+\line(1,0){75}, then we could write the extra information as %$I(0) = 12.$
+\line(1,0){75}.  Extra information about the solution that tells us about the solution at one 
+a single value of the independent variable is called an %{\bf initial condition.}\\
+\line(1,0){200}.\\
+
+\noindent  {\bf Example 4:}  Consider the differential equation $\ds \frac{dy}{dx} = \frac{x^2}{y^2}.$ 
+	Suppose we happen to know that the general solution is $y = \sqrt[3]{x^3 + C}$.
+	Among the family of solutions, find the solution that satisfies the additional 
+	information that $y(0)=2$.\\
+	\newpage
+%Among the infinite number of solutions that
+%satisfy the DE, we have found the one, unique solution that also satisfies the initial condition.\\
+
+
+\noindent  Keep in mind that ordinarily
+we would be begin by using a solution technique to find the general solution to a DE.  Since we 
+have not learned any solution techniques yet, we are just practicing finding a particular solution 
+once we have the general solution.\\ %Does this make sense to say after then next example, instead??
+
+\noindent  {\bf Example 5:}  Solve
+	\[ y'' - y' - 12y = 0, \hspace{0.25cm} y(0) = 4, \hspace{0.25cm} y'(0) = -2. \]
+	
+%\noindent  As in the previous example, we'll use the general solution we already verified in Example 1,
+%$ y = c_1e^{-3t} + c_2e^{4t}, $ as our starting point.  Notice that the second piece of extra information
+%gives us information about the value of the derivative, $y'$; therefore we would need to find the first derivative,
+%$y' = -3c_1e^{-3t} + 4c_2e^{4t},$ if we haven't already done so.
+%
+%Now let's see what happens when we use the initial conditions:
+%
+%\begin{align*}
+%y(0)	&= 4		&\Rightarrow \hspace{0.2cm} 4		&= c_1e^{-3\cdot 0} + c_2e^{4\cdot 0}\\
+%	&		&						4	&= c_1 + c_2\\
+%	&		&							&\\
+%y'(0)	&= -5	&\Rightarrow \hspace{0.2cm} - 5	&=-3c_1e^{-3\cdot} + 4c_2e^{4\cdot}\\
+%	&		&						-5	&= -3c_1 + 4c_2\\
+%\end{align*}
+%
+%\noindent  Notice that we now have two linear equations in terms of two unknowns, $c_1$ and $c_2.$
+%There are multiple ways to solve this system of equations, and the reader is encouraged to verify the
+%details that show that $c_1 = 3$ and $c_2 = 1$.  %OK to omit details here?
+%%We will solve for $c_2$ in the first equation
+%%and then substitute into the second.
+%%	\begin{align*}
+%%			4	&= c_1 + c_2\\
+%%	\Rightarrow c_2	&=4 - c_1\\
+%%				&\\
+%%			-5	&= -3c_1 + 4c_2\\
+%%	\Rightarrow -5	&= -3c_1 + 4(4 - c_1)\\
+%%			-5	&= -3c_1 + 16 - 4c_1\\
+%%			-21	&= -7c_1\\
+%%			3	&= c_1\\
+%%				&\\
+%%			c_2	&=4 - c_1\\
+%%				&= 4 - 3\\
+%%				&= 1\\
+%%	\end{align*}
+%\noindent  Thus, the solution we that satisfies the DE and both of the provided initial conditions is
+%	\[ y = 3e^{-3t} + e^{4t}. \]
+
+\newpage
+	
+\noindent  You've now seen a couple of examples that demonstrate how we can use extra information
+to narrow exactly one solution from the infinite number we have in the general solution.  When we do
+find exactly one solution, we call it a %{\bf particular solution}
+\line(1,0){175}.  This is what we found in the previous
+two examples when we applied the given initial conditions.  In fact, this same question will appear
+so frequently that is has a name.
+	\begin{quote}  {\it Definition:}  When we have a DE and we are given initial conditions to go along with the DE,
+	we have an %{\bf initial value problem,} or an IVP.
+	\line(1,0){300}.
+	\end{quote}
+	
+\noindent  When we were finding the general solution to a DE, there were multiple ways that question
+might be asked.  The same is true for the particular solution.  The following are equivalent ways to ask 
+the same question.
+\begin{itemize}
+\item  Solve $ y'' - y' - 12y = 0, \hspace{0.25cm} y(0) = 4, \hspace{0.25cm} y'(0) = -2. $
+\item  Solve  the initial value problem $ y'' - y' - 12y = 0, \hspace{0.25cm} y(0) = 4, \hspace{0.25cm} y'(0) = -2. $
+\item  Find the particular solution to $ y'' - y' - 12y = 0, \hspace{0.25cm} y(0) = 4, \hspace{0.25cm} y'(0) = -2. $
+\end{itemize}
+	
+\noindent  Keep in mind that ordinarily
+we would be begin by using a solution technique to find the general solution.  Since we 
+haven't learned any solution techniques yet, we are just practicing find a particular solution 
+once we have the general solution.)\\
+
+\noindent  Initial conditions are not the only kind of extra information we might have.  Sometimes
+we are given information about the solution at different values of the independent variable.  These
+are called boundary values and lead to boundary value problems.  We will revisit this idea in a
+future chapter.\\
+
+%%\noindent  Summary:\\
+%%\begin{itemize}
+%%\item  Know what a DE is
+%%\item  Know what it means to be a solution to a DE
+%%\ite  Be to determine whether a function is/is not a 
+%%	solution to a DE
+%%\item  Be able to identify independent and dependent variables in a DE
+%%\item  Be able to explain the difference between the general solution and a particular solution.
+%%\item  Be able to recognize various ways you might be asked to solve for the general solution 
+%%and/or the particular solution
+%%\item  Be able to determine the order of a DE
+%%\item  Be able to determine whether a DE is linear or nonlinear
+%%\end{itemize}
+
+
+\end{document}

@@ -1,0 +1,133 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[
+	paperheight=11in,
+	paperwidth=8.5in,
+	inner=0.4in,
+	textheight=10.2in,
+	textwidth=7.5in,
+	% marginparwidth=120pt,
+	% marginparsep=32pt,
+	% bottom=1.4in,
+	% left=0.5in,
+	% right=0.5in,
+	% footskip=1.0in
+]{geometry}
+\geometry{letterpaper}
+
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{asymptote}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{animate}
+\usepackage{arrayjobx}
+\usepackage{arydshln}
+\usepackage{bookman}
+\usepackage{color}
+\usepackage{cancel}
+\usepackage{calculator}
+\usepackage{collcell}
+\usepackage{epstopdf}
+\usepackage{enumerate}
+\usepackage{epsfig}
+\usepackage[english]{babel}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage[nomessages]{fp}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{ifmtarg}
+\usepackage[latin1]{inputenc}
+\usepackage{latexsym}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{multimedia}
+\usepackage{mathbbol}
+\usepackage{mathtools}
+\usepackage{multido}
+\usepackage{palatino}
+\usepackage{polynom}
+\usepackage{pxfonts}
+\usepackage{pifont}
+\usepackage{pgffor}
+\usepackage{pdfpages}
+\usepackage[parfill]{parskip}
+\usepackage{soul}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,trees,shapes.geometric,calc}
+\usepackage{txfonts}
+\usepackage{tcolorbox}
+\usepackage{wasysym}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{xmpmulti}
+\usepackage{xparse}
+\usepackage{xstring}
+\usepackage{mathrsfs}
+\newcommand{\LAP}[1]{\mathscr{L}\{#1\}}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcounter{ProbNum}
+\setcounter{ProbNum}{0}
+\def\NEWPROB{\stepcounter{ProbNum} {\noindent \arabic{ProbNum}. \,\,}}
+
+\begin{document}
+
+	\pagestyle{empty}
+
+	\hrule
+	\begin{center}
+		\begin{tabular}{p{6.8in}}
+			\multicolumn{1}{c}{\sc Differential Equations} \\
+			\multicolumn{1}{c}{\sc Laplace Transforms}
+		\end{tabular}
+	\end{center}
+	\medskip
+	\hrule
+
+	\medskip
+
+	\underline{Laplace Transform}
+
+% \NEWPROB Froward transform the following equations into the Laplace Domain.
+
+% \NEWPROB Solve each equation for $F(s),$ then find $\ILAP{F(s)}.$
+% \begin{enumerate}[(a)]
+% 	\item  $\D s^2 F(s) - 4F(s) = \frac{5}{s+1}$\\ \vspace{13.2cm}
+% 	\item  $ \D s^2 F(s) + sF(s) - 6F(s) = \frac{s^2 + 4}{s^2 + s}$\\ 
+% \end{enumerate}
+
+\NEWPROB Use Laplace transforms to find the solution $y(t)$ for the initial value problem
+\begin{enumerate}[(a)]
+
+	\item $ y' = 3,\quad y(0) = -4$
+	\vfill
+	
+	\item $ y' + y = e^t,\quad y(0) = 0$
+	\vfill
+
+	\newpage
+	\thispagestyle{empty}
+
+	\item $ y' + 8y = -24e^{4t},\quad y(0) = 3$ 
+
+	\newpage
+	\thispagestyle{empty}
+
+	\item $ y''-2y'+5y = -8e^{-t},\quad y(0) = 2,\quad y'(0) = 12.$ 
+
+	\newpage
+	\thispagestyle{empty}
+
+	\item  $ y'''+4y''+y' -6y = -12,\quad y(0) = 1,\quad y'(0) = 4,\quad y''(0) = -2.$
+\end{enumerate}
+
+\end{document}

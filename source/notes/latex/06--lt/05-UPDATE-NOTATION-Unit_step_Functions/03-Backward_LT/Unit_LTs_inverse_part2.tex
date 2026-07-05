@@ -1,0 +1,179 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{9in}
+
+
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,arrows.meta,matrix}
+\usetikzlibrary{decorations}
+\usetikzlibrary{animations}
+\usetikzlibrary{tikzmark,calc}
+\usetikzlibrary{bending, positioning}
+\usetikzlibrary{3d}
+% do not indent outermost itemize environ
+%\setlength{\leftmargini}{0in}
+%
+%\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\newcommand{\ds}{\displaystyle}
+\renewcommand{\Re}{\mbox{Re}}
+\renewcommand{\Im}{\mbox{Im}}
+\newcommand{\Arg}{\mbox{Arg}}
+\newcommand{\Ln}{\mbox{Ln}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\arraystretch}{1.5}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\renewcommand{\L}{\mathscr{L}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+
+\def\plottingAxesSmall{
+	\begin{tikzpicture}[samples=100, scale=0.9]
+
+		% === figure/domain/tick bounds ===
+		\def\tmin{-3.0}	\def\tmax{5.1}
+		\def\ymin{-2.0}	\def\ymax{3.1}
+		\def\tticks{-2, -1, 1, 2, 3, 4}
+		\def\yticks{-1, 1, 2}
+
+		% === Axes ===
+		\draw[->] (\tmin	,0		) -- (\tmax	,0		);
+		\draw[->] (0		,\ymin	) -- (0		,\ymax	);
+		% \node[font=\small, below] at (\tmax - 0.1	, 0) {$t$};
+
+		% === Tick marks/numeric labels ===
+		\foreach \t in \tticks {
+			\draw[gray]	(\t,0.1) -- (\t,-0.1);					% t ticks
+			\node[below, font=\small] at (\t,-0.08) {\t};	% t labels
+			
+		}
+		\foreach \y in \yticks {
+			\draw[gray]	(0.1,\y) -- (-0.1,\y);				% y ticks
+			\node[right, font=\small] at (0,\y) {\y};	% y labels
+		}
+		\draw[very thin,color=lightgray] (\tmin,\ymin) grid (\tmax,\ymax);	
+	\end{tikzpicture}
+}
+\def\plottingAxesBig{
+	\begin{tikzpicture}[samples=100, scale=1.0]
+
+		% === figure/domain/tick bounds ===
+		\def\tmin{-2.0}	\def\tmax{10.1}
+		\def\ymin{-5.0}	\def\ymax{5.1}
+		\def\tticks{-2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+		\def\yticks{-4, -3, -2, -1, 1, 2, 3, 4, 5}
+
+		% === Axes ===
+		\draw[->] (\tmin	,0		) -- (\tmax	,0		);
+		\draw[->] (0		,\ymin	) -- (0		,\ymax	);
+		% \node[font=\small, below] at (\tmax - 0.1	, 0) {$t$};
+
+		% === Tick marks/numeric labels ===
+		\foreach \t in \tticks {
+			\draw[gray]	(\t,0.1) -- (\t,-0.1);					% t ticks
+			\node[below, font=\small] at (\t,-0.08) {\t};	% t labels
+			
+		}
+		\foreach \y in \yticks {
+			\draw[gray]	(0.1,\y) -- (-0.1,\y);				% y ticks
+			\node[right, font=\small] at (0,\y) {\y};	% y labels
+		}
+		\draw[very thin,color=lightgray] (\tmin,\ymin) grid (\tmax,\ymax);
+	\end{tikzpicture}
+}
+
+\pagestyle{empty}
+\begin{document}
+
+	\noindent\rule{7in}{0.4pt}
+
+	\medskip
+
+	{\centering {\sc Inverse Laplace Transforms of Unit Step Functions}}
+
+	\noindent\rule{7in}{0.4pt}
+	
+	\medskip
+
+    \noindent When taking the inverse Laplace transform which will result in an unit step function, start with the transform
+    \[
+        \mathscr{L} \{f(t-c)\ u_c(t)\} = e^{-cs} F(s).
+    \]
+    Notice, this will still require that the inverse Laplace transform of $F(s)$ will need to be found, using the usual methods.  Take your time on this and pay attention to the details.   
+
+    \medskip
+
+    \noindent \textbf{Example 1}. Find the inverse Laplace transform of $\displaystyle{ }$
+    \[
+        X(s) = \frac{e^{-2s}}{s^3}
+    \]
+    \vfill
+
+    \newpage
+
+    \noindent \textbf{Example 2}. Find
+    \[
+        \mathscr{L}^{-1} \left\{ \frac{e^{-3s}}{s^2+16} \right\}.
+    \]
+    \vfill
+
+    \newpage
+
+    \noindent \textbf{Example 3}. Find the inverse Laplace transform of 
+    \[
+        Y(s) = \frac{se^{-7s}}{s^2+4s+5}.
+    \]
+    \vfill
+
+    \newpage
+
+\end{document}

@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\makeatletter
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc 
+Differential Equations\\
+Intro to DEs Practice Problems Part2	\\
+}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\ben
+\item Consider the differential equation
+		\[ \frac{dy}{dx} - 1 = e^{y - x}. \]
+	
+	\ben
+	\item Determine if $\ds y = -\ln(-x+C) + x$ where $C$ is a constant, is a solution to the given
+		differential equation.\\ \vfill
+
+	\item Is this a general solution or a particular solution?  Explain how you know.\\
+		\vspace{1in}
+			%General solution.  It contains a constant.
+	\een
+	
+\newpage
+
+\item Consider the differential equation
+	\[ \frac{dx}{dt} = \frac{x(x-2)}{2}.\]  
+	\ben
+	\item Determine if $ \ds x = \frac{2}{1 - Ce^t}$ is a solution to the given
+		differential equation.\\ \vfill
+
+	\item Find the particular solution that satisfies $\ds x(0) = \frac{1}{2}.$\\ \vspace{2.5in}
+			%\[ x = \frac{2}{1 + 3e^t}\]
+	\een
+	
+\newpage
+
+\item Consider $x = c_1\cos(t) + c_2 \sin(t),$ which is a family of
+	solutions to the DE $x'' + x = 0.$  Find the particular solution that satisfies $x(\pi/2) = 0,$
+	$x'(\pi/2) = 1.$\\ \vfill
+			%\[ x = -\cos(t) \]
+	
+\newpage	
+
+\item Consider $z = c_1e^{3t} + c_2e^{-5t},$ which is the general solution of some second-order DE.
+	Find the particular solution that satisfies $z(0) = 2,$
+	$z'(0) = 22.$\\ \vfill
+			%\[ z = 4e^{3t} - 2e^{-5t} \]
+
+\een
+
+\end{document}

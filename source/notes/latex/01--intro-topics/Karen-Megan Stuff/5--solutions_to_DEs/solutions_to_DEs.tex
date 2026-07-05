@@ -1,0 +1,278 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+%\includegraphics[scale = 0.65, trim = 1in 3.25in 1in 3in]{blank_axes.pdf}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Solutions of DEs}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Solution to a DE}
+\doublespacing
+
+\noindent  It might be helpful to make an analogy here by thinking about what it means to be a solution
+to an algebraic equation.  Consider the following algebraic equation.
+	\begin{equation} x^5 + 12x^2 +10x = 7x^3 + 24  \label{alg_eqn} \end{equation}
+\noindent  Think about this for a moment:  what does it mean to be a solution to this equation?  We are often
+asked to solve for things and we get an answer and move one, but what does it really mean in this case?
+Could you verify whether something is or is not a solution?\\
+
+\noindent  In the context of this algebraic equation, a solution would be an $x$-value that ``works" when we substitute
+it back into the equation.  
+
+\noindent  {\bf Algebraic Example A:}  Is $x = -1$ a solution to equation (\ref{alg_eqn}) above?
+\newpage
+
+%If we substitute $x = -1$ into each side of the equation, we have
+%	\begin{align*}
+%	\mbox{left hand side of the equation (LHS)}	%&= x^5 + 12x^2 +10x,\\
+%								&= (-1)^5 + 12(-1)^2 +10(-1),\\
+%								&= -1 + 12 - 11,\\
+%								&= 0,\\
+%	\end{align*}
+%and
+%	\begin{align*}
+%	\mbox{right hand side of the equation (RHS)}	%&= 7x^3 + 24,\\
+%									&= 7(-1)^3 + 24,\\
+%									&= -7 + 24,\\
+%									&= 17.
+%	\end{align*}
+%\noindent  When we substitute $x = -1$ into the left hand side of the equation we get $0$, whereas we get $17$ on
+%the right hand side.  This means $x = -1$ isn't a solution to the algebraic equation.  
+
+
+\noindent  {\bf Algebraic Example B:}  Is $x = -3$ a solution to equation (\ref{alg_eqn}) above?\\
+\vspace{3in}
+
+%However, if we try $x = -3,$ we have
+%	\begin{align*}
+%	\mbox{LHS}	%&= x^5 + 12x^2 +10x,\\
+%								&= (-3)^5 + 12(-3)^2 +10(-3),\\
+%								&= -243 + 108 - 30,\\
+%								&= -165,\\
+%	\end{align*}
+%and
+%	\begin{align*}
+%	\mbox{RHS}	%&= 7x^3 + 24,\\
+%									&= 7(-3)^3 + 24,\\
+%									&=  -189 + 24,\\
+%									&= -165.
+%	\end{align*}
+%\noindent  Since we get the same result when we substitute $x = -3$ in on the left hand and right hand sides of the
+%equation, we can conclude that $x = -3$ is a solution to the algebraic equation.\\
+%
+\noindent  A couple of notes before we get back to differential equations:
+	\begin{itemize}
+	\item  At no point did we discuss how we found the solution $x = -3.$  There are multiple ways one might find
+		a solution to an algebraic equation (and in a lot of ways figuring out how to solve an equation is far more 
+		interesting than knowing a single solution to a single equation),
+		but %we don't need to know anything about the solution technique 
+		%to be able to verify whether something is or isn't a solution.\\
+		\line(1,0){100}\\ \\
+		\line(1,0){500}\\ \\
+			\line(1,0){500}.\\
+		
+		One of the first things we will do is ask you to do with a DE 
+		to determine whether a given function is or is not a solution.  We are not going to explain (yet)
+		how we might have gotten the solution.  We will get there, but an important first step is to understand what it
+		means to be a solution to a DE.
+		
+	\item  It is possible that there are other solutions to the equation.  In fact, there are other solutions to the algebraic
+		equation above, and we can see them if we plot the functions 
+		$f_1(x) = x^5 + 12x^2 +10x$ and $f_2(x) = 7x^3 + 24$ to see where the curves intersect. 
+		
+		In other words, %it's possible that an equation has multiple solutions.  
+		\line(1,0){400}.\\
+		It is also possible that an equation %has no solution (e.g., the equation $x - 1 = x$ has no solution).  
+		\line(1,0){300}.\\
+		
+		We will find that the same is true for DEs; it is possible that a 
+		DE has many solutions and it is possible that it has no solution.  For the purposes of this class, this 
+		is not terribly important, but we do mention it here so you are aware.\\
+	\end{itemize}
+
+\noindent  We have just reviewed what it means to be a solution to an algebraic equation:  {\it if we get the same result 
+when we substitute a particular value in on the left hand and right hand sides of an algebraic 
+equation, we can conclude that we have a solution to the algebraic equation.}  The definition of solution of a DE
+is practically identical:
+	
+	\begin{quote}  If we get the same result when we substitute a particular {\it function} in on the left hand and right 
+	hand sides of a DE, the function is a solution to the DE.  We also describe this situation by saying that the function
+	%{\it satisfies the DE.}
+	\line(1,0){250}.
+	\end{quote}
+	
+\noindent  Let us look at a couple of examples to see how it works.\\
+
+\noindent  {\bf Example 1:}  Determine if $\ds y = Ce^{x^2} + 3$, where $C$ is any constant, is a solution to the DE 
+%$\ds \frac{dy}{dx} = 2xy - 6x.$\\
+\line(1,0){100.}
+
+%\noindent  We'll approach this the same way we approached the algebraic equation in the example above:  we will to 
+%substitute the function $\ds y = Ce^{x^2} + 3$ in on the left and right hand sides of the equation 
+%$\ds \frac{dy}{dx} = 2xy - 6x$ to see
+%if we get the same result.
+%	\begin{align*}
+%	\mbox{LHS}	&= \frac{dy}{dx}\\
+%				&= \frac{d}{dx}\Big( Ce^{x^2} + 3 \Big)\\
+%				&= C\frac{d}{dx}\Big( e^{x^2} \Big) + \frac{d}{dx}\Big( 3 \Big)\\
+%				&= C \cdot e^{x^2} \cdot \frac{d}{dx}\Big( x^2 \Big) + 0\\
+%				%margin note:  refer to R/P content on differentiation and chain rule
+%				&= C \cdot e^{x^2} \cdot 2x\\
+%				&= 2Cxe^{x^2}\\
+%	\end{align*}
+%	
+%	\begin{align*}
+%	\mbox{RHS}	&= 2xy - 6x\\
+%				&= 2x \Big( Ce^{x^2} + 3 \Big) - 6x\\
+%				&= 2Cxe^{x^2} + 6x - 6x\\
+%				&= 2Cxe^{x^2}
+%	\end{align*}
+%We do get the same result when we substitute in on the left and right hand sides of the DE, so we conclude that 
+%$\ds y = Ce^{x^2} + 3$ is a solution to the DE $\ds \frac{dy}{dx} = 2xy - 6x.$
+\newpage
+
+\noindent  Notice that since we used a generic constant $C$, we have shown that $\ds y = Ce^{x^2} + 3$ is a solution 
+for any value we like for the constant $C$.  So, for example, $y = -41e^{x^2} + 3$ is a solution, and so is $y = 199e^{x^2} + 3$.
+In other words, the DE $\ds \frac{dy}{dx} = 2xy - 6x$ has an infinite number of solutions.  %mention family of solutions here?
+\\
+
+\noindent  {\bf Example 2:}  Determine whether $y = 3\sin(x^2)$ is a solution to the DE %$y' - 12x^2\sin(x^2) = xy''$.
+\line(1,0){100}.
+
+%	\begin{align*}
+%	y'	&= \frac{d}{dx}\Big( 3\sin(x^2) \Big)\\
+%		&= 3\cos(x^2) \cdot \frac{d}{dx}\Big(  x^2\Big) \mbox{\hspace{0.2cm} (using the chain rule)}\\
+%		&= 3\cos(x^2) \cdot 2x\\
+%		&= 6x\cos(x^2)\\
+%		&\\
+%	y''	&= 6x \cdot \frac{d}{dx}\Big( \cos(x^2) \Big) + \frac{d}{dx}\Big( 6x \Big)\cdot \cos(x^2)
+%				\mbox{\hspace{0.2cm} (using the product rule)}\\
+%		&= -12x^2\sin(x^2) + 6\cos(x^2)\\
+%	\end{align*}
+%	
+%\noindent  With these in hand, we can substitute into the left and right hand sides of the equation, as follows.
+%	\begin{align*}
+%	\mbox{LHS}	&= y' - 12x^2\sin(x^2)\\
+%				&= 6x\cos(x^2) - 12x^2\sin(x^2)\\
+%				&\\
+%	\mbox{RHS}	&= xy''\\
+%				&= x\Big( -12x^2\sin(x^2) + 6\cos(x^2) \Big)\\
+%				&= -12x^3\sin(x^2) + 6x\cos(x^2)\\
+%	\end{align*}
+%\noindent  The resultant expressions when we substitute the function into the left hand side and the
+%right hand side are similar, but they are not the same.  Hence, $y = 3\sin(x^2)$ is {\bf not a solution}
+% to the DE $y' - 12x^2\sin(x^2) = xy''$.\\
+\newpage
+
+\noindent {\bf Example 3:}  Determine which of the following are solutions to the DE \line(1,0){100}.
+%$y'' - y' - 12y = 0.$
+	\begin{align*}
+	\mbox{(a)}	\hspace{0.2cm} y	&= 2e^{-3t}\\ %(m+3)(m-4) = m^2 - m - 12
+	\mbox{(b)}	\hspace{0.2cm} y	&= e^{4t}\\
+	\mbox{(c)}	\hspace{0.2cm} y	&= c_1e^{-3t} + c_2e^{4t}, \mbox{ where $c_1$ and $c_2$ are constants}\\
+	\end{align*}
+%\noindent  As in the previous example, we need to substitute each function into the DE.  In this case, we need to take
+%differentiate each function twice so we are able to substitute in to the DE.
+%
+%	\begin{align*}
+%	\mbox{(a)}	\hspace{0.2cm} y	&= 2e^{-3t}	&\Rightarrow \hspace{0.1cm} 	y'	&= -6e^{-3t}	
+%										&\Rightarrow \hspace{0.1cm} y''	&= 18e^{-3t}\\
+%							&			&							&	&&\\
+%	\mbox{(b)}	\hspace{0.2cm} y	&= e^{4t}		&\Rightarrow \hspace{0.1cm}	 y'	&= 4e^{4t}		
+%										&\Rightarrow \hspace{0.1cm} y''	&= 16e^{4t}\\
+%							&			&							&	&&\\
+%	\mbox{(c)}	\hspace{0.2cm} y	&= c_1e^{-3t} + c_2e^{4t} 
+%										&\Rightarrow \hspace{0.1cm} 	y'	&= -3c_1e^{-3t} + 4c_2e^{4t}
+%										&\Rightarrow \hspace{0.1cm} y''	&= 9c_1e^{-3t} + 16c_2e^{4t}
+%	\end{align*}
+%\noindent  Now let's check each provided function by substituting into the DE.
+%	\begin{align*}
+%	\mbox{(a)}	\hspace{0.2cm} LHS	&= y'' - y' - 12y\\
+%							&= \Big(18e^{-3t}\Big) - \Big( -6e^{-3t} \Big) - 12\Big( 2e^{-3t} \Big)\\
+%							&= 18e^{-3t} + 6e^{-3t} - 24e^{-3t}\\
+%							&= 0\\
+%							&= RHS\\
+%	\end{align*}
+%
+%	\begin{align*}
+%	\mbox{(a)}	\hspace{0.2cm} LHS	&= y'' - y' - 12y\\
+%							&= \Big(16e^{4t}\Big) - \Big( 4e^{4t} \Big) - 12\Big( e^{4t} \Big)\\
+%							&= 16e^{4t} - 4e^{4t} - 12e^{4t}\\
+%							&= 0\\
+%							&= RHS\\
+%	\end{align*}
+%	
+%	\begin{align*}
+%	\mbox{(c)}	\hspace{0.2cm} LHS	&= y'' - y' - 12y\\
+%							&= \Big(9c_1e^{-3t} + 16c_2e^{4t}\Big) - \Big( -3c_1e^{-3t} + 4c_2e^{4t} \Big) - 12\Big( c_1e^{-3t} + c_2e^{4t} \Big)\\
+%							&= 9c_1e^{-3t} + 16c_2e^{4t} + 3c_1e^{-3t} - 4c_2e^{4t} - 12c_1e^{-3t} - 12c_2e^{4t}\\
+%							&= \Big( 9c_1e^{-3t} + 3c_1e^{-3t} - 12c_1e^{-3t}   \Big) + \Big( 16c_2e^{4t} - 4c_2e^{4t} - 12c_2e^{4t} \Big)\\
+%							& = 0\\
+%							&= RHS\\
+%	\end{align*}
+%
+%\noindent  It turns out that each of the functions provided is, in fact, a solution to the DE.\\
+
+
+\end{document}

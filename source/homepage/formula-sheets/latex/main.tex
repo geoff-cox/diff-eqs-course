@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[paperheight=11in,paperwidth=8.5in,inner=72pt,%
+						outer=72pt,textheight=10in,%textwidth=320pt,
+						marginparwidth=150pt,%
+						marginparsep=32pt%,%
+						%bottom=3in,footskip=1.5in
+						]{geometry}
+						
+\title{Formula sheet}
+\author{coxgw10 }
+\date{February 2021}
+
+\newcommand{\myrule}{\rule[-10pt]{0pt}{15pt}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\myds}{\ds\myrule}
+\newcommand{\deriv}[2]{\ensuremath{\myds\frac{d}{dx}\left(#1\right)=#2}}
+\newcommand{\myint}[2]{\ensuremath{\myds\int #1\ dx=} \ensuremath{\ds #2}}
+
+\begin{document}
+
+\begin{center}
+    \noindent\textbf{\LARGE MA 311 - Formula Sheet}\\
+\end{center}
+
+\noindent\textbf{\large Derivatives}\\
+
+\begin{minipage}[t]{.49\linewidth}
+\begin{enumerate}\addtocounter{enumi}{0}
+\item[]	\deriv{a^x}{\ln a\cdot a^x}
+\item[]	\deriv{\sin x}{\cos x}
+\item[]	\deriv{\csc x}{-\csc x\cot x}
+\item[]	\deriv{\tan x}{\sec^2 x}
+\item[]	\deriv{\sin^{-1}x}{\frac{1}{\sqrt{1-x^2}}}
+\item[]	\deriv{\csc^{-1}x}{\frac{-1}{|x|\sqrt{x^2-1}}}
+\item[]	\deriv{\tan^{-1}x}{\frac{1}{1+x^2}}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.49\linewidth}
+\begin{enumerate}\addtocounter{enumi}{7}
+\item[]	\deriv{\log_a x}{\frac{1}{\ln a}\cdot \frac1x}
+\item[]	\deriv{\cos x}{-\sin x}
+\item[]	\deriv{\sec x}{\sec x\tan x}
+\item[]	\deriv{\cot x}{-\csc^2 x}
+\item[]	\deriv{\cos^{-1}x}{\frac{-1}{\sqrt{1-x^2}}}
+\item[]	\deriv{\sec^{-1}x}{\frac{1}{|x|\sqrt{x^2-1}}}
+\item[]	\deriv{\cot^{-1}x}{\frac{-1}{1+x^2}}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.33\linewidth}
+\begin{enumerate}\addtocounter{enumi}{16}
+\end{enumerate}
+\end{minipage}
+
+\vskip\baselineskip
+\noindent\textbf{\large Anti-derivatives}\\
+
+\noindent
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}
+\item[]	\myint{\cos x}{\sin x+C}
+\item[]	\myint{\tan x}{-\ln |\cos x|+C}
+\item[]	\myint{\csc x}{-\ln |\csc x+\cot x|+C}
+\item[]	\myint{\csc^2x}{-\cot x+C}
+\item[]	\myint{\csc x\cot x}{-\csc x+C}
+\item[]	\myint{\frac{1}{\sqrt{a^2-x^2}}}{\sin^{-1}\left(\frac xa\right)+C}
+\item[]	\myint{a^x}{\frac{1}{\ln a}\cdot a^x+C}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}\addtocounter{enumi}{11}
+\item[]	\myint{\sin x}{-\cos x+C}
+\item[]	\myint{\cot x}{\ln |\sin x|+C}
+\item[]	\myint{\sec x}{\ln |\sec x+\tan x|+C}
+\item[]	\myint{\sec^2 x}{\tan x+C}
+\item[]	\myint{\sec x\tan x}{\sec x+C}
+\item[]	\myint{\frac{1}{x^2+a^2}}{\frac1a\tan^{-1}\left(\frac xa\right)+C}
+\item[]	\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C}
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.6cm}
+
+{\em Note: More Anti-derivative formulas can be deduced from the reverse direction of the derivatives.}
+
+\clearpage
+
+\end{document}

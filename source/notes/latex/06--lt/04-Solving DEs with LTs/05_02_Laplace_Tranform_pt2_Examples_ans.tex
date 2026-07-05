@@ -1,0 +1,141 @@
+\documentclass[12pt]{amsart}
+
+\usepackage[
+	paperheight=11in,
+	paperwidth=8.5in,
+	inner=0.4in,
+	textheight=10.2in,
+	textwidth=7.5in,
+	% marginparwidth=120pt,
+	% marginparsep=32pt,
+	% bottom=1.4in,
+	% left=0.5in,
+	% right=0.5in,
+	% footskip=1.0in
+]{geometry}
+\geometry{letterpaper}
+
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{asymptote}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{animate}
+\usepackage{arrayjobx}
+\usepackage{arydshln}
+\usepackage{bookman}
+\usepackage{color}
+\usepackage{cancel}
+\usepackage{calculator}
+\usepackage{collcell}
+\usepackage{epstopdf}
+\usepackage{enumerate}
+\usepackage{epsfig}
+\usepackage[english]{babel}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage[nomessages]{fp}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{ifmtarg}
+\usepackage[latin1]{inputenc}
+\usepackage{latexsym}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{multimedia}
+\usepackage{mathbbol}
+\usepackage{mathtools}
+\usepackage{multido}
+\usepackage{palatino}
+\usepackage{polynom}
+\usepackage{pxfonts}
+\usepackage{pifont}
+\usepackage{pgffor}
+\usepackage{pdfpages}
+\usepackage[parfill]{parskip}
+\usepackage{soul}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,trees,shapes.geometric,calc}
+\usepackage{txfonts}
+\usepackage{tcolorbox}
+\usepackage{wasysym}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{xmpmulti}
+\usepackage{xparse}
+\usepackage{xstring}
+\usepackage{mathrsfs}
+\newcommand{\LAP}[1]{\mathscr{L}\{#1\}}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcounter{ProbNum}
+\setcounter{ProbNum}{0}
+\def\NEWPROB{\stepcounter{ProbNum} {\noindent \arabic{ProbNum}. \,\,}}
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Laplace Transforms \\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+\UL{Laplace Transforms}
+
+\NEWPROB
+
+\NEWPROB \begin{multicols}{2}
+\begin{enumerate}[(a)]
+	\item $\D f(t) = t^3 e^t$\\
+	\item $\D x(t) = \frac{1}{24}t^4$\\
+	\item $\D g(t) = \frac{4}{3}\sin(3t)$\\
+	\item $\D y(t) = 5 \cos(\sqrt{7}t)$\\
+	\item $\D r(t) = \frac{3}{16}t^2e^{-\frac{5}{2}t}$\\
+	\item $\D x(t) = \frac{21}{4} e^{-2t} \sin(4t)$\\
+	\item $\D f(t) = 10e^{10t}$\\
+	\item $\D q(t) = 7e^{-t}\cos(2\sqrt{3}t)$\\ %\vspace{0.5cm}
+\end{enumerate}
+\end{multicols}
+	
+\NEWPROB \begin{multicols}{2}
+\begin{enumerate}[(a)]
+	\item $\D g(t) = \frac{1}{2}e^{-2t}\sin(2t)$\\
+	\item $\D f(t) = 2e^{-2t}\cos(3t) + 4e^{-2t}\sin(3t)$\\
+	\item $\D q(t) = te^{-3t}$\\
+	\item $\D x(t) = 7\cos(6t) - \frac{2}{3}\sin(6t)$\\
+	\item $\D g(t) = 2e^{2t}\cos(3t) - 5e^{2t}\sin(3t) + 5e^t$\\
+	\item $\D f(t) = e^{-3t}\cos(\sqrt{2} t) - \frac{3}{\sqrt{2}}e^{-3t}\sin(\sqrt{2} t)$\end{enumerate}
+\end{multicols}
+	
+\NEWPROB
+\begin{enumerate}[(a)]
+	\item $\D x(t) = e^t + \frac{14}{3}e^{6t} + \frac{1}{3}$\\
+	\item $\D i(t) = -e^{-3t} + 2te^{-3t} + 6e^{-t}$\\
+	\item $\D f(t) = 6e^{2t} + 1 - \frac{3}{2}t^2$\\ %\vspace{0.5cm}
+\end{enumerate}
+
+\NEWPROB \begin{enumerate}[(a)]
+	\item  $\D f(t) = \frac{5}{4}e^{-2t} - \frac{5}{3}e^{-t} + \frac{5}{12}e^{2t}$\\
+	\item  $ \D f(t) = -\frac{13}{30}e^{-3t} + \frac{5}{6}e^{-t} + \frac{4}{15}e^{2t} - \frac{2}{3}$\\ %\vspace{1cm}
+\end{enumerate}
+
+\NEWPROB  $\D y(t) = -e^{-t} + 3e^t \cos(2t) + 4e^t \sin(2t)$\\
+
+\NEWPROB  $\D y(t) = e^{-3t} - 3e^{-2t} + e^t + 2$
+
+\end{document}

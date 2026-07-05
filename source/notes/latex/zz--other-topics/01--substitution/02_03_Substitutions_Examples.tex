@@ -1,0 +1,118 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{01} \def\SEC{02} \def\SEM{S} \def\YEAR{2018} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\input{\PATHTOHEADERS/TestQuizPackageHeader.tex}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.8 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Simplifying a Differential Equation by Substitution \\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+\begin{enumerate}[1.]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item  For each equation below complete the following
+
+$\succ$ \,\, Identify the equation with one of the following forms:
+
+\setlength{\extrarowheight}{-0.2cm}
+\begin{tabular}{p{4.0cm}rl}
+	$\,$ & i.   & $\D y' = f(ax+by+c)$ \\
+	\\
+	$\,$ & ii.  & $\D y' = f(y/x)$ \\
+	\\
+	$\,$ & iii. & $\D y'+P(x)\,y=f(x)\,y^n$ \\
+\end{tabular}
+
+$\succ$ \,\, Select the appropriate substitution $u$ to simplify the equation.
+
+$\succ$ \,\, Compute $\D \frac{dy}{dx}$ in terms of $\D \frac{du}{dx}$.
+
+$\succ$ \,\, Write the new equation in terms of $\D \frac{du}{dx}$ and $u$.
+
+$\succ$ \,\, Determine the method you could use to solve the new equation.
+
+\vspace{0.2cm}
+
+\begin{multicols}{2}
+	\begin{enumerate}
+	\item[(a)]  $\D (y - 4x - 1)^2 - \frac{dy}{dx} = 0$\\ \vspace{6.2cm}
+	\item[(c)]  $\D 2tx \frac{dx}{dt} + (t^2 - x^2) = 0$\\ \vspace{6.2cm}
+	\item[(b)]  $\D \frac{dy}{dx} + \frac{y}{x} = x^3 y^2$\\ \vspace{6.2cm}
+	\item[(d)]  $\D \frac{dy}{d\theta} = \frac{\theta\sec\left( \frac{y}{\theta} \right) + y}{\theta}$\\ \vspace{6.2cm}
+	\end{enumerate}
+\end{multicols}
+
+\newpage
+\thispagestyle{empty}
+
+\begin{multicols}{2}
+	\begin{enumerate}
+	\item[(e)]  $\D \frac{dy}{dx} + \frac{y}{x} = x^2y^2$\\ \vspace{11.2cm}
+	\item[(g)]  $\D (xy + y^2) - x^2\frac{dy}{dx} = 0$\\ \vspace{11.2cm}
+	\item[(f)]  $\D \frac{dy}{dx} = \sqrt{x+y} - 1$\\ \vspace{11.2cm}
+	\item[(h)]  $\D (y e^{-2x} + y^3) - e^{-2x}\frac{dy}{dx} = 0$\\ \vspace{11.2cm}
+	\end{enumerate}
+\end{multicols}
+
+\newpage
+\thispagestyle{empty}
+
+\begin{multicols}{2}
+	\begin{enumerate}
+	\item[(i)]  $\D \frac{dy}{dx} = (x + y + 2)^2$\\ \vspace{11.2cm}
+	\item[(k)]  $\D \frac{dy}{dx} - y = e^{2x}y^3$\\ \vspace{11.2cm}
+	\item[(j)]  $\D x^2 \frac{dy}{dx} = xy - y^2$\\ \vspace{11.2cm}
+	\item[(l)]  $\D \frac{dy}{dx} = \frac{2y}{x} - x^2 y^2$\\ \vspace{11.2cm}
+	\end{enumerate}
+\end{multicols}
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\begin{enumerate}[1.]
+\setcounter{enumi}{1}
+\item    Solve using one of the substitution/transformation techniques.
+		\[ \frac{dy}{dx} = 2 - \sqrt{2x - y + 3} \]
+
+\newpage
+\thispagestyle{empty}
+
+\item    Solve using one of the substitution/transformation techniques.
+		\[ \frac{dy}{dx} = \frac{x^2 - 3y^2}{2xy} \]
+\end{enumerate}
+
+\end{document}

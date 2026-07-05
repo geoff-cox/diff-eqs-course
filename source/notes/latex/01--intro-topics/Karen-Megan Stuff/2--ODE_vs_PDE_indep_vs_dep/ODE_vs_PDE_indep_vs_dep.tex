@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1.2in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10.2in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+%\includegraphics[scale = 0.65, trim = 1in 3.25in 1in 3in]{blank_axes.pdf}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+ODE versus PDE}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{ODE versus PDE, Independent versus Dependent Variables}
+\doublespacing
+\noindent  The focus of this text is %{\bf ordinary differential equations}
+\line(1,0){400}, where the unknown function
+is a function of just one variable.  Consider, for example, the DE\\ \\
+%\vspace{0.52in}
+%	\[ y'' - y' = e^x. \]
+
+\noindent  Here the unknown function is %$y$
+\line(1,0){50}, and whatever this unknown function is, we would want
+it to be a function such that \\ \vspace{0.25in}
+%if we took its second derivative and subtracted its first derivative, we would get
+%$e^x.$  
+
+\noindent It makes sense, then, that %$y$ is actually a function of $x$
+\line(1,0){300}, and we are\\ \\
+%taking derivatives {\it with respect to $x$}
+\line(1,0){500}.  \\ \\ So we have
+one %{\bf independent variable}, $x$, 
+\line(1,0){300}\, and \\ \\
+one %{\bf dependent variable}, our unknown function $y$.  
+\line(1,0){500}.\\
+\noindent Hence, this is an example of an ordinary differential equation.\\
+
+\noindent  It is possible that the unknown function in a DE depends on more than one independent variable.
+Suppose we want to describe a function $u$ that gives the temperature at a point $(x, y, z)$ at any time $t$.
+Then the value of $u$ depends on four independent variables, $x$, $y$, $z$, and $t$.  If we want to take
+the derivative of $u$, then we need to be careful to indicate if we are taking a derivative with respect to $x$
+or $y$ or $z$ or $t$, and multiple of these derivatives might occur in the same DE.  The heat equation
+	\[ \frac{\partial u}{\partial t} = \alpha \left( \frac{\partial^2 u}{\partial x^2} 
+		+ \frac{\partial^2 u}{\partial y^2} 
+		+ \frac{\partial^2 u}{\partial z^2}\right), \hspace{1cm} \alpha >0, \]	%margin note:  it's OK if you don't understand the notation here...
+describes the relationship between some derivatives of the function $u$ and shows how heat diffuses
+over time in a solid medium.  This type of DE is called a %{\bf partial differential equation}, or PDE.  
+\line(1,0){300}.\\  This text will
+focus exclusively on ODEs, but it is worth knowing that PDEs are common and there exist solution techniques
+to solve those, too.
+
+\end{document}

@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{9in}
+
+% do not indent outermost itemize environ
+%\setlength{\leftmargini}{0in}
+%
+%\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\newcommand{\ds}{\displaystyle}
+\renewcommand{\Re}{\mbox{Re}}
+\renewcommand{\Im}{\mbox{Im}}
+\newcommand{\Arg}{\mbox{Arg}}
+\newcommand{\Ln}{\mbox{Ln}}
+\renewcommand{\L}{\mathscr{L}}
+%\renewcommand{\arraystretch}{1.5}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\renewcommand{\L}{\mathscr{L}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+
+\pagestyle{empty}
+\begin{document}
+%\doublespacing
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Forward Laplace Transforms}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent  This will be a powerful method to solve LNCC differential equations where we will be able to expand the types of nonhomogenous functions we can use. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Learned DE Solution Techniques}
+
+\noindent  At this time, we know four different techniques for solving DEs.
+\begin{itemize}
+	\item Separation: \vspace{0.25in}
+	\item Integrating Factor (Variation of Parameter): \vspace{0.25in}
+	\item LHCC: \vspace{0.25in}
+	\item LNCC using the Method of Undetermined Coefficients: \vspace{0.25in}
+\end{itemize}
+
+\noindent With LHCC we can solve a DE of the form 
+\[ a_ny^{(n)} + a_{n-1}y^{(n-1)} + \cdots + a_2y'' + a_1y' + a_0y = f(t),\]
+where the function $f(t)$ has a specific form.   With Laplace transforms, LTs, we will be able to expand upon the type of functions we can select for $f(t)$. 
+
+
+\section*{Intro to Laplace Transforms}
+
+\noindent The general idea behind Laplace transforms is to use algebra instead of calculus to solve the differential equation.  In order to do this, we will first need to transform the original DE using forward LTs.  Then once we have completed the algebra, we will use inverse LTs to convert our equation into the solution of the DE.
+
+\vspace{2in}
+
+ 
+\newpage
+
+\section*{The Definition of the Laplace Transform}
+
+\noindent The Laplace transform of a function $y(t)$ is denoted as $Y(s)$ or $\mathscr{L} \{y(t)\}$.  The transform is found by 
+\[\mathscr{L} \{y(t)\} = \int^{\infty}_0 y(t)e^{-st}dt,\]  
+if the integral converges.
+
+
+The definition of a Laplace Transform requires an improper integral to be evaluated which may be very complicated to solve.   There are extensive lists of Laplace transforms which give the transforms without needing to use the definition.   As we have seen, there are some patterns with when using the definition when $k$ is a constant.
+
+\[\mathscr{L} \{k\} = \frac{k}{s}, \hspace{1cm} s>0\]\\
+\[\mathscr{L} \{e^{kt}\} = \frac{1}{s-k}, \hspace{1cm} s>k\]
+
+The table is on the back side of your formula sheet.
+
+
+\section*{Using the Laplace Transform Tables}
+
+\noindent  {\bf Example 1:}  Use the table to find \[ \mathscr{L} \{ t^2+4\cos{3t} \} \]
+
+
+\newpage
+
+\section*{Properties of Laplace Transforms}
+\noindent The following properties are very useful.   In the properties below, $\alpha$ and $\beta$ are constants.\\
+\begin{eqnarray*}
+\mathscr{L} \{\alpha f(t) + \beta g(t)\} &=& \alpha F(s) + \beta G(s)\\
+\mathscr{L} \{f(t)\} &=& F(s)\\
+\mathscr{L} \{f'(t)\} &=& sF(s) - f(0)\\
+\mathscr{L} \{f''(t)\} &=& s^2 F(s) - sf(0) - f'(0)\\
+\mathscr{L} \{f^{(n)}(t)\} &=& s^n F(s) - s^{n-1}f(0) - s^{n-2}f'(0) - \cdots - f^{(n-1)}(0)\\
+\mathscr{L} \{t^n f(t)\} &=& (-1)^n\frac{d^n}{ds^n}\big( F(s) \big) = (-1)^nF^{(n)}(s)\\
+\end{eqnarray*}
+
+
+\noindent  {\bf Example 2:}  Find the Laplace transform of the IVP $y''-2y'+3y=4$ where $y(0)=1$ and $y'(0)=5$. \\
+\vfill \vfill
+\noindent  {\bf Example 3:}  Use the table to find \[ \mathscr{L} \{ t\cos{3t} \} \] \\
+\vfill
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

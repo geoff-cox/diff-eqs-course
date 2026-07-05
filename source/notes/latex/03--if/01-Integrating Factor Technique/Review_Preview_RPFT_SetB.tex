@@ -1,0 +1,282 @@
+\documentclass[12pt]{article}
+
+\usepackage{filecontents}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	NOTE:
+%					You MUST use sepdflatex (or sepdflatexmk) when you typeset.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  If your document has only "teacher" and "student" versions, then you need not make the changes 
+%  described here.
+%
+%  However, if you want different and/or more versions, you'll need to consider changes to four areas:
+%
+% (1)  In the bulk of the document (immediately below), use the command \showto to indicate your 
+%       audience.
+%
+%  (2)  Edit the output file names.  See flags below.
+%
+%  (3)  Edit the names of the audiences.  See flags below.
+%
+%  (4)  Edit the "current" audience.  See flags below.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Below is the bulk of your document.  Use \showto to indicate audience
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{filecontents*}{template.tex}
+\pagestyle{empty}
+
+\showto{answers}{\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}
+\begin{center}
+{\sc 
+\noindent Differential Equations\\
+Review/Preview Practice Problems (R3P) Set \RPPPSetNum\ 							%CHANGE NUMBER BELOW********
+}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+\noindent Corresponding Review/Preview Fitness Test (RPFT) due \RPFTDueDate\\
+
+\vspace{1cm}
+
+\noindent  {\it These problems are intended to help you review the Product Rule for differentiation.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{RPPP}
+\item    Write down the product rule.\\
+	$\ds \frac{d}{dx}\Big( f(x)\cdot g(x) \Big) = \line(1,0){100}$
+
+\item  Evaluate the following derivatives.
+	\ben[label=(\alph*)]
+	\item  $\ds \frac{d}{dx}\Big( e^x\cos x \Big)$
+	\item  $\ds \frac{d}{dx}\Big( x^5\ln x \Big)$
+	\item  $\ds \frac{d}{dx}\Big( x\arctan x \Big)$\\
+	\een
+	
+\item  Given that $y$ is a function of $x$, use the product rule to rewrite the following:\\	
+		$\ds \frac{d}{dx}\Big( \cos x \cdot y(x) \Big) = $\\
+	
+\item Given that $z$ is a function of $t$, use the product rule to rewrite the following:\\	
+		$\ds \frac{d}{dt}\Big( e^{5t} \cdot z \Big) = $\\
+		
+\item  Now let's look at the product rule ``in the other direction"...  Or we can think about this
+	as ``un-doing" the product rule.\\
+	
+	Rewrite each of the following as the derivative of a product:
+	\ben[label=(\alph*)]
+	\item  $\ds x^{-4} \frac{dy}{dx} - 4x^{-5}y = \frac{d}{dx}\Big( \hspace{2cm} \Big)$
+	\item  $\ds e^{-3x} y' - 3e^{-3x}y = \frac{d}{dx}\Big( \hspace{2cm} \Big)$
+	\item  $\ds \sec(\theta) \frac{dr}{d\theta} + \sec(\theta) \tan(\theta) r 
+					= \frac{d}{d\theta}\Big( \hspace{2cm} \Big)$
+	\een
+	
+\end{RPPP}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{RPPP}
+\item   product rule: $\ds \frac{d}{dx}\Big( f(x)\cdot g(x) \Big) = f(x)g'(x) + f'(x) g(x)$
+
+\item  \ben[label=(\alph*)]
+	\item  $\ds \frac{d}{dx}\Big( e^x\cos x \Big) = -e^x\sin x + e^x\cos x$\\
+	\item  $\ds \frac{d}{dx}\Big( x^5\ln x \Big) = x^4 + 5x^4\ln x$\\
+	\item  $\ds \frac{d}{dx}\Big( x\arctan x \Big) = \frac{x}{1+x^2} + \arctan x$\\
+	\een
+	
+\item  $\ds \frac{d}{dx}\Big( \cos x \cdot y(x) \Big) = \cos x\cdot y'(x) - \sin x \cdot y(x)$\\
+	
+\item $\ds \frac{d}{dt}\Big( e^{5t} \cdot z \Big) = e^{5t}\cdot z' + 5e^{5t}\cdot z$\\
+		
+\item  \ben[label=(\alph*)]
+	\item  $\ds x^{-4} \frac{dy}{dx} - 4x^{-5}y = \frac{d}{dx}\Big( x^{-4}\cdot y \Big)$
+	\item  $\ds e^{-3x} y' - 3e^{-3x}y = \frac{d}{dx}\Big( e^{-3x}\cdot y \Big)$
+	\item  $\ds \sec(\theta) \frac{dr}{d\theta} + \sec(\theta) \tan(\theta) r 
+					= \frac{d}{d\theta}\Big( \sec(\theta)\cdot r \Big)$
+	\een
+	
+\end{RPPP}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+%\mbox{}\newpage		%If needed
+
+\showto{answers}{\mbox{}\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}\\
+
+{\sc 
+\noindent Differential Equations						\showto{student}{\hfill Name:  \line(1,0){200}}	\\
+Review/Preview Performance Test (RPFT) \RPPPSetNum\ 	\showto{student}{\hfill HR:  \line(1,0){200}}\\
+Due by 1600 \RPFTDueDate 		\showto{student}{\hfill Circle your section: \hspace{0.73in}\mbox{}\\
+												\mbox{} \hfill MWF1000\hspace{0.5cm}MWF1300 
+												\hspace{0.5cm}TR0925\hspace{0.5cm}TR1050}}
+\noindent\rule{7in}{0.4pt}
+\vspace{1cm}
+
+\noindent  For this RPFT, you are permitted to use your own notes/work and your
+textbook, but you are NOT AUTHORIZED to seek help from anyone
+other than MAJ Libertini or MAJ Bliss.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{RPFT}
+\item    Given that $Y$ is a function of $t$, use the product rule to rewrite the following.\\	
+		$\ds \frac{d}{dt}\Big( \sin(2t) \cdot Y \Big) = $\\
+	
+
+\item   Rewrite the following as the derivative of a product.\\
+		$\ds \ln x\cdot  \frac{dz}{dx} + \frac{1}{x}\cdot z = $
+	
+	
+\end{RPFT}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{student}{\newpage}
+\showto{answers}{
+\vfill
+\noindent  Answers:
+\begin{RPFT}
+\item    $\ds \frac{d}{dt}\Big( \sin(2t) \cdot Y \Big) = \sin(2t) \cdot Y' + 2\cos(2t)\cdot Y$\\
+
+\item $\ds \ln x\cdot  \frac{dz}{dx} + \frac{1}{x}\cdot z = \frac{d}{dx}\Big( \ln x \cdot z \Big)$
+	
+\end{RPFT}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{filecontents*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  This stuff tells LaTeX to produce multiple versions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\conditionmacro\undefined
+  \immediate\write18{%
+    pdflatex --jobname="answers_\jobname"			%EDIT (2) HERE AS NEEDED
+    "\gdef\string\conditionmacro{1}\string\input\space\jobname"  
+  }%
+  \immediate\write18{%
+    pdflatex --jobname="\jobname"						%EDIT (2) HERE AS NEEDED
+    "\gdef\string\conditionmacro{2}\string\input\space\jobname"
+ }%
+%  \immediate\write18{%
+%    pdflatex --jobname="solutions_\jobname"
+%    "\gdef\string\conditionmacro{3}\string\input\space\jobname"
+%  }%
+  \expandafter\stop
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here's the preamble.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+
+
+\newcommand\RPPPSetNum{B}									%CHANGE NUMBER HERE, TOO********
+\newcommand\RPFTDueDate{Monday, 30 January}
+
+\newlist{RPPP}{enumerate}{1}
+\setlist[RPPP]{label = R3P \RPPPSetNum.\arabic*.}
+
+\newlist{RPFT}{enumerate}{1}
+\setlist[RPFT]{label = RPFT \RPPPSetNum.\arabic*.}											
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here we tell LaTeX the names of the various audience categories it should be prepared for.
+%  Add more and/or edit as needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multiaudience}
+\SetNewAudience{answers}									%EDIT (3) HERE AS NEEDED
+\SetNewAudience{student}									%EDIT (3) HERE AS NEEDED
+%\SetNewAudience{solutions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here's where we tell LaTeX what needs to go into each document.  First, we tell it which 
+%  audience it should use, and then we send it up to the "bulk" of the document above.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifnum\conditionmacro=1 
+	\def\CurrentAudience{answers}							%EDIT (4) HERE AS NEEDED
+	\include{template}
+\fi 
+
+\ifnum\conditionmacro=2 
+	\def\CurrentAudience{student}							%EDIT (4) HERE AS NEEDED
+	\include{template}
+\fi
+
+%\ifnum\conditionmacro=3 
+%	\def\CurrentAudience{solutions}						%EDIT (4) HERE AS NEEDED
+%	\include{template}
+%\fi
+
+\end{document}

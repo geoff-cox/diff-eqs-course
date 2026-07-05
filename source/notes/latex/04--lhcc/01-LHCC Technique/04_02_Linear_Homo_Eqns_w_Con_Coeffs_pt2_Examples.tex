@@ -1,0 +1,87 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{04} \def\SEC{02} \def\SEM{S} \def\YEAR{2018} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\input{\PATHTOHEADERS/TestQuizPackageHeader.tex}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.8 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\newcounter{ProbNum}
+\setcounter{ProbNum}{0}
+\def\NEWPROB{\stepcounter{ProbNum} {\noindent \arabic{ProbNum}. \,\,}}
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Linear Homogeneous Differential Equations with Constant Coefficients Part 2\\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+\NEWPROB Find the general solution for the following.
+\begin{enumerate}[(a)]
+	\item  $7y' -36y = 0.$ \label{Q1}\\		%distinct real roots
+	\vspace{10.7cm}
+	\item  $y''' -36y' = 0$\\				%distinct real roots
+
+\newpage
+\thispagestyle{empty}
+
+	\item  $y^{(4)} - 16y = 0$\\	%distinct real roots
+	\vspace{10.0cm}
+	\item  $y''' + 5y'' - 14y' = 0$\\				%distinct real roots
+
+\newpage
+\thispagestyle{empty}
+
+	\item  $y''' - 3y' + 2y = 0$ \quad ({\em Hint: Observe what 1 root must be})\\	%distinct real roots
+	\vspace{10.0cm}
+	\item  $\D \frac{d^3 \theta}{dt^3} - 8\theta = 0$\\ \label{Q2c}	%distinct real roots
+\end{enumerate}
+	
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB Find the differential equation that corresponds to the following solution. Include initial conditions.
+
+$$\D P(x)=3+e^{x}-e^{-2x}(3\cos(2x)+3\sin(2x))$$\\
+	
+\newpage
+\thispagestyle{empty}
+
+%\NEWPROB  Solve the following differential equation.
+%	\[ \frac{d^2y}{dt^2} - 3y = 0\]
+%	\vfill
+%	
+%\NEWPROB  Solve the following initial value problem.
+%	\[ \frac{d^2y}{dt^2} + 3y = 0, \hspace{0.5cm} y(0) = 5, \hspace{0.5cm} y'(0) = \sqrt{3} \]
+%	\vfill
+
+\end{document}

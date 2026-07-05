@@ -1,0 +1,103 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{05} \def\SEC{01} \def\SEM{S} \def\YEAR{2018} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\usepackage{mathrsfs}
+\newcommand{\LAP}[1]{\mathscr{L}\{#1\}}
+
+\input{\PATHTOHEADERS/TestQuizPackageHeader.tex}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.8 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\newcounter{ProbNum}
+\setcounter{ProbNum}{0}
+\def\NEWPROB{\stepcounter{ProbNum} {\noindent \arabic{ProbNum}. \,\,}}
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Laplace Transforms \\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+\UL{Laplace Transform}
+
+\noindent  The Laplace Transform of function $f(t)$ is a new function $F(s)$ defined by:
+	\[ F(s) = \LAP{f(t)} = \int_0^{\infty}e^{-st}f(t) dt, \]
+	provided this integral is finite (converges).\\
+	
+\NEWPROB Use the definition of Laplace Transform (above) to find the Laplace Transform of $h(t) = 7t.$  
+	Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB Use the definition of Laplace Transform (above) to find the Laplace Transform of  the function
+	\[d(t) = \left\{ \begin{array}{ll}	0,	& t<0\\
+							7,	& 0 \le t < 3\\
+							0,	& t \ge 3\\
+							\end{array} \right.\]  %= 7U(t) - 7U(t-3)
+	Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+	
+%\item    $\D H(s) = \frac{7}{s^2},$ $s>0$\\
+%
+%\item    $\D W(s) = \frac{1}{s-k},$  $s > k$	\\
+%
+%\item   $\D Y(s) = \frac{2}{s^2} + \frac{1}{s-5},$  $s>5$
+
+%\item  $\D D(s) = \frac{7}{s} - \frac{7e^{-3s}}{s}$
+
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB Show that the Laplace Transform has the following 2 properties:
+
+\begin{enumerate}
+	\item  $\D \LAP{f(t)+g(t)} = \LAP{f(t)}+\LAP{g(t)}$\\ \vspace{10.2cm}
+	\item  $\D \LAP{A f(t)} = A \LAP{f(t)}\quad $($A$ is constant)\\
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB Determine the Laplace transform of each function. Use the table given in class.
+%-------NUM LIST---------
+\begin{itemize}
+	\item  $\D f(t) = e^{-2t}$\\ \vspace{5.2cm}
+	\item  $\D g(t) = t^3 $\\ \vspace{5.2cm}
+	\item  $\D h(t) = e^{2t} - \sin (5t)$\\ \vspace{5.2cm}
+	\item  $\D q(t) = 8t + 4 - \cos(6t) $\\ \vspace{5.2cm}
+\end{itemize}
+		
+\newpage
+\thispagestyle{empty}
+
+\end{document}

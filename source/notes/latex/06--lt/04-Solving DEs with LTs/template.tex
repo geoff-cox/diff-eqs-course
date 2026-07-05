@@ -1,0 +1,169 @@
+\pagestyle{empty}
+
+\showto{answers}{\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}
+\begin{center}
+{\sc
+\noindent Differential Equations\\
+ DEs Practice Problems Set \DEPPSetNum\        %CHANGE NUMBER BELOW********
+}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+\noindent Submit solutions for extra credit by 1600 \ECDueDate\\
+\noindent Corresponding Performance Quiz due by 1600 \PQDueDate\\
+
+\vspace{0.5cm}
+
+%intro to LTs / basic LTs.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{The Definition of Laplace Transform}
+
+\noindent  As a reminder, the Laplace Transform of function $f(t)$ is a function $F(s)$ as follows:
+ \[ F(s) = \L\{ f(t) \} = \int_0^{\infty}e^{-st}f(t) dt, \]
+ provided this integral is finite.\\
+
+\begin{DEPP}
+\item    Use the definition of Laplace Transform (above) to find the Laplace Transform of $h(t) = 7t.$
+ Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+
+\item    Use the definition of Laplace Transform (above) to find the Laplace Transform of $w(t) = e^{kt},$
+ where $k$ is some constant.  Include appropriate restrictions on $s$ to guarantee the
+ convergence of the integral.\\
+
+\item   Use the definition of Laplace Transform (above) to find the Laplace Transform of $y(t) = 7t + e^{5t}.$
+  Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+
+\item  Use the definition of Laplace Transform (above) to find the Laplace Transform of  the function
+ \[d(t) = \left\{ \begin{array}{ll} 0, & t<0\\
+       7, & 0 \le t < 3\\
+       0, & t \ge 3\\
+       \end{array} \right.\]  %= 7U(t) - 7U(t-3)
+ Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+
+ {\it Note:  This is a really important skill!  If we can take the Laplace Transform of
+ piecewise-defined functions like this one, then we can solve differential equations that
+ we couldn't solve before!)}\\
+%\item    $\ds H(s) = \frac{7}{s^2},$ $s>0$\\
+%
+%\item    $\ds W(s) = \frac{1}{s-k},$  $s > k$ \\
+%
+%\item   $\ds Y(s) = \frac{2}{s^2} + \frac{1}{s-5},$  $s>5$
+
+%\item  $\ds D(s) = \frac{7}{s} - \frac{7e^{-3s}}{s}$
+\end{DEPP}
+\newpage
+\subsection*{Using Table to Find LTs}
+\begin{DEPP}[resume]
+\item  Use the table and properties provided to determine the Laplace transform of each function.
+Include resulting restrictions on $s.$
+ \ben[label=(\alph*)]
+ \item  $\ds f(t) = e^{-2t}\sin(2t) + t^2 e^{3t}$\\
+ \item  $\ds g(t) = t^3 e^{-9t}$\\
+ \item  $\ds h(t) = e^{2t} - t^3 + t^2 - \sin (5t)$\\
+ \item  $\ds q(t) = 8t\cos(6t) + e^{3t}\sin(4t)$\\
+ \item  $\ds f(t) = t^2 \sin(3t)$\\
+ \een
+%\item  \ben [label=(\alph*)]
+% \item  $\ds F(s) = \frac{2}{(s+2)^2 + 4} + \frac{2}{(s-3)^3}, \hspace{0.25cm}s>3$\\
+% \item  $\ds G(s) = \frac{6}{(s+9)^4}, \hspace{0.25cm}s>-9$\\
+% \item  $\ds H(s) = \frac{1}{s-2} - \frac{6}{s^4} + \frac{2}{s^3} - \frac{5}{s^2 + 25},\hspace{0.25cm}s>2$\\
+% \item  $\ds Q(s) = \frac{8(s^2-36)}{(s^2 + 36)^2} + \frac{4}{(s-3)^2 + 16}, \hspace{0.25cm}s>3$\\
+% \item  $\ds F(s) = \frac{18(s^2 - 3)}{(s^2+9)^3},\hspace{0.25cm}s>0$\\
+% \een
+\end{DEPP}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{DEPP}
+\item    $\ds H(s) = \frac{7}{s^2},$ $s>0$\\
+
+\item    $\ds W(s) = \frac{1}{s-k},$  $s > k$ \\
+
+\item   $\ds Y(s) = \frac{2}{s^2} + \frac{1}{s-5},$  $s>5$\\
+
+\item  $\ds D(s) = \frac{7}{s} - \frac{7e^{-3s}}{s},$  $s>0$\\
+
+\item  \ben [label=(\alph*)]
+ \item  $\ds F(s) = \frac{2}{(s+2)^2 + 4} + \frac{2}{(s-3)^3}, \hspace{0.25cm}s>3$\\
+ \item  $\ds G(s) = \frac{6}{(s+9)^4}, \hspace{0.25cm}s>-9$\\
+ \item  $\ds H(s) = \frac{1}{s-2} - \frac{6}{s^4} + \frac{2}{s^3} - \frac{5}{s^2 + 25},\hspace{0.25cm}s>2$\\
+ \item  $\ds Q(s) = \frac{8(s^2-36)}{(s^2 + 36)^2} + \frac{4}{(s-3)^2 + 16}, \hspace{0.25cm}s>3$\\
+ \item  $\ds F(s) = \frac{18(s^2 - 3)}{(s^2+9)^3},\hspace{0.25cm}s>0$\\
+ \een
+\end{DEPP}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+%\mbox{}\newpage  %If needed
+
+\showto{answers}{\mbox{}\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}\\
+
+{\sc
+\noindent Differential Equations       \showto{student}{\hfill Name:  \line(1,0){200}}\\
+DEs Performance Quiz  \DEPPSetNum\   \showto{student}{\hfill HR:  \line(1,0){200}}\\
+Due by 1600 \PQDueDate \showto{student}{\hfill Circle your section: \hspace{0.73in}\mbox{}\\
+              \mbox{} \hfill MWF1000
+               \hspace{0.5cm}MWF1300 \hspace{0.5cm}TR0925
+               \hspace{0.5cm}TR1050}\\
+}
+
+\noindent\rule{7in}{0.4pt}
+\vspace{0.5cm}
+
+\noindent  For this Performance Quiz, you are permitted to use your own notes/work and your
+textbook, but you are NOT AUTHORIZED to seek help from anyone
+other than MAJ Libertini or MAJ Bliss.\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{PQ}
+\item   {\bf Use the definition of Laplace Transform} to find the Laplace Transform of
+
+  \[y(t) = \left\{ \begin{array}{ll} 0, & t<4\\
+        6, & t \ge 4\\
+       \end{array} \right.\]    %=6U(t-4)
+
+  Include appropriate restrictions on $s$ to guarantee the convergence of the integral.\\
+
+  {\it Note:  Credit will only be assigned for work that demonstrates how the definition was
+  used to find the LT.}\\
+\vfill
+\begin{center}{\it (There's more on the back!)}
+\end{center}
+\newpage
+\item  Use the table and properties provided to determine the Laplace transform of each function.
+Include resulting restrictions on $s.$
+ \ben[label=(\alph*)]
+ \item  $\ds g(t) = 17t^3 - 9te^{-4t}$\\ \vfill
+ \item  $\ds h(t) = t^2 \cos(8t)$\\ \vfill
+ \een
+\end{PQ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{PQ}
+\item  $\ds Y(s) = \frac{6e^{-4s}}{s},$  $s>0$
+
+\item  \ben[label=(\alph*)]
+ \item  $\ds G(s) = \frac{102}{s^4} - \frac{9}{(s+4)^2},$ $s>0$\\
+
+ \item  $\ds H(s) = -16 \cdot \frac{64-3s^2}{(s^2+64)^3}$
+  %H(s) = (-1)^2 *d^2/ds^2[8/(s^2 + 64)]
+  %  = d/ds[( (s^2+64)(0) - 8(2s)) / (s^2+64)^2]
+  %  = -16*d/ds[s / (s^2+64)^2]
+  %  = -16 * [ ( (s^2+64)^2 - s*2(s^2+64)(2s) ) / (s^2+64)^4]
+  %  = -16 * [ ( (s^2 + 64) - 4s^2 ) / (s^2+64)^3]
+  %  = -16 * [ ( -3s^2 + 64) / (s^2+64)^3]
+ \een
+\end{PQ}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

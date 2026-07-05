@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+%\includegraphics[scale = 0.65, trim = 1in 3.25in 1in 3in]{blank_axes.pdf}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc Differential Equations\\
+Linearity}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Classifying DEs:  linear vs. nonlinear}
+\doublespacing
+\noindent  Another classification that will be used to determine which technique we can use to solve a
+DE is whether a DE is {\bf linear or nonlinear}.  The technical definition of linearity is not especially
+easy to un-pack.Here it is, but then we need to discuss what it means.
+	\begin{quote}
+	A DE %with independent variable $x$ and dependent variable $y$ 
+	is said to be {\it linear} if it can be written as \[ a_n(x)y^{(n)} + a_{n-1}y^{(n-1)} + \cdots + a_2(x)y'' + a_1(x)y' + a_0(x)y = f(x). \] A DE is said to be {\it nonlinear} if it is not linear.
+	\end{quote}
+\noindent  This definition is a good theoretical/mathematical definition, but what are the important
+features we can tease out of the definition?  In this case, it might be easier to describe what would
+be true of a DE that does not fit in the form described in the definition of linearity.\\
+
+\noindent  A DE is {\bf nonlinear} if:
+	\begin{itemize}
+	\item \mbox{}\\ \vfill
+		%The dependent variable or a derivative is raised to a power other than 1.
+		%For example, the DE $y'' + y^2 = x^3$
+		%is nonlinear because the dependent variable, $y$, is raised to the second power.
+		
+	\item   \mbox{}\\ \vfill
+		%The dependent variable or a derivative is inside a function.  In the DE $y'' + \ln(y') = e^x$,
+		%the derivative $y'$ is inside a logarithmic function, so this DE is nonlinear.
+	\item   \mbox{}\\ \vfill
+		%The dependent variable and/or any of its derivatives are attached to each other via multiplication.
+		%For example,the DE $y'\cdot y'' + e^x y = y',$ is nonlinear because the first term is a product 
+		%of $y'$ and $y''$.
+	\end{itemize}
+	
+
+
+\end{document}

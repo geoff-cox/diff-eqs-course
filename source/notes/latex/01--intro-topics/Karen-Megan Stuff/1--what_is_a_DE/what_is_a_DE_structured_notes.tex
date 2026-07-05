@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{time}
+\usepackage{times}
+
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\L}{\mathscr{L}}
+
+%\includegraphics[scale = 0.65, trim = 1in 3.25in 1in 3in]{blank_axes.pdf}
+
+
+\pagestyle{empty}
+\begin{document}
+\noindent\rule{7in}{0.4pt}\\
+\begin{center}
+{\sc 
+Differential Equations\\
+Introduction to DEs	\\
+}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{What is a Differential Equation?}
+
+\doublespacing
+\noindent  Let us begin by defining what a differential equation (DE) is.
+	\begin{quote}
+	A {\bf differential equation} is an %equation 
+	\line(1,0){200}\, that contains \\ \\ %a derivative or derivatives 
+	\line(1,0){400}\, of \\ \\%some unknown function.
+	\line(1,0){400}.
+	\end{quote}
+\singlespacing
+\noindent  Let us look at a few examples to demonstrate what this means.\\
+
+\noindent  Each of the following \line(1,0){200}: %{\bf is a DE}:
+	\[ y'' + xy' = \sin x, \hspace{1cm}  \frac{dP}{dt} = P(P-10), \hspace{1cm} \ddot{Q} = 11Q. \]
+\noindent  Note that there are three different notations for derivatives on display here.  Perhaps you
+have not seen the dot notation in that third equation.  That does, in fact, mean differentiation, and
+is sometimes used to indicate derivatives with respect to time.\\
+
+\noindent  \line(1,0){500}:%\noindent  In contrast, none of the following is a DE:
+	\[ \frac{d^2 y}{dx^2} + 2\frac{dy}{dx}, \hspace{1cm} x^2 + 3x = 19, \hspace{1cm} \sin y + e^x = 0\]
+\noindent  The first is not an equation, so it certainly can't be a DE.  The other equations do not contain
+derivatives, so they are not DEs.\\
+
+\noindent   Let us look at one more example.
+
+\end{document}

@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{mathrsfs}
+
+\usepackage[paperheight=11in,paperwidth=8.5in,inner=72pt,%
+                        outer=72pt,textheight=10in,%textwidth=320pt,
+                        marginparwidth=150pt,%
+                        marginparsep=32pt%,%
+                        %bottom=3in,footskip=1.5in
+                        ]{geometry}
+
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+                        
+\title{Formula sheet}
+\author{coxgw10 }
+\date{February 2021}
+
+\newcommand{\myrule}{\rule[-10pt]{0pt}{15pt}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\myds}{\ds\myrule}
+\newcommand{\deriv}[2]{\ensuremath{\myds\frac{d}{dx}\left(#1\right)=#2}}
+\newcommand{\myint}[2]{\ensuremath{\myds\int #1\ dx=} \ensuremath{\ds #2}}
+\newcommand\laplacesym{\mathscr{L}}
+\newcommand\lap[1]{\laplacesym\left\{#1\right\}}
+\newcommand\ilap[1]{\laplacesym^{-1}\left\{#1\right\}}
+
+\begin{document}
+
+\begin{center}
+    \noindent\textbf{\LARGE MA 311 - Formula Sheet}\\
+\end{center}
+
+\noindent\textbf{\large Derivatives}
+
+\begin{minipage}[t]{.49\linewidth}
+\begin{enumerate}\addtocounter{enumi}{0}
+\item[]	\deriv{a^x}{\ln a\cdot a^x}
+\item[]	\deriv{\sin x}{\cos x}
+\item[]	\deriv{\csc x}{-\csc x\cot x}
+\item[]	\deriv{\tan x}{\sec^2 x}
+\item[]	\deriv{\sin^{-1}x}{\frac{1}{\sqrt{1-x^2}}}
+\item[]	\deriv{\csc^{-1}x}{\frac{-1}{|x|\sqrt{x^2-1}}}
+\item[]	\deriv{\tan^{-1}x}{\frac{1}{1+x^2}}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.49\linewidth}
+\begin{enumerate}\addtocounter{enumi}{7}
+\item[]	\deriv{\log_a x}{\frac{1}{\ln a}\cdot \frac1x}
+\item[]	\deriv{\cos x}{-\sin x}
+\item[]	\deriv{\sec x}{\sec x\tan x}
+\item[]	\deriv{\cot x}{-\csc^2 x}
+\item[]	\deriv{\cos^{-1}x}{\frac{-1}{\sqrt{1-x^2}}}
+\item[]	\deriv{\sec^{-1}x}{\frac{1}{|x|\sqrt{x^2-1}}}
+\item[]	\deriv{\cot^{-1}x}{\frac{-1}{1+x^2}}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.33\linewidth}
+%\begin{enumerate}\addtocounter{enumi}{16}
+%\end{enumerate}
+\end{minipage}
+
+\vskip\baselineskip
+\noindent\textbf{\large Anti-derivatives}\\
+
+\noindent
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}
+\item[]	\myint{\cos x}{\sin x+C}
+\item[]	\myint{\tan x}{-\ln |\cos x|+C}
+\item[]	\myint{\csc x}{-\ln |\csc x+\cot x|+C}
+\item[]	\myint{\csc^2x}{-\cot x+C}
+\item[]	\myint{\csc x\cot x}{-\csc x+C}
+\item[]	\myint{\frac{1}{\sqrt{a^2-x^2}}}{\sin^{-1}\left(\frac xa\right)+C}
+\item[]	\myint{a^x}{\frac{1}{\ln a}\cdot a^x+C}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}[t]{.5\linewidth}
+\begin{enumerate}\addtocounter{enumi}{11}
+\item[]	\myint{\sin x}{-\cos x+C}
+\item[]	\myint{\cot x}{\ln |\sin x|+C}
+\item[]	\myint{\sec x}{\ln |\sec x+\tan x|+C}
+\item[]	\myint{\sec^2 x}{\tan x+C}
+\item[]	\myint{\sec x\tan x}{\sec x+C}
+\item[]	\myint{\frac{1}{x^2+a^2}}{\frac1a\tan^{-1}\left(\frac xa\right)+C}
+\item[]	\myint{\frac{1}{x\sqrt{x^2-a^2}}}{\frac1a\sec^{-1}\left(\frac{|x|}{a}\right)+C}
+\end{enumerate}
+\end{minipage}
+
+\vspace{0.6cm}
+
+{\em Note: More Anti-derivative formulas can be deduced from the reverse direction of the derivatives.}
+
+\clearpage
+
+\newpage
+
+\begin{center}
+	\noindent {\bf Table of Laplace Transforms (\(a\), \(b\) are constants)\\} \hspace{0.25cm}
+
+	{\setlength{\extrarowheight}{-0.3cm}
+	\begin{tabular}{|c|c|c|}
+        \hline
+        &&\\
+                & $f(t)$                                 
+                & $F(s) = \lap{ f(t) }$ \\
+        &&\\
+        \hline\hline
+        &&\\
+        L1.     & 1                                        
+                & $\ds \frac{1}{s},  \hspace{0.25cm}s>0$\\
+		&&\\
+        \hline
+		&&\\
+        L2.     & $e^{at}$                                
+                & $\ds \frac{1}{s-a},  \hspace{0.25cm}s>a$\\
+		&&\\
+        \hline
+		&&\\
+        L3.     & $t^n,\quad n = 1, 2, \ldots$        	
+                & $\ds \frac{n!}{s^{n+1}},  \hspace{0.25cm}s>0$\\
+		&&\\
+        \hline
+		&&\\
+        L4.	    & $\sin (bt)$                        	
+                & $\ds \frac{b}{s^2 + b^2},  \hspace{0.25cm}s>0$\\
+		&&\\
+        \hline
+		&&\\
+        L5.	    & $\cos(bt)$                        	
+                & $\ds \frac{s}{s^2 + b^2},  \hspace{0.25cm}s>0$\\
+		&&\\
+        \hline
+		&&\\
+        L6.	    & $\sinh (bt)$                        	
+                & $\ds \frac{b}{s^2 - b^2},  \hspace{0.25cm}s>0$\\
+		&&\\
+        \hline
+		&&\\
+        L7.	    & $\cosh(bt)$                        	
+                & $\ds \frac{s}{s^2 - b^2},  \hspace{0.25cm}s>0$\\
+		&&\\
+        \hline
+		&&\\
+        L8.	    & $t^n e^{at},\quad n = 1, 2, \ldots$	
+                & $\ds \frac{n!}{(s-a)^{n+1}},  \hspace{0.25cm}s>a$\\
+		&&\\
+        \hline
+		&&\\
+        L9.	    & $e^{at} \sin(bt)$                        
+                & $\ds \frac{b}{(s-a)^2 + b^2},  \hspace{0.25cm}s>a$\\
+		&&\\
+        \hline
+		&&\\
+        L10.	& $e^{at} \cos(bt)$                	
+                & $\ds \frac{s-a}{(s-a)^2 + b^2},  \hspace{0.25cm}s>a$\\
+		&&\\
+        \hline
+		&&\\
+        L11.	& $e^{at}f(t)$                        
+                & $F(s-a)$\\
+		&&\\
+        \hline
+		&&\\
+        L12.	& $f'(t)$                        	
+                & $sF(s) - f(0)$\\
+		&&\\
+        \hline
+		&&\\
+        L13.	& $f''(t)$                        	
+                & $s^2 F(s) - sf(0) - f'(0)$\\
+		&&\\
+        \hline
+		&&\\
+        L14.	& $f^{(n)}(t)$                        
+                & $s^n F(s) - s^{n-1}f(0) - s^{n-2}f'(0) - \cdots - f^{(n-1)}(0)$\\
+		&&\\
+        \hline
+		&&\\
+        L15.	& $t^n f(t)$                        
+                & $\ds (-1)^n\frac{d^n}{ds^n}\big( F(s) \big) = (-1)^nF^{(n)}(s)$\\
+		&&\\
+        \hline
+		&&\\
+        L16.	& $U(t-a)$                        	
+                & $\ds  \frac{e^{-as}}{s}$\\
+		&&\\
+        \hline
+		&&\\
+        L17.	& $\ds f(t) U(t-a)$                	
+                & $\ds e^{-as} \lap{ f(t+a) }$\\
+		&&\\
+        \hline
+		&&\\
+        L18.	& $\ds f(t-a)U(t-a)$                
+                & $\ds e^{-as}F(s)$\\
+		&&\\
+        \hline\hline
+	\end{tabular}}
+\end{center}
+
+%\vfill
+%
+%\noindent { \bf Properties of Laplace Transforms}
+%\begin{enumerate}
+%\item $\ds \lap{ \alpha f(t) + \beta g(t) } = \alpha F(s) + \beta G(s),$ where $\alpha$ and $\beta$ are constants\\
+%\item $\ds \lap{ e^{at}f(t) } = F(s-a)$\\
+%\item $\ds \lap{ f'(t) } = sF(s) - f(0)$\\
+%\item $\ds \lap{ f''(t) } = s^2 F(s) - sf(0) - f'(0)$\\
+%\item $\ds \lap{ f^{(n)}(t) } = s^n F(s) - s^{n-1}f(0) - s^{n-2}f'(0) - \cdots - f^{(n-1)}(0)$\\
+%\item $\ds \lap{ t^n f(t) } = (-1)^n\frac{d^n}{ds^n}\big( F(s) \big) = (-1)^nF^{(n)}(s)$
+%\end{enumerate}
+
+\end{document}

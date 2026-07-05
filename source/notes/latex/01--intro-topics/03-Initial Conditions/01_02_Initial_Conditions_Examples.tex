@@ -1,0 +1,78 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{01} \def\SEC{02} \def\SEM{S} \def\YEAR{2018} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\input{\PATHTOHEADERS/TestQuizPackageHeader.tex}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.8 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Initial Conditions \\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+\noindent 1. For each of the following differential equations (i) verify whether the one parameter family of solutions satisfies the differential equation, (ii) Find the specific solution that corresponds to the given initial condition. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[(a)]
+\item  $\D y' = 1 + y^2; \quad y(x)=\tan(x+c); \quad y(0)=0$ \\
+
+\newpage
+\thispagestyle{empty}
+
+\item  $\D y' = y^2; \quad y(x)=\frac{-1}{x+c}; \quad y(1)=1$ \\
+
+\newpage
+\thispagestyle{empty}
+
+\item  $\D y\frac{dy}{dx} = 3x; \quad 3x^2-y^2=c; \quad y(-2)=3$ \\
+
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\noindent 2. Consider the differential equation $\D y''+4y = 0$ and answer the following: 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}[(a)]
+\item  Determine if the two parameter family of solutions $\D y(x)=c_1\cos(2x)+c_2\sin(2x)$ satisfies the differential equation. \\
+
+\vfill
+
+\item  find the specific solution that corresponds to the initial conditions: $y(0)=1, y'(\pi/4)=5$ \\
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

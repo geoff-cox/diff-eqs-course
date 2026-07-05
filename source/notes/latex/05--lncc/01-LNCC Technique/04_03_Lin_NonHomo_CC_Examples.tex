@@ -1,0 +1,168 @@
+\documentclass[12pt]{amsart}
+
+\def\CHT{04} \def\SEC{03} \def\SEM{S} \def\YEAR{2018} \def\CLASS{MA311}
+
+\newcommand{\BACKROOT}{../../../..}
+\newcommand{\TEACHINGROOT}{\BACKROOT}
+%\newcommand{\TEACHINGROOT}{/Users/rhcocker/Dropbox/Teaching}
+\newcommand{\COURSEROOT}{\TEACHINGROOT/\SEM_\YEAR/\CLASS}
+\newcommand{\SECTIONROOT}{\COURSEROOT/Chapter_\CHT/Section_\CHT_\SEC}
+\newcommand{\PATHTOHEADERS}{\TEACHINGROOT/Headers}
+\newcommand{\PATHTOSLIDES}{\SECTIONROOT/Slides}
+\newcommand{\PATHTOFIGS}{\COURSEROOT/Figures}
+
+\input{\PATHTOHEADERS/TestQuizPackageHeader.tex}
+
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+
+\numberwithin{equation}{section}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textheight = 10.8 in
+\topmargin = -1.0in
+\textwidth = 7.6in
+%\oddsidemargin = -0.7in
+%\evensidemargin = -0.7in
+
+\newcounter{ProbNum}
+\setcounter{ProbNum}{0}
+\def\NEWPROB{\stepcounter{ProbNum} {\noindent \arabic{ProbNum}. \,\,}}
+
+\begin{document}
+
+\input{\PATHTOHEADERS/TestDefinitionHeader.tex}
+
+\pagestyle{empty}
+
+\noindent\rule{7.6in}{0.4pt}
+
+{\centering\sc 
+\noindent Differential Equations\\
+ Linear Non-Homogeneous Differential Equations with Constant Coefficients\\
+}
+\noindent\rule{7.6in}{0.4pt}
+
+\vspace{0.1cm}
+
+\NEWPROB Consider the IVP: \hspace{1.0cm}
+$\left\{
+\setlength{\extrarowheight}{0.2cm}
+\begin{array}{rl}
+	2z'' + z = 9e^{2t} & \quad (1)\\
+	z(0) = 3 & \\
+	z'(0) = -1 & \\
+\end{array}
+\right.$
+\begin{enumerate}[(a)]
+	\item  Give the homogeneous equation associated with eqn (1) and solve it. Call the solution $z_h$.
+	\vspace{3.6cm}
+	
+	$z_h(t)=$
+	
+	\vspace{0.2cm}
+	\item  Based on the RHS of eqn (1), give the form of non-homogeneous part of solution, $z_p$ (up to a constant, say $A$).
+	
+	$z_p(t)=$
+	
+	\vspace{0.2cm}
+	\item  Find the value of $A$ by plugging your guess, $z_p$, into eqn (1). Update $z_p$ with this value.
+	\vspace{5.0cm}
+	
+	$z_p(t)=$
+	
+	\vspace{0.2cm}
+	\item  Give the general solution 
+	
+	$z(t) = z_h(t) + z_p(t) = $
+	
+	\vspace{0.2cm}
+	
+	\item  Use the initial conditions to find the particular solution to this IVP.\\
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+	
+\newpage
+\thispagestyle{empty}
+
+
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB Based on the RHS of each of the following eqns, give the form of non-homogeneous part of solution along with the appropriate constants. {\em Do not solve for these constants.}
+\begin{enumerate}[(a)]
+	\item  $\D y'' - 3y' - 17y = x^2 + \cos x$\\
+	
+	\vspace{1.9cm}
+	
+	\item  $\D y'' + y' - 12y = 4e^{3t} + \cos(2t)$\\ %from HW13
+	
+	\vspace{1.9cm}
+	
+	\item  $\D y'' - 4y = 2t - e^{2t}\sin(3t)$\\
+	
+	\vspace{1.9cm}
+	
+	\item  $\D x^3 \sin(4x) + x^2 \sin(4x) + 7y'' - y' + 2y  = 0$\\
+	
+	\vspace{1.9cm}
+	
+	\item  $\D w'' - 4w' + 13w = e^{3x} + x^2e^{-x}$\\
+	
+	\vspace{1.9cm}
+	
+	\item  $\D z'' - 4z' + 5z = te^{2t} + 2e^{2t}\sin t$\\ %From HW13
+	
+	\vspace{1.9cm}
+	
+	\item  $\D y'' - 2y' + y  = x^2 + e^x$\\ %From HW13
+	
+	\vspace{1.9cm}
+		
+	\item  $\D 3z'' - 4z' - 12z = 17 + 2\cos(2\theta)$\\
+\end{enumerate}
+	
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB  Find the general solution for each differential equation.
+\begin{enumerate}[(a)]
+	\item  $\D 2x' + x = 3t^2$\\
+	
+\newpage
+\thispagestyle{empty}
+	
+	\item  $\D y'' - 4y' - 5y = t + 2e^{-t}$\\
+		
+\newpage
+\thispagestyle{empty}
+
+	\item  $\D z'' -650\sin(6x) +34z = 6z'$ \\
+	
+\newpage
+\thispagestyle{empty}
+	
+	\item  $\D y'' - 4y' + 4y = 8\cos x + 12 e^{2x}$ \\
+	
+\newpage
+\thispagestyle{empty}
+
+	\item  $\D y'' - y' - 6y = 2t + 3e^{3t} - e^{-2t}$ \\
+\end{enumerate}
+
+\newpage
+\thispagestyle{empty}
+
+\NEWPROB  Find the solution to this IVP using the methods discussed in this section and then by integrating factors. 
+	\[ 2x' + x = 3t^2, \hspace{0.5cm} x(0) = 15. \]
+
+%(a) Find the solution to this IVP using the methods discussed in this section and then by integrating factors.
+%
+%\vspace{10.2cm}
+%
+%(b) Find the solution to this IVP using integrating factors.
+
+\end{document}

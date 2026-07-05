@@ -1,0 +1,293 @@
+\documentclass[12pt]{article}
+
+\usepackage{filecontents}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	NOTE:
+%					You MUST use sepdflatex (or sepdflatexmk) when you typeset.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  If your document has only "teacher" and "student" versions, then you need not make the changes 
+%  described here.
+%
+%  However, if you want different and/or more versions, you'll need to consider changes to four areas:
+%
+% (1)  In the bulk of the document (immediately below), use the command \showto to indicate your 
+%       audience.
+%
+%  (2)  Edit the output file names.  See flags below.
+%
+%  (3)  Edit the names of the audiences.  See flags below.
+%
+%  (4)  Edit the "current" audience.  See flags below.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Below is the bulk of your document.  Use \showto to indicate audience
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{filecontents*}{template.tex}
+\pagestyle{empty}
+
+\showto{answers}{\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}
+\begin{center}
+{\sc 
+\noindent Differential Equations\\
+ DEs Practice Problems Set \DEPPSetNum\ 							%CHANGE NUMBER BELOW********
+}
+\end{center}
+\noindent\rule{7in}{0.4pt}
+
+\noindent Submit solutions for extra credit by 1600 \ECDueDate\\
+\noindent Corresponding Performance Quiz due by 1600 \PQDueDate\\
+
+%\vspace{1cm}
+
+%\noindent List topics and/or special instructions here if desired.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{DEPP}
+\item  Find the general solution to each equation.
+	\ben[label=(\alph*)]
+	\item  $\ds \frac{dy}{dx} - y = e^{3x}$\\
+	\item  $\ds \frac{dy}{dx} = \frac{y}{x} + 2x + 1$\\
+	\item  $\ds \frac{dr}{d\theta} + r\tan \theta = \sec \theta$\\
+	\item  $\ds y\frac{dx}{dy} + 2x = 5y^3$\\
+	\een
+
+\item    Solve each initial value problem.
+	\ben[label=(\alph*)]
+	\item  $\ds \frac{dy}{dx} - \frac{y}{x} = xe^x,$ \hspace{0.5cm} $y(1) = e-1$\\
+	\item  $\ds  e^t z' = 1 - 4e^t z,$ \hspace{0.5cm} $\ds z(0) = \frac{4}{3}$\\
+	\een
+	
+\item  For each differential equation below, identify the appropriate statement and EXPLAIN how you know.
+	(You do not need to solve any of the equations.)
+		\begin{itemize}
+		\item  Can be solved by separating variables, but not using an integrating factor.
+		\item  Can be solved using an integrating factor, but not by separating variables.
+		\item  Can be solved both by using integrating factor and by separating variables.
+		\item  Cannot be solved using either technique.
+		\end{itemize}
+	\begin{multicols}{2}
+	\ben[label=(\alph*)]
+	\item  $\ds x^2 \frac{dy}{dx} + \cos x = y$\\ 	%integrating factor only
+	\item  $\ds \frac{dx}{dt} + xt = e^x$\\			%neither
+	%\item  $\ds x\frac{dx}{dt} + t^2 x = \sin t$\\		%neither
+	\item  $\ds (t^2 + 1) \frac{dy}{dt} = yt - y$\\		%both
+	\item  $\ds \frac{dy}{dt} - y^2 t = t$\\			%separable only
+	\item  $\ds 3r = \frac{dr}{d\theta} - \theta^3$	%integrating factor only
+	\een
+	\end{multicols}
+\end{DEPP}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{DEPP}
+\item  \ben[label=(\alph*)]
+	\item  $\ds y = \frac{1}{2}e^{3x} + Ce^x$\\
+	\item  $\ds y = 2x^2 + x\ln |x| + Cx$\\
+	\item  $\ds r = \sin \theta + C\cos \theta$\\
+	\item  $\ds x = y^3 + \frac{C}{y^2}$\\
+	\een
+
+\item    \ben[label=(\alph*)]
+	\item  $\ds y = xe^x - x$\\
+	\item  $\ds  z = \frac{1}{3}e^{-t} + e^{-4t}$\\
+	\een
+	
+\item  \ben[label=(\alph*)]
+	\item  Can be solved using an integrating factor, but not by separating variables.
+	\item  Cannot be solved using either technique.
+	%\item  $\ds x\frac{dx}{dt} + t^2 x = \sin t$\\		%neither
+	\item  Can be solved both by using integrating factor and by separating variables.
+	\item  Can be solved by separating variables, but not using an integrating factor.
+	\item  Can be solved by separating variables, but not using an integrating factor.
+	\een
+\end{DEPP}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+%\mbox{}\newpage		%If needed
+
+\showto{answers}{\mbox{}\hfill ANSWERS\\}
+\noindent\rule{7in}{0.4pt}\\
+
+{\sc 
+\noindent Differential Equations 						\showto{student}{\hfill Name:  \line(1,0){200}}\\
+DEs Performance Quiz  \DEPPSetNum\					\showto{student}{\hfill HR:  \line(1,0){200}}\\
+Due by 1600 \PQDueDate \showto{student}{\hfill Circle your section: \hspace{0.73in}\mbox{}\\
+														\mbox{} \hfill MWF1000
+															\hspace{0.5cm}MWF1300 \hspace{0.5cm}TR0925
+															\hspace{0.5cm}TR1050}
+}\\
+\noindent\rule{7in}{0.4pt}
+
+\vspace{1cm}
+
+%\noindent List topics and/or special instructions here if desired.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{PQ}
+\item  Solve $\ds x\frac{dy}{dx} + 3y + 2x^2 = x^3 + 4x.$\\
+	\vfill
+\item  For the differential equation below, identify the appropriate statement and EXPLAIN how you know.
+		\begin{itemize}
+		\item  Can be solved by separating variables, but not using an integrating factor.
+		\item  Can be solved using an integrating factor, but not by separating variables.
+		\item  Can be solved both by using integrating factor and by separating variables.
+		\item  Cannot be solved using either technique.\\
+		\end{itemize}
+
+	$\ds 3t = e^t\frac{dy}{dt} + y\ln t$\\		%integrating factor only
+	\vspace{1in}
+	
+\end{PQ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\showto{answers}{
+\newpage
+\noindent  Answers:
+\begin{PQ}
+\item  $\ds y = \frac{1}{6}x^3 - \frac{2}{5}x^2 + x + \frac{C}{x^3}$\\
+
+\item  Can be solved using an integrating factor, but not by separating variables.
+\end{PQ}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{filecontents*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  This stuff tells LaTeX to produce multiple versions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifx\conditionmacro\undefined
+  \immediate\write18{%
+    pdflatex --jobname="answers_\jobname"			%EDIT (2) HERE AS NEEDED
+    "\gdef\string\conditionmacro{1}\string\input\space\jobname"  
+  }%
+  \immediate\write18{%
+    pdflatex --jobname="\jobname"						%EDIT (2) HERE AS NEEDED
+    "\gdef\string\conditionmacro{2}\string\input\space\jobname"
+ }%
+%  \immediate\write18{%
+%    pdflatex --jobname="solutions_\jobname"
+%    "\gdef\string\conditionmacro{3}\string\input\space\jobname"
+%  }%
+  \expandafter\stop
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here's the preamble.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[cm]{fullpage}
+\setlength{\topmargin}{-1in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\textwidth}{7in}
+\setlength{\textheight}{10in}
+
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{array, latexsym}
+\usepackage{times}
+\usepackage{time}
+\usepackage{subfigure}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage[T1]{fontenc}
+\newcommand{\To}{\Rightarrow}
+\newcommand{\del}{\nabla}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\A}{\mathcal{A}}
+\renewcommand{\O}{\mathcal{O}}
+% \renewcommand{\N}{\mathbb{N}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\p}{\partial}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\cont}{\Rightarrow \Leftarrow}
+\newcommand{\back}{\backslash}
+\newcommand{\norm}[1]{\|{#1}\|}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\ip}[1]{\langle{#1}\rangle}
+\newcommand{\m}[1]{{\mathbf{#1}}}
+\newcommand{\sts}{\m{S}^\textrm{T}\m{S}}
+\newcommand{\rank}{\textrm{rank}}
+\newcommand{\X}{\mathcal{X}}
+\newcommand{\Y}{\mathcal{Y}}
+\def\ds{\displaystyle}
+\def\d{\partial}
+\renewcommand{\arraystretch}{1.5}
+
+
+\newcommand\DEPPSetNum{3}									%CHANGE NUMBER HERE, TOO********
+\newcommand\ECDueDate{Friday, 3 February}
+\newcommand\PQDueDate{Wednesday, 8 February}
+
+\newlist{DEPP}{enumerate}{1}
+\setlist[DEPP]{label = \DEPPSetNum.\arabic*.}
+
+\newlist{PQ}{enumerate}{1}
+\setlist[PQ]{label = PQ\DEPPSetNum.\arabic*.}											
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here we tell LaTeX the names of the various audience categories it should be prepared for.
+%  Add more and/or edit as needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multiaudience}
+\SetNewAudience{answers}									%EDIT (3) HERE AS NEEDED
+\SetNewAudience{student}									%EDIT (3) HERE AS NEEDED
+%\SetNewAudience{solutions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Here's where we tell LaTeX what needs to go into each document.  First, we tell it which 
+%  audience it should use, and then we send it up to the "bulk" of the document above.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifnum\conditionmacro=1 
+	\def\CurrentAudience{answers}							%EDIT (4) HERE AS NEEDED
+	\include{template}
+\fi 
+
+\ifnum\conditionmacro=2 
+	\def\CurrentAudience{student}							%EDIT (4) HERE AS NEEDED
+	\include{template}
+\fi
+
+%\ifnum\conditionmacro=3 
+%	\def\CurrentAudience{solutions}						%EDIT (4) HERE AS NEEDED
+%	\include{template}
+%\fi
+
+\end{document}
