@@ -1,0 +1,71 @@
+# .github/workflows/claude.yml  (MA 311 course repo)
+#
+# Runs Claude Code whenever a comment, issue, PR body, or review contains
+# "@claude".  Mobile entry point: open the GitHub app, create an issue or
+# comment, mention @claude, and name a Task ID from
+# checklists/mobile-build-checklist.md.
+#
+# Prerequisites (one-time):
+#   1. Claude GitHub App installed: https://github.com/apps/claude
+#      (Contents, Issues, Pull requests - read & write)
+#   2. Repository secret ANTHROPIC_API_KEY
+#   3. Actions enabled (Settings -> Actions -> General)
+#
+# Action reference: https://code.claude.com/docs/en/github-actions
+# (GA `@v1` tag; the old `@beta` syntax is deprecated)
+
+name: Claude Code
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+  issues:
+    types: [opened, assigned]
+
+jobs:
+  claude:
+    if: |
+      (
+        (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
+        (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install PreTeXt CLI
+        run: pip install pretext
+
+      # The MA 311 coursebook is the instructor's own external repo.
+      # It is READ-ONLY reference material for GLN drafting (Task B) and
+      # is cloned outside the workspace so it can never be committed here.
+      - name: Fetch coursebook for reference (read-only)
+        run: git clone --depth 1 https://github.com/geoff-cox/debookrs.git /tmp/debookrs
+
+      - name: Run Claude Code
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Conventions + Task catalog: CLAUDE.md and
+          # checklists/mobile-build-checklist*.md in the repo checkout.
+          # The coursebook source is available at /tmp/debookrs.
+          claude_args: |
+            --max-turns 60
+          # For heavier drafting sessions (Task B worksheets), add e.g.:
+          #   --model claude-opus-4-8

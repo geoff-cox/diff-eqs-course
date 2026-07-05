@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
 	<xi:include href="./bookends/docinfo.ptx" />
 
 	<article xml:id="ma311-notes">
 		<title>MA 311</title>
-		<subtitle>Class Notes</subtitle>
+		<subtitle>Guided Lecture Notes</subtitle>
 
     <xi:include href="./bookends/frontmatter.ptx" />
-		<xi:include href="./syllabus.ptx"/>
-		<!-- <xi:include href="./schedule.ptx"/> -->
-	
+		<xi:include href="./notes/sec-TOPICNAME.ptx"/>
+
 	</article>
 </pretext>

@@ -1,0 +1,62 @@
+# Mobile Build Checklist — Master Index (MA 311)
+
+Task catalog for refreshing the MA 311 (Ordinary Differential Equations)
+course materials. Each task has an ID (`A1`, `B2`, ...). From the GitHub
+mobile app, open an issue or comment and write, for example:
+
+> @claude Do Task B2 for "Separation of Variables".
+
+Claude Code reads `CLAUDE.md` (conventions, verification gates, PR
+rules, coursebook access) automatically; the per-track files hold the
+step-by-step details. Track letters match the original build-task
+letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
+
+| Track | File | Scope |
+|---|---|---|
+| A | `mobile-build-checklist-A-syllabus.md` | Review & update the MA 311 syllabus |
+| B | `mobile-build-checklist-B-guided-notes.md` | Guided Lecture Notes worksheets |
+| C | `mobile-build-checklist-C-macros.md` | LaTeX macro management |
+| D | `mobile-build-checklist-D-deploy.md` | GitHub Pages deployment |
+| M | `mobile-build-checklist-M-maintenance.md` | Ad hoc: commentary keys, figures, QA, build fixes, visibility |
+
+**The coursebook (debookrs) is external and read-only** — see
+`CLAUDE.md` §2. No task in this repo modifies the textbook.
+
+## Recommended work order
+
+1. **D1** (verify the deploy-target config in `project.ptx` — the
+   workflow builds via `pretext build --deploys`) — first, so every
+   later PR is reviewable as rendered HTML on Pages.
+2. **A1 → A2** (syllabus) — A1 untangles the monolithic-vs-modular
+   syllabus duplication; A2 is the semester refresh.
+3. **B1**, then **B2 repeated per section** — the long tail; one
+   worksheet per PR, ordered by the course schedule.
+4. **C1/C2** — C1 is a standing rule inside every task; C2 is an
+   occasional audit.
+
+## Global rules (apply to every task)
+
+1. One task per branch, one branch per PR, PR template filled out,
+   `preview` label applied.
+2. All four verification gates from `CLAUDE.md` §5 pass, with literal
+   command output pasted in the PR.
+3. `source/homepage/syllabus/common/` and `source/notes/latex/` are
+   never modified; debookrs is never modified or vendored.
+4. Improvements are welcome and encouraged, but every one is itemized
+   in the PR's "Improvements" section; judgment calls get
+   `<!-- TODO(geoff): ... -->` markers plus an "Open questions" line.
+5. Any new LaTeX macro goes into `source/bookends/docinfo.ptx` in the
+   same PR (Task C1 rule).
+6. If inputs are missing or contradictory, ship what's safe and put the
+   blocker under "Open questions" — never guess on critical decisions
+   (grading changes, semester dates, deleting content).
+
+## Mobile request recipes
+
+- `@claude Do Task D1.`
+- `@claude Do Task A1 and post the duplication report before changing anything.`
+- `@claude Do Task A2. New semester: <term>, meeting <days/times/room>, WebWork course <id>, Runestone course code <code>.`
+- `@claude Do Task B1 and attach the roadmap.`
+- `@claude Do Task B2 for "Slope Fields" (book: c6-qm/sec-slope-fields.ptx).`
+- `@claude Address my review comments on PR #7 and re-run all gates.`
+- `@claude Run Task C2 and report; only open a PR if fixes are needed.`
