@@ -19,9 +19,9 @@
       same source (notes.ptx) and differ only in their publication file:
         * worksheet <exercise> solutions: hidden for students, shown for
           instructors (exercise-worksheet solution="no|yes");
-        * instructor-only <commentary component="instructor"> blocks: gated by
-          the publication's <source><version include="..."/> (the "commentary"
-          stringparam that older PreTeXt used for this was removed in 2.43.1).
+        * paired component="stu" / component="key" elements: selected by the
+          publication's <source><version include="notes stu|key"/> (see
+          CLAUDE.md section 4 for the pairing conventions).
     -->
     <target
       name="notes-student"

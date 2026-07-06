@@ -16,7 +16,7 @@
   <!-- it defines. -->
   <brandlogo url="https://www.vmi.edu/" source="figures/title-icon-1-bk.png" />
 
-	<rename element="objectives">🎯 By the end of our discussion, you should be able to ... </rename>
+	<rename element="objectives">🎯 By the end of our discussion, you should be able to ...</rename>
   <rename element="aside">Note</rename>
 
   <programs language="octave"/>

@@ -2,17 +2,16 @@
 <!--
 	Publication file for the STUDENT copy of the Guided Lecture Notes.
 	Difference from the instructor copy: worksheet exercise solutions are
-	HIDDEN here (exercise-worksheet solution="no"). Instructor-only
-	<commentary component="instructor"> blocks are dropped here because
-	"instructor" is NOT listed in this file's <source><version include="notes"/>
-	(the component/version mechanism, since PreTeXt 2.43.1 removed the older
-	`commentary` stringparam that CLAUDE.md §4 describes).
+	HIDDEN here (exercise-worksheet solution="no"), and this file's
+	<source><version include="notes stu"/> keeps component="stu" elements
+	while dropping component="key" (instructor-only) elements.
+	See CLAUDE.md section 4 for the stu/key pairing conventions.
 -->
 <publication>
 
 	<source>
 		<directories external="notes/assets" generated="notes/generated-assets" />
-		<!-- "instructor" is NOT listed, so <commentary component="instructor"> is dropped. -->
+		<!-- "stu" kept, "key" dropped: student copy shows blanks, not answers. -->
 		<version include="notes stu" />
 	</source>
 
