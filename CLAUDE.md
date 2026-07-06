@@ -81,58 +81,25 @@ names — read them.
 
 ## 4. The guided-notes conventions (Task B core)
 
-**Model worksheet: `source/notes/ws-what-is-a-de.ptx`.** When in doubt,
-copy its patterns exactly.
+The worksheet-authoring conventions are **universal** across this repo
+and `geoff-cox/vector-calc-course`; they live in
+**`checklists/worksheet-conventions.md`**, which is kept byte-identical
+in both repos. Follow that file exactly; never change it in one repo
+without PR'ing the same change to the other.
 
-The student/instructor split uses the component/version mechanism:
-elements marked `component="stu"` appear only in the student build,
-`component="key"` only in the instructor build, selected by
-`<source><version include="notes stu"/>` (student) vs
-`<version include="notes key"/>` (instructor) in the publication files.
-**Both versions must mirror each other in structure** — a `stu` element
-is always paired with a matching `key` element at the same spot.
+Course parameters for THIS repo (plug into the shared conventions):
 
-The mechanisms; NOT interchangeable:
-
-1. **Reading-check blanks** — paired paragraphs: `<p component="stu">`
-   containing `<fillin characters="N"/>` blanks, immediately followed by
-   `<p component="key">` with the same sentence and the answers written
-   as `<m>\underline{\textbf{answer}}</m>`.
-   **Gotcha:** text inside `<fillin>` is silently discarded; the answer
-   never lives inside `<fillin>`.
-2. **Worked problems** — paired exercises:
-   `<exercise component="stu" workspace="Xin">` (statement only) followed
-   by `<exercise component="key">` (same statement plus `<solution>`).
-   `workspace="Xin"` reserves X inches of write-in space on the printed
-   student copy — be conservative and add extra room for students who
-   write large. Short True/False checks may instead be a single
-   `<exercise>` with `<solution component="key">`.
-3. `<exercise-worksheet statement="yes" solution="no|yes"/>` in the
-   publication files additionally hides/reveals bare `<solution>`s.
-
-**Layout rules:**
-
-- `<page>` delimits vertical space for letter-size printing, NOT topics.
-  Never put a `<title>` on a `<page>`; write headings as
-  `<p><term>Heading text.</term></p>`.
-- No `<title>` on exercises unless it is important to the statement
-  (e.g. "True or False") — space is precious on these worksheets.
-- Display math uses `<md>`; `<me>`/`<men>` are deprecated.
-
-**Gotcha:** PreTeXt `<example>` renders its solution in BOTH builds —
-anything whose answer must hide on the student copy uses `<exercise>`.
-Reserve `<example>` for read-along illustrations with NO hidden content.
-
-Quick selection table:
-
-| Situation                                 | Use                                          |
-|-------------------------------------------|----------------------------------------------|
-| One/two-word blank inside a sentence      | paired `<p component="stu|key">` + `<fillin>`|
-| Definition or theorem with a blank in it  | paired `<p component="stu|key">` + `<fillin>`|
-| Multi-step worked computation             | paired `<exercise component="stu|key">` + `workspace` |
-| "Your turn" practice problem              | paired `<exercise component="stu|key">` + `workspace` |
-| Quick True/False check                    | one `<exercise>` + `<solution component="key">` |
-| Read-along illustration, no hidden answer | `<example>` (no solution)                    |
+- **Model worksheet: `source/notes/ws-what-is-a-de.ptx`.** When in
+  doubt, copy its patterns exactly.
+- GLN track: **B**. Worksheets live in `source/notes/` and are
+  `<xi:include>`d by `source/notes.ptx`.
+- Targets (read `project.ptx`): `notes-student` / `notes-instructor`.
+- Publication files: `publication/notes-student-pub.ptx`
+  (`<version include="notes stu"/>`) and
+  `publication/notes-instructor-pub.ptx`
+  (`<version include="notes key"/>`).
+- The coursebook is EXTERNAL and read-only (§2, debookrs); worksheet
+  example equations must never be copied from it.
 
 ## 5. Verification gates (mandatory before every PR)
 
