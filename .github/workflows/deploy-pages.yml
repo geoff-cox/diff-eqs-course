@@ -69,7 +69,7 @@ jobs:
 
       - name: Stage site
         run: |
-          pretext deploy --stage-only
+          pretext deploy
           test -d output/stage || { echo "::error::pretext deploy produced no output/stage — check the deploy config in project.ptx"; exit 1; }
           # Stamp the build so previews are unambiguous when reviewing.
           echo "Built from ${GITHUB_REF_NAME} @ ${GITHUB_SHA} on $(date -u '+%Y-%m-%d %H:%M UTC')" > output/stage/build-info.txt
