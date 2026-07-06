@@ -13,7 +13,7 @@
 	<source>
 		<directories external="notes/assets" generated="notes/generated-assets" />
 		<!-- "instructor" IS listed, so <commentary component="instructor"> is kept. -->
-		<version include="notes instructor" />
+		<version include="notes key" />
 	</source>
 
 	<common>

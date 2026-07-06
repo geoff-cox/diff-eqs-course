@@ -13,7 +13,7 @@
 	<source>
 		<directories external="notes/assets" generated="notes/generated-assets" />
 		<!-- "instructor" is NOT listed, so <commentary component="instructor"> is dropped. -->
-		<version include="notes" />
+		<version include="notes stu" />
 	</source>
 
 	<common>

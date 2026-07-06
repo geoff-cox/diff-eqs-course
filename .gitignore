@@ -92,7 +92,7 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 
 # Don't track common virtual environment directories
-.venv/
+.venv
 
 # Don't include Dropbox settings and caches
 .dropbox
@@ -105,3 +105,5 @@ codechat_config.yaml
 # Don't track deprecated workflows
 .github/workflows/deploy.yml
 .github/workflows/test-build.yml
+
+syllabus/output

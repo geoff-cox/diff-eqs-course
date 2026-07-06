@@ -14,14 +14,14 @@
 	Guided-notes mechanisms (see CLAUDE.md §4):
 	  * <fillin characters="N"/>  -> an in-prose blank shown in BOTH builds.
 	    The answer NEVER lives inside the tag; it is revealed in a following
-	    <commentary> block. One <commentary> collects the answers for a group
+	    <remark> block. One <remark> collects the answers for a group
 	    of blanks, in order.
-	  * <commentary component="instructor">
+	  * <remark component="key">
 	                              -> instructor-only block. In PreTeXt 2.43.1
-	    (the pinned CLI) the old `commentary` stringparam is gone; visibility
+	    (the pinned CLI) the old `remark` stringparam is gone; visibility
 	    is now controlled by the component/version mechanism: the block is kept
-	    only when "instructor" appears in the publication file's
-	    <source><version include="..."/>. The instructor target's publication
+	    only when "key" appears in the publication file's
+	    <source><version include="..."/>. The key target's publication
 	    lists it; the student target's does not.
 	  * <exercise> + <solution>   -> multi-step guided computations whose
 	    solution hides on the student copy (exercise-worksheet solution="no")
@@ -30,16 +30,9 @@
 	    BOTH builds, so it is reserved for illustrations with nothing hidden.
 -->
 <worksheet xml:id="ws-intro-classification" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>What Is a Differential Equation? Naming Its Parts and Classifying It</title>
+	<title>What Is a Differential Equation?</title>
 
 	<objectives>
-		<introduction>
-			<p>
-				This worksheet is the in-class companion to the sections you have
-				already read on Runestone. By the end of our meeting(s) you should be
-				able to:
-			</p>
-		</introduction>
 		<ul>
 			<li><p><term>Identify</term> whether an equation is a differential equation, and name its dependent and independent variables.</p></li>
 			<li><p><term>Label</term> the terms, free term, and coefficients of a differential equation.</p></li>
@@ -51,10 +44,11 @@
 	</objectives>
 
 	<!-- ==================================================================== -->
-	<!-- PAGE 1 : What is a DE? Variables, terms, coefficients                 -->
+	<!-- PAGE 1 : What is a DE? Variables, terms, coefficients                -->
 	<!-- ==================================================================== -->
+
 	<page>
-		<title>What Is a Differential Equation?</title>
+		<p><term>What is a differential equation?</term></p>
 
 		<p>
 			In algebra you solved equations like <m>y - 3t = 5</m> for a
@@ -65,46 +59,74 @@
 			to find a function whose derivative is <m>5 + 3t</m>.
 		</p>
 
-		<!-- Reading check: one paragraph of blanks, then ONE commentary. -->
+		<!-- Reading check: one paragraph of blanks, then ONE remark. -->
 		<p>
 			<term>Reading check.</term> Fill in each blank from your reading.
 			<ol>
 				<li>
-					<p>
+					<p component="stu">
 						A differential equation is an equation that involves one or more
 						<fillin characters="12"/> of an unknown function.
 					</p>
-				</li>
-				<li>
-					<p>
-						For an equation to be a differential equation it must contain both a
-						derivative and an <fillin characters="12"/> sign.
+					<p component="key">
+						A differential equation is an equation that involves one or more
+						<m>\underline{\textbf{derivatives}}</m> of an unknown function.
 					</p>
 				</li>
 				<li>
-					<p>
+					<p component="stu">
+						For an equation to be a differential equation it must contain both a
+						derivative and an <fillin characters="12"/> sign.
+					</p>
+					<p component="key">
+						For an equation to be a differential equation it must contain both a
+						derivative and an <m>\underline{\textbf{equals}}</m> sign.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
 						If the unknown function depends on a single variable the equation is
-						an <fillin characters="4"/> (ordinary differential equation); if it
-						depends on more than one variable it is a <fillin characters="4"/>
-						(partial differential equation). In this course, <q>differential
-						equation</q> always means <fillin characters="4"/>.
+						an <fillin characters="10"/> differential equation; if it
+						depends on more than one variable it is a <fillin characters="9"/>
+						differential equation. In this course, when we say <q>differential 
+						equation</q> we mean  <fillin characters="10"/> differential equation.
+					</p>
+					<p component="key">
+						If the unknown function depends on a single variable the equation is
+						an <m>\underline{\textbf{ordinary}}</m> differential equation; if it
+						depends on more than one variable it is a 
+						<m>\underline{\textbf{partial}}</m> differential equation. In this 
+						course, when we say <q>differential equation</q> we mean 
+						<m>\underline{\textbf{ordinary}}</m> differential equation.
 					</p>
 				</li>
 			</ol>
 		</p>
 
-		<commentary component="instructor">
-			<p>
-				<term>Answers, in order:</term> (1) derivatives; (2) equals; (3) ODE,
-				PDE, ODE. Watch for the two things every differential equation needs at
-				once&#8212;a derivative <em>and</em> an equals sign; an expression like
-				<m>y''' - 4y'</m> is not a differential equation
-				because it has no equals sign.
-			</p>
-		</commentary>
+		<exercise xml:id="ws-ic-ex-diff-eq">
+			<title>True or False</title>
+			<statement>
+				<p><m>y''' - 4y' - 3</m> is a differential equation.</p>
+			</statement>
+			<solution>
+				<p>
+					False. It has derivatives of the dependent variable <m>y</m>, but it 
+					has no equals sign.
+				</p>
+			</solution>
+		</exercise>
 
-		<exercise xml:id="ws-ic-ex-antideriv">
-			<title>Your turn: back to calculus</title>
+		<exercise xml:id="ws-ic-ex-antideriv" component="stu" workspace="1.1in">
+			<statement>
+				<p>
+					Solve the differential equation <m>y' = 5 + 3t</m> by finding a
+					function <m>y</m> whose derivative is <m>5 + 3t</m>. Why is there more
+					than one answer?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ic-ex-antideriv" component="key">
 			<statement>
 				<p>
 					Solve the differential equation <m>y' = 5 + 3t</m> by finding a
@@ -124,19 +146,35 @@
 				</p>
 			</solution>
 		</exercise>
+	</page>
 
-		<exercise xml:id="ws-ic-ex-variables">
-			<title>Dependent vs. independent variables</title>
+	<page>
+		<exercise xml:id="ws-ic-ex-variables" component="stu" workspace="2.0in">
 			<statement>
 				<p>
 					For each differential equation, name the dependent variable (the
 					unknown function we solve for) and the independent variable (the one it
 					is differentiated with respect to):
-					<me>
+					<md>
 						\frac{dW}{dz} + \frac{W}{z} = 9z^2, \qquad
 						g'' + s^3 g = 0, \qquad
 						R''' = 6R.
-					</me>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ic-ex-variables" component="key">
+			<statement>
+				<p>
+					For each differential equation, name the dependent variable (the
+					unknown function we solve for) and the independent variable (the one it
+					is differentiated with respect to):
+					<md>
+						\frac{dW}{dz} + \frac{W}{z} = 9z^2, \qquad
+						g'' + s^3 g = 0, \qquad
+						R''' = 6R.
+					</md>
 				</p>
 			</statement>
 			<solution>
@@ -157,47 +195,81 @@
 			classify equations we need names for their pieces. Fill in the blanks.
 			<ol>
 				<li>
-					<p>
+					<p component="stu">
 						A <term>term</term> is any piece of a differential equation separated
 						from the others by <fillin characters="18"/> signs.
 					</p>
+					<p component="key">
+						A <term>term</term> is any piece of a differential equation separated
+						from the others by <m>\underline{\textbf{plus or minus}}</m> signs.
+					</p>
 				</li>
 				<li>
-					<p>
+					<p component="stu">
 						A <term>free term</term> is a term that does <em>not</em> involve the
-						<fillin characters="10"/> variable or its derivatives. Every equation
-						has one, even a hidden <m><fillin characters="2"/></m>: for example
+						<fillin characters="11"/> variable or its derivatives. Every equation
+						has one, even a hidden <fillin characters="11"/>: for example
+						<m>w' = 4w</m> is really <m>w' - 4w = 0</m>.
+					</p>
+					<p component="key">
+						A <term>free term</term> is a term that does <em>not</em> involve the
+						<m>\underline{\textbf{dependent}}</m> variable or its derivatives. Every 
+						equation has one, even a hidden <m>\underline{\textbf{free term}}</m>: for example
 						<m>w' = 4w</m> is really <m>w' - 4w = 0</m>.
 					</p>
 				</li>
 				<li>
-					<p>
+					<p component="stu">
 						A <term>coefficient</term> is a constant or a function of the
-						<fillin characters="12"/> variable that multiplies the dependent
+						<fillin characters="13"/> variable that multiplies the dependent
+						variable or one of its derivatives.
+					</p>
+					<p component="key">
+						A <term>coefficient</term> is a constant or a function of the
+						<m>\underline{\textbf{independent}}</m> variable that multiplies the dependent
 						variable or one of its derivatives.
 					</p>
 				</li>
 			</ol>
 		</p>
 
-		<commentary component="instructor">
-			<p>
-				<term>Answers, in order:</term> (1) plus or minus (addition or
-				subtraction); (2) dependent, and the hidden free term is <m>0</m>;
-				(3) independent. A useful mantra: a free term is <em>free of the
-				dependent variable</em>, and a coefficient may never contain the
-				dependent variable.
-			</p>
-		</commentary>
+		<exercise xml:id="ws-tf-ex-coeffs">
+			<title>True or False</title>
+			<statement>
+				<p>A coefficient may never contain the dependent variable.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True. A coefficient may be a constant or a function of the independent
+					variable, but it may not contain the dependent variable or any of its
+					derivatives.
+				</p>
+			</solution>
+		</exercise>
 
-		<exercise xml:id="ws-ic-ex-terms-coeffs">
+		<exercise component="stu" workspace="2.5in">
 			<title>Terms, free term, and coefficients</title>
 			<statement>
 				<p>
 					The dependent variable below is <m>u</m>:
-					<me>
+					<md>
 						\frac{5}{t}\,u^{(4)} + 2.7\,u'' + t^3 u' + u = \tfrac14 e^{2t}.
-					</me>
+					</md>
+					(a) List the five terms. (b) Which is the free term? (c) Give the
+					coefficient of <m>u^{(4)}</m>, of <m>u''</m>, of <m>u'</m>, and of
+					<m>u</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise component="key">
+			<title>Terms, free term, and coefficients</title>
+			<statement>
+				<p>
+					The dependent variable below is <m>u</m>:
+					<md>
+						\frac{5}{t}\,u^{(4)} + 2.7\,u'' + t^3 u' + u = \tfrac14 e^{2t}.
+					</md>
 					(a) List the five terms. (b) Which is the free term? (c) Give the
 					coefficient of <m>u^{(4)}</m>, of <m>u''</m>, of <m>u'</m>, and of
 					<m>u</m>.
@@ -228,7 +300,8 @@
 	<!-- PAGE 2 : Classification (order and linearity)                         -->
 	<!-- ==================================================================== -->
 	<page>
-		<title>Classifying a Differential Equation: Order and Linearity</title>
+
+		<p><term>Classifying a Differential Equation: Order and Linearity</term></p>
 
 		<p>
 			Once we can name the parts of an equation, two labels let us predict which
@@ -265,24 +338,24 @@
 			</ol>
 		</p>
 
-		<commentary component="instructor">
+		<remark component="key">
 			<p>
 				<term>Answers, in order:</term> (1) highest; (2) independent, does not;
 				(3) every, one (a single). The headline for linearity: one nonlinear
 				term is enough to make the entire equation nonlinear&#8212;linearity is
 				an all-or-nothing property of the equation.
 			</p>
-		</commentary>
+		</remark>
 
 		<exercise xml:id="ws-ic-ex-order">
 			<title>Reading off the order</title>
 			<statement>
 				<p>
 					Give the order of each equation:
-					<me>
+					<md>
 						\frac{d^3 B}{ds^3} + \frac{dB}{ds} + B = 42, \qquad
 						v^8 + \cos\!\big(v^{(6)}\big) = 0.
-					</me>
+					</md>
 				</p>
 			</statement>
 			<solution>
@@ -306,10 +379,10 @@
 				<p>
 					Take <m>y</m> as the dependent variable and <m>t</m> as the
 					independent variable. Label each term of
-					<me>
+					<md>
 						y'\,\frac{d^3 y}{dt^3} + 5t^4\,\frac{dy}{dt}
 						+ \cos(y) + (y'')^2 = \sqrt{t}
-					</me>
+					</md>
 					as linear or nonlinear, and say which rule it breaks.
 				</p>
 			</statement>
@@ -332,10 +405,10 @@
 				<p>
 					Decide whether each equation is linear or nonlinear, and justify with
 					one sentence:
-					<me>
+					<md>
 						w^{(4)} + \frac{w'}{t^3} + 9w = \tan t, \qquad
 						Q^{(5)} + \frac{k\,Q''}{Q'} = (k + 2)^3.
-					</me>
+					</md>
 				</p>
 			</statement>
 			<solution>
