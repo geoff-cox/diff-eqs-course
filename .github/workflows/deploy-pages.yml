@@ -69,7 +69,7 @@ jobs:
 
       - name: Stage site
         run: |
-          pretext deploy
+          pretext deploy --stage-only
           # `pretext deploy` stages into the directory named by the `stage`
           # attribute on <project> in project.ptx (here: pretext-output/deployed),
           # NOT the PreTeXt default output/stage. Keep this path in sync with it.
