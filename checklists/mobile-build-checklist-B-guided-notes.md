@@ -14,9 +14,9 @@
    conceptual warm-ups, common-misconception checks — itemized as
    Improvements.
 
-Guided-notes mechanisms: `CLAUDE.md` §4 (paired `component="stu"` /
-`component="key"` elements — fillin paragraphs, exercises with
-`workspace` — never `<example>` for hidden answers). Model worksheet:
+Worksheet-authoring conventions: **`checklists/worksheet-conventions.md`**
+(shared byte-identical with `vector-calc-course` — see `CLAUDE.md` §4
+for this repo's parameters). Model worksheet:
 `source/notes/ws-what-is-a-de.ptx`.
 
 ## Coursebook chapter map (debookrs, `source/`)
@@ -79,48 +79,29 @@ Invocation names the row, e.g.:
 
 1. Read the old deck (if any), the mapped book section(s) in
    `/tmp/debookrs`, and the model worksheet
-   (`source/notes/ws-what-is-a-de.ptx`). Translate the Beamer
-   reveal pattern:
-   - short revealed phrase → paired `<p component="stu">` with
-     `<fillin characters="N"/>` + `<p component="key">` with the answers
-     as `\underline{\textbf{...}}` math,
-   - revealed multi-line computation → paired
-     `<exercise component="stu" workspace="Xin">` (statement only) +
-     `<exercise component="key">` (statement + `<solution>`),
-   - static exposition → ordinary prose, tightened.
-2. Track the book, don't transcribe it: the worksheet is the in-class
-   companion to a section students have already read on Runestone.
-   Lead with a quick reading-check (1–2 fillins), then the section's
-   core computation(s) as guided exercises, then one extension the
-   book doesn't work out. Keep notation identical to the book's, but
-   never reuse the book's example equations — concepts can mirror the
-   book, the examples cannot.
-3. Structure: `<objectives>` (3–6 outcome verbs); `<page>`s delimiting
-   vertical space for letter-size printing (NOT topics — headings are
-   `<p><term>...</term></p>`, never page or exercise titles unless
-   essential); size `workspace` conservatively for students who write
-   large; display math via `<md>` (`<me>`/`<men>` are deprecated); a
-   closing "Looking ahead" paragraph to the next section.
-4. Figures: placeholder `<figure>`s naming the source image (old deck
-   PNG or book asset path in a comment); list under "Open questions".
-   Never copy binary assets from debookrs into this repo.
-5. Improvements expected, not optional: at minimum consider one modern
-   application and one misconception check per worksheet; itemize all.
-6. Wire the worksheet in via `<xi:include>`; flip its roadmap row to
-   `in-review`; new macros → `source/bookends/docinfo.ptx` same PR.
-7. If the deck and the book disagree mathematically, the book wins;
+   (`source/notes/ws-what-is-a-de.ptx`).
+2. Author per the shared conventions —
+   **`checklists/worksheet-conventions.md`** — which govern the
+   mechanisms (stu/key pairs, `workspace`), layout, structure,
+   Beamer-deck translation, sourcing rules (including "never reuse the
+   book's example equations"), figures, improvements, and macros.
+   Course-specific notes for this repo:
+   - the worksheet is the in-class companion to a section students have
+     already read on Runestone;
+   - never copy binary assets from debookrs into this repo.
+3. Wire the worksheet in via `<xi:include>` in `source/notes.ptx`; flip
+   its roadmap row to `in-review`.
+4. If the deck and the book disagree mathematically, the book wins;
    note the discrepancy. If the *book* looks wrong, do not "fix" it in
    the worksheet silently — flag it under "Open questions" with
    chapter/section so the instructor can patch debookrs.
 
-**Verification:** all four gates in `CLAUDE.md` §5 — the visibility
-split is the heart of this track. Sentinel from a `<solution>` or
-`component="key"` phrase unique to this worksheet; paste both grep
-counts (student = 0, instructor >= 1). Confirm blanks render on the
-Pages preview student copy, and that student and instructor copies
-mirror each other in structure.
+**Verification:** all four gates in `CLAUDE.md` §5, with the
+visibility-split procedure from `worksheet-conventions.md` §6 — it is
+the heart of this track. Also confirm blanks render on the Pages
+preview student copy.
 
-**Acceptance per worksheet:** builds in both notes targets; sentinel
-counts pass; objectives match content; Improvements and figure TODOs
-itemized; roadmap updated. **One worksheet per PR** — propose a split
-in the PR if a topic needs two meetings.
+**Acceptance per worksheet:** `worksheet-conventions.md` §7 (builds in
+both notes targets; sentinel counts pass; objectives match content;
+Improvements and figure TODOs itemized; roadmap updated; one worksheet
+per PR).
