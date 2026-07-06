@@ -14,5 +14,30 @@
       output-dir="homepage"
       deploy-dir="homepage">
     </target>
+    <!--
+      Student vs. instructor Guided Lecture Notes. The two targets share the
+      same source (notes.ptx) and differ only in their publication file:
+        * worksheet <exercise> solutions: hidden for students, shown for
+          instructors (exercise-worksheet solution="no|yes");
+        * paired component="stu" / component="key" elements: selected by the
+          publication's <source><version include="notes stu|key"/> (see
+          CLAUDE.md section 4 for the pairing conventions).
+    -->
+    <target
+      name="notes-student"
+      format="html"
+      source="notes.ptx"
+      publication="notes-student-pub.ptx"
+      output-dir="notes-student"
+      deploy-dir="notes/student">
+    </target>
+    <target
+      name="notes-instructor"
+      format="html"
+      source="notes.ptx"
+      publication="notes-instructor-pub.ptx"
+      output-dir="notes-instructor"
+      deploy-dir="notes/instructor">
+    </target>
   </targets>
 </project>

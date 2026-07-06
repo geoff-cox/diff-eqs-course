@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Publication file for the INSTRUCTOR copy of the Guided Lecture Notes.
+	Difference from the student copy: worksheet exercise solutions are
+	SHOWN here (exercise-worksheet solution="yes"), and this file's
+	<source><version include="notes key"/> keeps component="key"
+	(instructor-only) elements while dropping component="stu" elements.
+	See CLAUDE.md section 4 for the stu/key pairing conventions.
+-->
+<publication>
+
+	<source>
+		<directories external="notes/assets" generated="notes/generated-assets" />
+		<!-- "key" kept, "stu" dropped: instructor copy shows answers, not blanks. -->
+		<version include="notes key" />
+	</source>
+
+	<common>
+		<chunking level="1" />
+		<tableofcontents level="2" />
+		<!-- Worksheet solutions are revealed on the instructor copy. -->
+		<exercise-inline statement="yes" hint="yes" answer="yes" solution="yes" />
+		<exercise-divisional statement="yes" hint="yes" answer="yes" solution="yes" />
+		<exercise-worksheet statement="yes" hint="yes" answer="yes" solution="yes" />
+		<exercise-reading statement="yes" hint="yes" answer="yes" solution="yes" />
+		<!-- Style of fill-in-the-blanks -->
+		<fillin textstyle="underline" mathstyle="shade" />
+	</common>
+
+	<numbering>
+		<divisions chapter-start="1" level="2" />
+		<blocks level="1" />
+		<projects level="1" />
+		<equations level="1" />
+		<footnotes level="1" />
+	</numbering>
+
+	<html>
+		<platform host="web"/>
+		<search variant="default" />
+		<toc focused="yes" preexpanded-levels="4" />
+		<navigation logic="tree" upbutton="yes" />
+		<calculator model="none" activecode="none" />
+	</html>
+
+</publication>
