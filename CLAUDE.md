@@ -81,42 +81,58 @@ names — read them.
 
 ## 4. The guided-notes conventions (Task B core)
 
-Three mechanisms; NOT interchangeable:
+**Model worksheet: `source/notes/ws-what-is-a-de.ptx`.** When in doubt,
+copy its patterns exactly.
 
-1. `<fillin characters="N"/>` — an in-prose blank in BOTH builds.
-   **Gotcha:** text inside the tag is silently discarded; the answer
+The student/instructor split uses the component/version mechanism:
+elements marked `component="stu"` appear only in the student build,
+`component="key"` only in the instructor build, selected by
+`<source><version include="notes stu"/>` (student) vs
+`<version include="notes key"/>` (instructor) in the publication files.
+**Both versions must mirror each other in structure** — a `stu` element
+is always paired with a matching `key` element at the same spot.
+
+The mechanisms; NOT interchangeable:
+
+1. **Reading-check blanks** — paired paragraphs: `<p component="stu">`
+   containing `<fillin characters="N"/>` blanks, immediately followed by
+   `<p component="key">` with the same sentence and the answers written
+   as `<m>\underline{\textbf{answer}}</m>`.
+   **Gotcha:** text inside `<fillin>` is silently discarded; the answer
    never lives inside `<fillin>`.
-2. `<commentary>` — block-level, instructor-only; visibility from the
-   `commentary` stringparam set per-target in `project.ptx` (`"yes"` on
-   instructor targets only). Placed after the prose with the blanks,
-   never inline.
-3. `<exercise>` with `<statement>` + `<solution>` — multi-step worked
-   computations; visibility via
-   `<exercise-worksheet statement="yes" solution="no|yes"/>` in the
-   publication files.
+2. **Worked problems** — paired exercises:
+   `<exercise component="stu" workspace="Xin">` (statement only) followed
+   by `<exercise component="key">` (same statement plus `<solution>`).
+   `workspace="Xin"` reserves X inches of write-in space on the printed
+   student copy — be conservative and add extra room for students who
+   write large. Short True/False checks may instead be a single
+   `<exercise>` with `<solution component="key">`.
+3. `<exercise-worksheet statement="yes" solution="no|yes"/>` in the
+   publication files additionally hides/reveals bare `<solution>`s.
+
+**Layout rules:**
+
+- `<page>` delimits vertical space for letter-size printing, NOT topics.
+  Never put a `<title>` on a `<page>`; write headings as
+  `<p><term>Heading text.</term></p>`.
+- No `<title>` on exercises unless it is important to the statement
+  (e.g. "True or False") — space is precious on these worksheets.
+- Display math uses `<md>`; `<me>`/`<men>` are deprecated.
 
 **Gotcha:** PreTeXt `<example>` renders its solution in BOTH builds —
 anything whose answer must hide on the student copy uses `<exercise>`.
 Reserve `<example>` for read-along illustrations with NO hidden content.
 
-**Commentary pattern:** group the blanks for one idea into a single
-paragraph/list, then place ONE `<commentary>` block immediately after it
-listing the answers *in order*. Do not scatter one commentary per blank.
-
 Quick selection table:
 
-| Situation                                 | Use                         |
-|-------------------------------------------|-----------------------------|
-| One/two-word blank inside a sentence      | `<fillin>` + `<commentary>` |
-| Definition or theorem with a blank in it  | `<fillin>` + `<commentary>` |
-| Multi-step worked computation             | `<exercise>` + `<solution>` |
-| "Your turn" practice problem              | `<exercise>` + `<solution>` |
-| Read-along illustration, no hidden answer | `<example>` (no solution)   |
-
-If this repo lacks model worksheets, copy the pattern from the sibling
-course repo's `ws-function-notation.ptx` / `ws-vectors.ptx` (comment
-header explaining the mechanisms, `<objectives>`, `<page>` divisions,
-"Looking ahead" closer).
+| Situation                                 | Use                                          |
+|-------------------------------------------|----------------------------------------------|
+| One/two-word blank inside a sentence      | paired `<p component="stu|key">` + `<fillin>`|
+| Definition or theorem with a blank in it  | paired `<p component="stu|key">` + `<fillin>`|
+| Multi-step worked computation             | paired `<exercise component="stu|key">` + `workspace` |
+| "Your turn" practice problem              | paired `<exercise component="stu|key">` + `workspace` |
+| Quick True/False check                    | one `<exercise>` + `<solution component="key">` |
+| Read-along illustration, no hidden answer | `<example>` (no solution)                    |
 
 ## 5. Verification gates (mandatory before every PR)
 
@@ -127,7 +143,7 @@ header explaining the mechanisms, `<objectives>`, `<page>` divisions,
    `grep -v 'asset directories'`; fix or explain anything left.
 3. **Xref integrity** — zero unresolved cross-reference warnings.
 4. **Visibility split** (worksheets) — sentinel phrase from
-   solution/commentary prose:
+   `<solution>` or `component="key"` prose:
    student build grep count = 0, instructor build count >= 1.
 
 Paste literal command output into the PR's "Verification evidence"
@@ -160,6 +176,7 @@ Faithful conversion is the baseline; silent deviation is prohibited.
 - Modifying, vendoring, or committing any part of the debookrs
   coursebook into this repo.
 - Answers inside `<fillin>`; `<example>` where the answer must hide;
-  inline `<commentary>`.
+  a `component="stu"` element without its mirrored `component="key"`
+  partner (or vice versa); `<title>` on `<page>`; `<me>`/`<men>`.
 - Defining LaTeX macros anywhere except `source/bookends/docinfo.ptx`.
 - Merging your own PRs, force-pushing, or rewriting history on `main`.

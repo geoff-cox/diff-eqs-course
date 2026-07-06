@@ -10,25 +10,29 @@ the old Beamer decks in `source/notes/latex/`, tracking the coursebook
 > and confirming full topic coverage is the remaining part of **Task B1**. Rows
 > are added/refined as worksheets are drafted.
 
-## Notes build machinery (set up with the first worksheet)
+## Notes build machinery (set up with the first worksheets)
 
 - `source/notes.ptx` — container `<article>` that `<xi:include>`s each worksheet.
 - Two targets in `project.ptx`, sharing `notes.ptx`, differing only by
   publication file:
   - `notes-student` → `publication/notes-student-pub.ptx`
-    (`exercise-worksheet solution="no"`, `<version include="notes">`).
+    (`exercise-worksheet solution="no"`, `<version include="notes stu">`).
   - `notes-instructor` → `publication/notes-instructor-pub.ptx`
-    (`exercise-worksheet solution="yes"`, `<version include="notes instructor">`).
-- Instructor-only `<commentary component="instructor">` blocks are kept only
-  when `instructor` is in the target's `<source><version include="…">` list.
-  (PreTeXt 2.43.1 removed the older `commentary` stringparam that `CLAUDE.md`
-  §4 describes; the component/version mechanism is the current equivalent.)
+    (`exercise-worksheet solution="yes"`, `<version include="notes key">`).
+- Student/instructor content split uses `component="stu"` / `component="key"`
+  on mirrored elements (paired `<p>`s for reading-check blanks, paired
+  `<exercise>`s for worked problems); the publication file's
+  `<source><version include="…">` selects which survives. Student exercises
+  carry `workspace="Xin"` for write-in space; `<page>` delimits printed
+  letter-page vertical space, not topics; display math uses `<md>`.
+  See `CLAUDE.md` §4 and `source/notes/ws-what-is-a-de.ptx` for the model.
 
 ## Worksheet rows
 
 | Worksheet slug | Title | Old deck(s) | Book section(s) | Status |
 |---|---|---|---|---|
-| `ws-intro-classification` | What Is a Differential Equation? Naming Its Parts and Classifying It | `01 intro-topics` (What is a DE, ODE/PDE, order, linearity) | `c0-whats-a-de/sec-connection-to-alg-calc`, `sec-de-defn`, `sec-variables`, `sec-terms-coeffs`; `c1-classification/sec-order`, `sec-linear-terms`, `sec-linearity` | **in-review** |
+| `ws-what-is-a-de` | What Is a Differential Equation? | `01 intro-topics` (What is a DE, ODE/PDE) | `c0-whats-a-de/sec-connection-to-alg-calc`, `sec-de-defn`, `sec-variables`, `sec-terms-coeffs` | **in-review** |
+| `ws-classification` | Classifying Differential Equations | `01 intro-topics` (order, linearity) | `c1-classification/sec-order`, `sec-linear-terms`, `sec-linearity` | **in-review** |
 | `ws-solutions-ivp` | Verifying Solutions & Initial Conditions | `01 intro-topics` (Verifying DEs, Initial Conditions) | `c2-solns/*` | todo |
 | `ws-direct-integration` | Solving by Direct Integration | — (new) | `c3-di/*` | todo |
 | `ws-separation-of-variables` | Separation of Variables | `02 sov` | `c4-sov/*` | todo |

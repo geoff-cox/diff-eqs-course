@@ -7,7 +7,8 @@
 		<subtitle>Guided Lecture Notes</subtitle>
 
     <xi:include href="./bookends/frontmatter.ptx" />
-		<xi:include href="./notes/ws-intro-classification.ptx"/>
+		<xi:include href="./notes/ws-what-is-a-de.ptx"/>
+		<xi:include href="./notes/ws-classification.ptx"/>
 
 	</article>
 </pretext>

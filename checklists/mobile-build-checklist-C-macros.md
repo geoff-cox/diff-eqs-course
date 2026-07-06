@@ -26,7 +26,7 @@ Whenever a document authored in Tracks A–C uses a LaTeX macro:
 3. Old Beamer decks use header macros like `\D` (displaystyle), `\B`
    (reveal box), `\ON`, `\OBUL`. Do **not** port presentation-mechanic
    macros (`\B`, `\ON`, `\OBUL`) — they are the reveal system, replaced
-   by fillin/commentary. Port genuinely semantic ones (e.g., a Laplace
+   by the stu/key component pairs. Port genuinely semantic ones (e.g., a Laplace
    transform shorthand like `\lap{...}`) only if used in 3+ places,
    preferring the book's name for it; otherwise inline the LaTeX.
 

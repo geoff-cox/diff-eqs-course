@@ -14,8 +14,10 @@
    conceptual warm-ups, common-misconception checks — itemized as
    Improvements.
 
-Guided-notes mechanisms: `CLAUDE.md` §4 (fillin / commentary /
-exercise+solution; never `<example>` for hidden answers).
+Guided-notes mechanisms: `CLAUDE.md` §4 (paired `component="stu"` /
+`component="key"` elements — fillin paragraphs, exercises with
+`workspace` — never `<example>` for hidden answers). Model worksheet:
+`source/notes/ws-what-is-a-de.ptx`.
 
 ## Coursebook chapter map (debookrs, `source/`)
 
@@ -58,11 +60,11 @@ maintained.
    `worksheet slug | title | old deck(s) | book section(s) | ODP topic | status`
    — with `status` starting at `todo`.
 4. Set up the notes machinery: read `project.ptx`; ensure student and
-   instructor notes targets exist (publication files +
-   `commentary` stringparam per `CLAUDE.md` §4 — model the setup on the
-   sibling course repo if this one lacks it), and a notes container
-   file that worksheets `<xi:include>` into. Build both targets empty
-   or with any existing worksheets.
+   instructor notes targets exist (publication files with
+   `<version include="notes stu"/>` vs `<version include="notes key"/>`
+   per `CLAUDE.md` §4), and a notes container file that worksheets
+   `<xi:include>` into. Build both targets empty or with any existing
+   worksheets.
 5. Update the roadmap's `status` column in every later B2 PR.
 
 **Acceptance:** roadmap covers every ODP topic; both notes targets
@@ -76,20 +78,29 @@ Invocation names the row, e.g.:
 `@claude Task B2 for "Slope Fields" (book: c6-qm/sec-slope-fields.ptx).`
 
 1. Read the old deck (if any), the mapped book section(s) in
-   `/tmp/debookrs`, and the model worksheets. Translate the Beamer
+   `/tmp/debookrs`, and the model worksheet
+   (`source/notes/ws-what-is-a-de.ptx`). Translate the Beamer
    reveal pattern:
-   - short revealed phrase → `<fillin characters="N"/>` + answer in a
-     following `<commentary>` block,
-   - revealed multi-line computation → `<exercise>` with `<solution>`,
+   - short revealed phrase → paired `<p component="stu">` with
+     `<fillin characters="N"/>` + `<p component="key">` with the answers
+     as `\underline{\textbf{...}}` math,
+   - revealed multi-line computation → paired
+     `<exercise component="stu" workspace="Xin">` (statement only) +
+     `<exercise component="key">` (statement + `<solution>`),
    - static exposition → ordinary prose, tightened.
 2. Track the book, don't transcribe it: the worksheet is the in-class
    companion to a section students have already read on Runestone.
    Lead with a quick reading-check (1–2 fillins), then the section's
    core computation(s) as guided exercises, then one extension the
-   book doesn't work out. Keep notation identical to the book's.
-3. Structure: `<objectives>` (3–6 outcome verbs), `<page>`s pacing one
-   50-minute meeting, a closing "Looking ahead" paragraph to the next
-   section.
+   book doesn't work out. Keep notation identical to the book's, but
+   never reuse the book's example equations — concepts can mirror the
+   book, the examples cannot.
+3. Structure: `<objectives>` (3–6 outcome verbs); `<page>`s delimiting
+   vertical space for letter-size printing (NOT topics — headings are
+   `<p><term>...</term></p>`, never page or exercise titles unless
+   essential); size `workspace` conservatively for students who write
+   large; display math via `<md>` (`<me>`/`<men>` are deprecated); a
+   closing "Looking ahead" paragraph to the next section.
 4. Figures: placeholder `<figure>`s naming the source image (old deck
    PNG or book asset path in a comment); list under "Open questions".
    Never copy binary assets from debookrs into this repo.
@@ -104,9 +115,10 @@ Invocation names the row, e.g.:
 
 **Verification:** all four gates in `CLAUDE.md` §5 — the visibility
 split is the heart of this track. Sentinel from a `<solution>` or
-`<commentary>` phrase unique to this worksheet; paste both grep counts
-(student = 0, instructor >= 1). Confirm blanks render on the Pages
-preview student copy.
+`component="key"` phrase unique to this worksheet; paste both grep
+counts (student = 0, instructor >= 1). Confirm blanks render on the
+Pages preview student copy, and that student and instructor copies
+mirror each other in structure.
 
 **Acceptance per worksheet:** builds in both notes targets; sentinel
 counts pass; objectives match content; Improvements and figure TODOs

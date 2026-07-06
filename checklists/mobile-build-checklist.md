@@ -17,7 +17,7 @@ letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
 | B | `mobile-build-checklist-B-guided-notes.md` | Guided Lecture Notes worksheets |
 | C | `mobile-build-checklist-C-macros.md` | LaTeX macro management |
 | D | `mobile-build-checklist-D-deploy.md` | GitHub Pages deployment |
-| M | `mobile-build-checklist-M-maintenance.md` | Ad hoc: commentary keys, figures, QA, build fixes, visibility |
+| M | `mobile-build-checklist-M-maintenance.md` | Ad hoc: answer keys, figures, QA, build fixes, visibility |
 
 **The coursebook (debookrs) is external and read-only** — see
 `CLAUDE.md` §2. No task in this repo modifies the textbook.

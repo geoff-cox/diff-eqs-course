@@ -7,13 +7,15 @@ them, don't assume; the coursebook is external and read-only).
 The verification gates (`CLAUDE.md` §5) and PR workflow (§6) apply to
 every task and are not repeated below.
 
-## Task M1 — Revise or extend commentary answer keys
+## Task M1 — Revise or extend answer keys
 
 **You provide:** which worksheet; which blanks/answers to add, fix, or reword.
 
-1. Locate the paragraph(s) and their trailing `<commentary>` block(s).
-2. Edit or split commentary so each cluster of blanks has exactly one
-   ordered answer list immediately after it (`CLAUDE.md` §4 pattern).
+1. Locate the paired `<p component="stu">` / `<p component="key">`
+   paragraphs for the blanks in question.
+2. Edit both halves of the pair together so they stay mirrored: the
+   `stu` copy carries the `<fillin>`s, the `key` copy the same sentence
+   with answers as `\underline{\textbf{...}}` math (`CLAUDE.md` §4).
 3. New `<fillin>`s get a sensible `@characters` width.
 
 **Accept:** sentinel grep passes (0 student / >=1 instructor); answer
@@ -65,8 +67,8 @@ behavior.
 1. Choose the correct mechanism (`CLAUDE.md` §4). The most common fix is
    converting an `<example>` that must hide its answer into an
    `<exercise>`.
-2. For global toggles, edit the publication files or the `commentary`
-   stringparam in `project.ptx` — never per-element hacks.
+2. For global toggles, edit the publication files (`<version include>`
+   lists, `<exercise-worksheet>` switches) — never per-element hacks.
 
 **Accept:** the targeted content shows/hides exactly as requested,
 proven by grep counts in both builds; nothing else changed visibility.

@@ -1,45 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	Guided Lecture Notes worksheet: "What Is a Differential Equation?" + "Classification"
+	Guided Lecture Notes worksheet: "What Is a Differential Equation?"
 	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
 		c0-whats-a-de/sec-connection-to-alg-calc.ptx
 		c0-whats-a-de/sec-de-defn.ptx
 		c0-whats-a-de/sec-variables.ptx
 		c0-whats-a-de/sec-terms-coeffs.ptx
-		c1-classification/sec-order.ptx
-		c1-classification/sec-linear-terms.ptx
-		c1-classification/sec-linearity.ptx
 	Old deck: source/notes/latex/ 01 intro-topics folder
+	Companion worksheet for c1 classification: ws-classification.ptx
 
-	Guided-notes mechanisms (see CLAUDE.md §4):
-	  * <fillin characters="N"/>  -> an in-prose blank shown in BOTH builds.
-	    The answer NEVER lives inside the tag; it is revealed in a following
-	    <remark> block. One <remark> collects the answers for a group
-	    of blanks, in order.
-	  * <remark component="key">
-	                              -> instructor-only block. In PreTeXt 2.43.1
-	    (the pinned CLI) the old `remark` stringparam is gone; visibility
-	    is now controlled by the component/version mechanism: the block is kept
-	    only when "key" appears in the publication file's
-	    <source><version include="..."/>. The key target's publication
-	    lists it; the student target's does not.
-	  * <exercise> + <solution>   -> multi-step guided computations whose
-	    solution hides on the student copy (exercise-worksheet solution="no")
-	    and shows on the instructor copy (solution="yes").
-	  * <example>                 -> read-along only; its solution shows in
-	    BOTH builds, so it is reserved for illustrations with nothing hidden.
+	Worksheet conventions (see CLAUDE.md section 4):
+	  * Student/instructor split via component="stu" / component="key",
+	    selected by <source><version include="notes stu|key"/> in the
+	    publication files. Both versions mirror each other in structure.
+	  * Reading-check blanks: paired <p component="stu"> (with <fillin/>)
+	    and <p component="key"> (answers as underlined bold math). The
+	    answer NEVER lives inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    (statement only, generous write-in space) and
+	    <exercise component="key"> (statement + solution).
+	  * <page> delimits vertical space for letter-size printing, NOT topics.
+	    Headings are <p><term>...</term></p>, never page titles.
+	  * Display math uses <md>; <me>/<men> are deprecated.
+	  * <example> renders its solution in BOTH builds; reserve it for
+	    read-along illustrations with nothing hidden.
 -->
-<worksheet xml:id="ws-intro-classification" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet xml:id="ws-what-is-a-de" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>What Is a Differential Equation?</title>
 
 	<objectives>
 		<ul>
 			<li><p><term>Identify</term> whether an equation is a differential equation, and name its dependent and independent variables.</p></li>
+			<li><p><term>Connect</term> solving a differential equation to solving equations in algebra and to antidifferentiation.</p></li>
 			<li><p><term>Label</term> the terms, free term, and coefficients of a differential equation.</p></li>
-			<li><p><term>Determine</term> the order of a differential equation from its highest derivative.</p></li>
-			<li><p><term>Classify</term> individual terms as linear or nonlinear.</p></li>
-			<li><p><term>Decide</term> whether a whole differential equation is linear or nonlinear.</p></li>
-			<li><p><term>Apply</term> these labels to differential equations that model real systems.</p></li>
 		</ul>
 	</objectives>
 
@@ -294,188 +287,15 @@
 				</p>
 			</solution>
 		</exercise>
-	</page>
-
-	<!-- ==================================================================== -->
-	<!-- PAGE 2 : Classification (order and linearity)                         -->
-	<!-- ==================================================================== -->
-	<page>
-
-		<p><term>Classifying a Differential Equation: Order and Linearity</term></p>
-
-		<p>
-			Once we can name the parts of an equation, two labels let us predict which
-			solution methods will work: its <term>order</term> and whether it is
-			<term>linear</term>. We build both up on this page.
-		</p>
-
-		<p>
-			<term>Reading check.</term> Fill in each blank.
-			<ol>
-				<li>
-					<p>
-						The <term>order</term> of a differential equation is the
-						<fillin characters="12"/> derivative of the dependent variable that
-						appears in it.
-					</p>
-				</li>
-				<li>
-					<p>
-						A single term is <term>linear</term> if it has one of the forms
-						<m>a(t)</m>, <m>a(t)\,y</m>, or <m>a(t)\,y^{(n)}</m>, where the
-						coefficient <m>a(t)</m> depends on the <fillin characters="12"/>
-						variable only. The coefficient <fillin characters="12"/> (does / does
-						not) affect linearity, no matter how complicated it looks.
-					</p>
-				</li>
-				<li>
-					<p>
-						A whole differential equation is linear when <fillin characters="8"/>
-						term is linear; it is nonlinear as soon as <fillin characters="12"/>
-						term is nonlinear.
-					</p>
-				</li>
-			</ol>
-		</p>
-
-		<remark component="key">
-			<p>
-				<term>Answers, in order:</term> (1) highest; (2) independent, does not;
-				(3) every, one (a single). The headline for linearity: one nonlinear
-				term is enough to make the entire equation nonlinear&#8212;linearity is
-				an all-or-nothing property of the equation.
-			</p>
-		</remark>
-
-		<exercise xml:id="ws-ic-ex-order">
-			<title>Reading off the order</title>
-			<statement>
-				<p>
-					Give the order of each equation:
-					<md>
-						\frac{d^3 B}{ds^3} + \frac{dB}{ds} + B = 42, \qquad
-						v^8 + \cos\!\big(v^{(6)}\big) = 0.
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
-					The first is <term>third-order</term>: the highest derivative of
-					<m>B</m> is <m>d^3B/ds^3</m>.
-				</p>
-				<p>
-					The second is <term>sixth-order</term>. Do not confuse the exponent in
-					<m>v^8</m> (that is <m>v</m> raised to the eighth power, not an eighth
-					derivative) with a derivative; only derivatives set the order. And the
-					<m>\cos(\cdot)</m> wrapper does not change the order&#8212;the highest
-					derivative inside is still <m>v^{(6)}</m>.
-				</p>
-			</solution>
-		</exercise>
-
-		<exercise xml:id="ws-ic-ex-linear-terms">
-			<title>Term-by-term: linear or nonlinear?</title>
-			<statement>
-				<p>
-					Take <m>y</m> as the dependent variable and <m>t</m> as the
-					independent variable. Label each term of
-					<md>
-						y'\,\frac{d^3 y}{dt^3} + 5t^4\,\frac{dy}{dt}
-						+ \cos(y) + (y'')^2 = \sqrt{t}
-					</md>
-					as linear or nonlinear, and say which rule it breaks.
-				</p>
-			</statement>
-			<solution>
-				<p>
-					<ul marker="square">
-						<li><p><m>y'\,\dfrac{d^3y}{dt^3}</m>: <em>nonlinear</em>&#8212;two derivatives of the dependent variable are multiplied together.</p></li>
-						<li><p><m>5t^4\,\dfrac{dy}{dt}</m>: <em>linear</em>&#8212;it has the form <m>a(t)\,y'</m>; the messy coefficient <m>5t^4</m> is irrelevant.</p></li>
-						<li><p><m>\cos(y)</m>: <em>nonlinear</em>&#8212;the dependent variable sits inside a nonlinear function.</p></li>
-						<li><p><m>(y'')^2</m>: <em>nonlinear</em>&#8212;a derivative is raised to a power other than one.</p></li>
-						<li><p><m>\sqrt{t}</m>: <em>linear</em> (in fact a free term)&#8212;no dependent variable appears.</p></li>
-					</ul>
-				</p>
-			</solution>
-		</exercise>
-
-		<exercise xml:id="ws-ic-ex-linearity">
-			<title>Is the whole equation linear?</title>
-			<statement>
-				<p>
-					Decide whether each equation is linear or nonlinear, and justify with
-					one sentence:
-					<md>
-						w^{(4)} + \frac{w'}{t^3} + 9w = \tan t, \qquad
-						Q^{(5)} + \frac{k\,Q''}{Q'} = (k + 2)^3.
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
-					The first is <term>linear</term>: every term involving <m>w</m> or its
-					derivatives has the form <m>a(t)\,w^{(n)}</m>&#8212;here <m>w^{(4)}</m>,
-					<m>\frac{1}{t^3}w'</m>, and <m>9w</m>&#8212;while <m>\tan t</m> is a free
-					term. Its coefficients being functions of <m>t</m> is fine.
-				</p>
-				<p>
-					The second is <term>nonlinear</term>. The term <m>\frac{k\,Q''}{Q'}</m>
-					has derivatives of the dependent variable <m>Q</m> in both the numerator
-					and the denominator, so <m>Q''</m> and <m>Q'</m> are effectively
-					multiplied/divided together. One offending term is enough: the whole
-					equation is nonlinear. (Here <m>k</m> is a parameter, not the dependent
-					variable, so <m>(k+2)^3</m> is just a free term.)
-				</p>
-			</solution>
-		</exercise>
-
-		<!-- Extension the book does not work out: classify modeling equations. -->
-		<exercise xml:id="ws-ic-ex-modeling">
-			<title>Looking past the book: classifying models</title>
-			<statement>
-				<p>
-					Classification is the first thing we do to any model we meet later in
-					the course. For each equation below, give its <em>order</em> and say
-					whether it is <em>linear</em> or <em>nonlinear</em>. Assume the letter
-					on the derivative is the dependent variable.
-					<ol>
-						<li><p>Skydiver with air resistance: <m>m\dfrac{dv}{dt} = mg - cv^2</m></p></li>
-						<li><p>IV drug infusion: <m>\dfrac{dA}{dt} = r - kA</m></p></li>
-						<li><p>RLC circuit charge: <m>L\dfrac{d^2 q}{dt^2} + R\dfrac{dq}{dt} + \dfrac{1}{C}q = E(t)</m></p></li>
-						<li><p>Self-sustaining oscillator (van der Pol): <m>\dfrac{d^2 x}{dt^2} - \mu\left(1 - x^2\right)\dfrac{dx}{dt} + x = 0</m></p></li>
-					</ol>
-				</p>
-			</statement>
-			<hint>
-				<p>
-					<m>m</m>, <m>g</m>, <m>c</m>, <m>r</m>, <m>k</m>, <m>L</m>, <m>R</m>,
-					<m>C</m>, and <m>\mu</m> are constants (parameters), and <m>E(t)</m> is
-					a known function of the independent variable&#8212;none of them is the
-					dependent variable. Look only at how the dependent variable and its
-					derivatives appear.
-				</p>
-			</hint>
-			<solution>
-				<p>
-					<ol>
-						<li><p><term>First-order, nonlinear.</term> Rewriting as <m>mv' + cv^2 = mg</m>, the <m>cv^2</m> term squares the dependent variable. (At low speeds drag is roughly proportional to <m>v</m> instead, which <em>linearizes</em> the model&#8212;a trade-off we will revisit.)</p></li>
-						<li><p><term>First-order, linear.</term> It is <m>A' + kA = r</m>: one <m>a\,A'</m> term, one <m>a\,A</m> term, and a constant free term.</p></li>
-						<li><p><term>Second-order, linear.</term> Each term is a constant times <m>q</m>, <m>q'</m>, or <m>q''</m>, and the forcing <m>E(t)</m> is a free term.</p></li>
-						<li><p><term>Second-order, nonlinear.</term> The damping coefficient <m>-\mu(1 - x^2)</m> contains the dependent variable, so the middle term multiplies <m>x^2</m> by <m>x'</m>&#8212;coefficients are only allowed to involve the independent variable.</p></li>
-					</ol>
-				</p>
-			</solution>
-		</exercise>
 
 		<conclusion>
 			<title>Looking ahead</title>
 			<p>
-				Order and linearity are the two labels we will read off <em>first</em>
-				for every new equation, because together they decide which technique to
-				reach for. Next we turn to what it even means to <em>solve</em> a
-				differential equation&#8212;how to check that a candidate function really
-				satisfies the equation, and how an initial condition pins down the one
-				solution we want out of the whole family.
+				Naming the parts of a differential equation is the first step toward
+				<em>classifying</em> it. In the next worksheet we attach two labels to
+				every equation&#8212;its <em>order</em> and whether it is
+				<em>linear</em>&#8212;because together they decide which solution
+				technique to reach for.
 			</p>
 		</conclusion>
 	</page>
