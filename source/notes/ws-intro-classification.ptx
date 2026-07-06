@@ -57,12 +57,12 @@
 		<title>What Is a Differential Equation?</title>
 
 		<p>
-			In algebra you solved equations like <m>y + 2t = 11</m> for a
+			In algebra you solved equations like <m>y - 3t = 5</m> for a
 			<em>number</em> <m>y</m>. A differential equation asks a harder question:
 			it hands you information about a function <em>and its derivatives</em> and
 			asks you to find the whole <em>function</em>. For instance, isolating the
-			derivative in <m>y' + 2t = 11</m> gives <m>y' = 11 - 2t</m>, and the job is
-			to find a function whose derivative is <m>11 - 2t</m>.
+			derivative in <m>y' - 3t = 5</m> gives <m>y' = 5 + 3t</m>, and the job is
+			to find a function whose derivative is <m>5 + 3t</m>.
 		</p>
 
 		<!-- Reading check: one paragraph of blanks, then ONE commentary. -->
@@ -98,7 +98,7 @@
 				<term>Answers, in order:</term> (1) derivatives; (2) equals; (3) ODE,
 				PDE, ODE. Watch for the two things every differential equation needs at
 				once&#8212;a derivative <em>and</em> an equals sign; an expression like
-				<m>\frac{d^2 y}{dx^2} + 2\frac{dy}{dx}</m> is not a differential equation
+				<m>y''' - 4y'</m> is not a differential equation
 				because it has no equals sign.
 			</p>
 		</commentary>
@@ -107,16 +107,16 @@
 			<title>Your turn: back to calculus</title>
 			<statement>
 				<p>
-					Solve the differential equation <m>y' = 11 - 2t</m> by finding a
-					function <m>y</m> whose derivative is <m>11 - 2t</m>. Why is there more
+					Solve the differential equation <m>y' = 5 + 3t</m> by finding a
+					function <m>y</m> whose derivative is <m>5 + 3t</m>. Why is there more
 					than one answer?
 				</p>
 			</statement>
 			<solution>
 				<p>
-					Antidifferentiate both sides: <m>y = 11t - t^2 + C</m>. Every choice of
+					Antidifferentiate both sides: <m>y = 5t + \frac{3}{2}t^2 + C</m>. Every choice of
 					the constant <m>C</m> gives a function whose derivative is
-					<m>11 - 2t</m>, so a first-order differential equation has a whole
+					<m>5 + 3t</m>, so a first-order differential equation has a whole
 					<em>family</em> of solutions rather than a single one. This is the
 					recurring theme of the course: solving a differential equation means
 					recovering a function, and the arbitrary constant is the fingerprint of
@@ -133,9 +133,9 @@
 					unknown function we solve for) and the independent variable (the one it
 					is differentiated with respect to):
 					<me>
-						\frac{dP}{ds} + \frac{P}{s^2} = 17s, \qquad
-						u'' + t^2 u = 0, \qquad
-						Q'' = 11Q.
+						\frac{dW}{dz} + \frac{W}{z} = 9z^2, \qquad
+						g'' + s^3 g = 0, \qquad
+						R''' = 6R.
 					</me>
 				</p>
 			</statement>
@@ -144,9 +144,9 @@
 					The derivative tells you which variable is which&#8212;the dependent
 					variable is the one being differentiated.
 					<ul marker="square">
-						<li><p><m>dP/ds</m> means <m>P</m> changes as <m>s</m> changes: dependent <m>P</m>, independent <m>s</m>.</p></li>
-						<li><p><m>u''</m> is a derivative of <m>u</m> with respect to <m>t</m>: dependent <m>u</m>, independent <m>t</m>.</p></li>
-						<li><p><m>Q''</m> shows <m>Q</m> is the dependent variable; no independent variable is named, so you may call it whatever you like (say <m>t</m>).</p></li>
+						<li><p><m>dW/dz</m> means <m>W</m> changes as <m>z</m> changes: dependent <m>W</m>, independent <m>z</m>.</p></li>
+						<li><p><m>g''</m> is a derivative of <m>g</m> with respect to <m>s</m>: dependent <m>g</m>, independent <m>s</m>.</p></li>
+						<li><p><m>R'''</m> shows <m>R</m> is the dependent variable; no independent variable is named, so you may call it whatever you like (say <m>t</m>).</p></li>
 					</ul>
 				</p>
 			</solution>
@@ -167,7 +167,7 @@
 						A <term>free term</term> is a term that does <em>not</em> involve the
 						<fillin characters="10"/> variable or its derivatives. Every equation
 						has one, even a hidden <m><fillin characters="2"/></m>: for example
-						<m>y' = -3y</m> is really <m>y' + 3y = 0</m>.
+						<m>w' = 4w</m> is really <m>w' - 4w = 0</m>.
 					</p>
 				</li>
 				<li>
@@ -194,30 +194,30 @@
 			<title>Terms, free term, and coefficients</title>
 			<statement>
 				<p>
-					The dependent variable below is <m>y</m>:
+					The dependent variable below is <m>u</m>:
 					<me>
-						\frac{3}{x}\,y^{(6)} + 5.3\,y'' + x^2 y' + y = \tfrac12\ln(x).
+						\frac{5}{t}\,u^{(4)} + 2.7\,u'' + t^3 u' + u = \tfrac14 e^{2t}.
 					</me>
 					(a) List the five terms. (b) Which is the free term? (c) Give the
-					coefficient of <m>y^{(6)}</m>, of <m>y''</m>, of <m>y'</m>, and of
-					<m>y</m>.
+					coefficient of <m>u^{(4)}</m>, of <m>u''</m>, of <m>u'</m>, and of
+					<m>u</m>.
 				</p>
 			</statement>
 			<solution>
 				<p>
-					(a) The terms are <m>\frac{3}{x}y^{(6)}</m>, <m>5.3\,y''</m>,
-					<m>x^2 y'</m>, <m>y</m>, and <m>\frac12\ln(x)</m>.
+					(a) The terms are <m>\frac{5}{t}u^{(4)}</m>, <m>2.7\,u''</m>,
+					<m>t^3 u'</m>, <m>u</m>, and <m>\frac14 e^{2t}</m>.
 				</p>
 				<p>
-					(b) The free term is <m>\frac12\ln(x)</m>: it contains the independent
-					variable <m>x</m> but none of <m>y</m> or its derivatives. (Notice a
+					(b) The free term is <m>\frac14 e^{2t}</m>: it contains the independent
+					variable <m>t</m> but none of <m>u</m> or its derivatives. (Notice a
 					free term need not be constant&#8212;this is why <q>constant term</q> is
 					a misleading name.)
 				</p>
 				<p>
 					(c) Reading off the multipliers of the dependent variable and its
-					derivatives: coefficient of <m>y^{(6)}</m> is <m>\frac{3}{x}</m>, of
-					<m>y''</m> is <m>5.3</m>, of <m>y'</m> is <m>x^2</m>, and of <m>y</m> is
+					derivatives: coefficient of <m>u^{(4)}</m> is <m>\frac{5}{t}</m>, of
+					<m>u''</m> is <m>2.7</m>, of <m>u'</m> is <m>t^3</m>, and of <m>u</m> is
 					<m>1</m>.
 				</p>
 			</solution>
@@ -280,22 +280,22 @@
 				<p>
 					Give the order of each equation:
 					<me>
-						\frac{d^2 A}{dt^2} + \frac{dA}{dt} + A = 17, \qquad
-						w^6 + \sin\!\big(w^{(5)}\big) = 0.
+						\frac{d^3 B}{ds^3} + \frac{dB}{ds} + B = 42, \qquad
+						v^8 + \cos\!\big(v^{(6)}\big) = 0.
 					</me>
 				</p>
 			</statement>
 			<solution>
 				<p>
-					The first is <term>second-order</term>: the highest derivative of
-					<m>A</m> is <m>d^2A/dt^2</m>.
+					The first is <term>third-order</term>: the highest derivative of
+					<m>B</m> is <m>d^3B/ds^3</m>.
 				</p>
 				<p>
-					The second is <term>fifth-order</term>. Do not confuse the exponent in
-					<m>w^6</m> (that is <m>w</m> raised to the sixth power, not a sixth
+					The second is <term>sixth-order</term>. Do not confuse the exponent in
+					<m>v^8</m> (that is <m>v</m> raised to the eighth power, not an eighth
 					derivative) with a derivative; only derivatives set the order. And the
-					<m>\sin(\cdot)</m> wrapper does not change the order&#8212;the highest
-					derivative inside is still <m>w^{(5)}</m>.
+					<m>\cos(\cdot)</m> wrapper does not change the order&#8212;the highest
+					derivative inside is still <m>v^{(6)}</m>.
 				</p>
 			</solution>
 		</exercise>
@@ -307,8 +307,8 @@
 					Take <m>y</m> as the dependent variable and <m>t</m> as the
 					independent variable. Label each term of
 					<me>
-						y\,\frac{d^5 y}{dt^5} + 2t^3\,\frac{d^2 y}{dt^2}
-						+ \ln\!\left(\frac{dy}{dt}\right) + y^2 = t^3
+						y'\,\frac{d^3 y}{dt^3} + 5t^4\,\frac{dy}{dt}
+						+ \cos(y) + (y'')^2 = \sqrt{t}
 					</me>
 					as linear or nonlinear, and say which rule it breaks.
 				</p>
@@ -316,11 +316,11 @@
 			<solution>
 				<p>
 					<ul marker="square">
-						<li><p><m>y\,\dfrac{d^5y}{dt^5}</m>: <em>nonlinear</em>&#8212;the dependent variable and one of its derivatives are multiplied together.</p></li>
-						<li><p><m>2t^3\,\dfrac{d^2y}{dt^2}</m>: <em>linear</em>&#8212;it has the form <m>a(t)\,y''</m>; the messy coefficient <m>2t^3</m> is irrelevant.</p></li>
-						<li><p><m>\ln\!\left(\dfrac{dy}{dt}\right)</m>: <em>nonlinear</em>&#8212;a derivative sits inside a nonlinear function.</p></li>
-						<li><p><m>y^2</m>: <em>nonlinear</em>&#8212;the dependent variable is raised to a power other than one.</p></li>
-						<li><p><m>t^3</m>: <em>linear</em> (in fact a free term)&#8212;no dependent variable appears.</p></li>
+						<li><p><m>y'\,\dfrac{d^3y}{dt^3}</m>: <em>nonlinear</em>&#8212;two derivatives of the dependent variable are multiplied together.</p></li>
+						<li><p><m>5t^4\,\dfrac{dy}{dt}</m>: <em>linear</em>&#8212;it has the form <m>a(t)\,y'</m>; the messy coefficient <m>5t^4</m> is irrelevant.</p></li>
+						<li><p><m>\cos(y)</m>: <em>nonlinear</em>&#8212;the dependent variable sits inside a nonlinear function.</p></li>
+						<li><p><m>(y'')^2</m>: <em>nonlinear</em>&#8212;a derivative is raised to a power other than one.</p></li>
+						<li><p><m>\sqrt{t}</m>: <em>linear</em> (in fact a free term)&#8212;no dependent variable appears.</p></li>
 					</ul>
 				</p>
 			</solution>
@@ -333,25 +333,25 @@
 					Decide whether each equation is linear or nonlinear, and justify with
 					one sentence:
 					<me>
-						y^{(5)} + \frac{y'}{x^2} + 5y = \ln x, \qquad
-						P^{(6)} + \frac{m P'}{P} = (m - 1)^2.
+						w^{(4)} + \frac{w'}{t^3} + 9w = \tan t, \qquad
+						Q^{(5)} + \frac{k\,Q''}{Q'} = (k + 2)^3.
 					</me>
 				</p>
 			</statement>
 			<solution>
 				<p>
-					The first is <term>linear</term>: every term involving <m>y</m> or its
-					derivatives has the form <m>a(x)\,y^{(n)}</m>&#8212;here <m>y^{(5)}</m>,
-					<m>\frac{1}{x^2}y'</m>, and <m>5y</m>&#8212;while <m>\ln x</m> is a free
-					term. Its coefficients being functions of <m>x</m> is fine.
+					The first is <term>linear</term>: every term involving <m>w</m> or its
+					derivatives has the form <m>a(t)\,w^{(n)}</m>&#8212;here <m>w^{(4)}</m>,
+					<m>\frac{1}{t^3}w'</m>, and <m>9w</m>&#8212;while <m>\tan t</m> is a free
+					term. Its coefficients being functions of <m>t</m> is fine.
 				</p>
 				<p>
-					The second is <term>nonlinear</term>. The term <m>\frac{mP'}{P}</m> has
-					the dependent variable <m>P</m> in both the numerator and the
-					denominator, so <m>P</m> and <m>P'</m> are effectively multiplied/divided
-					together. One offending term is enough: the whole equation is nonlinear.
-					(Here <m>m</m> is a parameter, not the dependent variable, so
-					<m>(m-1)^2</m> is just a free term.)
+					The second is <term>nonlinear</term>. The term <m>\frac{k\,Q''}{Q'}</m>
+					has derivatives of the dependent variable <m>Q</m> in both the numerator
+					and the denominator, so <m>Q''</m> and <m>Q'</m> are effectively
+					multiplied/divided together. One offending term is enough: the whole
+					equation is nonlinear. (Here <m>k</m> is a parameter, not the dependent
+					variable, so <m>(k+2)^3</m> is just a free term.)
 				</p>
 			</solution>
 		</exercise>
@@ -366,27 +366,29 @@
 					whether it is <em>linear</em> or <em>nonlinear</em>. Assume the letter
 					on the derivative is the dependent variable.
 					<ol>
-						<li><p>Population growth: <m>\dfrac{dP}{dt} = rP</m></p></li>
-						<li><p>Logistic growth: <m>\dfrac{dP}{dt} = rP\left(1 - \dfrac{P}{K}\right)</m></p></li>
-						<li><p>Damped spring&#8211;mass: <m>m\dfrac{d^2 y}{dt^2} + c\dfrac{dy}{dt} + ky = 0</m></p></li>
-						<li><p>Pendulum, large swings: <m>\dfrac{d^2\theta}{dt^2} + \dfrac{g}{L}\sin\theta = 0</m></p></li>
+						<li><p>Skydiver with air resistance: <m>m\dfrac{dv}{dt} = mg - cv^2</m></p></li>
+						<li><p>IV drug infusion: <m>\dfrac{dA}{dt} = r - kA</m></p></li>
+						<li><p>RLC circuit charge: <m>L\dfrac{d^2 q}{dt^2} + R\dfrac{dq}{dt} + \dfrac{1}{C}q = E(t)</m></p></li>
+						<li><p>Self-sustaining oscillator (van der Pol): <m>\dfrac{d^2 x}{dt^2} - \mu\left(1 - x^2\right)\dfrac{dx}{dt} + x = 0</m></p></li>
 					</ol>
 				</p>
 			</statement>
 			<hint>
 				<p>
-					<m>r</m>, <m>K</m>, <m>m</m>, <m>c</m>, <m>k</m>, <m>g</m>, and
-					<m>L</m> are constants (parameters), not the dependent variable. Look
-					only at how the dependent variable and its derivatives appear.
+					<m>m</m>, <m>g</m>, <m>c</m>, <m>r</m>, <m>k</m>, <m>L</m>, <m>R</m>,
+					<m>C</m>, and <m>\mu</m> are constants (parameters), and <m>E(t)</m> is
+					a known function of the independent variable&#8212;none of them is the
+					dependent variable. Look only at how the dependent variable and its
+					derivatives appear.
 				</p>
 			</hint>
 			<solution>
 				<p>
 					<ol>
-						<li><p><term>First-order, linear.</term> It is <m>P' - rP = 0</m>; the term <m>rP</m> has the form <m>a\,P</m>.</p></li>
-						<li><p><term>First-order, nonlinear.</term> Expanding the right side gives a <m>-\frac{r}{K}P^2</m> term&#8212;the dependent variable is squared.</p></li>
-						<li><p><term>Second-order, linear.</term> Each term is a constant times <m>y</m>, <m>y'</m>, or <m>y''</m>; damping adds a first-derivative term but keeps it linear.</p></li>
-						<li><p><term>Second-order, nonlinear.</term> The dependent variable <m>\theta</m> sits inside <m>\sin(\cdot)</m>. (For small swings we replace <m>\sin\theta \approx \theta</m>, which <em>linearizes</em> the model&#8212;a trick we will use again.)</p></li>
+						<li><p><term>First-order, nonlinear.</term> Rewriting as <m>mv' + cv^2 = mg</m>, the <m>cv^2</m> term squares the dependent variable. (At low speeds drag is roughly proportional to <m>v</m> instead, which <em>linearizes</em> the model&#8212;a trade-off we will revisit.)</p></li>
+						<li><p><term>First-order, linear.</term> It is <m>A' + kA = r</m>: one <m>a\,A'</m> term, one <m>a\,A</m> term, and a constant free term.</p></li>
+						<li><p><term>Second-order, linear.</term> Each term is a constant times <m>q</m>, <m>q'</m>, or <m>q''</m>, and the forcing <m>E(t)</m> is a free term.</p></li>
+						<li><p><term>Second-order, nonlinear.</term> The damping coefficient <m>-\mu(1 - x^2)</m> contains the dependent variable, so the middle term multiplies <m>x^2</m> by <m>x'</m>&#8212;coefficients are only allowed to involve the independent variable.</p></li>
 					</ol>
 				</p>
 			</solution>
