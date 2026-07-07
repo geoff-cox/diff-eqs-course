@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Verifying Solutions & Initial Conditions"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c2-solns/sec-solns-to-eqns.ptx
+		c2-solns/sec-verifying-solns.ptx
+		c2-solns/sec-general-particular-solns.ptx
+		c2-solns/sec-initial-valued-problems.ptx
+		(c2-solns/sec-visualizing-solns.ptx is interactive-only; see the
+		figure placeholder note on the last page)
+	Old decks: source/notes/latex/ 01 intro-topics folder
+		02-Verifying DEs / 01_02_Verifying_Solutions_Examples.tex
+		03-Initial Conditions / 01_02_Initial_Conditions_Examples.tex
+	Previous worksheet: ws-classification.ptx; next: ws-direct-integration.
+
+	Per the sourcing rules, every equation here is fresh: concepts mirror
+	the book, the example equations do not appear in it.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md>.
+-->
+<worksheet xml:id="ws-solutions-ivp" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Verifying Solutions &amp; Initial Conditions</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Verify</term> whether a given function satisfies a differential equation.</p></li>
+			<li><p><term>Distinguish</term> a general solution, a particular solution, and a family of solutions.</p></li>
+			<li><p><term>Apply</term> initial conditions to a general solution to produce the particular solution of an initial-value problem.</p></li>
+			<li><p><term>Match</term> the number of initial conditions to the number of arbitrary constants a general solution carries.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : What does it mean to be a solution? Verifying               -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>What does it mean to solve a differential equation?</term></p>
+
+		<p>
+			In algebra, a <em>number</em> satisfies an equation when substituting it
+			makes both sides equal. A differential equation is satisfied by a
+			<em>function</em>: substitute the function and its derivatives, simplify,
+			and see whether the two sides become the very same expression. The
+			payoff is a skill you can use all semester&#8212;you can check any
+			claimed solution yourself, no answer key required.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						A solution to a differential equation is a
+						<fillin characters="10"/> that satisfies the equation, and
+						<q>satisfies</q> means both sides simplify to the
+						<fillin characters="8"/> expression.
+					</p>
+					<p component="key">
+						A solution to a differential equation is a
+						<m>\underline{\textbf{function}}</m> that satisfies the equation, and
+						<q>satisfies</q> means both sides simplify to the
+						<m>\underline{\textbf{same}}</m> expression.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						To verify a proposed solution: compute any needed
+						<fillin characters="12"/>, <fillin characters="12"/> them into the
+						equation, and simplify both sides.
+					</p>
+					<p component="key">
+						To verify a proposed solution: compute any needed
+						<m>\underline{\textbf{derivatives}}</m>,
+						<m>\underline{\textbf{substitute}}</m> them into the
+						equation, and simplify both sides.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-si-tf-verify-vs-solve">
+			<title>True or False</title>
+			<statement>
+				<p>To verify that a function is a solution, you must first solve the differential equation.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. Verification never requires solving: differentiate the
+					candidate function, substitute, and compare the two sides. That is
+					exactly why verifying is possible even before we learn a single
+					solution technique.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-verify-first" component="stu" workspace="1.7in">
+			<statement>
+				<p>
+					Consider the differential equation <m>w' + 4w = 0</m>. Verify that
+					<m>w = e^{-4t}</m> is a solution and that <m>w = e^{4t}</m> is not.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-verify-first" component="key">
+			<statement>
+				<p>
+					Consider the differential equation <m>w' + 4w = 0</m>. Verify that
+					<m>w = e^{-4t}</m> is a solution and that <m>w = e^{4t}</m> is not.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					For <m>w = e^{-4t}</m>: <m>w' = -4e^{-4t}</m>, so
+					<md>
+						<mrow> w' + 4w \amp = -4e^{-4t} + 4e^{-4t} = 0. \checkmark </mrow>
+					</md>
+					For <m>w = e^{4t}</m>: <m>w' = 4e^{4t}</m>, so
+					<md>
+						<mrow> w' + 4w \amp = 4e^{4t} + 4e^{4t} = 8e^{4t} \ne 0, </mrow>
+					</md>
+					so <m>e^{4t}</m> fails to satisfy the equation. The sign of the
+					exponent matters&#8212;only one of the two exponentials balances the
+					equation.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-verify-second" component="stu" workspace="2.0in">
+			<statement>
+				<p>
+					(a) Verify that <m>Q = \cos(3t)</m> is a solution of
+					<m>Q'' + 9Q = 0</m>.
+					(b) Without any new computation, explain why the same function is
+					<em>not</em> a solution of <m>Q'' + 9Q = 5</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-verify-second" component="key">
+			<statement>
+				<p>
+					(a) Verify that <m>Q = \cos(3t)</m> is a solution of
+					<m>Q'' + 9Q = 0</m>.
+					(b) Without any new computation, explain why the same function is
+					<em>not</em> a solution of <m>Q'' + 9Q = 5</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>Q' = -3\sin(3t)</m> and <m>Q'' = -9\cos(3t)</m>, so
+					<md>
+						<mrow> Q'' + 9Q \amp = -9\cos(3t) + 9\cos(3t) = 0. \checkmark </mrow>
+					</md>
+					(b) Part (a) shows the left side simplifies to <m>0</m>, and
+					<m>0 \ne 5</m>. Being a solution is a relationship between a function
+					and a <em>specific</em> equation&#8212;the same function can satisfy
+					one equation and fail another.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : General vs. particular vs. family                           -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>One solution or many? General, particular, family.</term></p>
+
+		<p>
+			Differential equations almost never have just one solution. Arbitrary
+			constants let one formula describe every solution at once, so we need
+			names to keep the ideas straight.
+		</p>
+
+		<p>
+			<term>Reading check.</term>
+			<ol>
+				<li>
+					<p component="stu">
+						A <term>general solution</term> is a formula containing one or more
+						arbitrary <fillin characters="10"/>; assigning each of them a
+						specific value produces a <fillin characters="10"/> solution.
+					</p>
+					<p component="key">
+						A <term>general solution</term> is a formula containing one or more
+						arbitrary <m>\underline{\textbf{constants}}</m>; assigning each of
+						them a specific value produces a
+						<m>\underline{\textbf{particular}}</m> solution.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						The <term>family of solutions</term> is the
+						<fillin characters="10"/> of <em>all</em> particular solutions.
+					</p>
+					<p component="key">
+						The <term>family of solutions</term> is the
+						<m>\underline{\textbf{collection}}</m> of <em>all</em> particular
+						solutions.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-si-ex-family" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					The differential equation <m>t\,y' + 2y = 10</m> has general solution
+					<m>y = 5 + \dfrac{c}{t^2}</m>.
+					(a) Verify the general solution.
+					(b) Write down two different particular solutions.
+					(c) One of <m>y = 5 - \dfrac{1}{t^2}</m> and
+					<m>y = 3 + \dfrac{1}{t^2}</m> belongs to the family of solutions and
+					one does not. Which is which? Justify both answers.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-family" component="key">
+			<statement>
+				<p>
+					The differential equation <m>t\,y' + 2y = 10</m> has general solution
+					<m>y = 5 + \dfrac{c}{t^2}</m>.
+					(a) Verify the general solution.
+					(b) Write down two different particular solutions.
+					(c) One of <m>y = 5 - \dfrac{1}{t^2}</m> and
+					<m>y = 3 + \dfrac{1}{t^2}</m> belongs to the family of solutions and
+					one does not. Which is which? Justify both answers.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) From <m>y = 5 + c\,t^{-2}</m> we get <m>y' = -2c\,t^{-3}</m>, so
+					<md>
+						<mrow> t\,y' + 2y \amp = -\frac{2c}{t^2} + 10 + \frac{2c}{t^2} = 10. \checkmark </mrow>
+					</md>
+					(b) Any two choices of <m>c</m> work, e.g. <m>c = 0</m> gives
+					<m>y = 5</m> and <m>c = 7</m> gives <m>y = 5 + \frac{7}{t^2}</m>.
+				</p>
+				<p>
+					(c) <m>y = 5 - \frac{1}{t^2}</m> is the member of the family with
+					<m>c = -1</m>. The function <m>y = 3 + \frac{1}{t^2}</m> does not
+					match the form <m>5 + \frac{c}{t^2}</m> for any <m>c</m>, and
+					substituting it confirms the failure:
+					<m>t\,y' + 2y = -\frac{2}{t^2} + 6 + \frac{2}{t^2} = 6 \ne 10</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-si-tf-arbitrary-constant">
+			<title>True or False</title>
+			<statement>
+				<p>Any solution that contains an arbitrary constant is a general solution.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. The equation <m>y'' = 2</m> has the solution
+					<m>y = x^2 + c_1</m> for every constant <m>c_1</m>, yet that formula
+					misses solutions like <m>y = x^2 + 7x</m>. The general solution needs
+					<em>two</em> constants: <m>y = x^2 + c_1 x + c_2</m>. A formula with
+					constants is only <em>general</em> when it captures every solution.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-emt" component="stu" workspace="1.7in">
+			<statement>
+				<p>
+					Find all values of <m>m</m> for which <m>y = e^{mt}</m> is a solution
+					of <m>y'' - y' - 6y = 0</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-emt" component="key">
+			<statement>
+				<p>
+					Find all values of <m>m</m> for which <m>y = e^{mt}</m> is a solution
+					of <m>y'' - y' - 6y = 0</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Substituting <m>y = e^{mt}</m>, <m>y' = m e^{mt}</m>,
+					<m>y'' = m^2 e^{mt}</m>:
+					<md>
+						<mrow> m^2 e^{mt} - m e^{mt} - 6e^{mt} \amp = 0 </mrow>
+						<mrow> e^{mt}\left(m^2 - m - 6\right) \amp = 0. </mrow>
+					</md>
+					Since <m>e^{mt}</m> is never zero, we need
+					<m>m^2 - m - 6 = (m-3)(m+2) = 0</m>, so <m>m = 3</m> or
+					<m>m = -2</m>. (File this trick away&#8212;it becomes an entire
+					solution method for linear equations with constant coefficients later
+					in the course.)
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : Initial conditions and IVPs                                 -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Initial conditions pin down the constants.</term></p>
+
+		<p>
+			A general solution is a menu of infinitely many functions. Real problems
+			come with known information&#8212;a starting height, a launch
+			velocity&#8212;that selects exactly one item off the menu.
+		</p>
+
+		<p>
+			<term>Reading check.</term>
+			<ol>
+				<li>
+					<p component="stu">
+						An <term>initial condition</term> is a known value of the
+						<fillin characters="10"/> variable, or of one of its
+						<fillin characters="12"/>, at a specific input.
+					</p>
+					<p component="key">
+						An <term>initial condition</term> is a known value of the
+						<m>\underline{\textbf{dependent}}</m> variable, or of one of its
+						<m>\underline{\textbf{derivatives}}</m>, at a specific input.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						A differential equation together with initial conditions is an
+						initial-value <fillin characters="8"/> (IVP), and solving it
+						produces a <fillin characters="10"/> solution.
+					</p>
+					<p component="key">
+						A differential equation together with initial conditions is an
+						initial-value <m>\underline{\textbf{problem}}</m> (IVP), and
+						solving it produces a <m>\underline{\textbf{particular}}</m>
+						solution.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						To determine every constant, the number of initial conditions must
+						match the number of arbitrary <fillin characters="10"/> in the
+						general solution.
+					</p>
+					<p component="key">
+						To determine every constant, the number of initial conditions must
+						match the number of arbitrary <m>\underline{\textbf{constants}}</m>
+						in the general solution.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-si-tf-ivp">
+			<title>True or False</title>
+			<statement>
+				<p>The equation <m>y' = x + y</m> is an initial-value problem.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. It is only a differential equation. It becomes an
+					initial-value problem once an initial condition such as
+					<m>y(0) = 2</m> is attached.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-ivp-falling" component="stu" workspace="2.4in">
+			<statement>
+				<p>
+					A small object falls through the air, and its downward velocity
+					<m>v(t)</m> (in <m>\mathrm{m/s}</m>) is modeled by the IVP
+					<md>
+						<mrow> v' = 8 - 2v, \qquad v(0) = 1. </mrow>
+					</md>
+					(a) Verify that <m>v = 4 + ce^{-2t}</m> is a solution of the
+					differential equation for every constant <m>c</m>.
+					(b) Apply the initial condition to find the particular solution.
+					(c) What happens to the velocity as <m>t \to \infty</m>? Interpret
+					your answer physically.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-ivp-falling" component="key">
+			<statement>
+				<p>
+					A small object falls through the air, and its downward velocity
+					<m>v(t)</m> (in <m>\mathrm{m/s}</m>) is modeled by the IVP
+					<md>
+						<mrow> v' = 8 - 2v, \qquad v(0) = 1. </mrow>
+					</md>
+					(a) Verify that <m>v = 4 + ce^{-2t}</m> is a solution of the
+					differential equation for every constant <m>c</m>.
+					(b) Apply the initial condition to find the particular solution.
+					(c) What happens to the velocity as <m>t \to \infty</m>? Interpret
+					your answer physically.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>v' = -2ce^{-2t}</m>, and
+					<md>
+						<mrow> 8 - 2v \amp = 8 - 2\left(4 + ce^{-2t}\right) = -2ce^{-2t} = v'. \checkmark </mrow>
+					</md>
+					(b) <m>v(0) = 4 + c = 1</m> gives <m>c = -3</m>, so
+					<m>v = 4 - 3e^{-2t}</m>.
+				</p>
+				<p>
+					(c) As <m>t \to \infty</m>, <m>e^{-2t} \to 0</m>, so
+					<m>v \to 4~\mathrm{m/s}</m>: the object approaches its terminal
+					velocity, where gravity and air resistance balance and the velocity
+					stops changing. Notice you can read this off the equation itself:
+					<m>v' = 0</m> exactly when <m>v = 4</m>.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Two constants, two conditions; an extension                 -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<!--
+			Figure placeholder (do not copy assets from debookrs): a static plot
+			of several family members y = 4 + c e^{-2t} with the initial point
+			(0, 1) marked, mirroring the book's jsxgraph interactive
+			(debookrs c2-solns/sec-visualizing-solns.ptx, code/initial-condition.js).
+			Needs a figure drawn for this repo's assets; flagged in the PR's
+			Open questions.
+		-->
+
+		<exercise xml:id="ws-si-ex-ivp-two-constants" component="stu" workspace="2.8in">
+			<statement>
+				<p>
+					The general solution of <m>y'' + 3y' - 10y = 0</m> is
+					<m>y = c_1 e^{2t} + c_2 e^{-5t}</m>. Find the particular solution
+					satisfying
+					<md>
+						<mrow> y(0) = 1, \qquad y'(0) = 9. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-ivp-two-constants" component="key">
+			<statement>
+				<p>
+					The general solution of <m>y'' + 3y' - 10y = 0</m> is
+					<m>y = c_1 e^{2t} + c_2 e^{-5t}</m>. Find the particular solution
+					satisfying
+					<md>
+						<mrow> y(0) = 1, \qquad y'(0) = 9. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Two constants require both conditions. From
+					<m>y = c_1 e^{2t} + c_2 e^{-5t}</m> we get
+					<m>y' = 2c_1 e^{2t} - 5c_2 e^{-5t}</m>, so
+					<md>
+						<mrow> y(0) = c_1 + c_2 \amp = 1 </mrow>
+						<mrow> y'(0) = 2c_1 - 5c_2 \amp = 9. </mrow>
+					</md>
+					Substituting <m>c_1 = 1 - c_2</m> into the second equation:
+					<m>2 - 7c_2 = 9</m>, so <m>c_2 = -1</m> and <m>c_1 = 2</m>. The
+					particular solution is
+					<md>
+						<mrow> y = 2e^{2t} - e^{-5t}. </mrow>
+					</md>
+					Quick check: <m>y(0) = 2 - 1 = 1</m> and
+					<m>y'(0) = 4 + 5 = 9</m>. <m>\checkmark</m>
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-ivp-not-at-zero" component="stu" workspace="2.2in">
+			<statement>
+				<p>
+					<em>Initial conditions need not be at zero.</em> For <m>t > 0</m>,
+					the general solution of <m>t\,y'' + y' = 0</m> is
+					<m>y = c_1 + c_2 \ln t</m>. Find the particular solution satisfying
+					<md>
+						<mrow> y(1) = 2, \qquad y'(1) = 3. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-si-ex-ivp-not-at-zero" component="key">
+			<statement>
+				<p>
+					<em>Initial conditions need not be at zero.</em> For <m>t > 0</m>,
+					the general solution of <m>t\,y'' + y' = 0</m> is
+					<m>y = c_1 + c_2 \ln t</m>. Find the particular solution satisfying
+					<md>
+						<mrow> y(1) = 2, \qquad y'(1) = 3. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Here <m>y' = \dfrac{c_2}{t}</m>. The condition
+					<m>y'(1) = c_2 = 3</m> hands us <m>c_2</m> directly, and then
+					<m>y(1) = c_1 + 3\ln 1 = c_1 = 2</m>. The particular solution is
+					<md>
+						<mrow> y = 2 + 3\ln t. </mrow>
+					</md>
+					The two constants arrived one at a time rather than from a system of
+					equations&#8212;the conditions attach wherever the problem supplies
+					information, not only at <m>t = 0</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Everything on this worksheet started from a solution someone handed
+				us. The rest of the course builds the machinery that <em>produces</em>
+				those solutions. We begin with the simplest case&#8212;equations of
+				the form <m>y' = f(t)</m>, solved by direct
+				integration&#8212;where the arbitrary constant of a general solution
+				is exactly the <m>+C</m> you have written since Calculus 1.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
