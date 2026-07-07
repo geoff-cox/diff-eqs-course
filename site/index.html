@@ -4,8 +4,9 @@
 
   `pretext deploy` uses its "static" strategy when this site/ directory
   exists: each deploy target in project.ptx is staged under its
-  deploy-dir, then this directory is copied over the stage root. Without
-  this file the CLI falls back to its Pelican-generated landing page,
+  deploy-dir, then this directory is copied over the stage root. If the
+  site/ directory did not exist at all, the CLI would fall back to its
+  Pelican-generated landing page,
   and Pelican is NOT installed by `pip install pretext` in the deploy
   workflow, so the site root would 404.
 
