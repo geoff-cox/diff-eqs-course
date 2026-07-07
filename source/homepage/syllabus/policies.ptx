@@ -1,4 +1,4 @@
-<section xmlns:xi="http://www.w3.org/2001/XInclude" label="ma311-policies">
+<subsection xmlns:xi="http://www.w3.org/2001/XInclude" label="ma311-policies">
 	<title>Policies</title>
 
 	<introduction>
@@ -8,7 +8,7 @@
 		</p>
 	</introduction>
 
-	<subsection label="ma311-coursework-policy">
+	<subsubsection label="ma311-coursework-policy">
 		<title>Coursework Policies</title>
 
 		<paragraphs>
@@ -62,9 +62,9 @@
 				</ul>
 			</p>
 		</paragraphs>
-	</subsection>
+	</subsubsection>
 
-	<subsection label="ma311-ai-policy">
+	<subsubsection label="ma311-ai-policy">
 		<title>AI Usage Policy</title>
 		<p>
 			AI tools can be useful when used responsibly, but my job is to assess YOUR understanding of the material, not the AI's accuracy. Assume any usage of AI is NOT permitted if it is not on the listed here. 
@@ -101,16 +101,16 @@
 		<p>
 			<em>Note: If you believe there is a valuable and responsible way to use AI that is not listed here, you are welcome to ask me about it. If I determine that it does not undermine your learning of the material, I will allow it and I may even add it to this list so that others may benefit from it.</em>
 		</p>
-	</subsection>
+	</subsubsection>
 
-	<subsection xml:id="ma311-policy-late">
+	<subsubsection xml:id="ma311-policy-late">
 		<title>Late Homework</title>
 		<p>
 			Late work will be accepted up to 5 days (including weekends and furlough days) after the due date and will incur a penalty of <m>-50 \%</m>. No work will be accepted beyond this.
 		</p>
-	</subsection>
+	</subsubsection>
 
-	<subsection xml:id="ma311-policy-getting-help">
+	<subsubsection xml:id="ma311-policy-getting-help">
 		<title>Getting Help</title>
 		<p>
 			The following are acceptable sources of help for the material in this course:
@@ -126,10 +126,10 @@
         <p>
             Ensure that you clearly and properly document such resources on any and all work that you submit for grade.
         </p>
-	</subsection>
+	</subsubsection>
 
 	<xi:include href="common/merc.ptx" />
 	<xi:include href="common/policy-grade-disputes.ptx" />
 	<xi:include href="common/policy-classroom-behavior.ptx" />
 
-</section>
+</subsection>

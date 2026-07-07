@@ -50,6 +50,24 @@ letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
 6. If inputs are missing or contradictory, ship what's safe and put the
    blocker under "Open questions" — never guess on critical decisions
    (grading changes, semester dates, deleting content).
+7. Every PR also updates the **Status board** below, flagging the
+   task(s) that PR completes (with the PR number). Repeatable tasks
+   (B2, M*) get their per-instance scope noted instead of a single
+   done-mark.
+
+## Status board
+
+| Task | Status | Evidence |
+|---|---|---|
+| A1 — syllabus source-of-truth | ✅ Done | PR #TBD |
+| A2 — semester refresh | ⬜ Not started | — |
+| B1 — worksheet roadmap | ✅ Done | PR #1 (`docs/gln-roadmap.md`) |
+| B2 — worksheets (per section) | 🔶 In progress | c0 `ws-what-is-a-de` + c1 `ws-classification` (PRs #1–#2); rest per roadmap |
+| C1 — macro standing rule | ♻️ Standing | enforced inside every PR |
+| C2 — macro audit | ⬜ Not started | — |
+| D1 — deploy config | ✅ Done | PR #3 |
+| D2 — preview hygiene | ♻️ Standing | every content PR |
+| M1–M5 — maintenance | ⬜ As needed | — |
 
 ## Mobile request recipes
 

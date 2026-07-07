@@ -122,6 +122,9 @@ section. A PR without evidence is incomplete.
   PR; use the PR template; add the `preview` label so `deploy-pages.yml`
   publishes the branch's rendered HTML to GitHub Pages.
 - Keep PRs phone-reviewable: several small PRs beat one large one.
+- Every PR updates the Status board in
+  `checklists/mobile-build-checklist.md` to flag the task(s) it
+  completes (master-checklist global rule 7).
 - Respond to review comments on the same branch; re-run all gates after
   every revision.
 

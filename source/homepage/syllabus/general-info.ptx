@@ -1,9 +1,9 @@
-<section xmlns:xi="http://www.w3.org/2001/XInclude" label="ma311-general-info">
+<subsection xmlns:xi="http://www.w3.org/2001/XInclude" label="ma311-general-info">
 	<title>General</title>
 
 	<xi:include href="./common/instructor-info.ptx" />
 
-	<subsection label="ma311-course-info">
+	<subsubsection label="ma311-course-info">
 		<title>Course Information</title>
 		<p>
 			<dl>
@@ -17,5 +17,5 @@
 				<li><title>Department Head</title><p>COL Troy Siemers</p></li>
 			</dl>
 		</p>
-	</subsection>
-</section>
+	</subsubsection>
+</subsection>
