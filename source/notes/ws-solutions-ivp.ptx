@@ -436,15 +436,6 @@
 	<!-- ==================================================================== -->
 
 	<page>
-		<!--
-			Figure placeholder (do not copy assets from debookrs): a static plot
-			of several family members y = 4 + c e^{-2t} with the initial point
-			(0, 1) marked, mirroring the book's jsxgraph interactive
-			(debookrs c2-solns/sec-visualizing-solns.ptx, code/initial-condition.js).
-			Needs a figure drawn for this repo's assets; flagged in the PR's
-			Open questions.
-		-->
-
 		<exercise xml:id="ws-si-ex-ivp-two-constants" component="stu" workspace="2.8in">
 			<statement>
 				<p>
