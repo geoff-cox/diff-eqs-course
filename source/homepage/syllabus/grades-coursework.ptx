@@ -1,7 +1,7 @@
-<section label="ma311-grades">
+<subsection label="ma311-grades">
 	<title>Grades &amp; Coursework</title>
 
-	<subsection label="ma311-final-grade">
+	<subsubsection label="ma311-final-grade">
 		<title>Final Grades</title>
 		<p>
 			Your final grade is determined by a combination of the following items:
@@ -59,15 +59,15 @@
 				</tabular>
 			</table>
 		</p>
-	</subsection>
+	</subsubsection>
 
-	<subsection label="ma311-homework">
+	<subsubsection label="ma311-homework">
 		<title>Homework</title>
 
 		<paragraphs>
 			<title>Reading Assignments (35%)</title>
 				<p>
-					Each section of the textbook includes some reading questions that <term>must be completed through Runestone</term>. These are straight-forward questions designed to reinforce your understanding of the key concepts.
+					Each section of the textbook includes some reading questions that <term>must be completed through Runestone</term>. These are straightforward questions designed to reinforce your understanding of the key concepts.
 				</p>
 		</paragraphs>
 
@@ -84,9 +84,9 @@
 					Modeling scenarios connect course concepts to real-world applications. You will translate a real question into a differential equation, solve the equation, and explain how the solution answers the original question. Your write-up should include both the mathematical work and a clear explanation in your own words. Submissions must be printed and handed in on paper.
 				</p>
 		</paragraphs> -->
-	</subsection>
+	</subsubsection>
 
-	<subsection label="ma311-odps">
+	<subsubsection label="ma311-odps">
 		<title>Opportunities to Demonstrate Proficiency (ODPs)</title>
 		<p>
 			Instead of traditional quizzes or tests, you will complete ODPs, which are short assessments scored on a <term>P</term> or <term>N</term> scale:
@@ -98,12 +98,12 @@
 		<p>
 			ODPs focus on specific course topics. Some are completed in class, while others are assigned outside of class. Because proficiency is about eventual mastery, you will have multiple opportunities to pass each topic.
 		</p>
-	</subsection>
+	</subsubsection>
 
-	<subsection label="ma311-final">
+	<subsubsection label="ma311-final">
 		<title>Final Exam</title>
 		<p>
 			You will take a traditional final exam that is points-based and covers all topics from the course. You will also have one final opportunity to demonstrate proficiency in one or more core topics. While the exam may include secondary topics, those questions will not count toward secondary passes.
 		</p>
-	</subsection>
-</section>
+	</subsubsection>
+</subsection>

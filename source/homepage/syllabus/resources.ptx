@@ -1,4 +1,4 @@
-<section label="ma311-resources">
+<subsection label="ma311-resources">
 	<title>Resources</title>
 
     <introduction>
@@ -7,7 +7,7 @@
         </p>
     </introduction>
 
-    <subsection label="ma311-materials-textbook">
+    <subsubsection label="ma311-materials-textbook">
         <title>Textbook</title>
 
         <p>
@@ -17,9 +17,9 @@
                 <li><title>URL</title><url href="https://runestone.academy/ns/books/published/debookrs/frontmatter.html?mode=browsing">Textbook via Runestone</url></li>
             </dl>
         </p>
-    </subsection>
+    </subsubsection>
 
-    <subsection label="ma311-materials-runestone">
+    <subsubsection label="ma311-materials-runestone">
         <title>Runestone</title>
 
         <p>
@@ -33,9 +33,9 @@
                 <li><title>Course Code</title><p><c>vmi-differential-eqns-fall-25-cox</c></p></li>
             </dl>
         </p>
-    </subsection>
+    </subsubsection>
 
-    <subsection label="ma311-materials-webwork">
+    <subsubsection label="ma311-materials-webwork">
         <title>WebWork</title>
 
         <p>
@@ -59,14 +59,14 @@
             After you log in for the first time change your password in "Account Settings." 
         </p>
 
-    </subsection>
+    </subsubsection>
 
-    <subsection label="ma311-materials-canvas">
+    <subsubsection label="ma311-materials-canvas">
         <title>Canvas</title>
 
         <p>
             Canvas will serve as the central hub for course communication and materials. Announcements, lecture slides, discussion worksheets, and assignment links will be posted here. It is your responsibility to check Canvas regularly and read announcements in a timely manner.
             <dl><li><title>URL</title><url href="https://vmi.instructure.com/courses/23993" visual="vmi.instructure.com/courses/23993">Canvas</url></li></dl>
         </p>
-    </subsection>
-</section>
+    </subsubsection>
+</subsection>

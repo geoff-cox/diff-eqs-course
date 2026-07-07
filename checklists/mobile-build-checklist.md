@@ -43,13 +43,34 @@ letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
 3. `source/homepage/syllabus/common/` and `source/notes/latex/` are
    never modified; debookrs is never modified or vendored.
 4. Improvements are welcome and encouraged, but every one is itemized
-   in the PR's "Improvements" section; judgment calls get
+   in the PR's "Improvements" section; judgment calls that change
+   meaning (content, math, pedagogy, policy, grading) get
    `<!-- TODO(geoff): ... -->` markers plus an "Open questions" line.
+   Typos, grammar, and minor wording fixes are just fixed — a grouped
+   one-liner under "Improvements" suffices (CLAUDE.md §7).
 5. Any new LaTeX macro goes into `source/bookends/docinfo.ptx` in the
    same PR (Task C1 rule).
 6. If inputs are missing or contradictory, ship what's safe and put the
    blocker under "Open questions" — never guess on critical decisions
    (grading changes, semester dates, deleting content).
+7. Every PR also updates the **Status board** below, flagging the
+   task(s) that PR completes (with the PR number). Repeatable tasks
+   (B2, M*) get their per-instance scope noted instead of a single
+   done-mark.
+
+## Status board
+
+| Task | Status | Evidence |
+|---|---|---|
+| A1 — syllabus source-of-truth | ✅ Done | PR #4 |
+| A2 — semester refresh | ⬜ Not started | — |
+| B1 — worksheet roadmap | ✅ Done | PR #1 (`docs/gln-roadmap.md`) |
+| B2 — worksheets (per section) | 🔶 In progress | c0 `ws-what-is-a-de` + c1 `ws-classification` (PRs #1–#2); rest per roadmap |
+| C1 — macro standing rule | ♻️ Standing | enforced inside every PR |
+| C2 — macro audit | ⬜ Not started | — |
+| D1 — deploy config | ✅ Done | PR #3 |
+| D2 — preview hygiene | ♻️ Standing | every content PR |
+| M1–M5 — maintenance | ⬜ As needed | — |
 
 ## Mobile request recipes
 
