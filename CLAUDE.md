@@ -100,6 +100,11 @@ Course parameters for THIS repo (plug into the shared conventions):
   (`<version include="notes key"/>`).
 - The coursebook is EXTERNAL and read-only (§2, debookrs); worksheet
   example equations must never be copied from it.
+- Instructor overrides for THIS repo (take precedence over the shared
+  conventions where they conflict): worksheets contain **no interactive
+  elements** (print-first, static content only — no jsxgraph/geogebra/
+  activecode); a topic stays on **one worksheet** even if it needs two
+  class meetings — never split or propose splitting.
 
 ## 5. Verification gates (mandatory before every PR)
 

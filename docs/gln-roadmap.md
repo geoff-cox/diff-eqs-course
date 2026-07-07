@@ -33,7 +33,7 @@ the old Beamer decks in `source/notes/latex/`, tracking the coursebook
 |---|---|---|---|---|
 | `ws-what-is-a-de` | What Is a Differential Equation? | `01 intro-topics` (What is a DE, ODE/PDE) | `c0-whats-a-de/sec-connection-to-alg-calc`, `sec-de-defn`, `sec-variables`, `sec-terms-coeffs` | **in-review** |
 | `ws-classification` | Classifying Differential Equations | `01 intro-topics` (order, linearity) | `c1-classification/sec-order`, `sec-linear-terms`, `sec-linearity` | **in-review** |
-| `ws-solutions-ivp` | Verifying Solutions & Initial Conditions | `01 intro-topics` (Verifying DEs, Initial Conditions) | `c2-solns/*` | todo |
+| `ws-solutions-ivp` | Verifying Solutions & Initial Conditions | `01 intro-topics` (Verifying DEs, Initial Conditions) | `c2-solns/*` | **in-review** |
 | `ws-direct-integration` | Solving by Direct Integration | — (new) | `c3-di/*` | todo |
 | `ws-separation-of-variables` | Separation of Variables | `02 sov` | `c4-sov/*` | todo |
 | `ws-integrating-factors` | Integrating Factors | `03 if` | `c5-if/*` | todo |

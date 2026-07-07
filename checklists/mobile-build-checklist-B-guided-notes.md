@@ -88,7 +88,10 @@ Invocation names the row, e.g.:
    Course-specific notes for this repo:
    - the worksheet is the in-class companion to a section students have
      already read on Runestone;
-   - never copy binary assets from debookrs into this repo.
+   - never copy binary assets from debookrs into this repo;
+   - instructor overrides (see CLAUDE.md §4): no interactive elements
+     in worksheets, and one worksheet per topic even if it spans two
+     class meetings — do not split or propose splitting.
 3. Wire the worksheet in via `<xi:include>` in `source/notes.ptx`; flip
    its roadmap row to `in-review`.
 4. If the deck and the book disagree mathematically, the book wins;

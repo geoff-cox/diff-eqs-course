@@ -9,6 +9,7 @@
     <xi:include href="./bookends/frontmatter.ptx" />
 		<xi:include href="./notes/ws-what-is-a-de.ptx"/>
 		<xi:include href="./notes/ws-classification.ptx"/>
+		<xi:include href="./notes/ws-solutions-ivp.ptx"/>
 
 	</article>
 </pretext>
