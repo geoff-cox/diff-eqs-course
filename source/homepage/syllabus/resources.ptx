@@ -30,7 +30,8 @@
             Create an account and enroll using the link and course code below: 
             <dl>
                 <li><title>URL</title><url href="https://runestone.academy">Runestone Academy</url></li>
-                <li><title>Course Code</title><p><c>vmi-differential-eqns-fall-25-cox</c></p></li>
+                <!-- TODO(geoff): Fall 2026 Runestone course code — replace the TBD-FA26 stub. -->
+                <li><title>Course Code</title><p><c>TBD-FA26-runestone-course-code</c></p></li>
             </dl>
         </p>
     </subsubsection>
@@ -44,7 +45,9 @@
 
         <p>
             The following link will take you to the WebWork page for this course
-            <dl><li><title>URL</title><url href="https://vmi-math.com/webwork2/ma311-fa25-cox">WebWork</url></li></dl>
+            <!-- TODO(geoff): Fall 2026 WeBWorK course URL — replace the TBD-FA26 stub with
+                 <url href="https://vmi-math.com/webwork2/ma311-XXX">WebWork</url>. -->
+            <dl><li><title>URL</title><alert>[TBD-FA26: WeBWorK course URL]</alert></li></dl>
             Your username and temporary password is the part of your VMI email address before the <c>@</c> symbol. For example, if your email is <c>smith66@vmi.edu</c>, you would log in with:
             <aside>
                 <title>Forgot Password?</title>
@@ -66,7 +69,9 @@
 
         <p>
             Canvas will serve as the central hub for course communication and materials. Announcements, lecture slides, discussion worksheets, and assignment links will be posted here. It is your responsibility to check Canvas regularly and read announcements in a timely manner.
-            <dl><li><title>URL</title><url href="https://vmi.instructure.com/courses/23993" visual="vmi.instructure.com/courses/23993">Canvas</url></li></dl>
+            <!-- TODO(geoff): Fall 2026 Canvas course URL — replace the TBD-FA26 stub with
+                 <url href="https://vmi.instructure.com/courses/XXXXX" visual="vmi.instructure.com/courses/XXXXX">Canvas</url>. -->
+            <dl><li><title>URL</title><alert>[TBD-FA26: Canvas course URL]</alert></li></dl>
         </p>
     </subsubsection>
 </subsection>
