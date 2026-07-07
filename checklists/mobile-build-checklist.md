@@ -43,8 +43,11 @@ letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
 3. `source/homepage/syllabus/common/` and `source/notes/latex/` are
    never modified; debookrs is never modified or vendored.
 4. Improvements are welcome and encouraged, but every one is itemized
-   in the PR's "Improvements" section; judgment calls get
+   in the PR's "Improvements" section; judgment calls that change
+   meaning (content, math, pedagogy, policy, grading) get
    `<!-- TODO(geoff): ... -->` markers plus an "Open questions" line.
+   Typos, grammar, and minor wording fixes are just fixed — a grouped
+   one-liner under "Improvements" suffices (CLAUDE.md §7).
 5. Any new LaTeX macro goes into `source/bookends/docinfo.ptx` in the
    same PR (Task C1 rule).
 6. If inputs are missing or contradictory, ship what's safe and put the

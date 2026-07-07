@@ -64,14 +64,10 @@
 	<subsubsection label="ma311-homework">
 		<title>Homework</title>
 
-		<!-- TODO(geoff): the two pre-consolidation syllabus copies disagreed in the
-		     paragraph below: "Each subsection" (the copy that rendered) vs "Each
-		     section" (this file). Kept the rendering copy's wording; flip it if the
-		     reading questions are actually per-section in Runestone. -->
 		<paragraphs>
 			<title>Reading Assignments (35%)</title>
 				<p>
-					Each subsection of the textbook includes some reading questions that <term>must be completed through Runestone</term>. These are straightforward questions designed to reinforce your understanding of the key concepts.
+					Each section of the textbook includes some reading questions that <term>must be completed through Runestone</term>. These are straightforward questions designed to reinforce your understanding of the key concepts.
 				</p>
 		</paragraphs>
 

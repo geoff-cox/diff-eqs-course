@@ -139,6 +139,13 @@ section**, and genuinely uncertain editorial calls get a
 `<!-- TODO(geoff): ... -->` comment plus an "Open questions" line.
 Faithful conversion is the baseline; silent deviation is prohibited.
 
+Low-stakes polish is exempt from that ceremony: typos, spelling,
+grammar, and minor wording/prose improvements should simply be fixed —
+no TODO marker, no open question. A single grouped line under
+"Improvements" (e.g., "prose polish: 3 typos, tightened two sentences")
+is enough. Reserve TODO(geoff)/Open questions for calls that change
+meaning: content, math, pedagogy, policy, or grading.
+
 ## 8. Prohibited
 
 - Editing `source/homepage/syllabus/common/` (shared VMI policy text).
