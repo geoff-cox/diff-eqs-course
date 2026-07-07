@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+  Landing page for the deployed MA 311 site (Task D1).
+
+  `pretext deploy` uses its "static" strategy when this site/ directory
+  exists: each deploy target in project.ptx is staged under its
+  deploy-dir, then this directory is copied over the stage root. If the
+  site/ directory did not exist at all, the CLI would fall back to its
+  Pelican-generated landing page,
+  and Pelican is NOT installed by `pip install pretext` in the deploy
+  workflow, so the site root would 404.
+
+  The links below must match the deploy-dir attributes in project.ptx:
+    homepage         -> homepage
+    notes-student    -> notes/student
+    notes-instructor -> notes/instructor
+
+  The ref/sha stamp is read from build-info.txt, which
+  .github/workflows/deploy-pages.yml writes into the stage root after
+  `pretext deploy --stage-only`.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>MA 311 — Ordinary Differential Equations</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+      line-height: 1.5;
+    }
+    h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+    p.subtitle { margin-top: 0; color: #666; }
+    ul.targets { list-style: none; padding: 0; }
+    ul.targets li { margin: 0.75rem 0; }
+    ul.targets a {
+      display: block;
+      padding: 0.9rem 1rem;
+      border: 1px solid #bbb;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    ul.targets a:hover, ul.targets a:focus { border-color: #666; }
+    ul.targets small { display: block; font-weight: 400; color: #666; }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #666;
+      border-top: 1px solid #ddd;
+      padding-top: 0.75rem;
+    }
+    #build-info { white-space: pre-wrap; font-family: monospace; }
+    @media (prefers-color-scheme: dark) {
+      p.subtitle, ul.targets small, footer { color: #aaa; }
+      ul.targets a { border-color: #555; }
+      ul.targets a:hover, ul.targets a:focus { border-color: #999; }
+      footer { border-top-color: #444; }
+    }
+  </style>
+</head>
+<body>
+  <h1>MA 311 — Ordinary Differential Equations</h1>
+  <p class="subtitle">Course materials (rendered site)</p>
+
+  <ul class="targets">
+    <li>
+      <a href="homepage/">Course Homepage &amp; Syllabus
+        <small>General info, grading, topics, resources</small></a>
+    </li>
+    <li>
+      <a href="notes/student/">Guided Lecture Notes — Student
+        <small>Worksheets with blanks and unworked examples</small></a>
+    </li>
+    <li>
+      <a href="notes/instructor/">Guided Lecture Notes — Instructor
+        <small>Answer key: all solutions revealed</small></a>
+    </li>
+  </ul>
+
+  <footer>
+    <div id="build-info">Build info unavailable (build-info.txt not found).</div>
+  </footer>
+
+  <script>
+    fetch('build-info.txt')
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+      .then(function (text) {
+        document.getElementById('build-info').textContent = text.trim();
+      })
+      .catch(function () { /* keep the fallback message */ });
+  </script>
+</body>
+</html>
