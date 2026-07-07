@@ -6,8 +6,9 @@
 		c2-solns/sec-verifying-solns.ptx
 		c2-solns/sec-general-particular-solns.ptx
 		c2-solns/sec-initial-valued-problems.ptx
-		(c2-solns/sec-visualizing-solns.ptx is interactive-only; see the
-		figure placeholder note on the last page)
+		(c2-solns/sec-visualizing-solns.ptx is interactive-only and has no
+		counterpart here: per the instructor overrides in CLAUDE.md section 4,
+		worksheets carry no interactive content)
 	Old decks: source/notes/latex/ 01 intro-topics folder
 		02-Verifying DEs / 01_02_Verifying_Solutions_Examples.tex
 		03-Initial Conditions / 01_02_Initial_Conditions_Examples.tex
@@ -217,8 +218,8 @@
 		<exercise xml:id="ws-si-ex-family" component="stu" workspace="2.6in">
 			<statement>
 				<p>
-					The differential equation <m>t\,y' + 2y = 10</m> has general solution
-					<m>y = 5 + \dfrac{c}{t^2}</m>.
+					For <m>t > 0</m>, the differential equation <m>t\,y' + 2y = 10</m>
+					has general solution <m>y = 5 + \dfrac{c}{t^2}</m>.
 					(a) Verify the general solution.
 					(b) Write down two different particular solutions.
 					(c) One of <m>y = 5 - \dfrac{1}{t^2}</m> and
@@ -231,8 +232,8 @@
 		<exercise xml:id="ws-si-ex-family" component="key">
 			<statement>
 				<p>
-					The differential equation <m>t\,y' + 2y = 10</m> has general solution
-					<m>y = 5 + \dfrac{c}{t^2}</m>.
+					For <m>t > 0</m>, the differential equation <m>t\,y' + 2y = 10</m>
+					has general solution <m>y = 5 + \dfrac{c}{t^2}</m>.
 					(a) Verify the general solution.
 					(b) Write down two different particular solutions.
 					(c) One of <m>y = 5 - \dfrac{1}{t^2}</m> and
