@@ -63,7 +63,7 @@ letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
 | Task | Status | Evidence |
 |---|---|---|
 | A1 — syllabus source-of-truth | ✅ Done | PR #4 |
-| A2 — semester refresh | ⬜ Not started | — |
+| A2 — semester refresh | 🔶 Stubs in place | PR #TBD — instructor fills `TBD-FA26` values before the semester |
 | B1 — worksheet roadmap | ✅ Done | PR #1 (`docs/gln-roadmap.md`) |
 | B2 — worksheets (per section) | 🔶 In progress | c0 `ws-what-is-a-de` + c1 `ws-classification` (PRs #1–#2); rest per roadmap |
 | C1 — macro standing rule | ♻️ Standing | enforced inside every PR |

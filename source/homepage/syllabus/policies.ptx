@@ -45,13 +45,17 @@
 		<paragraphs>
 			<title>Homework</title>
 			<p>
+				<!-- TODO(geoff): Modeling Scenarios are referenced throughout this policy (and
+				     in the AI policy below), but the corresponding assignment type is commented
+				     out in grades-coursework.ptx and the 35/65 homework split leaves no weight
+				     for them. Delete these references or revive the assignment. -->
 				Homework includes online exercises (Runestone/WeBWorK) and written Modeling Scenarios. Online sets are designed for practice with immediate feedback; Modeling Scenarios emphasize communication and application.
 				<ul>
 					<li>
-						<term>Online exercises</term>: Complete problems <em>before</em> the posted deadline. Work may be submitted up to fours days late (including weekends and holidays). Only 60% of your score will be recorded. Fours days after the deadline, the submission window will close and you will receive a <m>0</m> for that assignment.  
+						<term>Online exercises</term>: Complete problems <em>before</em> the posted deadline. Work may be submitted up to four days late (including weekends and holidays). Only 60% of your score will be recorded. Four days after the deadline, the submission window will close and you will receive a <m>0</m> for that assignment.  
 					</li>
 					<li>
-						<term>Modeling Scenarios</term>: Submit printed copies in class (or by end of day under my office door if noted). Unless otherwise stated, late submissions are accepted up to 24 hours with a <m>-20</m>% penalty; after that, a you will receive a <m>0</m> for the assignment.
+						<term>Modeling Scenarios</term>: Submit printed copies in class (or by end of day under my office door if noted). Unless otherwise stated, late submissions are accepted up to 24 hours with a <m>-20</m>% penalty; after that, you will receive a <m>0</m> for the assignment.
 					</li>
 					<li>
 						<term>Collaboration</term>: You may discuss approaches with peers currently enrolled in the course, but your write‑up and final solutions must be entirely in your own words. You may not view or use work from cadets who previously completed the course.
@@ -67,7 +71,7 @@
 	<subsubsection label="ma311-ai-policy">
 		<title>AI Usage Policy</title>
 		<p>
-			AI tools can be useful when used responsibly, but my job is to assess YOUR understanding of the material, not the AI's accuracy. Assume any usage of AI is NOT permitted if it is not on the listed here. 
+			AI tools can be useful when used responsibly, but my job is to assess YOUR understanding of the material, not the AI's accuracy. Assume any usage of AI is NOT permitted if it is not listed here. 
 		</p>
 
 		<p>
@@ -105,6 +109,8 @@
 
 	<subsubsection xml:id="ma311-policy-late">
 		<title>Late Homework</title>
+		<!-- TODO(geoff): this 5-days / -50% rule contradicts the Online-exercises bullet
+		     above (4 days late, 60% of score recorded). Reconcile the two. -->
 		<p>
 			Late work will be accepted up to 5 days (including weekends and furlough days) after the due date and will incur a penalty of <m>-50 \%</m>. No work will be accepted beyond this.
 		</p>

@@ -17,8 +17,8 @@
 							<p>Office Hours:</p>
 							<p>
 								<ul marker="">
-									<li>MWF 1200-1330,</li>
-									<li>MWF 1430-1600,</li>
+									<!-- TODO(geoff): Fall 2026 office hours — replace the TBD-FA26 stub. -->
+									<li><alert>[TBD-FA26: office hours]</alert>,</li>
 									<li>By Appointment</li>
 								</ul>
 							</p>

@@ -13,6 +13,9 @@
 			</ul>
 			The table below shows that the letter grade you will receive will come from the first row where <term>EVERY</term> requirement is met.
 	
+			<!-- TODO(geoff): the web and print variants of this table disagree on the C row:
+			     web says Secondary "1 P (on) 2+", print says "N/A". Reconcile before the
+			     semester starts. -->
 			<table component="web">
 				<title>Minimum Requirements for Final Grades</title>
 				<tabular bottom="minor" top="minor" left="minor" right="minor" halign="center">
