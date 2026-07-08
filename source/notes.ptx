@@ -10,6 +10,7 @@
 		<xi:include href="./notes/ws-what-is-a-de.ptx"/>
 		<xi:include href="./notes/ws-classification.ptx"/>
 		<xi:include href="./notes/ws-solutions-ivp.ptx"/>
+		<xi:include href="./notes/ws-direct-integration.ptx"/>
 
 	</article>
 </pretext>

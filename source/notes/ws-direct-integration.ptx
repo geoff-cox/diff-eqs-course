@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Solving by Direct Integration"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c3-di/sec-antiderivatives.ptx
+		c3-di/sec-di-method.ptx
+	Old deck: none (from-scratch worksheet; the roadmap marks c3 as "new").
+	Previous worksheet: ws-solutions-ivp.ptx; next: ws-separation-of-variables.
+
+	Per the sourcing rules, every equation here is fresh: concepts mirror
+	the book, the example equations do not appear in it. Per the
+	instructor overrides in CLAUDE.md section 4: no interactive content,
+	and the whole topic stays on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md>.
+-->
+<worksheet xml:id="ws-direct-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Solving by Direct Integration</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Recognize</term> that finding an antiderivative is already solving a differential equation.</p></li>
+			<li><p><term>Solve</term> equations of the forms <m>y' = f(x)</m> and <m>\frac{d}{dx}\left[g(x,y)\right] = f(x)</m> by integrating both sides.</p></li>
+			<li><p><term>Decide</term> when direct integration applies and explain why it fails when the dependent variable appears on the right side.</p></li>
+			<li><p><term>Combine</term> constants of integration and finish an initial-value problem started by direct integration.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : Antiderivatives are solutions; the basic form               -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>You have been solving differential equations since Calculus 1.</term></p>
+
+		<p>
+			Every antiderivative you have ever computed answers the question
+			<q>which function has this derivative?</q>&#8212;and that is exactly
+			what a differential equation of the form <m>y' = f(x)</m> asks. The
+			<m>+C</m> your calculus instructor insisted on is precisely the
+			arbitrary constant that makes the answer a <em>general</em> solution.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						Solving <m>y' = f(x)</m> amounts to finding an
+						<fillin characters="14"/> of <m>f(x)</m>; if <m>F(x)</m> is one
+						antiderivative, the general solution is <m>y = F(x) + </m>
+						<fillin characters="4"/>.
+					</p>
+					<p component="key">
+						Solving <m>y' = f(x)</m> amounts to finding an
+						<m>\underline{\textbf{antiderivative}}</m> of <m>f(x)</m>; if
+						<m>F(x)</m> is one antiderivative, the general solution is
+						<m>y = F(x) + \underline{\textbf{c}}</m>.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						Direct integration applies only when the side opposite the
+						derivative contains just the <fillin characters="12"/> variable.
+					</p>
+					<p component="key">
+						Direct integration applies only when the side opposite the
+						derivative contains just the
+						<m>\underline{\textbf{independent}}</m> variable.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-di-tf-antideriv">
+			<title>True or False</title>
+			<statement>
+				<p>Every time you compute an antiderivative, you are solving a differential equation.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True. Computing <m>\int f(x)\,dx</m> is answering <q>find <m>y</m>
+					with <m>y' = f(x)</m></q>&#8212;a differential equation. Calculus 1
+					just never called it that.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-di-ex-basic" component="stu" workspace="1.9in">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> 3y' + 6x^2 = 12. </mrow>
+					</md>
+					(Isolate <m>y'</m> first.)
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-di-ex-basic" component="key">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> 3y' + 6x^2 = 12. </mrow>
+					</md>
+					(Isolate <m>y'</m> first.)
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Isolating the derivative: <m>3y' = 12 - 6x^2</m>, so
+					<m>y' = 4 - 2x^2</m>. Integrating both sides with respect to
+					<m>x</m>:
+					<md>
+						<mrow> y \amp = \int \left(4 - 2x^2\right) dx = 4x - \frac{2}{3}x^3 + c. </mrow>
+					</md>
+					Isolate first, then integrate&#8212;integrating
+					<m>12 - 6x^2</m> without dividing by <m>3</m> first produces a
+					function whose derivative is <m>3y'</m>, not <m>y'</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-di-ex-ivp" component="stu" workspace="1.9in">
+			<statement>
+				<p>
+					Solve the initial-value problem
+					<md>
+						<mrow> s' = 9t^2 - 4, \qquad s(1) = 2. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-di-ex-ivp" component="key">
+			<statement>
+				<p>
+					Solve the initial-value problem
+					<md>
+						<mrow> s' = 9t^2 - 4, \qquad s(1) = 2. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Integrating gives the general solution
+					<m>s = 3t^3 - 4t + c</m>. The initial condition selects the
+					constant:
+					<md>
+						<mrow> s(1) = 3 - 4 + c = 2 \quad\Rightarrow\quad c = 3, </mrow>
+					</md>
+					so the particular solution is <m>s = 3t^3 - 4t + 3</m>. This is the
+					same two-step rhythm as the last worksheet: general solution first,
+					then the initial condition picks one member of the family.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : The trapped-derivative form; when DI applies                -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Freeing a trapped <m>y</m>.</term></p>
+
+		<p>
+			Direct integration also handles equations where <m>y</m> is locked
+			inside a derivative, <m>\frac{d}{dx}\left[g(x,y)\right] = f(x)</m>:
+			integrating both sides removes the derivative, and then algebra
+			finishes the job.
+		</p>
+
+		<p>
+			<term>Reading check.</term>
+			<ol>
+				<li>
+					<p component="stu">
+						After integrating both sides, the two constants of integration are
+						<fillin characters="9"/> into a single constant, and the last step
+						is to <fillin characters="6"/> for <m>y</m>.
+					</p>
+					<p component="key">
+						After integrating both sides, the two constants of integration are
+						<m>\underline{\textbf{combined}}</m> into a single constant, and
+						the last step is to <m>\underline{\textbf{solve}}</m> for
+						<m>y</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-di-ex-trapped" component="stu" workspace="2.4in">
+			<statement>
+				<p>
+					For <m>x > 0</m>, find the general solution of
+					<md>
+						<mrow> \frac{1}{x}\,\frac{d}{dx}\left[x^2\,y\right] = 6. </mrow>
+					</md>
+					Why is it legitimate to write a single constant <m>c</m> even though
+					both integrals produce one?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-di-ex-trapped" component="key">
+			<statement>
+				<p>
+					For <m>x > 0</m>, find the general solution of
+					<md>
+						<mrow> \frac{1}{x}\,\frac{d}{dx}\left[x^2\,y\right] = 6. </mrow>
+					</md>
+					Why is it legitimate to write a single constant <m>c</m> even though
+					both integrals produce one?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Isolate the derivative, then integrate both sides:
+					<md>
+						<mrow> \frac{d}{dx}\left[x^2 y\right] \amp = 6x </mrow>
+						<mrow> x^2 y + c_1 \amp = 3x^2 + c_2 </mrow>
+						<mrow> y \amp = 3 + \frac{c}{x^2}, </mrow>
+					</md>
+					where <m>c = c_2 - c_1</m>. A difference of two arbitrary constants
+					is just another arbitrary constant, so merging them loses nothing;
+					dividing by <m>x^2</m> then frees the solution.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-di-tf-integrate-y">
+			<title>True or False</title>
+			<statement>
+				<p><m>\displaystyle\int y\ dx = \frac{y^2}{2} + c</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. The variable of integration is <m>x</m>, and <m>y</m> is an
+					unknown <em>function</em> of <m>x</m>&#8212;not the integration
+					variable. Until we know which function <m>y</m> is, the integral
+					<m>\int y\,dx</m> simply cannot be computed. (The formula
+					<m>\frac{y^2}{2} + c</m> would be the answer to the different
+					problem <m>\int y\,dy</m>.)
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-di-ex-applies" component="stu" workspace="2.2in">
+			<statement>
+				<p>
+					For each equation, decide whether direct integration applies. If it
+					does, name the form (<m>y' = f(x)</m> or
+					<m>\frac{d}{dx}[g(x,y)] = f(x)</m>); if not, explain what goes
+					wrong.
+					<md>
+						<mrow> \text{(a)}\ y' = 7x\cos x \qquad
+						       \text{(b)}\ y' - y = 5x^2 \qquad
+						       \text{(c)}\ \frac{d}{dx}\left[y^3 + x\right] = e^{2x} </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-di-ex-applies" component="key">
+			<statement>
+				<p>
+					For each equation, decide whether direct integration applies. If it
+					does, name the form (<m>y' = f(x)</m> or
+					<m>\frac{d}{dx}[g(x,y)] = f(x)</m>); if not, explain what goes
+					wrong.
+					<md>
+						<mrow> \text{(a)}\ y' = 7x\cos x \qquad
+						       \text{(b)}\ y' - y = 5x^2 \qquad
+						       \text{(c)}\ \frac{d}{dx}\left[y^3 + x\right] = e^{2x} </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Yes: the form is <m>y' = f(x)</m>, with only <m>x</m>'s on the
+					right (the antiderivative takes integration by parts, but the
+					method applies).
+				</p>
+				<p>
+					(b) No: isolating the derivative gives <m>y' = 5x^2 + y</m>, and the
+					right side contains the dependent variable. Integrating would leave
+					the uncomputable <m>\int y\,dx</m> behind&#8212;we are stuck.
+				</p>
+				<p>
+					(c) Yes: this is the trapped-derivative form
+					<m>\frac{d}{dx}[g(x,y)] = f(x)</m> with <m>g = y^3 + x</m>.
+					Integrating gives <m>y^3 + x = \frac{1}{2}e^{2x} + c</m>, and solving
+					for <m>y</m> takes a cube root.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : Integrating twice; a modeling extension                     -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Integrating more than once.</term></p>
+
+		<p>
+			Nothing stops us from applying direct integration repeatedly: a
+			second-order equation <m>y'' = f(t)</m> surrenders after two
+			integrations&#8212;and each integration contributes its own arbitrary
+			constant, which is exactly why the general solution carries two of
+			them.
+		</p>
+
+		<exercise xml:id="ws-di-ex-ball" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					A ball is thrown straight up from a balcony <m>2</m> meters above
+					the ground with initial velocity <m>15~\mathrm{m/s}</m>. Its height
+					<m>y(t)</m> (in meters) satisfies
+					<md>
+						<mrow> y'' = -10, \qquad y(0) = 2, \qquad y'(0) = 15. </mrow>
+					</md>
+					(a) Integrate twice to find the general solution.
+					(b) Apply both initial conditions to find the particular solution.
+					(c) At what time does the ball reach its maximum height?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-di-ex-ball" component="key">
+			<statement>
+				<p>
+					A ball is thrown straight up from a balcony <m>2</m> meters above
+					the ground with initial velocity <m>15~\mathrm{m/s}</m>. Its height
+					<m>y(t)</m> (in meters) satisfies
+					<md>
+						<mrow> y'' = -10, \qquad y(0) = 2, \qquad y'(0) = 15. </mrow>
+					</md>
+					(a) Integrate twice to find the general solution.
+					(b) Apply both initial conditions to find the particular solution.
+					(c) At what time does the ball reach its maximum height?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) One integration gives <m>y' = -10t + c_1</m>; a second gives
+					<m>y = -5t^2 + c_1 t + c_2</m>. Two integrations, two constants.
+				</p>
+				<p>
+					(b) <m>y'(0) = c_1 = 15</m> and <m>y(0) = c_2 = 2</m>, so
+					<md>
+						<mrow> y = -5t^2 + 15t + 2. </mrow>
+					</md>
+				</p>
+				<p>
+					(c) The maximum occurs when the ball is momentarily motionless:
+					<m>y' = -10t + 15 = 0</m> at <m>t = 1.5</m> seconds (height
+					<m>y(1.5) = 13.25</m> m). Notice the velocity condition determined
+					<m>c_1</m> and the height condition determined <m>c_2</m>&#8212;each
+					initial condition pins down the constant born in the corresponding
+					integration.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Direct integration demands a right-hand side free of the dependent
+				variable&#8212;equations like <m>y' = 5x^2 + y</m> defeat it. The next
+				worksheet develops <em>separation of variables</em>, our first
+				technique for equations where the dependent variable refuses to stay
+				out of the way.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
