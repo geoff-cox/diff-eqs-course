@@ -34,6 +34,7 @@
 			<li><p><term>Recognize</term> when a first-order equation is separable and write it in the form <m>\frac{dy}{dx} = f(x)\cdot g(y)</m>.</p></li>
 			<li><p><term>Rewrite</term> equations by factoring and splitting fractions to reveal hidden separability.</p></li>
 			<li><p><term>Solve</term> separable equations with the three-step method&#8212;separate, integrate, solve&#8212;combining constants into one.</p></li>
+			<li><p><term>Identify</term> singular (lost) solutions the separation step can drop, and tell when a constant solution is genuinely lost.</p></li>
 			<li><p><term>Handle</term> implicit general solutions and absolute values, choosing the correct branch for an initial-value problem.</p></li>
 			<li><p><term>Model</term> growth and cooling with separable equations and interpret the results.</p></li>
 		</ul>
@@ -296,6 +297,14 @@
 					where the single constant <m>C = -c</m> absorbs the sign. Only one
 					arbitrary constant survives, even though we integrated two sides.
 				</p>
+				<p>
+					One caution before we celebrate: the divide-by-<m>y^2</m> step
+					quietly assumed <m>y \neq 0</m>. The constant function
+					<m>y \equiv 0</m> also solves <m>\frac{dy}{dx} = 3x^2 y^2</m> (both
+					sides are <m>0</m>), yet no value of <m>C</m> makes
+					<m>\frac{1}{C - x^3}</m> equal to <m>0</m>. That dropped solution is
+					the subject of the next page.
+				</p>
 			</solution>
 		</exercise>
 
@@ -350,7 +359,126 @@
 	</page>
 
 	<!-- ==================================================================== -->
-	<!-- PAGE 3 : Implicit solutions, absolute values, and branch selection   -->
+	<!-- PAGE 3 : Lost (singular) solutions from the divide step              -->
+	<!-- This page covers the singular/lost-solution theme of the old deck's  -->
+	<!-- x*sqrt(1-y^2) item. A matching section is planned for debookrs        -->
+	<!-- c4-sov; until then the treatment is self-contained here.             -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Lost solutions: the price of dividing.</term></p>
+
+		<p>
+			The warm-up on the previous page hid a trap. To separate
+			<m>\frac{dy}{dx} = 3x^2 y^2</m> we divided by <m>y^2</m>, and division
+			is only legal when the divisor is nonzero. Wherever <m>g(y) = 0</m>,
+			the constant function sitting there is itself a solution&#8212;because
+			<m>\frac{dy}{dx} = f(x)\cdot g(y)</m> makes <em>both</em> sides zero&#8212;but
+			the divided family may skip right over it. A constant solution
+			<m>y \equiv a</m> (with <m>g(a) = 0</m>) that the general-solution
+			family cannot reproduce is called a <term>singular solution</term>, or
+			a <term>lost solution</term>.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						Dividing by <m>g(y)</m> to separate is only valid when
+						<m>g(y)</m> is nonzero. At any constant <m>y = a</m> where
+						<m>g(a)</m> equals <fillin characters="4"/>, the constant function
+						<m>y \equiv a</m> is a solution that the divide step may drop; if
+						no value of the constant reproduces it, it is called a
+						<fillin characters="10"/> solution.
+					</p>
+					<p component="key">
+						Dividing by <m>g(y)</m> to separate is only valid when
+						<m>g(y)</m> is nonzero. At any constant <m>y = a</m> where
+						<m>g(a)</m> equals <m>\underline{\textbf{zero}}</m>, the constant
+						function <m>y \equiv a</m> is a solution that the divide step may
+						drop; if no value of the constant reproduces it, it is called a
+						<m>\underline{\textbf{singular}}</m> solution.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-sov-ex-singular" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> \frac{dy}{dx} = x\,(y - 3)^2, </mrow>
+					</md>
+					then identify the singular solution the separation step drops.
+					Verify that your singular solution really does satisfy the
+					equation.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-singular" component="key">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> \frac{dy}{dx} = x\,(y - 3)^2, </mrow>
+					</md>
+					then identify the singular solution the separation step drops.
+					Verify that your singular solution really does satisfy the
+					equation.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Separable with <m>f(x) = x</m> and <m>g(y) = (y-3)^2</m>. Dividing
+					by <m>(y-3)^2</m> and integrating:
+					<md>
+						<mrow> (y - 3)^{-2}\,dy \amp = x\,dx </mrow>
+						<mrow> -\frac{1}{y - 3} \amp = \frac{x^2}{2} + c. </mrow>
+					</md>
+					Solving for <m>y</m> gives the general solution
+					<md>
+						<mrow> y = 3 - \frac{2}{x^2 + C}, \qquad (C = 2c). </mrow>
+					</md>
+				</p>
+				<p>
+					The divide step required <m>y \neq 3</m>, so it set aside the
+					constant function <m>y \equiv 3</m>. Check it directly: if
+					<m>y \equiv 3</m> then <m>\frac{dy}{dx} = 0</m> and
+					<m>x\,(3 - 3)^2 = 0</m>, so it <em>is</em> a solution. Yet no finite
+					<m>C</m> makes <m>3 - \frac{2}{x^2 + C}</m> equal to the constant
+					<m>3</m>, so <m>y \equiv 3</m> is a genuine <em>singular solution</em>&#8212;we
+					must report it alongside the family.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sov-tf-singular">
+			<title>True or False</title>
+			<statement>
+				<p>Dividing by <m>y</m> while separating always throws away the solution <m>y \equiv 0</m> for good.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;<em>sometimes</em> the general family quietly puts it
+					back. For <m>\frac{dy}{dx} = 2xy</m> the divide step gives
+					<m>y = C e^{x^2}</m>, and the choice <m>C = 0</m> returns
+					<m>y \equiv 0</m>, so nothing is truly lost. It is genuinely lost
+					only when no value of the constant reproduces it&#8212;as with
+					<m>\frac{dy}{dx} = 3x^2 y^2</m>, whose family
+					<m>y = \frac{1}{C - x^3}</m> is never <m>0</m>. The rule: after
+					dividing, always find the zeros of <m>g(y)</m> and check each one
+					against your general solution.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Implicit solutions, absolute values, and branch selection   -->
 	<!-- ==================================================================== -->
 
 	<page>
@@ -492,15 +620,6 @@
 			</solution>
 		</exercise>
 
-		<!-- TODO(geoff): The old "02 sov" deck closed with a singular/lost-
-		     solution item (dy/dx = x*sqrt(1-y^2), where the constant solutions
-		     y = +/-1 are lost during separation). Book chapter c4-sov does not
-		     develop singular or lost solutions, so this worksheet omits it to
-		     track the book. Recommend adding a short singular-solutions
-		     treatment to debookrs c4-sov; once the book covers it, a matching
-		     exercise fits naturally right here, since dy/dx = -x/y in the
-		     circle IVP above is undefined at y = 0. -->
-
 		<exercise xml:id="ws-sov-tf-lny">
 			<title>True or False</title>
 			<statement>
@@ -519,7 +638,7 @@
 	</page>
 
 	<!-- ==================================================================== -->
-	<!-- PAGE 4 : A modeling extension the book leaves unworked; looking ahead -->
+	<!-- PAGE 5 : A modeling extension the book leaves unworked; looking ahead -->
 	<!-- ==================================================================== -->
 
 	<page>
