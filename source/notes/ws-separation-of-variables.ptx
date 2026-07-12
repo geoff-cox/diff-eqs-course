@@ -492,6 +492,15 @@
 			</solution>
 		</exercise>
 
+		<!-- TODO(geoff): The old "02 sov" deck closed with a singular/lost-
+		     solution item (dy/dx = x*sqrt(1-y^2), where the constant solutions
+		     y = +/-1 are lost during separation). Book chapter c4-sov does not
+		     develop singular or lost solutions, so this worksheet omits it to
+		     track the book. Recommend adding a short singular-solutions
+		     treatment to debookrs c4-sov; once the book covers it, a matching
+		     exercise fits naturally right here, since dy/dx = -x/y in the
+		     circle IVP above is undefined at y = 0. -->
+
 		<exercise xml:id="ws-sov-tf-lny">
 			<title>True or False</title>
 			<statement>
