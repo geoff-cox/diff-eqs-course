@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Separation of Variables"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c4-sov/sec-separable-form.ptx
+		c4-sov/sec-showing-separability.ptx
+		c4-sov/sec-sov-method.ptx
+		c4-sov/sec-sov-implicit-solns.ptx
+	Old deck: source/notes/latex/ folder "02 sov".
+	Previous worksheet: ws-direct-integration.ptx; next: ws-integrating-factors.
+
+	Per the sourcing rules, every equation here is fresh: concepts mirror
+	the book, but none of the example equations appear in it (nor in the
+	old deck or the earlier worksheets). Per the instructor overrides in
+	CLAUDE.md section 4: no interactive content, and the whole topic stays
+	on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-separation-of-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Separation of Variables</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Recognize</term> when a first-order equation is separable and write it in the form <m>\frac{dy}{dx} = f(x)\cdot g(y)</m>.</p></li>
+			<li><p><term>Rewrite</term> equations by factoring and splitting fractions to reveal hidden separability.</p></li>
+			<li><p><term>Solve</term> separable equations with the three-step method&#8212;separate, integrate, solve&#8212;combining constants into one.</p></li>
+			<li><p><term>Identify</term> singular (lost) solutions the separation step can drop, and tell when a constant solution is genuinely lost.</p></li>
+			<li><p><term>Handle</term> implicit general solutions and absolute values, choosing the correct branch for an initial-value problem.</p></li>
+			<li><p><term>Model</term> growth and cooling with separable equations and interpret the results.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : Separable form; recognizing and revealing separability      -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>What makes an equation separable?</term></p>
+
+		<p>
+			Direct integration failed the moment the dependent variable showed
+			up on the right-hand side. <em>Separation of variables</em> is our
+			first tool for exactly that situation&#8212;provided the right-hand
+			side splits into a product of a function of <m>x</m> alone and a
+			function of <m>y</m> alone. When it does, we can herd all the
+			<m>x</m>'s to one side and all the <m>y</m>'s to the other and
+			integrate each separately.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						A first-order differential equation is <term>separable</term> if
+						it can be written in the <term>separable form</term>
+						<m>\frac{dy}{dx} = f(x)\cdot g(y)</m>, that is, as a
+						<fillin characters="10"/> of a function of the independent
+						variable alone and a function of the dependent variable alone.
+					</p>
+					<p component="key">
+						A first-order differential equation is <term>separable</term> if
+						it can be written in the <term>separable form</term>
+						<m>\frac{dy}{dx} = f(x)\cdot g(y)</m>, that is, as a
+						<m>\underline{\textbf{product}}</m> of a function of the
+						independent variable alone and a function of the dependent
+						variable alone.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						In separable form the two variables are joined only by
+						<fillin characters="16"/>&#8212;never by addition. So a
+						right-hand side that is a <em>sum</em> of an <m>x</m>-piece and a
+						<m>y</m>-piece is generally <fillin characters="4"/> separable.
+					</p>
+					<p component="key">
+						In separable form the two variables are joined only by
+						<m>\underline{\textbf{multiplication}}</m>&#8212;never by
+						addition. So a right-hand side that is a <em>sum</em> of an
+						<m>x</m>-piece and a <m>y</m>-piece is generally
+						<m>\underline{\textbf{not}}</m> separable.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-sov-tf-sum">
+			<title>True or False</title>
+			<statement>
+				<p><m>y' = e^{x} + e^{y}</m> is separable.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. A <em>sum</em> cannot be rewritten as a single product
+					<m>f(x)\cdot g(y)</m>. Watch the contrast that trips students up:
+					<m>e^{x+y} = e^{x}\cdot e^{y}</m> <em>is</em> separable, because the
+					sum lives in the exponent and the exponent rule turns it into a
+					product. But a sum <em>of</em> exponentials, <m>e^{x} + e^{y}</m>,
+					has no such trick and stays non-separable.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-identify" component="stu" workspace="2.3in">
+			<statement>
+				<p>
+					For each equation, decide whether it is separable. If it is, write
+					it as <m>\frac{dy}{dx} = f(x)\cdot g(y)</m> and name <m>f(x)</m> and
+					<m>g(y)</m>; if not, explain what blocks it.
+					<md>
+						<mrow> \text{(a)}\ \frac{dy}{dx} = 7x^2 y \qquad
+						       \text{(b)}\ \frac{dy}{dx} = x + y^2 \qquad
+						       \text{(c)}\ \frac{dy}{dx} = (y+2)\cos x \qquad
+						       \text{(d)}\ \frac{dy}{dx} = \frac{x^2}{y+1} </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-identify" component="key">
+			<statement>
+				<p>
+					For each equation, decide whether it is separable. If it is, write
+					it as <m>\frac{dy}{dx} = f(x)\cdot g(y)</m> and name <m>f(x)</m> and
+					<m>g(y)</m>; if not, explain what blocks it.
+					<md>
+						<mrow> \text{(a)}\ \frac{dy}{dx} = 7x^2 y \qquad
+						       \text{(b)}\ \frac{dy}{dx} = x + y^2 \qquad
+						       \text{(c)}\ \frac{dy}{dx} = (y+2)\cos x \qquad
+						       \text{(d)}\ \frac{dy}{dx} = \frac{x^2}{y+1} </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Separable: <m>7x^2 y = (7x^2)\cdot(y)</m>, so <m>f(x) = 7x^2</m>
+					and <m>g(y) = y</m>.
+				</p>
+				<p>
+					(b) Not separable: <m>x + y^2</m> is a <em>sum</em>. No factoring
+					turns it into a product of an <m>x</m>-only factor and a
+					<m>y</m>-only factor.
+				</p>
+				<p>
+					(c) Separable: <m>(y+2)\cos x = (\cos x)\cdot(y+2)</m>, so
+					<m>f(x) = \cos x</m> and <m>g(y) = y+2</m>. Order does not matter&#8212;a product reads the same either way.
+				</p>
+				<p>
+					(d) Separable: a fraction is secretly a product,
+					<m>\frac{x^2}{y+1} = x^2\cdot\frac{1}{y+1}</m>, so <m>f(x) = x^2</m>
+					and <m>g(y) = \frac{1}{y+1}</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-reveal" component="stu" workspace="1.8in">
+			<statement>
+				<p>
+					The equation <m>\frac{dy}{dx} = 3xy - 12x</m> does not look
+					separable at a glance. Rewrite the right-hand side as a product to
+					show that it is, then identify <m>f(x)</m> and <m>g(y)</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-reveal" component="key">
+			<statement>
+				<p>
+					The equation <m>\frac{dy}{dx} = 3xy - 12x</m> does not look
+					separable at a glance. Rewrite the right-hand side as a product to
+					show that it is, then identify <m>f(x)</m> and <m>g(y)</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Factor the common <m>3x</m> out of both terms:
+					<md>
+						<mrow> \frac{dy}{dx} = 3xy - 12x = 3x\,(y - 4). </mrow>
+					</md>
+					This is now a product with <m>f(x) = 3x</m> and <m>g(y) = y - 4</m>,
+					so the equation is separable. Turning a <em>sum</em> of terms into a
+					<em>product</em> by factoring is the most common way a disguised
+					separable equation reveals itself.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : The three-step method; first solves and a growth model      -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The three-step method.</term></p>
+
+		<p>
+			Once an equation is in separable form <m>\frac{dy}{dx} = f(x)\cdot g(y)</m>,
+			the recipe is always the same: <em>separate</em> the variables onto
+			opposite sides, <em>integrate</em> both sides, then <em>solve</em> for
+			<m>y</m> if you can. Treating <m>\frac{dy}{dx}</m> as if <m>dy</m> and
+			<m>dx</m> were separate factors is not a real algebraic move, but it is
+			a reliable shortcut&#8212;a substitution argument justifies it.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						<term>Step 1.</term> After checking the equation is first order and
+						separable, divide so that all the <m>y</m>'s ride with <m>dy</m>
+						and all the <m>x</m>'s ride with <m>dx</m>:
+						<m>\frac{1}{g(y)}\,dy = f(x)\,dx</m>.
+						<term>Step 2.</term> <fillin characters="10"/> both sides.
+						<term>Step 3.</term> <fillin characters="6"/> for <m>y</m> when
+						possible, and combine the two constants of integration into a
+						single constant.
+					</p>
+					<p component="key">
+						<term>Step 1.</term> After checking the equation is first order and
+						separable, divide so that all the <m>y</m>'s ride with <m>dy</m>
+						and all the <m>x</m>'s ride with <m>dx</m>:
+						<m>\frac{1}{g(y)}\,dy = f(x)\,dx</m>.
+						<term>Step 2.</term> <m>\underline{\textbf{integrate}}</m> both
+						sides.
+						<term>Step 3.</term> <m>\underline{\textbf{solve}}</m> for
+						<m>y</m> when possible, and combine the two constants of
+						integration into a single constant.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-sov-tf-split">
+			<title>True or False</title>
+			<statement>
+				<p>Splitting <m>\frac{dy}{dx}</m> into separate pieces <m>dy</m> and <m>dx</m> is a genuine algebraic operation.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. Strictly, <m>\frac{dy}{dx}</m> is a single symbol for a
+					derivative, not a fraction we may break apart. The split is an
+					<em>informal shortcut</em>; it is justified by integrating
+					<m>\frac{1}{g(y)}\frac{dy}{dx} = f(x)</m> with respect to <m>x</m>
+					and recognizing <m>\frac{dy}{dx}\,dx = dy</m>. The shortcut always
+					gives the right answer here, which is why we use it.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-warmup" component="stu" workspace="2.2in">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> \frac{dy}{dx} = 3x^2 y^2. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-warmup" component="key">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> \frac{dy}{dx} = 3x^2 y^2. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					The right side is already a product, <m>(3x^2)(y^2)</m>. Separate
+					and integrate:
+					<md>
+						<mrow> y^{-2}\,dy \amp = 3x^2\,dx </mrow>
+						<mrow> \int y^{-2}\,dy \amp = \int 3x^2\,dx </mrow>
+						<mrow> -\frac{1}{y} \amp = x^3 + c. </mrow>
+					</md>
+					Solve for <m>y</m>: from <m>\frac{1}{y} = -(x^3 + c)</m>,
+					<md>
+						<mrow> y = \frac{1}{C - x^3}, </mrow>
+					</md>
+					where the single constant <m>C = -c</m> absorbs the sign. Only one
+					arbitrary constant survives, even though we integrated two sides.
+				</p>
+				<p>
+					One caution before we celebrate: the divide-by-<m>y^2</m> step
+					quietly assumed <m>y \neq 0</m>. The constant function
+					<m>y \equiv 0</m> also solves <m>\frac{dy}{dx} = 3x^2 y^2</m> (both
+					sides are <m>0</m>), yet no value of <m>C</m> makes
+					<m>\frac{1}{C - x^3}</m> equal to <m>0</m>. That dropped solution is
+					the subject of the next page.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-growth" component="stu" workspace="2.4in">
+			<statement>
+				<p>
+					A culture starts with <m>50</m> cells and grows so that its rate of
+					increase is proportional to its current size:
+					<md>
+						<mrow> \frac{dP}{dt} = 0.4\,P, \qquad P(0) = 50, </mrow>
+					</md>
+					with <m>t</m> in hours. (a) Find <m>P(t)</m>. (b) Estimate the
+					population at <m>t = 5</m> hours.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-growth" component="key">
+			<statement>
+				<p>
+					A culture starts with <m>50</m> cells and grows so that its rate of
+					increase is proportional to its current size:
+					<md>
+						<mrow> \frac{dP}{dt} = 0.4\,P, \qquad P(0) = 50, </mrow>
+					</md>
+					with <m>t</m> in hours. (a) Find <m>P(t)</m>. (b) Estimate the
+					population at <m>t = 5</m> hours.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Separable with <m>f(t) = 0.4</m> and <m>g(P) = P</m>. Separate
+					and integrate:
+					<md>
+						<mrow> \frac{1}{P}\,dP \amp = 0.4\,dt </mrow>
+						<mrow> \ln|P| \amp = 0.4\,t + c_1. </mrow>
+					</md>
+					A population is positive, so <m>|P| = P</m>, and exponentiating
+					gives <m>P = e^{0.4t + c_1} = C e^{0.4t}</m>. The initial condition
+					fixes the constant: <m>P(0) = C = 50</m>, so
+					<md>
+						<mrow> P(t) = 50\,e^{0.4t}. </mrow>
+					</md>
+				</p>
+				<p>
+					(b) At <m>t = 5</m>: <m>P(5) = 50\,e^{2} \approx 369</m> cells.
+					<q>Rate proportional to amount</q> always separates into pure
+					exponential growth&#8212;the model's signature.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : Lost (singular) solutions from the divide step              -->
+	<!-- This page covers the singular/lost-solution theme of the old deck's  -->
+	<!-- x*sqrt(1-y^2) item. A matching section is planned for debookrs        -->
+	<!-- c4-sov; until then the treatment is self-contained here.             -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Lost solutions: the price of dividing.</term></p>
+
+		<p>
+			The warm-up on the previous page hid a trap. To separate
+			<m>\frac{dy}{dx} = 3x^2 y^2</m> we divided by <m>y^2</m>, and division
+			is only legal when the divisor is nonzero. Wherever <m>g(y) = 0</m>,
+			the constant function sitting there is itself a solution&#8212;because
+			<m>\frac{dy}{dx} = f(x)\cdot g(y)</m> makes <em>both</em> sides zero&#8212;but
+			the divided family may skip right over it. A constant solution
+			<m>y \equiv a</m> (with <m>g(a) = 0</m>) that the general-solution
+			family cannot reproduce is called a <term>singular solution</term>, or
+			a <term>lost solution</term>.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						Dividing by <m>g(y)</m> to separate is only valid when
+						<m>g(y)</m> is nonzero. At any constant <m>y = a</m> where
+						<m>g(a)</m> equals <fillin characters="4"/>, the constant function
+						<m>y \equiv a</m> is a solution that the divide step may drop; if
+						no value of the constant reproduces it, it is called a
+						<fillin characters="10"/> solution.
+					</p>
+					<p component="key">
+						Dividing by <m>g(y)</m> to separate is only valid when
+						<m>g(y)</m> is nonzero. At any constant <m>y = a</m> where
+						<m>g(a)</m> equals <m>\underline{\textbf{zero}}</m>, the constant
+						function <m>y \equiv a</m> is a solution that the divide step may
+						drop; if no value of the constant reproduces it, it is called a
+						<m>\underline{\textbf{singular}}</m> solution.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-sov-ex-singular" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> \frac{dy}{dx} = x\,(y - 3)^2, </mrow>
+					</md>
+					then identify the singular solution the separation step drops.
+					Verify that your singular solution really does satisfy the
+					equation.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-singular" component="key">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> \frac{dy}{dx} = x\,(y - 3)^2, </mrow>
+					</md>
+					then identify the singular solution the separation step drops.
+					Verify that your singular solution really does satisfy the
+					equation.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Separable with <m>f(x) = x</m> and <m>g(y) = (y-3)^2</m>. Dividing
+					by <m>(y-3)^2</m> and integrating:
+					<md>
+						<mrow> (y - 3)^{-2}\,dy \amp = x\,dx </mrow>
+						<mrow> -\frac{1}{y - 3} \amp = \frac{x^2}{2} + c. </mrow>
+					</md>
+					Solving for <m>y</m> gives the general solution
+					<md>
+						<mrow> y = 3 - \frac{2}{x^2 + C}, \qquad (C = 2c). </mrow>
+					</md>
+				</p>
+				<p>
+					The divide step required <m>y \neq 3</m>, so it set aside the
+					constant function <m>y \equiv 3</m>. Check it directly: if
+					<m>y \equiv 3</m> then <m>\frac{dy}{dx} = 0</m> and
+					<m>x\,(3 - 3)^2 = 0</m>, so it <em>is</em> a solution. Yet no finite
+					<m>C</m> makes <m>3 - \frac{2}{x^2 + C}</m> equal to the constant
+					<m>3</m>, so <m>y \equiv 3</m> is a genuine <em>singular solution</em>&#8212;we
+					must report it alongside the family.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sov-tf-singular">
+			<title>True or False</title>
+			<statement>
+				<p>Dividing by <m>y</m> while separating always throws away the solution <m>y \equiv 0</m> for good.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;<em>sometimes</em> the general family quietly puts it
+					back. For <m>\frac{dy}{dx} = 2xy</m> the divide step gives
+					<m>y = C e^{x^2}</m>, and the choice <m>C = 0</m> returns
+					<m>y \equiv 0</m>, so nothing is truly lost. It is genuinely lost
+					only when no value of the constant reproduces it&#8212;as with
+					<m>\frac{dy}{dx} = 3x^2 y^2</m>, whose family
+					<m>y = \frac{1}{C - x^3}</m> is never <m>0</m>. The rule: after
+					dividing, always find the zeros of <m>g(y)</m> and check each one
+					against your general solution.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Implicit solutions, absolute values, and branch selection   -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>When you cannot isolate <m>y</m>.</term></p>
+
+		<p>
+			Step 3 says <q>solve for <m>y</m> <em>if possible</em></q>&#8212;and
+			sometimes it is not. When the integrated equation traps <m>y</m>
+			inside a mix of terms, we leave the answer in <em>implicit</em> form.
+			And whenever integration produces <m>\ln|y|</m>, unwrapping the
+			absolute value forces a <m>\pm</m> that we must not drop.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						If, after integrating, you cannot algebraically isolate the
+						dependent variable, you leave the answer in
+						<fillin characters="10"/> form.
+					</p>
+					<p component="key">
+						If, after integrating, you cannot algebraically isolate the
+						dependent variable, you leave the answer in
+						<m>\underline{\textbf{implicit}}</m> form.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						To finish isolating <m>y</m> from an equation such as
+						<m>|y| = e^{x^2 + c}</m>, you replace the absolute value with a
+						<fillin characters="16"/> sign to capture both possibilities.
+					</p>
+					<p component="key">
+						To finish isolating <m>y</m> from an equation such as
+						<m>|y| = e^{x^2 + c}</m>, you replace the absolute value with a
+						<m>\underline{\textbf{plus-or-minus}}</m> (<m>\pm</m>) sign to
+						capture both possibilities.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-sov-ex-implicit" component="stu" workspace="2.5in">
+			<statement>
+				<p>
+					Solve the initial-value problem
+					<md>
+						<mrow> \frac{dy}{dx} = \frac{x^2}{1 + \cos y}, \qquad y(0) = \frac{\pi}{2}. </mrow>
+					</md>
+					Leave the general solution in implicit form, then use the initial
+					condition to find the constant.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-implicit" component="key">
+			<statement>
+				<p>
+					Solve the initial-value problem
+					<md>
+						<mrow> \frac{dy}{dx} = \frac{x^2}{1 + \cos y}, \qquad y(0) = \frac{\pi}{2}. </mrow>
+					</md>
+					Leave the general solution in implicit form, then use the initial
+					condition to find the constant.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Separable: <m>\frac{x^2}{1+\cos y} = x^2\cdot\frac{1}{1+\cos y}</m>.
+					Separate and integrate:
+					<md>
+						<mrow> (1 + \cos y)\,dy \amp = x^2\,dx </mrow>
+						<mrow> \int (1 + \cos y)\,dy \amp = \int x^2\,dx </mrow>
+						<mrow> y + \sin y \amp = \frac{x^3}{3} + c. </mrow>
+					</md>
+					There is no way to isolate <m>y</m> out of <m>y + \sin y</m>, so
+					this <em>implicit general solution</em> is the final form. The
+					initial condition still determines <m>c</m>: setting <m>x = 0</m>,
+					<m>y = \frac{\pi}{2}</m> gives <m>\frac{\pi}{2} + \sin\frac{\pi}{2} = 0 + c</m>,
+					so <m>c = \frac{\pi}{2} + 1</m>. The implicit particular solution is
+					<md>
+						<mrow> y + \sin y = \frac{x^3}{3} + \frac{\pi}{2} + 1. </mrow>
+					</md>
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-branch" component="stu" workspace="2.7in">
+			<statement>
+				<p>
+					Solve the initial-value problem
+					<md>
+						<mrow> \frac{dy}{dx} = -\frac{x}{y}, \qquad y(1) = -2. </mrow>
+					</md>
+					Describe the shape of the general solution, and explain how the
+					initial condition decides which part of it you keep.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-branch" component="key">
+			<statement>
+				<p>
+					Solve the initial-value problem
+					<md>
+						<mrow> \frac{dy}{dx} = -\frac{x}{y}, \qquad y(1) = -2. </mrow>
+					</md>
+					Describe the shape of the general solution, and explain how the
+					initial condition decides which part of it you keep.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Separable: <m>-\frac{x}{y} = (-x)\cdot\frac{1}{y}</m>. Separate and
+					integrate:
+					<md>
+						<mrow> y\,dy \amp = -x\,dx </mrow>
+						<mrow> \frac{y^2}{2} \amp = -\frac{x^2}{2} + c_1 </mrow>
+						<mrow> x^2 + y^2 \amp = c, </mrow>
+					</md>
+					where <m>c = 2c_1</m>. The general solution is a family of
+					<em>circles</em> centered at the origin. Solving for <m>y</m> gives
+					two branches, <m>y = \pm\sqrt{c - x^2}</m>.
+				</p>
+				<p>
+					Because <m>y(1) = -2</m> is negative, the solution must come from the
+					<em>lower semicircle</em> branch <m>y = -\sqrt{c - x^2}</m>.
+					Substituting <m>x = 1</m>, <m>y = -2</m> gives <m>1 + 4 = c</m>, so
+					<m>c = 5</m> and
+					<md>
+						<mrow> y = -\sqrt{5 - x^2}, </mrow>
+					</md>
+					the lower half of the circle of radius <m>\sqrt{5}</m>, valid for
+					<m>|x| &lt; \sqrt{5}</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sov-tf-lny">
+			<title>True or False</title>
+			<statement>
+				<p><m>\displaystyle\int \frac{1}{y}\,dy = \ln(y) + c</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. The antiderivative is <m>\ln|y| + c</m>. Dropping the
+					absolute value silently throws away every solution with
+					<m>y &lt; 0</m>&#8212;which is exactly the branch the circle problem
+					above depended on. The <m>|\cdot|</m> is what keeps both signs of
+					<m>y</m> in play.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 5 : A modeling extension the book leaves unworked; looking ahead -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>A model the book leaves for you: Newton's law of cooling.</term></p>
+
+		<p>
+			Separation of variables is the engine behind many real models. Here is
+			one the coursebook sets up but leaves for you to solve&#8212;work it
+			end to end.
+		</p>
+
+		<exercise xml:id="ws-sov-ex-cooling" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					A cup of coffee at <m>90^\circ</m>C is left in a room held at
+					<m>20^\circ</m>C. Newton's law of cooling says its temperature
+					<m>T(t)</m> (in <m>{}^\circ</m>C, with <m>t</m> in minutes)
+					satisfies
+					<md>
+						<mrow> \frac{dT}{dt} = -k\,(T - 20), \qquad k &gt; 0. </mrow>
+					</md>
+					(a) Find the general solution.
+					(b) With <m>k = 0.1</m> and <m>T(0) = 90</m>, find <m>T(t)</m>.
+					(c) What temperature does the coffee approach as <m>t \to \infty</m>, and does that match your intuition?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sov-ex-cooling" component="key">
+			<statement>
+				<p>
+					A cup of coffee at <m>90^\circ</m>C is left in a room held at
+					<m>20^\circ</m>C. Newton's law of cooling says its temperature
+					<m>T(t)</m> (in <m>{}^\circ</m>C, with <m>t</m> in minutes)
+					satisfies
+					<md>
+						<mrow> \frac{dT}{dt} = -k\,(T - 20), \qquad k &gt; 0. </mrow>
+					</md>
+					(a) Find the general solution.
+					(b) With <m>k = 0.1</m> and <m>T(0) = 90</m>, find <m>T(t)</m>.
+					(c) What temperature does the coffee approach as <m>t \to \infty</m>, and does that match your intuition?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Separable with <m>f(t) = -k</m> and <m>g(T) = T - 20</m>.
+					Separate and integrate:
+					<md>
+						<mrow> \frac{1}{T - 20}\,dT \amp = -k\,dt </mrow>
+						<mrow> \ln|T - 20| \amp = -k\,t + c_1. </mrow>
+					</md>
+					The coffee is hotter than the room, so <m>T - 20 &gt; 0</m> and
+					<m>|T - 20| = T - 20</m>. Exponentiating,
+					<md>
+						<mrow> T - 20 = C e^{-kt} \quad\Rightarrow\quad T = 20 + C e^{-kt}. </mrow>
+					</md>
+				</p>
+				<p>
+					(b) The initial condition gives <m>T(0) = 20 + C = 90</m>, so
+					<m>C = 70</m> and
+					<md>
+						<mrow> T(t) = 20 + 70\,e^{-0.1t}. </mrow>
+					</md>
+				</p>
+				<p>
+					(c) As <m>t \to \infty</m>, <m>e^{-0.1t} \to 0</m>, so
+					<m>T \to 20^\circ</m>C. The coffee cools to room temperature, exactly
+					as intuition demands. The constant <m>20</m>&#8212;the room
+					temperature&#8212;is the equilibrium the model relaxes toward, and
+					<m>k</m> controls how fast it gets there.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Separation of variables works only when the right-hand side factors
+				into <m>f(x)\cdot g(y)</m>. Many first-order equations refuse&#8212;a
+				linear equation like <m>y' + p(x)\,y = q(x)</m> with a nonzero
+				<m>q(x)</m> mixes <m>x</m> and <m>y</m> in a way no factoring can
+				pull apart. The next worksheet develops <em>integrating factors</em>,
+				a technique built precisely for the linear equations that separation
+				cannot touch.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
