@@ -35,7 +35,7 @@ the old Beamer decks in `source/notes/latex/`, tracking the coursebook
 | `ws-classification` | Classifying Differential Equations | `01 intro-topics` (order, linearity) | `c1-classification/sec-order`, `sec-linear-terms`, `sec-linearity` | **done** |
 | `ws-solutions-ivp` | Verifying Solutions & Initial Conditions | `01 intro-topics` (Verifying DEs, Initial Conditions) | `c2-solns/*` | **done** |
 | `ws-direct-integration` | Solving by Direct Integration | — (new) | `c3-di/*` | **in-review** |
-| `ws-separation-of-variables` | Separation of Variables | `02 sov` | `c4-sov/*` | in-review |
+| `ws-separation-of-variables` | Separation of Variables | `02 sov` | `c4-sov/*` | **in-review** |
 | `ws-integrating-factors` | Integrating Factors | `03 if` | `c5-if/*` | todo |
 | `ws-slope-fields` | Slope Fields & Qualitative Analysis | `08 slope-fields` | `c6-qm/*` | todo |
 | `ws-eulers-method` | Euler's Method | `07 eulers-method` | `c7-em/*` | todo |
