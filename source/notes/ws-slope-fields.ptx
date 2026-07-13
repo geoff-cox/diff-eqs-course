@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Slope Fields and Qualitative Analysis"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c6-qm/sec-slope-fields.ptx
+		c6-qm/sec-autonomous-equations.ptx
+		c6-qm/sec-equilibrium-solutions.ptx
+		c6-qm/sec-classifying-equilibrium-solutions.ptx
+		c6-qm/sec-logistical-models.ptx
+		c6-qm/sec-parameter-analysis.ptx
+	Old deck: source/notes/latex/ folder "08 slope-fields"
+	(structured_notes_slope_fields.tex plus figs/).
+	Previous worksheet: ws-integrating-factors.ptx; next: ws-eulers-method.
+
+	Per the sourcing rules, every equation here is fresh: concepts mirror
+	the book, but none of the example equations appear in it (nor in the
+	old deck or the earlier worksheets). Per the instructor overrides in
+	CLAUDE.md section 4: no interactive content (print-first, so all
+	slope-field work is hand-constructed: slope tables, student-drawn
+	grids, text phase lines), and the whole topic stays on this one
+	worksheet.
+
+	FIGURES: dense computer-drawn slope fields would enrich pages 1-2 but
+	are not required by any exercise. Placeholder locations are marked
+	with TODO(geoff) comments naming candidate source images from the old
+	deck's figs/ directory (repo-internal, read-only). Listed under the
+	PR's Open questions.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-slope-fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Slope Fields and Qualitative Analysis</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Evaluate</term> the slope generator <m>f(t,y)</m> at a point and sketch a small slope field by hand.</p></li>
+			<li><p><term>Recognize</term> autonomous equations and the striped pattern of their slope fields.</p></li>
+			<li><p><term>Find</term> equilibrium solutions by solving <m>f(y) = 0</m>.</p></li>
+			<li><p><term>Construct</term> a phase line and classify each equilibrium as a sink, source, or node&#8212;by sign analysis and by the <m>f'(c)</m> test.</p></li>
+			<li><p><term>Predict</term> the long-term behavior of solutions without solving the equation, including a harvested logistic population.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : The slope generator; sketching a field by hand              -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Reading behavior without solving.</term></p>
+
+		<p>
+			Every technique so far produced a formula for <m>y</m>. This worksheet
+			flips the question: what can an equation <m>y' = f(t,y)</m> tell us
+			about its solutions <em>directly</em>, with no integration at all? The
+			right side is a <em>slope generator</em>: feed it any point
+			<m>(t,y)</m> and it returns the slope a solution must have there.
+			Plotting a short segment with that slope at many points produces a
+			<term>slope field</term>&#8212;a navigational chart every solution
+			must obey.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						A slope field does not display one particular solution; it
+						visualizes the entire <fillin characters="8"/> of solutions at
+						once. From any starting point, a solution curve threads through
+						the field by following the <fillin characters="8"/> segments.
+					</p>
+					<p component="key">
+						A slope field does not display one particular solution; it
+						visualizes the entire <m>\underline{\textbf{family}}</m> of
+						solutions at once. From any starting point, a solution curve
+						threads through the field by following the
+						<m>\underline{\textbf{slope}}</m> segments.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-sf-tf-solve">
+			<title>True or False</title>
+			<statement>
+				<p>To sketch a slope field for <m>y' = f(t,y)</m>, you must first solve the differential equation.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;that is the whole point. The slope generator
+					<m>f(t,y)</m> is read straight off the equation, so the field
+					costs only arithmetic. Slope fields exist precisely for the many
+					equations we <em>cannot</em> solve in closed form.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-table" component="stu" workspace="2.8in">
+			<statement>
+				<p>
+					Consider the differential equation
+					<md>
+						<mrow> \frac{dy}{dt} = t^2 - y. </mrow>
+					</md>
+					(a) Complete the table of slopes.
+					(b) On your own <m>(t,y)</m> axes, sketch the nine slope segments
+					to form a miniature slope field.
+					(c) What slope does a solution through <m>(2, 1)</m> have there?
+				</p>
+				<tabular halign="center">
+					<col right="minor"/>
+					<row bottom="minor">
+						<cell><m>f(t,y) = t^2 - y</m></cell>
+						<cell><m>t=-1</m></cell>
+						<cell><m>t=0</m></cell>
+						<cell><m>t=1</m></cell>
+					</row>
+					<row>
+						<cell><m>y=1</m></cell>
+						<cell></cell><cell></cell><cell></cell>
+					</row>
+					<row>
+						<cell><m>y=0</m></cell>
+						<cell></cell><cell></cell><cell></cell>
+					</row>
+					<row>
+						<cell><m>y=-1</m></cell>
+						<cell></cell><cell></cell><cell></cell>
+					</row>
+				</tabular>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-table" component="key">
+			<statement>
+				<p>
+					Consider the differential equation
+					<md>
+						<mrow> \frac{dy}{dt} = t^2 - y. </mrow>
+					</md>
+					(a) Complete the table of slopes.
+					(b) On your own <m>(t,y)</m> axes, sketch the nine slope segments
+					to form a miniature slope field.
+					(c) What slope does a solution through <m>(2, 1)</m> have there?
+				</p>
+				<tabular halign="center">
+					<col right="minor"/>
+					<row bottom="minor">
+						<cell><m>f(t,y) = t^2 - y</m></cell>
+						<cell><m>t=-1</m></cell>
+						<cell><m>t=0</m></cell>
+						<cell><m>t=1</m></cell>
+					</row>
+					<row>
+						<cell><m>y=1</m></cell>
+						<cell></cell><cell></cell><cell></cell>
+					</row>
+					<row>
+						<cell><m>y=0</m></cell>
+						<cell></cell><cell></cell><cell></cell>
+					</row>
+					<row>
+						<cell><m>y=-1</m></cell>
+						<cell></cell><cell></cell><cell></cell>
+					</row>
+				</tabular>
+			</statement>
+			<solution>
+				<p>
+					(a) Substituting each pair into <m>f(t,y) = t^2 - y</m>:
+				</p>
+				<tabular halign="center">
+					<col right="minor"/>
+					<row bottom="minor">
+						<cell><m>f(t,y)</m></cell>
+						<cell><m>t=-1</m></cell>
+						<cell><m>t=0</m></cell>
+						<cell><m>t=1</m></cell>
+					</row>
+					<row>
+						<cell><m>y=1</m></cell>
+						<cell><m>0</m></cell><cell><m>-1</m></cell><cell><m>0</m></cell>
+					</row>
+					<row>
+						<cell><m>y=0</m></cell>
+						<cell><m>1</m></cell><cell><m>0</m></cell><cell><m>1</m></cell>
+					</row>
+					<row>
+						<cell><m>y=-1</m></cell>
+						<cell><m>2</m></cell><cell><m>1</m></cell><cell><m>2</m></cell>
+					</row>
+				</tabular>
+				<p>
+					(b) At each grid point, draw a short segment with the tabulated
+					slope&#8212;e.g. flat at <m>(-1,1)</m>, falling at <m>(0,1)</m>,
+					steep (slope <m>2</m>) at <m>(\pm 1,-1)</m>. Notice the pattern is
+					<em>not</em> constant along horizontal rows: the slope depends on
+					<m>t</m> as well as <m>y</m>.
+				</p>
+				<p>
+					(c) <m>f(2,1) = 4 - 1 = 3</m>. Any solution passing through
+					<m>(2,1)</m> leaves that point with slope <m>3</m>&#8212;no
+					solving required.
+				</p>
+			</solution>
+		</exercise>
+
+		<!-- TODO(geoff): optional enrichment figure here: a dense
+		     computer-generated slope field for dy/dt = t^2 - y so students can
+		     compare their 3x3 hand sketch to the full picture. Candidate
+		     source assets from the old deck (read-only, would need to be
+		     re-exported into source/notes/assets/): 08 slope-fields
+		     figs/DE_C_fine.eps or regenerate via figs/slope_fields.m.
+		     No exercise depends on it. -->
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Autonomous equations and equilibrium solutions              -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Autonomous equations: stripes and standstills.</term></p>
+
+		<p>
+			When the slope generator has no explicit <m>t</m> in it&#8212;<m>y' = f(y)</m>&#8212;the
+			equation is <term>autonomous</term> (<q>self-governing</q>): how fast
+			<m>y</m> changes depends only on the current value of <m>y</m>, not on
+			the clock. In the slope field this shows up as horizontal
+			<em>stripes</em>: slide left or right and the segments never change.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						An equation <m>y' = f(y)</m> is called <fillin characters="10"/>
+						because its rate of change depends only on the current state,
+						not on <fillin characters="4"/>.
+					</p>
+					<p component="key">
+						An equation <m>y' = f(y)</m> is called
+						<m>\underline{\textbf{autonomous}}</m> because its rate of change
+						depends only on the current state, not on
+						<m>\underline{\textbf{time}}</m>.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						A constant solution <m>y(t) = c</m> where the system stops
+						changing is called an <fillin characters="11"/> solution; to find
+						them all, set <m>\frac{dy}{dt}</m> equal to <fillin characters="4"/>
+						and solve for <m>y</m>.
+					</p>
+					<p component="key">
+						A constant solution <m>y(t) = c</m> where the system stops
+						changing is called an <m>\underline{\textbf{equilibrium}}</m>
+						solution; to find them all, set <m>\frac{dy}{dt}</m> equal to
+						<m>\underline{\textbf{zero}}</m> and solve for <m>y</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-sf-tf-stripes">
+			<title>True or False</title>
+			<statement>
+				<p>For an autonomous equation, the slope-field segments at <m>(1, 2)</m> and <m>(5, 2)</m> have the same slope.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True. Both points have <m>y = 2</m>, and an autonomous slope
+					generator <m>f(y)</m> only looks at <m>y</m>: the slope is
+					<m>f(2)</m> at both. That is exactly why autonomous fields look
+					striped&#8212;and why the whole field can be compressed into a
+					single vertical phase line.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-equilibria" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Consider the autonomous equation
+					<md>
+						<mrow> \frac{dy}{dt} = y^2 - 9. </mrow>
+					</md>
+					(a) Find all equilibrium solutions.
+					(b) The equilibria split the <m>y</m>-axis into three regions; use
+					a test point in each to decide where solutions rise and where they
+					fall.
+					(c) Describe what the slope field looks like along the lines
+					<m>y = 3</m> and <m>y = -3</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-equilibria" component="key">
+			<statement>
+				<p>
+					Consider the autonomous equation
+					<md>
+						<mrow> \frac{dy}{dt} = y^2 - 9. </mrow>
+					</md>
+					(a) Find all equilibrium solutions.
+					(b) The equilibria split the <m>y</m>-axis into three regions; use
+					a test point in each to decide where solutions rise and where they
+					fall.
+					(c) Describe what the slope field looks like along the lines
+					<m>y = 3</m> and <m>y = -3</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Set <m>y = c</m> constant, so <m>\frac{dy}{dt} = 0</m>:
+					<md>
+						<mrow> 0 = c^2 - 9 = (c-3)(c+3) \quad\Rightarrow\quad c = \pm 3, </mrow>
+					</md>
+					giving the equilibrium solutions <m>y(t) = 3</m> and
+					<m>y(t) = -3</m>.
+				</p>
+				<p>
+					(b) Testing <m>f(y) = y^2 - 9</m> in each region:
+					<ul marker="square">
+						<li><p><m>y &gt; 3</m>: <m>f(4) = 7 &gt; 0</m>, solutions <em>rise</em>;</p></li>
+						<li><p><m>-3 &lt; y &lt; 3</m>: <m>f(0) = -9 &lt; 0</m>, solutions <em>fall</em>;</p></li>
+						<li><p><m>y &lt; -3</m>: <m>f(-4) = 7 &gt; 0</m>, solutions <em>rise</em>.</p></li>
+					</ul>
+				</p>
+				<p>
+					(c) Along <m>y = \pm 3</m> every segment is perfectly
+					<em>horizontal</em>&#8212;two flat stripes running across the whole
+					field. A solution that starts on one of those lines stays on it
+					forever.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : Phase lines; classifying equilibria (signs and f'(c))       -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The phase line: a slope field squeezed to one axis.</term></p>
+
+		<p>
+			For an autonomous equation, every column of the striped slope field
+			carries the same information, so we compress the whole picture onto a
+			single vertical <m>y</m>-axis: dots at the equilibria, an upward arrow
+			wherever <m>f(y) &gt; 0</m>, a downward arrow wherever
+			<m>f(y) &lt; 0</m>. This <term>phase line</term> tells the long-term
+			story of every solution at a glance.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						An equilibrium that attracts solutions from both sides is
+						<term>stable</term>, also called a <fillin characters="6"/>; one
+						that repels on both sides is <term>unstable</term>, also called a
+						<fillin characters="7"/>; one that attracts on one side and repels
+						on the other is <term>semi-stable</term>, also called a
+						<fillin characters="5"/>.
+					</p>
+					<p component="key">
+						An equilibrium that attracts solutions from both sides is
+						<term>stable</term>, also called a
+						<m>\underline{\textbf{sink}}</m>; one that repels on both sides is
+						<term>unstable</term>, also called a
+						<m>\underline{\textbf{source}}</m>; one that attracts on one side
+						and repels on the other is <term>semi-stable</term>, also called a
+						<m>\underline{\textbf{node}}</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-sf-ex-phaseline" component="stu" workspace="2.2in">
+			<statement>
+				<p>
+					Return to <m>\frac{dy}{dt} = y^2 - 9</m> from the previous page.
+					(a) Draw its phase line: mark the equilibria and add the up/down
+					arrows from your sign analysis.
+					(b) Classify each equilibrium as a sink, source, or node.
+					(c) A solution starts at <m>y(0) = 0</m>. What is
+					<m>\lim_{t\to\infty} y(t)</m>?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-phaseline" component="key">
+			<statement>
+				<p>
+					Return to <m>\frac{dy}{dt} = y^2 - 9</m> from the previous page.
+					(a) Draw its phase line: mark the equilibria and add the up/down
+					arrows from your sign analysis.
+					(b) Classify each equilibrium as a sink, source, or node.
+					(c) A solution starts at <m>y(0) = 0</m>. What is
+					<m>\lim_{t\to\infty} y(t)</m>?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) The phase line, drawn vertically (arrows show the sign of
+					<m>f</m>): up above <m>3</m>, down between <m>-3</m> and <m>3</m>,
+					up below <m>-3</m>:
+					<md>
+						<mrow> \begin{array}{ccl} \uparrow \amp \amp f&gt;0 \\ \bullet \amp y=3 \amp \\ \downarrow \amp \amp f&lt;0 \\ \bullet \amp y=-3 \amp \\ \uparrow \amp \amp f&gt;0 \end{array} </mrow>
+					</md>
+				</p>
+				<p>
+					(b) At <m>y = -3</m>, arrows point toward the dot from both sides
+					(up from below, down from above): a <term>sink</term> (stable). At
+					<m>y = 3</m>, arrows point away on both sides: a
+					<term>source</term> (unstable).
+				</p>
+				<p>
+					(c) Starting at <m>y(0) = 0</m>, between the equilibria, the arrow
+					is downward, so the solution decreases and levels off at the sink:
+					<m>\lim_{t\to\infty} y(t) = -3</m>. We predicted the destiny of the
+					solution without ever solving the equation.
+				</p>
+			</solution>
+		</exercise>
+
+		<p>
+			<term>A calculus shortcut.</term> The sign of <m>f'(c)</m> at an
+			equilibrium <m>c</m> classifies it instantly: <m>f'(c) &lt; 0</m> means
+			sink, <m>f'(c) &gt; 0</m> means source, and <m>f'(c) = 0</m> means the
+			test is inconclusive&#8212;fall back on the phase line.
+		</p>
+
+		<exercise xml:id="ws-sf-ex-node" component="stu" workspace="2.8in">
+			<statement>
+				<p>
+					Now analyze
+					<md>
+						<mrow> \frac{dy}{dt} = y\,(y - 2)^2. </mrow>
+					</md>
+					(a) Find the equilibria.
+					(b) Try the <m>f'(c)</m> test at each; where it is inconclusive,
+					build the phase line instead.
+					(c) Classify each equilibrium.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-node" component="key">
+			<statement>
+				<p>
+					Now analyze
+					<md>
+						<mrow> \frac{dy}{dt} = y\,(y - 2)^2. </mrow>
+					</md>
+					(a) Find the equilibria.
+					(b) Try the <m>f'(c)</m> test at each; where it is inconclusive,
+					build the phase line instead.
+					(c) Classify each equilibrium.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>f(y) = y(y-2)^2 = 0</m> at <m>y = 0</m> and <m>y = 2</m>.
+				</p>
+				<p>
+					(b) By the product rule,
+					<m>f'(y) = (y-2)^2 + 2y(y-2) = (y-2)(3y-2)</m>. Then
+					<m>f'(0) = (-2)(-2) = 4 &gt; 0</m>: <m>y=0</m> is a
+					<term>source</term>. But <m>f'(2) = 0</m>&#8212;inconclusive, so
+					check signs around <m>y = 2</m>: <m>f(1) = (1)(1) = 1 &gt; 0</m>
+					(rising below) and <m>f(3) = (3)(1) = 3 &gt; 0</m> (rising above).
+				</p>
+				<p>
+					(c) Solutions climb <em>toward</em> <m>y=2</m> from below but climb
+					<em>away</em> from it above: <m>y = 2</m> is a <term>node</term>
+					(semi-stable). The squared factor is the tell-tale: <m>f</m>
+					touches zero at <m>y=2</m> without changing sign, so the arrows on
+					both sides point the same way.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sf-tf-fprime">
+			<title>True or False</title>
+			<statement>
+				<p>If <m>f'(c) = 0</m> at an equilibrium <m>c</m>, then <m>c</m> must be semi-stable.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. <m>f'(c) = 0</m> only means the shortcut is
+					<em>inconclusive</em>. For <m>y' = y^3</m>, <m>f'(0) = 0</m> yet
+					<m>y=0</m> is a source (negative below, positive above); for
+					<m>y' = -y^3</m> it is a sink. Only the phase line settles it.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Qualitative payoff: a harvested logistic population         -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The payoff: a harvested population, no solving required.</term></p>
+
+		<p>
+			In the separation-of-variables worksheet, extracting the logistic
+			solution formula took real work. Qualitative analysis gets the story
+			for free&#8212;and it keeps working when we modify the model in ways
+			that make the formula ugly.
+		</p>
+
+		<exercise xml:id="ws-sf-ex-logistic" component="stu" workspace="2.4in">
+			<statement>
+				<p>
+					A fish population (in hundreds) obeys the logistic equation
+					<md>
+						<mrow> \frac{dP}{dt} = 0.2\,P\left(1 - \frac{P}{500}\right). </mrow>
+					</md>
+					(a) Find and classify the equilibria.
+					(b) Predict <m>\lim_{t\to\infty} P(t)</m> if <m>P(0) = 50</m>, and
+					if <m>P(0) = 800</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-logistic" component="key">
+			<statement>
+				<p>
+					A fish population (in hundreds) obeys the logistic equation
+					<md>
+						<mrow> \frac{dP}{dt} = 0.2\,P\left(1 - \frac{P}{500}\right). </mrow>
+					</md>
+					(a) Find and classify the equilibria.
+					(b) Predict <m>\lim_{t\to\infty} P(t)</m> if <m>P(0) = 50</m>, and
+					if <m>P(0) = 800</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>f(P) = 0.2P(1 - P/500) = 0</m> at <m>P = 0</m> and
+					<m>P = 500</m> (the carrying capacity). Signs: <m>f(100) &gt; 0</m>
+					(rising between) and <m>f(600) &lt; 0</m> (falling above), so
+					<m>P = 0</m> is a <term>source</term> and <m>P = 500</m> is a
+					<term>sink</term>.
+				</p>
+				<p>
+					(b) From <m>P(0) = 50</m> the solution rises toward the sink:
+					<m>P \to 500</m>. From <m>P(0) = 800</m> it falls toward the same
+					sink: <m>P \to 500</m>. Either way the population settles at
+					carrying capacity&#8212;the entire logistic story, read off a phase
+					line in three lines of arithmetic.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-harvest" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					Now suppose the fishery harvests at a constant rate <m>h</m>:
+					<md>
+						<mrow> \frac{dP}{dt} = 0.2\,P\left(1 - \frac{P}{500}\right) - h. </mrow>
+					</md>
+					(a) For <m>h = 9</m>, find the equilibria and classify each.
+					(b) Show that the equilibria are <m>P = 250 \pm 50\sqrt{25 - h}</m>
+					in general, and find the critical harvesting rate beyond which
+					<em>no</em> equilibrium exists.
+					(c) What happens to the population when <m>h</m> exceeds that
+					critical rate?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-sf-ex-harvest" component="key">
+			<statement>
+				<p>
+					Now suppose the fishery harvests at a constant rate <m>h</m>:
+					<md>
+						<mrow> \frac{dP}{dt} = 0.2\,P\left(1 - \frac{P}{500}\right) - h. </mrow>
+					</md>
+					(a) For <m>h = 9</m>, find the equilibria and classify each.
+					(b) Show that the equilibria are <m>P = 250 \pm 50\sqrt{25 - h}</m>
+					in general, and find the critical harvesting rate beyond which
+					<em>no</em> equilibrium exists.
+					(c) What happens to the population when <m>h</m> exceeds that
+					critical rate?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Setting <m>f(P) = 0.2P - 0.0004P^2 - 9 = 0</m> and multiplying
+					by <m>-2500</m>: <m>P^2 - 500P + 22500 = 0</m>, so
+					<m>P = 50</m> or <m>P = 450</m>. The parabola <m>f(P)</m> opens
+					downward, so <m>f &lt; 0</m> below <m>50</m>, <m>f &gt; 0</m>
+					between, <m>f &lt; 0</m> above <m>450</m>: <m>P = 50</m> is a
+					<term>source</term> and <m>P = 450</m> a <term>sink</term>. (New
+					danger compared with <m>h=0</m>: a stock that ever dips below
+					<m>50</m> is driven to collapse.)
+				</p>
+				<p>
+					(b) In general <m>0.0004P^2 - 0.2P + h = 0</m> gives
+					<md>
+						<mrow> P = \frac{0.2 \pm \sqrt{0.04 - 0.0016h}}{0.0008} = 250 \pm 50\sqrt{25 - h}. </mrow>
+					</md>
+					Real equilibria require <m>25 - h \ge 0</m>, so the critical rate is
+					<m>h = 25</m>. As <m>h</m> grows toward <m>25</m>, the source and
+					the sink slide toward each other and at <m>h = 25</m> they collide
+					and annihilate&#8212;a bifurcation.
+				</p>
+				<p>
+					(c) For <m>h &gt; 25</m> there are no equilibria and
+					<m>f(P) &lt; 0</m> for every <m>P</m>: the phase line points down
+					everywhere, so <m>P(t)</m> decreases no matter how large it
+					starts. On the physically meaningful domain <m>P \ge 0</m>, the
+					population is therefore driven down to <m>P = 0</m>&#8212;extinction&#8212;and
+					the model stops applying there (the raw equation would happily
+					continue into negative <m>P</m>, which means nothing for a
+					fishery). The model draws a hard sustainability line at harvesting
+					<m>25</m>&#8212;a conclusion we reached without solving anything.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Qualitative analysis tells us the <em>shape</em> of the story:
+				where solutions settle, where they flee, where a model breaks. What
+				it does not give is numbers&#8212;the population <em>at year
+				three</em>, say. The next worksheet builds <em>Euler's method</em>,
+				which turns the same slope generator into a step-by-step numerical
+				approximation of a solution.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>

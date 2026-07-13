@@ -36,8 +36,8 @@ the old Beamer decks in `source/notes/latex/`, tracking the coursebook
 | `ws-solutions-ivp` | Verifying Solutions & Initial Conditions | `01 intro-topics` (Verifying DEs, Initial Conditions) | `c2-solns/*` | **done** |
 | `ws-direct-integration` | Solving by Direct Integration | — (new) | `c3-di/*` | **in-review** |
 | `ws-separation-of-variables` | Separation of Variables | `02 sov` | `c4-sov/*` | **done** |
-| `ws-integrating-factors` | Integrating Factors | `03 if` | `c5-if/*` | **in-review** |
-| `ws-slope-fields` | Slope Fields & Qualitative Analysis | `08 slope-fields` | `c6-qm/*` | todo |
+| `ws-integrating-factors` | Integrating Factors | `03 if` | `c5-if/*` | **done** |
+| `ws-slope-fields` | Slope Fields & Qualitative Analysis | `08 slope-fields` | `c6-qm/*` | **in-review** |
 | `ws-eulers-method` | Euler's Method | `07 eulers-method` | `c7-em/*` | todo |
 | `ws-homogeneous-linear` | Homogeneous Linear Equations (constant coeff.) | `04 lhcc` | `c8-lhcc/*` | todo |
 | `ws-undetermined-coefficients` | Undetermined Coefficients | `05 lncc` | `c9-uc/*` | todo |
