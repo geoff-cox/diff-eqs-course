@@ -625,10 +625,13 @@
 				<p>
 					(c) For <m>h &gt; 25</m> there are no equilibria and
 					<m>f(P) &lt; 0</m> for every <m>P</m>: the phase line points down
-					everywhere, so the population crashes to extinction no matter how
-					large it starts. The model draws a hard sustainability line at
-					harvesting <m>25</m>&#8212;a conclusion we reached without solving
-					anything.
+					everywhere, so <m>P(t)</m> decreases no matter how large it
+					starts. On the physically meaningful domain <m>P \ge 0</m>, the
+					population is therefore driven down to <m>P = 0</m>&#8212;extinction&#8212;and
+					the model stops applying there (the raw equation would happily
+					continue into negative <m>P</m>, which means nothing for a
+					fishery). The model draws a hard sustainability line at harvesting
+					<m>25</m>&#8212;a conclusion we reached without solving anything.
 				</p>
 			</solution>
 		</exercise>
