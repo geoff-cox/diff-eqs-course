@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Integrating Factors"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c5-if/sec-product-rule.ptx
+		c5-if/sec-completing-the-product-rule.ptx
+		c5-if/sec-finding-the-integrating-factor.ptx
+		c5-if/sec-if-method.ptx
+	Old deck: source/notes/latex/ folder "03 if".
+	Previous worksheet: ws-separation-of-variables.ptx; next: ws-slope-fields.
+
+	Per the sourcing rules, every equation here is fresh: concepts mirror
+	the book, but none of the example equations appear in it (nor in the
+	old deck or the earlier worksheets). Per the instructor overrides in
+	CLAUDE.md section 4: no interactive content, and the whole topic stays
+	on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-integrating-factors" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Integrating Factors</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Reverse</term> the product rule to rewrite <m>f\,y' + f'\,y</m> as a single derivative <m>[f\,y]'</m>.</p></li>
+			<li><p><term>Rewrite</term> a first-order linear equation in standard form <m>y' + P(x)\,y = Q(x)</m> and identify <m>P(x)</m> and <m>Q(x)</m>.</p></li>
+			<li><p><term>Compute</term> the integrating factor <m>\mu = e^{\int P(x)\,dx}</m>.</p></li>
+			<li><p><term>Solve</term> first-order linear equations with the three-step integrating-factor method.</p></li>
+			<li><p><term>Decide</term> whether an equation calls for separation of variables, an integrating factor, both, or neither.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : The product rule, forward and (especially) in reverse       -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The engine: the product rule, run backward.</term></p>
+
+		<p>
+			Separation of variables failed the moment an equation refused to
+			factor into <m>f(x)\cdot g(y)</m>. Many first-order equations that
+			resist it are <em>linear</em>, and for those we have a different
+			trick&#8212;one built entirely on the product rule. Before we use it,
+			let's make sure we can run the product rule in both directions.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						The product rule combines two functions:
+						<m>[f\,g]' = f\,g' + f'\,g</m>. The integrating-factor method
+						uses this rule in <fillin characters="8"/>, turning a two-term sum
+						back into a single <fillin characters="10"/>.
+					</p>
+					<p component="key">
+						The product rule combines two functions:
+						<m>[f\,g]' = f\,g' + f'\,g</m>. The integrating-factor method
+						uses this rule in <m>\underline{\textbf{reverse}}</m>, turning a
+						two-term sum back into a single
+						<m>\underline{\textbf{derivative}}</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-if-ex-forward" component="stu" workspace="1.9in">
+			<statement>
+				<p>
+					Compute each derivative (treat <m>y</m> as a function of
+					<m>x</m>):
+					<md>
+						<mrow> \text{(a)}\ \frac{d}{dx}\left[x^3 e^{5x}\right] \qquad\qquad
+						       \text{(b)}\ \frac{d}{dx}\left[\sin(x)\,y\right]. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-forward" component="key">
+			<statement>
+				<p>
+					Compute each derivative (treat <m>y</m> as a function of
+					<m>x</m>):
+					<md>
+						<mrow> \text{(a)}\ \frac{d}{dx}\left[x^3 e^{5x}\right] \qquad\qquad
+						       \text{(b)}\ \frac{d}{dx}\left[\sin(x)\,y\right]. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Each is a straight product rule.
+					<md>
+						<mrow> \text{(a)}\ \frac{d}{dx}\left[x^3 e^{5x}\right] \amp = x^3\cdot 5e^{5x} + 3x^2\cdot e^{5x} = e^{5x}\left(5x^3 + 3x^2\right), </mrow>
+						<mrow> \text{(b)}\ \frac{d}{dx}\left[\sin(x)\,y\right] \amp = \sin(x)\,y' + \cos(x)\,y. </mrow>
+					</md>
+					Part (b) is the shape we care about: a term with <m>y'</m> plus a
+					term with <m>y</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-reverse" component="stu" workspace="2.2in">
+			<statement>
+				<p>
+					Run the product rule <em>backward</em>: write each sum as a single
+					derivative <m>[f\,y]'</m> (with <m>y = y(x)</m>). In each, name
+					<m>f(x)</m> and confirm that <m>f'(x)</m> is exactly the coefficient
+					sitting on <m>y</m>.
+					<md>
+						<mrow> \text{(a)}\ e^{4x}y' + 4e^{4x}y \qquad\qquad
+						       \text{(b)}\ x^3 y' + 3x^2 y. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-reverse" component="key">
+			<statement>
+				<p>
+					Run the product rule <em>backward</em>: write each sum as a single
+					derivative <m>[f\,y]'</m> (with <m>y = y(x)</m>). In each, name
+					<m>f(x)</m> and confirm that <m>f'(x)</m> is exactly the coefficient
+					sitting on <m>y</m>.
+					<md>
+						<mrow> \text{(a)}\ e^{4x}y' + 4e^{4x}y \qquad\qquad
+						       \text{(b)}\ x^3 y' + 3x^2 y. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					In each, the factor multiplying <m>y'</m> is <m>f</m>; check that its
+					derivative is the coefficient on <m>y</m>.
+					<md>
+						<mrow> \text{(a)}\ f = e^{4x},\ f' = 4e^{4x}\ \checkmark \amp \quad\Rightarrow\quad e^{4x}y' + 4e^{4x}y = \left[e^{4x}y\right]', </mrow>
+						<mrow> \text{(b)}\ f = x^3,\ f' = 3x^2\ \checkmark \amp \quad\Rightarrow\quad x^3 y' + 3x^2 y = \left[x^3 y\right]'. </mrow>
+					</md>
+					The check is the whole game: if <m>f'</m> does <em>not</em> match the
+					coefficient on <m>y</m>, the sum is not a completed product rule.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Standard form and the integrating factor                    -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Standard form and the integrating factor.</term></p>
+
+		<p>
+			An equation like <m>y' + 4y = x</m> is <em>almost</em> a completed
+			product rule&#8212;it is missing the right multiplier. Just as
+			completing the square adds the right constant, multiplying by the
+			right function <m>\mu(x)</m> completes the product rule on the left.
+			To find that function we first need the equation in a predictable
+			shape.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						A first-order linear equation is in <term>standard form</term>
+						when written <m>y' + P(x)\,y = Q(x)</m>, with the coefficient of
+						<m>y'</m> equal to <fillin characters="3"/>. If it is not, first
+						<fillin characters="8"/> through by the leading coefficient.
+					</p>
+					<p component="key">
+						A first-order linear equation is in <term>standard form</term>
+						when written <m>y' + P(x)\,y = Q(x)</m>, with the coefficient of
+						<m>y'</m> equal to <m>\underline{\textbf{1}}</m>. If it is not,
+						first <m>\underline{\textbf{divide}}</m> through by the leading
+						coefficient.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						Once <m>P(x)</m> is identified, the integrating factor is
+						<m>\mu = e^{\int P(x)\,dx}</m>; when computing that integral we
+						drop the constant of <fillin characters="12"/>, since any nonzero
+						choice works.
+					</p>
+					<p component="key">
+						Once <m>P(x)</m> is identified, the integrating factor is
+						<m>\mu = e^{\int P(x)\,dx}</m>; when computing that integral we
+						drop the constant of <m>\underline{\textbf{integration}}</m>,
+						since any nonzero choice works.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-if-ex-standard" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					For each equation, put it in standard form, identify <m>P(x)</m>
+					and <m>Q(x)</m>, and compute the integrating factor <m>\mu</m>:
+					<md>
+						<mrow> \text{(a)}\ y' + 5y = e^{2x} \qquad\qquad
+						       \text{(b)}\ x\,y' - 3y = x^5\ \ (x &gt; 0). </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-standard" component="key">
+			<statement>
+				<p>
+					For each equation, put it in standard form, identify <m>P(x)</m>
+					and <m>Q(x)</m>, and compute the integrating factor <m>\mu</m>:
+					<md>
+						<mrow> \text{(a)}\ y' + 5y = e^{2x} \qquad\qquad
+						       \text{(b)}\ x\,y' - 3y = x^5\ \ (x &gt; 0). </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Already in standard form: <m>P(x) = 5</m> and
+					<m>Q(x) = e^{2x}</m>. The integrating factor is
+					<md>
+						<mrow> \mu = e^{\int 5\,dx} = e^{5x}. </mrow>
+					</md>
+				</p>
+				<p>
+					(b) Divide through by <m>x</m> (legal since <m>x &gt; 0</m>):
+					<md>
+						<mrow> y' - \frac{3}{x}\,y = x^4, </mrow>
+					</md>
+					so <m>P(x) = -\dfrac{3}{x}</m> and <m>Q(x) = x^4</m>. Then
+					<md>
+						<mrow> \mu = e^{\int -\frac{3}{x}\,dx} = e^{-3\ln x} = x^{-3}. </mrow>
+					</md>
+					Notice <m>P</m> is <m>-3/x</m>, <em>not</em> <m>-3</m>: the coefficient
+					of <m>y</m> is only trustworthy after you reach standard form.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-if-tf-standard">
+			<title>True or False</title>
+			<statement>
+				<p>The integrating factor for <m>x\,y' - 3y = x^5</m> is <m>e^{-3x}</m>, because the coefficient of <m>y</m> is <m>-3</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. You must reach standard form <em>first</em>. Dividing by
+					<m>x</m> gives <m>y' - \frac{3}{x}y = x^4</m>, so <m>P(x) = -3/x</m>
+					and <m>\mu = e^{\int -3/x\,dx} = x^{-3}</m>. Reading <m>P</m> off the
+					un-divided equation is the single most common mistake in this method.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : The three-step method, worked start to finish               -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The three-step method.</term></p>
+
+		<p>
+			With the integrating factor in hand, the method is mechanical: it
+			always turns a first-order linear equation into a single direct
+			integration.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						<term>Step 1.</term> Compute <m>\mu = e^{\int P\,dx}</m>.
+						<term>Step 2.</term> Multiply the standard-form equation by
+						<m>\mu</m>; the left side collapses into a single
+						<fillin characters="10"/>, <m>\frac{d}{dx}[\mu\,y]</m>.
+						<term>Step 3.</term> <fillin characters="9"/> both sides and solve
+						for <m>y</m>.
+					</p>
+					<p component="key">
+						<term>Step 1.</term> Compute <m>\mu = e^{\int P\,dx}</m>.
+						<term>Step 2.</term> Multiply the standard-form equation by
+						<m>\mu</m>; the left side collapses into a single
+						<m>\underline{\textbf{derivative}}</m>,
+						<m>\frac{d}{dx}[\mu\,y]</m>.
+						<term>Step 3.</term> <m>\underline{\textbf{integrate}}</m> both
+						sides and solve for <m>y</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-if-tf-linear">
+			<title>True or False</title>
+			<statement>
+				<p>The integrating-factor method can solve any first-order differential equation.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. It is built for first-order <em>linear</em> equations,
+					<m>y' + P(x)y = Q(x)</m>. A term like <m>y^2</m> or <m>\sin y</m>
+					breaks the derivation (there is no clean <m>\mu</m>), so a nonlinear
+					equation such as <m>y' = xy^2</m> is out of reach&#8212;reach for
+					separation of variables there instead.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-solve1" component="stu" workspace="2.4in">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> y' + 3y = 12. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-solve1" component="key">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> y' + 3y = 12. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					It is already in standard form with <m>P = 3</m>, so
+					<m>\mu = e^{3x}</m>. Multiply through and reverse the product rule:
+					<md>
+						<mrow> e^{3x}y' + 3e^{3x}y \amp = 12e^{3x} </mrow>
+						<mrow> \frac{d}{dx}\left[e^{3x}y\right] \amp = 12e^{3x}. </mrow>
+					</md>
+					Integrate both sides and solve for <m>y</m>:
+					<md>
+						<mrow> e^{3x}y \amp = 4e^{3x} + c </mrow>
+						<mrow> y \amp = 4 + ce^{-3x}. </mrow>
+					</md>
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-solve2" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> x\,y' + 4y = 15x^2, \qquad x &gt; 0. </mrow>
+					</md>
+					(Standard form first!)
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-solve2" component="key">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> x\,y' + 4y = 15x^2, \qquad x &gt; 0. </mrow>
+					</md>
+					(Standard form first!)
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Divide by <m>x</m> to reach standard form:
+					<md>
+						<mrow> y' + \frac{4}{x}\,y = 15x. </mrow>
+					</md>
+					Here <m>P = \dfrac{4}{x}</m>, so
+					<m>\mu = e^{\int \frac{4}{x}\,dx} = e^{4\ln x} = x^4</m>. Multiply
+					through; the left side is a completed product rule:
+					<md>
+						<mrow> \frac{d}{dx}\left[x^4 y\right] \amp = 15x\cdot x^4 = 15x^5. </mrow>
+					</md>
+					Integrate and solve:
+					<md>
+						<mrow> x^4 y \amp = \frac{15}{6}x^6 + c = \frac{5}{2}x^6 + c </mrow>
+						<mrow> y \amp = \frac{5}{2}x^2 + \frac{c}{x^4}. </mrow>
+					</md>
+					A quick check: <m>x y' + 4y = x\left(5x - \frac{4c}{x^5}\right) + 4\left(\frac{5}{2}x^2 + \frac{c}{x^4}\right) = 15x^2</m>, as required.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : A modeling IVP, the SV-vs-IF decision, and looking ahead    -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>A model the book leaves for you: a driven RL circuit.</term></p>
+
+		<p>
+			First-order linear equations are the natural language of simple
+			circuits. Here is one to work end to end.
+		</p>
+
+		<exercise xml:id="ws-if-ex-circuit" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					In a series RL circuit the current <m>i(t)</m> (in amperes, with
+					<m>t</m> in seconds) satisfies
+					<md>
+						<mrow> i' + 3i = 6e^{-3t}, \qquad i(0) = 0, </mrow>
+					</md>
+					where the right side is a decaying applied voltage. (a) Solve for
+					<m>i(t)</m>. (b) Describe how the current behaves as <m>t</m> grows.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-circuit" component="key">
+			<statement>
+				<p>
+					In a series RL circuit the current <m>i(t)</m> (in amperes, with
+					<m>t</m> in seconds) satisfies
+					<md>
+						<mrow> i' + 3i = 6e^{-3t}, \qquad i(0) = 0, </mrow>
+					</md>
+					where the right side is a decaying applied voltage. (a) Solve for
+					<m>i(t)</m>. (b) Describe how the current behaves as <m>t</m> grows.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Standard form already, with <m>P = 3</m>, so <m>\mu = e^{3t}</m>.
+					Multiplying, the right side simplifies beautifully:
+					<md>
+						<mrow> \frac{d}{dt}\left[e^{3t} i\right] \amp = 6e^{-3t}\cdot e^{3t} = 6. </mrow>
+					</md>
+					Integrate and apply the initial condition:
+					<md>
+						<mrow> e^{3t} i \amp = 6t + c </mrow>
+						<mrow> i \amp = (6t + c)e^{-3t}. </mrow>
+					</md>
+					Since <m>i(0) = c = 0</m>, the current is
+					<md>
+						<mrow> i(t) = 6t\,e^{-3t}. </mrow>
+					</md>
+				</p>
+				<p>
+					(b) The current rises from zero, peaks at <m>t = \tfrac13</m> second,
+					and then the transient dies out toward <m>0</m> as
+					<m>t \to \infty</m>. Note this equation is <em>not</em>
+					separable&#8212;the right side <m>6e^{-3t} - 3i</m> is a sum that
+					will not factor&#8212;so the integrating factor is doing exactly the
+					work that separation cannot.
+				</p>
+			</solution>
+		</exercise>
+
+		<p>
+			<term>Which tool? Separation, integrating factor, both, or neither.</term>
+		</p>
+
+		<exercise xml:id="ws-if-ex-classify" component="stu" workspace="2.8in">
+			<statement>
+				<p>
+					For each equation, decide whether it can be solved by separation of
+					variables (SV), by an integrating factor (IF), both, or neither. You
+					need not solve them.
+					<md>
+						<mrow> \text{(a)}\ y' + xy = x \qquad
+						       \text{(b)}\ y' + xy = e^x \qquad
+						       \text{(c)}\ y' = y^2 + x \qquad
+						       \text{(d)}\ y' = x y^2 </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-if-ex-classify" component="key">
+			<statement>
+				<p>
+					For each equation, decide whether it can be solved by separation of
+					variables (SV), by an integrating factor (IF), both, or neither. You
+					need not solve them.
+					<md>
+						<mrow> \text{(a)}\ y' + xy = x \qquad
+						       \text{(b)}\ y' + xy = e^x \qquad
+						       \text{(c)}\ y' = y^2 + x \qquad
+						       \text{(d)}\ y' = x y^2 </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <term>Both.</term> It is linear (<m>P = x</m>, <m>Q = x</m>), and
+					it also separates: <m>y' = x - xy = x(1 - y)</m>.
+				</p>
+				<p>
+					(b) <term>IF only.</term> Linear with <m>P = x</m>, <m>Q = e^x</m>.
+					But <m>y' = e^x - xy</m> is a sum, so it does not separate.
+				</p>
+				<p>
+					(c) <term>Neither.</term> The <m>y^2</m> makes it nonlinear (no
+					integrating factor), and <m>y^2 + x</m> is a sum (no separation).
+				</p>
+				<p>
+					(d) <term>SV only.</term> It separates as <m>x\cdot y^2</m>, but the
+					<m>y^2</m> makes it nonlinear, so the integrating-factor method does
+					not apply.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				You now have three exact techniques&#8212;direct integration,
+				separation of variables, and integrating factors&#8212;and a sense of
+				which fits which equation. Many equations, though, yield to none of
+				them. The next worksheet steps back from exact formulas to ask what a
+				solution <em>looks like</em>: using <em>slope fields</em> and
+				qualitative analysis to read a first-order equation's behavior
+				straight off the equation itself.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
