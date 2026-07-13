@@ -420,7 +420,7 @@
 					<m>f</m>): up above <m>3</m>, down between <m>-3</m> and <m>3</m>,
 					up below <m>-3</m>:
 					<md>
-						<mrow> \begin{array}{ccl} \uparrow &amp; &amp; f&gt;0 \\ \bullet &amp; y=3 &amp; \\ \downarrow &amp; &amp; f&lt;0 \\ \bullet &amp; y=-3 &amp; \\ \uparrow &amp; &amp; f&gt;0 \end{array} </mrow>
+						<mrow> \begin{array}{ccl} \uparrow \amp \amp f&gt;0 \\ \bullet \amp y=3 \amp \\ \downarrow \amp \amp f&lt;0 \\ \bullet \amp y=-3 \amp \\ \uparrow \amp \amp f&gt;0 \end{array} </mrow>
 					</md>
 				</p>
 				<p>
