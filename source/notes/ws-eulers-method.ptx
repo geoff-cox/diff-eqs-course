@@ -99,10 +99,11 @@
 		<exercise xml:id="ws-em-ex-which-tool" component="stu" workspace="2.4in">
 			<statement>
 				<p>
-					For each initial-value problem, name every analytic technique from
+					For each differential equation, name every analytic technique from
 					this course that applies (direct integration, separation of
 					variables, integrating factor)&#8212;or conclude that none do, so a
-					numerical method is our only option.
+					numerical method would be our only option for an initial-value
+					problem built on it.
 					<md>
 						<mrow> \text{(a)}\ y' = t\,y \qquad
 						       \text{(b)}\ y' = \sin(t + y) \qquad
@@ -115,10 +116,11 @@
 		<exercise xml:id="ws-em-ex-which-tool" component="key">
 			<statement>
 				<p>
-					For each initial-value problem, name every analytic technique from
+					For each differential equation, name every analytic technique from
 					this course that applies (direct integration, separation of
 					variables, integrating factor)&#8212;or conclude that none do, so a
-					numerical method is our only option.
+					numerical method would be our only option for an initial-value
+					problem built on it.
 					<md>
 						<mrow> \text{(a)}\ y' = t\,y \qquad
 						       \text{(b)}\ y' = \sin(t + y) \qquad
