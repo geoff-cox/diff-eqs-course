@@ -6,7 +6,7 @@
   "xml.fileAssociations": [
     {
       "pattern": "**/source/**.ptx",
-      "systemId": "/home/gcox/.vscode-server/extensions/oscarlevin.pretext-tools-0.39.0/assets/schema/pretext.rng"
+      "systemId": "/home/gcox/.vscode-server/extensions/oscarlevin.pretext-tools-0.40.0/assets/schema/pretext.rng"
     }
   ]
 }
