@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Undetermined Coefficients"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c9-uc/sec-lncc-eqns.ptx
+		c9-uc/sec-selecting-the-particular-soln.ptx
+		c9-uc/sec-uc-method.ptx
+	Old deck: source/notes/latex/ folder "05 lncc".
+	Previous worksheet: ws-homogeneous-linear.ptx; next: ws-laplace-transforms.
+
+	Per the sourcing rules, every equation here is fresh: concepts mirror
+	the book, but none of the example equations appear in it (nor in the
+	old deck or the earlier worksheets). Per the instructor overrides in
+	CLAUDE.md section 4: no interactive content, and the whole topic stays
+	on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-undetermined-coefficients" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Undetermined Coefficients</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Recognize</term> LNCC equations and the two-part structure of their general solutions, <m>y = y_h + y_p</m>.</p></li>
+			<li><p><term>Select</term> the form of a particular solution <m>y_p</m> to mirror the forcing function <m>f(x)</m>.</p></li>
+			<li><p><term>Modify</term> <m>y_p</m> by factors of <m>x</m> when it conflicts with the homogeneous solution.</p></li>
+			<li><p><term>Determine</term> the unknown coefficients by substituting and matching like-terms.</p></li>
+			<li><p><term>Assemble</term> and report the full general solution.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : LNCC equations; y = y_h + y_p                               -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Turning the forcing on.</term></p>
+
+		<p>
+			Last worksheet the right-hand side was zero&#8212;nothing pushed on
+			the system. A <term>linear nonhomogeneous constant coefficient</term>
+			(LNCC) equation restores the push: <m>a\,y'' + b\,y' + c\,y = f(x)</m>
+			with a nonzero forcing function <m>f(x)</m>. Its general solution has
+			two parts: the <em>homogeneous solution</em> <m>y_h</m> (last
+			worksheet's machinery, carrying the arbitrary constants) plus any one
+			<em>particular solution</em> <m>y_p</m> that produces the forcing.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						An LNCC equation differs from an LHCC equation only in having a
+						nonzero <fillin characters="16"/>. Its general solution is the
+						sum <m>y = y_h + y_p</m>, where <m>y_h</m> carries the arbitrary
+						<fillin characters="9"/> and <m>y_p</m> is any one solution of
+						the full equation.
+					</p>
+					<p component="key">
+						An LNCC equation differs from an LHCC equation only in having a
+						nonzero <m>\underline{\textbf{forcing function}}</m>. Its general
+						solution is the sum <m>y = y_h + y_p</m>, where <m>y_h</m>
+						carries the arbitrary <m>\underline{\textbf{constants}}</m> and
+						<m>y_p</m> is any one solution of the full equation.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-uc-tf-sum">
+			<title>True or False</title>
+			<statement>
+				<p>If <m>y_p</m> solves <m>a\,y'' + b\,y' + c\,y = f(x)</m> and <m>y_h</m> solves the matching homogeneous equation, then <m>y_p + y_h</m> also solves the full equation.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True. Substituting the sum, the <m>y_h</m> part contributes
+					<m>0</m> and the <m>y_p</m> part contributes <m>f(x)</m>&#8212;linearity
+					lets the two ride along without disturbing each other. That is
+					exactly why the general solution is <m>y_h + y_p</m>: the
+					homogeneous family supplies the flexibility, the particular
+					solution supplies the forcing.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-uc-ex-structure" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Consider
+					<md>
+						<mrow> y'' - y' - 2y = -4x. </mrow>
+					</md>
+					(a) Solve the matching homogeneous equation to find <m>y_h</m>.
+					(b) Verify that <m>y_p = 2x - 1</m> solves the full equation.
+					(c) Write the general solution.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-uc-ex-structure" component="key">
+			<statement>
+				<p>
+					Consider
+					<md>
+						<mrow> y'' - y' - 2y = -4x. </mrow>
+					</md>
+					(a) Solve the matching homogeneous equation to find <m>y_h</m>.
+					(b) Verify that <m>y_p = 2x - 1</m> solves the full equation.
+					(c) Write the general solution.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) The characteristic equation of <m>y'' - y' - 2y = 0</m> is
+					<m>r^2 - r - 2 = (r-2)(r+1) = 0</m>, so
+					<m>y_h = c_1 e^{2x} + c_2 e^{-x}</m>.
+				</p>
+				<p>
+					(b) With <m>y_p = 2x - 1</m>: <m>y_p' = 2</m>, <m>y_p'' = 0</m>, so
+					<md>
+						<mrow> 0 - 2 - 2(2x - 1) = -2 - 4x + 2 = -4x. \checkmark </mrow>
+					</md>
+				</p>
+				<p>
+					(c) <m>y = c_1 e^{2x} + c_2 e^{-x} + 2x - 1</m>. Notice the roles:
+					the two constants live entirely in <m>y_h</m>; <m>y_p</m> is a
+					single fixed function whose only job is to manufacture the
+					forcing.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Selecting the form of y_p                                    -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Guessing with structure: selecting <m>y_p</m>.</term></p>
+
+		<p>
+			Where does <m>y_p</m> come from? Derivatives of polynomials are
+			polynomials, of exponentials are exponentials, of sines and cosines
+			are sines and cosines&#8212;so <m>y_p</m> should <em>mirror the
+			structural form</em> of <m>f(x)</m>, with unknown letters
+			<m>A, B, C, \ldots</m> (the <term>undetermined coefficients</term>)
+			standing in for the numbers we will solve for later.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						Even if a lower-order term is missing from a polynomial
+						<m>f(x)</m>, the form of <m>y_p</m> must still
+						<fillin characters="7"/> it: for <m>f(x) = 5x^2</m> the correct
+						starting form is <m>y_p = Ax^2 + Bx + </m><fillin characters="2"/>.
+					</p>
+					<p component="key">
+						Even if a lower-order term is missing from a polynomial
+						<m>f(x)</m>, the form of <m>y_p</m> must still
+						<m>\underline{\textbf{include}}</m> it: for <m>f(x) = 5x^2</m>
+						the correct starting form is
+						<m>y_p = Ax^2 + Bx + \underline{\textbf{C}}</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-uc-ex-forms" component="stu" workspace="2.2in">
+			<statement>
+				<p>
+					For each forcing function, write the starting form of <m>y_p</m>
+					(do not solve for the coefficients):
+					<md>
+						<mrow> \text{(a)}\ f(x) = 6x - 2 \qquad
+						       \text{(b)}\ f(x) = 4e^{7x} </mrow>
+						<mrow> \text{(c)}\ f(x) = 2\sin(5x) \qquad
+						       \text{(d)}\ f(x) = 8x^2 </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-uc-ex-forms" component="key">
+			<statement>
+				<p>
+					For each forcing function, write the starting form of <m>y_p</m>
+					(do not solve for the coefficients):
+					<md>
+						<mrow> \text{(a)}\ f(x) = 6x - 2 \qquad
+						       \text{(b)}\ f(x) = 4e^{7x} </mrow>
+						<mrow> \text{(c)}\ f(x) = 2\sin(5x) \qquad
+						       \text{(d)}\ f(x) = 8x^2 </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>y_p = Ax + B</m> (a full degree-one polynomial).
+				</p>
+				<p>
+					(b) <m>y_p = Ae^{7x}</m>&#8212;the exponent is <em>known</em>; only
+					the multiplier is undetermined.
+				</p>
+				<p>
+					(c) <m>y_p = A\sin(5x) + B\cos(5x)</m>. Both siblings are required
+					even though <m>f</m> shows only sine&#8212;differentiation swaps
+					sines and cosines, so <m>y_p</m> needs both to have any hope of
+					matching.
+				</p>
+				<p>
+					(d) <m>y_p = Ax^2 + Bx + C</m>: the missing <m>x</m> and constant
+					terms must still be included, since derivatives of <m>x^2</m>
+					produce them.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-uc-tf-sine">
+			<title>True or False</title>
+			<statement>
+				<p>For <m>f(x) = 3\sin(2x)</m>, the guess <m>y_p = A\sin(2x)</m> (no cosine term) is sufficient.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False in general. Substituting <m>A\sin(2x)</m> into an equation
+					with a <m>y'</m> term produces cosine terms on the left that have
+					no partner on the right, forcing <m>A</m> into contradictory
+					duties. The sine-cosine pair
+					<m>A\sin(2x) + B\cos(2x)</m> gives the algebra enough freedom.
+					(Only when the equation has no odd-order derivatives can the lone
+					sine survive.)
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : The conflict rule; a full solve with modification           -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The conflict rule: when the guess is already taken.</term></p>
+
+		<p>
+			One wrinkle: if the selected <m>y_p</m> shares a term with
+			<m>y_h</m>, substituting it produces <m>0</m>, not <m>f(x)</m>&#8212;the
+			homogeneous solution swallows the guess. The repair: multiply the
+			conflicting terms by <m>x</m>, and repeat until nothing is shared.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						<term>Step 1.</term> Solve the homogeneous equation for
+						<m>y_h</m>. <term>Step 2.</term> Select the form of <m>y_p</m>
+						from <m>f(x)</m>. <term>Step 3.</term> If <m>y_p</m> shares a
+						term with <m>y_h</m>, multiply the conflicting terms by
+						<fillin characters="3"/>. <term>Step 4.</term> Substitute and
+						match <fillin characters="12"/> to find the coefficients.
+						<term>Step 5.</term> Report <m>y = y_h + y_p</m>.
+					</p>
+					<p component="key">
+						<term>Step 1.</term> Solve the homogeneous equation for
+						<m>y_h</m>. <term>Step 2.</term> Select the form of <m>y_p</m>
+						from <m>f(x)</m>. <term>Step 3.</term> If <m>y_p</m> shares a
+						term with <m>y_h</m>, multiply the conflicting terms by
+						<m>\underline{\textbf{x}}</m>. <term>Step 4.</term> Substitute
+						and match <m>\underline{\textbf{like-terms}}</m> to find the
+						coefficients. <term>Step 5.</term> Report <m>y = y_h + y_p</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-uc-ex-conflict" component="stu" workspace="3.4in">
+			<statement>
+				<p>
+					Solve
+					<md>
+						<mrow> y'' - 9y = 4e^{3x}. </mrow>
+					</md>
+					(a) Find <m>y_h</m> and explain why the natural guess
+					<m>y_p = Ae^{3x}</m> fails.
+					(b) Repair the guess and find the coefficient.
+					(c) Write the general solution.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-uc-ex-conflict" component="key">
+			<statement>
+				<p>
+					Solve
+					<md>
+						<mrow> y'' - 9y = 4e^{3x}. </mrow>
+					</md>
+					(a) Find <m>y_h</m> and explain why the natural guess
+					<m>y_p = Ae^{3x}</m> fails.
+					(b) Repair the guess and find the coefficient.
+					(c) Write the general solution.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) From <m>r^2 - 9 = 0</m>, <m>y_h = c_1 e^{3x} + c_2 e^{-3x}</m>.
+					The guess <m>Ae^{3x}</m> is already a homogeneous solution, so
+					substituting it yields <m>0 = 4e^{3x}</m>&#8212;impossible. The
+					forcing resonates with the system's own response.
+				</p>
+				<p>
+					(b) Multiply by <m>x</m>: try <m>y_p = A\,x\,e^{3x}</m>. Then
+					<md>
+						<mrow> y_p' \amp = A e^{3x}(1 + 3x), \qquad y_p'' = A e^{3x}(6 + 9x), </mrow>
+						<mrow> y_p'' - 9y_p \amp = A e^{3x}(6 + 9x) - 9A\,x\,e^{3x} = 6A e^{3x}. </mrow>
+					</md>
+					Matching <m>6A e^{3x} = 4e^{3x}</m> gives <m>A = \tfrac{2}{3}</m>.
+				</p>
+				<p>
+					(c)
+					<md>
+						<mrow> y = c_1 e^{3x} + c_2 e^{-3x} + \tfrac{2}{3}\,x\,e^{3x}. </mrow>
+					</md>
+					The <m>x</m>-factor is the same medicine that cured the
+					repeated-root case last worksheet&#8212;and for the same reason:
+					the plain exponential was already spoken for.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-uc-tf-alwaysx">
+			<title>True or False</title>
+			<statement>
+				<p>To be safe, you should always multiply <m>y_p</m> by <m>x</m>, whether or not it conflicts with <m>y_h</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. An unnecessary factor of <m>x</m> wrecks the match: the
+					substituted guess produces terms (like <m>x e^{kx}</m>) that
+					<m>f(x)</m> does not contain, and the coefficient system becomes
+					inconsistent. Multiply by <m>x</m> exactly when a conflict with
+					<m>y_h</m> demands it&#8212;no more, no less.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : The full method start to finish                              -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The whole method, start to finish.</term></p>
+
+		<exercise xml:id="ws-uc-ex-full" component="stu" workspace="3.6in">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> y'' + 2y' - 3y = 6x + 1 </mrow>
+					</md>
+					by running all five steps: <m>y_h</m>, select <m>y_p</m>, check
+					for conflicts, match coefficients, and assemble
+					<m>y = y_h + y_p</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-uc-ex-full" component="key">
+			<statement>
+				<p>
+					Find the general solution of
+					<md>
+						<mrow> y'' + 2y' - 3y = 6x + 1 </mrow>
+					</md>
+					by running all five steps: <m>y_h</m>, select <m>y_p</m>, check
+					for conflicts, match coefficients, and assemble
+					<m>y = y_h + y_p</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<term>Step 1.</term> <m>r^2 + 2r - 3 = (r+3)(r-1) = 0</m>, so
+					<m>y_h = c_1 e^{-3x} + c_2 e^{x}</m>.
+				</p>
+				<p>
+					<term>Step 2.</term> <m>f(x) = 6x + 1</m> is a degree-one
+					polynomial: guess <m>y_p = Ax + B</m>.
+				</p>
+				<p>
+					<term>Step 3.</term> No conflict&#8212;<m>y_h</m> contains only
+					exponentials.
+				</p>
+				<p>
+					<term>Step 4.</term> With <m>y_p' = A</m> and <m>y_p'' = 0</m>:
+					<md>
+						<mrow> 0 + 2A - 3(Ax + B) \amp = -3A\,x + (2A - 3B) = 6x + 1. </mrow>
+					</md>
+					Matching <m>x</m>-terms: <m>-3A = 6</m>, so <m>A = -2</m>. Matching
+					free terms: <m>2(-2) - 3B = 1</m>, so <m>B = -\tfrac{5}{3}</m>.
+				</p>
+				<p>
+					<term>Step 5.</term>
+					<md>
+						<mrow> y = c_1 e^{-3x} + c_2 e^{x} - 2x - \tfrac{5}{3}. </mrow>
+					</md>
+					A quick sanity check on the free term: at any <m>x</m>, the
+					<m>y_p</m> pieces alone must reproduce <m>6x + 1</m>&#8212;and they
+					do.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Undetermined coefficients works beautifully when the forcing is
+				polite&#8212;polynomials, exponentials, sines and cosines. But real
+				systems get switched on and off, struck, and jolted by forcing
+				functions with corners and jumps. The next worksheets build the
+				<em>Laplace transform</em>, a machine designed to handle exactly
+				that kind of forcing.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
