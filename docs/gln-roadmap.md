@@ -38,8 +38,8 @@ the old Beamer decks in `source/notes/latex/`, tracking the coursebook
 | `ws-separation-of-variables` | Separation of Variables | `02 sov` | `c4-sov/*` | **done** |
 | `ws-integrating-factors` | Integrating Factors | `03 if` | `c5-if/*` | **done** |
 | `ws-slope-fields` | Slope Fields & Qualitative Analysis | `08 slope-fields` | `c6-qm/*` | **done** |
-| `ws-eulers-method` | Euler's Method | `07 eulers-method` | `c7-em/*` | **in-review** |
-| `ws-homogeneous-linear` | Homogeneous Linear Equations (constant coeff.) | `04 lhcc` | `c8-lhcc/*` | todo |
+| `ws-eulers-method` | Euler's Method | `07 eulers-method` | `c7-em/*` | **done** |
+| `ws-homogeneous-linear` | Homogeneous Linear Equations (constant coeff.) | `04 lhcc` | `c8-lhcc/*` | **in-review** |
 | `ws-undetermined-coefficients` | Undetermined Coefficients | `05 lncc` | `c9-uc/*` | todo |
 | `ws-laplace-transforms` | Laplace Transforms | `06 lt` | `c10-lt/*` | todo |
 | `ws-laplace-method` | Solving DEs with the Laplace Method | `06 lt` | `c11-ltm/*` | todo |

@@ -15,6 +15,7 @@
 		<xi:include href="./notes/ws-integrating-factors.ptx"/>
 		<xi:include href="./notes/ws-slope-fields.ptx"/>
 		<xi:include href="./notes/ws-eulers-method.ptx"/>
+		<xi:include href="./notes/ws-homogeneous-linear.ptx"/>
 
 	</article>
 </pretext>
