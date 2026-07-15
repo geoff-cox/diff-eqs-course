@@ -199,10 +199,12 @@
 			</statement>
 			<solution component="key">
 				<p>
-					True. An exponential <m>e^{rx}</m> is strictly positive for every
-					real <m>x</m>, so the product can vanish only if the polynomial
-					factor does. That harmless-looking division is what converts
-					calculus into algebra.
+					True. An exponential <m>e^{rx}</m> is never zero: for real
+					<m>r</m> it is strictly positive, and even for a complex root
+					<m>r = \alpha + i\beta</m> its magnitude is
+					<m>e^{\alpha x} \gt 0</m>. So the product can vanish only if the
+					polynomial factor does&#8212;and that harmless-looking division is
+					what converts calculus into algebra.
 				</p>
 			</solution>
 		</exercise>
