@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Homogeneous Linear Equations
+	(constant coefficients)"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c8-lhcc/sec-lhcc-eqn.ptx
+		c8-lhcc/sec-exponential-solns.ptx
+		c8-lhcc/sec-second-order-lhcc-eqns.ptx
+		c8-lhcc/sec-higher-order-lhcc-eqns.ptx
+		c8-lhcc/sec-solving-higher-order-lhcc-eqns.ptx
+	Old deck: source/notes/latex/ folder "04 lhcc".
+	Previous worksheet: ws-eulers-method.ptx; next: ws-undetermined-coefficients.
+
+	Per the sourcing rules, every equation here is fresh: concepts mirror
+	the book, but none of the example equations appear in it (nor in the
+	old deck or the earlier worksheets). Per the instructor overrides in
+	CLAUDE.md section 4: no interactive content, and the whole topic stays
+	on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-homogeneous-linear" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Homogeneous Linear Equations with Constant Coefficients</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Identify</term> LHCC equations: linear, homogeneous (zero forcing function), constant coefficients.</p></li>
+			<li><p><term>Explain</term> why exponentials <m>e^{rx}</m> are the natural candidates, and derive the characteristic equation by substitution.</p></li>
+			<li><p><term>Solve</term> second-order LHCC equations in all three cases&#8212;distinct real, complex, and repeated roots.</p></li>
+			<li><p><term>Apply</term> two initial conditions to pin down both constants in an IVP.</p></li>
+			<li><p><term>Extend</term> the method to higher-order equations via factored characteristic polynomials.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : What counts as LHCC                                          -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>A new family: second order and beyond.</term></p>
+
+		<p>
+			Every technique so far handled <em>first-order</em> equations. We now
+			jump to a family where exact solutions exist at any order:
+			<term>linear homogeneous constant coefficient</term> (LHCC) equations,
+			such as <m>a\,y'' + b\,y' + c\,y = 0</m>. Each word earns its place:
+			<em>linear</em> (no powers or products of <m>y</m> and its
+			derivatives), <em>homogeneous</em> (the forcing function&#8212;the
+			free term&#8212;is zero), and <em>constant coefficients</em> (the
+			multipliers <m>a, b, c</m> are numbers, not functions of <m>x</m>).
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						In this setting the free term is renamed the
+						<fillin characters="16"/>; an equation is <term>homogeneous</term>
+						when that term equals <fillin characters="4"/>.
+					</p>
+					<p component="key">
+						In this setting the free term is renamed the
+						<m>\underline{\textbf{forcing function}}</m>; an equation is
+						<term>homogeneous</term> when that term equals
+						<m>\underline{\textbf{zero}}</m>.
+					</p>
+				</li>
+				<li>
+					<p component="stu">
+						An LHCC equation has <term>constant coefficients</term>: every
+						coefficient is a constant rather than a function of the
+						<fillin characters="11"/> variable.
+					</p>
+					<p component="key">
+						An LHCC equation has <term>constant coefficients</term>: every
+						coefficient is a constant rather than a function of the
+						<m>\underline{\textbf{independent}}</m> variable.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-hl-tf-varcoeff">
+			<title>True or False</title>
+			<statement>
+				<p><m>y'' + (\cos x)\,y' + 2y = 0</m> is an LHCC equation.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. It is linear and homogeneous, but the coefficient
+					<m>\cos x</m> is a function of <m>x</m>, not a constant. The
+					characteristic-equation machinery we are about to build depends on
+					<em>all three</em> letters of LHCC.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-hl-ex-identify" component="stu" workspace="2.2in">
+			<statement>
+				<p>
+					For each equation, decide whether it is LHCC. If not, name the
+					property that fails.
+					<md>
+						<mrow> \text{(a)}\ y'' - 5y' + 4y = 0 \qquad
+						       \text{(b)}\ y'' + 2y' = 7 </mrow>
+						<mrow> \text{(c)}\ y'' + (y')^2 = 0 \qquad
+						       \text{(d)}\ y''' + 2y'' - y = 0 </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-hl-ex-identify" component="key">
+			<statement>
+				<p>
+					For each equation, decide whether it is LHCC. If not, name the
+					property that fails.
+					<md>
+						<mrow> \text{(a)}\ y'' - 5y' + 4y = 0 \qquad
+						       \text{(b)}\ y'' + 2y' = 7 </mrow>
+						<mrow> \text{(c)}\ y'' + (y')^2 = 0 \qquad
+						       \text{(d)}\ y''' + 2y'' - y = 0 </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) LHCC: linear, forcing function <m>0</m>, coefficients
+					<m>1, -5, 4</m> all constant.
+				</p>
+				<p>
+					(b) Not homogeneous: the forcing function is <m>7</m>, not zero.
+					(Equations like this are next worksheet's business.)
+				</p>
+				<p>
+					(c) Not linear: <m>(y')^2</m> raises a derivative to a power.
+				</p>
+				<p>
+					(d) LHCC&#8212;order three is welcome; nothing in the definition
+					stops at second order.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Why exponentials; the characteristic equation               -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Why exponentials? The like-terms argument.</term></p>
+
+		<p>
+			For <m>a\,y'' + b\,y' + c\,y</m> to collapse to zero, the three terms
+			must be <em>like-terms</em>&#8212;they must cancel by addition. That
+			demands a function whose derivatives are like-terms with itself, and
+			the exponential <m>y = e^{rx}</m> is the function built for the job:
+			every derivative is just a constant multiple of <m>e^{rx}</m>.
+			Substituting it turns the differential equation into algebra.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						Substituting <m>y = e^{rx}</m> into an LHCC equation and factoring
+						out <m>e^{rx}</m> leaves a polynomial in <m>r</m> called the
+						<fillin characters="14"/> equation. Each root <m>r</m> produces a
+						<fillin characters="11"/> solution <m>e^{rx}</m>.
+					</p>
+					<p component="key">
+						Substituting <m>y = e^{rx}</m> into an LHCC equation and factoring
+						out <m>e^{rx}</m> leaves a polynomial in <m>r</m> called the
+						<m>\underline{\textbf{characteristic}}</m> equation. Each root
+						<m>r</m> produces a <m>\underline{\textbf{fundamental}}</m>
+						solution <m>e^{rx}</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-hl-tf-nonzero">
+			<title>True or False</title>
+			<statement>
+				<p>The step from <m>(a r^2 + b r + c)\,e^{rx} = 0</m> to <m>a r^2 + b r + c = 0</m> is valid because <m>e^{rx}</m> is never zero.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True. An exponential <m>e^{rx}</m> is strictly positive for every
+					real <m>x</m>, so the product can vanish only if the polynomial
+					factor does. That harmless-looking division is what converts
+					calculus into algebra.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-hl-ex-ansatz" component="stu" workspace="2.8in">
+			<statement>
+				<p>
+					Substitute <m>y = e^{rx}</m> into
+					<md>
+						<mrow> y'' + y' - 6y = 0, </mrow>
+					</md>
+					factor out <m>e^{rx}</m>, and solve the resulting characteristic
+					equation. Then write the two fundamental solutions and the general
+					solution.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-hl-ex-ansatz" component="key">
+			<statement>
+				<p>
+					Substitute <m>y = e^{rx}</m> into
+					<md>
+						<mrow> y'' + y' - 6y = 0, </mrow>
+					</md>
+					factor out <m>e^{rx}</m>, and solve the resulting characteristic
+					equation. Then write the two fundamental solutions and the general
+					solution.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					With <m>y = e^{rx}</m>, <m>y' = r e^{rx}</m> and
+					<m>y'' = r^2 e^{rx}</m>:
+					<md>
+						<mrow> r^2 e^{rx} + r e^{rx} - 6 e^{rx} \amp = 0 </mrow>
+						<mrow> \left(r^2 + r - 6\right) e^{rx} \amp = 0. </mrow>
+					</md>
+					Since <m>e^{rx} \neq 0</m>, the characteristic equation is
+					<m>r^2 + r - 6 = (r+3)(r-2) = 0</m>, with roots <m>r = -3</m> and
+					<m>r = 2</m>. The fundamental solutions are <m>e^{-3x}</m> and
+					<m>e^{2x}</m>, and superposition assembles the general solution:
+					<md>
+						<mrow> y = c_1 e^{-3x} + c_2 e^{2x}. </mrow>
+					</md>
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : The three cases at second order                              -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Three kinds of roots, three solution forms.</term></p>
+
+		<p>
+			The quadratic <m>a r^2 + b r + c = 0</m> can behave three ways,
+			sorted by the discriminant <m>\Delta = b^2 - 4ac</m>&#8212;and each
+			way dictates the shape of the general solution.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						<term>Case 1</term> (<m>\Delta &gt; 0</m>), unequal real roots:
+						<m>y = c_1 e^{r_1 x} + c_2 e^{r_2 x}</m>.
+						<term>Case 2</term> (<m>\Delta &lt; 0</m>), complex roots
+						<m>r = \alpha \pm i\beta</m>:
+						<m>y = e^{\alpha x}\left(c_1 \cos(\beta x) + c_2 \sin(\beta x)\right)</m>,
+						where the sine and cosine come from <fillin characters="7"/>
+						formula. <term>Case 3</term> (<m>\Delta = 0</m>), a repeated
+						root: the second fundamental solution gains an extra factor of
+						<fillin characters="3"/>.
+					</p>
+					<p component="key">
+						<term>Case 1</term> (<m>\Delta &gt; 0</m>), unequal real roots:
+						<m>y = c_1 e^{r_1 x} + c_2 e^{r_2 x}</m>.
+						<term>Case 2</term> (<m>\Delta &lt; 0</m>), complex roots
+						<m>r = \alpha \pm i\beta</m>:
+						<m>y = e^{\alpha x}\left(c_1 \cos(\beta x) + c_2 \sin(\beta x)\right)</m>,
+						where the sine and cosine come from
+						<m>\underline{\textbf{Euler's}}</m> formula.
+						<term>Case 3</term> (<m>\Delta = 0</m>), a repeated root: the
+						second fundamental solution gains an extra factor of
+						<m>\underline{\textbf{x}}</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-hl-ex-cases" component="stu" workspace="3.4in">
+			<statement>
+				<p>
+					Find the general solution of each equation, and say which case it
+					falls in.
+					<md>
+						<mrow> \text{(a)}\ y'' - 10y' + 25y = 0 \qquad
+						       \text{(b)}\ y'' + 6y' + 13y = 0 \qquad
+						       \text{(c)}\ y'' + 9y = 0 </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-hl-ex-cases" component="key">
+			<statement>
+				<p>
+					Find the general solution of each equation, and say which case it
+					falls in.
+					<md>
+						<mrow> \text{(a)}\ y'' - 10y' + 25y = 0 \qquad
+						       \text{(b)}\ y'' + 6y' + 13y = 0 \qquad
+						       \text{(c)}\ y'' + 9y = 0 </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>r^2 - 10r + 25 = (r - 5)^2 = 0</m>: repeated root
+					<m>r = 5</m> (Case 3), so
+					<md>
+						<mrow> y = c_1 e^{5x} + c_2\,x\,e^{5x}. </mrow>
+					</md>
+				</p>
+				<p>
+					(b) <m>r^2 + 6r + 13 = 0</m> gives
+					<m>r = \frac{-6 \pm \sqrt{36 - 52}}{2} = -3 \pm 2i</m> (Case 2,
+					<m>\alpha = -3</m>, <m>\beta = 2</m>):
+					<md>
+						<mrow> y = e^{-3x}\left(c_1 \cos(2x) + c_2 \sin(2x)\right). </mrow>
+					</md>
+					A decaying envelope times an oscillation.
+				</p>
+				<p>
+					(c) <m>r^2 + 9 = 0</m> gives <m>r = \pm 3i</m>&#8212;Case 2 with
+					<m>\alpha = 0</m>, so the exponential envelope is
+					<m>e^{0x} = 1</m>:
+					<md>
+						<mrow> y = c_1 \cos(3x) + c_2 \sin(3x), </mrow>
+					</md>
+					pure oscillation that never grows or decays.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-hl-tf-repeated">
+			<title>True or False</title>
+			<statement>
+				<p>If the characteristic equation has the repeated root <m>r</m>, then <m>y = c_1 e^{rx} + c_2 e^{rx}</m> is the general solution.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. Those two terms are like-terms, so the sum collapses to
+					<m>(c_1 + c_2)e^{rx}</m>&#8212;one arbitrary constant masquerading
+					as two, which cannot meet two independent initial conditions. The
+					genuine second solution is <m>x\,e^{rx}</m>, giving
+					<m>y = c_1 e^{rx} + c_2\,x\,e^{rx}</m>.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : IVPs; higher order; looking ahead                            -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Pinning down the constants, and going higher.</term></p>
+
+		<p>
+			A second-order general solution carries <em>two</em> arbitrary
+			constants, so an initial-value problem must supply <em>two</em>
+			conditions&#8212;typically <m>y(0)</m> and <m>y'(0)</m>. And the
+			characteristic-equation method scales: an order-<m>n</m> LHCC
+			equation yields a degree-<m>n</m> polynomial, and its <m>n</m> roots
+			build the general solution the same way.
+		</p>
+
+		<exercise xml:id="ws-hl-ex-ivp" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					Solve the initial-value problem
+					<md>
+						<mrow> y'' + y' - 6y = 0, \qquad y(0) = 1, \qquad y'(0) = -8. </mrow>
+					</md>
+					(The general solution comes from page 2.)
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-hl-ex-ivp" component="key">
+			<statement>
+				<p>
+					Solve the initial-value problem
+					<md>
+						<mrow> y'' + y' - 6y = 0, \qquad y(0) = 1, \qquad y'(0) = -8. </mrow>
+					</md>
+					(The general solution comes from page 2.)
+				</p>
+			</statement>
+			<solution>
+				<p>
+					From page 2, <m>y = c_1 e^{-3x} + c_2 e^{2x}</m>, so
+					<m>y' = -3c_1 e^{-3x} + 2c_2 e^{2x}</m>. The conditions give the
+					system
+					<md>
+						<mrow> y(0) = c_1 + c_2 \amp = 1 </mrow>
+						<mrow> y'(0) = -3c_1 + 2c_2 \amp = -8. </mrow>
+					</md>
+					Substituting <m>c_1 = 1 - c_2</m> into the second:
+					<m>-3 + 5c_2 = -8</m>, so <m>c_2 = -1</m> and <m>c_1 = 2</m>:
+					<md>
+						<mrow> y = 2e^{-3x} - e^{2x}. </mrow>
+					</md>
+					Two constants, two conditions, one solution&#8212;the second-order
+					echo of <q>each constant needs its own condition</q> from direct
+					integration.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-hl-ex-higher" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Find the general solution of the third-order equation
+					<md>
+						<mrow> y''' - 9y' = 0. </mrow>
+					</md>
+					(Factor the characteristic polynomial completely; one root is
+					<m>0</m>.)
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-hl-ex-higher" component="key">
+			<statement>
+				<p>
+					Find the general solution of the third-order equation
+					<md>
+						<mrow> y''' - 9y' = 0. </mrow>
+					</md>
+					(Factor the characteristic polynomial completely; one root is
+					<m>0</m>.)
+				</p>
+			</statement>
+			<solution>
+				<p>
+					The characteristic equation is
+					<m>r^3 - 9r = r\,(r-3)(r+3) = 0</m>, with the three roots
+					<m>r = 0, 3, -3</m>. Each contributes a fundamental solution&#8212;and
+					<m>r = 0</m> contributes <m>e^{0x} = 1</m>, a constant:
+					<md>
+						<mrow> y = c_1 + c_2 e^{3x} + c_3 e^{-3x}. </mrow>
+					</md>
+					Order three, degree three, three roots, three constants: the
+					bookkeeping scales perfectly.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Homogeneous means nothing pushes on the system&#8212;the forcing
+				function is zero. The next worksheet turns the forcing on:
+				equations like <m>y'' + y' - 6y = f(x)</m> model driven springs and
+				circuits, and the method of <em>undetermined coefficients</em>
+				finds a particular solution to add to the homogeneous one we can
+				now build.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
