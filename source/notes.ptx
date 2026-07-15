@@ -14,6 +14,7 @@
 		<xi:include href="./notes/ws-separation-of-variables.ptx"/>
 		<xi:include href="./notes/ws-integrating-factors.ptx"/>
 		<xi:include href="./notes/ws-slope-fields.ptx"/>
+		<xi:include href="./notes/ws-eulers-method.ptx"/>
 
 	</article>
 </pretext>

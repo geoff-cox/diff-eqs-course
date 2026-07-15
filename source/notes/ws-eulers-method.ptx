@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Euler's Method"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c7-em/sec-what-is-a-numerical-solution.ptx
+		c7-em/sec-euler-intro-thinking-in-steps.ptx
+		c7-em/sec-euler-method.ptx
+	Old deck: source/notes/latex/ folder "07 eulers-method" (mostly
+	slope-field/Euler overlay figures; pedagogy follows the book).
+	Previous worksheet: ws-slope-fields.ptx; next: ws-homogeneous-linear.
+
+	Per the sourcing rules, every equation here is fresh: concepts mirror
+	the book, but none of the example equations appear in it (nor in the
+	old deck or the earlier worksheets). Per the instructor overrides in
+	CLAUDE.md section 4: no interactive content (the book's jsxgraph
+	Euler tool has no counterpart here; the by-hand tables ARE the
+	activity), and the whole topic stays on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-eulers-method" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Euler's Method</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Distinguish</term> analytic (closed-form) solutions from numerical solutions, and recognize when a numerical method is the only option.</p></li>
+			<li><p><term>Execute</term> one Euler step: from a point, move a run of <m>h</m> with rise <m>= \text{slope}\times h</m>.</p></li>
+			<li><p><term>Apply</term> the update rule <m>y_{k+1} = y_k + h\,f(t_k, y_k)</m> to build an approximation table across an interval.</p></li>
+			<li><p><term>Explain</term> why Euler's method accumulates error and how shrinking the step size <m>h</m> improves accuracy.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : Analytic vs numerical solutions; when we need Euler         -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>When the formula never comes.</term></p>
+
+		<p>
+			Everything before the slope-fields worksheet produced an
+			<term>analytic solution</term>&#8212;an exact formula for <m>y(t)</m>.
+			But many equations have no closed-form solution at all. A
+			<term>numerical method</term> gives up on the formula: starting from
+			the initial condition, it uses the differential equation to predict
+			the solution one small step at a time, producing a <em>table</em> of
+			approximate points instead. Euler's method is the simplest such
+			method&#8212;it is the slope field made mechanical.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						An exact formula for <m>y(t)</m> is called an <term>analytic</term>
+						solution, also known as a <fillin characters="11"/>-form solution.
+						A numerical method instead produces a table of
+						<fillin characters="11"/> points&#8212;a <term>numerical
+						solution</term>.
+					</p>
+					<p component="key">
+						An exact formula for <m>y(t)</m> is called an <term>analytic</term>
+						solution, also known as a
+						<m>\underline{\textbf{closed}}</m>-form solution. A numerical
+						method instead produces a table of
+						<m>\underline{\textbf{approximate}}</m> points&#8212;a
+						<term>numerical solution</term>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-em-tf-formula">
+			<title>True or False</title>
+			<statement>
+				<p>A numerical solution is a formula for <m>y(t)</m> that you can evaluate at any <m>t</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. A numerical solution is a <em>list of points</em>
+					<m>(t_0,y_0), (t_1,y_1),\ldots</m> at chosen <m>t</m>-values, each
+					<m>y_k</m> only approximate. Between the listed <m>t</m>-values it
+					says nothing at all&#8212;there is no formula to plug into.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-em-ex-which-tool" component="stu" workspace="2.4in">
+			<statement>
+				<p>
+					For each differential equation, name every analytic technique from
+					this course that applies (direct integration, separation of
+					variables, integrating factor)&#8212;or conclude that none do, so a
+					numerical method would be our only option for an initial-value
+					problem built on it.
+					<md>
+						<mrow> \text{(a)}\ y' = t\,y \qquad
+						       \text{(b)}\ y' = \sin(t + y) \qquad
+						       \text{(c)}\ y' + 4y = \cos t </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-em-ex-which-tool" component="key">
+			<statement>
+				<p>
+					For each differential equation, name every analytic technique from
+					this course that applies (direct integration, separation of
+					variables, integrating factor)&#8212;or conclude that none do, so a
+					numerical method would be our only option for an initial-value
+					problem built on it.
+					<md>
+						<mrow> \text{(a)}\ y' = t\,y \qquad
+						       \text{(b)}\ y' = \sin(t + y) \qquad
+						       \text{(c)}\ y' + 4y = \cos t </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Both separation of variables (<m>f(t)\cdot g(y) = t\cdot y</m>)
+					and an integrating factor (<m>y' - t\,y = 0</m> is linear) work.
+				</p>
+				<p>
+					(b) Neither: <m>\sin(t+y)</m> is not a product of a <m>t</m>-part
+					and a <m>y</m>-part, and the equation is not linear. None of our
+					formula-producing techniques apply&#8212;this one is exactly why
+					numerical methods exist.
+				</p>
+				<p>
+					(c) Integrating factor only (linear, <m>P(t) = 4</m>); the sum
+					<m>\cos t - 4y</m> does not separate.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : One step: run h, rise = slope * h                           -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>One step at a time.</term></p>
+
+		<p>
+			Euler's method is <em>iterative</em>: it repeats one small task over
+			and over. The task: <q>from a known point, move to a nearby point
+			along the direction of the slope.</q> If the run is the step size
+			<m>h</m>, then slope <m>= \text{rise}/h</m> forces
+			<m>\text{rise} = \text{slope}\times h</m>, so one step moves
+			<md>
+				<mrow> (t,\ y)\ \longrightarrow\ (t + h,\ y + \text{slope}\cdot h). </mrow>
+			</md>
+			The slope comes straight from the differential equation&#8212;the same
+			slope generator that drew our slope fields.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						The small run used in each step of Euler's method is called the
+						<fillin characters="9"/>, written <m>h</m>; the corresponding rise
+						equals the <fillin characters="6"/> times <m>h</m>. (If the slope
+						is negative, the <q>rise</q> actually points
+						<fillin characters="8"/>.)
+					</p>
+					<p component="key">
+						The small run used in each step of Euler's method is called the
+						<m>\underline{\textbf{step size}}</m>, written <m>h</m>; the
+						corresponding rise equals the <m>\underline{\textbf{slope}}</m>
+						times <m>h</m>. (If the slope is negative, the <q>rise</q>
+						actually points <m>\underline{\textbf{downward}}</m>.)
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-em-ex-onestep" component="stu" workspace="2.0in">
+			<statement>
+				<p>
+					(a) You are at the point <m>(2,\ 5)</m> and the slope there is
+					<m>-4</m>. Where does one Euler step with <m>h = 0.25</m> land you?
+				</p>
+				<p>
+					(b) Now use a differential equation: for
+					<md>
+						<mrow> y' = 2t - y, \qquad y(1) = 3, </mrow>
+					</md>
+					compute the slope at <m>(1, 3)</m> and take one step with
+					<m>h = 0.1</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-em-ex-onestep" component="key">
+			<statement>
+				<p>
+					(a) You are at the point <m>(2,\ 5)</m> and the slope there is
+					<m>-4</m>. Where does one Euler step with <m>h = 0.25</m> land you?
+				</p>
+				<p>
+					(b) Now use a differential equation: for
+					<md>
+						<mrow> y' = 2t - y, \qquad y(1) = 3, </mrow>
+					</md>
+					compute the slope at <m>(1, 3)</m> and take one step with
+					<m>h = 0.1</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Run <m>= 0.25</m>, rise <m>= (-4)(0.25) = -1</m>:
+					<md>
+						<mrow> (2,\ 5)\ \longrightarrow\ (2 + 0.25,\ 5 - 1) = (2.25,\ 4). </mrow>
+					</md>
+					The negative slope makes the <q>rise</q> a fall.
+				</p>
+				<p>
+					(b) The slope generator gives
+					<m>y'(1) = 2(1) - 3 = -1</m>. One step:
+					<md>
+						<mrow> (1,\ 3)\ \longrightarrow\ (1 + 0.1,\ 3 + (-1)(0.1)) = (1.1,\ 2.9). </mrow>
+					</md>
+					That is the entire mechanical heart of Euler's method&#8212;everything
+					else is repetition.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-em-tf-equilibrium">
+			<title>True or False</title>
+			<statement>
+				<p>If <m>y' = f(y)</m> is autonomous and the initial condition starts exactly on an equilibrium, Euler's method stays there for every step, no matter what <m>h</m> is.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True. At an equilibrium <m>c</m>, <m>f(c) = 0</m>, so each update
+					adds <m>h\cdot 0 = 0</m>: the method reproduces the constant
+					solution exactly. Euler's method and the phase line agree about
+					standing still&#8212;it is everywhere <em>else</em> that the method
+					only approximates.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : The full method: update rule and a three-step table         -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The full method: repeat until you arrive.</term></p>
+
+		<p>
+			To approximate a solution of <m>y' = f(t,y)</m>, <m>y(t_0) = y_0</m>
+			across <m>[t_0, t_N]</m>: chop the interval into equal steps
+			<m>t_{k+1} = t_k + h</m>, start at the initial condition (the one
+			point we know exactly), and repeat the one-step move. Writing
+			<m>y_k</m> for the approximation at <m>t_k</m>, the whole method is
+			one line&#8212;the <term>update rule</term>:
+			<md>
+				<mrow> y_{k+1} = y_k + h\cdot f(t_k,\ y_k). </mrow>
+			</md>
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						The first point of the approximation costs nothing to
+						compute&#8212;it is the <fillin characters="17"/>. Each later
+						<m>y</m>-value is found from the previous point by adding
+						<m>h</m> times the slope <m>f</m> evaluated at the
+						<fillin characters="8"/> point.
+					</p>
+					<p component="key">
+						The first point of the approximation costs nothing to
+						compute&#8212;it is the
+						<m>\underline{\textbf{initial condition}}</m>. Each later
+						<m>y</m>-value is found from the previous point by adding
+						<m>h</m> times the slope <m>f</m> evaluated at the
+						<m>\underline{\textbf{previous}}</m> point.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-em-ex-table" component="stu" workspace="3.2in">
+			<statement>
+				<p>
+					Use Euler's method with step size <m>h = 0.5</m> to approximate the
+					solution of
+					<md>
+						<mrow> y' = 2t - y, \qquad y(0) = 1, \qquad t \text{ in } [0,\ 1.5]. </mrow>
+					</md>
+					Fill in the table, showing the slope used for each step.
+				</p>
+				<tabular halign="center">
+					<col right="minor"/>
+					<row bottom="minor">
+						<cell><m>k</m></cell>
+						<cell><m>t_k</m></cell>
+						<cell><m>y_k</m></cell>
+						<cell>slope <m>f(t_k, y_k) = 2t_k - y_k</m></cell>
+					</row>
+					<row><cell><m>0</m></cell><cell><m>0</m></cell><cell><m>1</m></cell><cell></cell></row>
+					<row><cell><m>1</m></cell><cell><m>0.5</m></cell><cell></cell><cell></cell></row>
+					<row><cell><m>2</m></cell><cell><m>1</m></cell><cell></cell><cell></cell></row>
+					<row><cell><m>3</m></cell><cell><m>1.5</m></cell><cell></cell><cell></cell></row>
+				</tabular>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-em-ex-table" component="key">
+			<statement>
+				<p>
+					Use Euler's method with step size <m>h = 0.5</m> to approximate the
+					solution of
+					<md>
+						<mrow> y' = 2t - y, \qquad y(0) = 1, \qquad t \text{ in } [0,\ 1.5]. </mrow>
+					</md>
+					Fill in the table, showing the slope used for each step.
+				</p>
+				<tabular halign="center">
+					<col right="minor"/>
+					<row bottom="minor">
+						<cell><m>k</m></cell>
+						<cell><m>t_k</m></cell>
+						<cell><m>y_k</m></cell>
+						<cell>slope <m>f(t_k, y_k) = 2t_k - y_k</m></cell>
+					</row>
+					<row><cell><m>0</m></cell><cell><m>0</m></cell><cell><m>1</m></cell><cell></cell></row>
+					<row><cell><m>1</m></cell><cell><m>0.5</m></cell><cell></cell><cell></cell></row>
+					<row><cell><m>2</m></cell><cell><m>1</m></cell><cell></cell><cell></cell></row>
+					<row><cell><m>3</m></cell><cell><m>1.5</m></cell><cell></cell><cell></cell></row>
+				</tabular>
+			</statement>
+			<solution>
+				<p>
+					Each row uses the update rule
+					<m>y_{k+1} = y_k + 0.5\,(2t_k - y_k)</m>:
+					<md>
+						<mrow> f(0,\ 1) \amp = -1, \amp y_1 \amp = 1 + 0.5(-1) = 0.5, </mrow>
+						<mrow> f(0.5,\ 0.5) \amp = 0.5, \amp y_2 \amp = 0.5 + 0.5(0.5) = 0.75, </mrow>
+						<mrow> f(1,\ 0.75) \amp = 1.25, \amp y_3 \amp = 0.75 + 0.5(1.25) = 1.375. </mrow>
+					</md>
+				</p>
+				<tabular halign="center">
+					<col right="minor"/>
+					<row bottom="minor">
+						<cell><m>k</m></cell>
+						<cell><m>t_k</m></cell>
+						<cell><m>y_k</m></cell>
+						<cell>slope</cell>
+					</row>
+					<row><cell><m>0</m></cell><cell><m>0</m></cell><cell><m>1</m></cell><cell><m>-1</m></cell></row>
+					<row><cell><m>1</m></cell><cell><m>0.5</m></cell><cell><m>0.5</m></cell><cell><m>0.5</m></cell></row>
+					<row><cell><m>2</m></cell><cell><m>1</m></cell><cell><m>0.75</m></cell><cell><m>1.25</m></cell></row>
+					<row><cell><m>3</m></cell><cell><m>1.5</m></cell><cell><m>1.375</m></cell><cell>&#8212;</cell></row>
+				</tabular>
+				<p>
+					The approximation is the four points
+					<m>(0,1),\ (0.5,0.5),\ (1,0.75),\ (1.5,1.375)</m>. Notice the
+					rhythm: <em>slope, step, repeat</em>&#8212;and that no slope is
+					needed at the final point, since we never step past
+					<m>t = 1.5</m>.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Accuracy: error accumulation and shrinking h                -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>How wrong is it, and what helps?</term></p>
+
+		<p>
+			Each Euler step pretends the slope stays constant across the whole
+			step&#8212;but along the true solution the slope keeps changing. That
+			mismatch injects a small error at every step, and the errors
+			compound. The standard remedy: take more, smaller steps.
+		</p>
+
+		<exercise xml:id="ws-em-ex-accuracy" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					The initial-value problem
+					<md>
+						<mrow> y' = 2y, \qquad y(0) = 1 </mrow>
+					</md>
+					has the exact solution <m>y = e^{2t}</m>, so
+					<m>y(1) = e^{2} \approx 7.389</m>. Approximate <m>y(1)</m> with
+					Euler's method two ways:
+					(a) one step with <m>h = 1</m>;
+					(b) two steps with <m>h = 0.5</m>.
+					(c) Compare both answers to the exact value. Which is closer? Why
+					do both <em>undershoot</em>?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-em-ex-accuracy" component="key">
+			<statement>
+				<p>
+					The initial-value problem
+					<md>
+						<mrow> y' = 2y, \qquad y(0) = 1 </mrow>
+					</md>
+					has the exact solution <m>y = e^{2t}</m>, so
+					<m>y(1) = e^{2} \approx 7.389</m>. Approximate <m>y(1)</m> with
+					Euler's method two ways:
+					(a) one step with <m>h = 1</m>;
+					(b) two steps with <m>h = 0.5</m>.
+					(c) Compare both answers to the exact value. Which is closer? Why
+					do both <em>undershoot</em>?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) One step: <m>f(0,1) = 2</m>, so
+					<m>y_1 = 1 + 1\cdot 2 = 3</m>.
+				</p>
+				<p>
+					(b) Two steps: <m>y_1 = 1 + 0.5\,(2) = 2</m> at <m>t=0.5</m>; then
+					<m>f(0.5, 2) = 4</m> gives <m>y_2 = 2 + 0.5\,(4) = 4</m> at
+					<m>t = 1</m>.
+				</p>
+				<p>
+					(c) Exact <m>\approx 7.389</m>; the <m>h=1</m> estimate is <m>3</m>
+					and the <m>h=0.5</m> estimate is <m>4</m>&#8212;halving <m>h</m>
+					moved the answer meaningfully toward the truth. Both undershoot
+					because the true solution bends <em>upward</em>: its slope grows
+					throughout each step, while Euler keeps using a stale slope from
+					the step's start, so every step falls short. Smaller steps refresh
+					the slope more often, trimming the error.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-em-tf-bigh">
+			<title>True or False</title>
+			<statement>
+				<p>Doubling the step size <m>h</m> generally makes an Euler approximation more accurate, since each step covers more ground.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;it is exactly backwards. Bigger steps hold a single
+					stale slope over a longer stretch, so more error is injected per
+					step. Accuracy improves as <m>h</m> <em>shrinks</em>; the price is
+					more steps of arithmetic, which is why this method belongs to
+					computers.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Euler's method turns any first-order equation into arithmetic, no
+				matter how unsolvable its formula. But numerical tables are not the
+				end of the story: for an important family&#8212;<em>homogeneous
+				linear equations with constant coefficients</em>&#8212;beautiful
+				exact solutions exist, even at second order and beyond. The next
+				worksheet builds them.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
