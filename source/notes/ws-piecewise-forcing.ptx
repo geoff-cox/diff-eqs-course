@@ -330,7 +330,7 @@
 					<m>\frac{1}{s^2}</m> inverts to <m>t</m>, and
 					<m>\frac{e^{-5s}}{s^2}</m> inverts to <m>(t-5)\,u_5(t)</m>:
 					<md>
-						<mrow> y(t) = t - (t-5)\,u_5(t) = \begin{cases} t \amp t \lt 5 \\ 5 \amp t \ge 5 \end{cases} </mrow>
+						<mrow> f(t) = t - (t-5)\,u_5(t) = \begin{cases} t \amp t \lt 5 \\ 5 \amp t \ge 5 \end{cases} </mrow>
 					</md>
 					&#8212;a ramp that climbs steadily and then freezes at height
 					<m>5</m>: the delayed ramp arrives and exactly cancels the
@@ -405,7 +405,7 @@
 		<exercise xml:id="ws-pf-tf-asleep">
 			<title>True or False</title>
 			<statement>
-				<p>If <m>y(0) = 0</m> and the forcing does not switch on until <m>t = c</m>, then the solution is identically zero for all <m>t \lt c</m>.</p>
+				<p>If a system starts with zero initial state (<m>y(0) = 0</m>, and for higher orders <m>y'(0) = 0</m>, and so on) and the forcing does not switch on until <m>t = c</m>, then the solution is identically zero for all <m>t \lt c</m>.</p>
 			</statement>
 			<solution component="key">
 				<p>
