@@ -42,8 +42,8 @@ the old Beamer decks in `source/notes/latex/`, tracking the coursebook
 | `ws-homogeneous-linear` | Homogeneous Linear Equations (constant coeff.) | `04 lhcc` | `c8-lhcc/*` | **done** |
 | `ws-undetermined-coefficients` | Undetermined Coefficients | `05 lncc` | `c9-uc/*` | **done** |
 | `ws-laplace-transforms` | Laplace Transforms | `06 lt` | `c10-lt/*` | **done** |
-| `ws-laplace-method` | Solving DEs with the Laplace Method | `06 lt` | `c11-ltm/*` | **in-review** |
-| `ws-piecewise-forcing` | Piecewise Forcing | `06 lt` | `c12-ltp/*` | todo |
+| `ws-laplace-method` | Solving DEs with the Laplace Method | `06 lt` | `c11-ltm/*` | **done** |
+| `ws-piecewise-forcing` | Piecewise Forcing | `06 lt` | `c12-ltp/*` | **in-review** |
 | `ws-linear-systems` | Linear Systems | `09 systems / reduction-of-order` | `c13-linsys/*` | todo |
 | `ws-nonlinear-systems` | Nonlinear Systems | `09 systems` | `c14-nlinsys/*` | todo |
 

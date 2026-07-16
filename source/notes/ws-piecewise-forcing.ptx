@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Piecewise Forcing"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c12-ltp/sec-unit-step-functions.ptx
+		c12-ltp/sec-piecewise-functions.ptx
+		c12-ltp/sec-piecewise-transform-rules.ptx
+		c12-ltp/sec-transforming-piecewise-functions.ptx
+		c12-ltp/sec-laplace-piecewise-method.ptx
+	Old deck: source/notes/latex/ folder "06 lt"
+	(05-Unit step Functions subfolders).
+	Previous worksheet: ws-laplace-method.ptx; next: ws-linear-systems.
+
+	Per the sourcing rules, every worked instance here is fresh: the
+	canonical step-transform rules are shared reference facts, but no
+	computed example (the step-form conversion, the forward/inverse
+	instances, the IVP solve) appears in the book, the old deck, or
+	earlier worksheets. Notation follows the book: u_c(t). Per the
+	instructor overrides in CLAUDE.md section 4: no interactive content,
+	and the whole topic stays on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-piecewise-forcing" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Piecewise Forcing</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Evaluate</term> the unit step function <m>u_c(t)</m> and use it to switch functions on at chosen times.</p></li>
+			<li><p><term>Rewrite</term> piecewise-defined forcing in step form.</p></li>
+			<li><p><term>Transform</term> step functions and delayed functions: <m>\mathcal{L}\{u_c(t)\} = \frac{e^{-cs}}{s}</m> and <m>\mathcal{L}\{f(t-c)\,u_c(t)\} = e^{-cs}F(s)</m>.</p></li>
+			<li><p><term>Invert</term> transforms containing <m>e^{-cs}</m> factors, reading the delay correctly.</p></li>
+			<li><p><term>Solve</term> an initial-value problem whose forcing switches on mid-story.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : The unit step function; step form                            -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The switch: forcing that turns on.</term></p>
+
+		<p>
+			Real systems get switched: a voltage applied at <m>t = 3</m>, a drug
+			dose started at <m>t = 7</m>. The <term>unit step function</term>
+			models the switch itself:
+			<md>
+				<mrow> u_c(t) = \begin{cases} 0 \amp t \lt c \\ 1 \amp t \ge c \end{cases} </mrow>
+			</md>
+			&#8212;worth <m>0</m> before time <m>c</m>, worth <m>1</m> from
+			<m>c</m> onward. Multiplying any function by <m>u_c(t)</m> silences
+			it before <m>c</m> and switches it on at <m>c</m>, which lets us
+			rewrite piecewise formulas as single expressions.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						The function <m>u_c(t)</m> outputs <fillin characters="2"/> before
+						time <m>c</m> and <fillin characters="2"/> afterward; the product
+						<m>f(t)\,u_c(t)</m> is a copy of <m>f</m> that is switched
+						<fillin characters="3"/> at <m>t = c</m>.
+					</p>
+					<p component="key">
+						The function <m>u_c(t)</m> outputs <m>\underline{\textbf{0}}</m>
+						before time <m>c</m> and <m>\underline{\textbf{1}}</m> afterward;
+						the product <m>f(t)\,u_c(t)</m> is a copy of <m>f</m> that is
+						switched <m>\underline{\textbf{on}}</m> at <m>t = c</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-pf-tf-ramp">
+			<title>True or False</title>
+			<statement>
+				<p><m>u_c(t)</m> rises gradually from <m>0</m> to <m>1</m> near <m>t = c</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. The step is instantaneous&#8212;a jump discontinuity, not a
+					ramp. That abruptness is the whole point (an ideal switch), and it
+					is exactly the kind of forcing that undetermined coefficients
+					could never touch but the Laplace transform handles cleanly.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-pf-ex-stepform" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					(a) Evaluate <m>u_7(3)</m>, <m>u_7(7)</m>, and <m>u_7(10)</m>.
+				</p>
+				<p>
+					(b) Write the piecewise forcing
+					<md>
+						<mrow> f(t) = \begin{cases} 3 \amp t \lt 7 \\ -1 \amp t \ge 7 \end{cases} </mrow>
+					</md>
+					in step form (a single expression using <m>u_7(t)</m>), and check
+					your expression at <m>t = 0</m> and <m>t = 9</m>.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-pf-ex-stepform" component="key">
+			<statement>
+				<p>
+					(a) Evaluate <m>u_7(3)</m>, <m>u_7(7)</m>, and <m>u_7(10)</m>.
+				</p>
+				<p>
+					(b) Write the piecewise forcing
+					<md>
+						<mrow> f(t) = \begin{cases} 3 \amp t \lt 7 \\ -1 \amp t \ge 7 \end{cases} </mrow>
+					</md>
+					in step form (a single expression using <m>u_7(t)</m>), and check
+					your expression at <m>t = 0</m> and <m>t = 9</m>.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>u_7(3) = 0</m> (before the switch), <m>u_7(7) = 1</m> (the
+					switch is on at its own instant), <m>u_7(10) = 1</m>.
+				</p>
+				<p>
+					(b) Start at <m>3</m>; at <m>t = 7</m> the value must jump by
+					<m>-1 - 3 = -4</m>, and a jump of size <m>k</m> at time <m>c</m> is
+					<m>k\,u_c(t)</m>:
+					<md>
+						<mrow> f(t) = 3 - 4\,u_7(t). </mrow>
+					</md>
+					Check: at <m>t = 0</m>, <m>3 - 4(0) = 3</m>; at <m>t = 9</m>,
+					<m>3 - 4(1) = -1</m>. Start value plus (jump)&#215;(switch) is the
+					recipe for any two-piece constant forcing.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Forward transform rules for steps                            -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Transforming switches and delays.</term></p>
+
+		<p>
+			Two rules carry the whole chapter (with
+			<m>F(s) = \mathcal{L}\{f(t)\}</m>):
+			<md>
+				<mrow> \mathcal{L}\{u_c(t)\} = \frac{e^{-cs}}{s},
+				       \qquad
+				       \mathcal{L}\{f(t-c)\,u_c(t)\} = e^{-cs}\,F(s). </mrow>
+			</md>
+			The factor <m>e^{-cs}</m> is the <m>s</m>-domain fingerprint of a
+			delay: <q>whatever happens, it happens <m>c</m> seconds late.</q>
+			Note carefully that the second rule wants the <em>shifted</em>
+			function <m>f(t-c)</m> riding the switch&#8212;not plain
+			<m>f(t)</m>.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						In the <m>s</m>-domain, an exponential factor <m>e^{-cs}</m>
+						signals a <fillin characters="5"/> of length <m>c</m> in the
+						<m>t</m>-domain; the delayed-function rule applies when the
+						function multiplying <m>u_c(t)</m> is written in terms of
+						<fillin characters="5"/>, not <m>t</m>.
+					</p>
+					<p component="key">
+						In the <m>s</m>-domain, an exponential factor <m>e^{-cs}</m>
+						signals a <m>\underline{\textbf{delay}}</m> of length <m>c</m> in
+						the <m>t</m>-domain; the delayed-function rule applies when the
+						function multiplying <m>u_c(t)</m> is written in terms of
+						<m>\underline{\textbf{t-c}}</m>, not <m>t</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-pf-ex-forward" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Compute each transform:
+					<md>
+						<mrow> \text{(a)}\ \mathcal{L}\{u_7(t)\} \qquad
+						       \text{(b)}\ \mathcal{L}\{5\,u_8(t)\} \qquad
+						       \text{(c)}\ \mathcal{L}\{(t-8)^3\,u_8(t)\}. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-pf-ex-forward" component="key">
+			<statement>
+				<p>
+					Compute each transform:
+					<md>
+						<mrow> \text{(a)}\ \mathcal{L}\{u_7(t)\} \qquad
+						       \text{(b)}\ \mathcal{L}\{5\,u_8(t)\} \qquad
+						       \text{(c)}\ \mathcal{L}\{(t-8)^3\,u_8(t)\}. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>\dfrac{e^{-7s}}{s}</m>.
+				</p>
+				<p>
+					(b) Linearity first: <m>5\,\mathcal{L}\{u_8(t)\} = \dfrac{5e^{-8s}}{s}</m>.
+				</p>
+				<p>
+					(c) This fits the delayed-function rule perfectly: the function on
+					the switch is already written in <m>t - 8</m>, with
+					<m>f(t) = t^3</m> and <m>F(s) = \frac{3!}{s^4} = \frac{6}{s^4}</m>:
+					<md>
+						<mrow> \mathcal{L}\{(t-8)^3\,u_8(t)\} = \frac{6\,e^{-8s}}{s^4}. </mrow>
+					</md>
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-pf-tf-shift">
+			<title>True or False</title>
+			<statement>
+				<p><m>\mathcal{L}\{f(t)\,u_c(t)\} = e^{-cs}\,F(s)</m> for any function <m>f</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;the rule demands the <em>shifted</em> form
+					<m>f(t-c)\,u_c(t)</m>. If the function on the switch is written in
+					plain <m>t</m>, you must first rewrite it in terms of
+					<m>t - c</m> (adding and subtracting <m>c</m> inside) before the
+					rule applies. Skipping that rewrite is this chapter's most common
+					error.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : Inverting delays                                             -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Inverting a delay: read the fingerprint.</term></p>
+
+		<p>
+			Going backwards, the recipe is: peel off the <m>e^{-cs}</m>, invert
+			what remains to get <m>f(t)</m>, then reattach the delay&#8212;every
+			<m>t</m> becomes <m>t - c</m>, and the whole thing rides
+			<m>u_c(t)</m>:
+			<md>
+				<mrow> \mathcal{L}^{-1}\left\{e^{-cs}\,F(s)\right\} = f(t-c)\,u_c(t). </mrow>
+			</md>
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						When <m>Y(s)</m> contains a factor <m>e^{-cs}</m>, the inverse
+						transform gains a factor <m>u_c(t)</m> and every <m>t</m> in the
+						un-delayed inverse is replaced by <fillin characters="5"/>.
+					</p>
+					<p component="key">
+						When <m>Y(s)</m> contains a factor <m>e^{-cs}</m>, the inverse
+						transform gains a factor <m>u_c(t)</m> and every <m>t</m> in the
+						un-delayed inverse is replaced by
+						<m>\underline{\textbf{t-c}}</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-pf-ex-inverse" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					Invert each transform, and for (b) describe the resulting function
+					in words:
+					<md>
+						<mrow> \text{(a)}\ \mathcal{L}^{-1}\left\{\frac{e^{-6s}}{s-2}\right\} \qquad
+						       \text{(b)}\ \mathcal{L}^{-1}\left\{\frac{1 - e^{-5s}}{s^2}\right\}. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-pf-ex-inverse" component="key">
+			<statement>
+				<p>
+					Invert each transform, and for (b) describe the resulting function
+					in words:
+					<md>
+						<mrow> \text{(a)}\ \mathcal{L}^{-1}\left\{\frac{e^{-6s}}{s-2}\right\} \qquad
+						       \text{(b)}\ \mathcal{L}^{-1}\left\{\frac{1 - e^{-5s}}{s^2}\right\}. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Without the delay, <m>\frac{1}{s-2}</m> inverts to
+					<m>e^{2t}</m>; reattaching the <m>c = 6</m> delay:
+					<md>
+						<mrow> e^{2(t-6)}\,u_6(t). </mrow>
+					</md>
+					The exponent shifts too&#8212;<m>e^{2(t-6)}</m>, not
+					<m>e^{2t}</m>: the growth starts fresh at the switch.
+				</p>
+				<p>
+					(b) Split by linearity:
+					<m>\frac{1}{s^2}</m> inverts to <m>t</m>, and
+					<m>\frac{e^{-5s}}{s^2}</m> inverts to <m>(t-5)\,u_5(t)</m>:
+					<md>
+						<mrow> f(t) = t - (t-5)\,u_5(t) = \begin{cases} t \amp t \lt 5 \\ 5 \amp t \ge 5 \end{cases} </mrow>
+					</md>
+					&#8212;a ramp that climbs steadily and then freezes at height
+					<m>5</m>: the delayed ramp arrives and exactly cancels the
+					climb.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Solving an IVP with switched forcing                         -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The full method with a switch.</term></p>
+
+		<exercise xml:id="ws-pf-ex-solve" component="stu" workspace="3.6in">
+			<statement>
+				<p>
+					A system is at rest until a constant input of strength <m>4</m>
+					switches on at <m>t = 3</m>:
+					<md>
+						<mrow> y' + 2y = 4\,u_3(t), \qquad y(0) = 0. </mrow>
+					</md>
+					(a) Solve with the Laplace method.
+					(b) What is <m>y(t)</m> for <m>t \lt 3</m>? What value does
+					<m>y</m> approach as <m>t \to \infty</m>?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-pf-ex-solve" component="key">
+			<statement>
+				<p>
+					A system is at rest until a constant input of strength <m>4</m>
+					switches on at <m>t = 3</m>:
+					<md>
+						<mrow> y' + 2y = 4\,u_3(t), \qquad y(0) = 0. </mrow>
+					</md>
+					(a) Solve with the Laplace method.
+					(b) What is <m>y(t)</m> for <m>t \lt 3</m>? What value does
+					<m>y</m> approach as <m>t \to \infty</m>?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <term>Forward:</term> with <m>y(0) = 0</m>,
+					<md>
+						<mrow> (s + 2)\,Y = \frac{4e^{-3s}}{s}
+						       \quad\Rightarrow\quad
+						       Y = e^{-3s}\cdot\frac{4}{s(s+2)}. </mrow>
+					</md>
+					<term>Prepare:</term> PFD of the un-delayed part:
+					<m>\frac{4}{s(s+2)} = \frac{2}{s} - \frac{2}{s+2}</m>, which
+					inverts to <m>g(t) = 2 - 2e^{-2t}</m>.
+					<term>Invert with the delay:</term>
+					<md>
+						<mrow> y(t) = g(t-3)\,u_3(t) = \left(2 - 2e^{-2(t-3)}\right) u_3(t). </mrow>
+					</md>
+				</p>
+				<p>
+					(b) For <m>t \lt 3</m> the step is off and <m>y \equiv 0</m>: the
+					system stays asleep until the switch. Once on, the solution rises
+					from <m>0</m> and levels off at <m>2</m> as
+					<m>t \to \infty</m>&#8212;the same equilibrium a phase line for
+					<m>y' = 4 - 2y</m> would predict, just delayed three seconds. Every
+					tool in the course is visible in this one answer.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-pf-tf-asleep">
+			<title>True or False</title>
+			<statement>
+				<p>If a system starts with zero initial state (<m>y(0) = 0</m>, and for higher orders <m>y'(0) = 0</m>, and so on) and the forcing does not switch on until <m>t = c</m>, then the solution is identically zero for all <m>t \lt c</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True. Before the switch, the equation is homogeneous with zero
+					initial state, and zero satisfies it perfectly&#8212;nothing pushes,
+					so nothing moves. The step form makes this visible in the answer
+					itself: every term of the response rides a <m>u_c(t)</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				With switches in hand, the Laplace story is told: transform, solve,
+				invert&#8212;whatever the forcing throws at us. The final two
+				worksheets change the cast instead of the forcing: <em>systems</em>
+				of differential equations, where two or more unknowns&#8212;predator
+				and prey, two coupled tanks&#8212;evolve together.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
