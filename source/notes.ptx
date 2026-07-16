@@ -18,6 +18,7 @@
 		<xi:include href="./notes/ws-homogeneous-linear.ptx"/>
 		<xi:include href="./notes/ws-undetermined-coefficients.ptx"/>
 		<xi:include href="./notes/ws-laplace-transforms.ptx"/>
+		<xi:include href="./notes/ws-laplace-method.ptx"/>
 
 	</article>
 </pretext>
