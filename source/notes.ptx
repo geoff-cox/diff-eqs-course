@@ -19,6 +19,7 @@
 		<xi:include href="./notes/ws-undetermined-coefficients.ptx"/>
 		<xi:include href="./notes/ws-laplace-transforms.ptx"/>
 		<xi:include href="./notes/ws-laplace-method.ptx"/>
+		<xi:include href="./notes/ws-piecewise-forcing.ptx"/>
 
 	</article>
 </pretext>
