@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Laplace Transforms"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c10-lt/sec-lt-derivative-transfer.ptx
+		c10-lt/sec-lt-definition.ptx
+		c10-lt/sec-common-transforms.ptx
+		c10-lt/sec-lt-properties.ptx
+		c10-lt/sec-lt-library.ptx
+	Old deck: source/notes/latex/ folder "06 lt" (01-Review Topics).
+	Previous worksheet: ws-undetermined-coefficients.ptx;
+	next: ws-laplace-method (c11, solving DEs with the transform).
+
+	Per the sourcing rules, every worked instance here is fresh: the
+	canonical table formulas (1/s, n!/s^{n+1}, 1/(s-a), ...) are shared
+	reference facts, but no computed example (e^{-4t}, the linearity
+	combos, the IVP setup) appears in the book (c10 OR c11), the old
+	deck, or earlier worksheets. Per the instructor overrides in
+	CLAUDE.md section 4: no interactive content, and the whole topic
+	stays on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-laplace-transforms" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Laplace Transforms</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>State</term> the definition <m>\mathcal{L}\{f(t)\} = \int_0^{\infty} e^{-st} f(t)\,dt</m> and compute a transform from it, limit and all.</p></li>
+			<li><p><term>Use</term> linearity and the transform table to transform sums of standard functions.</p></li>
+			<li><p><term>Transform</term> derivatives: <m>\mathcal{L}\{y'\} = sY(s) - y(0)</m> and its second-order extension.</p></li>
+			<li><p><term>Convert</term> an entire initial-value problem into an algebraic equation for <m>Y(s)</m>.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : The definition; computing a transform from scratch          -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>A machine that trades calculus for algebra.</term></p>
+
+		<p>
+			The <term>Laplace transform</term> takes a function of <m>t</m> and
+			produces a new function of <m>s</m>:
+			<md>
+				<mrow> \mathcal{L}\{f(t)\} = \int_0^{\infty} e^{-st} f(t)\,dt = F(s). </mrow>
+			</md>
+			The integral is improper, so we compute it as a limit: integrate from
+			<m>0</m> to <m>b</m> (treating <m>s</m> as a constant), then send
+			<m>b \to \infty</m>. When <m>s</m> is large enough, the decay of
+			<m>e^{-st}</m> crushes the limit to something finite, and the
+			transform exists.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						The transform multiplies <m>f(t)</m> by the kernel
+						<m>e^{-st}</m> and integrates from <m>0</m> to
+						<fillin characters="8"/>; the result is a function of the new
+						variable <fillin characters="3"/>, customarily written with a
+						<fillin characters="7"/> letter, as in <m>F(s)</m> or
+						<m>Y(s)</m>.
+					</p>
+					<p component="key">
+						The transform multiplies <m>f(t)</m> by the kernel
+						<m>e^{-st}</m> and integrates from <m>0</m> to
+						<m>\underline{\textbf{infinity}}</m>; the result is a function of
+						the new variable <m>\underline{\textbf{s}}</m>, customarily
+						written with a <m>\underline{\textbf{capital}}</m> letter, as in
+						<m>F(s)</m> or <m>Y(s)</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-lt-tf-oft">
+			<title>True or False</title>
+			<statement>
+				<p><m>\mathcal{L}\{f(t)\}</m> is another function of <m>t</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. The variable <m>t</m> is integrated away&#8212;it is the
+					variable of integration, and the limits <m>0</m> and
+					<m>\infty</m> get substituted into it. What survives is the
+					parameter <m>s</m>: the transform moves the whole problem from the
+					<m>t</m>-world into the <m>s</m>-world.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-lt-ex-definition" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					Compute
+					<md>
+						<mrow> \mathcal{L}\left\{e^{-4t}\right\} </mrow>
+					</md>
+					directly from the definition: set up the integral, combine the
+					exponentials, integrate from <m>0</m> to <m>b</m>, and take the
+					limit. For which values of <m>s</m> does the transform exist?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-lt-ex-definition" component="key">
+			<statement>
+				<p>
+					Compute
+					<md>
+						<mrow> \mathcal{L}\left\{e^{-4t}\right\} </mrow>
+					</md>
+					directly from the definition: set up the integral, combine the
+					exponentials, integrate from <m>0</m> to <m>b</m>, and take the
+					limit. For which values of <m>s</m> does the transform exist?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Combine the exponentials and integrate:
+					<md>
+						<mrow> \mathcal{L}\left\{e^{-4t}\right\} \amp = \int_0^{\infty} e^{-st} e^{-4t}\,dt = \lim_{b\to\infty} \int_0^{b} e^{-(s+4)t}\,dt </mrow>
+						<mrow> \amp = \lim_{b\to\infty} \left[ \frac{e^{-(s+4)t}}{-(s+4)} \right]_0^{b} = \lim_{b\to\infty} \left( \frac{e^{-(s+4)b}}{-(s+4)} + \frac{1}{s+4} \right). </mrow>
+					</md>
+					When <m>s + 4 &gt; 0</m>, the exponential term dies as
+					<m>b \to \infty</m>, leaving
+					<md>
+						<mrow> \mathcal{L}\left\{e^{-4t}\right\} = \frac{1}{s+4}, \qquad s &gt; -4. </mrow>
+					</md>
+					This matches the general table entry
+					<m>\mathcal{L}\{e^{at}\} = \frac{1}{s-a}</m> with <m>a = -4</m>.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Linearity and the table                                      -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Linearity and the table: transforms without integrals.</term></p>
+
+		<p>
+			Nobody recomputes that integral every time. A short table of standard
+			transforms plus one property&#8212;<term>linearity</term>&#8212;handles
+			most functions we meet:
+			<md>
+				<mrow> \mathcal{L}\{a f(t) + b g(t)\} = a\,\mathcal{L}\{f(t)\} + b\,\mathcal{L}\{g(t)\}. </mrow>
+			</md>
+			The workhorse table entries:
+			<md>
+				<mrow> \mathcal{L}\{1\} = \frac{1}{s}, \quad
+				       \mathcal{L}\{t^n\} = \frac{n!}{s^{n+1}}, \quad
+				       \mathcal{L}\{e^{at}\} = \frac{1}{s-a}, </mrow>
+				<mrow> \mathcal{L}\{\sin(bt)\} = \frac{b}{s^2+b^2}, \quad
+				       \mathcal{L}\{\cos(bt)\} = \frac{s}{s^2+b^2}. </mrow>
+			</md>
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						Linearity lets the transform take apart <fillin characters="4"/>
+						and pull out constant <fillin characters="9"/>&#8212;the same two
+						moves that integrals allow.
+					</p>
+					<p component="key">
+						Linearity lets the transform take apart
+						<m>\underline{\textbf{sums}}</m> and pull out constant
+						<m>\underline{\textbf{multiples}}</m>&#8212;the same two moves
+						that integrals allow.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-lt-ex-linearity" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Use linearity and the table to compute:
+					<md>
+						<mrow> \text{(a)}\ \mathcal{L}\left\{7 - 3t^2 + 2e^{6t}\right\} \qquad
+						       \text{(b)}\ \mathcal{L}\left\{4\cos(7t) - \sin(7t)\right\}. </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-lt-ex-linearity" component="key">
+			<statement>
+				<p>
+					Use linearity and the table to compute:
+					<md>
+						<mrow> \text{(a)}\ \mathcal{L}\left\{7 - 3t^2 + 2e^{6t}\right\} \qquad
+						       \text{(b)}\ \mathcal{L}\left\{4\cos(7t) - \sin(7t)\right\}. </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Split the sum and pull out the constants:
+					<md>
+						<mrow> 7\,\mathcal{L}\{1\} - 3\,\mathcal{L}\{t^2\} + 2\,\mathcal{L}\{e^{6t}\}
+						       = \frac{7}{s} - \frac{6}{s^3} + \frac{2}{s-6}, </mrow>
+					</md>
+					using <m>\mathcal{L}\{t^2\} = \frac{2!}{s^3} = \frac{2}{s^3}</m>.
+				</p>
+				<p>
+					(b) Both entries share the denominator <m>s^2 + 49</m>:
+					<md>
+						<mrow> 4\cdot\frac{s}{s^2+49} - \frac{7}{s^2+49} = \frac{4s - 7}{s^2 + 49}. </mrow>
+					</md>
+					Note the numerators: cosine carries the <m>s</m>, sine carries the
+					frequency <m>b = 7</m>.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-lt-tf-product">
+			<title>True or False</title>
+			<statement>
+				<p><m>\mathcal{L}\{f(t)\,g(t)\} = \mathcal{L}\{f(t)\}\cdot\mathcal{L}\{g(t)\}</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;and this is the most tempting wrong move in the
+					chapter. Linearity covers <em>sums and constant multiples
+					only</em>; the transform of a product is not the product of the
+					transforms. (Quick check: <m>\mathcal{L}\{1\cdot 1\} = \frac{1}{s}</m>,
+					but <m>\mathcal{L}\{1\}\cdot\mathcal{L}\{1\} = \frac{1}{s^2}</m>.)
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : Transforming derivatives                                     -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The payoff rule: derivatives become multiplication.</term></p>
+
+		<p>
+			Integration by parts transfers the derivative off of <m>y</m> and
+			onto the kernel <m>e^{-st}</m>, which merely multiplies by
+			<m>-s</m>. The result, written with <m>Y(s) = \mathcal{L}\{y(t)\}</m>:
+			<md>
+				<mrow> \mathcal{L}\{y'\} \amp = s\,Y(s) - y(0), </mrow>
+				<mrow> \mathcal{L}\{y''\} \amp = s^2\,Y(s) - s\,y(0) - y'(0). </mrow>
+			</md>
+			Differentiation in the <m>t</m>-world is multiplication by <m>s</m>
+			in the <m>s</m>-world&#8212;with the initial conditions folded in
+			automatically.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						Transforming one derivative costs one factor of
+						<fillin characters="3"/> and subtracts the initial value
+						<fillin characters="6"/>; the boundary term
+						<m>e^{-sb}y(b)</m> from integration by parts vanishes in the
+						limit.
+					</p>
+					<p component="key">
+						Transforming one derivative costs one factor of
+						<m>\underline{\textbf{s}}</m> and subtracts the initial value
+						<m>\underline{\textbf{y(0)}}</m>; the boundary term
+						<m>e^{-sb}y(b)</m> from integration by parts vanishes in the
+						limit.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-lt-tf-ics">
+			<title>True or False</title>
+			<statement>
+				<p>When you transform a derivative, the initial conditions must be applied in a separate step at the end, as with earlier methods.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;they enter <em>immediately</em> and automatically:
+					<m>y(0)</m> and <m>y'(0)</m> are baked into the derivative rules
+					themselves. This is a signature advantage of the transform method:
+					it solves the initial-value problem directly rather than finding a
+					general solution first and fitting constants later.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-lt-ex-derivs" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Suppose <m>y(0) = 5</m> and <m>y'(0) = -1</m>. Using
+					<m>Y = Y(s)</m>, write
+					<md>
+						<mrow> \mathcal{L}\{y''\} + 4\,\mathcal{L}\{y'\} </mrow>
+					</md>
+					in terms of <m>Y</m>, fully simplified.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-lt-ex-derivs" component="key">
+			<statement>
+				<p>
+					Suppose <m>y(0) = 5</m> and <m>y'(0) = -1</m>. Using
+					<m>Y = Y(s)</m>, write
+					<md>
+						<mrow> \mathcal{L}\{y''\} + 4\,\mathcal{L}\{y'\} </mrow>
+					</md>
+					in terms of <m>Y</m>, fully simplified.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Apply each rule with the given initial values:
+					<md>
+						<mrow> \mathcal{L}\{y''\} \amp = s^2 Y - s\,(5) - (-1) = s^2 Y - 5s + 1, </mrow>
+						<mrow> 4\,\mathcal{L}\{y'\} \amp = 4\left(sY - 5\right) = 4sY - 20. </mrow>
+					</md>
+					Adding,
+					<md>
+						<mrow> \left(s^2 + 4s\right) Y - 5s - 19. </mrow>
+					</md>
+					No derivatives remain: calculus enters, algebra leaves.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Transforming a whole IVP                                     -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Putting it together: an IVP becomes algebra.</term></p>
+
+		<exercise xml:id="ws-lt-ex-ivp" component="stu" workspace="3.2in">
+			<statement>
+				<p>
+					Transform the entire initial-value problem
+					<md>
+						<mrow> y'' + 3y = 12e^{t}, \qquad y(0) = 2, \qquad y'(0) = 0 </mrow>
+					</md>
+					into an equation in <m>Y(s)</m>, then solve that equation for
+					<m>Y(s)</m>. (Stop there&#8212;recovering <m>y(t)</m> from
+					<m>Y(s)</m> is the next worksheet's project.)
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-lt-ex-ivp" component="key">
+			<statement>
+				<p>
+					Transform the entire initial-value problem
+					<md>
+						<mrow> y'' + 3y = 12e^{t}, \qquad y(0) = 2, \qquad y'(0) = 0 </mrow>
+					</md>
+					into an equation in <m>Y(s)</m>, then solve that equation for
+					<m>Y(s)</m>. (Stop there&#8212;recovering <m>y(t)</m> from
+					<m>Y(s)</m> is the next worksheet's project.)
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Transform both sides, using linearity on the left and the table on
+					the right:
+					<md>
+						<mrow> \left(s^2 Y - s\,(2) - 0\right) + 3Y \amp = \frac{12}{s-1} </mrow>
+						<mrow> \left(s^2 + 3\right) Y \amp = \frac{12}{s-1} + 2s. </mrow>
+					</md>
+					Dividing,
+					<md>
+						<mrow> Y(s) = \frac{12}{(s-1)\left(s^2+3\right)} + \frac{2s}{s^2+3}. </mrow>
+					</md>
+					The differential equation is gone: what remains is a rational
+					function of <m>s</m> holding the complete solution&#8212;forcing,
+					initial conditions, and all&#8212;in frozen form.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-lt-tf-why">
+			<title>True or False</title>
+			<statement>
+				<p>The Laplace transform method requires the forcing function to be a polynomial, exponential, sine, or cosine, just like undetermined coefficients.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. The transform only asks that the integral converge, which
+					admits a far wilder class of forcing&#8212;including functions with
+					jumps and switches that undetermined coefficients cannot touch.
+					That generality is the method's whole reason for existing, and
+					piecewise forcing is where this chapter's story is headed.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				We can now push an initial-value problem through the transform and
+				solve for <m>Y(s)</m> with pure algebra. The remaining leg of the
+				journey is the return trip: <em>inverting</em> the
+				transform&#8212;using partial fractions and the table read
+				backwards&#8212;to turn <m>Y(s)</m> back into the solution
+				<m>y(t)</m>. That is the next worksheet.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
