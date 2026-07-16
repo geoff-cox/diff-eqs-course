@@ -389,9 +389,9 @@
 					</md>
 					Both initial conditions check: <m>y(0) = 2 - 1 = 1</m> and
 					<m>y'(0) = -4 + 5 = 1</m>. The characteristic polynomial from the
-					c8 worksheet reappears here as the coefficient of <m>Y</m>&#8212;the
-					two methods are cousins, but this one absorbs the initial
-					conditions without a system of equations at the end.
+					c8 worksheet reappears here as the coefficient of
+					<m>Y(s)</m>&#8212;the two methods are cousins, but this one absorbs
+					the initial conditions without a system of equations at the end.
 				</p>
 			</solution>
 		</exercise>
