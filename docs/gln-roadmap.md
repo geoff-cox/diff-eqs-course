@@ -40,8 +40,8 @@ the old Beamer decks in `source/notes/latex/`, tracking the coursebook
 | `ws-slope-fields` | Slope Fields & Qualitative Analysis | `08 slope-fields` | `c6-qm/*` | **done** |
 | `ws-eulers-method` | Euler's Method | `07 eulers-method` | `c7-em/*` | **done** |
 | `ws-homogeneous-linear` | Homogeneous Linear Equations (constant coeff.) | `04 lhcc` | `c8-lhcc/*` | **done** |
-| `ws-undetermined-coefficients` | Undetermined Coefficients | `05 lncc` | `c9-uc/*` | **in-review** |
-| `ws-laplace-transforms` | Laplace Transforms | `06 lt` | `c10-lt/*` | todo |
+| `ws-undetermined-coefficients` | Undetermined Coefficients | `05 lncc` | `c9-uc/*` | **done** |
+| `ws-laplace-transforms` | Laplace Transforms | `06 lt` | `c10-lt/*` | **in-review** |
 | `ws-laplace-method` | Solving DEs with the Laplace Method | `06 lt` | `c11-ltm/*` | todo |
 | `ws-piecewise-forcing` | Piecewise Forcing | `06 lt` | `c12-ltp/*` | todo |
 | `ws-linear-systems` | Linear Systems | `09 systems / reduction-of-order` | `c13-linsys/*` | todo |
