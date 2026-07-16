@@ -16,6 +16,7 @@
 		<xi:include href="./notes/ws-slope-fields.ptx"/>
 		<xi:include href="./notes/ws-eulers-method.ptx"/>
 		<xi:include href="./notes/ws-homogeneous-linear.ptx"/>
+		<xi:include href="./notes/ws-undetermined-coefficients.ptx"/>
 
 	</article>
 </pretext>
