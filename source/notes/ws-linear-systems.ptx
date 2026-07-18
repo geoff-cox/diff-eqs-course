@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Linear Systems"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c13-linsys/sec-introduction-to-systems.ptx
+		c13-linsys/sec-variable-interactions.ptx
+		c13-linsys/sec-linear-systems.ptx
+		c13-linsys/sec-second-order-to-system.ptx
+		c13-linsys/sec-solving-linear-systems.ptx
+		c13-linsys/sec-qualitative-methods-systems.ptx
+	Old deck: source/notes/latex/ folder "09 systems-reduction-of-order".
+	Previous worksheet: ws-piecewise-forcing.ptx; next: ws-nonlinear-systems.
+
+	Per the sourcing rules, every worked instance here is fresh: no
+	example system, conversion, or solve appears in the book, the old
+	deck, or earlier worksheets. Per the instructor overrides in
+	CLAUDE.md section 4: no interactive content (phase-plane work is
+	described qualitatively in text; no plotting tools), and the whole
+	topic stays on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-linear-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Linear Systems</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Recognize</term> systems of differential equations, and classify them as coupled or uncoupled, linear or nonlinear.</p></li>
+			<li><p><term>Convert</term> a second-order equation into a first-order system with the substitution <m>v = y'</m>.</p></li>
+			<li><p><term>Solve</term> a coupled linear system by guessing exponential solutions and finding the special rates <m>r</m>.</p></li>
+			<li><p><term>Interpret</term> the signs of the rates: which directions attract, which repel, and where trajectories go long-term.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : What systems are; coupled vs uncoupled, linear vs not       -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Two unknowns, one story.</term></p>
+
+		<p>
+			So far every model tracked one quantity. Real situations rarely
+			cooperate: predators and prey, two connected tanks, position and
+			velocity&#8212;each changes at a rate that depends on the
+			<em>others</em>. A <term>system</term> of differential equations
+			tracks several unknown functions at once. When each equation involves
+			only its own unknown, the system is <term>uncoupled</term> and the
+			equations can be solved separately; when the unknowns appear in each
+			other's equations, the system is <term>coupled</term> and must be
+			solved together.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						A system is <fillin characters="9"/> when the unknowns appear in
+						each other's equations; it is linear when each equation is a sum
+						of the unknowns times <fillin characters="12"/>, with no products
+						or compositions of the unknowns.
+					</p>
+					<p component="key">
+						A system is <m>\underline{\textbf{coupled}}</m> when the unknowns
+						appear in each other's equations; it is linear when each equation
+						is a sum of the unknowns times
+						<m>\underline{\textbf{coefficients}}</m>, with no products or
+						compositions of the unknowns.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-ls-ex-classify" component="stu" workspace="2.4in">
+			<statement>
+				<p>
+					Classify each system: coupled or uncoupled, and linear or
+					nonlinear.
+					<md>
+						<mrow> \text{(a)}\ \begin{cases} x' = 3x \\ y' = -4y \end{cases} \qquad
+						       \text{(b)}\ \begin{cases} x' = x - 2y \\ y' = 3x + y \end{cases} \qquad
+						       \text{(c)}\ \begin{cases} x' = y^2 \\ y' = x \end{cases} </mrow>
+					</md>
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ls-ex-classify" component="key">
+			<statement>
+				<p>
+					Classify each system: coupled or uncoupled, and linear or
+					nonlinear.
+					<md>
+						<mrow> \text{(a)}\ \begin{cases} x' = 3x \\ y' = -4y \end{cases} \qquad
+						       \text{(b)}\ \begin{cases} x' = x - 2y \\ y' = 3x + y \end{cases} \qquad
+						       \text{(c)}\ \begin{cases} x' = y^2 \\ y' = x \end{cases} </mrow>
+					</md>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Uncoupled and linear: each equation mentions only its own
+					unknown, so this is really two separate one-variable problems
+					wearing a system costume (<m>x = c_1 e^{3t}</m>,
+					<m>y = c_2 e^{-4t}</m>).
+				</p>
+				<p>
+					(b) Coupled and linear: <m>y</m> appears in the <m>x'</m> equation
+					and <m>x</m> in the <m>y'</m> equation, but only through constant
+					multiples.
+				</p>
+				<p>
+					(c) Coupled and <em>nonlinear</em>: the <m>y^2</m> disqualifies
+					linearity even though everything is coupled politely.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ls-tf-uncoupled">
+			<title>True or False</title>
+			<statement>
+				<p>An uncoupled system requires new solution techniques beyond this course's one-equation methods.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. Uncoupled equations ignore each other, so each is solved
+					alone with the usual first-order tools. Coupling is the whole
+					difficulty&#8212;and the reason this chapter exists.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Second-order equations as systems                            -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Old friends in new clothes: second order as a system.</term></p>
+
+		<p>
+			Systems are not just for multi-quantity models: <em>any</em>
+			second-order equation can be rewritten as a first-order system by
+			naming the derivative. Set <m>v = y'</m>; then <m>v' = y''</m>, and
+			one second-order equation becomes two first-order ones. This is how
+			software solves higher-order equations&#8212;and it ties this chapter
+			to everything since c8.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						To convert <m>y'' = F(y, y')</m> into a system, introduce the new
+						unknown <m>v = </m><fillin characters="3"/>; the first equation of
+						the system is then <m>y' = v</m>, and the second is
+						<m>v' = </m><fillin characters="8"/>.
+					</p>
+					<p component="key">
+						To convert <m>y'' = F(y, y')</m> into a system, introduce the new
+						unknown <m>v = \underline{\textbf{y'}}</m>; the first equation of
+						the system is then <m>y' = v</m>, and the second is
+						<m>v' = \underline{\textbf{F(y,v)}}</m>.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-ls-ex-convert" component="stu" workspace="2.4in">
+			<statement>
+				<p>
+					Convert the second-order equation
+					<md>
+						<mrow> y'' + 5y' + 4y = 0 </mrow>
+					</md>
+					into a first-order system in the unknowns <m>y</m> and
+					<m>v = y'</m>. Is the resulting system coupled? Linear?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ls-ex-convert" component="key">
+			<statement>
+				<p>
+					Convert the second-order equation
+					<md>
+						<mrow> y'' + 5y' + 4y = 0 </mrow>
+					</md>
+					into a first-order system in the unknowns <m>y</m> and
+					<m>v = y'</m>. Is the resulting system coupled? Linear?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					With <m>v = y'</m>, we have <m>v' = y'' = -4y - 5v</m>:
+					<md>
+						<mrow> \begin{cases} y' = v \\ v' = -4y - 5v \end{cases} </mrow>
+					</md>
+					The system is coupled (each equation uses the other unknown) and
+					linear (constant coefficients, no products). Its exponential rates
+					turn out to be exactly the characteristic roots of the original
+					equation (<m>r = -1, -4</m>)&#8212;the two viewpoints carry the
+					same information.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ls-tf-order">
+			<title>True or False</title>
+			<statement>
+				<p>A single third-order equation can be rewritten as a system of three first-order equations.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True: name each derivative&#8212;<m>v = y'</m>,
+					<m>w = y''</m>&#8212;and the third-order equation becomes three
+					first-order equations in <m>y, v, w</m>. Order trades for
+					dimension, one derivative per new unknown.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : Solving a coupled system with exponential guesses            -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Solving by exponential guess.</term></p>
+
+		<p>
+			The LHCC insight survives the jump to systems: guess that
+			<em>both</em> unknowns are multiples of the same exponential,
+			<md>
+				<mrow> x = a\,e^{rt}, \qquad y = b\,e^{rt}, </mrow>
+			</md>
+			substitute, cancel <m>e^{rt}</m>, and hunt for the special rates
+			<m>r</m> (and direction pairs <m>(a,b)</m>) that make both equations
+			hold with <m>a, b</m> not both zero.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						After substituting and canceling <m>e^{rt}</m>, the system
+						becomes algebraic conditions on <m>r</m>, <m>a</m>, and
+						<m>b</m>; a <m>2\times 2</m> linear system typically has
+						<fillin characters="3"/> special rates, and each contributes one
+						exponential building block to the <fillin characters="7"/>
+						solution.
+					</p>
+					<p component="key">
+						After substituting and canceling <m>e^{rt}</m>, the system
+						becomes algebraic conditions on <m>r</m>, <m>a</m>, and
+						<m>b</m>; a <m>2\times 2</m> linear system typically has
+						<m>\underline{\textbf{two}}</m> special rates, and each
+						contributes one exponential building block to the
+						<m>\underline{\textbf{general}}</m> solution.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-ls-ex-solve" component="stu" workspace="3.6in">
+			<statement>
+				<p>
+					Solve the coupled system
+					<md>
+						<mrow> \begin{cases} x' = x + 3y \\ y' = 3x + y \end{cases} </mrow>
+					</md>
+					(a) Substitute <m>x = a e^{rt}</m>, <m>y = b e^{rt}</m> and cancel
+					<m>e^{rt}</m>.
+					(b) Show the two conditions force <m>r = 4</m> (with
+					<m>b = a</m>) or <m>r = -2</m> (with <m>b = -a</m>).
+					(c) Write the general solution.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ls-ex-solve" component="key">
+			<statement>
+				<p>
+					Solve the coupled system
+					<md>
+						<mrow> \begin{cases} x' = x + 3y \\ y' = 3x + y \end{cases} </mrow>
+					</md>
+					(a) Substitute <m>x = a e^{rt}</m>, <m>y = b e^{rt}</m> and cancel
+					<m>e^{rt}</m>.
+					(b) Show the two conditions force <m>r = 4</m> (with
+					<m>b = a</m>) or <m>r = -2</m> (with <m>b = -a</m>).
+					(c) Write the general solution.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Since <m>x' = ra\,e^{rt}</m> and <m>y' = rb\,e^{rt}</m>,
+					canceling <m>e^{rt}</m> leaves
+					<md>
+						<mrow> ra = a + 3b, \qquad rb = 3a + b. </mrow>
+					</md>
+				</p>
+				<p>
+					(b) Adding the two conditions: <m>r(a+b) = 4(a+b)</m>; subtracting:
+					<m>r(a-b) = -2(a-b)</m>. If <m>a + b \neq 0</m>, the first forces
+					<m>r = 4</m>, and then the conditions give <m>b = a</m>. If
+					<m>a - b \neq 0</m>, the second forces <m>r = -2</m> and
+					<m>b = -a</m>. Two rates, each with its own direction:
+					<m>r = 4</m> along <m>(1,1)</m>, and <m>r = -2</m> along
+					<m>(1,-1)</m>.
+				</p>
+				<p>
+					(c) Superposition assembles the general solution:
+					<md>
+						<mrow> x(t) \amp = c_1 e^{4t} + c_2 e^{-2t}, </mrow>
+						<mrow> y(t) \amp = c_1 e^{4t} - c_2 e^{-2t}. </mrow>
+					</md>
+					Each building block is a <em>straight-line solution</em>: a
+					trajectory that runs along its direction vector, growing or
+					decaying at its rate.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Reading the rates; qualitative behavior                      -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Reading the rates: the phase-plane story.</term></p>
+
+		<p>
+			Plotting <m>(x(t), y(t))</m> as a moving point in the plane&#8212;the
+			<term>phase plane</term>&#8212;turns the algebra into geometry.
+			Straight-line solutions are the skeleton: directions with negative
+			rates pull trajectories in, directions with positive rates push them
+			out, and every other trajectory bends between the two.
+		</p>
+
+		<exercise xml:id="ws-ls-ex-behavior" component="stu" workspace="2.8in">
+			<statement>
+				<p>
+					For the system solved on the previous page (rates <m>r = 4</m>
+					along <m>(1,1)</m> and <m>r = -2</m> along <m>(1,-1)</m>):
+					(a) Describe what happens to a solution that starts exactly on the
+					line <m>y = -x</m>.
+					(b) Describe the long-term behavior of a generic solution (both
+					<m>c_1, c_2 \neq 0</m>).
+					(c) Is the origin stable or unstable for this system?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ls-ex-behavior" component="key">
+			<statement>
+				<p>
+					For the system solved on the previous page (rates <m>r = 4</m>
+					along <m>(1,1)</m> and <m>r = -2</m> along <m>(1,-1)</m>):
+					(a) Describe what happens to a solution that starts exactly on the
+					line <m>y = -x</m>.
+					(b) Describe the long-term behavior of a generic solution (both
+					<m>c_1, c_2 \neq 0</m>).
+					(c) Is the origin stable or unstable for this system?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Starting on <m>y = -x</m> means <m>c_1 = 0</m>: the solution is
+					pure <m>e^{-2t}</m> along <m>(1,-1)</m>, so it slides straight into
+					the origin and stays on that line forever.
+				</p>
+				<p>
+					(b) For a generic start, the <m>e^{-2t}</m> part dies while the
+					<m>e^{4t}</m> part explodes, so the trajectory bends away and
+					eventually runs off nearly parallel to the <m>(1,1)</m>
+					direction. Trajectories approach along one line and flee along the
+					other.
+				</p>
+				<p>
+					(c) Unstable&#8212;this mixed sign pattern (one negative rate, one
+					positive) is called a <em>saddle</em>: almost every solution
+					escapes, and only the knife-edge starts on <m>y = -x</m> are drawn
+					in. The one-variable phase line from c6 has grown into a phase
+					plane, but the vocabulary&#8212;attract, repel,
+					stability&#8212;carries straight over.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ls-tf-decay">
+			<title>True or False</title>
+			<statement>
+				<p>If both special rates of a <m>2\times 2</m> linear system are negative, every solution tends to the origin as <m>t \to \infty</m>.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					True. Every solution is a combination of the two exponential
+					building blocks, and both decay&#8212;so the whole combination
+					does too. The origin is then a sink for the entire plane, the
+					two-dimensional cousin of c6's stable equilibrium.
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking ahead</title>
+			<p>
+				Linear systems bend to the exponential guess, just as LHCC
+				equations did. The final worksheet faces systems that
+				don't&#8212;<em>nonlinear</em> systems like predator&#8211;prey&#8212;where
+				we find equilibria, linearize nearby, and let this worksheet's
+				machinery describe each neighborhood of the phase plane.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
