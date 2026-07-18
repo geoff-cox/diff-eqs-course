@@ -65,7 +65,7 @@ letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
 | A1 — syllabus source-of-truth | ✅ Done | PR #4 |
 | A2 — semester refresh | 🔶 Stubs in place | PR #5 — instructor fills `TBD-FA26` values before the semester |
 | B1 — worksheet roadmap | ✅ Done | PR #1 (`docs/gln-roadmap.md`) |
-| B2 — worksheets (per section) | 🔶 In progress | c0 `ws-what-is-a-de` + c1 `ws-classification` (PRs #1–#2); c2 `ws-solutions-ivp` (PR #6, merged); c3 `ws-direct-integration` (PR #7); c4 `ws-separation-of-variables` (PR #8, merged); c5 `ws-integrating-factors` (PR #9, merged); c6 `ws-slope-fields` (PR #10, merged); c7 `ws-eulers-method` (PR #11, merged); c8 `ws-homogeneous-linear` (PR #12, merged); c9 `ws-undetermined-coefficients` (PR #13, merged); c10 `ws-laplace-transforms` (PR #14, merged); c11 `ws-laplace-method` (PR #15, merged); c12 `ws-piecewise-forcing` (PR #16, merged); c13 `ws-linear-systems` (PR #17, merged); c14 `ws-nonlinear-systems` (PR #18 — final row) |
+| B2 — worksheets (per section) | ✅ Done | All 15 worksheets merged, c0–c14 (PRs #1–#2, #6–#18); details per `docs/gln-roadmap.md`. Follow-up owned outside this repo: debookrs c14 chapter is a stub — `ws-nonlinear-systems` should be revisited once it's written (see PR #18 open questions) |
 | C1 — macro standing rule | ♻️ Standing | enforced inside every PR |
 | C2 — macro audit | ⬜ Not started | — |
 | D1 — deploy config | ✅ Done | PR #3 |
