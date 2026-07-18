@@ -21,6 +21,7 @@
 		<xi:include href="./notes/ws-laplace-method.ptx"/>
 		<xi:include href="./notes/ws-piecewise-forcing.ptx"/>
 		<xi:include href="./notes/ws-linear-systems.ptx"/>
+		<xi:include href="./notes/ws-nonlinear-systems.ptx"/>
 
 	</article>
 </pretext>

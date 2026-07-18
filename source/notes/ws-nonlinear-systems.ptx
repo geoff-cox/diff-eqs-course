@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Guided Lecture Notes worksheet: "Nonlinear Systems"
+	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+		c14-nlinsys/sec-nonlinear-systems.ptx  <- STUB (see TODO below)
+	Old deck: source/notes/latex/ folder "09 systems-reduction-of-order"
+	(thin; largely consumed by the c13 worksheet).
+	Previous worksheet: ws-linear-systems.ptx; last worksheet of the GLN.
+
+	TODO(geoff): the debookrs c14 chapter is currently a placeholder
+	(sec-nonlinear-systems.ptx contains only a FUTURE-WORK stub), so
+	unlike every other worksheet, this one could not track a book
+	chapter. It is drafted ENTIRELY as proposed new material (standard
+	course-capstone content: nonlinear systems, equilibria of systems,
+	linearization near an equilibrium by dropping product terms,
+	predator-prey interpretation, Euler's method on systems), fulfilling
+	the arc promised in the c13 worksheet's conclusion. Every editorial
+	choice here is up for review; once the debookrs c14 chapter is
+	written, this worksheet should be revisited to track its notation
+	and examples. Raised under the PR's Open questions.
+
+	Per the sourcing rules, every worked instance here is fresh (checked
+	against the whole book, the old decks, and earlier worksheets). Per
+	the instructor overrides in CLAUDE.md section 4: no interactive
+	content, and the whole topic stays on this one worksheet.
+
+	Worksheet conventions: checklists/worksheet-conventions.md (see
+	CLAUDE.md section 4 for this repo's parameters). In brief:
+	  * Student/instructor split via component="stu" / component="key",
+	    mirrored in structure; answers never live inside <fillin>.
+	  * Worked problems: paired <exercise component="stu" workspace="Xin">
+	    and <exercise component="key"> (statement + solution).
+	  * True/False checks: one <exercise> + <solution component="key">.
+	  * <page> = vertical print space, not topics; headings are
+	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
+	    prohibited here).
+-->
+<worksheet xml:id="ws-nonlinear-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Nonlinear Systems</title>
+
+	<objectives>
+		<ul>
+			<li><p><term>Explain</term> why the exponential guess and superposition fail for nonlinear systems.</p></li>
+			<li><p><term>Find</term> equilibrium points of a system by solving <m>x' = 0</m> and <m>y' = 0</m> simultaneously.</p></li>
+			<li><p><term>Linearize</term> near an equilibrium by dropping product terms, and classify the neighborhood with linear-system tools.</p></li>
+			<li><p><term>Interpret</term> a predator&#8211;prey model's equations and cycles in words.</p></li>
+			<li><p><term>Apply</term> Euler's method to a system when no formula exists.</p></li>
+		</ul>
+	</objectives>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 1 : Why nonlinear is different; equilibria of systems            -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>When the guess stops working.</term></p>
+
+		<p>
+			A term like <m>x\,y</m> breaks the linear machinery twice over: the
+			exponential guess fails (substituting multiples of <m>e^{rt}</m>
+			produces an <m>e^{2rt}</m> the other terms cannot cancel), and
+			superposition fails with it&#8212;the sum of two solutions is no
+			longer a solution. What survives is the <em>qualitative</em>
+			program from c6, now in the phase plane: find where the system
+			stands still, then study each neighborhood.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						An equilibrium point of a system is a point where
+						<m>x'</m> and <m>y'</m> equal <fillin characters="4"/>
+						<em>simultaneously</em>; a solution that starts at an equilibrium
+						point <fillin characters="5"/> there forever.
+					</p>
+					<p component="key">
+						An equilibrium point of a system is a point where
+						<m>x'</m> and <m>y'</m> equal <m>\underline{\textbf{zero}}</m>
+						<em>simultaneously</em>; a solution that starts at an equilibrium
+						point <m>\underline{\textbf{stays}}</m> there forever.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-ns-tf-super">
+			<title>True or False</title>
+			<statement>
+				<p>If <m>(x_1, y_1)</m> and <m>(x_2, y_2)</m> are solutions of a nonlinear system, then their sum is also a solution.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False. Superposition is a strictly linear privilege: a product
+					term like <m>x\,y</m> evaluated at a sum produces cross-terms that
+					the separate solutions never had to cancel. Losing superposition
+					is precisely what makes nonlinear systems hard&#8212;and what
+					pushes us back to qualitative and numerical tools.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ns-ex-equilibria" component="stu" workspace="2.6in">
+			<statement>
+				<p>
+					Consider the system
+					<md>
+						<mrow> \begin{cases} x' = x\,(2 - y) \\ y' = y\,(x - 3) \end{cases} </mrow>
+					</md>
+					Find all equilibrium points. (Solve <m>x' = 0</m> and
+					<m>y' = 0</m> together&#8212;watch for the case-by-case
+					structure.)
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ns-ex-equilibria" component="key">
+			<statement>
+				<p>
+					Consider the system
+					<md>
+						<mrow> \begin{cases} x' = x\,(2 - y) \\ y' = y\,(x - 3) \end{cases} </mrow>
+					</md>
+					Find all equilibrium points. (Solve <m>x' = 0</m> and
+					<m>y' = 0</m> together&#8212;watch for the case-by-case
+					structure.)
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<m>x' = 0</m> requires <m>x = 0</m> or <m>y = 2</m>;
+					<m>y' = 0</m> requires <m>y = 0</m> or <m>x = 3</m>. Intersecting
+					the cases: <m>x = 0</m> pairs with <m>y = 0</m> (since
+					<m>x = 0 \neq 3</m>), and <m>y = 2</m> pairs with <m>x = 3</m>.
+					Two equilibria:
+					<md>
+						<mrow> (0, 0) \qquad\text{and}\qquad (3, 2). </mrow>
+					</md>
+					Mixing cases carelessly&#8212;say <m>x=0</m> with
+					<m>x=3</m>&#8212;is the standard error; each equilibrium must
+					satisfy one condition <em>from each equation</em>.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 2 : Linearization near an equilibrium                            -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>Zooming in: linearization.</term></p>
+
+		<p>
+			Near an equilibrium, deviations are small&#8212;and a product of two
+			small deviations is <em>tiny</em>. Writing the system in deviation
+			variables and dropping those product terms leaves a linear system
+			that governs the neighborhood, and c13's toolkit classifies it.
+		</p>
+
+		<!-- Reading check -->
+		<p>
+			<term>Reading check.</term> Fill in each blank from your reading.
+			<ol>
+				<li>
+					<p component="stu">
+						To linearize at an equilibrium, rewrite the system in deviation
+						variables centered there and drop the <fillin characters="7"/> of
+						deviations, which are negligibly small; the resulting
+						<fillin characters="6"/> system describes trajectories near that
+						equilibrium only.
+					</p>
+					<p component="key">
+						To linearize at an equilibrium, rewrite the system in deviation
+						variables centered there and drop the
+						<m>\underline{\textbf{products}}</m> of deviations, which are
+						negligibly small; the resulting <m>\underline{\textbf{linear}}</m>
+						system describes trajectories near that equilibrium only.
+					</p>
+				</li>
+			</ol>
+		</p>
+
+		<exercise xml:id="ws-ns-ex-linearize" component="stu" workspace="3.4in">
+			<statement>
+				<p>
+					For the system on page 1:
+					(a) Linearize at <m>(0,0)</m> by expanding and dropping product
+					terms, and classify the equilibrium with c13's tools.
+					(b) At <m>(3,2)</m>, substitute <m>x = 3 + u</m>,
+					<m>y = 2 + w</m>, drop products of <m>u</m> and <m>w</m>, and
+					describe the resulting linear system.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ns-ex-linearize" component="key">
+			<statement>
+				<p>
+					For the system on page 1:
+					(a) Linearize at <m>(0,0)</m> by expanding and dropping product
+					terms, and classify the equilibrium with c13's tools.
+					(b) At <m>(3,2)</m>, substitute <m>x = 3 + u</m>,
+					<m>y = 2 + w</m>, drop products of <m>u</m> and <m>w</m>, and
+					describe the resulting linear system.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) Expanding: <m>x' = 2x - xy</m> and <m>y' = -3y + xy</m>. Near
+					<m>(0,0)</m> the products are negligible:
+					<md>
+						<mrow> x' \approx 2x, \qquad y' \approx -3y. </mrow>
+					</md>
+					An uncoupled linear system with rates <m>2</m> and
+					<m>-3</m>&#8212;one positive, one negative: a <em>saddle</em>. The
+					origin attracts along the <m>y</m>-axis (prey extinct, predators
+					starve) and repels along the <m>x</m>-axis (no predators, prey
+					boom).
+				</p>
+				<p>
+					(b) Substituting and using <m>2 - y = -w</m> and
+					<m>x - 3 = u</m>:
+					<md>
+						<mrow> u' = (3+u)(-w) = -3w - uw \amp \approx -3w, </mrow>
+						<mrow> w' = (2+w)(u) = 2u + uw \amp \approx 2u. </mrow>
+					</md>
+					Each deviation drives the <em>other</em>: <m>u' = -3w</m>,
+					<m>w' = 2u</m>&#8212;pure rotation with no growth or decay terms,
+					so nearby trajectories orbit the equilibrium in closed loops
+					rather than spiraling in or out.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ns-tf-global">
+			<title>True or False</title>
+			<statement>
+				<p>A linearization describes the system's behavior across the entire phase plane.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;it is a local magnifying glass, trustworthy only near
+					the equilibrium where the dropped products really are tiny. Far
+					away, the nonlinear terms take over. That is why each equilibrium
+					gets its own linearization, and the global picture is stitched
+					together from the neighborhoods.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 3 : Reading the model: predator-prey                             -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>What the model says: predators and prey.</term></p>
+
+		<p>
+			The page-1 system is a <term>predator&#8211;prey model</term>. The
+			signs tell the story before any mathematics: ask which variable
+			suffers from the other's presence, and which one needs the other to
+			survive.
+		</p>
+
+		<exercise xml:id="ws-ns-ex-interpret" component="stu" workspace="2.8in">
+			<statement>
+				<p>
+					For <m>x' = x(2-y)</m>, <m>y' = y(x-3)</m>:
+					(a) Which variable is the prey and which the predator? Cite the
+					signs that decide it.
+					(b) What does the equilibrium <m>(3,2)</m> mean ecologically?
+					(c) Using the rotation found on page 2, narrate one full cycle
+					starting from abundant prey and few predators.
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ns-ex-interpret" component="key">
+			<statement>
+				<p>
+					For <m>x' = x(2-y)</m>, <m>y' = y(x-3)</m>:
+					(a) Which variable is the prey and which the predator? Cite the
+					signs that decide it.
+					(b) What does the equilibrium <m>(3,2)</m> mean ecologically?
+					(c) Using the rotation found on page 2, narrate one full cycle
+					starting from abundant prey and few predators.
+				</p>
+			</statement>
+			<solution>
+				<p>
+					(a) <m>x</m> is the prey: its growth rate <m>2 - y</m> is
+					<em>hurt</em> by <m>y</m>. <m>y</m> is the predator: its growth
+					rate <m>x - 3</m> is <em>negative without enough</em>
+					<m>x</m>&#8212;predators starve when prey are scarce.
+				</p>
+				<p>
+					(b) At <m>(3,2)</m> the populations are perfectly balanced: three
+					units of prey exactly sustain the predators, and two units of
+					predators exactly cap the prey. Both populations hold constant.
+				</p>
+				<p>
+					(c) Abundant prey let predators multiply; rising predators drive
+					prey down; scarce prey starve the predators; falling predators
+					release the prey to boom again&#8212;a closed loop around
+					<m>(3,2)</m>, each population's peak trailing the other's. The
+					boom-bust cycle is the model's signature, and real predator-prey
+					data show exactly this lagged oscillation.
+				</p>
+			</solution>
+		</exercise>
+
+		<exercise xml:id="ws-ns-tf-cycle">
+			<title>True or False</title>
+			<statement>
+				<p>In the predator&#8211;prey cycle, the predator population peaks at the same time as the prey population.</p>
+			</statement>
+			<solution component="key">
+				<p>
+					False&#8212;the predator peak <em>lags</em> the prey peak.
+					Predators are still multiplying while prey are already declining,
+					because the feast that fueled them came earlier. The lag is
+					visible in the phase plane as rotation: the two populations chase
+					each other around the loop rather than rising and falling in
+					unison.
+				</p>
+			</solution>
+		</exercise>
+	</page>
+
+	<!-- ==================================================================== -->
+	<!-- PAGE 4 : Numerics as the universal fallback; course capstone          -->
+	<!-- ==================================================================== -->
+
+	<page>
+		<p><term>The universal fallback: Euler on a system.</term></p>
+
+		<p>
+			No formula solves the predator&#8211;prey system in elementary
+			functions&#8212;but Euler's method never asked for a formula. It
+			works on systems verbatim: evaluate <em>both</em> rates at the
+			current point, and step <em>both</em> variables at once.
+		</p>
+
+		<exercise xml:id="ws-ns-ex-euler" component="stu" workspace="3.0in">
+			<statement>
+				<p>
+					Run two Euler steps with <m>h = 0.5</m> on
+					<md>
+						<mrow> x' = x\,(2-y), \qquad y' = y\,(x-3), \qquad (x_0, y_0) = (4, 1). </mrow>
+					</md>
+					Does the motion so far match the cycle narrative from page 3?
+				</p>
+			</statement>
+		</exercise>
+
+		<exercise xml:id="ws-ns-ex-euler" component="key">
+			<statement>
+				<p>
+					Run two Euler steps with <m>h = 0.5</m> on
+					<md>
+						<mrow> x' = x\,(2-y), \qquad y' = y\,(x-3), \qquad (x_0, y_0) = (4, 1). </mrow>
+					</md>
+					Does the motion so far match the cycle narrative from page 3?
+				</p>
+			</statement>
+			<solution>
+				<p>
+					<term>Step 1.</term> At <m>(4,1)</m>:
+					<m>x' = 4(2-1) = 4</m> and <m>y' = 1(4-3) = 1</m>, so
+					<md>
+						<mrow> (x_1, y_1) = (4 + 0.5\cdot 4,\ 1 + 0.5\cdot 1) = (6,\ 1.5). </mrow>
+					</md>
+					<term>Step 2.</term> At <m>(6, 1.5)</m>:
+					<m>x' = 6(0.5) = 3</m> and <m>y' = 1.5(3) = 4.5</m>:
+					<md>
+						<mrow> (x_2, y_2) = (6 + 1.5,\ 1.5 + 2.25) = (7.5,\ 3.75). </mrow>
+					</md>
+				</p>
+				<p>
+					Both populations are climbing, with the predators accelerating as
+					prey pile up&#8212;the opening phase of the cycle exactly as
+					narrated: feast first, reckoning later. (A computer taking
+					thousands of tiny steps would carry the loop all the way around.)
+				</p>
+			</solution>
+		</exercise>
+
+		<conclusion>
+			<title>Looking back</title>
+			<p>
+				This worksheet closes the course's loop. One equation or many,
+				linear or not, polite forcing or switched&#8212;the toolkit is the
+				same three lenses: <em>exact formulas</em> where structure allows
+				(separation, integrating factors, characteristic roots, Laplace),
+				<em>qualitative analysis</em> where it doesn't (equilibria, phase
+				lines and planes, stability), and <em>numerics</em> everywhere
+				(Euler's method and its refinements). Knowing which lens to reach
+				for&#8212;that judgment is the real content of MA 311.
+			</p>
+		</conclusion>
+	</page>
+</worksheet>
