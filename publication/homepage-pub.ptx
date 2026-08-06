@@ -9,15 +9,14 @@
 <publication>
 
 	<source>
-		<directories external="homepage/assets" generated="homepage/generated-assets" />
 		<version include="html" />
 	</source>
 
 	<common>
 		<!-- Level at which are html files generated (chapter/section/etc) -->
-		<chunking level="2" />
+		<chunking level="3" />
 		<!-- Depth for table of contents.  0 means no TOC -->
-		<tableofcontents level="2" />
+		<tableofcontents level="3" />
 		<!-- Visibility of exercise components where they first appear -->
 		<exercise-inline statement="yes" hint="yes" answer="no" solution="yes" />
 		<exercise-divisional statement="yes" hint="yes" answer="no" solution="yes" />
@@ -60,11 +59,9 @@
 			print="no"
 			sides="one"
 			open-odd="no"
-			pageref="no"
 			font-size="11"
 			draft="no"
 			latex-style=""
-			class="exam"
 	>
 		<!-- 
 			Control text justification and bottom page behavior. Add content
@@ -74,22 +71,14 @@
 			<geometry></geometry>
 		</page>
 		<asymptote links="no" />
-		<!-- Covers: provide paths to pdfs for front and back covers -->
-		<covers front="cover-front.pdf" back="cover-back.pdf" />
-		<!-- Set @formatted to "no" to remove formatting on worksheets -->
-		<worksheets formatted="yes" />
 	</latex>
 
 	<!-- @short-answer-responses={"always","graded"} -->
 	<html short-answer-responses="always">
 
 		<baseurl href="vmi.instructure.com"/>
-		
-		<!-- @host={"web","runestone"} -->
-		<platform host="web"/>
 
 		<knowl
-			audio="yes"
 			theorem="yes"
 			proof="yes"
 			definition="yes"
@@ -100,12 +89,10 @@
 			remark="no"
 			objectives="no"
 			outcomes="yes"
-			assemblage="yes"
 			figure="no"
 			table="no"
 			listing="no"
 			list="no"
-			activity="no"
 			exercise-inline="no"
 			exercise-divisional="no"
 			exercise-worksheet="no"
@@ -141,13 +128,10 @@
 		/> -->
 
 		<!-- @variant={"default", "none"} -->
-		<search variant="default" />
 
 		<!-- Table of Contents -->
 		<!-- @focused={"yes", "no"} (enables expand/collapse functionality) -->
 		<!-- @preexpanded-levels={"0","1","2",...} (how deep to expand toc initially). -->
-		<toc focused="yes" preexpanded-levels="4" />
-
 		<!--
 			@logic={"linear", "tree"}
 			@upbutton={"yes", "no"}
@@ -176,22 +160,6 @@
 			project			=	"dynamic"
 		/>
 
-		<!--
-			Use the tabbed viewer for tasks in exercises. 
-			@tabbed-tasks={"project", "reading", "inline divisional"}
-			@task-reveal={"show", "answer", "solution"}
-		-->
-		<exercises tabbed-tasks="project reading inline divisional" task-reveal="solution"/>
-
-		<!--
-			@privacy={"yes,"no"} "yes" disables certain tracking cookies for embedded videos.
-		-->
-		<audio privacy="yes"/>
-
-		<!--
-			Asymptote Click to Enlarge links
-		-->
-		<baseurl href="vmi.instructure.com"/>
 		<asymptote links="yes"/>
 
 		<!--
@@ -205,11 +173,6 @@
 		/> -->
 
 	</html>
-
-	<epub>
-		<!-- The cover tag can have a @front attribute to specify a cover image. -->
-		<!-- <cover front="cover.jpg"> -->
-	</epub>
 
 	<!-- To use WeBWorK, you need a server. -->
 	<webwork server="https://webwork-ptx.aimath.org" />

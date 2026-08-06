@@ -1,12 +1,9 @@
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="syllabus-ma311">
+<section
+	xml:id="syllabus-ma311"
+	xml:lang="en-US"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+>
 	<title>Syllabus</title>
-
-	<!--
-		Thin wrapper (Task A1): the syllabus content lives in one file per
-		section under ./syllabus/. Edit those files, not this one. VMI-wide
-		policy text under ./syllabus/common/ is inherited unchanged and is
-		never edited in this repo (CLAUDE.md section 8).
-	-->
 
 	<introduction>
 		<p>
@@ -15,7 +12,7 @@
 		</p>
 	</introduction>
 
-	<xi:include href="./syllabus/general-info.ptx" />
+	<xi:include href="syllabus/general-info.ptx" parse="xml"/>
 	<xi:include href="./syllabus/grades-coursework.ptx" />
 	<xi:include href="./syllabus/resources.ptx" />
 	<xi:include href="./syllabus/topics.ptx" />
@@ -24,5 +21,4 @@
 	<xi:include href="./syllabus/common/workforgrade.ptx" />
 	<xi:include href="./syllabus/common/attendance.ptx" />
 	<xi:include href="./syllabus/common/accessibility.ptx" />
-
 </section>
