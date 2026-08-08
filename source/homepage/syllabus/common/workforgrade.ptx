@@ -1,7 +1,7 @@
-<subsection label="work-for-grade">
+<subsection xml:id="work-for-grade">
 	<title>Work For Grade</title>
 	
-	<subsubsection label="vmi-work-for-grade">
+	<subsubsection xml:id="vmi-work-for-grade">
 		<title>VMI</title>
 	
 		<p>
@@ -63,17 +63,17 @@
 		</p>
 	</subsubsection>
 
-	<subsubsection label="math-work-for-grade">
+	<subsubsection xml:id="math-work-for-grade">
 		<title>Applied Math</title>
 
 		<p>
 			The faculty of the Department of Applied Mathematics fully supports the Institute Work 
       for Grade Policy as passed by the Academic Board and approved by the Superintendent.  
       Because of this, faculty in our department will promptly contact any cadet who has 
-      submitted work for grade without the expression “HELP RECEIVED” followed by the word 
-      “none” or an explanation of the nature of the help received as well as the cadet's 
+      submitted work for grade without the expression <q>HELP RECEIVED</q> followed by the word 
+      <q>none</q> or an explanation of the nature of the help received as well as the cadet's 
       signature. The faculty member will inform the cadet that the work will not be graded 
-      until the cadet adds the required “HELP RECEIVED” statement to the work.
+      until the cadet adds the required <q>HELP RECEIVED</q> statement to the work.
 		</p>
 
 		<p>

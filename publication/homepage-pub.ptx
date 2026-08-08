@@ -14,9 +14,9 @@
 
 	<common>
 		<!-- Level at which are html files generated (chapter/section/etc) -->
-		<chunking level="3" />
+		<chunking level="2" />
 		<!-- Depth for table of contents.  0 means no TOC -->
-		<tableofcontents level="3" />
+		<tableofcontents level="2" />
 		<!-- Visibility of exercise components where they first appear -->
 		<exercise-inline statement="yes" hint="yes" answer="no" solution="yes" />
 		<exercise-divisional statement="yes" hint="yes" answer="no" solution="yes" />

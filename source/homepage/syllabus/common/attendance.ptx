@@ -1,7 +1,7 @@
-<subsection label="vmi-attendance">
+<subsection xml:id="vmi-attendance">
 	<title>Attendance</title>
 
-	<subsubsection label="vmi-missing-class">
+	<subsubsection xml:id="vmi-missing-class">
 		<title>Missing Class</title>
 		<p>
 			If you are forced to miss a class, you must make up for what you missed in class.
@@ -23,7 +23,7 @@
 		</p>
 	</subsubsection>
 
-	<subsubsection label="vmi-attendance-policy">
+	<subsubsection xml:id="vmi-attendance-policy">
 		<title>Attendance Policy</title>
 
 		<p>

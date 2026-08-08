@@ -12,13 +12,42 @@
 		</p>
 	</introduction>
 
-	<xi:include href="syllabus/general-info.ptx" parse="xml"/>
-	<xi:include href="./syllabus/grades-coursework.ptx" />
-	<xi:include href="./syllabus/resources.ptx" />
-	<xi:include href="./syllabus/topics.ptx" />
-	<xi:include href="./syllabus/policies.ptx" />
+	<subsection
+		xml:id="ma311-general-info"
+		xml:lang="en-US"
+	>
+		<title>General</title>
 
-	<xi:include href="./syllabus/common/workforgrade.ptx" />
-	<xi:include href="./syllabus/common/attendance.ptx" />
-	<xi:include href="./syllabus/common/accessibility.ptx" />
+		<subsubsection xml:id="ma311-instructor-info">
+			<title>Instructor Information</title>
+
+			<p>
+				<dl>
+					<li><title>Instructor</title><p>Geoffrey Cox PhD (LTC)</p></li>
+					<li><title>Email</title><p><url href="mailto:coxgeoff@vmi.edu">coxgeoff@vmi.edu</url></p></li>
+					<li><title>Office</title><p>MA 425</p></li>
+					<li><title>Office Hours</title><p>MWF: 1430-1600, By Appointment</p></li>
+				</dl>
+			</p>
+
+		</subsubsection>
+
+		<subsubsection xml:id="ma311-course-info">
+			<title>Course Information</title>
+			<p>
+				<dl>
+					<li><title>Course Description</title>
+						<p>
+							Ordinary differential equations (ODEs); Applications; Laplace transforms; Systems of ODEs.
+						</p>
+					</li>
+					<!-- TODO(geoff): Fall 2026 meeting info <mdash/> replace the TBD-FA26 stub. -->
+					<li><title>Meetings</title><p><alert>[TBD-FA26: room / days / times]</alert></p></li>
+					<li><title>Prerequisite</title><p>Grade of C or better in MA 124</p></li>
+					<li><title>Department Head</title><p>COL Troy Siemers</p></li>
+				</dl>
+			</p>
+		</subsubsection>
+	</subsection>
+
 </section>

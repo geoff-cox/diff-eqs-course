@@ -17,7 +17,7 @@
 							<p>Office Hours:</p>
 							<p>
 								<ul marker="">
-									<!-- TODO(geoff): Fall 2026 office hours — replace the TBD-FA26 stub. -->
+									<!-- TODO(geoff): Fall 2026 office hours <mdash/> replace the TBD-FA26 stub. -->
 									<li><alert>[TBD-FA26: office hours]</alert>,</li>
 									<li>By Appointment</li>
 								</ul>
