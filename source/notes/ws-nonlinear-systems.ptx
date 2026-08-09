@@ -59,7 +59,7 @@
 			A term like <m>x\,y</m> breaks the linear machinery twice over: the
 			exponential guess fails (substituting multiples of <m>e^{rt}</m>
 			produces an <m>e^{2rt}</m> the other terms cannot cancel), and
-			superposition fails with it&#8212;the sum of two solutions is no
+			superposition fails with it<mdash />the sum of two solutions is no
 			longer a solution. What survives is the <em>qualitative</em>
 			program from c6, now in the phase plane: find where the system
 			stands still, then study each neighborhood.
@@ -96,13 +96,13 @@
 					False. Superposition is a strictly linear privilege: a product
 					term like <m>x\,y</m> evaluated at a sum produces cross-terms that
 					the separate solutions never had to cancel. Losing superposition
-					is precisely what makes nonlinear systems hard&#8212;and what
+					is precisely what makes nonlinear systems hard<mdash />and what
 					pushes us back to qualitative and numerical tools.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-ns-ex-equilibria" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-ns-ex-equilibria-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					Consider the system
@@ -110,13 +110,13 @@
 						<mrow> \begin{cases} x' = x\,(2 - y) \\ y' = y\,(x - 3) \end{cases} </mrow>
 					</md>
 					Find all equilibrium points. (Solve <m>x' = 0</m> and
-					<m>y' = 0</m> together&#8212;watch for the case-by-case
+					<m>y' = 0</m> together<mdash />watch for the case-by-case
 					structure.)
 				</p>
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ns-ex-equilibria" component="key">
+		<exercise xml:id="ws-ns-ex-equilibria-key" component="key">
 			<statement>
 				<p>
 					Consider the system
@@ -124,7 +124,7 @@
 						<mrow> \begin{cases} x' = x\,(2 - y) \\ y' = y\,(x - 3) \end{cases} </mrow>
 					</md>
 					Find all equilibrium points. (Solve <m>x' = 0</m> and
-					<m>y' = 0</m> together&#8212;watch for the case-by-case
+					<m>y' = 0</m> together<mdash />watch for the case-by-case
 					structure.)
 				</p>
 			</statement>
@@ -138,8 +138,8 @@
 					<md>
 						<mrow> (0, 0) \qquad\text{and}\qquad (3, 2). </mrow>
 					</md>
-					Mixing cases carelessly&#8212;say <m>x=0</m> with
-					<m>x=3</m>&#8212;is the standard error; each equilibrium must
+					Mixing cases carelessly<mdash />say <m>x=0</m> with
+					<m>x=3</m><mdash />is the standard error; each equilibrium must
 					satisfy one condition <em>from each equation</em>.
 				</p>
 			</solution>
@@ -154,7 +154,7 @@
 		<p><term>Zooming in: linearization.</term></p>
 
 		<p>
-			Near an equilibrium, deviations are small&#8212;and a product of two
+			Near an equilibrium, deviations are small<mdash />and a product of two
 			small deviations is <em>tiny</em>. Writing the system in deviation
 			variables and dropping those product terms leaves a linear system
 			that governs the neighborhood, and c13's toolkit classifies it.
@@ -183,7 +183,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-ns-ex-linearize" component="stu" workspace="3.4in">
+		<exercise xml:id="ws-ns-ex-linearize-stu" component="stu" workspace="3.4in">
 			<statement>
 				<p>
 					For the system on page 1:
@@ -196,7 +196,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ns-ex-linearize" component="key">
+		<exercise xml:id="ws-ns-ex-linearize-key" component="key">
 			<statement>
 				<p>
 					For the system on page 1:
@@ -215,7 +215,7 @@
 						<mrow> x' \approx 2x, \qquad y' \approx -3y. </mrow>
 					</md>
 					An uncoupled linear system with rates <m>2</m> and
-					<m>-3</m>&#8212;one positive, one negative: a <em>saddle</em>. The
+					<m>-3</m><mdash />one positive, one negative: a <em>saddle</em>. The
 					origin attracts along the <m>y</m>-axis (prey extinct, predators
 					starve) and repels along the <m>x</m>-axis (no predators, prey
 					boom).
@@ -228,7 +228,7 @@
 						<mrow> w' = (2+w)(u) = 2u + uw \amp \approx 2u. </mrow>
 					</md>
 					Each deviation drives the <em>other</em>: <m>u' = -3w</m>,
-					<m>w' = 2u</m>&#8212;pure rotation with no growth or decay terms,
+					<m>w' = 2u</m><mdash />pure rotation with no growth or decay terms,
 					so nearby trajectories orbit the equilibrium in closed loops
 					rather than spiraling in or out.
 				</p>
@@ -242,7 +242,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False&#8212;it is a local magnifying glass, trustworthy only near
+					False<mdash />it is a local magnifying glass, trustworthy only near
 					the equilibrium where the dropped products really are tiny. Far
 					away, the nonlinear terms take over. That is why each equilibrium
 					gets its own linearization, and the global picture is stitched
@@ -266,7 +266,7 @@
 			survive.
 		</p>
 
-		<exercise xml:id="ws-ns-ex-interpret" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-ns-ex-interpret-stu" component="stu" workspace="2.8in">
 			<statement>
 				<p>
 					For <m>x' = x(2-y)</m>, <m>y' = y(x-3)</m>:
@@ -279,7 +279,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ns-ex-interpret" component="key">
+		<exercise xml:id="ws-ns-ex-interpret-key" component="key">
 			<statement>
 				<p>
 					For <m>x' = x(2-y)</m>, <m>y' = y(x-3)</m>:
@@ -295,7 +295,7 @@
 					(a) <m>x</m> is the prey: its growth rate <m>2 - y</m> is
 					<em>hurt</em> by <m>y</m>. <m>y</m> is the predator: its growth
 					rate <m>x - 3</m> is <em>negative without enough</em>
-					<m>x</m>&#8212;predators starve when prey are scarce.
+					<m>x</m><mdash />predators starve when prey are scarce.
 				</p>
 				<p>
 					(b) At <m>(3,2)</m> the populations are perfectly balanced: three
@@ -305,7 +305,7 @@
 				<p>
 					(c) Abundant prey let predators multiply; rising predators drive
 					prey down; scarce prey starve the predators; falling predators
-					release the prey to boom again&#8212;a closed loop around
+					release the prey to boom again<mdash />a closed loop around
 					<m>(3,2)</m>, each population's peak trailing the other's. The
 					boom-bust cycle is the model's signature, and real predator-prey
 					data show exactly this lagged oscillation.
@@ -320,7 +320,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False&#8212;the predator peak <em>lags</em> the prey peak.
+					False<mdash />the predator peak <em>lags</em> the prey peak.
 					Predators are still multiplying while prey are already declining,
 					because the feast that fueled them came earlier. The lag is
 					visible in the phase plane as rotation: the two populations chase
@@ -340,12 +340,12 @@
 
 		<p>
 			No formula solves the predator&#8211;prey system in elementary
-			functions&#8212;but Euler's method never asked for a formula. It
+			functions<mdash />but Euler's method never asked for a formula. It
 			works on systems verbatim: evaluate <em>both</em> rates at the
 			current point, and step <em>both</em> variables at once.
 		</p>
 
-		<exercise xml:id="ws-ns-ex-euler" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-ns-ex-euler-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					Run two Euler steps with <m>h = 0.5</m> on
@@ -357,7 +357,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ns-ex-euler" component="key">
+		<exercise xml:id="ws-ns-ex-euler-key" component="key">
 			<statement>
 				<p>
 					Run two Euler steps with <m>h = 0.5</m> on
@@ -382,7 +382,7 @@
 				</p>
 				<p>
 					Both populations are climbing, with the predators accelerating as
-					prey pile up&#8212;the opening phase of the cycle exactly as
+					prey pile up<mdash />the opening phase of the cycle exactly as
 					narrated: feast first, reckoning later. (A computer taking
 					thousands of tiny steps would carry the loop all the way around.)
 				</p>
@@ -393,13 +393,13 @@
 			<title>Looking back</title>
 			<p>
 				This worksheet closes the course's loop. One equation or many,
-				linear or not, polite forcing or switched&#8212;the toolkit is the
+				linear or not, polite forcing or switched<mdash />the toolkit is the
 				same three lenses: <em>exact formulas</em> where structure allows
 				(separation, integrating factors, characteristic roots, Laplace),
 				<em>qualitative analysis</em> where it doesn't (equilibria, phase
 				lines and planes, stability), and <em>numerics</em> everywhere
 				(Euler's method and its refinements). Knowing which lens to reach
-				for&#8212;that judgment is the real content of MA 311.
+				for<mdash />that judgment is the real content of MA 311.
 			</p>
 		</conclusion>
 	</page>

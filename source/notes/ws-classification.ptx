@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-	Guided Lecture Notes worksheet: "Classifying Differential Equations"
+
+<!-- Guided Lecture Notes worksheet: "Classifying Differential Equations"
 	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
 		c1-classification/sec-order.ptx
 		c1-classification/sec-linear-terms.ptx
@@ -19,13 +19,13 @@
 	  * <page> delimits vertical space for letter-size printing, NOT topics.
 	    Headings are <p><term>...</term></p>, never page titles.
 	  * Display math uses <md>; <me>/<men> are deprecated.
--->
+  -->
 <worksheet xml:id="ws-classification" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Classifying Differential Equations</title>
 
 	<objectives>
 		<ul>
-			<li><p><term>Determine</term> the order of a differential equation from its highest derivative.</p></li>
+			<li><p><term>Determine</term> the order of a differential equation.</p></li>
 			<li><p><term>Classify</term> individual terms as linear or nonlinear.</p></li>
 			<li><p><term>Decide</term> whether a whole differential equation is linear or nonlinear.</p></li>
 			<li><p><term>Apply</term> these labels to differential equations that model real systems.</p></li>
@@ -104,7 +104,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-cl-ex-order" component="stu" workspace="1.5in">
+		<exercise xml:id="ws-cl-ex-order-stu" component="stu" workspace="1.5in">
 			<statement>
 				<p>
 					Give the order of each equation:
@@ -116,7 +116,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-cl-ex-order" component="key">
+		<exercise xml:id="ws-cl-ex-order-key" component="key">
 			<statement>
 				<p>
 					Give the order of each equation:
@@ -135,7 +135,7 @@
 					The second is <term>sixth-order</term>. Do not confuse the exponent in
 					<m>v^8</m> (that is <m>v</m> raised to the eighth power, not an eighth
 					derivative) with a derivative; only derivatives set the order. And the
-					<m>\cos(\cdot)</m> wrapper does not change the order&#8212;the highest
+					<m>\cos(\cdot)</m> wrapper does not change the order<mdash />the highest
 					derivative inside is still <m>v^{(6)}</m>.
 				</p>
 			</solution>
@@ -143,50 +143,69 @@
 	</page>
 
 	<page>
-		<exercise xml:id="ws-cl-ex-linear-terms" component="stu" workspace="2.5in">
+		<!-- <exercise xml:id="ws-cl-ex-linear-terms-stu" component="stu" workspace="2.5in">
 			<statement>
 				<p>
-					Take <m>y</m> as the dependent variable and <m>t</m> as the
-					independent variable. Label each term of
+					Label each term of the equation, below, as linear or nonlinear.
 					<md>
 						y'\,\frac{d^3 y}{dt^3} + 5t^4\,\frac{dy}{dt}
 						+ \cos(y) + (y'')^2 = \sqrt{t}
 					</md>
-					as linear or nonlinear, and say which rule it breaks.
 				</p>
 			</statement>
-		</exercise>
+		</exercise> -->
 
-		<exercise xml:id="ws-cl-ex-linear-terms" component="key">
+		<exercise xml:id="ws-cl-ex-linear-terms-key">
 			<statement>
 				<p>
-					Take <m>y</m> as the dependent variable and <m>t</m> as the
-					independent variable. Label each term of
+					Label each term of the equation as linear or nonlinear. If nonlinear, explain why.
 					<md>
 						y'\,\frac{d^3 y}{dt^3} + 5t^4\,\frac{dy}{dt}
 						+ \cos(y) + (y'')^2 = \sqrt{t}
 					</md>
-					as linear or nonlinear, and say which rule it breaks.
 				</p>
+        <tabular bottom="minor">
+          <col halign="center" width="14%"/>
+          <col halign="center" width="14%"/>
+          <col halign="left" width="72%"/>
+          <row header="yes">
+            <cell><p>Term</p></cell>
+            <cell><p>Linearity</p></cell>
+            <cell><p>Justification</p></cell>
+          </row>
+          <row>
+            <cell><p><m>y'\dfrac{d^3y}{dt^3}</m></p></cell>
+            <cell><p><em>nonlinear</em></p></cell>
+            <cell><p>Two derivatives of the dependent variable are multiplied together.</p></cell>
+          </row>
+          <row>
+            <cell><p><m>5t^4\dfrac{dy}{dt}</m></p></cell>
+            <cell><p component="key"><em>linear</em></p></cell>
+            <cell><p component="key">Has the form <m>a(t)\,y'</m>; the coefficient <m>5t^4</m> is irrelevant.</p></cell>
+          </row>
+          <row>
+            <cell><p><m>\cos(y)</m></p></cell>
+            <cell><p component="key"><em>nonlinear</em></p></cell>
+            <cell><p component="key">The dependent variable sits inside a nonlinear function.</p></cell>
+          </row>
+          <row>
+            <cell><p><m>(y'')^2</m></p></cell>
+            <cell><p component="key"><em>nonlinear</em></p></cell>
+            <cell><p component="key">A derivative is raised to a power other than one.</p></cell>
+          </row>
+          <row>
+            <cell><p><m>\sqrt{t}</m></p></cell>
+            <cell><p component="key"><em>linear</em></p></cell>
+            <cell><p component="key">No dependent variable appears (has the form: <m>a(t)y^{0}</m>).</p></cell>
+          </row>
+        </tabular>
 			</statement>
-			<solution>
-				<p>
-					<ul marker="square">
-						<li><p><m>y'\,\dfrac{d^3y}{dt^3}</m>: <em>nonlinear</em>&#8212;two derivatives of the dependent variable are multiplied together.</p></li>
-						<li><p><m>5t^4\,\dfrac{dy}{dt}</m>: <em>linear</em>&#8212;it has the form <m>a(t)\,y'</m>; the messy coefficient <m>5t^4</m> is irrelevant.</p></li>
-						<li><p><m>\cos(y)</m>: <em>nonlinear</em>&#8212;the dependent variable sits inside a nonlinear function.</p></li>
-						<li><p><m>(y'')^2</m>: <em>nonlinear</em>&#8212;a derivative is raised to a power other than one.</p></li>
-						<li><p><m>\sqrt{t}</m>: <em>linear</em> (in fact a free term)&#8212;no dependent variable appears.</p></li>
-					</ul>
-				</p>
-			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-cl-ex-linearity" component="stu" workspace="2.0in">
+		<exercise xml:id="ws-cl-ex-linearity-stu" component="stu" workspace="2.0in">
 			<statement>
 				<p>
-					Decide whether each equation is linear or nonlinear, and justify with
-					one sentence:
+					Decide whether each equation is linear or nonlinear, and explain why.
 					<md>
 						w^{(4)} + \frac{w'}{t^3} + 9w = \tan t, \qquad
 						Q^{(5)} + \frac{k\,Q''}{Q'} = (k + 2)^3.
@@ -195,7 +214,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-cl-ex-linearity" component="key">
+		<exercise xml:id="ws-cl-ex-linearity-key" component="key">
 			<statement>
 				<p>
 					Decide whether each equation is linear or nonlinear, and justify with
@@ -209,8 +228,8 @@
 			<solution>
 				<p>
 					The first is <term>linear</term>: every term involving <m>w</m> or its
-					derivatives has the form <m>a(t)\,w^{(n)}</m>&#8212;here <m>w^{(4)}</m>,
-					<m>\frac{1}{t^3}w'</m>, and <m>9w</m>&#8212;while <m>\tan t</m> is a free
+					derivatives has the form <m>a(t)\,w^{(n)}</m><mdash />here <m>w^{(4)}</m>,
+					<m>\frac{1}{t^3}w'</m>, and <m>9w</m><mdash />while <m>\tan t</m> is a free
 					term. Its coefficients being functions of <m>t</m> is fine.
 				</p>
 				<p>
@@ -228,7 +247,7 @@
 	<page>
 		<p><term>Classifying models.</term></p>
 
-		<exercise xml:id="ws-cl-ex-modeling" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-cl-ex-modeling-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					Classification is the first thing we do to any model we meet later in
@@ -247,14 +266,14 @@
 				<p>
 					<m>m</m>, <m>g</m>, <m>c</m>, <m>r</m>, <m>k</m>, <m>L</m>, <m>R</m>,
 					<m>C</m>, and <m>\mu</m> are constants (parameters), and <m>E(t)</m> is
-					a known function of the independent variable&#8212;none of them is the
+					a known function of the independent variable<mdash />none of them is the
 					dependent variable. Look only at how the dependent variable and its
 					derivatives appear.
 				</p>
 			</hint>
 		</exercise>
 
-		<exercise xml:id="ws-cl-ex-modeling" component="key">
+		<exercise xml:id="ws-cl-ex-modeling-key" component="key">
 			<statement>
 				<p>
 					Classification is the first thing we do to any model we meet later in
@@ -273,7 +292,7 @@
 				<p>
 					<m>m</m>, <m>g</m>, <m>c</m>, <m>r</m>, <m>k</m>, <m>L</m>, <m>R</m>,
 					<m>C</m>, and <m>\mu</m> are constants (parameters), and <m>E(t)</m> is
-					a known function of the independent variable&#8212;none of them is the
+					a known function of the independent variable<mdash />none of them is the
 					dependent variable. Look only at how the dependent variable and its
 					derivatives appear.
 				</p>
@@ -281,25 +300,23 @@
 			<solution>
 				<p>
 					<ol>
-						<li><p><term>First-order, nonlinear.</term> Rewriting as <m>mv' + cv^2 = mg</m>, the <m>cv^2</m> term squares the dependent variable. (At low speeds drag is roughly proportional to <m>v</m> instead, which <em>linearizes</em> the model&#8212;a trade-off we will revisit.)</p></li>
+						<li><p><term>First-order, nonlinear.</term> Rewriting as <m>mv' + cv^2 = mg</m>, the <m>cv^2</m> term squares the dependent variable. (At low speeds drag is roughly proportional to <m>v</m> instead, which <em>linearizes</em> the model<mdash />a trade-off we will revisit.)</p></li>
 						<li><p><term>First-order, linear.</term> It is <m>A' + kA = r</m>: one <m>a\,A'</m> term, one <m>a\,A</m> term, and a constant free term.</p></li>
 						<li><p><term>Second-order, linear.</term> Each term is a constant times <m>q</m>, <m>q'</m>, or <m>q''</m>, and the forcing <m>E(t)</m> is a free term.</p></li>
-						<li><p><term>Second-order, nonlinear.</term> The damping coefficient <m>-\mu(1 - x^2)</m> contains the dependent variable, so the middle term multiplies <m>x^2</m> by <m>x'</m>&#8212;coefficients are only allowed to involve the independent variable.</p></li>
+						<li><p><term>Second-order, nonlinear.</term> The damping coefficient <m>-\mu(1 - x^2)</m> contains the dependent variable, so the middle term multiplies <m>x^2</m> by <m>x'</m><mdash />coefficients are only allowed to involve the independent variable.</p></li>
 					</ol>
 				</p>
 			</solution>
 		</exercise>
 
-		<conclusion>
-			<title>Looking ahead</title>
-			<p>
-				Order and linearity are the two labels we will read off <em>first</em>
-				for every new equation, because together they decide which technique to
-				reach for. Next we turn to what it even means to <em>solve</em> a
-				differential equation&#8212;how to check that a candidate function really
-				satisfies the equation, and how an initial condition pins down the one
-				solution we want out of the whole family.
-			</p>
-		</conclusion>
+    <p>
+      <term>Looking ahead</term>. Order and linearity are the two labels we will
+      read off <em>first</em>
+      for every new equation, because together they decide which technique to
+      reach for. Next we turn to what it even means to <em>solve</em> a
+      differential equation<mdash />how to check that a candidate function really
+      satisfies the equation, and how an initial condition pins down the one
+      solution we want out of the whole family.
+    </p>
 	</page>
 </worksheet>

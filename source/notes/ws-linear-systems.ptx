@@ -51,7 +51,7 @@
 		<p>
 			So far every model tracked one quantity. Real situations rarely
 			cooperate: predators and prey, two connected tanks, position and
-			velocity&#8212;each changes at a rate that depends on the
+			velocity<mdash />each changes at a rate that depends on the
 			<em>others</em>. A <term>system</term> of differential equations
 			tracks several unknown functions at once. When each equation involves
 			only its own unknown, the system is <term>uncoupled</term> and the
@@ -82,7 +82,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-ls-ex-classify" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-ls-ex-classify-stu" component="stu" workspace="2.4in">
 			<statement>
 				<p>
 					Classify each system: coupled or uncoupled, and linear or
@@ -96,7 +96,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ls-ex-classify" component="key">
+		<exercise xml:id="ws-ls-ex-classify-key" component="key">
 			<statement>
 				<p>
 					Classify each system: coupled or uncoupled, and linear or
@@ -136,7 +136,7 @@
 				<p>
 					False. Uncoupled equations ignore each other, so each is solved
 					alone with the usual first-order tools. Coupling is the whole
-					difficulty&#8212;and the reason this chapter exists.
+					difficulty<mdash />and the reason this chapter exists.
 				</p>
 			</solution>
 		</exercise>
@@ -154,7 +154,7 @@
 			second-order equation can be rewritten as a first-order system by
 			naming the derivative. Set <m>v = y'</m>; then <m>v' = y''</m>, and
 			one second-order equation becomes two first-order ones. This is how
-			software solves higher-order equations&#8212;and it ties this chapter
+			software solves higher-order equations<mdash />and it ties this chapter
 			to everything since c8.
 		</p>
 
@@ -179,7 +179,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-ls-ex-convert" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-ls-ex-convert-stu" component="stu" workspace="2.4in">
 			<statement>
 				<p>
 					Convert the second-order equation
@@ -192,7 +192,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ls-ex-convert" component="key">
+		<exercise xml:id="ws-ls-ex-convert-key" component="key">
 			<statement>
 				<p>
 					Convert the second-order equation
@@ -212,7 +212,7 @@
 					The system is coupled (each equation uses the other unknown) and
 					linear (constant coefficients, no products). Its exponential rates
 					turn out to be exactly the characteristic roots of the original
-					equation (<m>r = -1, -4</m>)&#8212;the two viewpoints carry the
+					equation (<m>r = -1, -4</m>)<mdash />the two viewpoints carry the
 					same information.
 				</p>
 			</solution>
@@ -225,8 +225,8 @@
 			</statement>
 			<solution component="key">
 				<p>
-					True: name each derivative&#8212;<m>v = y'</m>,
-					<m>w = y''</m>&#8212;and the third-order equation becomes three
+					True: name each derivative<mdash /><m>v = y'</m>,
+					<m>w = y''</m><mdash />and the third-order equation becomes three
 					first-order equations in <m>y, v, w</m>. Order trades for
 					dimension, one derivative per new unknown.
 				</p>
@@ -277,7 +277,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-ls-ex-solve" component="stu" workspace="3.6in">
+		<exercise xml:id="ws-ls-ex-solve-stu" component="stu" workspace="3.6in">
 			<statement>
 				<p>
 					Solve the coupled system
@@ -293,7 +293,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ls-ex-solve" component="key">
+		<exercise xml:id="ws-ls-ex-solve-key" component="key">
 			<statement>
 				<p>
 					Solve the coupled system
@@ -346,14 +346,14 @@
 		<p><term>Reading the rates: the phase-plane story.</term></p>
 
 		<p>
-			Plotting <m>(x(t), y(t))</m> as a moving point in the plane&#8212;the
-			<term>phase plane</term>&#8212;turns the algebra into geometry.
+			Plotting <m>(x(t), y(t))</m> as a moving point in the plane<mdash />the
+			<term>phase plane</term><mdash />turns the algebra into geometry.
 			Straight-line solutions are the skeleton: directions with negative
 			rates pull trajectories in, directions with positive rates push them
 			out, and every other trajectory bends between the two.
 		</p>
 
-		<exercise xml:id="ws-ls-ex-behavior" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-ls-ex-behavior-stu" component="stu" workspace="2.8in">
 			<statement>
 				<p>
 					For the system solved on the previous page (rates <m>r = 4</m>
@@ -367,7 +367,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ls-ex-behavior" component="key">
+		<exercise xml:id="ws-ls-ex-behavior-key" component="key">
 			<statement>
 				<p>
 					For the system solved on the previous page (rates <m>r = 4</m>
@@ -393,12 +393,12 @@
 					other.
 				</p>
 				<p>
-					(c) Unstable&#8212;this mixed sign pattern (one negative rate, one
+					(c) Unstable<mdash />this mixed sign pattern (one negative rate, one
 					positive) is called a <em>saddle</em>: almost every solution
 					escapes, and only the knife-edge starts on <m>y = -x</m> are drawn
 					in. The one-variable phase line from c6 has grown into a phase
-					plane, but the vocabulary&#8212;attract, repel,
-					stability&#8212;carries straight over.
+					plane, but the vocabulary<mdash />attract, repel,
+					stability<mdash />carries straight over.
 				</p>
 			</solution>
 		</exercise>
@@ -411,7 +411,7 @@
 			<solution component="key">
 				<p>
 					True. Every solution is a combination of the two exponential
-					building blocks, and both decay&#8212;so the whole combination
+					building blocks, and both decay<mdash />so the whole combination
 					does too. The origin is then a sink for the entire plane, the
 					two-dimensional cousin of c6's stable equilibrium.
 				</p>
@@ -423,7 +423,7 @@
 			<p>
 				Linear systems bend to the exponential guess, just as LHCC
 				equations did. The final worksheet faces systems that
-				don't&#8212;<em>nonlinear</em> systems like predator&#8211;prey&#8212;where
+				don't<mdash /><em>nonlinear</em> systems like predator&#8211;prey<mdash />where
 				we find equilibria, linearize nearby, and let this worksheet's
 				machinery describe each neighborhood of the phase plane.
 			</p>

@@ -33,7 +33,7 @@
 		<ul>
 			<li><p><term>Recognize</term> when a first-order equation is separable and write it in the form <m>\frac{dy}{dx} = f(x)\cdot g(y)</m>.</p></li>
 			<li><p><term>Rewrite</term> equations by factoring and splitting fractions to reveal hidden separability.</p></li>
-			<li><p><term>Solve</term> separable equations with the three-step method&#8212;separate, integrate, solve&#8212;combining constants into one.</p></li>
+			<li><p><term>Solve</term> separable equations with the three-step method<mdash />separate, integrate, solve<mdash />combining constants into one.</p></li>
 			<li><p><term>Identify</term> singular (lost) solutions the separation step can drop, and tell when a constant solution is genuinely lost.</p></li>
 			<li><p><term>Handle</term> implicit general solutions and absolute values, choosing the correct branch for an initial-value problem.</p></li>
 			<li><p><term>Model</term> growth and cooling with separable equations and interpret the results.</p></li>
@@ -50,7 +50,7 @@
 		<p>
 			Direct integration failed the moment the dependent variable showed
 			up on the right-hand side. <em>Separation of variables</em> is our
-			first tool for exactly that situation&#8212;provided the right-hand
+			first tool for exactly that situation<mdash />provided the right-hand
 			side splits into a product of a function of <m>x</m> alone and a
 			function of <m>y</m> alone. When it does, we can herd all the
 			<m>x</m>'s to one side and all the <m>y</m>'s to the other and
@@ -81,13 +81,13 @@
 				<li>
 					<p component="stu">
 						In separable form the two variables are joined only by
-						<fillin characters="16"/>&#8212;never by addition. So a
+						<fillin characters="16"/><mdash />never by addition. So a
 						right-hand side that is a <em>sum</em> of an <m>x</m>-piece and a
 						<m>y</m>-piece is generally <fillin characters="4"/> separable.
 					</p>
 					<p component="key">
 						In separable form the two variables are joined only by
-						<m>\underline{\textbf{multiplication}}</m>&#8212;never by
+						<m>\underline{\textbf{multiplication}}</m><mdash />never by
 						addition. So a right-hand side that is a <em>sum</em> of an
 						<m>x</m>-piece and a <m>y</m>-piece is generally
 						<m>\underline{\textbf{not}}</m> separable.
@@ -113,7 +113,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-identify" component="stu" workspace="2.3in">
+		<exercise xml:id="ws-sov-ex-identify-stu" component="stu" workspace="2.3in">
 			<statement>
 				<p>
 					For each equation, decide whether it is separable. If it is, write
@@ -129,7 +129,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-identify" component="key">
+		<exercise xml:id="ws-sov-ex-identify-key" component="key">
 			<statement>
 				<p>
 					For each equation, decide whether it is separable. If it is, write
@@ -155,7 +155,7 @@
 				</p>
 				<p>
 					(c) Separable: <m>(y+2)\cos x = (\cos x)\cdot(y+2)</m>, so
-					<m>f(x) = \cos x</m> and <m>g(y) = y+2</m>. Order does not matter&#8212;a product reads the same either way.
+					<m>f(x) = \cos x</m> and <m>g(y) = y+2</m>. Order does not matter<mdash />a product reads the same either way.
 				</p>
 				<p>
 					(d) Separable: a fraction is secretly a product,
@@ -165,7 +165,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-reveal" component="stu" workspace="1.8in">
+		<exercise xml:id="ws-sov-ex-reveal-stu" component="stu" workspace="1.8in">
 			<statement>
 				<p>
 					The equation <m>\frac{dy}{dx} = 3xy - 12x</m> does not look
@@ -175,7 +175,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-reveal" component="key">
+		<exercise xml:id="ws-sov-ex-reveal-key" component="key">
 			<statement>
 				<p>
 					The equation <m>\frac{dy}{dx} = 3xy - 12x</m> does not look
@@ -211,7 +211,7 @@
 			opposite sides, <em>integrate</em> both sides, then <em>solve</em> for
 			<m>y</m> if you can. Treating <m>\frac{dy}{dx}</m> as if <m>dy</m> and
 			<m>dx</m> were separate factors is not a real algebraic move, but it is
-			a reliable shortcut&#8212;a substitution argument justifies it.
+			a reliable shortcut<mdash />a substitution argument justifies it.
 		</p>
 
 		<!-- Reading check -->
@@ -261,7 +261,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-warmup" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-sov-ex-warmup-stu" component="stu" workspace="2.2in">
 			<statement>
 				<p>
 					Find the general solution of
@@ -272,7 +272,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-warmup" component="key">
+		<exercise xml:id="ws-sov-ex-warmup-key" component="key">
 			<statement>
 				<p>
 					Find the general solution of
@@ -308,7 +308,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-growth" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-sov-ex-growth-stu" component="stu" workspace="2.4in">
 			<statement>
 				<p>
 					A culture starts with <m>50</m> cells and grows so that its rate of
@@ -322,7 +322,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-growth" component="key">
+		<exercise xml:id="ws-sov-ex-growth-key" component="key">
 			<statement>
 				<p>
 					A culture starts with <m>50</m> cells and grows so that its rate of
@@ -352,7 +352,7 @@
 				<p>
 					(b) At <m>t = 5</m>: <m>P(5) = 50\,e^{2} \approx 369</m> cells.
 					<q>Rate proportional to amount</q> always separates into pure
-					exponential growth&#8212;the model's signature.
+					exponential growth<mdash />the model's signature.
 				</p>
 			</solution>
 		</exercise>
@@ -372,8 +372,8 @@
 			The warm-up on the previous page hid a trap. To separate
 			<m>\frac{dy}{dx} = 3x^2 y^2</m> we divided by <m>y^2</m>, and division
 			is only legal when the divisor is nonzero. Wherever <m>g(y) = 0</m>,
-			the constant function sitting there is itself a solution&#8212;because
-			<m>\frac{dy}{dx} = f(x)\cdot g(y)</m> makes <em>both</em> sides zero&#8212;but
+			the constant function sitting there is itself a solution<mdash />because
+			<m>\frac{dy}{dx} = f(x)\cdot g(y)</m> makes <em>both</em> sides zero<mdash />but
 			the divided family may skip right over it. A constant solution
 			<m>y \equiv a</m> (with <m>g(a) = 0</m>) that the general-solution
 			family cannot reproduce is called a <term>singular solution</term>, or
@@ -405,7 +405,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-sov-ex-singular" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-sov-ex-singular-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					Find the general solution of
@@ -419,7 +419,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-singular" component="key">
+		<exercise xml:id="ws-sov-ex-singular-key" component="key">
 			<statement>
 				<p>
 					Find the general solution of
@@ -450,7 +450,7 @@
 					<m>y \equiv 3</m> then <m>\frac{dy}{dx} = 0</m> and
 					<m>x\,(3 - 3)^2 = 0</m>, so it <em>is</em> a solution. Yet no finite
 					<m>C</m> makes <m>3 - \frac{2}{x^2 + C}</m> equal to the constant
-					<m>3</m>, so <m>y \equiv 3</m> is a genuine <em>singular solution</em>&#8212;we
+					<m>3</m>, so <m>y \equiv 3</m> is a genuine <em>singular solution</em><mdash />we
 					must report it alongside the family.
 				</p>
 			</solution>
@@ -463,11 +463,11 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False&#8212;<em>sometimes</em> the general family quietly puts it
+					False<mdash /><em>sometimes</em> the general family quietly puts it
 					back. For <m>\frac{dy}{dx} = 2xy</m> the divide step gives
 					<m>y = C e^{x^2}</m>, and the choice <m>C = 0</m> returns
 					<m>y \equiv 0</m>, so nothing is truly lost. It is genuinely lost
-					only when no value of the constant reproduces it&#8212;as with
+					only when no value of the constant reproduces it<mdash />as with
 					<m>\frac{dy}{dx} = 3x^2 y^2</m>, whose family
 					<m>y = \frac{1}{C - x^3}</m> is never <m>0</m>. The rule: after
 					dividing, always find the zeros of <m>g(y)</m> and check each one
@@ -485,7 +485,7 @@
 		<p><term>When you cannot isolate <m>y</m>.</term></p>
 
 		<p>
-			Step 3 says <q>solve for <m>y</m> <em>if possible</em></q>&#8212;and
+			Step 3 says <q>solve for <m>y</m> <em>if possible</em></q><mdash />and
 			sometimes it is not. When the integrated equation traps <m>y</m>
 			inside a mix of terms, we leave the answer in <em>implicit</em> form.
 			And whenever integration produces <m>\ln|y|</m>, unwrapping the
@@ -524,7 +524,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-sov-ex-implicit" component="stu" workspace="2.5in">
+		<exercise xml:id="ws-sov-ex-implicit-stu" component="stu" workspace="2.5in">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -537,7 +537,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-implicit" component="key">
+		<exercise xml:id="ws-sov-ex-implicit-key" component="key">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -569,7 +569,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-branch" component="stu" workspace="2.7in">
+		<exercise xml:id="ws-sov-ex-branch-stu" component="stu" workspace="2.7in">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -582,7 +582,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-branch" component="key">
+		<exercise xml:id="ws-sov-ex-branch-key" component="key">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -629,7 +629,7 @@
 				<p>
 					False. The antiderivative is <m>\ln|y| + c</m>. Dropping the
 					absolute value silently throws away every solution with
-					<m>y &lt; 0</m>&#8212;which is exactly the branch the circle problem
+					<m>y &lt; 0</m><mdash />which is exactly the branch the circle problem
 					above depended on. The <m>|\cdot|</m> is what keeps both signs of
 					<m>y</m> in play.
 				</p>
@@ -646,11 +646,11 @@
 
 		<p>
 			Separation of variables is the engine behind many real models. Here is
-			one the coursebook sets up but leaves for you to solve&#8212;work it
+			one the coursebook sets up but leaves for you to solve<mdash />work it
 			end to end.
 		</p>
 
-		<exercise xml:id="ws-sov-ex-cooling" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-sov-ex-cooling-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					A cup of coffee at <m>90^\circ</m>C is left in a room held at
@@ -667,7 +667,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-cooling" component="key">
+		<exercise xml:id="ws-sov-ex-cooling-key" component="key">
 			<statement>
 				<p>
 					A cup of coffee at <m>90^\circ</m>C is left in a room held at
@@ -706,8 +706,8 @@
 				<p>
 					(c) As <m>t \to \infty</m>, <m>e^{-0.1t} \to 0</m>, so
 					<m>T \to 20^\circ</m>C. The coffee cools to room temperature, exactly
-					as intuition demands. The constant <m>20</m>&#8212;the room
-					temperature&#8212;is the equilibrium the model relaxes toward, and
+					as intuition demands. The constant <m>20</m><mdash />the room
+					temperature<mdash />is the equilibrium the model relaxes toward, and
 					<m>k</m> controls how fast it gets there.
 				</p>
 			</solution>
@@ -717,7 +717,7 @@
 			<title>Looking ahead</title>
 			<p>
 				Separation of variables works only when the right-hand side factors
-				into <m>f(x)\cdot g(y)</m>. Many first-order equations refuse&#8212;a
+				into <m>f(x)\cdot g(y)</m>. Many first-order equations refuse<mdash />a
 				linear equation like <m>y' + p(x)\,y = q(x)</m> with a nonzero
 				<m>q(x)</m> mixes <m>x</m> and <m>y</m> in a way no factoring can
 				pull apart. The next worksheet develops <em>integrating factors</em>,

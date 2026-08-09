@@ -50,7 +50,7 @@
 			Separation of variables failed the moment an equation refused to
 			factor into <m>f(x)\cdot g(y)</m>. Many first-order equations that
 			resist it are <em>linear</em>, and for those we have a different
-			trick&#8212;one built entirely on the product rule. Before we use it,
+			trick<mdash />one built entirely on the product rule. Before we use it,
 			let's make sure we can run the product rule in both directions.
 		</p>
 
@@ -76,7 +76,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-if-ex-forward" component="stu" workspace="1.9in">
+		<exercise xml:id="ws-if-ex-forward-stu" component="stu" workspace="1.9in">
 			<statement>
 				<p>
 					Compute each derivative (treat <m>y</m> as a function of
@@ -89,7 +89,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-forward" component="key">
+		<exercise xml:id="ws-if-ex-forward-key" component="key">
 			<statement>
 				<p>
 					Compute each derivative (treat <m>y</m> as a function of
@@ -113,7 +113,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-reverse" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-if-ex-reverse-stu" component="stu" workspace="2.2in">
 			<statement>
 				<p>
 					Run the product rule <em>backward</em>: write each sum as a single
@@ -128,7 +128,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-reverse" component="key">
+		<exercise xml:id="ws-if-ex-reverse-key" component="key">
 			<statement>
 				<p>
 					Run the product rule <em>backward</em>: write each sum as a single
@@ -165,7 +165,7 @@
 
 		<p>
 			An equation like <m>y' + 4y = x</m> is <em>almost</em> a completed
-			product rule&#8212;it is missing the right multiplier. Just as
+			product rule<mdash />it is missing the right multiplier. Just as
 			completing the square adds the right constant, multiplying by the
 			right function <m>\mu(x)</m> completes the product rule on the left.
 			To find that function we first need the equation in a predictable
@@ -208,7 +208,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-if-ex-standard" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-if-ex-standard-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					For each equation, put it in standard form, identify <m>P(x)</m>
@@ -221,7 +221,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-standard" component="key">
+		<exercise xml:id="ws-if-ex-standard-key" component="key">
 			<statement>
 				<p>
 					For each equation, put it in standard form, identify <m>P(x)</m>
@@ -320,13 +320,13 @@
 					False. It is built for first-order <em>linear</em> equations,
 					<m>y' + P(x)y = Q(x)</m>. A term like <m>y^2</m> or <m>\sin y</m>
 					breaks the derivation (there is no clean <m>\mu</m>), so a nonlinear
-					equation such as <m>y' = xy^2</m> is out of reach&#8212;reach for
+					equation such as <m>y' = xy^2</m> is out of reach<mdash />reach for
 					separation of variables there instead.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-solve1" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-if-ex-solve1-stu" component="stu" workspace="2.4in">
 			<statement>
 				<p>
 					Find the general solution of
@@ -337,7 +337,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-solve1" component="key">
+		<exercise xml:id="ws-if-ex-solve1-key" component="key">
 			<statement>
 				<p>
 					Find the general solution of
@@ -363,7 +363,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-solve2" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-if-ex-solve2-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					Find the general solution of
@@ -375,7 +375,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-solve2" component="key">
+		<exercise xml:id="ws-if-ex-solve2-key" component="key">
 			<statement>
 				<p>
 					Find the general solution of
@@ -420,7 +420,7 @@
 			circuits. Here is one to work end to end.
 		</p>
 
-		<exercise xml:id="ws-if-ex-circuit" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-if-ex-circuit-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					In a series RL circuit the current <m>i(t)</m> (in amperes, with
@@ -434,7 +434,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-circuit" component="key">
+		<exercise xml:id="ws-if-ex-circuit-key" component="key">
 			<statement>
 				<p>
 					In a series RL circuit the current <m>i(t)</m> (in amperes, with
@@ -467,8 +467,8 @@
 					(b) The current rises from zero, peaks at <m>t = \tfrac13</m> second,
 					and then the transient dies out toward <m>0</m> as
 					<m>t \to \infty</m>. Note this equation is <em>not</em>
-					separable&#8212;the right side <m>6e^{-3t} - 3i</m> is a sum that
-					will not factor&#8212;so the integrating factor is doing exactly the
+					separable<mdash />the right side <m>6e^{-3t} - 3i</m> is a sum that
+					will not factor<mdash />so the integrating factor is doing exactly the
 					work that separation cannot.
 				</p>
 			</solution>
@@ -478,7 +478,7 @@
 			<term>Which tool? Separation, integrating factor, both, or neither.</term>
 		</p>
 
-		<exercise xml:id="ws-if-ex-classify" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-if-ex-classify-stu" component="stu" workspace="2.8in">
 			<statement>
 				<p>
 					For each equation, decide whether it can be solved by separation of
@@ -494,7 +494,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-classify" component="key">
+		<exercise xml:id="ws-if-ex-classify-key" component="key">
 			<statement>
 				<p>
 					For each equation, decide whether it can be solved by separation of
@@ -532,8 +532,8 @@
 		<conclusion>
 			<title>Looking ahead</title>
 			<p>
-				You now have three exact techniques&#8212;direct integration,
-				separation of variables, and integrating factors&#8212;and a sense of
+				You now have three exact techniques<mdash />direct integration,
+				separation of variables, and integrating factors<mdash />and a sense of
 				which fits which equation. Many equations, though, yield to none of
 				them. The next worksheet steps back from exact formulas to ask what a
 				solution <em>looks like</em>: using <em>slope fields</em> and

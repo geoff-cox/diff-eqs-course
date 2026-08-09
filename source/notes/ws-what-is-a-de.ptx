@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-	Guided Lecture Notes worksheet: "What Is a Differential Equation?"
-	Book sections (Exploring Differential Equations, geoff-cox/debookrs):
-		c0-whats-a-de/sec-connection-to-alg-calc.ptx
-		c0-whats-a-de/sec-de-defn.ptx
-		c0-whats-a-de/sec-variables.ptx
-		c0-whats-a-de/sec-terms-coeffs.ptx
-	Old deck: source/notes/latex/ 01 intro-topics folder
-	Companion worksheet for c1 classification: ws-classification.ptx
 
-	Worksheet conventions (see CLAUDE.md section 4):
-	  * Student/instructor split via component="stu" / component="key",
-	    selected by <source><version include="notes stu|key"/> in the
-	    publication files. Both versions mirror each other in structure.
-	  * Reading-check blanks: paired <p component="stu"> (with <fillin/>)
-	    and <p component="key"> (answers as underlined bold math). The
-	    answer NEVER lives inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    (statement only, generous write-in space) and
-	    <exercise component="key"> (statement + solution).
-	  * <page> delimits vertical space for letter-size printing, NOT topics.
-	    Headings are <p><term>...</term></p>, never page titles.
-	  * Display math uses <md>; <me>/<men> are deprecated.
-	  * <example> renders its solution in BOTH builds; reserve it for
-	    read-along illustrations with nothing hidden.
--->
+<!-- Guided Lecture Notes worksheet: "What Is a Differential Equation?"
+  Book sections (Exploring Differential Equations, geoff-cox/debookrs):
+    c0-whats-a-de/sec-connection-to-alg-calc.ptx
+    c0-whats-a-de/sec-de-defn.ptx
+    c0-whats-a-de/sec-variables.ptx
+    c0-whats-a-de/sec-terms-coeffs.ptx
+  Old deck: source/notes/latex/ 01 intro-topics folder
+  Companion worksheet for c1 classification: ws-classification.ptx
+
+  Worksheet conventions (see CLAUDE.md section 4):
+    * Student/instructor split via component="stu" / component="key",
+      selected by <source><version include="notes stu|key"/> in the
+      publication files. Both versions mirror each other in structure.
+    * Reading-check blanks: paired <p component="stu"> (with <fillin/>)
+      and <p component="key"> (answers as underlined bold math). The
+      answer NEVER lives inside <fillin>.
+    * Worked problems: paired <exercise component="stu" workspace="Xin">
+      (statement only, generous write-in space) and
+      <exercise component="key"> (statement + solution).
+    * <page> delimits vertical space for letter-size printing, NOT topics.
+      Headings are <p><term>...</term></p>, never page titles.
+    * Display math uses <md>; <me>/<men> are deprecated.
+    * <example> renders its solution in BOTH builds; reserve it for
+      read-along illustrations with nothing hidden.
+  -->
+  
 <worksheet xml:id="ws-what-is-a-de" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>What Is a Differential Equation?</title>
 
@@ -35,10 +36,6 @@
 			<li><p><term>Label</term> the terms, free term, and coefficients of a differential equation.</p></li>
 		</ul>
 	</objectives>
-
-	<!-- ==================================================================== -->
-	<!-- PAGE 1 : What is a DE? Variables, terms, coefficients                -->
-	<!-- ==================================================================== -->
 
 	<page>
 		<p><term>What is a differential equation?</term></p>
@@ -52,56 +49,59 @@
 			to find a function whose derivative is <m>5 + 3t</m>.
 		</p>
 
-		<!-- Reading check: one paragraph of blanks, then ONE remark. -->
-		<p>
-			<term>Reading check.</term> Fill in each blank from your reading.
-			<ol>
-				<li>
-					<p component="stu">
-						A differential equation is an equation that involves one or more
-						<fillin characters="12"/> of an unknown function.
-					</p>
-					<p component="key">
-						A differential equation is an equation that involves one or more
-						<m>\underline{\textbf{derivatives}}</m> of an unknown function.
-					</p>
-				</li>
-				<li>
-					<p component="stu">
-						For an equation to be a differential equation it must contain both a
-						derivative and an <fillin characters="12"/> sign.
-					</p>
-					<p component="key">
-						For an equation to be a differential equation it must contain both a
-						derivative and an <m>\underline{\textbf{equals}}</m> sign.
-					</p>
-				</li>
-				<li>
-					<p component="stu">
-						If the unknown function depends on a single variable the equation is
-						an <fillin characters="10"/> differential equation; if it
-						depends on more than one variable it is a <fillin characters="9"/>
-						differential equation. In this course, when we say <q>differential 
-						equation</q> we mean  <fillin characters="10"/> differential equation.
-					</p>
-					<p component="key">
-						If the unknown function depends on a single variable the equation is
-						an <m>\underline{\textbf{ordinary}}</m> differential equation; if it
-						depends on more than one variable it is a 
-						<m>\underline{\textbf{partial}}</m> differential equation. In this 
-						course, when we say <q>differential equation</q> we mean 
-						<m>\underline{\textbf{ordinary}}</m> differential equation.
-					</p>
-				</li>
-			</ol>
-		</p>
+    <exercise>
+      <statement>
+        <p>
+          <term>Reading check.</term> Fill in each blank from your reading.
+          <ol>
+            <li>
+              <p component="stu">
+                A differential equation is an equation that involves one or more
+                <fillin characters="12"/> of an unknown function.
+              </p>
+              <p component="key">
+                A differential equation is an equation that involves one or more
+                <m>\underline{\textbf{derivatives}}</m> of an unknown function.
+              </p>
+            </li>
+            <li>
+              <p component="stu">
+                For an equation to be a differential equation it must contain both a
+                derivative and an <fillin characters="12"/> sign.
+              </p>
+              <p component="key">
+                For an equation to be a differential equation it must contain both a
+                derivative and an <m>\underline{\textbf{equals}}</m> sign.
+              </p>
+            </li>
+            <li>
+              <p component="stu">
+                If the unknown function depends on a single variable the equation is
+                an <fillin characters="10"/> differential equation; if it
+                depends on more than one variable it is a <fillin characters="9"/>
+                differential equation. In this course, when we say <q>differential 
+                equation</q> we mean  <fillin characters="10"/> differential equation.
+              </p>
+              <p component="key">
+                If the unknown function depends on a single variable the equation is
+                an <m>\underline{\textbf{ordinary}}</m> differential equation; if it
+                depends on more than one variable it is a 
+                <m>\underline{\textbf{partial}}</m> differential equation. In this 
+                course, when we say <q>differential equation</q> we mean 
+                <m>\underline{\textbf{ordinary}}</m> differential equation.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </exercise>
 
-		<exercise xml:id="ws-ic-ex-diff-eq">
+		<exercise>
 			<title>True or False</title>
 			<statement>
 				<p><m>y''' - 4y' - 3</m> is a differential equation.</p>
 			</statement>
-			<solution>
+			<solution component="key">
 				<p>
 					False. It has derivatives of the dependent variable <m>y</m>, but it 
 					has no equals sign.
@@ -109,40 +109,41 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-ic-ex-antideriv" component="stu" workspace="1.1in">
+		<exercise component="stu" workspace="1.1in">
 			<statement>
 				<p>
 					Solve the differential equation <m>y' = 5 + 3t</m> by finding a
-					function <m>y</m> whose derivative is <m>5 + 3t</m>. Why is there more
-					than one answer?
+					function <m>y</m> whose derivative is <m>5 + 3t</m>.
 				</p>
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ic-ex-antideriv" component="key">
+    <exercise component="key">
 			<statement>
 				<p>
-					Solve the differential equation <m>y' = 5 + 3t</m> by finding a
-					function <m>y</m> whose derivative is <m>5 + 3t</m>. Why is there more
-					than one answer?
+					Solve the differential equation <m>y' = \cos t + 5</m> by finding a
+					function <m>y</m> whose derivative is <m>\cos t + 5</m>.
 				</p>
 			</statement>
 			<solution>
 				<p>
-					Antidifferentiate both sides: <m>y = 5t + \frac{3}{2}t^2 + C</m>. Every choice of
-					the constant <m>C</m> gives a function whose derivative is
-					<m>5 + 3t</m>, so a first-order differential equation has a whole
-					<em>family</em> of solutions rather than a single one. This is the
-					recurring theme of the course: solving a differential equation means
-					recovering a function, and the arbitrary constant is the fingerprint of
-					the integration we did to get there.
+					Antidifferentiate both sides:
+          <md>
+            y = \int (\cos t + 5)\,dt = \sin t + 5t + C
+          </md>
+          Every choice of the constant <m>C</m> gives a function whose derivative
+          is <m>\cos t + 5</m>, so there is a whole <em>family</em> of solutions.
+          This pattern will recur throughout the course: solving a differential
+          equation means recovering a function up to one or more constants that
+          arise from integration.
 				</p>
 			</solution>
 		</exercise>
 	</page>
 
 	<page>
-		<exercise xml:id="ws-ic-ex-variables" component="stu" workspace="2.0in">
+
+		<exercise component="stu" workspace="2.0in">
 			<statement>
 				<p>
 					For each differential equation, name the dependent variable (the
@@ -157,7 +158,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ic-ex-variables" component="key">
+		<exercise component="key">
 			<statement>
 				<p>
 					For each differential equation, name the dependent variable (the
@@ -172,12 +173,11 @@
 			</statement>
 			<solution>
 				<p>
-					The derivative tells you which variable is which&#8212;the dependent
-					variable is the one being differentiated.
+					The dependent variable is the one being differentiated.
 					<ul marker="square">
-						<li><p><m>dW/dz</m> means <m>W</m> changes as <m>z</m> changes: dependent <m>W</m>, independent <m>z</m>.</p></li>
-						<li><p><m>g''</m> is a derivative of <m>g</m> with respect to <m>s</m>: dependent <m>g</m>, independent <m>s</m>.</p></li>
-						<li><p><m>R'''</m> shows <m>R</m> is the dependent variable; no independent variable is named, so you may call it whatever you like (say <m>t</m>).</p></li>
+						<li><p><m>\dfrac{dW}{dz}\ \Rightarrow</m> <m>W</m> is differentiated with respect to <m>z\ \Rightarrow\ </m> dependent: <m>W</m>, independent: <m>z</m>.</p></li>
+						<li><p><m>g''\ \Rightarrow</m> <m>g</m> is differentiated with respect to <m>s\ \Rightarrow\ </m> dependent: <m>g</m>, independent: <m>s</m>.</p></li>
+						<li><p><m>R'''\ \Rightarrow</m> <m>R</m> is the differentiated dependent variable, but no independent variable is named.</p></li>
 					</ul>
 				</p>
 			</solution>
@@ -226,8 +226,9 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-tf-ex-coeffs">
+		<exercise>
 			<title>True or False</title>
+
 			<statement>
 				<p>A coefficient may never contain the dependent variable.</p>
 			</statement>
@@ -242,6 +243,7 @@
 
 		<exercise component="stu" workspace="2.5in">
 			<title>Terms, free term, and coefficients</title>
+
 			<statement>
 				<p>
 					The dependent variable below is <m>u</m>:
@@ -257,46 +259,45 @@
 
 		<exercise component="key">
 			<title>Terms, free term, and coefficients</title>
+
 			<statement>
 				<p>
 					The dependent variable below is <m>u</m>:
 					<md>
-						\frac{5}{t}\,u^{(4)} + 2.7\,u'' + t^3 u' + u = \tfrac14 e^{2t}.
+						\frac{5}{t}\,u^{(4)} + 2.7 u'' + t^3 u' + u = \tfrac14 e^{2t}.
 					</md>
-					(a) List the five terms. (b) Which is the free term? (c) Give the
-					coefficient of <m>u^{(4)}</m>, of <m>u''</m>, of <m>u'</m>, and of
-					<m>u</m>.
+					(a) List the five terms.
+          (b) Which is the free term?
+          (c) Give the coefficients of the non-free terms.
 				</p>
 			</statement>
 			<solution>
 				<p>
-					(a) The terms are <m>\frac{5}{t}u^{(4)}</m>, <m>2.7\,u''</m>,
-					<m>t^3 u'</m>, <m>u</m>, and <m>\frac14 e^{2t}</m>.
-				</p>
-				<p>
-					(b) The free term is <m>\frac14 e^{2t}</m>: it contains the independent
-					variable <m>t</m> but none of <m>u</m> or its derivatives. (Notice a
-					free term need not be constant&#8212;this is why <q>constant term</q> is
-					a misleading name.)
-				</p>
-				<p>
-					(c) Reading off the multipliers of the dependent variable and its
-					derivatives: coefficient of <m>u^{(4)}</m> is <m>\frac{5}{t}</m>, of
-					<m>u''</m> is <m>2.7</m>, of <m>u'</m> is <m>t^3</m>, and of <m>u</m> is
-					<m>1</m>.
+          <ol marker="(a)">
+            <li>
+              <m>
+                \dfrac{5}{t}u^{(4)},\quad
+                2.7u'',\quad
+                t^3 u',\quad
+                u,\quad
+                \dfrac14 e^{2t}
+              </m>
+            </li>
+            <li><m>\dfrac14 e^{2t}\quad</m> (Notice a free term need not be constant)</li>
+            <li>
+              Reading from left to right, the coefficients are:
+              <m>\quad\dfrac{5}{t},\quad 2.7,\quad t^3,\quad 1</m>.
+            </li>
+          </ol>
 				</p>
 			</solution>
 		</exercise>
 
-		<conclusion>
-			<title>Looking ahead</title>
-			<p>
-				Naming the parts of a differential equation is the first step toward
-				<em>classifying</em> it. In the next worksheet we attach two labels to
-				every equation&#8212;its <em>order</em> and whether it is
-				<em>linear</em>&#8212;because together they decide which solution
-				technique to reach for.
-			</p>
-		</conclusion>
+    <p>
+      <term>Looking ahead</term>. Naming the parts of a differential equation is the first step toward
+      <em>classifying</em> it. In the next worksheet we attach two labels to
+      every equation: its <em>order</em> and whether it is <em>linear</em>. 
+      Together they decide which solution technique to reach for.
+    </p>
 	</page>
 </worksheet>

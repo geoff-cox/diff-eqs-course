@@ -45,7 +45,7 @@
 			<li><p><term>Evaluate</term> the slope generator <m>f(t,y)</m> at a point and sketch a small slope field by hand.</p></li>
 			<li><p><term>Recognize</term> autonomous equations and the striped pattern of their slope fields.</p></li>
 			<li><p><term>Find</term> equilibrium solutions by solving <m>f(y) = 0</m>.</p></li>
-			<li><p><term>Construct</term> a phase line and classify each equilibrium as a sink, source, or node&#8212;by sign analysis and by the <m>f'(c)</m> test.</p></li>
+			<li><p><term>Construct</term> a phase line and classify each equilibrium as a sink, source, or node<mdash />by sign analysis and by the <m>f'(c)</m> test.</p></li>
 			<li><p><term>Predict</term> the long-term behavior of solutions without solving the equation, including a harvested logistic population.</p></li>
 		</ul>
 	</objectives>
@@ -64,7 +64,7 @@
 			right side is a <em>slope generator</em>: feed it any point
 			<m>(t,y)</m> and it returns the slope a solution must have there.
 			Plotting a short segment with that slope at many points produces a
-			<term>slope field</term>&#8212;a navigational chart every solution
+			<term>slope field</term><mdash />a navigational chart every solution
 			must obey.
 		</p>
 
@@ -97,7 +97,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False&#8212;that is the whole point. The slope generator
+					False<mdash />that is the whole point. The slope generator
 					<m>f(t,y)</m> is read straight off the equation, so the field
 					costs only arithmetic. Slope fields exist precisely for the many
 					equations we <em>cannot</em> solve in closed form.
@@ -105,7 +105,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-table" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-sf-ex-table-stu" component="stu" workspace="2.8in">
 			<statement>
 				<p>
 					Consider the differential equation
@@ -141,7 +141,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-table" component="key">
+		<exercise xml:id="ws-sf-ex-table-key" component="key">
 			<statement>
 				<p>
 					Consider the differential equation
@@ -202,14 +202,14 @@
 				</tabular>
 				<p>
 					(b) At each grid point, draw a short segment with the tabulated
-					slope&#8212;e.g. flat at <m>(-1,1)</m>, falling at <m>(0,1)</m>,
+					slope<mdash />e.g. flat at <m>(-1,1)</m>, falling at <m>(0,1)</m>,
 					steep (slope <m>2</m>) at <m>(\pm 1,-1)</m>. Notice the pattern is
 					<em>not</em> constant along horizontal rows: the slope depends on
 					<m>t</m> as well as <m>y</m>.
 				</p>
 				<p>
 					(c) <m>f(2,1) = 4 - 1 = 3</m>. Any solution passing through
-					<m>(2,1)</m> leaves that point with slope <m>3</m>&#8212;no
+					<m>(2,1)</m> leaves that point with slope <m>3</m><mdash />no
 					solving required.
 				</p>
 			</solution>
@@ -232,7 +232,7 @@
 		<p><term>Autonomous equations: stripes and standstills.</term></p>
 
 		<p>
-			When the slope generator has no explicit <m>t</m> in it&#8212;<m>y' = f(y)</m>&#8212;the
+			When the slope generator has no explicit <m>t</m> in it<mdash /><m>y' = f(y)</m><mdash />the
 			equation is <term>autonomous</term> (<q>self-governing</q>): how fast
 			<m>y</m> changes depends only on the current value of <m>y</m>, not on
 			the clock. In the slope field this shows up as horizontal
@@ -283,13 +283,13 @@
 					True. Both points have <m>y = 2</m>, and an autonomous slope
 					generator <m>f(y)</m> only looks at <m>y</m>: the slope is
 					<m>f(2)</m> at both. That is exactly why autonomous fields look
-					striped&#8212;and why the whole field can be compressed into a
+					striped<mdash />and why the whole field can be compressed into a
 					single vertical phase line.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-equilibria" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-sf-ex-equilibria-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					Consider the autonomous equation
@@ -306,7 +306,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-equilibria" component="key">
+		<exercise xml:id="ws-sf-ex-equilibria-key" component="key">
 			<statement>
 				<p>
 					Consider the autonomous equation
@@ -340,7 +340,7 @@
 				</p>
 				<p>
 					(c) Along <m>y = \pm 3</m> every segment is perfectly
-					<em>horizontal</em>&#8212;two flat stripes running across the whole
+					<em>horizontal</em><mdash />two flat stripes running across the whole
 					field. A solution that starts on one of those lines stays on it
 					forever.
 				</p>
@@ -390,7 +390,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-sf-ex-phaseline" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-sf-ex-phaseline-stu" component="stu" workspace="2.2in">
 			<statement>
 				<p>
 					Return to <m>\frac{dy}{dt} = y^2 - 9</m> from the previous page.
@@ -403,7 +403,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-phaseline" component="key">
+		<exercise xml:id="ws-sf-ex-phaseline-key" component="key">
 			<statement>
 				<p>
 					Return to <m>\frac{dy}{dt} = y^2 - 9</m> from the previous page.
@@ -442,10 +442,10 @@
 			<term>A calculus shortcut.</term> The sign of <m>f'(c)</m> at an
 			equilibrium <m>c</m> classifies it instantly: <m>f'(c) &lt; 0</m> means
 			sink, <m>f'(c) &gt; 0</m> means source, and <m>f'(c) = 0</m> means the
-			test is inconclusive&#8212;fall back on the phase line.
+			test is inconclusive<mdash />fall back on the phase line.
 		</p>
 
-		<exercise xml:id="ws-sf-ex-node" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-sf-ex-node-stu" component="stu" workspace="2.8in">
 			<statement>
 				<p>
 					Now analyze
@@ -460,7 +460,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-node" component="key">
+		<exercise xml:id="ws-sf-ex-node-key" component="key">
 			<statement>
 				<p>
 					Now analyze
@@ -481,7 +481,7 @@
 					(b) By the product rule,
 					<m>f'(y) = (y-2)^2 + 2y(y-2) = (y-2)(3y-2)</m>. Then
 					<m>f'(0) = (-2)(-2) = 4 &gt; 0</m>: <m>y=0</m> is a
-					<term>source</term>. But <m>f'(2) = 0</m>&#8212;inconclusive, so
+					<term>source</term>. But <m>f'(2) = 0</m><mdash />inconclusive, so
 					check signs around <m>y = 2</m>: <m>f(1) = (1)(1) = 1 &gt; 0</m>
 					(rising below) and <m>f(3) = (3)(1) = 3 &gt; 0</m> (rising above).
 				</p>
@@ -521,11 +521,11 @@
 		<p>
 			In the separation-of-variables worksheet, extracting the logistic
 			solution formula took real work. Qualitative analysis gets the story
-			for free&#8212;and it keeps working when we modify the model in ways
+			for free<mdash />and it keeps working when we modify the model in ways
 			that make the formula ugly.
 		</p>
 
-		<exercise xml:id="ws-sf-ex-logistic" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-sf-ex-logistic-stu" component="stu" workspace="2.4in">
 			<statement>
 				<p>
 					A fish population (in hundreds) obeys the logistic equation
@@ -539,7 +539,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-logistic" component="key">
+		<exercise xml:id="ws-sf-ex-logistic-key" component="key">
 			<statement>
 				<p>
 					A fish population (in hundreds) obeys the logistic equation
@@ -563,13 +563,13 @@
 					(b) From <m>P(0) = 50</m> the solution rises toward the sink:
 					<m>P \to 500</m>. From <m>P(0) = 800</m> it falls toward the same
 					sink: <m>P \to 500</m>. Either way the population settles at
-					carrying capacity&#8212;the entire logistic story, read off a phase
+					carrying capacity<mdash />the entire logistic story, read off a phase
 					line in three lines of arithmetic.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-harvest" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-sf-ex-harvest-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					Now suppose the fishery harvests at a constant rate <m>h</m>:
@@ -586,7 +586,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sf-ex-harvest" component="key">
+		<exercise xml:id="ws-sf-ex-harvest-key" component="key">
 			<statement>
 				<p>
 					Now suppose the fishery harvests at a constant rate <m>h</m>:
@@ -620,18 +620,18 @@
 					Real equilibria require <m>25 - h \ge 0</m>, so the critical rate is
 					<m>h = 25</m>. As <m>h</m> grows toward <m>25</m>, the source and
 					the sink slide toward each other and at <m>h = 25</m> they collide
-					and annihilate&#8212;a bifurcation.
+					and annihilate<mdash />a bifurcation.
 				</p>
 				<p>
 					(c) For <m>h &gt; 25</m> there are no equilibria and
 					<m>f(P) &lt; 0</m> for every <m>P</m>: the phase line points down
 					everywhere, so <m>P(t)</m> decreases no matter how large it
 					starts. On the physically meaningful domain <m>P \ge 0</m>, the
-					population is therefore driven down to <m>P = 0</m>&#8212;extinction&#8212;and
+					population is therefore driven down to <m>P = 0</m><mdash />extinction<mdash />and
 					the model stops applying there (the raw equation would happily
 					continue into negative <m>P</m>, which means nothing for a
 					fishery). The model draws a hard sustainability line at harvesting
-					<m>25</m>&#8212;a conclusion we reached without solving anything.
+					<m>25</m><mdash />a conclusion we reached without solving anything.
 				</p>
 			</solution>
 		</exercise>
@@ -641,7 +641,7 @@
 			<p>
 				Qualitative analysis tells us the <em>shape</em> of the story:
 				where solutions settle, where they flee, where a model breaks. What
-				it does not give is numbers&#8212;the population <em>at year
+				it does not give is numbers<mdash />the population <em>at year
 				three</em>, say. The next worksheet builds <em>Euler's method</em>,
 				which turns the same slope generator into a step-by-step numerical
 				approximation of a solution.

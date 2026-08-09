@@ -46,7 +46,7 @@
 		<p><term>Turning the forcing on.</term></p>
 
 		<p>
-			Last worksheet the right-hand side was zero&#8212;nothing pushed on
+			Last worksheet the right-hand side was zero<mdash />nothing pushed on
 			the system. A <term>linear nonhomogeneous constant coefficient</term>
 			(LNCC) equation restores the push: <m>a\,y'' + b\,y' + c\,y = f(x)</m>
 			with a nonzero forcing function <m>f(x)</m>. Its general solution has
@@ -86,7 +86,7 @@
 			<solution component="key">
 				<p>
 					True. Substituting the sum, the <m>y_h</m> part contributes
-					<m>0</m> and the <m>y_p</m> part contributes <m>f(x)</m>&#8212;linearity
+					<m>0</m> and the <m>y_p</m> part contributes <m>f(x)</m><mdash />linearity
 					lets the two ride along without disturbing each other. That is
 					exactly why the general solution is <m>y_h + y_p</m>: the
 					homogeneous family supplies the flexibility, the particular
@@ -95,7 +95,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-uc-ex-structure" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-uc-ex-structure-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					Consider
@@ -109,7 +109,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-uc-ex-structure" component="key">
+		<exercise xml:id="ws-uc-ex-structure-key" component="key">
 			<statement>
 				<p>
 					Consider
@@ -153,7 +153,7 @@
 		<p>
 			Where does <m>y_p</m> come from? Derivatives of polynomials are
 			polynomials, of exponentials are exponentials, of sines and cosines
-			are sines and cosines&#8212;so <m>y_p</m> should <em>mirror the
+			are sines and cosines<mdash />so <m>y_p</m> should <em>mirror the
 			structural form</em> of <m>f(x)</m>, with unknown letters
 			<m>A, B, C, \ldots</m> (the <term>undetermined coefficients</term>)
 			standing in for the numbers we will solve for later.
@@ -181,7 +181,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-uc-ex-forms" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-uc-ex-forms-stu" component="stu" workspace="2.2in">
 			<statement>
 				<p>
 					For each forcing function, write the starting form of <m>y_p</m>
@@ -196,7 +196,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-uc-ex-forms" component="key">
+		<exercise xml:id="ws-uc-ex-forms-key" component="key">
 			<statement>
 				<p>
 					For each forcing function, write the starting form of <m>y_p</m>
@@ -214,12 +214,12 @@
 					(a) <m>y_p = Ax + B</m> (a full degree-one polynomial).
 				</p>
 				<p>
-					(b) <m>y_p = Ae^{7x}</m>&#8212;the exponent is <em>known</em>; only
+					(b) <m>y_p = Ae^{7x}</m><mdash />the exponent is <em>known</em>; only
 					the multiplier is undetermined.
 				</p>
 				<p>
 					(c) <m>y_p = A\sin(5x) + B\cos(5x)</m>. Both siblings are required
-					even though <m>f</m> shows only sine&#8212;differentiation swaps
+					even though <m>f</m> shows only sine<mdash />differentiation swaps
 					sines and cosines, so <m>y_p</m> needs both to have any hope of
 					matching.
 				</p>
@@ -259,7 +259,7 @@
 
 		<p>
 			One wrinkle: if the selected <m>y_p</m> shares a term with
-			<m>y_h</m>, substituting it produces <m>0</m>, not <m>f(x)</m>&#8212;the
+			<m>y_h</m>, substituting it produces <m>0</m>, not <m>f(x)</m><mdash />the
 			homogeneous solution swallows the guess. The repair: multiply the
 			conflicting terms by <m>x</m>, and repeat until nothing is shared.
 		</p>
@@ -291,7 +291,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-uc-ex-conflict" component="stu" workspace="3.4in">
+		<exercise xml:id="ws-uc-ex-conflict-stu" component="stu" workspace="3.4in">
 			<statement>
 				<p>
 					Solve
@@ -306,7 +306,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-uc-ex-conflict" component="key">
+		<exercise xml:id="ws-uc-ex-conflict-key" component="key">
 			<statement>
 				<p>
 					Solve
@@ -323,7 +323,7 @@
 				<p>
 					(a) From <m>r^2 - 9 = 0</m>, <m>y_h = c_1 e^{3x} + c_2 e^{-3x}</m>.
 					The guess <m>Ae^{3x}</m> is already a homogeneous solution, so
-					substituting it yields <m>0 = 4e^{3x}</m>&#8212;impossible. The
+					substituting it yields <m>0 = 4e^{3x}</m><mdash />impossible. The
 					forcing resonates with the system's own response.
 				</p>
 				<p>
@@ -340,7 +340,7 @@
 						<mrow> y = c_1 e^{3x} + c_2 e^{-3x} + \tfrac{2}{3}\,x\,e^{3x}. </mrow>
 					</md>
 					The <m>x</m>-factor is the same medicine that cured the
-					repeated-root case last worksheet&#8212;and for the same reason:
+					repeated-root case last worksheet<mdash />and for the same reason:
 					the plain exponential was already spoken for.
 				</p>
 			</solution>
@@ -357,7 +357,7 @@
 					substituted guess produces terms (like <m>x e^{kx}</m>) that
 					<m>f(x)</m> does not contain, and the coefficient system becomes
 					inconsistent. Multiply by <m>x</m> exactly when a conflict with
-					<m>y_h</m> demands it&#8212;no more, no less.
+					<m>y_h</m> demands it<mdash />no more, no less.
 				</p>
 			</solution>
 		</exercise>
@@ -370,7 +370,7 @@
 	<page>
 		<p><term>The whole method, start to finish.</term></p>
 
-		<exercise xml:id="ws-uc-ex-full" component="stu" workspace="3.6in">
+		<exercise xml:id="ws-uc-ex-full-stu" component="stu" workspace="3.6in">
 			<statement>
 				<p>
 					Find the general solution of
@@ -384,7 +384,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-uc-ex-full" component="key">
+		<exercise xml:id="ws-uc-ex-full-key" component="key">
 			<statement>
 				<p>
 					Find the general solution of
@@ -406,7 +406,7 @@
 					polynomial: guess <m>y_p = Ax + B</m>.
 				</p>
 				<p>
-					<term>Step 3.</term> No conflict&#8212;<m>y_h</m> contains only
+					<term>Step 3.</term> No conflict<mdash /><m>y_h</m> contains only
 					exponentials.
 				</p>
 				<p>
@@ -423,7 +423,7 @@
 						<mrow> y = c_1 e^{-3x} + c_2 e^{x} - 2x - \tfrac{5}{3}. </mrow>
 					</md>
 					A quick sanity check on the free term: at any <m>x</m>, the
-					<m>y_p</m> pieces alone must reproduce <m>6x + 1</m>&#8212;and they
+					<m>y_p</m> pieces alone must reproduce <m>6x + 1</m><mdash />and they
 					do.
 				</p>
 			</solution>
@@ -433,7 +433,7 @@
 			<title>Looking ahead</title>
 			<p>
 				Undetermined coefficients works beautifully when the forcing is
-				polite&#8212;polynomials, exponentials, sines and cosines. But real
+				polite<mdash />polynomials, exponentials, sines and cosines. But real
 				systems get switched on and off, struck, and jolted by forcing
 				functions with corners and jumps. The next worksheets build the
 				<em>Laplace transform</em>, a machine designed to handle exactly

@@ -94,7 +94,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False. The variable <m>t</m> is integrated away&#8212;it is the
+					False. The variable <m>t</m> is integrated away<mdash />it is the
 					variable of integration, and the limits <m>0</m> and
 					<m>\infty</m> get substituted into it. What survives is the
 					parameter <m>s</m>: the transform moves the whole problem from the
@@ -103,7 +103,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-lt-ex-definition" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-lt-ex-definition-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					Compute
@@ -117,7 +117,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lt-ex-definition" component="key">
+		<exercise xml:id="ws-lt-ex-definition-key" component="key">
 			<statement>
 				<p>
 					Compute
@@ -157,7 +157,7 @@
 
 		<p>
 			Nobody recomputes that integral every time. A short table of standard
-			transforms plus one property&#8212;<term>linearity</term>&#8212;handles
+			transforms plus one property<mdash /><term>linearity</term><mdash />handles
 			most functions we meet:
 			<md>
 				<mrow> \mathcal{L}\{a f(t) + b g(t)\} = a\,\mathcal{L}\{f(t)\} + b\,\mathcal{L}\{g(t)\}. </mrow>
@@ -179,20 +179,20 @@
 				<li>
 					<p component="stu">
 						Linearity lets the transform take apart <fillin characters="4"/>
-						and pull out constant <fillin characters="9"/>&#8212;the same two
+						and pull out constant <fillin characters="9"/><mdash />the same two
 						moves that integrals allow.
 					</p>
 					<p component="key">
 						Linearity lets the transform take apart
 						<m>\underline{\textbf{sums}}</m> and pull out constant
-						<m>\underline{\textbf{multiples}}</m>&#8212;the same two moves
+						<m>\underline{\textbf{multiples}}</m><mdash />the same two moves
 						that integrals allow.
 					</p>
 				</li>
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-lt-ex-linearity" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-lt-ex-linearity-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					Use linearity and the table to compute:
@@ -204,7 +204,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lt-ex-linearity" component="key">
+		<exercise xml:id="ws-lt-ex-linearity-key" component="key">
 			<statement>
 				<p>
 					Use linearity and the table to compute:
@@ -241,7 +241,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False&#8212;and this is the most tempting wrong move in the
+					False<mdash />and this is the most tempting wrong move in the
 					chapter. Linearity covers <em>sums and constant multiples
 					only</em>; the transform of a product is not the product of the
 					transforms. (Quick check: <m>\mathcal{L}\{1\cdot 1\} = \frac{1}{s}</m>,
@@ -267,7 +267,7 @@
 				<mrow> \mathcal{L}\{y''\} \amp = s^2\,Y(s) - s\,y(0) - y'(0). </mrow>
 			</md>
 			Differentiation in the <m>t</m>-world is multiplication by <m>s</m>
-			in the <m>s</m>-world&#8212;with the initial conditions folded in
+			in the <m>s</m>-world<mdash />with the initial conditions folded in
 			automatically.
 		</p>
 
@@ -301,7 +301,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False&#8212;they enter <em>immediately</em> and automatically:
+					False<mdash />they enter <em>immediately</em> and automatically:
 					<m>y(0)</m> and <m>y'(0)</m> are baked into the derivative rules
 					themselves. This is a signature advantage of the transform method:
 					it solves the initial-value problem directly rather than finding a
@@ -310,7 +310,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-lt-ex-derivs" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-lt-ex-derivs-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					Suppose <m>y(0) = 5</m> and <m>y'(0) = -1</m>. Using
@@ -323,7 +323,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lt-ex-derivs" component="key">
+		<exercise xml:id="ws-lt-ex-derivs-key" component="key">
 			<statement>
 				<p>
 					Suppose <m>y(0) = 5</m> and <m>y'(0) = -1</m>. Using
@@ -358,7 +358,7 @@
 	<page>
 		<p><term>Putting it together: an IVP becomes algebra.</term></p>
 
-		<exercise xml:id="ws-lt-ex-ivp" component="stu" workspace="3.2in">
+		<exercise xml:id="ws-lt-ex-ivp-stu" component="stu" workspace="3.2in">
 			<statement>
 				<p>
 					Transform the entire initial-value problem
@@ -366,13 +366,13 @@
 						<mrow> y'' + 3y = 12e^{t}, \qquad y(0) = 2, \qquad y'(0) = 0 </mrow>
 					</md>
 					into an equation in <m>Y(s)</m>, then solve that equation for
-					<m>Y(s)</m>. (Stop there&#8212;recovering <m>y(t)</m> from
+					<m>Y(s)</m>. (Stop there<mdash />recovering <m>y(t)</m> from
 					<m>Y(s)</m> is the next worksheet's project.)
 				</p>
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lt-ex-ivp" component="key">
+		<exercise xml:id="ws-lt-ex-ivp-key" component="key">
 			<statement>
 				<p>
 					Transform the entire initial-value problem
@@ -380,7 +380,7 @@
 						<mrow> y'' + 3y = 12e^{t}, \qquad y(0) = 2, \qquad y'(0) = 0 </mrow>
 					</md>
 					into an equation in <m>Y(s)</m>, then solve that equation for
-					<m>Y(s)</m>. (Stop there&#8212;recovering <m>y(t)</m> from
+					<m>Y(s)</m>. (Stop there<mdash />recovering <m>y(t)</m> from
 					<m>Y(s)</m> is the next worksheet's project.)
 				</p>
 			</statement>
@@ -397,8 +397,8 @@
 						<mrow> Y(s) = \frac{12}{(s-1)\left(s^2+3\right)} + \frac{2s}{s^2+3}. </mrow>
 					</md>
 					The differential equation is gone: what remains is a rational
-					function of <m>s</m> holding the complete solution&#8212;forcing,
-					initial conditions, and all&#8212;in frozen form.
+					function of <m>s</m> holding the complete solution<mdash />forcing,
+					initial conditions, and all<mdash />in frozen form.
 				</p>
 			</solution>
 		</exercise>
@@ -411,7 +411,7 @@
 			<solution component="key">
 				<p>
 					False. The transform only asks that the integral converge, which
-					admits a far wilder class of forcing&#8212;including functions with
+					admits a far wilder class of forcing<mdash />including functions with
 					jumps and switches that undetermined coefficients cannot touch.
 					That generality is the method's whole reason for existing, and
 					piecewise forcing is where this chapter's story is headed.
@@ -425,8 +425,8 @@
 				We can now push an initial-value problem through the transform and
 				solve for <m>Y(s)</m> with pure algebra. The remaining leg of the
 				journey is the return trip: <em>inverting</em> the
-				transform&#8212;using partial fractions and the table read
-				backwards&#8212;to turn <m>Y(s)</m> back into the solution
+				transform<mdash />using partial fractions and the table read
+				backwards<mdash />to turn <m>Y(s)</m> back into the solution
 				<m>y(t)</m>. That is the next worksheet.
 			</p>
 		</conclusion>

@@ -35,7 +35,7 @@
 		<ul>
 			<li><p><term>Identify</term> LHCC equations: linear, homogeneous (zero forcing function), constant coefficients.</p></li>
 			<li><p><term>Explain</term> why exponentials <m>e^{rx}</m> are the natural candidates, and derive the characteristic equation by substitution.</p></li>
-			<li><p><term>Solve</term> second-order LHCC equations in all three cases&#8212;distinct real, complex, and repeated roots.</p></li>
+			<li><p><term>Solve</term> second-order LHCC equations in all three cases<mdash />distinct real, complex, and repeated roots.</p></li>
 			<li><p><term>Apply</term> two initial conditions to pin down both constants in an IVP.</p></li>
 			<li><p><term>Extend</term> the method to higher-order equations via factored characteristic polynomials.</p></li>
 		</ul>
@@ -54,8 +54,8 @@
 			<term>linear homogeneous constant coefficient</term> (LHCC) equations,
 			such as <m>a\,y'' + b\,y' + c\,y = 0</m>. Each word earns its place:
 			<em>linear</em> (no powers or products of <m>y</m> and its
-			derivatives), <em>homogeneous</em> (the forcing function&#8212;the
-			free term&#8212;is zero), and <em>constant coefficients</em> (the
+			derivatives), <em>homogeneous</em> (the forcing function<mdash />the
+			free term<mdash />is zero), and <em>constant coefficients</em> (the
 			multipliers <m>a, b, c</m> are numbers, not functions of <m>x</m>).
 		</p>
 
@@ -106,7 +106,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-identify" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-hl-ex-identify-stu" component="stu" workspace="2.2in">
 			<statement>
 				<p>
 					For each equation, decide whether it is LHCC. If not, name the
@@ -121,7 +121,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-identify" component="key">
+		<exercise xml:id="ws-hl-ex-identify-key" component="key">
 			<statement>
 				<p>
 					For each equation, decide whether it is LHCC. If not, name the
@@ -147,7 +147,7 @@
 					(c) Not linear: <m>(y')^2</m> raises a derivative to a power.
 				</p>
 				<p>
-					(d) LHCC&#8212;order three is welcome; nothing in the definition
+					(d) LHCC<mdash />order three is welcome; nothing in the definition
 					stops at second order.
 				</p>
 			</solution>
@@ -163,7 +163,7 @@
 
 		<p>
 			For <m>a\,y'' + b\,y' + c\,y</m> to collapse to zero, the three terms
-			must be <em>like-terms</em>&#8212;they must cancel by addition. That
+			must be <em>like-terms</em><mdash />they must cancel by addition. That
 			demands a function whose derivatives are like-terms with itself, and
 			the exponential <m>y = e^{rx}</m> is the function built for the job:
 			every derivative is just a constant multiple of <m>e^{rx}</m>.
@@ -203,13 +203,13 @@
 					<m>r</m> it is strictly positive, and even for a complex root
 					<m>r = \alpha + i\beta</m> its magnitude is
 					<m>e^{\alpha x} \gt 0</m>. So the product can vanish only if the
-					polynomial factor does&#8212;and that harmless-looking division is
+					polynomial factor does<mdash />and that harmless-looking division is
 					what converts calculus into algebra.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-ansatz" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-hl-ex-ansatz-stu" component="stu" workspace="2.8in">
 			<statement>
 				<p>
 					Substitute <m>y = e^{rx}</m> into
@@ -223,7 +223,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-ansatz" component="key">
+		<exercise xml:id="ws-hl-ex-ansatz-key" component="key">
 			<statement>
 				<p>
 					Substitute <m>y = e^{rx}</m> into
@@ -264,7 +264,7 @@
 
 		<p>
 			The quadratic <m>a r^2 + b r + c = 0</m> can behave three ways,
-			sorted by the discriminant <m>\Delta = b^2 - 4ac</m>&#8212;and each
+			sorted by the discriminant <m>\Delta = b^2 - 4ac</m><mdash />and each
 			way dictates the shape of the general solution.
 		</p>
 
@@ -300,7 +300,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-hl-ex-cases" component="stu" workspace="3.4in">
+		<exercise xml:id="ws-hl-ex-cases-stu" component="stu" workspace="3.4in">
 			<statement>
 				<p>
 					Find the general solution of each equation, and say which case it
@@ -314,7 +314,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-cases" component="key">
+		<exercise xml:id="ws-hl-ex-cases-key" component="key">
 			<statement>
 				<p>
 					Find the general solution of each equation, and say which case it
@@ -344,7 +344,7 @@
 					A decaying envelope times an oscillation.
 				</p>
 				<p>
-					(c) <m>r^2 + 9 = 0</m> gives <m>r = \pm 3i</m>&#8212;Case 2 with
+					(c) <m>r^2 + 9 = 0</m> gives <m>r = \pm 3i</m><mdash />Case 2 with
 					<m>\alpha = 0</m>, so the exponential envelope is
 					<m>e^{0x} = 1</m>:
 					<md>
@@ -363,7 +363,7 @@
 			<solution component="key">
 				<p>
 					False. Those two terms are like-terms, so the sum collapses to
-					<m>(c_1 + c_2)e^{rx}</m>&#8212;one arbitrary constant masquerading
+					<m>(c_1 + c_2)e^{rx}</m><mdash />one arbitrary constant masquerading
 					as two, which cannot meet two independent initial conditions. The
 					genuine second solution is <m>x\,e^{rx}</m>, giving
 					<m>y = c_1 e^{rx} + c_2\,x\,e^{rx}</m>.
@@ -382,13 +382,13 @@
 		<p>
 			A second-order general solution carries <em>two</em> arbitrary
 			constants, so an initial-value problem must supply <em>two</em>
-			conditions&#8212;typically <m>y(0)</m> and <m>y'(0)</m>. And the
+			conditions<mdash />typically <m>y(0)</m> and <m>y'(0)</m>. And the
 			characteristic-equation method scales: an order-<m>n</m> LHCC
 			equation yields a degree-<m>n</m> polynomial, and its <m>n</m> roots
 			build the general solution the same way.
 		</p>
 
-		<exercise xml:id="ws-hl-ex-ivp" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-hl-ex-ivp-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -400,7 +400,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-ivp" component="key">
+		<exercise xml:id="ws-hl-ex-ivp-key" component="key">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -424,14 +424,14 @@
 					<md>
 						<mrow> y = 2e^{-3x} - e^{2x}. </mrow>
 					</md>
-					Two constants, two conditions, one solution&#8212;the second-order
+					Two constants, two conditions, one solution<mdash />the second-order
 					echo of <q>each constant needs its own condition</q> from direct
 					integration.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-higher" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-hl-ex-higher-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					Find the general solution of the third-order equation
@@ -444,7 +444,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-higher" component="key">
+		<exercise xml:id="ws-hl-ex-higher-key" component="key">
 			<statement>
 				<p>
 					Find the general solution of the third-order equation
@@ -459,7 +459,7 @@
 				<p>
 					The characteristic equation is
 					<m>r^3 - 9r = r\,(r-3)(r+3) = 0</m>, with the three roots
-					<m>r = 0, 3, -3</m>. Each contributes a fundamental solution&#8212;and
+					<m>r = 0, 3, -3</m>. Each contributes a fundamental solution<mdash />and
 					<m>r = 0</m> contributes <m>e^{0x} = 1</m>, a constant:
 					<md>
 						<mrow> y = c_1 + c_2 e^{3x} + c_3 e^{-3x}. </mrow>
@@ -473,7 +473,7 @@
 		<conclusion>
 			<title>Looking ahead</title>
 			<p>
-				Homogeneous means nothing pushes on the system&#8212;the forcing
+				Homogeneous means nothing pushes on the system<mdash />the forcing
 				function is zero. The next worksheet turns the forcing on:
 				equations like <m>y'' + y' - 6y = f(x)</m> model driven springs and
 				circuits, and the method of <em>undetermined coefficients</em>

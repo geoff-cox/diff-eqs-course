@@ -57,7 +57,7 @@
 			<md>
 				<mrow> u_c(t) = \begin{cases} 0 \amp t \lt c \\ 1 \amp t \ge c \end{cases} </mrow>
 			</md>
-			&#8212;worth <m>0</m> before time <m>c</m>, worth <m>1</m> from
+			<mdash />worth <m>0</m> before time <m>c</m>, worth <m>1</m> from
 			<m>c</m> onward. Multiplying any function by <m>u_c(t)</m> silences
 			it before <m>c</m> and switches it on at <m>c</m>, which lets us
 			rewrite piecewise formulas as single expressions.
@@ -91,7 +91,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False. The step is instantaneous&#8212;a jump discontinuity, not a
+					False. The step is instantaneous<mdash />a jump discontinuity, not a
 					ramp. That abruptness is the whole point (an ideal switch), and it
 					is exactly the kind of forcing that undetermined coefficients
 					could never touch but the Laplace transform handles cleanly.
@@ -99,7 +99,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-pf-ex-stepform" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-pf-ex-stepform-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					(a) Evaluate <m>u_7(3)</m>, <m>u_7(7)</m>, and <m>u_7(10)</m>.
@@ -115,7 +115,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-pf-ex-stepform" component="key">
+		<exercise xml:id="ws-pf-ex-stepform-key" component="key">
 			<statement>
 				<p>
 					(a) Evaluate <m>u_7(3)</m>, <m>u_7(7)</m>, and <m>u_7(10)</m>.
@@ -167,7 +167,7 @@
 			The factor <m>e^{-cs}</m> is the <m>s</m>-domain fingerprint of a
 			delay: <q>whatever happens, it happens <m>c</m> seconds late.</q>
 			Note carefully that the second rule wants the <em>shifted</em>
-			function <m>f(t-c)</m> riding the switch&#8212;not plain
+			function <m>f(t-c)</m> riding the switch<mdash />not plain
 			<m>f(t)</m>.
 		</p>
 
@@ -194,7 +194,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-pf-ex-forward" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-pf-ex-forward-stu" component="stu" workspace="2.6in">
 			<statement>
 				<p>
 					Compute each transform:
@@ -207,7 +207,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-pf-ex-forward" component="key">
+		<exercise xml:id="ws-pf-ex-forward-key" component="key">
 			<statement>
 				<p>
 					Compute each transform:
@@ -243,7 +243,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False&#8212;the rule demands the <em>shifted</em> form
+					False<mdash />the rule demands the <em>shifted</em> form
 					<m>f(t-c)\,u_c(t)</m>. If the function on the switch is written in
 					plain <m>t</m>, you must first rewrite it in terms of
 					<m>t - c</m> (adding and subtracting <m>c</m> inside) before the
@@ -263,7 +263,7 @@
 
 		<p>
 			Going backwards, the recipe is: peel off the <m>e^{-cs}</m>, invert
-			what remains to get <m>f(t)</m>, then reattach the delay&#8212;every
+			what remains to get <m>f(t)</m>, then reattach the delay<mdash />every
 			<m>t</m> becomes <m>t - c</m>, and the whole thing rides
 			<m>u_c(t)</m>:
 			<md>
@@ -291,7 +291,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-pf-ex-inverse" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-pf-ex-inverse-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					Invert each transform, and for (b) describe the resulting function
@@ -304,7 +304,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-pf-ex-inverse" component="key">
+		<exercise xml:id="ws-pf-ex-inverse-key" component="key">
 			<statement>
 				<p>
 					Invert each transform, and for (b) describe the resulting function
@@ -322,7 +322,7 @@
 					<md>
 						<mrow> e^{2(t-6)}\,u_6(t). </mrow>
 					</md>
-					The exponent shifts too&#8212;<m>e^{2(t-6)}</m>, not
+					The exponent shifts too<mdash /><m>e^{2(t-6)}</m>, not
 					<m>e^{2t}</m>: the growth starts fresh at the switch.
 				</p>
 				<p>
@@ -332,7 +332,7 @@
 					<md>
 						<mrow> f(t) = t - (t-5)\,u_5(t) = \begin{cases} t \amp t \lt 5 \\ 5 \amp t \ge 5 \end{cases} </mrow>
 					</md>
-					&#8212;a ramp that climbs steadily and then freezes at height
+					<mdash />a ramp that climbs steadily and then freezes at height
 					<m>5</m>: the delayed ramp arrives and exactly cancels the
 					climb.
 				</p>
@@ -347,7 +347,7 @@
 	<page>
 		<p><term>The full method with a switch.</term></p>
 
-		<exercise xml:id="ws-pf-ex-solve" component="stu" workspace="3.6in">
+		<exercise xml:id="ws-pf-ex-solve-stu" component="stu" workspace="3.6in">
 			<statement>
 				<p>
 					A system is at rest until a constant input of strength <m>4</m>
@@ -362,7 +362,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-pf-ex-solve" component="key">
+		<exercise xml:id="ws-pf-ex-solve-key" component="key">
 			<statement>
 				<p>
 					A system is at rest until a constant input of strength <m>4</m>
@@ -395,7 +395,7 @@
 					(b) For <m>t \lt 3</m> the step is off and <m>y \equiv 0</m>: the
 					system stays asleep until the switch. Once on, the solution rises
 					from <m>0</m> and levels off at <m>2</m> as
-					<m>t \to \infty</m>&#8212;the same equilibrium a phase line for
+					<m>t \to \infty</m><mdash />the same equilibrium a phase line for
 					<m>y' = 4 - 2y</m> would predict, just delayed three seconds. Every
 					tool in the course is visible in this one answer.
 				</p>
@@ -410,7 +410,7 @@
 			<solution component="key">
 				<p>
 					True. Before the switch, the equation is homogeneous with zero
-					initial state, and zero satisfies it perfectly&#8212;nothing pushes,
+					initial state, and zero satisfies it perfectly<mdash />nothing pushes,
 					so nothing moves. The step form makes this visible in the answer
 					itself: every term of the response rides a <m>u_c(t)</m>.
 				</p>
@@ -421,10 +421,10 @@
 			<title>Looking ahead</title>
 			<p>
 				With switches in hand, the Laplace story is told: transform, solve,
-				invert&#8212;whatever the forcing throws at us. The final two
+				invert<mdash />whatever the forcing throws at us. The final two
 				worksheets change the cast instead of the forcing: <em>systems</em>
-				of differential equations, where two or more unknowns&#8212;predator
-				and prey, two coupled tanks&#8212;evolve together.
+				of differential equations, where two or more unknowns<mdash />predator
+				and prey, two coupled tanks<mdash />evolve together.
 			</p>
 		</conclusion>
 	</page>

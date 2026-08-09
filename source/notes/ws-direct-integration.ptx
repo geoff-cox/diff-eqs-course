@@ -43,7 +43,7 @@
 
 		<p>
 			Every antiderivative you have ever computed answers the question
-			<q>which function has this derivative?</q>&#8212;and that is exactly
+			<q>which function has this derivative?</q><mdash />and that is exactly
 			what a differential equation of the form <m>y' = f(x)</m> asks. The
 			<m>+C</m> your calculus instructor insisted on is precisely the
 			arbitrary constant that makes the answer a <em>general</em> solution.
@@ -89,13 +89,13 @@
 			<solution component="key">
 				<p>
 					True. Computing <m>\int f(x)\,dx</m> is answering <q>find <m>y</m>
-					with <m>y' = f(x)</m></q>&#8212;a differential equation. Calculus 1
+					with <m>y' = f(x)</m></q><mdash />a differential equation. Calculus 1
 					just never called it that.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-basic" component="stu" workspace="1.9in">
+		<exercise xml:id="ws-di-ex-basic-stu" component="stu" workspace="1.9in">
 			<statement>
 				<p>
 					Find the general solution of
@@ -107,7 +107,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-basic" component="key">
+		<exercise xml:id="ws-di-ex-basic-key" component="key">
 			<statement>
 				<p>
 					Find the general solution of
@@ -125,14 +125,14 @@
 					<md>
 						<mrow> y \amp = \int \left(4 - 2x^2\right) dx = 4x - \frac{2}{3}x^3 + c. </mrow>
 					</md>
-					Isolate first, then integrate&#8212;integrating
+					Isolate first, then integrate<mdash />integrating
 					<m>12 - 6x^2</m> without dividing by <m>3</m> first produces a
 					function whose derivative is <m>3y'</m>, not <m>y'</m>.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-ivp" component="stu" workspace="1.9in">
+		<exercise xml:id="ws-di-ex-ivp-stu" component="stu" workspace="1.9in">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -143,7 +143,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-ivp" component="key">
+		<exercise xml:id="ws-di-ex-ivp-key" component="key">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -201,7 +201,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-di-ex-trapped" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-di-ex-trapped-stu" component="stu" workspace="2.4in">
 			<statement>
 				<p>
 					For <m>x > 0</m>, find the general solution of
@@ -214,7 +214,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-trapped" component="key">
+		<exercise xml:id="ws-di-ex-trapped-key" component="key">
 			<statement>
 				<p>
 					For <m>x > 0</m>, find the general solution of
@@ -248,7 +248,7 @@
 			<solution component="key">
 				<p>
 					False. The variable of integration is <m>x</m>, and <m>y</m> is an
-					unknown <em>function</em> of <m>x</m>&#8212;not the integration
+					unknown <em>function</em> of <m>x</m><mdash />not the integration
 					variable. Until we know which function <m>y</m> is, the integral
 					<m>\int y\,dx</m> simply cannot be computed. (The formula
 					<m>\frac{y^2}{2} + c</m> would be the answer to the different
@@ -257,7 +257,7 @@
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-applies" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-di-ex-applies-stu" component="stu" workspace="2.2in">
 			<statement>
 				<p>
 					For each equation, decide whether direct integration applies. If it
@@ -273,7 +273,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-applies" component="key">
+		<exercise xml:id="ws-di-ex-applies-key" component="key">
 			<statement>
 				<p>
 					For each equation, decide whether direct integration applies. If it
@@ -296,7 +296,7 @@
 				<p>
 					(b) No: isolating the derivative gives <m>y' = 5x^2 + y</m>, and the
 					right side contains the dependent variable. Integrating would leave
-					the uncomputable <m>\int y\,dx</m> behind&#8212;we are stuck.
+					the uncomputable <m>\int y\,dx</m> behind<mdash />we are stuck.
 				</p>
 				<p>
 					(c) Yes: this is the trapped-derivative form
@@ -318,12 +318,12 @@
 		<p>
 			Nothing stops us from applying direct integration repeatedly: a
 			second-order equation <m>y'' = f(t)</m> surrenders after two
-			integrations&#8212;and each integration contributes its own arbitrary
+			integrations<mdash />and each integration contributes its own arbitrary
 			constant, which is exactly why the general solution carries two of
 			them.
 		</p>
 
-		<exercise xml:id="ws-di-ex-ball" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-di-ex-ball-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					A ball is thrown straight up from a balcony <m>2</m> meters above
@@ -339,7 +339,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-ball" component="key">
+		<exercise xml:id="ws-di-ex-ball-key" component="key">
 			<statement>
 				<p>
 					A ball is thrown straight up from a balcony <m>2</m> meters above
@@ -368,7 +368,7 @@
 					(c) The maximum occurs when the ball is momentarily motionless:
 					<m>y' = -10t + 15 = 0</m> at <m>t = 1.5</m> seconds (height
 					<m>y(1.5) = 13.25</m> m). Notice the velocity condition determined
-					<m>c_1</m> and the height condition determined <m>c_2</m>&#8212;each
+					<m>c_1</m> and the height condition determined <m>c_2</m><mdash />each
 					initial condition pins down the constant born in the corresponding
 					integration.
 				</p>
@@ -379,7 +379,7 @@
 			<title>Looking ahead</title>
 			<p>
 				Direct integration demands a right-hand side free of the dependent
-				variable&#8212;equations like <m>y' = 5x^2 + y</m> defeat it. The next
+				variable<mdash />equations like <m>y' = 5x^2 + y</m> defeat it. The next
 				worksheet develops <em>separation of variables</em>, our first
 				technique for equations where the dependent variable refuses to stay
 				out of the way.

@@ -48,13 +48,13 @@
 
 		<p>
 			Everything before the slope-fields worksheet produced an
-			<term>analytic solution</term>&#8212;an exact formula for <m>y(t)</m>.
+			<term>analytic solution</term><mdash />an exact formula for <m>y(t)</m>.
 			But many equations have no closed-form solution at all. A
 			<term>numerical method</term> gives up on the formula: starting from
 			the initial condition, it uses the differential equation to predict
 			the solution one small step at a time, producing a <em>table</em> of
 			approximate points instead. Euler's method is the simplest such
-			method&#8212;it is the slope field made mechanical.
+			method<mdash />it is the slope field made mechanical.
 		</p>
 
 		<!-- Reading check -->
@@ -66,7 +66,7 @@
 						An exact formula for <m>y(t)</m> is called an <term>analytic</term>
 						solution, also known as a <fillin characters="11"/>-form solution.
 						A numerical method instead produces a table of
-						<fillin characters="11"/> points&#8212;a <term>numerical
+						<fillin characters="11"/> points<mdash />a <term>numerical
 						solution</term>.
 					</p>
 					<p component="key">
@@ -74,7 +74,7 @@
 						solution, also known as a
 						<m>\underline{\textbf{closed}}</m>-form solution. A numerical
 						method instead produces a table of
-						<m>\underline{\textbf{approximate}}</m> points&#8212;a
+						<m>\underline{\textbf{approximate}}</m> points<mdash />a
 						<term>numerical solution</term>.
 					</p>
 				</li>
@@ -91,17 +91,17 @@
 					False. A numerical solution is a <em>list of points</em>
 					<m>(t_0,y_0), (t_1,y_1),\ldots</m> at chosen <m>t</m>-values, each
 					<m>y_k</m> only approximate. Between the listed <m>t</m>-values it
-					says nothing at all&#8212;there is no formula to plug into.
+					says nothing at all<mdash />there is no formula to plug into.
 				</p>
 			</solution>
 		</exercise>
 
-		<exercise xml:id="ws-em-ex-which-tool" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-em-ex-which-tool-stu" component="stu" workspace="2.4in">
 			<statement>
 				<p>
 					For each differential equation, name every analytic technique from
 					this course that applies (direct integration, separation of
-					variables, integrating factor)&#8212;or conclude that none do, so a
+					variables, integrating factor)<mdash />or conclude that none do, so a
 					numerical method would be our only option for an initial-value
 					problem built on it.
 					<md>
@@ -113,12 +113,12 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-em-ex-which-tool" component="key">
+		<exercise xml:id="ws-em-ex-which-tool-key" component="key">
 			<statement>
 				<p>
 					For each differential equation, name every analytic technique from
 					this course that applies (direct integration, separation of
-					variables, integrating factor)&#8212;or conclude that none do, so a
+					variables, integrating factor)<mdash />or conclude that none do, so a
 					numerical method would be our only option for an initial-value
 					problem built on it.
 					<md>
@@ -136,7 +136,7 @@
 				<p>
 					(b) Neither: <m>\sin(t+y)</m> is not a product of a <m>t</m>-part
 					and a <m>y</m>-part, and the equation is not linear. None of our
-					formula-producing techniques apply&#8212;this one is exactly why
+					formula-producing techniques apply<mdash />this one is exactly why
 					numerical methods exist.
 				</p>
 				<p>
@@ -163,7 +163,7 @@
 			<md>
 				<mrow> (t,\ y)\ \longrightarrow\ (t + h,\ y + \text{slope}\cdot h). </mrow>
 			</md>
-			The slope comes straight from the differential equation&#8212;the same
+			The slope comes straight from the differential equation<mdash />the same
 			slope generator that drew our slope fields.
 		</p>
 
@@ -190,7 +190,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-em-ex-onestep" component="stu" workspace="2.0in">
+		<exercise xml:id="ws-em-ex-onestep-stu" component="stu" workspace="2.0in">
 			<statement>
 				<p>
 					(a) You are at the point <m>(2,\ 5)</m> and the slope there is
@@ -207,7 +207,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-em-ex-onestep" component="key">
+		<exercise xml:id="ws-em-ex-onestep-key" component="key">
 			<statement>
 				<p>
 					(a) You are at the point <m>(2,\ 5)</m> and the slope there is
@@ -236,7 +236,7 @@
 					<md>
 						<mrow> (1,\ 3)\ \longrightarrow\ (1 + 0.1,\ 3 + (-1)(0.1)) = (1.1,\ 2.9). </mrow>
 					</md>
-					That is the entire mechanical heart of Euler's method&#8212;everything
+					That is the entire mechanical heart of Euler's method<mdash />everything
 					else is repetition.
 				</p>
 			</solution>
@@ -252,7 +252,7 @@
 					True. At an equilibrium <m>c</m>, <m>f(c) = 0</m>, so each update
 					adds <m>h\cdot 0 = 0</m>: the method reproduces the constant
 					solution exactly. Euler's method and the phase line agree about
-					standing still&#8212;it is everywhere <em>else</em> that the method
+					standing still<mdash />it is everywhere <em>else</em> that the method
 					only approximates.
 				</p>
 			</solution>
@@ -272,7 +272,7 @@
 			<m>t_{k+1} = t_k + h</m>, start at the initial condition (the one
 			point we know exactly), and repeat the one-step move. Writing
 			<m>y_k</m> for the approximation at <m>t_k</m>, the whole method is
-			one line&#8212;the <term>update rule</term>:
+			one line<mdash />the <term>update rule</term>:
 			<md>
 				<mrow> y_{k+1} = y_k + h\cdot f(t_k,\ y_k). </mrow>
 			</md>
@@ -285,14 +285,14 @@
 				<li>
 					<p component="stu">
 						The first point of the approximation costs nothing to
-						compute&#8212;it is the <fillin characters="17"/>. Each later
+						compute<mdash />it is the <fillin characters="17"/>. Each later
 						<m>y</m>-value is found from the previous point by adding
 						<m>h</m> times the slope <m>f</m> evaluated at the
 						<fillin characters="8"/> point.
 					</p>
 					<p component="key">
 						The first point of the approximation costs nothing to
-						compute&#8212;it is the
+						compute<mdash />it is the
 						<m>\underline{\textbf{initial condition}}</m>. Each later
 						<m>y</m>-value is found from the previous point by adding
 						<m>h</m> times the slope <m>f</m> evaluated at the
@@ -302,7 +302,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-em-ex-table" component="stu" workspace="3.2in">
+		<exercise xml:id="ws-em-ex-table-stu" component="stu" workspace="3.2in">
 			<statement>
 				<p>
 					Use Euler's method with step size <m>h = 0.5</m> to approximate the
@@ -328,7 +328,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-em-ex-table" component="key">
+		<exercise xml:id="ws-em-ex-table-key" component="key">
 			<statement>
 				<p>
 					Use Euler's method with step size <m>h = 0.5</m> to approximate the
@@ -373,12 +373,12 @@
 					<row><cell><m>0</m></cell><cell><m>0</m></cell><cell><m>1</m></cell><cell><m>-1</m></cell></row>
 					<row><cell><m>1</m></cell><cell><m>0.5</m></cell><cell><m>0.5</m></cell><cell><m>0.5</m></cell></row>
 					<row><cell><m>2</m></cell><cell><m>1</m></cell><cell><m>0.75</m></cell><cell><m>1.25</m></cell></row>
-					<row><cell><m>3</m></cell><cell><m>1.5</m></cell><cell><m>1.375</m></cell><cell>&#8212;</cell></row>
+					<row><cell><m>3</m></cell><cell><m>1.5</m></cell><cell><m>1.375</m></cell><cell><mdash /></cell></row>
 				</tabular>
 				<p>
 					The approximation is the four points
 					<m>(0,1),\ (0.5,0.5),\ (1,0.75),\ (1.5,1.375)</m>. Notice the
-					rhythm: <em>slope, step, repeat</em>&#8212;and that no slope is
+					rhythm: <em>slope, step, repeat</em><mdash />and that no slope is
 					needed at the final point, since we never step past
 					<m>t = 1.5</m>.
 				</p>
@@ -395,12 +395,12 @@
 
 		<p>
 			Each Euler step pretends the slope stays constant across the whole
-			step&#8212;but along the true solution the slope keeps changing. That
+			step<mdash />but along the true solution the slope keeps changing. That
 			mismatch injects a small error at every step, and the errors
 			compound. The standard remedy: take more, smaller steps.
 		</p>
 
-		<exercise xml:id="ws-em-ex-accuracy" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-em-ex-accuracy-stu" component="stu" workspace="3.0in">
 			<statement>
 				<p>
 					The initial-value problem
@@ -418,7 +418,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-em-ex-accuracy" component="key">
+		<exercise xml:id="ws-em-ex-accuracy-key" component="key">
 			<statement>
 				<p>
 					The initial-value problem
@@ -446,7 +446,7 @@
 				</p>
 				<p>
 					(c) Exact <m>\approx 7.389</m>; the <m>h=1</m> estimate is <m>3</m>
-					and the <m>h=0.5</m> estimate is <m>4</m>&#8212;halving <m>h</m>
+					and the <m>h=0.5</m> estimate is <m>4</m><mdash />halving <m>h</m>
 					moved the answer meaningfully toward the truth. Both undershoot
 					because the true solution bends <em>upward</em>: its slope grows
 					throughout each step, while Euler keeps using a stale slope from
@@ -463,7 +463,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False&#8212;it is exactly backwards. Bigger steps hold a single
+					False<mdash />it is exactly backwards. Bigger steps hold a single
 					stale slope over a longer stretch, so more error is injected per
 					step. Accuracy improves as <m>h</m> <em>shrinks</em>; the price is
 					more steps of arithmetic, which is why this method belongs to
@@ -477,8 +477,8 @@
 			<p>
 				Euler's method turns any first-order equation into arithmetic, no
 				matter how unsolvable its formula. But numerical tables are not the
-				end of the story: for an important family&#8212;<em>homogeneous
-				linear equations with constant coefficients</em>&#8212;beautiful
+				end of the story: for an important family<mdash /><em>homogeneous
+				linear equations with constant coefficients</em><mdash />beautiful
 				exact solutions exist, even at second order and beyond. The next
 				worksheet builds them.
 			</p>

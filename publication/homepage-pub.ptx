@@ -9,7 +9,9 @@
 <publication>
 
 	<source>
-		<version include="html" />
+		<version include="
+			html
+		" />
 	</source>
 
 	<common>

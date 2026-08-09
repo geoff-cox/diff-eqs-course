@@ -51,7 +51,7 @@
 			<term>inverse Laplace transform</term>, <m>\mathcal{L}^{-1}</m>,
 			thaws it: it undoes the forward transform, carrying functions of
 			<m>s</m> back to functions of <m>t</m>. In practice, inverting means
-			<em>reading the table backwards</em>&#8212;and, like the forward
+			<em>reading the table backwards</em><mdash />and, like the forward
 			transform, <m>\mathcal{L}^{-1}</m> is linear.
 		</p>
 
@@ -79,7 +79,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-lm-ex-invert" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-lm-ex-invert-stu" component="stu" workspace="2.8in">
 			<statement>
 				<p>
 					Invert each transform (the table:
@@ -97,7 +97,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lm-ex-invert" component="key">
+		<exercise xml:id="ws-lm-ex-invert-key" component="key">
 			<statement>
 				<p>
 					Invert each transform (the table:
@@ -141,7 +141,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					True&#8212;inverse linearity is what makes the whole strategy
+					True<mdash />inverse linearity is what makes the whole strategy
 					work: chop <m>Y(s)</m> into table-sized pieces, invert each piece
 					separately, and add the results back together.
 				</p>
@@ -158,7 +158,7 @@
 
 		<p>
 			Solving for <m>Y(s)</m> usually produces a rational function whose
-			denominator is a <em>product</em> of factors&#8212;no table entry
+			denominator is a <em>product</em> of factors<mdash />no table entry
 			looks like that. <term>Partial fraction decomposition</term> (PFD)
 			splits it into a sum of table-ready pieces: each linear factor
 			<m>(s - a)</m> contributes a term <m>\frac{A}{s-a}</m>.
@@ -170,12 +170,12 @@
 			<ol>
 				<li>
 					<p component="stu">
-						PFD is not the inverse transform itself&#8212;it is the
+						PFD is not the inverse transform itself<mdash />it is the
 						<fillin characters="11"/> step that rewrites <m>Y(s)</m> as a sum
 						of pieces, each matching a <fillin characters="5"/> entry.
 					</p>
 					<p component="key">
-						PFD is not the inverse transform itself&#8212;it is the
+						PFD is not the inverse transform itself<mdash />it is the
 						<m>\underline{\textbf{preparation}}</m> step that rewrites
 						<m>Y(s)</m> as a sum of pieces, each matching a
 						<m>\underline{\textbf{table}}</m> entry.
@@ -184,7 +184,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-lm-ex-pfd" component="stu" workspace="3.2in">
+		<exercise xml:id="ws-lm-ex-pfd-stu" component="stu" workspace="3.2in">
 			<statement>
 				<p>
 					Decompose and invert:
@@ -198,7 +198,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lm-ex-pfd" component="key">
+		<exercise xml:id="ws-lm-ex-pfd-key" component="key">
 			<statement>
 				<p>
 					Decompose and invert:
@@ -226,7 +226,7 @@
 						<mrow> y(t) = 2e^{t} + 3e^{-4t}. </mrow>
 					</md>
 					Plugging the factor's root into the rest of the expression is the
-					fastest route to each coefficient&#8212;each choice of <m>s</m>
+					fastest route to each coefficient<mdash />each choice of <m>s</m>
 					silences one unknown.
 				</p>
 			</solution>
@@ -239,7 +239,7 @@
 			</statement>
 			<solution component="key">
 				<p>
-					False. PFD is pure algebra&#8212;it changes how <m>Y(s)</m> is
+					False. PFD is pure algebra<mdash />it changes how <m>Y(s)</m> is
 					<em>written</em>, not what it <em>is</em>, and no <m>t</m> appears
 					anywhere in it. The inverse transform is the separate, final step
 					that actually crosses back to the time domain.
@@ -280,7 +280,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-lm-ex-first" component="stu" workspace="3.4in">
+		<exercise xml:id="ws-lm-ex-first-stu" component="stu" workspace="3.4in">
 			<statement>
 				<p>
 					Solve the initial-value problem with the Laplace method:
@@ -293,7 +293,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lm-ex-first" component="key">
+		<exercise xml:id="ws-lm-ex-first-key" component="key">
 			<statement>
 				<p>
 					Solve the initial-value problem with the Laplace method:
@@ -327,7 +327,7 @@
 				</p>
 				<p>
 					Check: <m>y' + 5y = 5e^{-5t} + 10 - 5e^{-5t} = 10</m> and
-					<m>y(0) = 2 - 1 = 1</m>. The round trip is complete&#8212;and
+					<m>y(0) = 2 - 1 = 1</m>. The round trip is complete<mdash />and
 					notice there was no general solution and no constant-fitting: the
 					initial condition rode along from Step 1.
 				</p>
@@ -342,7 +342,7 @@
 	<page>
 		<p><term>Second order, same round trip.</term></p>
 
-		<exercise xml:id="ws-lm-ex-second" component="stu" workspace="3.6in">
+		<exercise xml:id="ws-lm-ex-second-stu" component="stu" workspace="3.6in">
 			<statement>
 				<p>
 					Solve with the Laplace method:
@@ -353,7 +353,7 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lm-ex-second" component="key">
+		<exercise xml:id="ws-lm-ex-second-key" component="key">
 			<statement>
 				<p>
 					Solve with the Laplace method:
@@ -390,7 +390,7 @@
 					Both initial conditions check: <m>y(0) = 2 - 1 = 1</m> and
 					<m>y'(0) = -4 + 5 = 1</m>. The characteristic polynomial from the
 					c8 worksheet reappears here as the coefficient of
-					<m>Y(s)</m>&#8212;the two methods are cousins, but this one absorbs
+					<m>Y(s)</m><mdash />the two methods are cousins, but this one absorbs
 					the initial conditions without a system of equations at the end.
 				</p>
 			</solution>
@@ -407,8 +407,8 @@
 					forward transform, the <m>Y(s)</m> you solve for already belongs
 					to <em>the</em> solution, not a family. Skipping the
 					constant-fitting stage is one of the method's two selling points;
-					the other&#8212;handling forcing that switches on and
-					off&#8212;is next.
+					the other<mdash />handling forcing that switches on and
+					off<mdash />is next.
 				</p>
 			</solution>
 		</exercise>
@@ -418,8 +418,8 @@
 			<p>
 				The round trip works: transform, solve, invert. So far our forcing
 				functions have been smooth and permanent. The final Laplace
-				worksheet brings in the <em>unit step function</em>&#8212;forcing
-				that switches on at a chosen moment&#8212;where the transform
+				worksheet brings in the <em>unit step function</em><mdash />forcing
+				that switches on at a chosen moment<mdash />where the transform
 				method leaves every earlier technique behind.
 			</p>
 		</conclusion>
