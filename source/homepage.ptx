@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pretext
 	xml:lang="en-US"
-	xmlns:xi="http://www.w3.org/2001/XInclude"
->
+	xmlns:xi="http://www.w3.org/2001/XInclude">
 	
 	<docinfo>
 		<document-id>ma311-homepage</document-id>
@@ -86,8 +85,7 @@
 
 		<section xml:id="ma311-syllabus"
 			xml:lang="en-US"
-			xmlns:xi="http://www.w3.org/2001/XInclude"
-		>
+			xmlns:xi="http://www.w3.org/2001/XInclude">
 			<title>Syllabus</title>
 
 			<introduction>
