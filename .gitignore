@@ -1,4 +1,4 @@
-# This file was automatically generated with PreTeXt 2.28.2.
+# This file was automatically generated with PreTeXt 2.48.1.
 # If you modify this file, PreTeXt will no longer automatically update it.
 #
 # Boilerplate list of files in a PreTeXt project for git to ignore
@@ -6,7 +6,7 @@
 !.gitignore
 
 # don't track unpublished builds or stage (note: Runestone uses `published`)
-pretext-output
+output
 published
 
 # don't track assets generated from source
@@ -92,7 +92,7 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 
 # Don't track common virtual environment directories
-.venv
+venv/
 
 # Don't include Dropbox settings and caches
 .dropbox
@@ -105,7 +105,3 @@ codechat_config.yaml
 # Don't track deprecated workflows
 .github/workflows/deploy.yml
 .github/workflows/test-build.yml
-
-.vscode
-
-output

@@ -1,7 +1,7 @@
-<subsection xml:id="work-for-grade">
+<section xml:id="work-for-grade">
 	<title>Work For Grade</title>
 	
-	<subsubsection xml:id="vmi-work-for-grade">
+	<subsection xml:id="vmi-work-for-grade">
 		<title>VMI</title>
 	
 		<p>
@@ -47,7 +47,7 @@
 
 		<p>
 			Each student bears the responsibility for familiarizing himself or herself thoroughly 
-      with the policies stated in this subsection, with any supplementary statement regarding 
+      with the policies stated in this section, with any supplementary statement regarding 
       work for grade expressed by the academic department in which he or she is taking a 
       course, and with any special conditions provided in writing by the professor for a 
       given assignment. The student should consult the course's instructor if there is any 
@@ -61,9 +61,9 @@
       by the Honor Court, result in his or her being dismissed from VMI. Neither ignorance 
       nor professed confusion about the correct interpretation of these policies is an excuse.
 		</p>
-	</subsubsection>
+	</subsection>
 
-	<subsubsection xml:id="math-work-for-grade">
+	<subsection xml:id="math-work-for-grade">
 		<title>Applied Math</title>
 
 		<p>
@@ -156,5 +156,5 @@
 			</p>
 		</paragraphs>
 
-	</subsubsection>
-</subsection>
+	</subsection>
+</section>

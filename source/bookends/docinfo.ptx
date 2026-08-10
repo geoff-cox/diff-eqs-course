@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <docinfo>
   <document-id>ma311-homepage</document-id>
-  <!-- <brandlogo
-    url="https://www.vmi.edu/"
-    source="figures/title-icon-1-bk.png"
-  /> -->
+    <!-- <brandlogo
+      url="https://www.vmi.edu/"
+      source="figures/title-icon-1-bk.png"
+    /> -->
 
-  <directories
-    external="../assets"
-  />
+    <directories external="../assets" />
 
-  <latex-image-preamble>
-    \usepackage{graphicx}
-    \usepackage{tikz, pgfplots}
-    \usetikzlibrary{positioning,matrix,arrows}
-    \usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
-    \usetikzlibrary{decorations.markings}
-    \usepackage{dsfont}
-  </latex-image-preamble>
-  
-  <macros>
-    \usepackage{graphicx}
-    \usepackage{cancel}
-    \usepackage[normalem]{ulem}
-    \usepackage{soul}
-  </macros>
+		<latex-image-preamble>
+			\usepackage{graphicx}
+			\usepackage{tikz, pgfplots}
+			\usetikzlibrary{positioning,matrix,arrows}
+			\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+			\usetikzlibrary{decorations.markings}
+			\usepackage{dsfont}
+		</latex-image-preamble>
+		
+		<macros>
+			\usepackage{graphicx}
+			\usepackage{cancel}
+			\usepackage[normalem]{ulem}
+			\usepackage{soul}
+		</macros>
 
-  <blurb shelf="none">
-    A research journal and undergraduate guide for the PROTEUS Short-Answer
-    project. The book separates the project's stable analytic framework and
-    coding protocol from current software documentation, training materials,
-    and dated research records.
-  </blurb>
+		<blurb shelf="none">
+			My DE course homepage for MA311: Differential Equations.
+		</blurb>
 
-  <rename element="solution">↕️</rename>
-  <rename element="objectives">
-    🎯 By the end of our discussion, you should be able to ...
-  </rename>
-  <rename element="aside">Note</rename>
+		<rename element="solution">↕️</rename>
+		<rename element="objectives">
+			🎯 By the end of our discussion, you should be able to ...
+		</rename>
+		<rename element="aside">Note</rename>
 
-</docinfo>
+	</docinfo>

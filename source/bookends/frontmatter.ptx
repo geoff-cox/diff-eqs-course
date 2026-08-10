@@ -1,4 +1,9 @@
-<!-- <frontmatter label="frontmatter">
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This frontmatter division will contain all content before the -->
+<!-- first chapter. Fill in and comment/uncomment to see how this -->
+<!-- works. -->
+
+<frontmatter>
 	<bibinfo>
 		<author>
 			<personname>Dr. Geoffrey Cox (LTC)</personname>
@@ -17,7 +22,6 @@
 							<p>Office Hours:</p>
 							<p>
 								<ul marker="">
-									<!-- TODO(geoff): Fall 2026 office hours <mdash/> replace the TBD-FA26 stub. -->
 									<li><alert>[TBD-FA26: office hours]</alert>,</li>
 									<li>By Appointment</li>
 								</ul>
@@ -35,5 +39,4 @@
 	<titlepage>
 		<titlepage-items/>
 	</titlepage>
-
-</frontmatter> -->
+</frontmatter>
