@@ -9,6 +9,7 @@
 <publication>
 
 	<source>
+    <directories generated="../generated-assets" />
 		<version include="
 			html
 		" />

@@ -45,7 +45,7 @@
 		<title>MA 311</title>
 		<subtitle>Ordinary Differential Equations - Fall 2026</subtitle>
 
-		<frontmatter xml:id="frontmatter-homepage">
+		<frontmatter>
 			<bibinfo>
 				<author>
 					<personname>Dr. Geoffrey Cox (LTC)</personname>
