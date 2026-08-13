@@ -2,34 +2,34 @@
 <docinfo>
   <document-id>ma311-homepage</document-id>
 
-    <directories external="../assets" />
+	<directories external="../assets" />
 
-		<latex-image-preamble>
-			\usepackage{graphicx}
-			\usepackage{tikz, pgfplots}
-			\usetikzlibrary{positioning,matrix,arrows}
-			\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
-			\usetikzlibrary{decorations.markings}
-			\usepackage{dsfont}
-		</latex-image-preamble>
+	<latex-image-preamble>
+		\usepackage{graphicx}
+		\usepackage{tikz, pgfplots}
+		\usetikzlibrary{positioning,matrix,arrows}
+		\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+		\usetikzlibrary{decorations.markings}
+		\usepackage{dsfont}
+	</latex-image-preamble>
 
-		<macros>
-			\usepackage{graphicx}
-			\usepackage{cancel}
-			\usepackage[normalem]{ulem}
-			\usepackage{soul}
-		</macros>
+	<macros>
+		\usepackage{graphicx}
+		\usepackage{cancel}
+		\usepackage[normalem]{ulem}
+		\usepackage{soul}
+	</macros>
 
-		<blurb shelf="none">
-			DE course notes for MA311: Differential Equations.
-		</blurb>
+	<blurb shelf="none">
+		DE course notes for MA311: Differential Equations.
+	</blurb>
 
-		<rename element="solution">
-			🔎 Solution
-		</rename>
-		<rename element="objectives">
-			🎯 Learning Objectives
-		</rename>
-		<rename element="aside">Note</rename>
+	<rename element="solution">
+		🔎 Solution
+	</rename>
+	<rename element="objectives">
+		🎯 Learning Objectives
+	</rename>
+	<rename element="aside">Note</rename>
 
-	</docinfo>
+</docinfo>
