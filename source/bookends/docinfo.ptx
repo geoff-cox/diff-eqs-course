@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <docinfo>
   <document-id>ma311-homepage</document-id>
-    <!-- <brandlogo
-      url="https://www.vmi.edu/"
-      source="figures/title-icon-1-bk.png"
-    /> -->
 
     <directories external="../assets" />
 
@@ -16,7 +12,7 @@
 			\usetikzlibrary{decorations.markings}
 			\usepackage{dsfont}
 		</latex-image-preamble>
-		
+
 		<macros>
 			\usepackage{graphicx}
 			\usepackage{cancel}
@@ -25,12 +21,14 @@
 		</macros>
 
 		<blurb shelf="none">
-			My DE course homepage for MA311: Differential Equations.
+			DE course notes for MA311: Differential Equations.
 		</blurb>
 
-		<rename element="solution">↕️</rename>
+		<rename element="solution">
+			🔎 Solution
+		</rename>
 		<rename element="objectives">
-			🎯 By the end of our discussion, you should be able to ...
+			🎯 Learning Objectives
 		</rename>
 		<rename element="aside">Note</rename>
 

@@ -13,20 +13,24 @@
 			<support>
 				<ul marker="">
 					<li>
-						<sidebyside widths="14% 20%" margins="33% 33%">
-							<p>Office:</p><p>MA 425</p>
-						</sidebyside>
-					</li>
-					<li>
-						<sidebyside widths="16% 28%" margins="28% 28%">
-							<p>Office Hours:</p>
-							<p>
-								<ul marker="">
-									<li><alert>[TBD-FA26: office hours]</alert>,</li>
-									<li>By Appointment</li>
-								</ul>
-							</p>
-						</sidebyside>
+						<tabular>
+							<col width="20%"/>
+							<col width="10%"/>
+							<col width="40%"/>
+							<row>
+								<cell><p>Office:</p></cell>
+								<cell colspan="2"><p>MA 425</p></cell>
+							</row>
+							<row>
+								<cell><p>Office Hours:</p></cell>
+								<cell><p>MWF:</p></cell>
+								<cell><p>1100-1300, 1430-1530</p></cell>
+							</row>
+							<row>
+								<cell></cell>
+								<cell colspan="2"><p>By Appointment</p></cell>
+							</row>
+						</tabular>
 					</li>
 				</ul>
 			</support>
@@ -35,7 +39,7 @@
 			Last Updated: <today />
 		</date>
 	</bibinfo>
-		
+
 	<titlepage>
 		<titlepage-items/>
 	</titlepage>

@@ -1,89 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pretext
-	xml:lang="en-US"
-	xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 	
-	<docinfo>
-		<document-id>ma311-homepage</document-id>
-
-		<directories
-			external="../assets"
-		/>
-
-		<latex-image-preamble>
-			\usepackage{graphicx}
-			\usepackage{tikz, pgfplots}
-			\usetikzlibrary{positioning,matrix,arrows}
-			\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
-			\usetikzlibrary{decorations.markings}
-			\usepackage{dsfont}
-		</latex-image-preamble>
-		
-		<macros>
-			\usepackage{graphicx}
-			\usepackage{cancel}
-			\usepackage[normalem]{ulem}
-			\usepackage{soul}
-		</macros>
-
-		<blurb shelf="none">
-			A research journal and undergraduate guide for the PROTEUS Short-Answer
-			project. The book separates the project's stable analytic framework and
-			coding protocol from current software documentation, training materials,
-			and dated research records.
-		</blurb>
-
-		<rename element="solution">
-			🔎 Solution
-		</rename>
-		<rename element="objectives">
-			🎯 Learning Objectives
-		</rename>
-		<rename element="aside">Note</rename>
-
-	</docinfo>
+	<xi:include href="./bookends/docinfo.ptx" />
 
 	<article xml:id="ma311-notes">
 		<title>MA 311</title>
 		<subtitle>Guided Lecture Notes</subtitle>
 
-		<frontmatter xml:id="frontmatter-homepage">
-			<bibinfo>
-				<author>
-					<personname>Dr. Geoffrey Cox (LTC)</personname>
-					<department>Applied Mathematics</department>
-					<institution>Virginia Military Institute</institution>
-					<email>coxgeoff@vmi.edu</email>
-					<support>
-						<ul marker="">
-							<li>
-								<sidebyside widths="14% 20%" margins="33% 33%">
-									<p>Office:</p><p>MA 425</p>
-								</sidebyside>
-							</li>
-							<li>
-								<sidebyside widths="16% 28%" margins="28% 28%">
-									<p>Office Hours:</p>
-									<p>
-										<ul marker="">
-											<li><alert>[TBD-FA26: office hours]</alert>,</li>
-											<li>By Appointment</li>
-										</ul>
-									</p>
-								</sidebyside>
-							</li>
-						</ul>
-					</support>
-				</author>
-				<date>
-					Last Updated: <today />
-				</date>
-			</bibinfo>
-				
-			<titlepage>
-				<titlepage-items/>
-			</titlepage>
-		</frontmatter>
+		<xi:include href="./bookends/frontmatter.ptx" />
 
 		<xi:include href="./notes/ws-what-is-a-de.ptx"/>
 		<xi:include href="./notes/ws-classification.ptx"/>

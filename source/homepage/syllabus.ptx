@@ -3,15 +3,15 @@
 <chapter xml:id="ma311-syllabus" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Syllabus</title>
 
-	<introduction>
-		<p>
-			Carefully review every item of this syllabus. By taking this course, you are agreeing
-			to the policies laid out in this document. Let me know if you have any questions.
-		</p>
-	</introduction>
-
 	<section xml:id="ma311-general-info">
 		<title>General</title>
+
+		<introduction>
+			<p>
+				Carefully review every item of this syllabus. By taking this course, you are agreeing
+				to the policies laid out in this document. Let me know if you have any questions.
+			</p>
+		</introduction>
 
 		<subsection xml:id="ma311-instructor-info">
 			<title>Instructor Information</title>
@@ -21,7 +21,7 @@
 					<li><title>Instructor</title><p>Geoffrey Cox PhD (LTC)</p></li>
 					<li><title>Email</title><p><url href="mailto:coxgeoff@vmi.edu">coxgeoff@vmi.edu</url></p></li>
 					<li><title>Office</title><p>MA 425</p></li>
-					<li><title>Office Hours</title><p>MWF: 1430-1600, By Appointment</p></li>
+					<li><title>Office Hours</title><p>MWF: 1100-1300, 1430-1530, By Appointment</p></li>
 				</dl>
 			</p>
 
@@ -36,8 +36,10 @@
 							Ordinary differential equations (ODEs); Applications; Laplace transforms; Systems of ODEs.
 						</p>
 					</li>
-					<!-- TODO(geoff): Fall 2026 meeting info <mdash/> replace the TBD-FA26 stub. -->
-					<li><title>Meetings</title><p><alert>[TBD-FA26: room / days / times]</alert></p></li>
+					<li><title>Meetings</title>
+						<p>Section 01: MWF 0900-0950 in MH 213</p>
+						<p>Section 02: MWF 1000-1050 in MH 213</p>
+					</li>
 					<li><title>Prerequisite</title><p>Grade of C or better in MA 124</p></li>
 					<li><title>Department Head</title><p>COL Troy Siemers</p></li>
 				</dl>
@@ -128,13 +130,6 @@
 						Each topic also includes a set of online exercises that must be completed in WeBWorK. Most problems require step-by-step work, so you should complete them on paper before entering final answers online. Problems may allow multiple attempts; if you struggle, use it as a chance to learn and ask for help before using all of your attempts.
 					</p>
 			</paragraphs>
-
-			<!-- <paragraphs>
-				<title>Modeling Scenarios</title>
-					<p>
-						Modeling scenarios connect course concepts to real-world applications. You will translate a real question into a differential equation, solve the equation, and explain how the solution answers the original question. Your write-up should include both the mathematical work and a clear explanation in your own words. Submissions must be printed and handed in on paper.
-					</p>
-			</paragraphs> -->
 		</subsection>
 
 		<subsection xml:id="ma311-odps">
@@ -157,6 +152,22 @@
 				You will take a traditional final exam that is points-based and covers all topics from the course. You will also have one final opportunity to demonstrate proficiency in one or more core topics. While the exam may include secondary topics, those questions will not count toward secondary passes.
 			</p>
 		</subsection>
+
+		<subsection>
+			<title>Secondary(S) Topic Pass ➜ 1% Homework</title>
+				<p>
+					You can trade in one Secondary Topic P for a flat 1% increase to your homework grade. 
+					Here are the rules:
+					<ul>
+						<li>To trade in a P, email me with the particular S-topic you want to trade in.</li>
+						<li>After you trade it in, you lose the P for that S-topic.</li>
+						<li>You can repass an S-topic that you have traded in.</li>
+						<li>You may not trade in more than one P for the same S-topic.</li>
+						<li>You must submit your trade-in request before the final exam.</li>
+					</ul>
+				</p>
+		</subsection>
+
 	</section>
 
 	<section xml:id="ma311-resources">
@@ -167,6 +178,17 @@
 				The resources listed will be used in this course. You are expected to access and use them regularly, as each one plays a specific role in supporting your learning and success in MA311.
 			</p>
 		</introduction>
+
+		<subsection xml:id="ma311-materials-canvas">
+			<title>Canvas</title>
+
+			<p>
+				Canvas will serve as the central hub for course communication and materials.
+				Announcements, lecture slides, discussion worksheets, and assignment links
+				will be posted here. It is your responsibility to check Canvas regularly and
+				read announcements in a timely manner.
+			</p>
+		</subsection>
 
 		<subsection xml:id="ma311-materials-textbook">
 			<title>Textbook</title>
@@ -217,54 +239,17 @@
 			<title>WebWork</title>
 
 			<p>
-				WeBWorK is the online homework system we will use to practice problem solving with differential equations. It provides immediate feedback on your answers and multiple opportunities to correct mistakes. Homework assignments in WeBWorK are designed to reinforce concepts from class and the textbook, and they are a key part of building proficiency. You are encouraged to attempt problems multiple times and to use mistakes as learning opportunities.
+				WeBWorK is the online homework system we will use to practice problem solving
+				with differential equations. It provides immediate feedback on your answers
+				and multiple opportunities to correct mistakes. Homework assignments in
+				WeBWorK are designed to reinforce concepts from class and the textbook, and
+				they are a key part of building proficiency. You are encouraged to attempt
+				problems multiple times and to use mistakes as learning opportunities.
 			</p>
 
 			<p>
-				The following link will take you to the WebWork page for this course
-				<!-- TODO(geoff): Fall 2026 WeBWorK course URL <mdash/> replace the TBD-FA26 stub with
-					<url href="https://vmi-math.com/webwork2/ma311-XXX">WebWork</url>. -->
-				<dl>
-					<li>
-						<title>URL</title>
-						<p><alert>[TBD-FA26: WeBWorK course URL]</alert></p>
-					</li>
-				</dl>
-				Your username and temporary password is the part of your VMI email address before the <c>@</c> symbol. For example, if your email is <c>smith66@vmi.edu</c>, you would log in with:
-				<dl>
-					<li>
-						<title>Username:</title>
-						<p><c>smith66</c></p>
-					</li>
-					<li>
-						<title>Password:</title>
-						<p><c>smith66</c></p>
-					</li>
-				</dl>
-				After you log in for the first time change your password in "Account Settings." 
-			</p>
-
-			<aside>
-				<title>Forgot Password?</title>
-				<p>
-					If you forget or lose your password, you must email me to reset it.
-				</p>
-			</aside>
-		</subsection>
-
-		<subsection xml:id="ma311-materials-canvas">
-			<title>Canvas</title>
-
-			<p>
-				Canvas will serve as the central hub for course communication and materials. Announcements, lecture slides, discussion worksheets, and assignment links will be posted here. It is your responsibility to check Canvas regularly and read announcements in a timely manner.
-				<!-- TODO(geoff): Fall 2026 Canvas course URL <mdash/> replace the TBD-FA26 stub with
-					<url href="https://vmi.instructure.com/courses/XXXXX" visual="vmi.instructure.com/courses/XXXXX">Canvas</url>. -->
-				<dl>
-					<li>
-						<title>URL</title>
-						<p><alert>[TBD-FA26: Canvas course URL]</alert></p>
-					</li>
-				</dl>
+				Your WebWork account is free and will be linked to Canvas. When you click on
+				an assignment in Canvas, it will automatically take you into WeBWorK. 
 			</p>
 		</subsection>
 	</section>
@@ -412,10 +397,9 @@
 					</row>
 
 					<row>
-						<cell><line><term>C7</term>:</line><line>Approximating Solutions</line></cell>
+						<cell><line><term>C7</term>:</line><line>Applying Methods</line></cell>
 						<cell>
-							<line>Describe the difference between an Analytic vs Numerical Solution.</line>
-							<line>Approximate the solution to a first-order DE using Euler's Method.</line>
+							<line>Identify the appropriate solution method(s) to solve a given differential equation.</line>
 						</cell>
 					</row>
 				</tabular>
@@ -456,14 +440,31 @@
 					</row>
 
 					<row>
-						<cell><line><term>S3</term>:</line><line>LNCC 1</line></cell>
+						<cell><line><term>S3</term>:</line><line>Slope Fields &amp; Equilibria</line></cell>
+						<cell>
+							<line>Create a slope field for a DE.</line>
+								<line>Sketch solution curves for an IVP on a slope field.</line>
+								<line>Determine the stability of equilibria for autonomous DEs.</line>
+						</cell>
+					</row>
+
+					<row>
+						<cell><line><term>S4</term>:</line><line>Numerical Solution</line></cell>
+						<cell>
+							<line>Describe the difference between an Analytic vs Numerical Solution.</line>
+							<line>Approximate the solution to a first-order DE using Euler's Method.</line>
+						</cell>
+					</row>
+
+					<row>
+						<cell><line><term>S5</term>:</line><line>LNCC 1</line></cell>
 						<cell>
 							<line>Make a correct first guess for the particular solution <m>y_p</m>.</line>
 						</cell>
 					</row>
 
 					<row>
-						<cell><line><term>S4</term>:</line><line>LNCC 2</line></cell>
+						<cell><line><term>S6</term>:</line><line>LNCC 2</line></cell>
 						<cell>
 							<line>Decide when the first guess for <m>y_p</m> must be adjusted.</line>
 								<line>Make and justify the correct adjustment to the guess for <m>y_p</m> when needed.</line>
@@ -471,21 +472,21 @@
 					</row>
 
 					<row>
-						<cell><line><term>S5</term>:</line><line>Forward Transform</line></cell>
+						<cell><line><term>S7</term>:</line><line>Forward Transform</line></cell>
 						<cell>
 							<line>Use a provided table to compute a forward Laplace transform.</line>
 						</cell>
 					</row>
 
 					<row>
-						<cell><line><term>S6</term>:</line><line>Inverse Transform</line></cell>
+						<cell><line><term>S8</term>:</line><line>Inverse Transform</line></cell>
 						<cell>
 							<p>Use a provided table to compute an inverse Laplace transform.</p>
 						</cell>
 					</row>
 
 					<row>
-						<cell><line><term>S7</term>:</line><line>Step Functions 1</line></cell>
+						<cell><line><term>S9</term>:</line><line>Step Functions 1</line></cell>
 						<cell>
 							<line>Rewrite a piecewise function in unit step form.</line>
 								<line>Sketch a function involving step functions.</line>
@@ -495,7 +496,7 @@
 					</row>
 
 					<row>
-						<cell><line><term>S8</term>:</line><line>Step Functions 2</line></cell>
+						<cell><line><term>S10</term>:</line><line>Step Functions 2</line></cell>
 						<cell>
 							<line>Transform a piecewise function using unit step functions.</line>
 								<line>Find an inverse transform of a function involving step functions.</line>
@@ -503,25 +504,9 @@
 					</row>
 
 					<row>
-						<cell><line><term>S9</term>:</line><line>Discontinuous Forcing</line></cell>
+						<cell><line><term>S11</term>:</line><line>Discontinuous Forcing</line></cell>
 						<cell>
 							<line>Solve a LNCC equation with a discontinuous forcing term.</line>
-						</cell>
-					</row>
-
-					<row>
-						<cell><line><term>S10</term>:</line><line>Slope Fields &amp; Equilibria</line></cell>
-						<cell>
-							<line>Create a slope field for a DE.</line>
-								<line>Sketch solution curves for an IVP on a slope field.</line>
-								<line>Determine the stability of equilibria for autonomous DEs.</line>
-						</cell>
-					</row>
-
-					<row>
-						<cell><line><term>S11</term>:</line><line>Numerical Solution</line></cell>
-						<cell>
-							<p>Find the numerical solution for an IVP and interpret the result.</p>
 						</cell>
 					</row>
 
@@ -597,18 +582,14 @@
 			<paragraphs>
 				<title>Homework</title>
 				<p>
-					<!-- TODO(geoff): Modeling Scenarios are referenced throughout this policy (and
-							in the AI policy below), but the corresponding assignment type is commented
-							out in grades-coursework.ptx and the 35/65 homework split leaves no weight
-							for them. Delete these references or revive the assignment. -->
-					Homework includes online exercises (Runestone/WeBWorK) and written Modeling Scenarios. Online sets are designed for practice with immediate feedback; Modeling Scenarios emphasize communication and application.
+					Homework includes Runestone reading exercises and WeBWorK assignments.
 					<ul>
 						<li>
-							<term>Online exercises</term>: Complete problems <em>before</em> the posted deadline. Work may be submitted up to four days late (including weekends and holidays). Only 60% of your score will be recorded. Four days after the deadline, the submission window will close and you will receive a <m>0</m> for that assignment.  
+							<term>Online exercises</term>: Complete problems <em>before</em> the posted deadline. Work may be submitted up to five days late (including weekends and holidays). Only 50% of your score will be recorded. Four days after the deadline, the submission window will close and you will receive a <m>0</m> for that assignment.  
 						</li>
-						<li>
+						<!-- <li>
 							<term>Modeling Scenarios</term>: Submit printed copies in class (or by end of day under my office door if noted). Unless otherwise stated, late submissions are accepted up to 24 hours with a <m>-20</m>% penalty; after that, you will receive a <m>0</m> for the assignment.
-						</li>
+						</li> -->
 						<li>
 							<term>Collaboration</term>: You may discuss approaches with peers currently enrolled in the course, but your write‑up and final solutions must be entirely in your own words. You may not view or use work from cadets who previously completed the course.
 						</li>
@@ -643,12 +624,12 @@
 				</ul> 
 			</p>
 
-			<p>
+			<!-- <p>
 				For <term>Modeling Scenarios</term>, you may ask AI to ...
 				<ul>
 					<li>check my work for spelling and grammar mistakes.</li>
 				</ul> 
-			</p>
+			</p> -->
 
 			<p>
 				For <term>ODPs and the Final Exam</term>, you may NOT use AI in any capacity.
@@ -661,8 +642,6 @@
 
 		<subsection xml:id="ma311-policy-late">
 			<title>Late Homework</title>
-			<!-- TODO(geoff): this 5-days / -50% rule contradicts the Online-exercises bullet
-					above (4 days late, 60% of score recorded). Reconcile the two. -->
 			<p>
 				Late work will be accepted up to 5 days (including weekends and furlough days) after the due date and will incur a penalty of <m>-50 \%</m>. No work will be accepted beyond this.
 			</p>
