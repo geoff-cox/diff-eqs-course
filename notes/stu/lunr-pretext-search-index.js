@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Front Matter",
   "number": "",
   "title": "Front Matter",
-  "body": "  Dr. Geoffrey Cox (LTC) Applied Mathematics Virginia Military Institute coxgeoff@vmi.edu         Office:  MA 425    Office Hours:  MWF:  1100-1300, 1430-1530     By Appointment       Last Updated:       "
+  "body": "  Dr. Geoffrey Cox Applied Mathematics Virginia Military Institute coxgeoff@vmi.edu         Office:  MA 425    Office Hours:  MWF:  1100-1300, 1430-1530     By Appointment       Last Updated:       "
 },
 {
   "id": "ws-what-is-a-de",
