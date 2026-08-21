@@ -233,6 +233,33 @@ var ptx_lunr_docs = [
   "number": "4",
   "title": "Tentative Schedule of ODPs (subject to change)",
   "body": " Tentative Schedule of ODPs (subject to change)          Out-of-Class  In-Class    Week  Date  Eligible ODPs  Date  Eligible ODPs    1  -- --  -- --    2  9\/2\/2026 C1  -- --    3  9\/9\/2026 C1, C2  9\/11\/2026 C1-C2, S1-S4    4  9\/16\/2026 C2  -- --    5  9\/23\/2026 C3  9\/25\/2026 C1-C3, S1-S4    6  9\/30\/2026 C3  -- --    7  10\/7\/2026 C4  10\/9\/2026 C1-C4, S1-S5    8  10\/14\/2026 C4  -- --    9  10\/21\/2026 C5  10\/23\/2026 C1-C5, S1-S6    10  10\/28\/2026 C5  10\/30\/2026 C1-C5, S1-S8    11  11\/4\/2026 --  -- --    12  11\/11\/2026 C6, C7  11\/13\/2026 C1-C7, S1-S9    13  11\/18\/2026 C6, C7  11\/20\/2026 C1-C7, S1-S9    14  12\/2\/2026 --  12\/4\/2026 C1-C7, S1-S11    15  Reading Day --  12\/9\/2026 C1-C7, S1-S12    Final  -- --  Final C1-C7    "
+},
+{
+  "id": "ws-formula-sheet",
+  "level": "1",
+  "url": "ws-formula-sheet.html",
+  "type": "Worksheet",
+  "number": "3",
+  "title": "ODP Formula Sheet",
+  "body": " ODP Formula Sheet    Derivatives and Antiderivatives    Function  Derivative  Antiderivative ( )                                                                                  Let be the unit step function, , are real numbers and .   Laplace Transforms           Conditions    L1       L2       L3       L4       L5       L6       L7       L8       L9       L10       L11       L12       L13      L14       L15       L16       L17         "
+},
+{
+  "id": "ws-formula-sheet-2-1",
+  "level": "2",
+  "url": "ws-formula-sheet.html#ws-formula-sheet-2-1",
+  "type": "Table",
+  "number": "5",
+  "title": "Derivatives and Antiderivatives",
+  "body": " Derivatives and Antiderivatives    Function  Derivative  Antiderivative ( )                                                                               "
+},
+{
+  "id": "ws-formula-sheet-3-2",
+  "level": "2",
+  "url": "ws-formula-sheet.html#ws-formula-sheet-3-2",
+  "type": "Table",
+  "number": "6",
+  "title": "Laplace Transforms",
+  "body": " Laplace Transforms           Conditions    L1       L2       L3       L4       L5       L6       L7       L8       L9       L10       L11       L12       L13      L14       L15       L16       L17       "
 }
 ]
 

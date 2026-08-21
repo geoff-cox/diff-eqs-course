@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ODP Formula Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
+<meta property="og:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
+<meta property="book:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
+<meta name="twitter:description" content="DE course notes for MA311: Differential Equations.">
+<meta property="og:description" content="DE course notes for MA311: Differential Equations.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.49"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.49"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="ma311-homepage" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="https://www.vmi.edu/"><img src="external/icons/de-book-icon-7.png" alt="Logo image"></a><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="ma311-homepage.html"><span class="title">MA 311</span> <span class="subtitle">Ordinary Differential Equations - Fall 2026</span></a></div>
+<p class="byline">Dr. Geoffrey Cox</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="up-button button" href="ma311-homepage-6.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="ma311-homepage-3.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ma311-syllabus.html" class="internal"><span class="codenumber">1</span> <span class="title">Syllabus</span></a></div>
+<ul id="ptx-toc-group-ma311-syllabus" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-general-info.html" class="internal"><span class="codenumber">1.1</span> <span class="title">General</span></a></div>
+<ul id="ptx-toc-group-ma311-general-info" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-general-info.html#ma311-instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-general-info.html#ma311-course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-grades.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Grades &amp; Coursework</span></a></div>
+<ul id="ptx-toc-group-ma311-grades" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-final-grade" class="internal"><span class="title">Final Grades</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-homework" class="internal"><span class="title">Homework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-odps" class="internal"><span class="title">Opportunities to Demonstrate Proficiency (ODPs)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-final" class="internal"><span class="title">Final Exam</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-grades-6" class="internal"><span class="title">Secondary(S) Topic Pass ➜ 1% Homework</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-resources.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Resources</span></a></div>
+<ul id="ptx-toc-group-ma311-resources" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-canvas" class="internal"><span class="title">Canvas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-textbook" class="internal"><span class="title">Textbook</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-runestone" class="internal"><span class="title">Runestone</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-webwork" class="internal"><span class="title">WebWork</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-topics.html" class="internal"><span class="codenumber">1.4</span> <span class="title">ODP Topics</span></a></div>
+<ul id="ptx-toc-group-ma311-topics" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-how-odps-work" class="internal"><span class="title">How ODPs Work</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-core-topics" class="internal"><span class="title">Core Topics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-secondary-topics" class="internal"><span class="title">Secondary Topics</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-policies.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Policies</span></a></div>
+<ul id="ptx-toc-group-ma311-policies" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-coursework-policy" class="internal"><span class="title">Coursework Policies</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-ai-policy" class="internal"><span class="title">AI Usage Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-policy-late" class="internal"><span class="title">Late Homework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-policy-getting-help" class="internal"><span class="title">Getting Help</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#merc" class="internal"><span class="title">MERC</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#policy-grade-disputes" class="internal"><span class="title">Grade Disputes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#policy-classroom-behavior" class="internal"><span class="title">Classroom Behavior</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="work-for-grade.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Work For Grade</span></a></div>
+<ul id="ptx-toc-group-work-for-grade" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="work-for-grade.html#vmi-work-for-grade" class="internal"><span class="title">VMI</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="work-for-grade.html#math-work-for-grade" class="internal"><span class="title">Applied Math</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="vmi-attendance.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Attendance</span></a></div>
+<ul id="ptx-toc-group-vmi-attendance" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vmi-attendance.html#vmi-missing-class" class="internal"><span class="title">Missing Class</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vmi-attendance.html#vmi-attendance-policy" class="internal"><span class="title">Attendance Policy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="vmi-accessibility.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Accessibility</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ma311-homepage-5.html" class="internal"><span class="codenumber">2</span> <span class="title">Tentative ODP Schedule</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ma311-homepage-6.html" class="internal"><span class="codenumber">3</span> <span class="title">Formula Sheets</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ma311-homepage-6"><li class="toc-item toc-worksheet active"><div class="toc-title-box"><a href="ws-formula-sheet.html" class="internal"><span class="codenumber">3</span> <span class="title">ODP Formula Sheet</span></a></div></li></ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<div class="print-preview-header">
+<h2 class="print-preview">Print preview</h2>
+<div class="print-controls">
+<div class="print-controls-toggles">
+<form class="papersize-select" id="papersize-select">
+<span class="name">Paper size</span><label><input type="radio" name="papersize" value="a4">A4
+        </label><label><input type="radio" name="papersize" value="letter">Letter
+        </label>
+</form>
+<details class="print-options"><summary>Additional printing options</summary><div class="header-footer-options">
+<div class="header-option">
+<span class="title">Print headers</span><label>First page<input type="checkbox" id="print-first-page-header-checkbox" checked></label><label>Running<input type="checkbox" id="print-running-header-checkbox" checked></label>
+</div>
+<div class="footer-option">
+<span class="title">Print footers</span><label>First page<input type="checkbox" id="print-first-page-footer-checkbox" checked></label><label>Running<input type="checkbox" id="print-running-footer-checkbox" checked></label>
+</div>
+</div>
+<div class="highlight-workspace-option">
+<label for="highlight-workspace-checkbox">Highlight workspace</label><input type="checkbox" id="highlight-workspace-checkbox">
+</div></details>
+</div>
+<button class="print-button" title="Print" onClick="window.print()"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span><span class="name">Print</span></button>
+</div>
+</div>
+<section class="worksheet" id="ws-formula-sheet" data-margins="0.75in 0.75in 0.75in 0.75in">
+<h1 class="heading hide-type">
+<span class="type">Worksheet</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">ODP Formula Sheet</span><div class="print-links"><a href="?printpreview=ws-formula-sheet" class="print-link" title="Print preview"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span></a></div>
+</h1>
+<section class="onepage" id="ws-formula-sheet-2">
+<figure class="table table-like" id="ws-formula-sheet-2-1"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Derivatives and Antiderivatives<div class="autopermalink" aria-hidden="true" data-description="Table 5: Derivatives and Antiderivatives"><a tabindex="-1" href="#ws-formula-sheet-2-1" title="Copy heading and permalink for Table 5: Derivatives and Antiderivatives" aria-label="Copy heading and permalink for Table 5: Derivatives and Antiderivatives">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b2 r0 l0 t0 lines">Function <span class="process-math">\((r \neq -1)\)</span>
+</th>
+<th scope="col" class="c m b2 r0 l0 t0 lines">Derivative</th>
+<th scope="col" class="c m b2 r0 l0 t0 lines">Antiderivative (<span class="process-math">\(+C\)</span>)</th>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x^r\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(rx^{r-1}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\dfrac{1}{r+1}x^{r+1}\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x^{-1}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-\dfrac{1}{x^2}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\ln|x|\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(e^x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(e^x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(e^x\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\ln x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\dfrac{1}{x}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(x\ln x - x\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(a^x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\ln(a) a^x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\dfrac{1}{\ln(a)}a^x\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\log_a x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\dfrac{1}{\ln(a)}\dfrac{1}{x}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\dfrac{1}{\ln(a)}x\ln x - \dfrac{1}{\ln(a)}x\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\sin x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\phantom{-}\cos x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-\cos x\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\cos x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-\sin x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\phantom{-}\sin x\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\csc x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-\csc x\cot x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-\ln|\csc x+\cot x|\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\sec x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\phantom{-}\sec x\tan x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\phantom{-}\ln|\sec x+\tan x|\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\tan x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\phantom{-}\sec^2 x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-\ln|\cos x|\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\cot x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(-\csc^2 x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\phantom{-}\ln|\sin x|\)</span></td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\tan^{-1}x,\ \cot^{-1}x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\dfrac{1}{1+x^2}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines">—</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\sin^{-1}x,\ \cos^{-1}x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\dfrac{1}{\sqrt{1-x^2}}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines">—</td>
+</tr>
+<tr>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\csc^{-1}x,\ \sec^{-1}x\)</span></td>
+<td class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\dfrac{1}{x\sqrt{x^2-1}}\)</span></td>
+<td class="c m b1 r0 l0 t0 lines">—</td>
+</tr>
+</table></div>
+</figure></section><section class="onepage" id="ws-formula-sheet-3">
+<div class="para" id="ws-formula-sheet-3-1">Let <span class="process-math">\(u(t)\)</span> be the unit step function, <span class="process-math">\(u_c(t) = u(t-c)\text{,}\)</span> <span class="process-math">\(a,b,c,\alpha,\beta\)</span> are real numbers and <span class="process-math">\(n=1,2,3,\ldots\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="ws-formula-sheet-3-2"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Laplace Transforms<div class="autopermalink" aria-hidden="true" data-description="Table 6: Laplace Transforms"><a tabindex="-1" href="#ws-formula-sheet-3-2" title="Copy heading and permalink for Table 6: Laplace Transforms" aria-label="Copy heading and permalink for Table 6: Laplace Transforms">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="r m b2 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-5-1-1"><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
+</th>
+<th scope="col" class="c m b2 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-5-2-1">
+<span class="process-math">\(f(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</th>
+<th scope="col" class="c m b2 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-5-3-1">
+<span class="process-math">\(F(s)=\mathcal{L}\{f(t)\}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</th>
+<th scope="col" class="c m b2 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-5-4-1">Conditions<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</th>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-6-1-1">L1<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-6-2-1">
+<span class="process-math">\(1\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-6-3-1">
+<span class="process-math">\(\dfrac{1}{s}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-6-4-1">
+<span class="process-math">\(s&gt;0\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-7-1-1">L2<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-7-2-1">
+<span class="process-math">\(e^{at}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-7-3-1">
+<span class="process-math">\(\dfrac{1}{s-a}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-7-4-1">
+<span class="process-math">\(s&gt;a\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-7-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-8-1-1">L3<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-8-2-1">
+<span class="process-math">\(t^n\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-8-3-1">
+<span class="process-math">\(\dfrac{n!}{s^{n+1}}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-8-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-8-4-1">
+<span class="process-math">\(s&gt;0\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-8-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-9-1-1">L4<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-9-2-1">
+<span class="process-math">\(\sin(bt)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-9-3-1">
+<span class="process-math">\(\dfrac{b}{s^2+b^2}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-9-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-9-4-1">
+<span class="process-math">\(s&gt;0\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-9-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-10-1-1">L5<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-10-2-1">
+<span class="process-math">\(\cos(bt)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-10-3-1">
+<span class="process-math">\(\dfrac{s}{s^2+b^2}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-10-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-10-4-1">
+<span class="process-math">\(s&gt;0\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-10-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-11-1-1">L6<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-11-2-1">
+<span class="process-math">\(t^n e^{at}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-11-3-1">
+<span class="process-math">\(\dfrac{n!}{(s-a)^{n+1}}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-11-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-11-4-1">
+<span class="process-math">\(s&gt;a\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-11-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-12-1-1">L7<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-12-2-1">
+<span class="process-math">\(e^{at}\sin(bt)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-12-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-12-3-1">
+<span class="process-math">\(\dfrac{b}{(s-a)^2+b^2}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-12-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-12-4-1">
+<span class="process-math">\(s&gt;a\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-12-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-13-1-1">L8<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-13-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-13-2-1">
+<span class="process-math">\(e^{at}\cos(bt)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-13-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-13-3-1">
+<span class="process-math">\(\dfrac{s-a}{(s-a)^2+b^2}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-13-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:120px;">
+<div class="para" id="ws-formula-sheet-3-2-2-13-4-1">
+<span class="process-math">\(s&gt;a\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-13-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-14-1-1">L9<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-14-2-1">
+<span class="process-math">\(\alpha f(t)+\beta g(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-14-3-1">
+<span class="process-math">\(\alpha F(s)+\beta G(s)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-14-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-15-1-1">L10<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-15-2-1">
+<span class="process-math">\(e^{at}f(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-15-3-1">
+<span class="process-math">\(F(s-a)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-15-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-16-1-1">L11<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-16-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-16-2-1">
+<span class="process-math">\(f'(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-16-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-16-3-1">
+<span class="process-math">\(sF(s)-f(0)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-16-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-17-1-1">L12<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-17-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-17-2-1">
+<span class="process-math">\(f''(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-17-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-17-3-1">
+<span class="process-math">\(s^2F(s)-sf(0)-f'(0)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-17-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-18-1-1">L13<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-18-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-18-2-1">
+<span class="process-math">\(f'''(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-18-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="l m b1 r0 l0 t0 lines" colspan="2"><span class="process-math">\(s^3F(s)-s^2f(0)-sf'(0)-f''(0)\)</span></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-19-1-1">L14<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-19-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-19-2-1">
+<span class="process-math">\(t^n f(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-19-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-19-3-1">
+<span class="process-math">\((-1)^n\dfrac{d^n}{ds^n}\bigl(F(s)\bigr)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-19-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-20-1-1">L15<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-20-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-20-2-1">
+<span class="process-math">\(u_c(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-20-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-20-3-1">
+<span class="process-math">\(\dfrac{e^{-cs}}{s}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-20-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-21-1-1">L16<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-21-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-21-2-1">
+<span class="process-math">\(f(t)u_c(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-21-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-21-3-1">
+<span class="process-math">\(e^{-cs}\mathcal{L}\{f(t+c)\}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-21-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="r m b1 r0 l0 t0" style="max-width:60px;">
+<div class="para" id="ws-formula-sheet-3-2-2-22-1-1">L17<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:150px;">
+<div class="para" id="ws-formula-sheet-3-2-2-22-2-1">
+<span class="process-math">\(f(t-c)\,u_c(t)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-22-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0" style="max-width:270px;">
+<div class="para" id="ws-formula-sheet-3-2-2-22-3-1">
+<span class="process-math">\(e^{-cs}F(s)\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-formula-sheet-3-2-2-22-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+</td>
+<td class="c m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+</figure></section><div class="autopermalink" aria-hidden="true" data-description="Worksheet 3: ODP Formula Sheet"><a tabindex="-1" href="#ws-formula-sheet" title="Copy heading and permalink for Worksheet 3: ODP Formula Sheet" aria-label="Copy heading and permalink for Worksheet 3: ODP Formula Sheet">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
