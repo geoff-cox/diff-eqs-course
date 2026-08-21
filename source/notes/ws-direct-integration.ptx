@@ -22,8 +22,8 @@
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md>.
 -->
-<worksheet xml:id="ws-direct-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Solving by Direct Integration</title>
+	<worksheet xml:id="ws-direct-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+		<title>Solving by Direct Integration</title>
 
 	<objectives>
 		<ul>

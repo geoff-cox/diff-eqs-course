@@ -11,6 +11,7 @@
 		<xi:include href="./bookends/frontmatter.ptx" />
 		<xi:include href="./homepage/syllabus.ptx" />
 		<xi:include href="./homepage/odp-schedule.ptx" />
+		<xi:include href="./homepage/odp-formula-sheet.ptx" />
 	
 	</book>
 </pretext>

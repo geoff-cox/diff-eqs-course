@@ -1,0 +1,227 @@
+<chapter>
+  <title>Formula Sheets</title>
+
+  <p>
+    This formula sheet summarizes commonly used derivative, integral, and
+    Laplace transform formulas.
+  </p>
+
+  <worksheet xml:id="ws-formula-sheet">
+    <title>ODP Formula Sheet</title>
+
+    <page>
+      <table>
+        <title>Derivatives and Antiderivatives</title>
+
+        <tabular halign="center" bottom="minor">
+          <row header="yes" bottom="medium">
+            <cell>Function <m>(r \neq -1)</m></cell>
+            <cell>Derivative</cell>
+            <cell>Antiderivative (<m>+C</m>)</cell>
+          </row>
+          <row>
+            <cell><m>x^r</m></cell>
+            <cell><m>rx^{r-1}</m></cell>
+            <cell><m>\dfrac{1}{r+1}x^{r+1}</m></cell>
+          </row>
+          <row>
+            <cell><m>x^{-1}</m></cell>
+            <cell><m>-\dfrac{1}{x^2}</m></cell>
+            <cell><m>\ln|x|</m></cell>
+          </row>
+          <row>
+            <cell><m>e^x</m></cell>
+            <cell><m>e^x</m></cell>
+            <cell><m>e^x</m></cell>
+          </row>
+          <row>
+            <cell><m>\ln x</m></cell>
+            <cell><m>\dfrac{1}{x}</m></cell>
+            <cell><m>x\ln x - x</m></cell>
+          </row>
+          <row>
+            <cell><m>a^x</m></cell>
+            <cell><m>\ln(a) a^x</m></cell>
+            <cell><m>\dfrac{1}{\ln(a)}a^x</m></cell>
+          </row>
+          <row>
+            <cell><m>\log_a x</m></cell>
+            <cell><m>\dfrac{1}{\ln(a)}\dfrac{1}{x}</m></cell>
+            <cell><m>\dfrac{1}{\ln(a)}x\ln x - \dfrac{1}{\ln(a)}x</m></cell>
+          </row>
+          <row>
+            <cell><m>\sin x</m></cell>
+            <cell><m>\phantom{-}\cos x</m></cell>
+            <cell><m>-\cos x</m></cell>
+          </row>
+          <row>
+            <cell><m>\cos x</m></cell>
+            <cell><m>-\sin x</m></cell>
+            <cell><m>\phantom{-}\sin x</m></cell>
+          </row>
+          <row>
+            <cell><m>\csc x</m></cell>
+            <cell><m>-\csc x\cot x</m></cell>
+            <cell><m>-\ln|\csc x+\cot x|</m></cell>
+          </row>
+          <row>
+            <cell><m>\sec x</m></cell>
+            <cell><m>\phantom{-}\sec x\tan x</m></cell>
+            <cell><m>\phantom{-}\ln|\sec x+\tan x|</m></cell>
+          </row>
+          <row>
+            <cell><m>\tan x</m></cell>
+            <cell><m>\phantom{-}\sec^2 x</m></cell>
+            <cell><m>-\ln|\cos x|</m></cell>
+          </row>
+          <row>
+            <cell><m>\cot x</m></cell>
+            <cell><m>-\csc^2 x</m></cell>
+            <cell><m>\phantom{-}\ln|\sin x|</m></cell>
+          </row>
+          <row>
+            <cell><m>\tan^{-1}x,\ \cot^{-1}x</m></cell>
+            <cell><m>\dfrac{1}{1+x^2}</m></cell>
+            <cell><mdash/></cell>
+          </row>
+          <row>
+            <cell><m>\sin^{-1}x,\ \cos^{-1}x</m></cell>
+            <cell><m>\dfrac{1}{\sqrt{1-x^2}}</m></cell>
+            <cell><mdash/></cell>
+          </row>
+          <row>
+            <cell><m>\csc^{-1}x,\ \sec^{-1}x</m></cell>
+            <cell><m>\dfrac{1}{x\sqrt{x^2-1}}</m></cell>
+            <cell><mdash/></cell>
+          </row>
+        </tabular>
+      </table>
+    </page>
+
+    <page>
+      <p>
+        Let <m>u(t)</m> be the unit step function, <m>u_c(t) = u(t-c)</m>, <m>a,b,c,\alpha,\beta</m>
+        are real numbers and <m>n=1,2,3,\ldots</m>.
+      </p>
+
+      <table>
+        <title>Laplace Transforms</title>
+
+        <tabular bottom="minor">
+          <col halign="right" width="10%"/>
+          <col halign="center" width="25%"/>
+          <col halign="center" width="45%"/>
+          <col halign="center" width="20%"/>
+          <row header="yes" bottom="medium">
+            <cell><p></p></cell>
+            <cell><p><m>f(t)</m></p></cell>
+            <cell><p><m>F(s)=\mathcal{L}\{f(t)\}</m></p></cell>
+            <cell><p>Conditions</p></cell>
+          </row>
+          <row>
+            <cell><p>L1</p></cell>
+            <cell><p><m>1</m></p></cell>
+            <cell><p><m>\dfrac{1}{s}</m></p></cell>
+            <cell><p><m>s&gt;0</m></p></cell>
+          </row>
+          <row>
+            <cell><p>L2</p></cell>
+            <cell><p><m>e^{at}</m></p></cell>
+            <cell><p><m>\dfrac{1}{s-a}</m></p></cell>
+            <cell><p><m>s&gt;a</m></p></cell>
+          </row>
+          <row>
+            <cell><p>L3</p></cell>
+            <cell><p><m>t^n</m></p></cell>
+            <cell><p><m>\dfrac{n!}{s^{n+1}}</m></p></cell>
+            <cell><p><m>s&gt;0</m></p></cell>
+          </row>
+          <row>
+            <cell><p>L4</p></cell>
+            <cell><p><m>\sin(bt)</m></p></cell>
+            <cell><p><m>\dfrac{b}{s^2+b^2}</m></p></cell>
+            <cell><p><m>s&gt;0</m></p></cell>
+          </row>
+          <row>
+            <cell><p>L5</p></cell>
+            <cell><p><m>\cos(bt)</m></p></cell>
+            <cell><p><m>\dfrac{s}{s^2+b^2}</m></p></cell>
+            <cell><p><m>s&gt;0</m></p></cell>
+          </row>
+          <row>
+            <cell><p>L6</p></cell>
+            <cell><p><m>t^n e^{at}</m></p></cell>
+            <cell><p><m>\dfrac{n!}{(s-a)^{n+1}}</m></p></cell>
+            <cell><p><m>s&gt;a</m></p></cell>
+          </row>
+          <row>
+            <cell><p>L7</p></cell>
+            <cell><p><m>e^{at}\sin(bt)</m></p></cell>
+            <cell><p><m>\dfrac{b}{(s-a)^2+b^2}</m></p></cell>
+            <cell><p><m>s&gt;a</m></p></cell>
+          </row>
+          <row>
+            <cell><p>L8</p></cell>
+            <cell><p><m>e^{at}\cos(bt)</m></p></cell>
+            <cell><p><m>\dfrac{s-a}{(s-a)^2+b^2}</m></p></cell>
+            <cell><p><m>s&gt;a</m></p></cell>
+          </row>
+          <row>
+            <cell><p>L9</p></cell>
+            <cell><p><m>\alpha f(t)+\beta g(t)</m></p></cell>
+            <cell><p><m>\alpha F(s)+\beta G(s)</m></p></cell>
+            <cell/>
+          </row>
+          <row>
+            <cell><p>L10</p></cell>
+            <cell><p><m>e^{at}f(t)</m></p></cell>
+            <cell><p><m>F(s-a)</m></p></cell>
+            <cell/>
+          </row>
+          <row>
+            <cell><p>L11</p></cell>
+            <cell><p><m>f'(t)</m></p></cell>
+            <cell><p><m>sF(s)-f(0)</m></p></cell>
+            <cell/>
+          </row>
+          <row>
+            <cell><p>L12</p></cell>
+            <cell><p><m>f''(t)</m></p></cell>
+            <cell><p><m>s^2F(s)-sf(0)-f'(0)</m></p></cell>
+            <cell/>
+          </row>
+          <row>
+            <cell><p>L13</p></cell>
+            <cell><p><m>f'''(t)</m></p></cell>
+            <cell colspan="2" halign="left"><m>s^3F(s)-s^2f(0)-sf'(0)-f''(0)</m></cell>
+          </row>
+          <row>
+            <cell><p>L14</p></cell>
+            <cell><p><m>t^n f(t)</m></p></cell>
+            <cell><p><m>(-1)^n\dfrac{d^n}{ds^n}\bigl(F(s)\bigr)</m></p></cell>
+            <cell/>
+          </row>
+          <row>
+            <cell><p>L15</p></cell>
+            <cell><p><m>u_c(t)</m></p></cell>
+            <cell><p><m>\dfrac{e^{-cs}}{s}</m></p></cell>
+            <cell/>
+          </row>
+          <row>
+            <cell><p>L16</p></cell>
+            <cell><p><m>f(t)u_c(t)</m></p></cell>
+            <cell><p><m>e^{-cs}\mathcal{L}\{f(t+c)\}</m></p></cell>
+            <cell/>
+          </row>
+          <row>
+            <cell><p>L17</p></cell>
+            <cell><p><m>f(t-c)\,u_c(t)</m></p></cell>
+            <cell><p><m>e^{-cs}F(s)</m></p></cell>
+            <cell/>
+          </row>
+        </tabular>
+      </table>
+    </page>
+  </worksheet>
+
+</chapter>
