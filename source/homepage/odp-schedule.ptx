@@ -1,0 +1,115 @@
+<chapter>
+  <title>Tentative ODP Schedule</title>
+
+  <p>
+    The tentative schedule of out-of-class and in-class ODP for the
+    <xref ref="ma311-core-topics" text="custom">Core</xref> and
+    <xref ref="ma311-secondary-topics" text="custom">Secondary</xref> topics is
+    shown below.
+  </p>
+
+  <table>
+    <title>Tentative Schedule of ODPs (subject to change)</title>
+
+    <tabular top="minor" bottom="minor" left="minor" halign="center">
+      <col top="none" right="minor"/>
+      <col right="minor"/>
+      <col right="minor"/>
+      <col right="minor"/>
+      <col right="minor"/>
+      <row left="none">
+        <cell/>
+        <cell colspan="2"><term>Out-of-Class</term></cell>
+        <cell halign="center" colspan="2"><term>In-Class</term></cell>
+      </row>
+
+      <row bottom="minor">
+        <cell><term>Week</term></cell>
+        <cell><term>Date</term></cell>
+        <cell><term>Eligible ODPs</term></cell>
+        <cell><term>Date</term></cell>
+        <cell><term>Eligible ODPs</term></cell>
+      </row>
+
+      <row>
+        <cell>1</cell>  <cell>--</cell><cell>--</cell>
+                        <cell>--</cell><cell>--</cell>
+      </row>
+
+      <row>
+        <cell>2</cell>  <cell>9/2/2026</cell><cell>C1</cell>
+                        <cell>--</cell><cell>--</cell>
+      </row>
+
+      <row>
+        <cell>3</cell>  <cell>9/9/2026</cell><cell>C1, C2</cell>
+                        <cell>9/11/2026</cell><cell>C1-C2, S1-S4</cell>
+      </row>
+
+      <row>
+        <cell>4</cell>  <cell>9/16/2026</cell><cell>C2</cell>
+                        <cell>--</cell><cell>--</cell>
+      </row>
+
+      <row>
+        <cell>5</cell>  <cell>9/23/2026</cell><cell>C3</cell>
+                        <cell>9/25/2026</cell><cell>C1-C3, S1-S4</cell>
+      </row>
+
+      <row>
+        <cell>6</cell>  <cell>9/30/2026</cell><cell>C3</cell>
+                        <cell>--</cell><cell>--</cell>
+      </row>
+
+      <row>
+        <cell>7</cell>  <cell>10/7/2026</cell><cell>C4</cell>
+                        <cell>10/9/2026</cell><cell>C1-C4, S1-S5</cell>
+      </row>
+
+      <row>
+        <cell>8</cell>  <cell>10/14/2026</cell><cell>C4</cell>
+                        <cell>--</cell><cell>--</cell>
+      </row>
+
+      <row>
+        <cell>9</cell>  <cell>10/21/2026</cell><cell>C5</cell>
+                        <cell>10/23/2026</cell><cell>C1-C5, S1-S6</cell>
+      </row>
+
+      <row>
+        <cell>10</cell> <cell>10/28/2026</cell><cell>C5</cell>
+                        <cell>10/30/2026</cell><cell>C1-C5, S1-S8</cell>
+      </row>
+
+      <row>
+        <cell>11</cell> <cell>11/4/2026</cell><cell>--</cell>
+                        <cell>--</cell><cell>--</cell>
+      </row>
+
+      <row>
+        <cell>12</cell> <cell>11/11/2026</cell><cell>C6, C7</cell>
+                        <cell>11/13/2026</cell><cell>C1-C7, S1-S9</cell>
+      </row>
+
+      <row>
+        <cell>13</cell> <cell>11/18/2026</cell><cell>C6, C7</cell>
+                        <cell>11/20/2026</cell><cell>C1-C7, S1-S9</cell>
+      </row>
+
+      <row>
+        <cell>14</cell> <cell>12/2/2026</cell><cell>--</cell>
+                        <cell>12/4/2026</cell><cell>C1-C7, S1-S11</cell>
+      </row>
+
+      <row>
+        <cell>15</cell> <cell>Reading Day</cell><cell>--</cell>
+                        <cell>12/9/2026</cell><cell>C1-C7, S1-S12</cell>
+      </row>
+
+      <row bottom="minor">
+        <cell>Final</cell>  <cell>--</cell><cell>--</cell>
+                            <cell>Final</cell><cell>C1-C7</cell>
+      </row>
+    </tabular>
+  </table>
+</chapter>
