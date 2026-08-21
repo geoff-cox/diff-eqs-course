@@ -29,13 +29,14 @@ lang: "en-US",
 });
 </script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="article">
+<meta property="og:type" content="book">
 <meta name="twitter:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
 <meta property="og:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
-<meta name="twitter:description" content="A research journal and undergraduate guide for the PROTEUS Short-Answer project. The book separates the project's stable analytic framework and coding protocol from current software documentation, training materials, and dated research records.">
-<meta property="og:description" content="A research journal and undergraduate guide for the PROTEUS Short-Answer project. The book separates the project's stable analytic framework and coding protocol from current software documentation, training materials, and dated research records.">
+<meta property="book:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
+<meta name="twitter:description" content="DE course notes for MA311: Differential Equations.">
+<meta property="og:description" content="DE course notes for MA311: Differential Equations.">
 <meta name="twitter:card" content="summary">
-<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.47"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.47"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.49"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.49"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
 <!--**     log level is 0, Runestone Services are disabled     **-->
@@ -54,27 +55,28 @@ eBookConfig.readings = null;
 eBookConfig.activities = null;
 eBookConfig.downloadsEnabled = false;
 eBookConfig.allow_pairs = false;
-eBookConfig.enableScratchAC = true;
-eBookConfig.acDefaultLanguage = 'python';
+eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '8.2.3';
+eBookConfig.runestone_version = '8.2.6';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f00d2d175c91fc71.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<script src="_static/prefix-runtime.86d8a68ed7481f7e.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
-<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdn.geogebra.org/apps/deployggb.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
-<body id="ma311-homepage" class="pretext article ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner"><div class="title-container">
+<body id="ma311-homepage" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="https://www.vmi.edu/"><img src="external/icons/de-book-icon-7.png" alt="Logo image"></a><div class="title-container">
 <div class="heading ptx-banner-heading"><a href="ma311-homepage.html"><span class="title">MA 311</span> <span class="subtitle">Ordinary Differential Equations - Fall 2026</span></a></div>
-<p class="byline">Dr. Geoffrey Cox (LTC)</p>
-</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<p class="byline">Dr. Geoffrey Cox</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
 <div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
@@ -85,12 +87,7 @@ eBookConfig.enable_chatcodes =  false;
 <div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
 <ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
 </div>
-<span class="nav-other-controls"><button type="button" id="ptx-calculator-toggle" class="ptx-calculator-toggle button" title="Calculator"><span class="icon material-symbols-outlined" aria-hidden="true">&#xea5f;</span><span class="name">Calculator</span></button><dialog id="ptx-calculator-container" class="ptx-dialog ptx-calculator-container" aria-label="Calculator"><div id="ptx-geogebra-calculator" class="ptx-geogebra-calculator"></div>
-<script id="ptx-geogebra-calculator-params">
-let ggbParams = {
-    "appName": "classic"
-};
-</script></dialog><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
 <button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
 </div>
 <dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
@@ -118,7 +115,7 @@ let ggbParams = {
 <legend>Assistive technologies</legend>
 <label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
 </fieldset>
-<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="work-for-grade.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ma311-syllabus.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="vmi-accessibility.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span><span class="nav-runestone-controls"><button onclick="runestoneComponents.popupScratchAC()" class="activecode-toggle button" title="Scratch ActiveCode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf097;</span><span class="name">Scratch ActiveCode</span></button></span>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><a class="previous-button button" href="work-for-grade.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ma311-syllabus.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="vmi-accessibility.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\usepackage{graphicx}
 \usepackage{cancel}
 \usepackage[normalem]{ulem}
@@ -131,82 +128,83 @@ let ggbParams = {
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter-homepage.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-section contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="ma311-homepage-3.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ma311-syllabus.html" class="internal"><span class="codenumber">1</span> <span class="title">Syllabus</span></a></div>
 <ul class="structural toc-item-list contains-active" id="ptx-toc-group-ma311-syllabus">
-<li class="toc-item toc-introduction"><div class="toc-title-box"><a href="ma311-syllabus-2.html" class="internal"><span class="title">Introduction</span></a></div></li>
-<li class="toc-item toc-subsection">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="ma311-general-info.html" class="internal"><span class="codenumber">1.1</span> <span class="title">General</span></a></div>
 <ul id="ptx-toc-group-ma311-general-info" class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-general-info.html#ma311-instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-general-info.html#ma311-course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-general-info.html#ma311-instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-general-info.html#ma311-course-info" class="internal"><span class="title">Course Information</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-subsection">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="ma311-grades.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Grades &amp; Coursework</span></a></div>
 <ul id="ptx-toc-group-ma311-grades" class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-final-grade" class="internal"><span class="title">Final Grades</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-homework" class="internal"><span class="title">Homework</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-odps" class="internal"><span class="title">Opportunities to Demonstrate Proficiency (ODPs)</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-final" class="internal"><span class="title">Final Exam</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-final-grade" class="internal"><span class="title">Final Grades</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-homework" class="internal"><span class="title">Homework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-odps" class="internal"><span class="title">Opportunities to Demonstrate Proficiency (ODPs)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-final" class="internal"><span class="title">Final Exam</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-grades-6" class="internal"><span class="title">Secondary(S) Topic Pass ➜ 1% Homework</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-subsection">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="ma311-resources.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Resources</span></a></div>
 <ul id="ptx-toc-group-ma311-resources" class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-textbook" class="internal"><span class="title">Textbook</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-runestone" class="internal"><span class="title">Runestone</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-webwork" class="internal"><span class="title">WebWork</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-canvas" class="internal"><span class="title">Canvas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-canvas" class="internal"><span class="title">Canvas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-textbook" class="internal"><span class="title">Textbook</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-runestone" class="internal"><span class="title">Runestone</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-webwork" class="internal"><span class="title">WebWork</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-subsection">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="ma311-topics.html" class="internal"><span class="codenumber">1.4</span> <span class="title">ODP Topics</span></a></div>
 <ul id="ptx-toc-group-ma311-topics" class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-how-odps-work" class="internal"><span class="title">How ODPs Work</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-core-topics" class="internal"><span class="title">Core Topics</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-secondary-topics" class="internal"><span class="title">Secondary Topics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-how-odps-work" class="internal"><span class="title">How ODPs Work</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-core-topics" class="internal"><span class="title">Core Topics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-secondary-topics" class="internal"><span class="title">Secondary Topics</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-subsection">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="ma311-policies.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Policies</span></a></div>
 <ul id="ptx-toc-group-ma311-policies" class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-coursework-policy" class="internal"><span class="title">Coursework Policies</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-ai-policy" class="internal"><span class="title">AI Usage Policy</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-policy-late" class="internal"><span class="title">Late Homework</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-policy-getting-help" class="internal"><span class="title">Getting Help</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-policies.html#merc" class="internal"><span class="title">MERC</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-policies.html#policy-grade-disputes" class="internal"><span class="title">Grade Disputes</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="ma311-policies.html#policy-classroom-behavior" class="internal"><span class="title">Classroom Behavior</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-coursework-policy" class="internal"><span class="title">Coursework Policies</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-ai-policy" class="internal"><span class="title">AI Usage Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-policy-late" class="internal"><span class="title">Late Homework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-policy-getting-help" class="internal"><span class="title">Getting Help</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#merc" class="internal"><span class="title">MERC</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#policy-grade-disputes" class="internal"><span class="title">Grade Disputes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#policy-classroom-behavior" class="internal"><span class="title">Classroom Behavior</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-subsection">
+<li class="toc-item toc-section">
 <div class="toc-title-box"><a href="work-for-grade.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Work For Grade</span></a></div>
 <ul id="ptx-toc-group-work-for-grade" class="structural toc-item-list">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="work-for-grade.html#vmi-work-for-grade" class="internal"><span class="title">VMI</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="work-for-grade.html#math-work-for-grade" class="internal"><span class="title">Applied Math</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="work-for-grade.html#vmi-work-for-grade" class="internal"><span class="title">VMI</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="work-for-grade.html#math-work-for-grade" class="internal"><span class="title">Applied Math</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-subsection contains-active">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="vmi-attendance.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Attendance</span></a></div>
 <ul class="structural toc-item-list active" id="ptx-toc-group-vmi-attendance">
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="vmi-attendance.html#vmi-missing-class" class="internal"><span class="title">Missing Class</span></a></div></li>
-<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="vmi-attendance.html#vmi-attendance-policy" class="internal"><span class="title">Attendance Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vmi-attendance.html#vmi-missing-class" class="internal"><span class="title">Missing Class</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vmi-attendance.html#vmi-attendance-policy" class="internal"><span class="title">Attendance Policy</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vmi-accessibility.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Accessibility</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="vmi-accessibility.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Accessibility</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ma311-homepage-5.html" class="internal"><span class="codenumber">2</span> <span class="title">Tentative ODP Schedule</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
-<section class="subsection" id="vmi-attendance">
+<section class="section" id="vmi-attendance">
 <h1 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Attendance</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Attendance</span>
 </h1>
-<section class="subsubsection" id="vmi-missing-class">
+<section class="subsection" id="vmi-missing-class">
 <h2 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Missing Class</span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Missing Class</span>
 </h2>
 <div class="para logical" id="vmi-missing-class-2">
 <div class="para">If you are forced to miss a class, you must make up for what you missed in class.</div>
@@ -226,16 +224,16 @@ let ggbParams = {
 </ul>
 <div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vmi-missing-class-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Missing Class"><a tabindex="-1" href="#vmi-missing-class" title="Copy heading and permalink for Subsubsection: Missing Class" aria-label="Copy heading and permalink for Subsubsection: Missing Class">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: Missing Class"><a tabindex="-1" href="#vmi-missing-class" title="Copy heading and permalink for Subsection: Missing Class" aria-label="Copy heading and permalink for Subsection: Missing Class">🔗</a></div>
 </section>
-<section class="subsubsection" id="vmi-attendance-policy">
+<section class="subsection" id="vmi-attendance-policy">
 <h2 class="heading hide-type">
-<span class="type">Subsubsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Attendance Policy</span>
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Attendance Policy</span>
 </h2>
 <div class="para" id="vmi-attendance-policy-2">The following is the attendance policy at VMI. Academic excellence is best achieved through consistent class attendance. The maximum allowed percentage of class absences is 30%. No categories of absences (academic, athletic, guard, 3.0 cuts, etc.) will be exempt from that percentage. When a cadet reaches 20% absences, the instructor issues a written warning, and the cadet must sign a receipt that they are aware of the absences incurred.  Upon reaching 30% absences, the cadet is referred to the Dean for appropriate action. Typically, a cadet who exceeds the 30% absences will be required to withdraw from the course with a W or a WF. An absence is considered missing more than 20 minutes of class, sleeping in class, or being overly distracted/distracting during class. I reserve the right to mark you absent if I feel any of these conditions have been met.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#vmi-attendance-policy-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="autopermalink" aria-hidden="true" data-description="Subsubsection: Attendance Policy"><a tabindex="-1" href="#vmi-attendance-policy" title="Copy heading and permalink for Subsubsection: Attendance Policy" aria-label="Copy heading and permalink for Subsubsection: Attendance Policy">🔗</a></div>
-</section><div class="autopermalink" aria-hidden="true" data-description="Subsection 1.7: Attendance"><a tabindex="-1" href="#vmi-attendance" title="Copy heading and permalink for Subsection 1.7: Attendance" aria-label="Copy heading and permalink for Subsection 1.7: Attendance">🔗</a></div>
+<div class="autopermalink" aria-hidden="true" data-description="Subsection: Attendance Policy"><a tabindex="-1" href="#vmi-attendance-policy" title="Copy heading and permalink for Subsection: Attendance Policy" aria-label="Copy heading and permalink for Subsection: Attendance Policy">🔗</a></div>
+</section><div class="autopermalink" aria-hidden="true" data-description="Section 1.7: Attendance"><a tabindex="-1" href="#vmi-attendance" title="Copy heading and permalink for Section 1.7: Attendance" aria-label="Copy heading and permalink for Section 1.7: Attendance">🔗</a></div>
 </section>
 </div>
 <div id="ptx-content-footer" class="ptx-content-footer">
