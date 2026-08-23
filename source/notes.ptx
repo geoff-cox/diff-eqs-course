@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <chapter xml:id="ma311-notes" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Guided Lecture Notes</title>
 
-  <xi:include href="./bookends/frontmatter.ptx"/>
   <xi:include href="./notes/ws-what-is-a-de.ptx"/>
   <xi:include href="./notes/ws-classification.ptx"/>
   <!-- <xi:include href="./notes/ws-solutions-ivp.ptx"/> -->

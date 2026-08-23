@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Publication file for the Guided Lecture Notes (STUDENT).
-	Difference from the instructor copy: worksheet exercise solutions are
-	HIDDEN here (exercise-worksheet solution="no"), and this file's
-	<source><version include="notes stu"/> keeps component="stu" elements
-	while dropping component="key" (instructor-only) elements.
+<!-- Publication file for the Guided Lecture Notes (INSTRUCTOR).
+	Difference from the student copy: worksheet exercise solutions are
+	SHOWN here (exercise-worksheet solution="yes"), and this file's
+	<source><version include="notes key"/> keeps component="key"
+	(instructor-only) elements while dropping component="stu" elements.
 	See CLAUDE.md section 4 for the stu/key pairing conventions.
 -->
 <publication>
@@ -21,7 +21,8 @@
   -->
 	<source>
     <directories generated="../generated-assets" />
-		<version include="notes stu" />
+		<version include="html key" />
+		<webwork-extraction file="webwork-extraction.xml"/>
 	</source>
 
 	<common>
@@ -36,11 +37,11 @@
 		 them defaults to "yes".  The entries below are a plausible example,
 		 not the defaults.
 		 -->
-		<exercise-inline			statement="yes"		hint="yes"		answer="no"	solution="no"	/>
-		<exercise-divisional	statement="yes"		hint="yes"		answer="no"	solution="no"	/>
-		<exercise-worksheet		statement="yes"		hint="yes"		answer="no"	solution="no"	/>
-		<exercise-reading			statement="yes"		hint="yes"		answer="no"	solution="no"	/>
-		<exercise-project			statement="yes"		hint="yes"		answer="no"	solution="no"	/>
+		<exercise-inline			statement="yes"		hint="yes"		answer="yes"	solution="yes"	/>
+		<exercise-divisional	statement="yes"		hint="yes"		answer="yes"	solution="yes"	/>
+		<exercise-worksheet		statement="yes"		hint="yes"		answer="yes"	solution="yes"	/>
+		<exercise-reading			statement="yes"		hint="yes"		answer="yes"	solution="yes"	/>
+		<exercise-project			statement="yes"		hint="yes"		answer="yes"	solution="yes"	/>
 
 		<!-- fillin attributes
 		 Style of fill-in-the-blanks.

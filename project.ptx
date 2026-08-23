@@ -5,14 +5,6 @@
   output-dir="output"
   >
   <targets>
-    <target 
-      name="homepage" 
-      format="html" 
-      source="homepage.ptx"
-      publication="homepage-pub.ptx"
-      output-dir="homepage"
-      deploy-dir="homepage">
-    </target>
     <!--
       stu vs. key Guided Lecture Notes. The two targets share the
       same source (notes.ptx) and differ only in their publication file:
@@ -22,21 +14,21 @@
           publication's <source><version include="notes stu|key"/> (see
           CLAUDE.md section 4 for the pairing conventions).
     -->
-    <target
-      name="notes-stu"
-      format="html"
-      source="notes.ptx"
-      publication="notes-stu-pub.ptx"
-      output-dir="notes-stu"
-      deploy-dir="notes/stu">
+    <target 
+      name="homepage" 
+      format="html" 
+      source="homepage.ptx"
+      publication="homepage-pub.ptx"
+      output-dir="stu"
+      deploy-dir="stu">
     </target>
     <target
-      name="notes-key"
+      name="key"
       format="html"
-      source="notes.ptx"
-      publication="notes-key-pub.ptx"
-      output-dir="notes-key"
-      deploy-dir="notes/key">
+      source="homepage.ptx"
+      publication="key-pub.ptx"
+      output-dir="key"
+      deploy-dir="key">
     </target>
   </targets>
 </project>
