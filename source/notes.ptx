@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
-	
-	<xi:include href="./bookends/docinfo.ptx" />
+<chapter xml:id="ma311-notes" xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Guided Lecture Notes</title>
 
-	<article xml:id="ma311-notes">
-		<title>MA 311</title>
-		<subtitle>Guided Lecture Notes</subtitle>
-
-		<xi:include href="./bookends/frontmatter.ptx" />
-
-		<xi:include href="./notes/ws-what-is-a-de.ptx"/>
-		<xi:include href="./notes/ws-classification.ptx"/>
-		<!-- <xi:include href="./notes/ws-solutions-ivp.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-direct-integration.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-separation-of-variables.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-integrating-factors.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-slope-fields.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-eulers-method.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-homogeneous-linear.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-undetermined-coefficients.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-laplace-transforms.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-laplace-method.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-piecewise-forcing.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-linear-systems.ptx"/> -->
-		<!-- <xi:include href="./notes/ws-nonlinear-systems.ptx"/> -->
-	</article>
-</pretext>
+  <xi:include href="./bookends/frontmatter.ptx"/>
+  <xi:include href="./notes/ws-what-is-a-de.ptx"/>
+  <xi:include href="./notes/ws-classification.ptx"/>
+  <!-- <xi:include href="./notes/ws-solutions-ivp.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-direct-integration.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-separation-of-variables.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-integrating-factors.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-slope-fields.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-eulers-method.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-homogeneous-linear.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-undetermined-coefficients.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-laplace-transforms.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-laplace-method.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-piecewise-forcing.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-linear-systems.ptx"/> -->
+  <!-- <xi:include href="./notes/ws-nonlinear-systems.ptx"/> -->
+</chapter>

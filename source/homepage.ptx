@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
-	
-	<xi:include href="./bookends/docinfo.ptx" />
+  <xi:include href="./bookends/docinfo.ptx"/>
+  <book xml:id="ma311-homepage">
+    <title>MA 311</title>
 
-	<book xml:id="ma311-homepage">
-		<title>MA 311</title>
-		<subtitle>Ordinary Differential Equations - Fall 2026</subtitle>
-
-		<xi:include href="./bookends/frontmatter.ptx" />
-		<xi:include href="./homepage/syllabus.ptx" />
-		<xi:include href="./homepage/odp-schedule.ptx" />
-		<xi:include href="./homepage/odp-formula-sheet.ptx" />
-	
-	</book>
+    <subtitle>Ordinary Differential Equations - Fall 2026</subtitle>
+    <xi:include href="./bookends/frontmatter.ptx"/>
+    <xi:include href="./syllabus.ptx"/>
+    <xi:include href="./odp-schedule.ptx"/>
+    <xi:include href="./odp-formula-sheet.ptx"/>
+    <xi:include href="./notes.ptx"/>
+  </book>
 </pretext>
