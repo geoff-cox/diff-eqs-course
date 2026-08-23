@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>What Is a Differential Equation?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script type="module">import { startMathJax } from './_static/pretext/js/dist/mathjax_startup.js';
+startMathJax({
+hasWebworkReps: false,
+hasSage: false,
+isReact: false,
+htmlPresentation: false,
+lang: "en-US",
+});
+</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta name="twitter:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
+<meta property="og:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
+<meta property="book:title" content="MA 311: Ordinary Differential Equations - Fall 2026">
+<meta name="twitter:description" content="DE course notes for MA311: Differential Equations.">
+<meta property="og:description" content="DE course notes for MA311: Differential Equations.">
+<meta name="twitter:card" content="summary">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/dist/pretext-core.js?v=2.49"></script><script src="_static/pretext/js/dist/pretext-read-aloud.js?v=2.49"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/dist/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/dist/pretext_search.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="ma311-homepage" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead" role="banner"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="https://www.vmi.edu/"><img src="external/icons/de-book-icon-7.png" alt="Logo image"></a><div class="title-container">
+<div class="heading ptx-banner-heading"><a href="ma311-homepage.html"><span class="title">MA 311</span> <span class="subtitle">Ordinary Differential Equations - Fall 2026</span></a></div>
+<p class="byline">Dr. Geoffrey Cox</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button id="ptx-toc-toggle" type="button" aria-controls="ptx-sidebar" class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="ptx-search-box">
+<div class="ptx-search-widget"><button id="ptx-search-button" type="button" class="ptx-search-button button" title="Search Book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<dialog id="ptx-search-dialog" class="ptx-dialog ptx-search-dialog"><div class="ptx-search-dialog-controls">
+<input aria-label="Search term" id="ptx-search-terms" class="ptx-search-terms" type="text" name="terms" placeholder="Search terms"><button aria-label="Close" id="ptx-search-close" class="ptx-search-close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div id="ptx-search-status" class="ptx-search-status" aria-live="polite" aria-atomic="true"></div>
+<h2 class="heading ptx-search-results-heading">Search Results: </h2>
+<div id="ptx-search-empty" class="ptx-search-empty"><span>No results.</span></div>
+<ol id="ptx-search-results" class="ptx-search-results"></ol></dialog>
+</div>
+<span class="nav-other-controls"><button id="ptx-read-aloud-button" class="ptx-read-aloud-button button" title="Read aloud" aria-expanded="false"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf1bc;</span><span class="name">Read aloud</span></button><div id="ptx-read-aloud-player" class="ptx-read-aloud-player" hidden="hidden" role="group" aria-label="Read aloud">
+<button id="ptx-read-aloud-prev" class="button" title="Previous sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe045;</span></button><button id="ptx-read-aloud-toggle" class="ptx-read-aloud-toggle button" title="Play"><span class="ptx-read-aloud-icon-play"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></span><span class="ptx-read-aloud-icon-pause"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe034;</span></span></button><button id="ptx-read-aloud-next" class="button" title="Next sentence"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe044;</span></button><a id="ptx-read-aloud-continue" class="ptx-read-aloud-continue button" hidden="hidden">Continue<span class="icon material-symbols-outlined" aria-hidden="true">&#xe037;</span></a><button id="ptx-read-aloud-settings-button" class="ptx-read-aloud-settings-button button" title="Reading settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe429;</span></button>
+</div>
+<dialog class="ptx-dialog ptx-read-aloud-settings-popup" id="ptx-read-aloud-settings-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Read aloud settings</h2>
+<button class="ptx-read-aloud-settings-close-button button" id="ptx-read-aloud-settings-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label for="ptx-read-aloud-voice"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe91f;</span><span>Voice</span></label><select id="ptx-read-aloud-voice"></select><label class="ptx-readability-slider-label" for="ptx-read-aloud-rate"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe9e4;</span><span>Reading speed</span><output id="ptx-read-aloud-rate-value" for="ptx-read-aloud-rate">1×</output></label><input type="range" id="ptx-read-aloud-rate" min="0.5" max="2" step="0.1" value="1"><label for="ptx-read-aloud-asides"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d7;</span><span>Collapsed content</span></label><select id="ptx-read-aloud-asides"><option value="skip">Announce, do not read</option>
+<option value="read">Read automatically</option></select><label for="ptx-read-aloud-autoscroll"><input type="checkbox" id="ptx-read-aloud-autoscroll" checked><span>Follow along (auto-scroll)</span></label><label for="ptx-read-aloud-autocontinue"><input type="checkbox" id="ptx-read-aloud-autocontinue"><span>Continue to the next page automatically</span></label>
+</div></dialog><button id="ptx-readability-options-button" class="ptx-readability-options-button button" title="Readability settings"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf6f1;</span><span class="name">Readability settings</span></button><dialog class="ptx-dialog ptx-readability-options-popup" id="ptx-readability-options-popup"><div class="ptx-readability-options-popup-controls">
+<h2 class="heading">Readability settings</h2>
+<button class="ptx-readability-options-close-button button" id="ptx-readability-options-close-button" title="Close"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cd;</span></button>
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-line-height"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe240;</span><span>Line height</span><output id="ptx-readability-line-height-value" for="ptx-readability-line-height">1.35</output></label><input type="range" id="ptx-readability-line-height" min="1.10" max="3" step="0.05" value="1.35">
+</div>
+<div class="ptx-readability-options-group">
+<label class="ptx-readability-slider-label" for="ptx-readability-font-size"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe245;</span><span>Content font size</span><output id="ptx-readability-font-size-value" for="ptx-readability-font-size">100%</output></label><input type="range" id="ptx-readability-font-size" min="0.8" max="1.5" step="0.05" value="1">
+</div>
+<fieldset class="ptx-readability-options-group ptx-readability-options-group-theme">
+<legend>Theme</legend>
+<label for="ptx-readability-theme-system"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-system" value="system"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe1ab;</span><span>System</span></label><label for="ptx-readability-theme-light"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-light" value="light"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe518;</span><span>Light</span></label><label for="ptx-readability-theme-dark"><input type="radio" name="ptx-readability-theme" id="ptx-readability-theme-dark" value="dark"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span>Dark</span></label>
+</fieldset>
+<fieldset class="ptx-readability-options-group">
+<legend>Assistive technologies</legend>
+<label for="ptx-readability-accessible-permalinks"><input type="checkbox" id="ptx-readability-accessible-permalinks"><span>🔗</span><span>Expose permalinks</span></label>
+</fieldset>
+<div class="ptx-readability-options-group"><button type="button" class="ptx-readability-reset-button button" id="ptx-readability-reset-button"><span class="icon material-symbols-outlined" aria-hidden="true">&#xf053;</span><span class="name">Reset All</span></button></div></dialog></span><span class="treebuttons"><span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="up-button button" href="ma311-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ws-classification.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[normalem]{ulem}
+\usepackage{soul}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" role="complementary" class="ptx-sidebar"><nav id="ptx-toc" tabindex="-1" aria-label="Contents" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="ma311-homepage-3.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ma311-syllabus.html" class="internal"><span class="codenumber">1</span> <span class="title">Syllabus</span></a></div>
+<ul id="ptx-toc-group-ma311-syllabus" class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-general-info.html" class="internal"><span class="codenumber">1.1</span> <span class="title">General</span></a></div>
+<ul id="ptx-toc-group-ma311-general-info" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-general-info.html#ma311-instructor-info" class="internal"><span class="title">Instructor Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-general-info.html#ma311-course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-grades.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Grades &amp; Coursework</span></a></div>
+<ul id="ptx-toc-group-ma311-grades" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-final-grade" class="internal"><span class="title">Final Grades</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-homework" class="internal"><span class="title">Homework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-odps" class="internal"><span class="title">Opportunities to Demonstrate Proficiency (ODPs)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-final" class="internal"><span class="title">Final Exam</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-grades.html#ma311-grades-6" class="internal"><span class="title">Secondary(S) Topic Pass ➜ 1% Homework</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-resources.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Resources</span></a></div>
+<ul id="ptx-toc-group-ma311-resources" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-canvas" class="internal"><span class="title">Canvas</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-textbook" class="internal"><span class="title">Textbook</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-runestone" class="internal"><span class="title">Runestone</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-resources.html#ma311-materials-webwork" class="internal"><span class="title">WebWork</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-topics.html" class="internal"><span class="codenumber">1.4</span> <span class="title">ODP Topics</span></a></div>
+<ul id="ptx-toc-group-ma311-topics" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-how-odps-work" class="internal"><span class="title">How ODPs Work</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-core-topics" class="internal"><span class="title">Core Topics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-topics.html#ma311-secondary-topics" class="internal"><span class="title">Secondary Topics</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ma311-policies.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Policies</span></a></div>
+<ul id="ptx-toc-group-ma311-policies" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-coursework-policy" class="internal"><span class="title">Coursework Policies</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-ai-policy" class="internal"><span class="title">AI Usage Policy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-policy-late" class="internal"><span class="title">Late Homework</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#ma311-policy-getting-help" class="internal"><span class="title">Getting Help</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#merc" class="internal"><span class="title">MERC</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#policy-grade-disputes" class="internal"><span class="title">Grade Disputes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ma311-policies.html#policy-classroom-behavior" class="internal"><span class="title">Classroom Behavior</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="work-for-grade.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Work For Grade</span></a></div>
+<ul id="ptx-toc-group-work-for-grade" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="work-for-grade.html#vmi-work-for-grade" class="internal"><span class="title">VMI</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="work-for-grade.html#math-work-for-grade" class="internal"><span class="title">Applied Math</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="vmi-attendance.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Attendance</span></a></div>
+<ul id="ptx-toc-group-vmi-attendance" class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vmi-attendance.html#vmi-missing-class" class="internal"><span class="title">Missing Class</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="vmi-attendance.html#vmi-attendance-policy" class="internal"><span class="title">Attendance Policy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="vmi-accessibility.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Accessibility</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ma311-homepage-5.html" class="internal"><span class="codenumber">2</span> <span class="title">Tentative ODP Schedule</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ma311-homepage-6.html" class="internal"><span class="codenumber">3</span> <span class="title">Formula Sheets</span></a></div>
+<ul id="ptx-toc-group-ma311-homepage-6" class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="ws-formula-sheet.html" class="internal"><span class="codenumber">3</span> <span class="title">ODP Formula Sheet</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ma311-notes.html" class="internal"><span class="codenumber">4</span> <span class="title">Guided Lecture Notes</span></a></div>
+<ul class="structural toc-item-list contains-active" id="ptx-toc-group-ma311-notes">
+<li class="toc-item toc-worksheet active"><div class="toc-title-box"><a href="ws-what-is-a-de.html" class="internal"><span class="codenumber">4.1</span> <span class="title">What Is a Differential Equation?</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="ws-classification.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Classifying Differential Equations</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<div class="print-preview-header">
+<h2 class="print-preview">Print preview</h2>
+<div class="print-controls">
+<div class="print-controls-toggles">
+<form class="papersize-select" id="papersize-select">
+<span class="name">Paper size</span><label><input type="radio" name="papersize" value="a4">A4
+        </label><label><input type="radio" name="papersize" value="letter">Letter
+        </label>
+</form>
+<details class="print-options"><summary>Additional printing options</summary><div class="hide-solutions-options"><div class="hide-option">
+<label for="hide-solution-checkbox">Hide solutions</label><input type="checkbox" id="hide-solution-checkbox">
+</div></div>
+<div class="header-footer-options">
+<div class="header-option">
+<span class="title">Print headers</span><label>First page<input type="checkbox" id="print-first-page-header-checkbox" checked></label><label>Running<input type="checkbox" id="print-running-header-checkbox" checked></label>
+</div>
+<div class="footer-option">
+<span class="title">Print footers</span><label>First page<input type="checkbox" id="print-first-page-footer-checkbox" checked></label><label>Running<input type="checkbox" id="print-running-footer-checkbox" checked></label>
+</div>
+</div>
+<div class="highlight-workspace-option">
+<label for="highlight-workspace-checkbox">Highlight workspace</label><input type="checkbox" id="highlight-workspace-checkbox">
+</div></details>
+</div>
+<button class="print-button" title="Print" onClick="window.print()"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span><span class="name">Print</span></button>
+</div>
+</div>
+<section class="worksheet" id="ws-what-is-a-de" data-margins="0.75in 0.75in 0.75in 0.75in">
+<h1 class="heading hide-type">
+<span class="type">Worksheet</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">What Is a Differential Equation?</span><div class="print-links"><a href="?printpreview=ws-what-is-a-de" class="print-link" title="Print preview"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8ad;</span></a></div>
+</h1>
+<article class="objectives goal-like" id="ws-what-is-a-de-2"><h2 class="heading"><span class="type">🎯 Learning Objectives</span></h2>
+<ul class="disc" id="ws-what-is-a-de-2-1">
+<li id="ws-what-is-a-de-2-1-1">
+<div class="para" id="ws-what-is-a-de-2-1-1-1">
+<dfn class="terminology">Identify</dfn> whether an equation is a differential equation, and name its dependent and independent variables.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Objective"><a tabindex="-1" href="#ws-what-is-a-de-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-2-1-2">
+<div class="para" id="ws-what-is-a-de-2-1-2-1">
+<dfn class="terminology">Connect</dfn> solving a differential equation to solving equations in algebra and to antidifferentiation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Objective"><a tabindex="-1" href="#ws-what-is-a-de-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-2-1-3">
+<div class="para" id="ws-what-is-a-de-2-1-3-1">
+<dfn class="terminology">Label</dfn> the terms, free term, and coefficients of a differential equation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Objective"><a tabindex="-1" href="#ws-what-is-a-de-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="🎯 Learning Objectives 4.1"><a tabindex="-1" href="#ws-what-is-a-de-2" title="Copy heading and permalink for 🎯 Learning Objectives 4.1" aria-label="Copy heading and permalink for 🎯 Learning Objectives 4.1">🔗</a></div>
+</article><section class="onepage" id="ws-what-is-a-de-3">
+<div class="para" id="ws-what-is-a-de-3-1">
+<dfn class="terminology">What is a differential equation?</dfn><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ws-what-is-a-de-3-2">In algebra you solved equations like <span class="process-math">\(y - 3t = 5\)</span> for a <em class="emphasis">number</em> <span class="process-math">\(y\text{.}\)</span> A differential equation asks a harder question: it hands you information about a function <em class="emphasis">and its derivatives</em> and asks you to find the whole <em class="emphasis">function</em>. For instance, isolating the derivative in <span class="process-math">\(y' - 3t = 5\)</span> gives <span class="process-math">\(y' = 5 + 3t\text{,}\)</span> and the job is to find a function whose derivative is <span class="process-math">\(5 + 3t\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="ws-what-is-a-de-3-3"><h2 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="ws-what-is-a-de-3-3-1-1">
+<div class="para">
+<dfn class="terminology">Reading check.</dfn> Fill in each blank from your reading.</div>
+<ol class="lower-alpha lower-alpha-level-1" id="ws-what-is-a-de-3-3-1-1-2">
+<li id="ws-what-is-a-de-3-3-1-1-2-1">
+<div class="para" id="ws-what-is-a-de-3-3-1-1-2-1-1">A differential equation is an equation that involves one or more <span class="process-math">\(\underline{\textbf{derivatives}}\)</span> of an unknown function.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-3-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4.1.1.a"><a tabindex="-1" href="#ws-what-is-a-de-3-3-1-1-2-1" title="Copy heading and permalink for Item 4.1.1.a" aria-label="Copy heading and permalink for Item 4.1.1.a">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-3-3-1-1-2-2">
+<div class="para" id="ws-what-is-a-de-3-3-1-1-2-2-1">For an equation to be a differential equation it must contain both a derivative and an <span class="process-math">\(\underline{\textbf{equals}}\)</span> sign.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-3-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4.1.1.b"><a tabindex="-1" href="#ws-what-is-a-de-3-3-1-1-2-2" title="Copy heading and permalink for Item 4.1.1.b" aria-label="Copy heading and permalink for Item 4.1.1.b">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-3-3-1-1-2-3">
+<div class="para" id="ws-what-is-a-de-3-3-1-1-2-3-1">If the unknown function depends on a single variable the equation is an <span class="process-math">\(\underline{\textbf{ordinary}}\)</span> differential equation; if it depends on more than one variable it is a <span class="process-math">\(\underline{\textbf{partial}}\)</span> differential equation. In this course, when we say “differential equation” we mean <span class="process-math">\(\underline{\textbf{ordinary}}\)</span> differential equation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-3-1-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4.1.1.c"><a tabindex="-1" href="#ws-what-is-a-de-3-3-1-1-2-3" title="Copy heading and permalink for Item 4.1.1.c" aria-label="Copy heading and permalink for Item 4.1.1.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 4.1.1"><a tabindex="-1" href="#ws-what-is-a-de-3-3" title="Copy heading and permalink for Worksheet Exercise 4.1.1" aria-label="Copy heading and permalink for Worksheet Exercise 4.1.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ws-what-is-a-de-3-4"><h2 class="heading">
+<span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">True or False.</span>
+</h2>
+<div class="para" id="ws-what-is-a-de-3-4-2-1">
+<span class="process-math">\(y''' - 4y' - 3\)</span> is a differential equation.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ws-what-is-a-de-3-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">🔎 Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ws-what-is-a-de-3-4-3-1">False. It has derivatives of the dependent variable <span class="process-math">\(y\text{,}\)</span> but it has no equals sign.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="🔎 Solution 4.1.2.1"><a tabindex="-1" href="#ws-what-is-a-de-3-4-3" title="Copy heading and permalink for 🔎 Solution 4.1.2.1" aria-label="Copy heading and permalink for 🔎 Solution 4.1.2.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 4.1.2: True or False"><a tabindex="-1" href="#ws-what-is-a-de-3-4" title="Copy heading and permalink for Worksheet Exercise 4.1.2: True or False" aria-label="Copy heading and permalink for Worksheet Exercise 4.1.2: True or False">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ws-what-is-a-de-3-5"><h2 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para" id="ws-what-is-a-de-3-5-1-1">Solve the differential equation <span class="process-math">\(y' = \cos t + 5\)</span> by finding a function <span class="process-math">\(y\)</span> whose derivative is <span class="process-math">\(\cos t + 5\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-5-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ws-what-is-a-de-3-5-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">🔎 Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ws-what-is-a-de-3-5-2-1">
+<div class="para">Antidifferentiate both sides:</div>
+<div class="displaymath process-math" id="ws-what-is-a-de-3-5-2-1-1">
+\begin{equation*}
+y = \int (\cos t + 5)\,dt = \sin t + 5t + C
+\end{equation*}
+</div>
+<div class="para">Every choice of the constant <span class="process-math">\(C\)</span> gives a function whose derivative is <span class="process-math">\(\cos t + 5\text{,}\)</span> so there is a whole <em class="emphasis">family</em> of solutions. This pattern will recur throughout the course: solving a differential equation means recovering a function up to one or more constants that arise from integration.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-3-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="🔎 Solution 4.1.3.1"><a tabindex="-1" href="#ws-what-is-a-de-3-5-2" title="Copy heading and permalink for 🔎 Solution 4.1.3.1" aria-label="Copy heading and permalink for 🔎 Solution 4.1.3.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 4.1.3"><a tabindex="-1" href="#ws-what-is-a-de-3-5" title="Copy heading and permalink for Worksheet Exercise 4.1.3" aria-label="Copy heading and permalink for Worksheet Exercise 4.1.3">🔗</a></div>
+</article></section><section class="onepage" id="ws-what-is-a-de-4">
+<article class="exercise exercise-like" id="ws-what-is-a-de-4-1"><h2 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h2>
+<div class="para logical" id="ws-what-is-a-de-4-1-1-1">
+<div class="para">For each differential equation, name the dependent variable (the unknown function we solve for) and the independent variable (the one it is differentiated with respect to):</div>
+<div class="displaymath process-math" id="ws-what-is-a-de-4-1-1-1-1">
+\begin{equation*}
+\frac{dW}{dz} + \frac{W}{z} = 9z^2, \qquad
+g'' + s^3 g = 0, \qquad
+R''' = 6R.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ws-what-is-a-de-4-1-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">🔎 Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ws-what-is-a-de-4-1-2-1">
+<div class="para">The dependent variable is the one being differentiated.</div>
+<ul class="square" id="ws-what-is-a-de-4-1-2-1-1">
+<li id="ws-what-is-a-de-4-1-2-1-1-1">
+<div class="para" id="ws-what-is-a-de-4-1-2-1-1-1-1">
+<span class="process-math">\(\dfrac{dW}{dz}\ \Rightarrow\)</span> <span class="process-math">\(W\)</span> is differentiated with respect to <span class="process-math">\(z\ \Rightarrow\ \)</span> dependent: <span class="process-math">\(W\text{,}\)</span> independent: <span class="process-math">\(z\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-1-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ws-what-is-a-de-4-1-2-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-4-1-2-1-1-2">
+<div class="para" id="ws-what-is-a-de-4-1-2-1-1-2-1">
+<span class="process-math">\(g''\ \Rightarrow\)</span> <span class="process-math">\(g\)</span> is differentiated with respect to <span class="process-math">\(s\ \Rightarrow\ \)</span> dependent: <span class="process-math">\(g\text{,}\)</span> independent: <span class="process-math">\(s\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-1-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ws-what-is-a-de-4-1-2-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-4-1-2-1-1-3">
+<div class="para" id="ws-what-is-a-de-4-1-2-1-1-3-1">
+<span class="process-math">\(R'''\ \Rightarrow\)</span> <span class="process-math">\(R\)</span> is the differentiated dependent variable, but no independent variable is named.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-1-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item"><a tabindex="-1" href="#ws-what-is-a-de-4-1-2-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="🔎 Solution 4.1.4.1"><a tabindex="-1" href="#ws-what-is-a-de-4-1-2" title="Copy heading and permalink for 🔎 Solution 4.1.4.1" aria-label="Copy heading and permalink for 🔎 Solution 4.1.4.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 4.1.4"><a tabindex="-1" href="#ws-what-is-a-de-4-1" title="Copy heading and permalink for Worksheet Exercise 4.1.4" aria-label="Copy heading and permalink for Worksheet Exercise 4.1.4">🔗</a></div>
+</article>
+<div class="para logical" id="ws-what-is-a-de-4-2">
+<div class="para">
+<dfn class="terminology">Vocabulary for the parts of an equation.</dfn> Before we can classify equations we need names for their pieces. Fill in the blanks.</div>
+<ol class="lower-alpha lower-alpha-level-1" id="ws-what-is-a-de-4-2-2">
+<li id="ws-what-is-a-de-4-2-2-1">
+<div class="para" id="ws-what-is-a-de-4-2-2-1-1">A <dfn class="terminology">term</dfn> is any piece of a differential equation separated from the others by <span class="process-math">\(\underline{\textbf{plus or minus}}\)</span> signs.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item a"><a tabindex="-1" href="#ws-what-is-a-de-4-2-2-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-4-2-2-2">
+<div class="para" id="ws-what-is-a-de-4-2-2-2-1">A <dfn class="terminology">free term</dfn> is a term that does <em class="emphasis">not</em> involve the <span class="process-math">\(\underline{\textbf{dependent}}\)</span> variable or its derivatives. Every equation has one, even a hidden <span class="process-math">\(\underline{\textbf{free term}}\text{:}\)</span> for example <span class="process-math">\(w' = 4w\)</span> is really <span class="process-math">\(w' - 4w = 0\text{.}\)</span><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item b"><a tabindex="-1" href="#ws-what-is-a-de-4-2-2-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-4-2-2-3">
+<div class="para" id="ws-what-is-a-de-4-2-2-3-1">A <dfn class="terminology">coefficient</dfn> is a constant or a function of the <span class="process-math">\(\underline{\textbf{independent}}\)</span> variable that multiplies the dependent variable or one of its derivatives.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item c"><a tabindex="-1" href="#ws-what-is-a-de-4-2-2-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="exercise exercise-like" id="ws-what-is-a-de-4-3"><h2 class="heading">
+<span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">True or False.</span>
+</h2>
+<div class="para" id="ws-what-is-a-de-4-3-2-1">A coefficient may never contain the dependent variable.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ws-what-is-a-de-4-3-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">🔎 Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para" id="ws-what-is-a-de-4-3-3-1">True. A coefficient may be a constant or a function of the independent variable, but it may not contain the dependent variable or any of its derivatives.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="🔎 Solution 4.1.5.1"><a tabindex="-1" href="#ws-what-is-a-de-4-3-3" title="Copy heading and permalink for 🔎 Solution 4.1.5.1" aria-label="Copy heading and permalink for 🔎 Solution 4.1.5.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 4.1.5: True or False"><a tabindex="-1" href="#ws-what-is-a-de-4-3" title="Copy heading and permalink for Worksheet Exercise 4.1.5: True or False" aria-label="Copy heading and permalink for Worksheet Exercise 4.1.5: True or False">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="ws-what-is-a-de-4-4"><h2 class="heading">
+<span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Terms, free term, and coefficients.</span>
+</h2>
+<div class="para logical" id="ws-what-is-a-de-4-4-2-1">
+<div class="para">The dependent variable below is <span class="process-math">\(u\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="ws-what-is-a-de-4-4-2-1-2">
+\begin{equation*}
+\frac{5}{t}\,u^{(4)} + 2.7 u'' + t^3 u' + u = \tfrac14 e^{2t}.
+\end{equation*}
+</div>
+<div class="para">(a) List the five terms. (b) Which is the free term? (c) Give the coefficients of the non-free terms.</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="ws-what-is-a-de-4-4-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">🔎 Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="solution solution-like knowl__content">
+<div class="para logical" id="ws-what-is-a-de-4-4-3-1">
+<ol class="lower-alpha ol-marker-1" id="ws-what-is-a-de-4-4-3-1-1">
+<li id="ws-what-is-a-de-4-4-3-1-1-1">
+<div class="para" id="p-derived-ws-what-is-a-de-4-4-3-1-1-1"><span class="process-math">\(\displaystyle \dfrac{5}{t}u^{(4)},\quad
+2.7u'',\quad
+t^3 u',\quad
+u,\quad
+\dfrac14 e^{2t}\)</span></div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4.1.6.a"><a tabindex="-1" href="#ws-what-is-a-de-4-4-3-1-1-1" title="Copy heading and permalink for Item 4.1.6.a" aria-label="Copy heading and permalink for Item 4.1.6.a">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-4-4-3-1-1-2">
+<div class="para" id="p-derived-ws-what-is-a-de-4-4-3-1-1-2">
+<span class="process-math">\(\dfrac14 e^{2t}\quad\)</span> (Notice a free term need not be constant)</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4.1.6.b"><a tabindex="-1" href="#ws-what-is-a-de-4-4-3-1-1-2" title="Copy heading and permalink for Item 4.1.6.b" aria-label="Copy heading and permalink for Item 4.1.6.b">🔗</a></div>
+</li>
+<li id="ws-what-is-a-de-4-4-3-1-1-3">
+<div class="para" id="p-derived-ws-what-is-a-de-4-4-3-1-1-3">Reading from left to right, the coefficients are: <span class="process-math">\(\quad\dfrac{5}{t},\quad 2.7,\quad t^3,\quad 1\text{.}\)</span>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Item 4.1.6.c"><a tabindex="-1" href="#ws-what-is-a-de-4-4-3-1-1-3" title="Copy heading and permalink for Item 4.1.6.c" aria-label="Copy heading and permalink for Item 4.1.6.c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="🔎 Solution 4.1.6.1"><a tabindex="-1" href="#ws-what-is-a-de-4-4-3" title="Copy heading and permalink for 🔎 Solution 4.1.6.1" aria-label="Copy heading and permalink for 🔎 Solution 4.1.6.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Worksheet Exercise 4.1.6: Terms, free term, and coefficients"><a tabindex="-1" href="#ws-what-is-a-de-4-4" title="Copy heading and permalink for Worksheet Exercise 4.1.6: Terms, free term, and coefficients" aria-label="Copy heading and permalink for Worksheet Exercise 4.1.6: Terms, free term, and coefficients">🔗</a></div>
+</article>
+<div class="para" id="ws-what-is-a-de-4-5">
+<dfn class="terminology">Looking ahead</dfn>. Naming the parts of a differential equation is the first step toward <em class="emphasis">classifying</em> it. In the next worksheet we attach two labels to every equation: its <em class="emphasis">order</em> and whether it is <em class="emphasis">linear</em>. Together they decide which solution technique to reach for.<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ws-what-is-a-de-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section><div class="autopermalink" aria-hidden="true" data-description="Worksheet 4.1: What Is a Differential Equation?"><a tabindex="-1" href="#ws-what-is-a-de" title="Copy heading and permalink for Worksheet 4.1: What Is a Differential Equation?" aria-label="Copy heading and permalink for Worksheet 4.1: What Is a Differential Equation?">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<span class="previous-button button disabled"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></span><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ws-classification.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
