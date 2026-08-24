@@ -115,7 +115,8 @@ Course parameters for THIS repo (plug into the shared conventions):
    `grep -v 'asset directories'`; fix or explain anything left.
 3. **Xref integrity** — zero unresolved cross-reference warnings.
 4. **Visibility split** (worksheets) — sentinel phrase from
-   `<solution>` or `component="key"` prose:
+   `component="key"` prose (worksheets carry no `<solution>` any more;
+   see the shared conventions, mechanism 2):
    student build grep count = 0, instructor build count >= 1.
 
 Paste literal command output into the PR's "Verification evidence"

@@ -37,18 +37,45 @@ revealed). The split uses PreTeXt's component/version mechanism:
    **Gotcha:** text inside `<fillin>` is silently discarded; the answer
    never lives inside `<fillin>`. Give each `<fillin>` a sensible
    `@characters` width.
-2. **Worked problems** — paired exercises:
-   `<exercise component="stu" workspace="Xin">` (statement only)
-   followed by `<exercise component="key">` (same statement plus
-   `<solution>`). `workspace="Xin"` reserves X inches of write-in space
-   on the printed student copy — be conservative and add extra room for
-   students who write large.
-3. **Quick True/False checks** — may instead be a single `<exercise>`
-   with `<solution component="key">` (statement shared, solution
-   instructor-only).
-4. `<exercise-worksheet statement="yes" solution="no|yes"/>` in the
-   publication files additionally hides/reveals bare `<solution>`s
-   (student: `no`; instructor: `yes`).
+2. **Worked problems** — ONE `<exercise>`, split inside its
+   `<statement>`:
+
+       <exercise>
+         <statement>
+           <p>…the prompt, shared by both builds…</p>
+           <p component="stu" workspace="Xin"/>
+           <p component="key">…the worked answer…</p>
+         </statement>
+       </exercise>
+
+   `workspace="Xin"` reserves X inches of write-in space on the printed
+   student copy — be conservative and add extra room for students who
+   write large. A set of problems is one `<exercise>` with an
+   `<introduction>` carrying the shared instruction and one `<task>`
+   per problem, each task's `<statement>` built the same way.
+
+   **Never use `<solution>`, and never write a duplicated
+   `<exercise component="stu">` / `<exercise component="key">` pair.**
+   Both were the earlier convention and both are retired. The
+   duplicated pair had to repeat the statement verbatim in two places,
+   and in practice the copies drifted: MA 311's own model worksheet
+   ended up asking students to solve `y' = 5 + 3t` while the answer key
+   solved `y' = cos t + 5`. Keeping the prompt in exactly one place
+   makes that class of bug unrepresentable.
+3. **Quick True/False checks** — the same shape as mechanism 2: one
+   `<exercise>` (give it `<title>True or False</title>`) whose
+   `<statement>` holds the claim, then a
+   `<p component="stu" workspace="Xin"/>` for the student's reasoning,
+   then a `<p component="key">` with the verdict and why. Not
+   `<solution component="key">`.
+4. **A worksheet must not contain a `<solution>`.** Where that holds,
+   the publication files' `<exercise-worksheet solution="no|yes"/>`
+   gates nothing in that worksheet — the `component` attributes alone
+   carry the split. **Leave the setting as it is** (student `no`,
+   instructor `yes`) regardless: it still applies to non-worksheet
+   exercises, and while any repo is mid-migration it is the only thing
+   keeping a not-yet-converted worksheet's `<solution>` blocks off the
+   student copy. Check every worksheet before touching it.
 
 **Gotcha:** PreTeXt `<example>` renders its solution in BOTH builds —
 anything whose answer must hide on the student copy uses `<exercise>`.
@@ -60,9 +87,9 @@ Quick selection table:
 |-------------------------------------------|----------------------------------------------|
 | One/two-word blank inside a sentence      | paired `<p component="stu|key">` + `<fillin>`|
 | Definition or theorem with a blank in it  | paired `<p component="stu|key">` + `<fillin>`|
-| Multi-step worked computation             | paired `<exercise component="stu|key">` + `workspace` |
-| "Your turn" practice problem              | paired `<exercise component="stu|key">` + `workspace` |
-| Quick True/False check                    | one `<exercise>` + `<solution component="key">` |
+| Multi-step worked computation             | one `<exercise>` + `<p component="stu" workspace="Xin"/>` + `<p component="key">` |
+| "Your turn" practice problem              | one `<exercise>` + `<p component="stu" workspace="Xin"/>` + `<p component="key">` |
+| Quick True/False check                    | one `<exercise>` + `<p component="stu" workspace="Xin"/>` + `<p component="key">` |
 | Read-along illustration, no hidden answer | `<example>` (no solution)                    |
 
 ## 3. Layout rules
@@ -91,7 +118,7 @@ Quick selection table:
 - Translating an old Beamer deck (the reveal pattern `\ON<1>{\B{...}}`
   marks what becomes hidden):
   - short revealed phrase → reading-check pair (mechanism 1),
-  - revealed multi-line computation → worked-problem pair (mechanism 2),
+  - revealed multi-line computation → worked problem (mechanism 2),
   - static exposition → ordinary prose, tightened.
 - Figures: placeholder `<figure>`s naming the source image (deck PNG or
   book asset path in a comment); list them under the PR's "Open
@@ -110,8 +137,8 @@ Quick selection table:
 Beyond the repo's standard gates (well-formedness, clean build, xref
 integrity), every worksheet PR proves the split:
 
-1. Pick a sentinel phrase that exists only in `<solution>` or
-   `component="key"` prose and is unique to the worksheet. Structural
+1. Pick a sentinel phrase that exists only in `component="key"`
+   prose and is unique to the worksheet. Structural
    tags are unreliable sentinels; use answer-specific prose.
 2. Grep the rendered HTML of the student and instructor targets (output
    directories per `project.ptx`):

@@ -16,9 +16,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md>.
 -->
@@ -85,17 +86,16 @@
 			<title>True or False</title>
 			<statement>
 				<p>Every time you compute an antiderivative, you are solving a differential equation.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					True. Computing <m>\int f(x)\,dx</m> is answering <q>find <m>y</m>
 					with <m>y' = f(x)</m></q><mdash />a differential equation. Calculus 1
 					just never called it that.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-basic-stu" component="stu" workspace="1.9in">
+		<exercise xml:id="ws-di-ex-basic">
 			<statement>
 				<p>
 					Find the general solution of
@@ -104,21 +104,8 @@
 					</md>
 					(Isolate <m>y'</m> first.)
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-di-ex-basic-key" component="key">
-			<statement>
-				<p>
-					Find the general solution of
-					<md>
-						<mrow> 3y' + 6x^2 = 12. </mrow>
-					</md>
-					(Isolate <m>y'</m> first.)
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="1.9in"/>
+				<p component="key">
 					Isolating the derivative: <m>3y' = 12 - 6x^2</m>, so
 					<m>y' = 4 - 2x^2</m>. Integrating both sides with respect to
 					<m>x</m>:
@@ -129,10 +116,10 @@
 					<m>12 - 6x^2</m> without dividing by <m>3</m> first produces a
 					function whose derivative is <m>3y'</m>, not <m>y'</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-ivp-stu" component="stu" workspace="1.9in">
+		<exercise xml:id="ws-di-ex-ivp">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -140,20 +127,8 @@
 						<mrow> s' = 9t^2 - 4, \qquad s(1) = 2. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-di-ex-ivp-key" component="key">
-			<statement>
-				<p>
-					Solve the initial-value problem
-					<md>
-						<mrow> s' = 9t^2 - 4, \qquad s(1) = 2. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="1.9in"/>
+				<p component="key">
 					Integrating gives the general solution
 					<m>s = 3t^3 - 4t + c</m>. The initial condition selects the
 					constant:
@@ -164,7 +139,7 @@
 					same two-step rhythm as the last worksheet: general solution first,
 					then the initial condition picks one member of the family.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -201,7 +176,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-di-ex-trapped-stu" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-di-ex-trapped">
 			<statement>
 				<p>
 					For <m>x > 0</m>, find the general solution of
@@ -211,22 +186,8 @@
 					Why is it legitimate to write a single constant <m>c</m> even though
 					both integrals produce one?
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-di-ex-trapped-key" component="key">
-			<statement>
-				<p>
-					For <m>x > 0</m>, find the general solution of
-					<md>
-						<mrow> \frac{1}{x}\,\frac{d}{dx}\left[x^2\,y\right] = 6. </mrow>
-					</md>
-					Why is it legitimate to write a single constant <m>c</m> even though
-					both integrals produce one?
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.4in"/>
+				<p component="key">
 					Isolate the derivative, then integrate both sides:
 					<md>
 						<mrow> \frac{d}{dx}\left[x^2 y\right] \amp = 6x </mrow>
@@ -237,16 +198,15 @@
 					is just another arbitrary constant, so merging them loses nothing;
 					dividing by <m>x^2</m> then frees the solution.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-di-tf-integrate-y">
 			<title>True or False</title>
 			<statement>
 				<p><m>\displaystyle\int y\ dx = \frac{y^2}{2} + c</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. The variable of integration is <m>x</m>, and <m>y</m> is an
 					unknown <em>function</em> of <m>x</m><mdash />not the integration
 					variable. Until we know which function <m>y</m> is, the integral
@@ -254,10 +214,10 @@
 					<m>\frac{y^2}{2} + c</m> would be the answer to the different
 					problem <m>\int y\,dy</m>.)
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-di-ex-applies-stu" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-di-ex-applies">
 			<statement>
 				<p>
 					For each equation, decide whether direct integration applies. If it
@@ -270,41 +230,24 @@
 						       \text{(c)}\ \frac{d}{dx}\left[y^3 + x\right] = e^{2x} </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-di-ex-applies-key" component="key">
-			<statement>
-				<p>
-					For each equation, decide whether direct integration applies. If it
-					does, name the form (<m>y' = f(x)</m> or
-					<m>\frac{d}{dx}[g(x,y)] = f(x)</m>); if not, explain what goes
-					wrong.
-					<md>
-						<mrow> \text{(a)}\ y' = 7x\cos x \qquad
-						       \text{(b)}\ y' - y = 5x^2 \qquad
-						       \text{(c)}\ \frac{d}{dx}\left[y^3 + x\right] = e^{2x} </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.2in"/>
+				<p component="key">
 					(a) Yes: the form is <m>y' = f(x)</m>, with only <m>x</m>'s on the
 					right (the antiderivative takes integration by parts, but the
 					method applies).
 				</p>
-				<p>
+				<p component="key">
 					(b) No: isolating the derivative gives <m>y' = 5x^2 + y</m>, and the
 					right side contains the dependent variable. Integrating would leave
 					the uncomputable <m>\int y\,dx</m> behind<mdash />we are stuck.
 				</p>
-				<p>
+				<p component="key">
 					(c) Yes: this is the trapped-derivative form
 					<m>\frac{d}{dx}[g(x,y)] = f(x)</m> with <m>g = y^3 + x</m>.
 					Integrating gives <m>y^3 + x = \frac{1}{2}e^{2x} + c</m>, and solving
 					for <m>y</m> takes a cube root.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -323,7 +266,7 @@
 			them.
 		</p>
 
-		<exercise xml:id="ws-di-ex-ball-stu" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-di-ex-ball">
 			<statement>
 				<p>
 					A ball is thrown straight up from a balcony <m>2</m> meters above
@@ -336,35 +279,18 @@
 					(b) Apply both initial conditions to find the particular solution.
 					(c) At what time does the ball reach its maximum height?
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-di-ex-ball-key" component="key">
-			<statement>
-				<p>
-					A ball is thrown straight up from a balcony <m>2</m> meters above
-					the ground with initial velocity <m>15~\mathrm{m/s}</m>. Its height
-					<m>y(t)</m> (in meters) satisfies
-					<md>
-						<mrow> y'' = -10, \qquad y(0) = 2, \qquad y'(0) = 15. </mrow>
-					</md>
-					(a) Integrate twice to find the general solution.
-					(b) Apply both initial conditions to find the particular solution.
-					(c) At what time does the ball reach its maximum height?
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.0in"/>
+				<p component="key">
 					(a) One integration gives <m>y' = -10t + c_1</m>; a second gives
 					<m>y = -5t^2 + c_1 t + c_2</m>. Two integrations, two constants.
 				</p>
-				<p>
+				<p component="key">
 					(b) <m>y'(0) = c_1 = 15</m> and <m>y(0) = c_2 = 2</m>, so
 					<md>
 						<mrow> y = -5t^2 + 15t + 2. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(c) The maximum occurs when the ball is momentarily motionless:
 					<m>y' = -10t + 15 = 0</m> at <m>t = 1.5</m> seconds (height
 					<m>y(1.5) = 13.25</m> m). Notice the velocity condition determined
@@ -372,7 +298,7 @@
 					initial condition pins down the constant born in the corresponding
 					integration.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>

@@ -23,9 +23,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
@@ -91,19 +92,18 @@
 			<title>True or False</title>
 			<statement>
 				<p><m>\mathcal{L}\{f(t)\}</m> is another function of <m>t</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. The variable <m>t</m> is integrated away<mdash />it is the
 					variable of integration, and the limits <m>0</m> and
 					<m>\infty</m> get substituted into it. What survives is the
 					parameter <m>s</m>: the transform moves the whole problem from the
 					<m>t</m>-world into the <m>s</m>-world.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lt-ex-definition-stu" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-lt-ex-definition">
 			<statement>
 				<p>
 					Compute
@@ -114,23 +114,8 @@
 					exponentials, integrate from <m>0</m> to <m>b</m>, and take the
 					limit. For which values of <m>s</m> does the transform exist?
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-lt-ex-definition-key" component="key">
-			<statement>
-				<p>
-					Compute
-					<md>
-						<mrow> \mathcal{L}\left\{e^{-4t}\right\} </mrow>
-					</md>
-					directly from the definition: set up the integral, combine the
-					exponentials, integrate from <m>0</m> to <m>b</m>, and take the
-					limit. For which values of <m>s</m> does the transform exist?
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.0in"/>
+				<p component="key">
 					Combine the exponentials and integrate:
 					<md>
 						<mrow> \mathcal{L}\left\{e^{-4t}\right\} \amp = \int_0^{\infty} e^{-st} e^{-4t}\,dt = \lim_{b\to\infty} \int_0^{b} e^{-(s+4)t}\,dt </mrow>
@@ -144,7 +129,7 @@
 					This matches the general table entry
 					<m>\mathcal{L}\{e^{at}\} = \frac{1}{s-a}</m> with <m>a = -4</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -192,7 +177,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-lt-ex-linearity-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-lt-ex-linearity">
 			<statement>
 				<p>
 					Use linearity and the table to compute:
@@ -201,21 +186,8 @@
 						       \text{(b)}\ \mathcal{L}\left\{4\cos(7t) - \sin(7t)\right\}. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-lt-ex-linearity-key" component="key">
-			<statement>
-				<p>
-					Use linearity and the table to compute:
-					<md>
-						<mrow> \text{(a)}\ \mathcal{L}\left\{7 - 3t^2 + 2e^{6t}\right\} \qquad
-						       \text{(b)}\ \mathcal{L}\left\{4\cos(7t) - \sin(7t)\right\}. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					(a) Split the sum and pull out the constants:
 					<md>
 						<mrow> 7\,\mathcal{L}\{1\} - 3\,\mathcal{L}\{t^2\} + 2\,\mathcal{L}\{e^{6t}\}
@@ -223,7 +195,7 @@
 					</md>
 					using <m>\mathcal{L}\{t^2\} = \frac{2!}{s^3} = \frac{2}{s^3}</m>.
 				</p>
-				<p>
+				<p component="key">
 					(b) Both entries share the denominator <m>s^2 + 49</m>:
 					<md>
 						<mrow> 4\cdot\frac{s}{s^2+49} - \frac{7}{s^2+49} = \frac{4s - 7}{s^2 + 49}. </mrow>
@@ -231,23 +203,22 @@
 					Note the numerators: cosine carries the <m>s</m>, sine carries the
 					frequency <m>b = 7</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-lt-tf-product">
 			<title>True or False</title>
 			<statement>
 				<p><m>\mathcal{L}\{f(t)\,g(t)\} = \mathcal{L}\{f(t)\}\cdot\mathcal{L}\{g(t)\}</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False<mdash />and this is the most tempting wrong move in the
 					chapter. Linearity covers <em>sums and constant multiples
 					only</em>; the transform of a product is not the product of the
 					transforms. (Quick check: <m>\mathcal{L}\{1\cdot 1\} = \frac{1}{s}</m>,
 					but <m>\mathcal{L}\{1\}\cdot\mathcal{L}\{1\} = \frac{1}{s^2}</m>.)
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -298,19 +269,18 @@
 			<title>True or False</title>
 			<statement>
 				<p>When you transform a derivative, the initial conditions must be applied in a separate step at the end, as with earlier methods.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False<mdash />they enter <em>immediately</em> and automatically:
 					<m>y(0)</m> and <m>y'(0)</m> are baked into the derivative rules
 					themselves. This is a signature advantage of the transform method:
 					it solves the initial-value problem directly rather than finding a
 					general solution first and fitting constants later.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-lt-ex-derivs-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-lt-ex-derivs">
 			<statement>
 				<p>
 					Suppose <m>y(0) = 5</m> and <m>y'(0) = -1</m>. Using
@@ -320,22 +290,8 @@
 					</md>
 					in terms of <m>Y</m>, fully simplified.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-lt-ex-derivs-key" component="key">
-			<statement>
-				<p>
-					Suppose <m>y(0) = 5</m> and <m>y'(0) = -1</m>. Using
-					<m>Y = Y(s)</m>, write
-					<md>
-						<mrow> \mathcal{L}\{y''\} + 4\,\mathcal{L}\{y'\} </mrow>
-					</md>
-					in terms of <m>Y</m>, fully simplified.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					Apply each rule with the given initial values:
 					<md>
 						<mrow> \mathcal{L}\{y''\} \amp = s^2 Y - s\,(5) - (-1) = s^2 Y - 5s + 1, </mrow>
@@ -347,7 +303,7 @@
 					</md>
 					No derivatives remain: calculus enters, algebra leaves.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -358,7 +314,7 @@
 	<page>
 		<p><term>Putting it together: an IVP becomes algebra.</term></p>
 
-		<exercise xml:id="ws-lt-ex-ivp-stu" component="stu" workspace="3.2in">
+		<exercise xml:id="ws-lt-ex-ivp">
 			<statement>
 				<p>
 					Transform the entire initial-value problem
@@ -369,23 +325,8 @@
 					<m>Y(s)</m>. (Stop there<mdash />recovering <m>y(t)</m> from
 					<m>Y(s)</m> is the next worksheet's project.)
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-lt-ex-ivp-key" component="key">
-			<statement>
-				<p>
-					Transform the entire initial-value problem
-					<md>
-						<mrow> y'' + 3y = 12e^{t}, \qquad y(0) = 2, \qquad y'(0) = 0 </mrow>
-					</md>
-					into an equation in <m>Y(s)</m>, then solve that equation for
-					<m>Y(s)</m>. (Stop there<mdash />recovering <m>y(t)</m> from
-					<m>Y(s)</m> is the next worksheet's project.)
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.2in"/>
+				<p component="key">
 					Transform both sides, using linearity on the left and the table on
 					the right:
 					<md>
@@ -400,23 +341,22 @@
 					function of <m>s</m> holding the complete solution<mdash />forcing,
 					initial conditions, and all<mdash />in frozen form.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-lt-tf-why">
 			<title>True or False</title>
 			<statement>
 				<p>The Laplace transform method requires the forcing function to be a polynomial, exponential, sine, or cosine, just like undetermined coefficients.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. The transform only asks that the integral converge, which
 					admits a far wilder class of forcing<mdash />including functions with
 					jumps and switches that undetermined coefficients cannot touch.
 					That generality is the method's whole reason for existing, and
 					piecewise forcing is where this chapter's story is headed.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>
