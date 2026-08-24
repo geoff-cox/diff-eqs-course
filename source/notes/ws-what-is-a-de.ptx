@@ -112,17 +112,17 @@
 		<exercise>
 			<statement>
 				<p>
-					Solve the differential equation <m>y' = 5 + 3t</m> by finding a
-					function <m>y</m> whose derivative is <m>5 + 3t</m>.
+					Solve the differential equation <m>y' = \cos t + 5</m> by finding a
+					function <m>y</m> whose derivative is <m>\cos t + 5</m>.
 				</p>
 				<p component="stu" workspace="1.1in"/>
 				<p component="key">
 					Antidifferentiate both sides:
           <md>
-            y = \int (5 + 3t)\,dt = 5t + \tfrac{3}{2}t^2 + C
+            y = \int (\cos t + 5)\,dt = \sin t + 5t + C
           </md>
           Every choice of the constant <m>C</m> gives a function whose derivative
-          is <m>5 + 3t</m>, so there is a whole <em>family</em> of solutions.
+          is <m>\cos t + 5</m>, so there is a whole <em>family</em> of solutions.
           This pattern will recur throughout the course: solving a differential
           equation means recovering a function up to one or more constants that
           arise from integration.

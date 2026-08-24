@@ -1,4 +1,4 @@
-<chapter xml:id="ma311-syllabus" xmlns:xi="http://www.w3.org/2001/XInclude">
+<appendix xml:id="ma311-syllabus" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Syllabus</title>
 
   <section xml:id="ma311-general-info">
@@ -1009,12 +1009,12 @@
       </p>
     </subsection>
 
-    <xi:include href="./syllabus/common/merc.ptx"/>
-    <xi:include href="./syllabus/common/policy-grade-disputes.ptx"/>
-    <xi:include href="./syllabus/common/policy-classroom-behavior.ptx"/>
+    <xi:include href="syllabus/common/merc.ptx"/>
+    <xi:include href="syllabus/common/policy-grade-disputes.ptx"/>
+    <xi:include href="syllabus/common/policy-classroom-behavior.ptx"/>
   </section>
 
-  <xi:include href="./syllabus/common/workforgrade.ptx"/>
-  <xi:include href="./syllabus/common/attendance.ptx"/>
-  <xi:include href="./syllabus/common/accessibility.ptx"/>
-</chapter>
+  <xi:include href="syllabus/common/workforgrade.ptx"/>
+  <xi:include href="syllabus/common/attendance.ptx"/>
+  <xi:include href="syllabus/common/accessibility.ptx"/>
+</appendix>
