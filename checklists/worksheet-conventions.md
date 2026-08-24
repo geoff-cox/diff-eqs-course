@@ -68,11 +68,14 @@ revealed). The split uses PreTeXt's component/version mechanism:
    `<p component="stu" workspace="Xin"/>` for the student's reasoning,
    then a `<p component="key">` with the verdict and why. Not
    `<solution component="key">`.
-4. Because no worksheet contains a `<solution>` any more, the
-   publication files' `<exercise-worksheet solution="no|yes"/>` no
-   longer gates any worksheet answer — the `component` attributes alone
-   carry the split. Leave the setting as it is (student `no`,
-   instructor `yes`); it still applies to non-worksheet exercises.
+4. **A worksheet must not contain a `<solution>`.** Where that holds,
+   the publication files' `<exercise-worksheet solution="no|yes"/>`
+   gates nothing in that worksheet — the `component` attributes alone
+   carry the split. **Leave the setting as it is** (student `no`,
+   instructor `yes`) regardless: it still applies to non-worksheet
+   exercises, and while any repo is mid-migration it is the only thing
+   keeping a not-yet-converted worksheet's `<solution>` blocks off the
+   student copy. Check every worksheet before touching it.
 
 **Gotcha:** PreTeXt `<example>` renders its solution in BOTH builds —
 anything whose answer must hide on the student copy uses `<exercise>`.
@@ -84,9 +87,9 @@ Quick selection table:
 |-------------------------------------------|----------------------------------------------|
 | One/two-word blank inside a sentence      | paired `<p component="stu|key">` + `<fillin>`|
 | Definition or theorem with a blank in it  | paired `<p component="stu|key">` + `<fillin>`|
-| Multi-step worked computation             | one `<exercise>` + `<p component="stu" workspace>` + `<p component="key">` |
-| "Your turn" practice problem              | one `<exercise>` + `<p component="stu" workspace>` + `<p component="key">` |
-| Quick True/False check                    | one `<exercise>` + `<p component="stu" workspace>` + `<p component="key">` |
+| Multi-step worked computation             | one `<exercise>` + `<p component="stu" workspace="Xin"/>` + `<p component="key">` |
+| "Your turn" practice problem              | one `<exercise>` + `<p component="stu" workspace="Xin"/>` + `<p component="key">` |
+| Quick True/False check                    | one `<exercise>` + `<p component="stu" workspace="Xin"/>` + `<p component="key">` |
 | Read-along illustration, no hidden answer | `<example>` (no solution)                    |
 
 ## 3. Layout rules
