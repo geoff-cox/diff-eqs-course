@@ -20,9 +20,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
@@ -79,7 +80,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-lm-ex-invert-stu" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-lm-ex-invert">
 			<statement>
 				<p>
 					Invert each transform (the table:
@@ -94,34 +95,15 @@
 						       \text{(c)}\ \mathcal{L}^{-1}\left\{\frac{3s - 12}{s^2 + 36}\right\}. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-lm-ex-invert-key" component="key">
-			<statement>
-				<p>
-					Invert each transform (the table:
-					<m>\frac{1}{s} \leftrightarrow 1</m>,
-					<m>\frac{n!}{s^{n+1}} \leftrightarrow t^n</m>,
-					<m>\frac{1}{s-a} \leftrightarrow e^{at}</m>,
-					<m>\frac{b}{s^2+b^2} \leftrightarrow \sin(bt)</m>,
-					<m>\frac{s}{s^2+b^2} \leftrightarrow \cos(bt)</m>):
-					<md>
-						<mrow> \text{(a)}\ \mathcal{L}^{-1}\left\{\frac{5}{s}\right\} \qquad
-						       \text{(b)}\ \mathcal{L}^{-1}\left\{\frac{1}{s-8}\right\} \qquad
-						       \text{(c)}\ \mathcal{L}^{-1}\left\{\frac{3s - 12}{s^2 + 36}\right\}. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.8in"/>
+				<p component="key">
 					(a) <m>5\,\mathcal{L}^{-1}\left\{\frac{1}{s}\right\} = 5</m>.
 				</p>
-				<p>
+				<p component="key">
 					(b) The <m>\frac{1}{s-a}</m> entry with <m>a = 8</m>:
 					<m>e^{8t}</m>.
 				</p>
-				<p>
+				<p component="key">
 					(c) Split the numerator so each piece matches an entry (here
 					<m>b = 6</m>):
 					<md>
@@ -131,21 +113,20 @@
 					The sine entry needs the frequency <m>6</m> in the numerator, so we
 					manufacture it: <m>12 = 2 \cdot 6</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-lm-tf-linear">
 			<title>True or False</title>
 			<statement>
 				<p>Like the forward transform, <m>\mathcal{L}^{-1}</m> splits sums and pulls out constant multiples.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					True<mdash />inverse linearity is what makes the whole strategy
 					work: chop <m>Y(s)</m> into table-sized pieces, invert each piece
 					separately, and add the results back together.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -184,7 +165,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-lm-ex-pfd-stu" component="stu" workspace="3.2in">
+		<exercise xml:id="ws-lm-ex-pfd">
 			<statement>
 				<p>
 					Decompose and invert:
@@ -195,23 +176,8 @@
 					<m>A</m> and <m>B</m>.
 					(b) Apply <m>\mathcal{L}^{-1}</m> to get <m>y(t)</m>.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-lm-ex-pfd-key" component="key">
-			<statement>
-				<p>
-					Decompose and invert:
-					<md>
-						<mrow> Y(s) = \frac{5s + 5}{(s-1)(s+4)}. </mrow>
-					</md>
-					(a) Write <m>Y(s) = \frac{A}{s-1} + \frac{B}{s+4}</m> and find
-					<m>A</m> and <m>B</m>.
-					(b) Apply <m>\mathcal{L}^{-1}</m> to get <m>y(t)</m>.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.2in"/>
+				<p component="key">
 					(a) Clearing denominators: <m>5s + 5 = A(s+4) + B(s-1)</m>.
 					Choosing convenient values of <m>s</m>:
 					<md>
@@ -220,7 +186,7 @@
 					</md>
 					So <m>Y(s) = \dfrac{2}{s-1} + \dfrac{3}{s+4}</m>.
 				</p>
-				<p>
+				<p component="key">
 					(b) Each piece is a <m>\frac{1}{s-a}</m> entry:
 					<md>
 						<mrow> y(t) = 2e^{t} + 3e^{-4t}. </mrow>
@@ -229,22 +195,21 @@
 					fastest route to each coefficient<mdash />each choice of <m>s</m>
 					silences one unknown.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-lm-tf-pfd">
 			<title>True or False</title>
 			<statement>
 				<p>Partial fraction decomposition is the inverse Laplace transform.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. PFD is pure algebra<mdash />it changes how <m>Y(s)</m> is
 					<em>written</em>, not what it <em>is</em>, and no <m>t</m> appears
 					anywhere in it. The inverse transform is the separate, final step
 					that actually crosses back to the time domain.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -280,7 +245,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-lm-ex-first-stu" component="stu" workspace="3.4in">
+		<exercise xml:id="ws-lm-ex-first">
 			<statement>
 				<p>
 					Solve the initial-value problem with the Laplace method:
@@ -290,26 +255,12 @@
 					Run all three steps, and verify your answer satisfies the
 					equation and the initial condition.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-lm-ex-first-key" component="key">
-			<statement>
-				<p>
-					Solve the initial-value problem with the Laplace method:
-					<md>
-						<mrow> y' + 5y = 10, \qquad y(0) = 1. </mrow>
-					</md>
-					Run all three steps, and verify your answer satisfies the
-					equation and the initial condition.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.4in"/>
+				<p component="key">
 					<term>Step 1</term> (forward):
 					<m>(sY - 1) + 5Y = \frac{10}{s}</m>.
 				</p>
-				<p>
+				<p component="key">
 					<term>Step 2</term> (solve and prepare):
 					<md>
 						<mrow> (s + 5)Y = \frac{10}{s} + 1 = \frac{10 + s}{s}
@@ -322,16 +273,16 @@
 						<mrow> Y = \frac{2}{s} - \frac{1}{s+5}. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					<term>Step 3</term> (inverse): <m>y(t) = 2 - e^{-5t}</m>.
 				</p>
-				<p>
+				<p component="key">
 					Check: <m>y' + 5y = 5e^{-5t} + 10 - 5e^{-5t} = 10</m> and
 					<m>y(0) = 2 - 1 = 1</m>. The round trip is complete<mdash />and
 					notice there was no general solution and no constant-fitting: the
 					initial condition rode along from Step 1.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -342,7 +293,7 @@
 	<page>
 		<p><term>Second order, same round trip.</term></p>
 
-		<exercise xml:id="ws-lm-ex-second-stu" component="stu" workspace="3.6in">
+		<exercise xml:id="ws-lm-ex-second">
 			<statement>
 				<p>
 					Solve with the Laplace method:
@@ -350,27 +301,15 @@
 						<mrow> y'' + 7y' + 10y = 0, \qquad y(0) = 1, \qquad y'(0) = 1. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-lm-ex-second-key" component="key">
-			<statement>
-				<p>
-					Solve with the Laplace method:
-					<md>
-						<mrow> y'' + 7y' + 10y = 0, \qquad y(0) = 1, \qquad y'(0) = 1. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.6in"/>
+				<p component="key">
 					<term>Step 1.</term> Transforming with
 					<m>y(0) = 1</m>, <m>y'(0) = 1</m>:
 					<md>
 						<mrow> \left(s^2 Y - s - 1\right) + 7\left(sY - 1\right) + 10Y = 0. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					<term>Step 2.</term> Collect and solve:
 					<md>
 						<mrow> \left(s^2 + 7s + 10\right) Y = s + 8
@@ -382,7 +321,7 @@
 						<mrow> Y = \frac{2}{s+2} - \frac{1}{s+5}. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					<term>Step 3.</term>
 					<md>
 						<mrow> y(t) = 2e^{-2t} - e^{-5t}. </mrow>
@@ -393,16 +332,15 @@
 					<m>Y(s)</m><mdash />the two methods are cousins, but this one absorbs
 					the initial conditions without a system of equations at the end.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-lm-tf-direct">
 			<title>True or False</title>
 			<statement>
 				<p>The Laplace method produces the particular solution of an IVP directly, with no general-solution or constant-fitting stage.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					True. Because <m>y(0)</m> and <m>y'(0)</m> enter during the
 					forward transform, the <m>Y(s)</m> you solve for already belongs
 					to <em>the</em> solution, not a family. Skipping the
@@ -410,7 +348,7 @@
 					the other<mdash />handling forcing that switches on and
 					off<mdash />is next.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>

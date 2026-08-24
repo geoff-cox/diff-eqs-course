@@ -21,9 +21,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
@@ -95,18 +96,17 @@
 			<title>True or False</title>
 			<statement>
 				<p><m>y'' + (\cos x)\,y' + 2y = 0</m> is an LHCC equation.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. It is linear and homogeneous, but the coefficient
 					<m>\cos x</m> is a function of <m>x</m>, not a constant. The
 					characteristic-equation machinery we are about to build depends on
 					<em>all three</em> letters of LHCC.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-identify-stu" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-hl-ex-identify">
 			<statement>
 				<p>
 					For each equation, decide whether it is LHCC. If not, name the
@@ -118,39 +118,23 @@
 						       \text{(d)}\ y''' + 2y'' - y = 0 </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-hl-ex-identify-key" component="key">
-			<statement>
-				<p>
-					For each equation, decide whether it is LHCC. If not, name the
-					property that fails.
-					<md>
-						<mrow> \text{(a)}\ y'' - 5y' + 4y = 0 \qquad
-						       \text{(b)}\ y'' + 2y' = 7 </mrow>
-						<mrow> \text{(c)}\ y'' + (y')^2 = 0 \qquad
-						       \text{(d)}\ y''' + 2y'' - y = 0 </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.2in"/>
+				<p component="key">
 					(a) LHCC: linear, forcing function <m>0</m>, coefficients
 					<m>1, -5, 4</m> all constant.
 				</p>
-				<p>
+				<p component="key">
 					(b) Not homogeneous: the forcing function is <m>7</m>, not zero.
 					(Equations like this are next worksheet's business.)
 				</p>
-				<p>
+				<p component="key">
 					(c) Not linear: <m>(y')^2</m> raises a derivative to a power.
 				</p>
-				<p>
+				<p component="key">
 					(d) LHCC<mdash />order three is welcome; nothing in the definition
 					stops at second order.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -196,9 +180,8 @@
 			<title>True or False</title>
 			<statement>
 				<p>The step from <m>(a r^2 + b r + c)\,e^{rx} = 0</m> to <m>a r^2 + b r + c = 0</m> is valid because <m>e^{rx}</m> is never zero.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					True. An exponential <m>e^{rx}</m> is never zero: for real
 					<m>r</m> it is strictly positive, and even for a complex root
 					<m>r = \alpha + i\beta</m> its magnitude is
@@ -206,10 +189,10 @@
 					polynomial factor does<mdash />and that harmless-looking division is
 					what converts calculus into algebra.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-ansatz-stu" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-hl-ex-ansatz">
 			<statement>
 				<p>
 					Substitute <m>y = e^{rx}</m> into
@@ -220,23 +203,8 @@
 					equation. Then write the two fundamental solutions and the general
 					solution.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-hl-ex-ansatz-key" component="key">
-			<statement>
-				<p>
-					Substitute <m>y = e^{rx}</m> into
-					<md>
-						<mrow> y'' + y' - 6y = 0, </mrow>
-					</md>
-					factor out <m>e^{rx}</m>, and solve the resulting characteristic
-					equation. Then write the two fundamental solutions and the general
-					solution.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.8in"/>
+				<p component="key">
 					With <m>y = e^{rx}</m>, <m>y' = r e^{rx}</m> and
 					<m>y'' = r^2 e^{rx}</m>:
 					<md>
@@ -251,7 +219,7 @@
 						<mrow> y = c_1 e^{-3x} + c_2 e^{2x}. </mrow>
 					</md>
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -300,7 +268,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-hl-ex-cases-stu" component="stu" workspace="3.4in">
+		<exercise xml:id="ws-hl-ex-cases">
 			<statement>
 				<p>
 					Find the general solution of each equation, and say which case it
@@ -311,30 +279,15 @@
 						       \text{(c)}\ y'' + 9y = 0 </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-hl-ex-cases-key" component="key">
-			<statement>
-				<p>
-					Find the general solution of each equation, and say which case it
-					falls in.
-					<md>
-						<mrow> \text{(a)}\ y'' - 10y' + 25y = 0 \qquad
-						       \text{(b)}\ y'' + 6y' + 13y = 0 \qquad
-						       \text{(c)}\ y'' + 9y = 0 </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.4in"/>
+				<p component="key">
 					(a) <m>r^2 - 10r + 25 = (r - 5)^2 = 0</m>: repeated root
 					<m>r = 5</m> (Case 3), so
 					<md>
 						<mrow> y = c_1 e^{5x} + c_2\,x\,e^{5x}. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(b) <m>r^2 + 6r + 13 = 0</m> gives
 					<m>r = \frac{-6 \pm \sqrt{36 - 52}}{2} = -3 \pm 2i</m> (Case 2,
 					<m>\alpha = -3</m>, <m>\beta = 2</m>):
@@ -343,7 +296,7 @@
 					</md>
 					A decaying envelope times an oscillation.
 				</p>
-				<p>
+				<p component="key">
 					(c) <m>r^2 + 9 = 0</m> gives <m>r = \pm 3i</m><mdash />Case 2 with
 					<m>\alpha = 0</m>, so the exponential envelope is
 					<m>e^{0x} = 1</m>:
@@ -352,23 +305,22 @@
 					</md>
 					pure oscillation that never grows or decays.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-hl-tf-repeated">
 			<title>True or False</title>
 			<statement>
 				<p>If the characteristic equation has the repeated root <m>r</m>, then <m>y = c_1 e^{rx} + c_2 e^{rx}</m> is the general solution.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. Those two terms are like-terms, so the sum collapses to
 					<m>(c_1 + c_2)e^{rx}</m><mdash />one arbitrary constant masquerading
 					as two, which cannot meet two independent initial conditions. The
 					genuine second solution is <m>x\,e^{rx}</m>, giving
 					<m>y = c_1 e^{rx} + c_2\,x\,e^{rx}</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -388,7 +340,7 @@
 			build the general solution the same way.
 		</p>
 
-		<exercise xml:id="ws-hl-ex-ivp-stu" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-hl-ex-ivp">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -397,21 +349,8 @@
 					</md>
 					(The general solution comes from page 2.)
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-hl-ex-ivp-key" component="key">
-			<statement>
-				<p>
-					Solve the initial-value problem
-					<md>
-						<mrow> y'' + y' - 6y = 0, \qquad y(0) = 1, \qquad y'(0) = -8. </mrow>
-					</md>
-					(The general solution comes from page 2.)
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.0in"/>
+				<p component="key">
 					From page 2, <m>y = c_1 e^{-3x} + c_2 e^{2x}</m>, so
 					<m>y' = -3c_1 e^{-3x} + 2c_2 e^{2x}</m>. The conditions give the
 					system
@@ -428,10 +367,10 @@
 					echo of <q>each constant needs its own condition</q> from direct
 					integration.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-hl-ex-higher-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-hl-ex-higher">
 			<statement>
 				<p>
 					Find the general solution of the third-order equation
@@ -441,22 +380,8 @@
 					(Factor the characteristic polynomial completely; one root is
 					<m>0</m>.)
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-hl-ex-higher-key" component="key">
-			<statement>
-				<p>
-					Find the general solution of the third-order equation
-					<md>
-						<mrow> y''' - 9y' = 0. </mrow>
-					</md>
-					(Factor the characteristic polynomial completely; one root is
-					<m>0</m>.)
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					The characteristic equation is
 					<m>r^3 - 9r = r\,(r-3)(r+3) = 0</m>, with the three roots
 					<m>r = 0, 3, -3</m>. Each contributes a fundamental solution<mdash />and
@@ -467,7 +392,7 @@
 					Order three, degree three, three roots, three constants: the
 					bookkeeping scales perfectly.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>

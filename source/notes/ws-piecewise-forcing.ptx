@@ -23,9 +23,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
@@ -88,18 +89,17 @@
 			<title>True or False</title>
 			<statement>
 				<p><m>u_c(t)</m> rises gradually from <m>0</m> to <m>1</m> near <m>t = c</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. The step is instantaneous<mdash />a jump discontinuity, not a
 					ramp. That abruptness is the whole point (an ideal switch), and it
 					is exactly the kind of forcing that undetermined coefficients
 					could never touch but the Laplace transform handles cleanly.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-pf-ex-stepform-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-pf-ex-stepform">
 			<statement>
 				<p>
 					(a) Evaluate <m>u_7(3)</m>, <m>u_7(7)</m>, and <m>u_7(10)</m>.
@@ -112,29 +112,12 @@
 					in step form (a single expression using <m>u_7(t)</m>), and check
 					your expression at <m>t = 0</m> and <m>t = 9</m>.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-pf-ex-stepform-key" component="key">
-			<statement>
-				<p>
-					(a) Evaluate <m>u_7(3)</m>, <m>u_7(7)</m>, and <m>u_7(10)</m>.
-				</p>
-				<p>
-					(b) Write the piecewise forcing
-					<md>
-						<mrow> f(t) = \begin{cases} 3 \amp t \lt 7 \\ -1 \amp t \ge 7 \end{cases} </mrow>
-					</md>
-					in step form (a single expression using <m>u_7(t)</m>), and check
-					your expression at <m>t = 0</m> and <m>t = 9</m>.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					(a) <m>u_7(3) = 0</m> (before the switch), <m>u_7(7) = 1</m> (the
 					switch is on at its own instant), <m>u_7(10) = 1</m>.
 				</p>
-				<p>
+				<p component="key">
 					(b) Start at <m>3</m>; at <m>t = 7</m> the value must jump by
 					<m>-1 - 3 = -4</m>, and a jump of size <m>k</m> at time <m>c</m> is
 					<m>k\,u_c(t)</m>:
@@ -145,7 +128,7 @@
 					<m>3 - 4(1) = -1</m>. Start value plus (jump)&#215;(switch) is the
 					recipe for any two-piece constant forcing.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -194,7 +177,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-pf-ex-forward-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-pf-ex-forward">
 			<statement>
 				<p>
 					Compute each transform:
@@ -204,28 +187,14 @@
 						       \text{(c)}\ \mathcal{L}\{(t-8)^3\,u_8(t)\}. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-pf-ex-forward-key" component="key">
-			<statement>
-				<p>
-					Compute each transform:
-					<md>
-						<mrow> \text{(a)}\ \mathcal{L}\{u_7(t)\} \qquad
-						       \text{(b)}\ \mathcal{L}\{5\,u_8(t)\} \qquad
-						       \text{(c)}\ \mathcal{L}\{(t-8)^3\,u_8(t)\}. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					(a) <m>\dfrac{e^{-7s}}{s}</m>.
 				</p>
-				<p>
+				<p component="key">
 					(b) Linearity first: <m>5\,\mathcal{L}\{u_8(t)\} = \dfrac{5e^{-8s}}{s}</m>.
 				</p>
-				<p>
+				<p component="key">
 					(c) This fits the delayed-function rule perfectly: the function on
 					the switch is already written in <m>t - 8</m>, with
 					<m>f(t) = t^3</m> and <m>F(s) = \frac{3!}{s^4} = \frac{6}{s^4}</m>:
@@ -233,16 +202,15 @@
 						<mrow> \mathcal{L}\{(t-8)^3\,u_8(t)\} = \frac{6\,e^{-8s}}{s^4}. </mrow>
 					</md>
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-pf-tf-shift">
 			<title>True or False</title>
 			<statement>
 				<p><m>\mathcal{L}\{f(t)\,u_c(t)\} = e^{-cs}\,F(s)</m> for any function <m>f</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False<mdash />the rule demands the <em>shifted</em> form
 					<m>f(t-c)\,u_c(t)</m>. If the function on the switch is written in
 					plain <m>t</m>, you must first rewrite it in terms of
@@ -250,7 +218,7 @@
 					rule applies. Skipping that rewrite is this chapter's most common
 					error.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -291,7 +259,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-pf-ex-inverse-stu" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-pf-ex-inverse">
 			<statement>
 				<p>
 					Invert each transform, and for (b) describe the resulting function
@@ -301,22 +269,8 @@
 						       \text{(b)}\ \mathcal{L}^{-1}\left\{\frac{1 - e^{-5s}}{s^2}\right\}. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-pf-ex-inverse-key" component="key">
-			<statement>
-				<p>
-					Invert each transform, and for (b) describe the resulting function
-					in words:
-					<md>
-						<mrow> \text{(a)}\ \mathcal{L}^{-1}\left\{\frac{e^{-6s}}{s-2}\right\} \qquad
-						       \text{(b)}\ \mathcal{L}^{-1}\left\{\frac{1 - e^{-5s}}{s^2}\right\}. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.0in"/>
+				<p component="key">
 					(a) Without the delay, <m>\frac{1}{s-2}</m> inverts to
 					<m>e^{2t}</m>; reattaching the <m>c = 6</m> delay:
 					<md>
@@ -325,7 +279,7 @@
 					The exponent shifts too<mdash /><m>e^{2(t-6)}</m>, not
 					<m>e^{2t}</m>: the growth starts fresh at the switch.
 				</p>
-				<p>
+				<p component="key">
 					(b) Split by linearity:
 					<m>\frac{1}{s^2}</m> inverts to <m>t</m>, and
 					<m>\frac{e^{-5s}}{s^2}</m> inverts to <m>(t-5)\,u_5(t)</m>:
@@ -336,7 +290,7 @@
 					<m>5</m>: the delayed ramp arrives and exactly cancels the
 					climb.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -347,7 +301,7 @@
 	<page>
 		<p><term>The full method with a switch.</term></p>
 
-		<exercise xml:id="ws-pf-ex-solve-stu" component="stu" workspace="3.6in">
+		<exercise xml:id="ws-pf-ex-solve">
 			<statement>
 				<p>
 					A system is at rest until a constant input of strength <m>4</m>
@@ -359,24 +313,8 @@
 					(b) What is <m>y(t)</m> for <m>t \lt 3</m>? What value does
 					<m>y</m> approach as <m>t \to \infty</m>?
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-pf-ex-solve-key" component="key">
-			<statement>
-				<p>
-					A system is at rest until a constant input of strength <m>4</m>
-					switches on at <m>t = 3</m>:
-					<md>
-						<mrow> y' + 2y = 4\,u_3(t), \qquad y(0) = 0. </mrow>
-					</md>
-					(a) Solve with the Laplace method.
-					(b) What is <m>y(t)</m> for <m>t \lt 3</m>? What value does
-					<m>y</m> approach as <m>t \to \infty</m>?
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.6in"/>
+				<p component="key">
 					(a) <term>Forward:</term> with <m>y(0) = 0</m>,
 					<md>
 						<mrow> (s + 2)\,Y = \frac{4e^{-3s}}{s}
@@ -391,7 +329,7 @@
 						<mrow> y(t) = g(t-3)\,u_3(t) = \left(2 - 2e^{-2(t-3)}\right) u_3(t). </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(b) For <m>t \lt 3</m> the step is off and <m>y \equiv 0</m>: the
 					system stays asleep until the switch. Once on, the solution rises
 					from <m>0</m> and levels off at <m>2</m> as
@@ -399,22 +337,21 @@
 					<m>y' = 4 - 2y</m> would predict, just delayed three seconds. Every
 					tool in the course is visible in this one answer.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-pf-tf-asleep">
 			<title>True or False</title>
 			<statement>
 				<p>If a system starts with zero initial state (<m>y(0) = 0</m>, and for higher orders <m>y'(0) = 0</m>, and so on) and the forcing does not switch on until <m>t = c</m>, then the solution is identically zero for all <m>t \lt c</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					True. Before the switch, the equation is homogeneous with zero
 					initial state, and zero satisfies it perfectly<mdash />nothing pushes,
 					so nothing moves. The step form makes this visible in the answer
 					itself: every term of the response rides a <m>u_c(t)</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>

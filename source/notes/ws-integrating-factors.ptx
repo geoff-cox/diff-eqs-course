@@ -19,9 +19,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
@@ -76,7 +77,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-if-ex-forward-stu" component="stu" workspace="1.9in">
+		<exercise xml:id="ws-if-ex-forward">
 			<statement>
 				<p>
 					Compute each derivative (treat <m>y</m> as a function of
@@ -86,22 +87,8 @@
 						       \text{(b)}\ \frac{d}{dx}\left[\sin(x)\,y\right]. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-if-ex-forward-key" component="key">
-			<statement>
-				<p>
-					Compute each derivative (treat <m>y</m> as a function of
-					<m>x</m>):
-					<md>
-						<mrow> \text{(a)}\ \frac{d}{dx}\left[x^3 e^{5x}\right] \qquad\qquad
-						       \text{(b)}\ \frac{d}{dx}\left[\sin(x)\,y\right]. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="1.9in"/>
+				<p component="key">
 					Each is a straight product rule.
 					<md>
 						<mrow> \text{(a)}\ \frac{d}{dx}\left[x^3 e^{5x}\right] \amp = x^3\cdot 5e^{5x} + 3x^2\cdot e^{5x} = e^{5x}\left(5x^3 + 3x^2\right), </mrow>
@@ -110,10 +97,10 @@
 					Part (b) is the shape we care about: a term with <m>y'</m> plus a
 					term with <m>y</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-reverse-stu" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-if-ex-reverse">
 			<statement>
 				<p>
 					Run the product rule <em>backward</em>: write each sum as a single
@@ -125,24 +112,8 @@
 						       \text{(b)}\ x^3 y' + 3x^2 y. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-if-ex-reverse-key" component="key">
-			<statement>
-				<p>
-					Run the product rule <em>backward</em>: write each sum as a single
-					derivative <m>[f\,y]'</m> (with <m>y = y(x)</m>). In each, name
-					<m>f(x)</m> and confirm that <m>f'(x)</m> is exactly the coefficient
-					sitting on <m>y</m>.
-					<md>
-						<mrow> \text{(a)}\ e^{4x}y' + 4e^{4x}y \qquad\qquad
-						       \text{(b)}\ x^3 y' + 3x^2 y. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.2in"/>
+				<p component="key">
 					In each, the factor multiplying <m>y'</m> is <m>f</m>; check that its
 					derivative is the coefficient on <m>y</m>.
 					<md>
@@ -152,7 +123,7 @@
 					The check is the whole game: if <m>f'</m> does <em>not</em> match the
 					coefficient on <m>y</m>, the sum is not a completed product rule.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -208,7 +179,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-if-ex-standard-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-if-ex-standard">
 			<statement>
 				<p>
 					For each equation, put it in standard form, identify <m>P(x)</m>
@@ -218,29 +189,15 @@
 						       \text{(b)}\ x\,y' - 3y = x^5\ \ (x &gt; 0). </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-if-ex-standard-key" component="key">
-			<statement>
-				<p>
-					For each equation, put it in standard form, identify <m>P(x)</m>
-					and <m>Q(x)</m>, and compute the integrating factor <m>\mu</m>:
-					<md>
-						<mrow> \text{(a)}\ y' + 5y = e^{2x} \qquad\qquad
-						       \text{(b)}\ x\,y' - 3y = x^5\ \ (x &gt; 0). </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					(a) Already in standard form: <m>P(x) = 5</m> and
 					<m>Q(x) = e^{2x}</m>. The integrating factor is
 					<md>
 						<mrow> \mu = e^{\int 5\,dx} = e^{5x}. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(b) Divide through by <m>x</m> (legal since <m>x &gt; 0</m>):
 					<md>
 						<mrow> y' - \frac{3}{x}\,y = x^4, </mrow>
@@ -252,22 +209,21 @@
 					Notice <m>P</m> is <m>-3/x</m>, <em>not</em> <m>-3</m>: the coefficient
 					of <m>y</m> is only trustworthy after you reach standard form.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-if-tf-standard">
 			<title>True or False</title>
 			<statement>
 				<p>The integrating factor for <m>x\,y' - 3y = x^5</m> is <m>e^{-3x}</m>, because the coefficient of <m>y</m> is <m>-3</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. You must reach standard form <em>first</em>. Dividing by
 					<m>x</m> gives <m>y' - \frac{3}{x}y = x^4</m>, so <m>P(x) = -3/x</m>
 					and <m>\mu = e^{\int -3/x\,dx} = x^{-3}</m>. Reading <m>P</m> off the
 					un-divided equation is the single most common mistake in this method.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -314,19 +270,18 @@
 			<title>True or False</title>
 			<statement>
 				<p>The integrating-factor method can solve any first-order differential equation.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. It is built for first-order <em>linear</em> equations,
 					<m>y' + P(x)y = Q(x)</m>. A term like <m>y^2</m> or <m>\sin y</m>
 					breaks the derivation (there is no clean <m>\mu</m>), so a nonlinear
 					equation such as <m>y' = xy^2</m> is out of reach<mdash />reach for
 					separation of variables there instead.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-solve1-stu" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-if-ex-solve1">
 			<statement>
 				<p>
 					Find the general solution of
@@ -334,20 +289,8 @@
 						<mrow> y' + 3y = 12. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-if-ex-solve1-key" component="key">
-			<statement>
-				<p>
-					Find the general solution of
-					<md>
-						<mrow> y' + 3y = 12. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.4in"/>
+				<p component="key">
 					It is already in standard form with <m>P = 3</m>, so
 					<m>\mu = e^{3x}</m>. Multiply through and reverse the product rule:
 					<md>
@@ -360,10 +303,10 @@
 						<mrow> y \amp = 4 + ce^{-3x}. </mrow>
 					</md>
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-if-ex-solve2-stu" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-if-ex-solve2">
 			<statement>
 				<p>
 					Find the general solution of
@@ -372,21 +315,8 @@
 					</md>
 					(Standard form first!)
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-if-ex-solve2-key" component="key">
-			<statement>
-				<p>
-					Find the general solution of
-					<md>
-						<mrow> x\,y' + 4y = 15x^2, \qquad x &gt; 0. </mrow>
-					</md>
-					(Standard form first!)
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.0in"/>
+				<p component="key">
 					Divide by <m>x</m> to reach standard form:
 					<md>
 						<mrow> y' + \frac{4}{x}\,y = 15x. </mrow>
@@ -404,7 +334,7 @@
 					</md>
 					A quick check: <m>x y' + 4y = x\left(5x - \frac{4c}{x^5}\right) + 4\left(\frac{5}{2}x^2 + \frac{c}{x^4}\right) = 15x^2</m>, as required.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -420,7 +350,7 @@
 			circuits. Here is one to work end to end.
 		</p>
 
-		<exercise xml:id="ws-if-ex-circuit-stu" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-if-ex-circuit">
 			<statement>
 				<p>
 					In a series RL circuit the current <m>i(t)</m> (in amperes, with
@@ -431,23 +361,8 @@
 					where the right side is a decaying applied voltage. (a) Solve for
 					<m>i(t)</m>. (b) Describe how the current behaves as <m>t</m> grows.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-if-ex-circuit-key" component="key">
-			<statement>
-				<p>
-					In a series RL circuit the current <m>i(t)</m> (in amperes, with
-					<m>t</m> in seconds) satisfies
-					<md>
-						<mrow> i' + 3i = 6e^{-3t}, \qquad i(0) = 0, </mrow>
-					</md>
-					where the right side is a decaying applied voltage. (a) Solve for
-					<m>i(t)</m>. (b) Describe how the current behaves as <m>t</m> grows.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.0in"/>
+				<p component="key">
 					(a) Standard form already, with <m>P = 3</m>, so <m>\mu = e^{3t}</m>.
 					Multiplying, the right side simplifies beautifully:
 					<md>
@@ -463,7 +378,7 @@
 						<mrow> i(t) = 6t\,e^{-3t}. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(b) The current rises from zero, peaks at <m>t = \tfrac13</m> second,
 					and then the transient dies out toward <m>0</m> as
 					<m>t \to \infty</m>. Note this equation is <em>not</em>
@@ -471,14 +386,14 @@
 					will not factor<mdash />so the integrating factor is doing exactly the
 					work that separation cannot.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<p>
 			<term>Which tool? Separation, integrating factor, both, or neither.</term>
 		</p>
 
-		<exercise xml:id="ws-if-ex-classify-stu" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-if-ex-classify">
 			<statement>
 				<p>
 					For each equation, decide whether it can be solved by separation of
@@ -491,42 +406,25 @@
 						       \text{(d)}\ y' = x y^2 </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-if-ex-classify-key" component="key">
-			<statement>
-				<p>
-					For each equation, decide whether it can be solved by separation of
-					variables (SV), by an integrating factor (IF), both, or neither. You
-					need not solve them.
-					<md>
-						<mrow> \text{(a)}\ y' + xy = x \qquad
-						       \text{(b)}\ y' + xy = e^x \qquad
-						       \text{(c)}\ y' = y^2 + x \qquad
-						       \text{(d)}\ y' = x y^2 </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.8in"/>
+				<p component="key">
 					(a) <term>Both.</term> It is linear (<m>P = x</m>, <m>Q = x</m>), and
 					it also separates: <m>y' = x - xy = x(1 - y)</m>.
 				</p>
-				<p>
+				<p component="key">
 					(b) <term>IF only.</term> Linear with <m>P = x</m>, <m>Q = e^x</m>.
 					But <m>y' = e^x - xy</m> is a sum, so it does not separate.
 				</p>
-				<p>
+				<p component="key">
 					(c) <term>Neither.</term> The <m>y^2</m> makes it nonlinear (no
 					integrating factor), and <m>y^2 + x</m> is a sum (no separation).
 				</p>
-				<p>
+				<p component="key">
 					(d) <term>SV only.</term> It separates as <m>x\cdot y^2</m>, but the
 					<m>y^2</m> makes it nonlinear, so the integrating-factor method does
 					not apply.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>

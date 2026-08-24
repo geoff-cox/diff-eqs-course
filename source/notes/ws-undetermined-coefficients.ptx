@@ -18,9 +18,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
@@ -82,9 +83,8 @@
 			<title>True or False</title>
 			<statement>
 				<p>If <m>y_p</m> solves <m>a\,y'' + b\,y' + c\,y = f(x)</m> and <m>y_h</m> solves the matching homogeneous equation, then <m>y_p + y_h</m> also solves the full equation.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					True. Substituting the sum, the <m>y_h</m> part contributes
 					<m>0</m> and the <m>y_p</m> part contributes <m>f(x)</m><mdash />linearity
 					lets the two ride along without disturbing each other. That is
@@ -92,10 +92,10 @@
 					homogeneous family supplies the flexibility, the particular
 					solution supplies the forcing.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-uc-ex-structure-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-uc-ex-structure">
 			<statement>
 				<p>
 					Consider
@@ -106,40 +106,25 @@
 					(b) Verify that <m>y_p = 2x - 1</m> solves the full equation.
 					(c) Write the general solution.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-uc-ex-structure-key" component="key">
-			<statement>
-				<p>
-					Consider
-					<md>
-						<mrow> y'' - y' - 2y = -4x. </mrow>
-					</md>
-					(a) Solve the matching homogeneous equation to find <m>y_h</m>.
-					(b) Verify that <m>y_p = 2x - 1</m> solves the full equation.
-					(c) Write the general solution.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					(a) The characteristic equation of <m>y'' - y' - 2y = 0</m> is
 					<m>r^2 - r - 2 = (r-2)(r+1) = 0</m>, so
 					<m>y_h = c_1 e^{2x} + c_2 e^{-x}</m>.
 				</p>
-				<p>
+				<p component="key">
 					(b) With <m>y_p = 2x - 1</m>: <m>y_p' = 2</m>, <m>y_p'' = 0</m>, so
 					<md>
 						<mrow> 0 - 2 - 2(2x - 1) = -2 - 4x + 2 = -4x. \checkmark </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(c) <m>y = c_1 e^{2x} + c_2 e^{-x} + 2x - 1</m>. Notice the roles:
 					the two constants live entirely in <m>y_h</m>; <m>y_p</m> is a
 					single fixed function whose only job is to manufacture the
 					forcing.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -181,7 +166,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-uc-ex-forms-stu" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-uc-ex-forms">
 			<statement>
 				<p>
 					For each forcing function, write the starting form of <m>y_p</m>
@@ -193,51 +178,34 @@
 						       \text{(d)}\ f(x) = 8x^2 </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-uc-ex-forms-key" component="key">
-			<statement>
-				<p>
-					For each forcing function, write the starting form of <m>y_p</m>
-					(do not solve for the coefficients):
-					<md>
-						<mrow> \text{(a)}\ f(x) = 6x - 2 \qquad
-						       \text{(b)}\ f(x) = 4e^{7x} </mrow>
-						<mrow> \text{(c)}\ f(x) = 2\sin(5x) \qquad
-						       \text{(d)}\ f(x) = 8x^2 </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.2in"/>
+				<p component="key">
 					(a) <m>y_p = Ax + B</m> (a full degree-one polynomial).
 				</p>
-				<p>
+				<p component="key">
 					(b) <m>y_p = Ae^{7x}</m><mdash />the exponent is <em>known</em>; only
 					the multiplier is undetermined.
 				</p>
-				<p>
+				<p component="key">
 					(c) <m>y_p = A\sin(5x) + B\cos(5x)</m>. Both siblings are required
 					even though <m>f</m> shows only sine<mdash />differentiation swaps
 					sines and cosines, so <m>y_p</m> needs both to have any hope of
 					matching.
 				</p>
-				<p>
+				<p component="key">
 					(d) <m>y_p = Ax^2 + Bx + C</m>: the missing <m>x</m> and constant
 					terms must still be included, since derivatives of <m>x^2</m>
 					produce them.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-uc-tf-sine">
 			<title>True or False</title>
 			<statement>
 				<p>For <m>f(x) = 3\sin(2x)</m>, the guess <m>y_p = A\sin(2x)</m> (no cosine term) is sufficient.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False in general. Substituting <m>A\sin(2x)</m> into an equation
 					with a <m>y'</m> term produces cosine terms on the left that have
 					no partner on the right, forcing <m>A</m> into contradictory
@@ -246,7 +214,7 @@
 					(Only when the equation has no odd-order derivatives can the lone
 					sine survive.)
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -291,7 +259,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-uc-ex-conflict-stu" component="stu" workspace="3.4in">
+		<exercise xml:id="ws-uc-ex-conflict">
 			<statement>
 				<p>
 					Solve
@@ -303,30 +271,14 @@
 					(b) Repair the guess and find the coefficient.
 					(c) Write the general solution.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-uc-ex-conflict-key" component="key">
-			<statement>
-				<p>
-					Solve
-					<md>
-						<mrow> y'' - 9y = 4e^{3x}. </mrow>
-					</md>
-					(a) Find <m>y_h</m> and explain why the natural guess
-					<m>y_p = Ae^{3x}</m> fails.
-					(b) Repair the guess and find the coefficient.
-					(c) Write the general solution.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.4in"/>
+				<p component="key">
 					(a) From <m>r^2 - 9 = 0</m>, <m>y_h = c_1 e^{3x} + c_2 e^{-3x}</m>.
 					The guess <m>Ae^{3x}</m> is already a homogeneous solution, so
 					substituting it yields <m>0 = 4e^{3x}</m><mdash />impossible. The
 					forcing resonates with the system's own response.
 				</p>
-				<p>
+				<p component="key">
 					(b) Multiply by <m>x</m>: try <m>y_p = A\,x\,e^{3x}</m>. Then
 					<md>
 						<mrow> y_p' \amp = A e^{3x}(1 + 3x), \qquad y_p'' = A e^{3x}(6 + 9x), </mrow>
@@ -334,7 +286,7 @@
 					</md>
 					Matching <m>6A e^{3x} = 4e^{3x}</m> gives <m>A = \tfrac{2}{3}</m>.
 				</p>
-				<p>
+				<p component="key">
 					(c)
 					<md>
 						<mrow> y = c_1 e^{3x} + c_2 e^{-3x} + \tfrac{2}{3}\,x\,e^{3x}. </mrow>
@@ -343,23 +295,22 @@
 					repeated-root case last worksheet<mdash />and for the same reason:
 					the plain exponential was already spoken for.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-uc-tf-alwaysx">
 			<title>True or False</title>
 			<statement>
 				<p>To be safe, you should always multiply <m>y_p</m> by <m>x</m>, whether or not it conflicts with <m>y_h</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. An unnecessary factor of <m>x</m> wrecks the match: the
 					substituted guess produces terms (like <m>x e^{kx}</m>) that
 					<m>f(x)</m> does not contain, and the coefficient system becomes
 					inconsistent. Multiply by <m>x</m> exactly when a conflict with
 					<m>y_h</m> demands it<mdash />no more, no less.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -370,7 +321,7 @@
 	<page>
 		<p><term>The whole method, start to finish.</term></p>
 
-		<exercise xml:id="ws-uc-ex-full-stu" component="stu" workspace="3.6in">
+		<exercise xml:id="ws-uc-ex-full">
 			<statement>
 				<p>
 					Find the general solution of
@@ -381,35 +332,20 @@
 					for conflicts, match coefficients, and assemble
 					<m>y = y_h + y_p</m>.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-uc-ex-full-key" component="key">
-			<statement>
-				<p>
-					Find the general solution of
-					<md>
-						<mrow> y'' + 2y' - 3y = 6x + 1 </mrow>
-					</md>
-					by running all five steps: <m>y_h</m>, select <m>y_p</m>, check
-					for conflicts, match coefficients, and assemble
-					<m>y = y_h + y_p</m>.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.6in"/>
+				<p component="key">
 					<term>Step 1.</term> <m>r^2 + 2r - 3 = (r+3)(r-1) = 0</m>, so
 					<m>y_h = c_1 e^{-3x} + c_2 e^{x}</m>.
 				</p>
-				<p>
+				<p component="key">
 					<term>Step 2.</term> <m>f(x) = 6x + 1</m> is a degree-one
 					polynomial: guess <m>y_p = Ax + B</m>.
 				</p>
-				<p>
+				<p component="key">
 					<term>Step 3.</term> No conflict<mdash /><m>y_h</m> contains only
 					exponentials.
 				</p>
-				<p>
+				<p component="key">
 					<term>Step 4.</term> With <m>y_p' = A</m> and <m>y_p'' = 0</m>:
 					<md>
 						<mrow> 0 + 2A - 3(Ax + B) \amp = -3A\,x + (2A - 3B) = 6x + 1. </mrow>
@@ -417,7 +353,7 @@
 					Matching <m>x</m>-terms: <m>-3A = 6</m>, so <m>A = -2</m>. Matching
 					free terms: <m>2(-2) - 3B = 1</m>, so <m>B = -\tfrac{5}{3}</m>.
 				</p>
-				<p>
+				<p component="key">
 					<term>Step 5.</term>
 					<md>
 						<mrow> y = c_1 e^{-3x} + c_2 e^{x} - 2x - \tfrac{5}{3}. </mrow>
@@ -426,7 +362,7 @@
 					<m>y_p</m> pieces alone must reproduce <m>6x + 1</m><mdash />and they
 					do.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>

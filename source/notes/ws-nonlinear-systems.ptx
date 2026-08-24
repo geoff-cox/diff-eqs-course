@@ -28,9 +28,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
@@ -90,19 +91,18 @@
 			<title>True or False</title>
 			<statement>
 				<p>If <m>(x_1, y_1)</m> and <m>(x_2, y_2)</m> are solutions of a nonlinear system, then their sum is also a solution.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. Superposition is a strictly linear privilege: a product
 					term like <m>x\,y</m> evaluated at a sum produces cross-terms that
 					the separate solutions never had to cancel. Losing superposition
 					is precisely what makes nonlinear systems hard<mdash />and what
 					pushes us back to qualitative and numerical tools.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-ns-ex-equilibria-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-ns-ex-equilibria">
 			<statement>
 				<p>
 					Consider the system
@@ -113,23 +113,8 @@
 					<m>y' = 0</m> together<mdash />watch for the case-by-case
 					structure.)
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-ns-ex-equilibria-key" component="key">
-			<statement>
-				<p>
-					Consider the system
-					<md>
-						<mrow> \begin{cases} x' = x\,(2 - y) \\ y' = y\,(x - 3) \end{cases} </mrow>
-					</md>
-					Find all equilibrium points. (Solve <m>x' = 0</m> and
-					<m>y' = 0</m> together<mdash />watch for the case-by-case
-					structure.)
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					<m>x' = 0</m> requires <m>x = 0</m> or <m>y = 2</m>;
 					<m>y' = 0</m> requires <m>y = 0</m> or <m>x = 3</m>. Intersecting
 					the cases: <m>x = 0</m> pairs with <m>y = 0</m> (since
@@ -142,7 +127,7 @@
 					<m>x=3</m><mdash />is the standard error; each equilibrium must
 					satisfy one condition <em>from each equation</em>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -183,7 +168,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-ns-ex-linearize-stu" component="stu" workspace="3.4in">
+		<exercise xml:id="ws-ns-ex-linearize">
 			<statement>
 				<p>
 					For the system on page 1:
@@ -193,22 +178,8 @@
 					<m>y = 2 + w</m>, drop products of <m>u</m> and <m>w</m>, and
 					describe the resulting linear system.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-ns-ex-linearize-key" component="key">
-			<statement>
-				<p>
-					For the system on page 1:
-					(a) Linearize at <m>(0,0)</m> by expanding and dropping product
-					terms, and classify the equilibrium with c13's tools.
-					(b) At <m>(3,2)</m>, substitute <m>x = 3 + u</m>,
-					<m>y = 2 + w</m>, drop products of <m>u</m> and <m>w</m>, and
-					describe the resulting linear system.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.4in"/>
+				<p component="key">
 					(a) Expanding: <m>x' = 2x - xy</m> and <m>y' = -3y + xy</m>. Near
 					<m>(0,0)</m> the products are negligible:
 					<md>
@@ -220,7 +191,7 @@
 					starve) and repels along the <m>x</m>-axis (no predators, prey
 					boom).
 				</p>
-				<p>
+				<p component="key">
 					(b) Substituting and using <m>2 - y = -w</m> and
 					<m>x - 3 = u</m>:
 					<md>
@@ -232,23 +203,22 @@
 					so nearby trajectories orbit the equilibrium in closed loops
 					rather than spiraling in or out.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-ns-tf-global">
 			<title>True or False</title>
 			<statement>
 				<p>A linearization describes the system's behavior across the entire phase plane.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False<mdash />it is a local magnifying glass, trustworthy only near
 					the equilibrium where the dropped products really are tiny. Far
 					away, the nonlinear terms take over. That is why each equilibrium
 					gets its own linearization, and the global picture is stitched
 					together from the neighborhoods.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -266,7 +236,7 @@
 			survive.
 		</p>
 
-		<exercise xml:id="ws-ns-ex-interpret-stu" component="stu" workspace="2.8in">
+		<exercise xml:id="ws-ns-ex-interpret">
 			<statement>
 				<p>
 					For <m>x' = x(2-y)</m>, <m>y' = y(x-3)</m>:
@@ -276,33 +246,19 @@
 					(c) Using the rotation found on page 2, narrate one full cycle
 					starting from abundant prey and few predators.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-ns-ex-interpret-key" component="key">
-			<statement>
-				<p>
-					For <m>x' = x(2-y)</m>, <m>y' = y(x-3)</m>:
-					(a) Which variable is the prey and which the predator? Cite the
-					signs that decide it.
-					(b) What does the equilibrium <m>(3,2)</m> mean ecologically?
-					(c) Using the rotation found on page 2, narrate one full cycle
-					starting from abundant prey and few predators.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.8in"/>
+				<p component="key">
 					(a) <m>x</m> is the prey: its growth rate <m>2 - y</m> is
 					<em>hurt</em> by <m>y</m>. <m>y</m> is the predator: its growth
 					rate <m>x - 3</m> is <em>negative without enough</em>
 					<m>x</m><mdash />predators starve when prey are scarce.
 				</p>
-				<p>
+				<p component="key">
 					(b) At <m>(3,2)</m> the populations are perfectly balanced: three
 					units of prey exactly sustain the predators, and two units of
 					predators exactly cap the prey. Both populations hold constant.
 				</p>
-				<p>
+				<p component="key">
 					(c) Abundant prey let predators multiply; rising predators drive
 					prey down; scarce prey starve the predators; falling predators
 					release the prey to boom again<mdash />a closed loop around
@@ -310,16 +266,15 @@
 					boom-bust cycle is the model's signature, and real predator-prey
 					data show exactly this lagged oscillation.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-ns-tf-cycle">
 			<title>True or False</title>
 			<statement>
 				<p>In the predator&#8211;prey cycle, the predator population peaks at the same time as the prey population.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False<mdash />the predator peak <em>lags</em> the prey peak.
 					Predators are still multiplying while prey are already declining,
 					because the feast that fueled them came earlier. The lag is
@@ -327,7 +282,7 @@
 					each other around the loop rather than rising and falling in
 					unison.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -345,7 +300,7 @@
 			current point, and step <em>both</em> variables at once.
 		</p>
 
-		<exercise xml:id="ws-ns-ex-euler-stu" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-ns-ex-euler">
 			<statement>
 				<p>
 					Run two Euler steps with <m>h = 0.5</m> on
@@ -354,21 +309,8 @@
 					</md>
 					Does the motion so far match the cycle narrative from page 3?
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-ns-ex-euler-key" component="key">
-			<statement>
-				<p>
-					Run two Euler steps with <m>h = 0.5</m> on
-					<md>
-						<mrow> x' = x\,(2-y), \qquad y' = y\,(x-3), \qquad (x_0, y_0) = (4, 1). </mrow>
-					</md>
-					Does the motion so far match the cycle narrative from page 3?
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.0in"/>
+				<p component="key">
 					<term>Step 1.</term> At <m>(4,1)</m>:
 					<m>x' = 4(2-1) = 4</m> and <m>y' = 1(4-3) = 1</m>, so
 					<md>
@@ -380,13 +322,13 @@
 						<mrow> (x_2, y_2) = (6 + 1.5,\ 1.5 + 2.25) = (7.5,\ 3.75). </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					Both populations are climbing, with the predators accelerating as
 					prey pile up<mdash />the opening phase of the cycle exactly as
 					narrated: feast first, reckoning later. (A computer taking
 					thousands of tiny steps would carry the loop all the way around.)
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>

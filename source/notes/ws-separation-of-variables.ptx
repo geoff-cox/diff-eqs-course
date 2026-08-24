@@ -19,9 +19,10 @@
 	CLAUDE.md section 4 for this repo's parameters). In brief:
 	  * Student/instructor split via component="stu" / component="key",
 	    mirrored in structure; answers never live inside <fillin>.
-	  * Worked problems: paired <exercise component="stu" workspace="Xin">
-	    and <exercise component="key"> (statement + solution).
-	  * True/False checks: one <exercise> + <solution component="key">.
+	  * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+	    then <p component="stu" workspace="Xin"/>, then <p component="key">
+	    with the answer.  No <solution>, no duplicated stu/key exercise pair.
+	  * True/False checks: the same shape, with <title>True or False</title>.
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
@@ -100,9 +101,8 @@
 			<title>True or False</title>
 			<statement>
 				<p><m>y' = e^{x} + e^{y}</m> is separable.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. A <em>sum</em> cannot be rewritten as a single product
 					<m>f(x)\cdot g(y)</m>. Watch the contrast that trips students up:
 					<m>e^{x+y} = e^{x}\cdot e^{y}</m> <em>is</em> separable, because the
@@ -110,10 +110,10 @@
 					product. But a sum <em>of</em> exponentials, <m>e^{x} + e^{y}</m>,
 					has no such trick and stays non-separable.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-identify-stu" component="stu" workspace="2.3in">
+		<exercise xml:id="ws-sov-ex-identify">
 			<statement>
 				<p>
 					For each equation, decide whether it is separable. If it is, write
@@ -126,65 +126,37 @@
 						       \text{(d)}\ \frac{dy}{dx} = \frac{x^2}{y+1} </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-sov-ex-identify-key" component="key">
-			<statement>
-				<p>
-					For each equation, decide whether it is separable. If it is, write
-					it as <m>\frac{dy}{dx} = f(x)\cdot g(y)</m> and name <m>f(x)</m> and
-					<m>g(y)</m>; if not, explain what blocks it.
-					<md>
-						<mrow> \text{(a)}\ \frac{dy}{dx} = 7x^2 y \qquad
-						       \text{(b)}\ \frac{dy}{dx} = x + y^2 \qquad
-						       \text{(c)}\ \frac{dy}{dx} = (y+2)\cos x \qquad
-						       \text{(d)}\ \frac{dy}{dx} = \frac{x^2}{y+1} </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.3in"/>
+				<p component="key">
 					(a) Separable: <m>7x^2 y = (7x^2)\cdot(y)</m>, so <m>f(x) = 7x^2</m>
 					and <m>g(y) = y</m>.
 				</p>
-				<p>
+				<p component="key">
 					(b) Not separable: <m>x + y^2</m> is a <em>sum</em>. No factoring
 					turns it into a product of an <m>x</m>-only factor and a
 					<m>y</m>-only factor.
 				</p>
-				<p>
+				<p component="key">
 					(c) Separable: <m>(y+2)\cos x = (\cos x)\cdot(y+2)</m>, so
 					<m>f(x) = \cos x</m> and <m>g(y) = y+2</m>. Order does not matter<mdash />a product reads the same either way.
 				</p>
-				<p>
+				<p component="key">
 					(d) Separable: a fraction is secretly a product,
 					<m>\frac{x^2}{y+1} = x^2\cdot\frac{1}{y+1}</m>, so <m>f(x) = x^2</m>
 					and <m>g(y) = \frac{1}{y+1}</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-reveal-stu" component="stu" workspace="1.8in">
+		<exercise xml:id="ws-sov-ex-reveal">
 			<statement>
 				<p>
 					The equation <m>\frac{dy}{dx} = 3xy - 12x</m> does not look
 					separable at a glance. Rewrite the right-hand side as a product to
 					show that it is, then identify <m>f(x)</m> and <m>g(y)</m>.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-sov-ex-reveal-key" component="key">
-			<statement>
-				<p>
-					The equation <m>\frac{dy}{dx} = 3xy - 12x</m> does not look
-					separable at a glance. Rewrite the right-hand side as a product to
-					show that it is, then identify <m>f(x)</m> and <m>g(y)</m>.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="1.8in"/>
+				<p component="key">
 					Factor the common <m>3x</m> out of both terms:
 					<md>
 						<mrow> \frac{dy}{dx} = 3xy - 12x = 3x\,(y - 4). </mrow>
@@ -194,7 +166,7 @@
 					<em>product</em> by factoring is the most common way a disguised
 					separable equation reveals itself.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -248,9 +220,8 @@
 			<title>True or False</title>
 			<statement>
 				<p>Splitting <m>\frac{dy}{dx}</m> into separate pieces <m>dy</m> and <m>dx</m> is a genuine algebraic operation.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. Strictly, <m>\frac{dy}{dx}</m> is a single symbol for a
 					derivative, not a fraction we may break apart. The split is an
 					<em>informal shortcut</em>; it is justified by integrating
@@ -258,10 +229,10 @@
 					and recognizing <m>\frac{dy}{dx}\,dx = dy</m>. The shortcut always
 					gives the right answer here, which is why we use it.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-warmup-stu" component="stu" workspace="2.2in">
+		<exercise xml:id="ws-sov-ex-warmup">
 			<statement>
 				<p>
 					Find the general solution of
@@ -269,20 +240,8 @@
 						<mrow> \frac{dy}{dx} = 3x^2 y^2. </mrow>
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-sov-ex-warmup-key" component="key">
-			<statement>
-				<p>
-					Find the general solution of
-					<md>
-						<mrow> \frac{dy}{dx} = 3x^2 y^2. </mrow>
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.2in"/>
+				<p component="key">
 					The right side is already a product, <m>(3x^2)(y^2)</m>. Separate
 					and integrate:
 					<md>
@@ -297,7 +256,7 @@
 					where the single constant <m>C = -c</m> absorbs the sign. Only one
 					arbitrary constant survives, even though we integrated two sides.
 				</p>
-				<p>
+				<p component="key">
 					One caution before we celebrate: the divide-by-<m>y^2</m> step
 					quietly assumed <m>y \neq 0</m>. The constant function
 					<m>y \equiv 0</m> also solves <m>\frac{dy}{dx} = 3x^2 y^2</m> (both
@@ -305,10 +264,10 @@
 					<m>\frac{1}{C - x^3}</m> equal to <m>0</m>. That dropped solution is
 					the subject of the next page.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-growth-stu" component="stu" workspace="2.4in">
+		<exercise xml:id="ws-sov-ex-growth">
 			<statement>
 				<p>
 					A culture starts with <m>50</m> cells and grows so that its rate of
@@ -319,23 +278,8 @@
 					with <m>t</m> in hours. (a) Find <m>P(t)</m>. (b) Estimate the
 					population at <m>t = 5</m> hours.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-sov-ex-growth-key" component="key">
-			<statement>
-				<p>
-					A culture starts with <m>50</m> cells and grows so that its rate of
-					increase is proportional to its current size:
-					<md>
-						<mrow> \frac{dP}{dt} = 0.4\,P, \qquad P(0) = 50, </mrow>
-					</md>
-					with <m>t</m> in hours. (a) Find <m>P(t)</m>. (b) Estimate the
-					population at <m>t = 5</m> hours.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.4in"/>
+				<p component="key">
 					(a) Separable with <m>f(t) = 0.4</m> and <m>g(P) = P</m>. Separate
 					and integrate:
 					<md>
@@ -349,12 +293,12 @@
 						<mrow> P(t) = 50\,e^{0.4t}. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(b) At <m>t = 5</m>: <m>P(5) = 50\,e^{2} \approx 369</m> cells.
 					<q>Rate proportional to amount</q> always separates into pure
 					exponential growth<mdash />the model's signature.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -405,7 +349,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-sov-ex-singular-stu" component="stu" workspace="2.6in">
+		<exercise xml:id="ws-sov-ex-singular">
 			<statement>
 				<p>
 					Find the general solution of
@@ -416,23 +360,8 @@
 					Verify that your singular solution really does satisfy the
 					equation.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-sov-ex-singular-key" component="key">
-			<statement>
-				<p>
-					Find the general solution of
-					<md>
-						<mrow> \frac{dy}{dx} = x\,(y - 3)^2, </mrow>
-					</md>
-					then identify the singular solution the separation step drops.
-					Verify that your singular solution really does satisfy the
-					equation.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.6in"/>
+				<p component="key">
 					Separable with <m>f(x) = x</m> and <m>g(y) = (y-3)^2</m>. Dividing
 					by <m>(y-3)^2</m> and integrating:
 					<md>
@@ -444,7 +373,7 @@
 						<mrow> y = 3 - \frac{2}{x^2 + C}, \qquad (C = 2c). </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					The divide step required <m>y \neq 3</m>, so it set aside the
 					constant function <m>y \equiv 3</m>. Check it directly: if
 					<m>y \equiv 3</m> then <m>\frac{dy}{dx} = 0</m> and
@@ -453,16 +382,15 @@
 					<m>3</m>, so <m>y \equiv 3</m> is a genuine <em>singular solution</em><mdash />we
 					must report it alongside the family.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-sov-tf-singular">
 			<title>True or False</title>
 			<statement>
 				<p>Dividing by <m>y</m> while separating always throws away the solution <m>y \equiv 0</m> for good.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False<mdash /><em>sometimes</em> the general family quietly puts it
 					back. For <m>\frac{dy}{dx} = 2xy</m> the divide step gives
 					<m>y = C e^{x^2}</m>, and the choice <m>C = 0</m> returns
@@ -473,7 +401,7 @@
 					dividing, always find the zeros of <m>g(y)</m> and check each one
 					against your general solution.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -524,7 +452,7 @@
 			</ol>
 		</p>
 
-		<exercise xml:id="ws-sov-ex-implicit-stu" component="stu" workspace="2.5in">
+		<exercise xml:id="ws-sov-ex-implicit">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -534,22 +462,8 @@
 					Leave the general solution in implicit form, then use the initial
 					condition to find the constant.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-sov-ex-implicit-key" component="key">
-			<statement>
-				<p>
-					Solve the initial-value problem
-					<md>
-						<mrow> \frac{dy}{dx} = \frac{x^2}{1 + \cos y}, \qquad y(0) = \frac{\pi}{2}. </mrow>
-					</md>
-					Leave the general solution in implicit form, then use the initial
-					condition to find the constant.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.5in"/>
+				<p component="key">
 					Separable: <m>\frac{x^2}{1+\cos y} = x^2\cdot\frac{1}{1+\cos y}</m>.
 					Separate and integrate:
 					<md>
@@ -566,10 +480,10 @@
 						<mrow> y + \sin y = \frac{x^3}{3} + \frac{\pi}{2} + 1. </mrow>
 					</md>
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-sov-ex-branch-stu" component="stu" workspace="2.7in">
+		<exercise xml:id="ws-sov-ex-branch">
 			<statement>
 				<p>
 					Solve the initial-value problem
@@ -579,22 +493,8 @@
 					Describe the shape of the general solution, and explain how the
 					initial condition decides which part of it you keep.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-sov-ex-branch-key" component="key">
-			<statement>
-				<p>
-					Solve the initial-value problem
-					<md>
-						<mrow> \frac{dy}{dx} = -\frac{x}{y}, \qquad y(1) = -2. </mrow>
-					</md>
-					Describe the shape of the general solution, and explain how the
-					initial condition decides which part of it you keep.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.7in"/>
+				<p component="key">
 					Separable: <m>-\frac{x}{y} = (-x)\cdot\frac{1}{y}</m>. Separate and
 					integrate:
 					<md>
@@ -606,7 +506,7 @@
 					<em>circles</em> centered at the origin. Solving for <m>y</m> gives
 					two branches, <m>y = \pm\sqrt{c - x^2}</m>.
 				</p>
-				<p>
+				<p component="key">
 					Because <m>y(1) = -2</m> is negative, the solution must come from the
 					<em>lower semicircle</em> branch <m>y = -\sqrt{c - x^2}</m>.
 					Substituting <m>x = 1</m>, <m>y = -2</m> gives <m>1 + 4 = c</m>, so
@@ -617,23 +517,22 @@
 					the lower half of the circle of radius <m>\sqrt{5}</m>, valid for
 					<m>|x| &lt; \sqrt{5}</m>.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<exercise xml:id="ws-sov-tf-lny">
 			<title>True or False</title>
 			<statement>
 				<p><m>\displaystyle\int \frac{1}{y}\,dy = \ln(y) + c</m>.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. The antiderivative is <m>\ln|y| + c</m>. Dropping the
 					absolute value silently throws away every solution with
 					<m>y &lt; 0</m><mdash />which is exactly the branch the circle problem
 					above depended on. The <m>|\cdot|</m> is what keeps both signs of
 					<m>y</m> in play.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
@@ -650,7 +549,7 @@
 			end to end.
 		</p>
 
-		<exercise xml:id="ws-sov-ex-cooling-stu" component="stu" workspace="3.0in">
+		<exercise xml:id="ws-sov-ex-cooling">
 			<statement>
 				<p>
 					A cup of coffee at <m>90^\circ</m>C is left in a room held at
@@ -664,26 +563,8 @@
 					(b) With <m>k = 0.1</m> and <m>T(0) = 90</m>, find <m>T(t)</m>.
 					(c) What temperature does the coffee approach as <m>t \to \infty</m>, and does that match your intuition?
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise xml:id="ws-sov-ex-cooling-key" component="key">
-			<statement>
-				<p>
-					A cup of coffee at <m>90^\circ</m>C is left in a room held at
-					<m>20^\circ</m>C. Newton's law of cooling says its temperature
-					<m>T(t)</m> (in <m>{}^\circ</m>C, with <m>t</m> in minutes)
-					satisfies
-					<md>
-						<mrow> \frac{dT}{dt} = -k\,(T - 20), \qquad k &gt; 0. </mrow>
-					</md>
-					(a) Find the general solution.
-					(b) With <m>k = 0.1</m> and <m>T(0) = 90</m>, find <m>T(t)</m>.
-					(c) What temperature does the coffee approach as <m>t \to \infty</m>, and does that match your intuition?
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="3.0in"/>
+				<p component="key">
 					(a) Separable with <m>f(t) = -k</m> and <m>g(T) = T - 20</m>.
 					Separate and integrate:
 					<md>
@@ -696,21 +577,21 @@
 						<mrow> T - 20 = C e^{-kt} \quad\Rightarrow\quad T = 20 + C e^{-kt}. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(b) The initial condition gives <m>T(0) = 20 + C = 90</m>, so
 					<m>C = 70</m> and
 					<md>
 						<mrow> T(t) = 20 + 70\,e^{-0.1t}. </mrow>
 					</md>
 				</p>
-				<p>
+				<p component="key">
 					(c) As <m>t \to \infty</m>, <m>e^{-0.1t} \to 0</m>, so
 					<m>T \to 20^\circ</m>C. The coffee cools to room temperature, exactly
 					as intuition demands. The constant <m>20</m><mdash />the room
 					temperature<mdash />is the equilibrium the model relaxes toward, and
 					<m>k</m> controls how fast it gets there.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<conclusion>
