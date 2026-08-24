@@ -142,7 +142,7 @@
 				<p component="key">
 					(a) Substituting each pair into <m>f(t,y) = t^2 - y</m>:
 				</p>
-				<tabular halign="center">
+				<tabular component="key" halign="center">
 					<col right="minor"/>
 					<row bottom="minor">
 						<cell><m>f(t,y)</m></cell>

@@ -118,7 +118,7 @@ Quick selection table:
 - Translating an old Beamer deck (the reveal pattern `\ON<1>{\B{...}}`
   marks what becomes hidden):
   - short revealed phrase → reading-check pair (mechanism 1),
-  - revealed multi-line computation → worked-problem pair (mechanism 2),
+  - revealed multi-line computation → worked problem (mechanism 2),
   - static exposition → ordinary prose, tightened.
 - Figures: placeholder `<figure>`s naming the source image (deck PNG or
   book asset path in a comment); list them under the PR's "Open
