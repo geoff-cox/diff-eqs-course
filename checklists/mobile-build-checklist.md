@@ -66,6 +66,7 @@ letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
 | A2 — semester refresh | 🔶 Stubs in place | PR #5 — instructor fills `TBD-FA26` values before the semester |
 | B1 — worksheet roadmap | ✅ Done | PR #1 (`docs/gln-roadmap.md`) |
 | B2 — worksheets (per section) | ✅ Done | All 15 worksheets merged, c0–c14 (PRs #1–#2, #6–#18); details per `docs/gln-roadmap.md`. Follow-up owned outside this repo: debookrs c14 chapter is a stub — `ws-nonlinear-systems` should be revisited once it's written (see PR #18 open questions) |
+| B3 — worked-problem mechanism | ✅ Done | All 15 worksheets moved off duplicated `<exercise component="stu"/"key">` pairs and `<solution>` onto the single-`<exercise>` `component="stu"` workspace / `component="key"` answer split; shared `checklists/worksheet-conventions.md` mechanism 2 rewritten to match, in lockstep with `geoff-cox/vector-calc-course` |
 | C1 — macro standing rule | ♻️ Standing | enforced inside every PR |
 | C2 — macro audit | ⬜ Not started | — |
 | D1 — deploy config | ✅ Done | PR #3 |
