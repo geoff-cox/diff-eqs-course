@@ -16,9 +16,10 @@
     * Reading-check blanks: paired <p component="stu"> (with <fillin/>)
       and <p component="key"> (answers as underlined bold math). The
       answer NEVER lives inside <fillin>.
-    * Worked problems: paired <exercise component="stu" workspace="Xin">
-      (statement only, generous write-in space) and
-      <exercise component="key"> (statement + solution).
+    * Worked problems: ONE <exercise> whose <statement> holds the prompt,
+      then <p component="stu" workspace="Xin"/> (generous write-in space),
+      then <p component="key"> with the answer.  No <solution>, and no
+      duplicated stu/key exercise pair.
     * <page> delimits vertical space for letter-size printing, NOT topics.
       Headings are <p><term>...</term></p>, never page titles.
     * Display math uses <md>; <me>/<men> are deprecated.
@@ -100,50 +101,39 @@
 			<title>True or False</title>
 			<statement>
 				<p><m>y''' - 4y' - 3</m> is a differential equation.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					False. It has derivatives of the dependent variable <m>y</m>, but it 
 					has no equals sign.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise component="stu" workspace="1.1in">
+		<exercise>
 			<statement>
 				<p>
 					Solve the differential equation <m>y' = 5 + 3t</m> by finding a
 					function <m>y</m> whose derivative is <m>5 + 3t</m>.
 				</p>
-			</statement>
-		</exercise>
-
-    <exercise component="key">
-			<statement>
-				<p>
-					Solve the differential equation <m>y' = \cos t + 5</m> by finding a
-					function <m>y</m> whose derivative is <m>\cos t + 5</m>.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="1.1in"/>
+				<p component="key">
 					Antidifferentiate both sides:
           <md>
-            y = \int (\cos t + 5)\,dt = \sin t + 5t + C
+            y = \int (5 + 3t)\,dt = 5t + \tfrac{3}{2}t^2 + C
           </md>
           Every choice of the constant <m>C</m> gives a function whose derivative
-          is <m>\cos t + 5</m>, so there is a whole <em>family</em> of solutions.
+          is <m>5 + 3t</m>, so there is a whole <em>family</em> of solutions.
           This pattern will recur throughout the course: solving a differential
           equation means recovering a function up to one or more constants that
           arise from integration.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 	</page>
 
 	<page>
 
-		<exercise component="stu" workspace="2.0in">
+		<exercise>
 			<statement>
 				<p>
 					For each differential equation, name the dependent variable (the
@@ -155,24 +145,8 @@
 						R''' = 6R.
 					</md>
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise component="key">
-			<statement>
-				<p>
-					For each differential equation, name the dependent variable (the
-					unknown function we solve for) and the independent variable (the one it
-					is differentiated with respect to):
-					<md>
-						\frac{dW}{dz} + \frac{W}{z} = 9z^2, \qquad
-						g'' + s^3 g = 0, \qquad
-						R''' = 6R.
-					</md>
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.0in"/>
+				<p component="key">
 					The dependent variable is the one being differentiated.
 					<ul marker="square">
 						<li><p><m>\dfrac{dW}{dz}\ \Rightarrow</m> <m>W</m> is differentiated with respect to <m>z\ \Rightarrow\ </m> dependent: <m>W</m>, independent: <m>z</m>.</p></li>
@@ -180,7 +154,7 @@
 						<li><p><m>R'''\ \Rightarrow</m> <m>R</m> is the differentiated dependent variable, but no independent variable is named.</p></li>
 					</ul>
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
 		<p>
@@ -231,17 +205,16 @@
 
 			<statement>
 				<p>A coefficient may never contain the dependent variable.</p>
-			</statement>
-			<solution component="key">
-				<p>
+				<p component="stu" workspace="1in"/>
+				<p component="key">
 					True. A coefficient may be a constant or a function of the independent
 					variable, but it may not contain the dependent variable or any of its
 					derivatives.
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
-		<exercise component="stu" workspace="2.5in">
+		<exercise>
 			<title>Terms, free term, and coefficients</title>
 
 			<statement>
@@ -254,25 +227,8 @@
 					coefficient of <m>u^{(4)}</m>, of <m>u''</m>, of <m>u'</m>, and of
 					<m>u</m>.
 				</p>
-			</statement>
-		</exercise>
-
-		<exercise component="key">
-			<title>Terms, free term, and coefficients</title>
-
-			<statement>
-				<p>
-					The dependent variable below is <m>u</m>:
-					<md>
-						\frac{5}{t}\,u^{(4)} + 2.7 u'' + t^3 u' + u = \tfrac14 e^{2t}.
-					</md>
-					(a) List the five terms.
-          (b) Which is the free term?
-          (c) Give the coefficients of the non-free terms.
-				</p>
-			</statement>
-			<solution>
-				<p>
+				<p component="stu" workspace="2.5in"/>
+				<p component="key">
           <ol marker="(a)">
             <li>
               <m>
@@ -290,7 +246,7 @@
             </li>
           </ol>
 				</p>
-			</solution>
+			</statement>
 		</exercise>
 
     <p>
