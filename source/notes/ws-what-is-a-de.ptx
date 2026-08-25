@@ -50,58 +50,55 @@
 			to find a function whose derivative is <m>5 + 3t</m>.
 		</p>
 
-    <exercise>
-      <statement>
-        <p>
-          <term>Reading check.</term> Fill in each blank from your reading.
-          <ol>
-            <li>
-              <p component="stu">
-                A differential equation is an equation that involves one or more
-                <fillin characters="12"/> of an unknown function.
-              </p>
-              <p component="key">
-                A differential equation is an equation that involves one or more
-                <m>\underline{\textbf{derivatives}}</m> of an unknown function.
-              </p>
-            </li>
-            <li>
-              <p component="stu">
-                For an equation to be a differential equation it must contain both a
-                derivative and an <fillin characters="12"/> sign.
-              </p>
-              <p component="key">
-                For an equation to be a differential equation it must contain both a
-                derivative and an <m>\underline{\textbf{equals}}</m> sign.
-              </p>
-            </li>
-            <li>
-              <p component="stu">
-                If the unknown function depends on a single variable the equation is
-                an <fillin characters="10"/> differential equation; if it
-                depends on more than one variable it is a <fillin characters="9"/>
-                differential equation. In this course, when we say <q>differential 
-                equation</q> we mean  <fillin characters="10"/> differential equation.
-              </p>
-              <p component="key">
-                If the unknown function depends on a single variable the equation is
-                an <m>\underline{\textbf{ordinary}}</m> differential equation; if it
-                depends on more than one variable it is a 
-                <m>\underline{\textbf{partial}}</m> differential equation. In this 
-                course, when we say <q>differential equation</q> we mean 
-                <m>\underline{\textbf{ordinary}}</m> differential equation.
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>
-    </exercise>
+    <assemblage>
+			<p>
+				<term>Reading check.</term> Fill in each blank from your reading.
+				<ol>
+					<li>
+						<p component="stu">
+							A differential equation is an equation that involves one or more
+							<fillin characters="12"/> of an unknown function.
+						</p>
+						<p component="key">
+							A differential equation is an equation that involves one or more
+							<m>\underline{\textbf{derivatives}}</m> of an unknown function.
+						</p>
+					</li>
+					<li>
+						<p component="stu">
+							For an equation to be a differential equation it must contain both a
+							<fillin characters="16"/> and an <fillin characters="12"/> sign.
+						</p>
+						<p component="key">
+							For an equation to be a differential equation it must contain both a
+							<m>\underline{\textbf{derivative}}</m> and an <m>\underline{\textbf{equals}}</m> sign.
+						</p>
+					</li>
+					<li>
+						<p component="stu">
+							If the unknown function depends on a single variable the equation is
+							an <fillin characters="10"/> differential equation; if it
+							depends on more than one variable it is a <fillin characters="9"/>
+							differential equation. In this course, when we say <q>differential 
+							equation</q> we mean  <fillin characters="10"/> differential equation.
+						</p>
+						<p component="key">
+							If the unknown function depends on a single variable the equation is
+							an <m>\underline{\textbf{ordinary}}</m> differential equation; if it
+							depends on more than one variable it is a 
+							<m>\underline{\textbf{partial}}</m> differential equation. In this 
+							course, when we say <q>differential equation</q> we mean 
+							<m>\underline{\textbf{ordinary}}</m> differential equation.
+						</p>
+					</li>
+				</ol>
+			</p>
+    </assemblage>
 
 		<exercise>
 			<title>True or False</title>
 			<statement>
 				<p><m>y''' - 4y' - 3</m> is a differential equation.</p>
-				<p component="stu" workspace="1in"/>
 				<p component="key">
 					False. It has derivatives of the dependent variable <m>y</m>, but it 
 					has no equals sign.
@@ -115,7 +112,7 @@
 					Solve the differential equation <m>y' = \cos t + 5</m> by finding a
 					function <m>y</m> whose derivative is <m>\cos t + 5</m>.
 				</p>
-				<p component="stu" workspace="1.1in"/>
+				<p component="stu" workspace="1.5in"/>
 				<p component="key">
 					Antidifferentiate both sides:
           <md>
@@ -157,55 +154,57 @@
 			</statement>
 		</exercise>
 
-		<p>
-			<term>Vocabulary for the parts of an equation.</term> Before we can
-			classify equations we need names for their pieces. Fill in the blanks.
-			<ol>
-				<li>
-					<p component="stu">
-						A <term>term</term> is any piece of a differential equation separated
-						from the others by <fillin characters="18"/> signs.
-					</p>
-					<p component="key">
-						A <term>term</term> is any piece of a differential equation separated
-						from the others by <m>\underline{\textbf{plus or minus}}</m> signs.
-					</p>
-				</li>
-				<li>
-					<p component="stu">
-						A <term>free term</term> is a term that does <em>not</em> involve the
-						<fillin characters="11"/> variable or its derivatives. Every equation
-						has one, even a hidden <fillin characters="11"/>: for example
-						<m>w' = 4w</m> is really <m>w' - 4w = 0</m>.
-					</p>
-					<p component="key">
-						A <term>free term</term> is a term that does <em>not</em> involve the
-						<m>\underline{\textbf{dependent}}</m> variable or its derivatives. Every 
-						equation has one, even a hidden <m>\underline{\textbf{free term}}</m>: for example
-						<m>w' = 4w</m> is really <m>w' - 4w = 0</m>.
-					</p>
-				</li>
-				<li>
-					<p component="stu">
-						A <term>coefficient</term> is a constant or a function of the
-						<fillin characters="13"/> variable that multiplies the dependent
-						variable or one of its derivatives.
-					</p>
-					<p component="key">
-						A <term>coefficient</term> is a constant or a function of the
-						<m>\underline{\textbf{independent}}</m> variable that multiplies the dependent
-						variable or one of its derivatives.
-					</p>
-				</li>
-			</ol>
-		</p>
+		<assemblage xml:id="block-vocabulary">
+			<title>Parts of a Differential Equation</title>
+			<p>
+				Before we can classify equations we need names for their pieces. 
+				Fill in the blanks.
+				<ol>
+					<li>
+						<p component="stu">
+							A <term>term</term> is any piece of a differential equation separated
+							from the others by <fillin characters="18"/> signs.
+						</p>
+						<p component="key">
+							A <term>term</term> is any piece of a differential equation separated
+							from the others by <m>\underline{\textbf{plus or minus}}</m> signs.
+						</p>
+					</li>
+					<li>
+						<p component="stu">
+							A <term>free term</term> is a term that does <em>not</em> involve the
+							<fillin characters="11"/> variable or its derivatives. Every equation
+							has one, even a hidden <fillin characters="11"/>: for example
+							<m>w' = 4w</m> is really <m>w' - 4w = 0</m>.
+						</p>
+						<p component="key">
+							A <term>free term</term> is a term that does <em>not</em> involve the
+							<m>\underline{\textbf{dependent}}</m> variable or its derivatives. Every 
+							equation has one, even a hidden <m>\underline{\textbf{free term}}</m>: for example
+							<m>w' = 4w</m> is really <m>w' - 4w = 0</m>.
+						</p>
+					</li>
+					<li>
+						<p component="stu">
+							A <term>coefficient</term> is a constant or a function of the
+							<fillin characters="13"/> variable that multiplies the dependent
+							variable or one of its derivatives.
+						</p>
+						<p component="key">
+							A <term>coefficient</term> is a constant or a function of the
+							<m>\underline{\textbf{independent}}</m> variable that multiplies the dependent
+							variable or one of its derivatives.
+						</p>
+					</li>
+				</ol>
+			</p>
+		</assemblage>
 
 		<exercise>
 			<title>True or False</title>
 
 			<statement>
 				<p>A coefficient may never contain the dependent variable.</p>
-				<p component="stu" workspace="1in"/>
 				<p component="key">
 					True. A coefficient may be a constant or a function of the independent
 					variable, but it may not contain the dependent variable or any of its
