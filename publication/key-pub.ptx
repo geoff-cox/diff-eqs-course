@@ -21,7 +21,7 @@
   -->
 	<source>
     <directories generated="../generated-assets" />
-		<version include="html key" />
+    <version include="html key draft"/>
 		<webwork-extraction file="webwork-extraction.xml"/>
 	</source>
 

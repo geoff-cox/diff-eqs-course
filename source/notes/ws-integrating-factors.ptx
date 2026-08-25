@@ -27,7 +27,7 @@
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
 -->
-<worksheet xml:id="ws-integrating-factors" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet component="draft" xml:id="ws-integrating-factors" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Integrating Factors</title>
 
 	<objectives>

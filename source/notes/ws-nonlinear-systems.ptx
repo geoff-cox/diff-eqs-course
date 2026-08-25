@@ -36,7 +36,7 @@
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
 -->
-<worksheet xml:id="ws-nonlinear-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet component="draft" xml:id="ws-nonlinear-systems" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Nonlinear Systems</title>
 
 	<objectives>

@@ -38,7 +38,7 @@
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
 -->
-<worksheet xml:id="ws-slope-fields" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet component="draft" xml:id="ws-slope-fields" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Slope Fields and Qualitative Analysis</title>
 
 	<objectives>

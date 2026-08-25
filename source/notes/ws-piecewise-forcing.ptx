@@ -31,7 +31,7 @@
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
 -->
-<worksheet xml:id="ws-piecewise-forcing" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet component="draft" xml:id="ws-piecewise-forcing" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Piecewise Forcing</title>
 
 	<objectives>

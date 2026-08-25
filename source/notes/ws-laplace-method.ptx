@@ -28,7 +28,7 @@
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
 -->
-<worksheet xml:id="ws-laplace-method" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet component="draft" xml:id="ws-laplace-method" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Solving Differential Equations with the Laplace Method</title>
 
 	<objectives>

@@ -28,7 +28,7 @@
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md>.
 -->
-<worksheet xml:id="ws-solutions-ivp" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet component="draft" xml:id="ws-solutions-ivp" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Verifying Solutions &amp; Initial Conditions</title>
 
 	<objectives>

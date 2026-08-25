@@ -27,7 +27,7 @@
 	    <p><term>...</term></p>; display math uses <md> (<me>/<men> are
 	    prohibited here).
 -->
-<worksheet xml:id="ws-separation-of-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet component="draft" xml:id="ws-separation-of-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Separation of Variables</title>
 
 	<objectives>
