@@ -326,15 +326,14 @@
               <em>Exploring Differential Equations</em>, Geoffrey Cox PhD.
             </p>
           </li>
-
-          <li>
+          <!-- <li>
             <title>URL</title>
-
             <p>
               <url href="https://runestone.academy/ns/books/published/debookrs/frontmatter.html?mode=browsing">Textbook via Runestone</url>
             </p>
-          </li>
+          </li> -->
         </dl>
+        Access the textbook through Canvas.
       </p>
     </subsection>
 
@@ -350,7 +349,7 @@
         your progress can be recorded in Canvas.
       </p>
 
-      <p>
+      <!-- <p>
         Create an account and enroll using the link and course code below:
         <dl>
           <li>
@@ -360,7 +359,6 @@
               <url href="https://runestone.academy">Runestone Academy</url>
             </p>
           </li>
-          <!-- TODO(geoff): Fall 2026 Runestone course code <mdash/> replace the TBD-FA26 stub. -->
           <li>
             <title>Course Code</title>
 
@@ -369,7 +367,7 @@
             </p>
           </li>
         </dl>
-      </p>
+      </p> -->
     </subsection>
 
     <subsection xml:id="ma311-materials-webwork">
