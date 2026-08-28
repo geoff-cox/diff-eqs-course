@@ -21,7 +21,7 @@
 	    Headings are <p><term>...</term></p>, never page titles.
 	  * Display math uses <md>; <me>/<men> are deprecated.
   -->
-<worksheet xml:id="ws-classification" xmlns:xi="http://www.w3.org/2001/XInclude">
+<worksheet xml:id="ws-classification">
 	<title>Classifying Differential Equations</title>
 
 	<objectives>
@@ -62,16 +62,15 @@
 						A single term is <term>linear</term> if it has one of the forms
 						<m>a(t)</m>, <m>a(t)\,y</m>, or <m>a(t)\,y^{(n)}</m>, where the
 						coefficient <m>a(t)</m> depends on the <fillin characters="13"/>
-						variable only. The coefficient <fillin characters="10"/> (does / does
-						not) affect linearity, no matter how complicated it looks.
+						variable only. The coefficient, <m>a(t)</m>, (does | does not)
+						affect linearity.
 					</p>
 					<p component="key">
 						A single term is <term>linear</term> if it has one of the forms
 						<m>a(t)</m>, <m>a(t)\,y</m>, or <m>a(t)\,y^{(n)}</m>, where the
 						coefficient <m>a(t)</m> depends on the
-						<m>\underline{\textbf{independent}}</m> variable only. The coefficient
-						<m>\underline{\textbf{does not}}</m> affect linearity, no matter how
-						complicated it looks.
+						<m>\underline{\textbf{independent}}</m> variable only. The coefficient,
+						<m>a(t)</m>, <m>\underline{\textbf{does not}}</m> affect linearity.
 					</p>
 				</li>
 				<li>
@@ -93,10 +92,8 @@
 			<title>True or False</title>
 			<statement>
 				<p>
-					If nine out of an equation's ten terms are linear, the equation is
-					linear.
+					A differential equation is linear if the majority of its terms are linear.
 				</p>
-				<p component="stu" workspace="1in"/>
 				<p component="key">
 					False. Linearity is all-or-nothing: one nonlinear term is enough to
 					make the entire equation nonlinear.
@@ -104,53 +101,17 @@
 			</statement>
 		</exercise>
 
-		<exercise xml:id="ws-cl-ex-order">
-			<statement>
-				<p>
-					Give the order of each equation:
-					<md>
-						\frac{d^3 B}{ds^3} + \frac{dB}{ds} + B = 42, \qquad
-						v^8 + \cos\!\big(v^{(6)}\big) = 0.
-					</md>
-				</p>
-				<p component="stu" workspace="1.5in"/>
-				<p component="key">
-					The first is <term>third-order</term>: the highest derivative of
-					<m>B</m> is <m>d^3B/ds^3</m>.
-				</p>
-				<p component="key">
-					The second is <term>sixth-order</term>. Do not confuse the exponent in
-					<m>v^8</m> (that is <m>v</m> raised to the eighth power, not an eighth
-					derivative) with a derivative; only derivatives set the order. And the
-					<m>\cos(\cdot)</m> wrapper does not change the order<mdash />the highest
-					derivative inside is still <m>v^{(6)}</m>.
-				</p>
-			</statement>
-		</exercise>
-	</page>
-
-	<page>
-		<!-- <exercise xml:id="ws-cl-ex-linear-terms-stu" component="stu" workspace="2.5in">
-			<statement>
-				<p>
-					Label each term of the equation, below, as linear or nonlinear.
-					<md>
-						y'\,\frac{d^3 y}{dt^3} + 5t^4\,\frac{dy}{dt}
-						+ \cos(y) + (y'')^2 = \sqrt{t}
-					</md>
-				</p>
-			</statement>
-		</exercise> -->
-
 		<exercise xml:id="ws-cl-ex-linear-terms-key">
 			<statement>
 				<p>
-					Label each term of the equation as linear or nonlinear. If nonlinear, explain why.
+					Give the order and label each term of the equation as linear or nonlinear. If nonlinear, explain why.
 					<md>
 						y'\,\frac{d^3 y}{dt^3} + 5t^4\,\frac{dy}{dt}
 						+ \cos(y) + (y'')^2 = \sqrt{t}
 					</md>
 				</p>
+				<p component="stu"><term>Order:</term></p>
+        <p component="key"><term>Order:</term> <m>\underline{\text{Third-order since highest derivative is}\ d^3y/dt^3}</m>.</p>
         <tabular bottom="minor">
           <col halign="center" width="14%"/>
           <col halign="center" width="14%"/>
@@ -171,17 +132,17 @@
             <cell><p component="stu"/><p component="key">Has the form <m>a(t)\,y'</m>; the coefficient <m>5t^4</m> is irrelevant.</p></cell>
           </row>
           <row>
-            <cell><p><m>\cos(y)</m></p></cell>
+            <cell><p><m>\cos(y)\vphantom{\dfrac{d}{d}}</m></p></cell>
             <cell><p component="stu"/><p component="key"><em>nonlinear</em></p></cell>
             <cell><p component="stu"/><p component="key">The dependent variable sits inside a nonlinear function.</p></cell>
           </row>
           <row>
-            <cell><p><m>(y'')^2</m></p></cell>
+            <cell><p><m>(y'')^2\vphantom{\dfrac{d}{d}}</m></p></cell>
             <cell><p component="stu"/><p component="key"><em>nonlinear</em></p></cell>
             <cell><p component="stu"/><p component="key">A derivative is raised to a power other than one.</p></cell>
           </row>
           <row>
-            <cell><p><m>\sqrt{t}</m></p></cell>
+            <cell><p><m>\sqrt{t}\vphantom{\dfrac{d}{d}}</m></p></cell>
             <cell><p component="stu"/><p component="key"><em>linear</em></p></cell>
             <cell><p component="stu"/><p component="key">No dependent variable appears (has the form: <m>a(t)y^{0}</m>).</p></cell>
           </row>
@@ -192,67 +153,83 @@
 		<exercise xml:id="ws-cl-ex-linearity">
 			<statement>
 				<p>
-					Decide whether each equation is linear or nonlinear, and explain why.
-					<md>
-						w^{(4)} + \frac{w'}{t^3} + 9w = \tan t, \qquad
-						Q^{(5)} + \frac{k\,Q''}{Q'} = (k + 2)^3.
-					</md>
+					Determine the dependent variable, order, and linearity for each differential equation.
 				</p>
-				<p component="stu" workspace="2.0in"/>
-				<p component="key">
-					The first is <term>linear</term>: every term involving <m>w</m> or its
-					derivatives has the form <m>a(t)\,w^{(n)}</m><mdash />here <m>w^{(4)}</m>,
-					<m>\frac{1}{t^3}w'</m>, and <m>9w</m><mdash />while <m>\tan t</m> is a free
-					term. Its coefficients being functions of <m>t</m> is fine.
-				</p>
-				<p component="key">
-					The second is <term>nonlinear</term>. The term <m>\frac{k\,Q''}{Q'}</m>
-					has derivatives of the dependent variable <m>Q</m> in both the numerator
-					and the denominator, so <m>Q''</m> and <m>Q'</m> are effectively
-					multiplied/divided together. One offending term is enough: the whole
-					equation is nonlinear. (Here <m>k</m> is a parameter, not the dependent
-					variable, so <m>(k+2)^3</m> is just a free term.)
-				</p>
+        <tabular bottom="minor">
+          <col halign="center" width="40%"/>
+          <col halign="center" width="12%"/>
+          <col halign="center" width="12%"/>
+          <col halign="center" width="12%"/>
+          <col halign="left" width="24%"/>
+          <row header="yes">
+            <cell><p>Equation</p></cell>
+            <cell><p>Dep Var</p></cell>
+            <cell><p>Order</p></cell>
+            <cell><p>Linear?</p></cell>
+            <cell><p>Nonlinear terms</p></cell>
+          </row>
+          <row>
+            <cell><p><m>\displaystyle w^{(4)} + \dfrac{w'}{t^3} + 9w = \tan t</m></p></cell>
+            <cell><p component="key"><m>w</m></p></cell>
+            <cell><p component="key">4th</p></cell>
+            <cell><p component="key"><em>Yes</em></p></cell>
+            <cell><p component="key"><mdash /></p></cell>
+          </row>
+          <row>
+            <cell><p><m>\displaystyle Q^{(5)} + \dfrac{k\,Q''}{Q'} = (k + 2)^3</m></p></cell>
+            <cell><p component="key"><m>Q</m></p></cell>
+            <cell><p component="key">5th</p></cell>
+            <cell><p component="key"><em>No</em></p></cell>
+            <cell><p component="key"><m>\dfrac{k\,Q''}{Q'}</m></p></cell>
+          </row>
+          <row>
+            <cell><p><m>\displaystyle \dfrac{d^3 B}{ds^3} + s^2\dfrac{dB}{ds} + B = 42</m></p></cell>
+            <cell><p component="key"><m>B</m></p></cell>
+            <cell><p component="key">3rd</p></cell>
+            <cell><p component="key"><em>Yes</em></p></cell>
+            <cell><p component="key"><mdash /></p></cell>
+          </row>
+          <row>
+            <cell><p><m>\displaystyle v^8 + \cos\!\big(v^{(6)}\big) = 0</m></p></cell>
+            <cell><p component="key"><m>v</m></p></cell>
+            <cell><p component="key">6th</p></cell>
+            <cell><p component="key"><em>No</em></p></cell>
+            <cell><p component="key"><m>v^8</m>, <m>\cos\!\big(v^{(6)}\big)</m></p></cell>
+          </row>
+        </tabular>
 			</statement>
 		</exercise>
-	</page>
-
-	<page>
-		<p><term>Classifying models.</term></p>
 
 		<exercise xml:id="ws-cl-ex-modeling">
 			<statement>
 				<p>
-					Classification is the first thing we do to any model we meet later in
-					the course. For each equation below, give its <em>order</em> and say
-					whether it is <em>linear</em> or <em>nonlinear</em>. Assume the letter
-					on the derivative is the dependent variable.
+					<term>Classifying models.</term> For each equation below, give its 
+					<em>order</em> and say whether it is <em>linear</em> or 
+					<em>nonlinear</em>.
 					<ol>
-						<li><p>Skydiver with air resistance: <m>m\dfrac{dv}{dt} = mg - cv^2</m></p></li>
-						<li><p>IV drug infusion: <m>\dfrac{dA}{dt} = r - kA</m></p></li>
-						<li><p>RLC circuit charge: <m>L\dfrac{d^2 q}{dt^2} + R\dfrac{dq}{dt} + \dfrac{1}{C}q = E(t)</m></p></li>
-						<li><p>Self-sustaining oscillator (van der Pol): <m>\dfrac{d^2 x}{dt^2} - \mu\left(1 - x^2\right)\dfrac{dx}{dt} + x = 0</m></p></li>
-					</ol>
-				</p>
-				<p component="stu" workspace="3.0in"/>
-				<p component="key">
-					<ol>
-						<li><p><term>First-order, nonlinear.</term> Rewriting as <m>mv' + cv^2 = mg</m>, the <m>cv^2</m> term squares the dependent variable. (At low speeds drag is roughly proportional to <m>v</m> instead, which <em>linearizes</em> the model<mdash />a trade-off we will revisit.)</p></li>
-						<li><p><term>First-order, linear.</term> It is <m>A' + kA = r</m>: one <m>a\,A'</m> term, one <m>a\,A</m> term, and a constant free term.</p></li>
-						<li><p><term>Second-order, linear.</term> Each term is a constant times <m>q</m>, <m>q'</m>, or <m>q''</m>, and the forcing <m>E(t)</m> is a free term.</p></li>
-						<li><p><term>Second-order, nonlinear.</term> The damping coefficient <m>-\mu(1 - x^2)</m> contains the dependent variable, so the middle term multiplies <m>x^2</m> by <m>x'</m><mdash />coefficients are only allowed to involve the independent variable.</p></li>
+						<li>
+							<p>Skydiver with air resistance: <m>\quad m\dfrac{dv}{dt} = mg - cv^2</m></p>
+							<p component="stu" workspace="1.0in"/>
+							<p component="key"><term>First-order, nonlinear.</term></p>
+						</li>
+						<li>
+							<p>IV drug infusion: <m>\quad \dfrac{dA}{dt} = r - kA</m></p>
+							<p component="stu" workspace="1.0in"/>
+							<p component="key"><term>First-order, linear.</term></p>
+						</li>
+						<li>
+							<p>RLC circuit charge: <m>\quad L\dfrac{d^2 q}{dt^2} + R\dfrac{dq}{dt} + \dfrac{1}{C}q = E(t)</m></p>
+							<p component="stu" workspace="1.0in"/>
+							<p component="key"><term>Second-order, linear.</term></p>
+						</li>
+						<li>
+							<p>Self-sustaining oscillator (van der Pol): <m>\quad \dfrac{d^2 x}{dt^2} - \mu\left(1 - x^2\right)\dfrac{dx}{dt} + x = 0</m></p>
+							<p component="stu" workspace="1.0in"/>
+							<p component="key"><term>Second-order, nonlinear.</term></p>
+						</li>
 					</ol>
 				</p>
 			</statement>
-			<hint>
-				<p>
-					<m>m</m>, <m>g</m>, <m>c</m>, <m>r</m>, <m>k</m>, <m>L</m>, <m>R</m>,
-					<m>C</m>, and <m>\mu</m> are constants (parameters), and <m>E(t)</m> is
-					a known function of the independent variable<mdash />none of them is the
-					dependent variable. Look only at how the dependent variable and its
-					derivatives appear.
-				</p>
-			</hint>
 		</exercise>
 
     <p>
@@ -260,8 +237,7 @@
       read off <em>first</em>
       for every new equation, because together they decide which technique to
       reach for. Next we turn to what it even means to <em>solve</em> a
-      differential equation<mdash />how to check that a candidate function really
-      satisfies the equation, and how an initial condition pins down the one
+      differential equation and how an initial condition pins down the one
       solution we want out of the whole family.
     </p>
 	</page>
