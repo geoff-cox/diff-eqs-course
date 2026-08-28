@@ -106,7 +106,7 @@ var ptx_lunr_docs = [
   "type": "Worksheet",
   "number": "1.2",
   "title": "Classifying Differential Equations",
-  "body": " Classifying Differential Equations    Determine the order of a differential equation.  Classify individual terms as linear or nonlinear.  Decide whether a whole differential equation is linear or nonlinear.  Apply these labels to differential equations that model real systems.     Classifying a differential equation: order and linearity.  Once we can name the parts of an equation, two labels let us predict which solution methods will work: its order and whether it is linear .   Reading check. Fill in each blank from your reading.   The order of a differential equation is the derivative of the dependent variable that appears in it.    A single term is linear if it has one of the forms , , or , where the coefficient depends on the variable only. The coefficient (does \/ does not) affect linearity, no matter how complicated it looks.    A whole differential equation is linear when term is linear; it is nonlinear as soon as term is nonlinear.      True or False   If nine out of an equation's ten terms are linear, the equation is linear.       Give the order of each equation:           Label each term of the equation as linear or nonlinear. If nonlinear, explain why.        Term  Linearity  Justification     nonlinear  Two derivatives of the dependent variable are multiplied together.                            Decide whether each equation is linear or nonlinear, and explain why.        Classifying models.    Classification is the first thing we do to any model we meet later in the course. For each equation below, give its order and say whether it is linear or nonlinear . Assume the letter on the derivative is the dependent variable.  Skydiver with air resistance:  IV drug infusion:  RLC circuit charge:  Self-sustaining oscillator (van der Pol):        , , , , , , , , and are constants (parameters), and is a known function of the independent variable none of them is the dependent variable. Look only at how the dependent variable and its derivatives appear.     Looking ahead . Order and linearity are the two labels we will read off first for every new equation, because together they decide which technique to reach for. Next we turn to what it even means to solve a differential equation how to check that a candidate function really satisfies the equation, and how an initial condition pins down the one solution we want out of the whole family.   "
+  "body": " Classifying Differential Equations    Determine the order of a differential equation.  Classify individual terms as linear or nonlinear.  Decide whether a whole differential equation is linear or nonlinear.  Apply these labels to differential equations that model real systems.     Classifying a differential equation: order and linearity.  Once we can name the parts of an equation, two labels let us predict which solution methods will work: its order and whether it is linear .   Reading check. Fill in each blank from your reading.   The order of a differential equation is the derivative of the dependent variable that appears in it.    A single term is linear if it has one of the forms , , or , where the coefficient depends on the variable only. The coefficient, , (does | does not) affect linearity.    A whole differential equation is linear when term is linear; it is nonlinear as soon as term is nonlinear.      True or False   A differential equation is linear if the majority of its terms are linear.      Give the order and label each term of the equation as linear or nonlinear. If nonlinear, explain why.   Order:       Term  Linearity  Justification     nonlinear  Two derivatives of the dependent variable are multiplied together.                            Determine the dependent variable, order, and linearity for each differential equation.         Equation  Dep Var  Order  Linear?  Nonlinear terms                                     Classifying models. For each equation below, give its order and say whether it is linear or nonlinear .   Skydiver with air resistance:     IV drug infusion:     RLC circuit charge:     Self-sustaining oscillator (van der Pol):         Looking ahead . Order and linearity are the two labels we will read off first for every new equation, because together they decide which technique to reach for. Next we turn to what it even means to solve a differential equation and how an initial condition pins down the one solution we want out of the whole family.   "
 },
 {
   "id": "ws-classification-2",
@@ -151,57 +151,39 @@ var ptx_lunr_docs = [
   "type": "Worksheet Exercise",
   "number": "1.2.1",
   "title": "True or False.",
-  "body": " True or False   If nine out of an equation's ten terms are linear, the equation is linear.    "
-},
-{
-  "id": "ws-cl-ex-order",
-  "level": "2",
-  "url": "ws-classification.html#ws-cl-ex-order",
-  "type": "Worksheet Exercise",
-  "number": "1.2.2",
-  "title": "",
-  "body": "  Give the order of each equation:     "
+  "body": " True or False   A differential equation is linear if the majority of its terms are linear.   "
 },
 {
   "id": "ws-cl-ex-linear-terms-key",
   "level": "2",
   "url": "ws-classification.html#ws-cl-ex-linear-terms-key",
   "type": "Worksheet Exercise",
-  "number": "1.2.3",
+  "number": "1.2.2",
   "title": "",
-  "body": "  Label each term of the equation as linear or nonlinear. If nonlinear, explain why.        Term  Linearity  Justification     nonlinear  Two derivatives of the dependent variable are multiplied together.                         "
+  "body": "  Give the order and label each term of the equation as linear or nonlinear. If nonlinear, explain why.   Order:       Term  Linearity  Justification     nonlinear  Two derivatives of the dependent variable are multiplied together.                         "
 },
 {
   "id": "ws-cl-ex-linearity",
   "level": "2",
   "url": "ws-classification.html#ws-cl-ex-linearity",
   "type": "Worksheet Exercise",
-  "number": "1.2.4",
+  "number": "1.2.3",
   "title": "",
-  "body": "  Decide whether each equation is linear or nonlinear, and explain why.     "
-},
-{
-  "id": "ws-classification-5-1",
-  "level": "2",
-  "url": "ws-classification.html#ws-classification-5-1",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Classifying models. "
+  "body": "  Determine the dependent variable, order, and linearity for each differential equation.         Equation  Dep Var  Order  Linear?  Nonlinear terms                                 "
 },
 {
   "id": "ws-cl-ex-modeling",
   "level": "2",
   "url": "ws-classification.html#ws-cl-ex-modeling",
   "type": "Worksheet Exercise",
-  "number": "1.2.5",
+  "number": "1.2.4",
   "title": "",
-  "body": "  Classification is the first thing we do to any model we meet later in the course. For each equation below, give its order and say whether it is linear or nonlinear . Assume the letter on the derivative is the dependent variable.  Skydiver with air resistance:  IV drug infusion:  RLC circuit charge:  Self-sustaining oscillator (van der Pol):        , , , , , , , , and are constants (parameters), and is a known function of the independent variable none of them is the dependent variable. Look only at how the dependent variable and its derivatives appear.   "
+  "body": "   Classifying models. For each equation below, give its order and say whether it is linear or nonlinear .   Skydiver with air resistance:     IV drug infusion:     RLC circuit charge:     Self-sustaining oscillator (van der Pol):       "
 },
 {
-  "id": "ws-classification-5-3",
+  "id": "ws-classification-3-8",
   "level": "2",
-  "url": "ws-classification.html#ws-classification-5-3",
+  "url": "ws-classification.html#ws-classification-3-8",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
