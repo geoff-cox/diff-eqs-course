@@ -190,6 +190,177 @@ var ptx_lunr_docs = [
   "body": "Looking ahead "
 },
 {
+  "id": "ws-solutions-ivp",
+  "level": "1",
+  "url": "ws-solutions-ivp.html",
+  "type": "Worksheet",
+  "number": "1.3",
+  "title": "Verifying Solutions &amp; Initial Conditions",
+  "body": " Verifying Solutions & Initial Conditions      Verify whether a given function satisfies a differential equation.     Distinguish a general solution, a particular solution, and a family of solutions.     Apply initial conditions to a general solution to produce the particular solution of an initial-value problem.     Match the number of initial conditions to the number of arbitrary constants a general solution carries.          What does it mean to solve a differential equation?   In algebra, a number satisfies an equation when substituting it makes both sides equal. A differential equation is satisfied by a function : substitute the function and its derivatives, simplify, and see whether the two sides become the very same expression.    Reading check. Fill in each blank from your reading.   A solution to a differential equation is a that satisfies the equation, and satisfies means both sides simplify to the expression.    To verify a proposed solution: compute any needed , them into the equation, and simplify both sides.      True or False   To verify that a function is a solution, you must first solve the differential equation.       Consider the differential equation . Verify that is a solution and that is not.            (a) Verify that is a solution of .   (b) Without any new computation, explain why the same function is not a solution of .   Being a solution is a relationship between a function and a specific equation.     One solution or many? General, particular, family.   Differential equations almost never have just one solution. Arbitrary constants let one formula describe every solution at once, so we need names to keep the ideas straight.   Reading check.    A general solution is a formula containing one or more arbitrary ; assigning each of them a specific value produces a solution.    The family of solutions is the of all particular solutions.         For , the differential equation has general solution .     Verify the general solution.       Write down two different particular solutions.       One of and belongs to the family of solutions and one does not. Which is which? Justify both answers.       True or False   Any solution that contains an arbitrary constant is a general solution.      Find all values of for which is a solution of .           Initial conditions pin down the constants.   A general solution is a menu of infinitely many functions. Real problems come with known information (e.g., a starting height, a launch velocity) that selects exactly one item off the menu.   Reading check.    An initial condition is a known value of the variable, or of one of its , at a specific input.    A differential equation together with initial conditions is an initial-value (IVP), and solving it produces a solution.    To determine every constant, the number of initial conditions must match the number of arbitrary in the general solution.      True or False   The equation is an initial-value problem.      A small object falls through the air, and its downward velocity (in ) is modeled by the IVP (a) Verify that is a solution of the differential equation for every constant . (b) Apply the initial condition to find the particular solution. (c) What happens to the velocity as ? Interpret your answer physically.            The general solution of is . Find the particular solution satisfying         Initial conditions need not be at zero. For , the general solution of is . Find the particular solution satisfying       Looking ahead. Everything on this worksheet started from a solution someone handed us. The rest of the course builds the machinery that produces those solutions. We begin with the simplest case: , solved by integration where the arbitrary constant of a general solution is exactly the you had to write in Calculus.   "
+},
+{
+  "id": "ws-solutions-ivp-2",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-solutions-ivp-2",
+  "type": "🎯 Learning Objectives",
+  "number": "1.3",
+  "title": "",
+  "body": "    Verify whether a given function satisfies a differential equation.     Distinguish a general solution, a particular solution, and a family of solutions.     Apply initial conditions to a general solution to produce the particular solution of an initial-value problem.     Match the number of initial conditions to the number of arbitrary constants a general solution carries.    "
+},
+{
+  "id": "ws-solutions-ivp-3-1",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-solutions-ivp-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "What does it mean to solve a differential equation? "
+},
+{
+  "id": "ws-solutions-ivp-3-3",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-solutions-ivp-3-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Reading check. "
+},
+{
+  "id": "ws-si-tf-verify-vs-solve",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-tf-verify-vs-solve",
+  "type": "Worksheet Exercise",
+  "number": "1.3.1",
+  "title": "True or False.",
+  "body": " True or False   To verify that a function is a solution, you must first solve the differential equation.    "
+},
+{
+  "id": "ws-si-ex-verify-first",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-ex-verify-first",
+  "type": "Worksheet Exercise",
+  "number": "1.3.2",
+  "title": "",
+  "body": "  Consider the differential equation . Verify that is a solution and that is not.    "
+},
+{
+  "id": "ws-si-ex-verify-second",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-ex-verify-second",
+  "type": "Worksheet Exercise",
+  "number": "1.3.3",
+  "title": "",
+  "body": "  (a) Verify that is a solution of .   (b) Without any new computation, explain why the same function is not a solution of .   Being a solution is a relationship between a function and a specific equation.   "
+},
+{
+  "id": "ws-solutions-ivp-4-2",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-solutions-ivp-4-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "One solution or many? General, particular, family. "
+},
+{
+  "id": "ws-solutions-ivp-4-4",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-solutions-ivp-4-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Reading check. general solution family of solutions "
+},
+{
+  "id": "ws-si-ex-family",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-ex-family",
+  "type": "Worksheet Exercise",
+  "number": "1.3.4",
+  "title": "",
+  "body": "  For , the differential equation has general solution .     Verify the general solution.       Write down two different particular solutions.       One of and belongs to the family of solutions and one does not. Which is which? Justify both answers.     "
+},
+{
+  "id": "ws-si-tf-arbitrary-constant",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-tf-arbitrary-constant",
+  "type": "Worksheet Exercise",
+  "number": "1.3.5",
+  "title": "True or False.",
+  "body": " True or False   Any solution that contains an arbitrary constant is a general solution.   "
+},
+{
+  "id": "ws-si-ex-emt",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-ex-emt",
+  "type": "Worksheet Exercise",
+  "number": "1.3.6",
+  "title": "",
+  "body": "  Find all values of for which is a solution of .    "
+},
+{
+  "id": "ws-solutions-ivp-6-1",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-solutions-ivp-6-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Initial conditions pin down the constants. "
+},
+{
+  "id": "ws-solutions-ivp-6-3",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-solutions-ivp-6-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Reading check. initial condition "
+},
+{
+  "id": "ws-si-tf-ivp",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-tf-ivp",
+  "type": "Worksheet Exercise",
+  "number": "1.3.7",
+  "title": "True or False.",
+  "body": " True or False   The equation is an initial-value problem.   "
+},
+{
+  "id": "ws-si-ex-ivp-falling",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-ex-ivp-falling",
+  "type": "Worksheet Exercise",
+  "number": "1.3.8",
+  "title": "",
+  "body": "  A small object falls through the air, and its downward velocity (in ) is modeled by the IVP (a) Verify that is a solution of the differential equation for every constant . (b) Apply the initial condition to find the particular solution. (c) What happens to the velocity as ? Interpret your answer physically.    "
+},
+{
+  "id": "ws-si-ex-ivp-two-constants",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-ex-ivp-two-constants",
+  "type": "Worksheet Exercise",
+  "number": "1.3.9",
+  "title": "",
+  "body": "  The general solution of is . Find the particular solution satisfying     "
+},
+{
+  "id": "ws-si-ex-ivp-not-at-zero",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-si-ex-ivp-not-at-zero",
+  "type": "Worksheet Exercise",
+  "number": "1.3.10",
+  "title": "",
+  "body": "   Initial conditions need not be at zero. For , the general solution of is . Find the particular solution satisfying     "
+},
+{
+  "id": "ws-solutions-ivp-7-3",
+  "level": "2",
+  "url": "ws-solutions-ivp.html#ws-solutions-ivp-7-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Looking ahead. "
+},
+{
   "id": "ma311-general-info",
   "level": "1",
   "url": "ma311-general-info.html",
