@@ -12,13 +12,13 @@
             output-dir="stu"
             deploy-dir="stu"
       />
-    <target name="stu-pdf" 
+    <!-- <target name="stu-pdf" 
             format="pdf" 
             source="homepage.ptx"
             publication="stu-pub-pdf.ptx"
             output-dir="stu-pdf"
             deploy-dir="stu-pdf"
-      />
+      /> -->
     <!-- Instructor answer key.  Deliberately carries NO deploy-dir:
          a target is published iff it has one, so this builds locally
          (`pretext build key` gives output/key) while CI, which builds
