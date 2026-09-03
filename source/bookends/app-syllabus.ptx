@@ -1012,7 +1012,8 @@
     <xi:include href="syllabus/common/policy-classroom-behavior.ptx"/>
   </section>
 
-  <xi:include href="syllabus/common/workforgrade.ptx"/>
+  <xi:include href="syllabus/common/workforgrade-vmi.ptx"/>
+  <xi:include href="syllabus/common/workforgrade-math.ptx"/>
   <xi:include href="syllabus/common/attendance.ptx"/>
   <xi:include href="syllabus/common/accessibility.ptx"/>
 </appendix>
