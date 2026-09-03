@@ -69,9 +69,9 @@ letters: A = syllabus, B = GLN, C = macros, plus D = deployment.
 | B3 — worked-problem mechanism | ✅ Done | All 15 worksheets moved off duplicated `<exercise component="stu">` / `<exercise component="key">` pairs and `<solution>` onto the single-`<exercise>` `component="stu"` workspace / `component="key"` answer split; shared `checklists/worksheet-conventions.md` mechanism 2 rewritten to match, in lockstep with `geoff-cox/vector-calc-course` |
 | C1 — macro standing rule | ♻️ Standing | enforced inside every PR |
 | C2 — macro audit | ⬜ Not started | — |
-| D1 — deploy config | ✅ Done | PR #3 |
+| D1 — deploy config | ✅ Done | PR #3; hardened in PR #22 — the build step no longer masks a failed `pretext build` behind a pipeline exit status, and staging now requires a target `index.html` rather than just an `output/stage` directory. Both gates were needed: lxml 6.1.3 broke every build, and CI deployed the empty result as a green run |
 | D2 — preview hygiene | ♻️ Standing | every content PR |
-| M1–M5 — maintenance | ⬜ As needed | — |
+| M1–M5 — maintenance | ⬜ As needed | M4 (2026-09-03, PR #22): every `pretext build` was dying at the first stylesheet with `fatal: Entity 'entities' not defined` — lxml 6.1.3 fixed LP#2165901 and stopped resolving the external parameter entity that PreTeXt's core XSL declares. Pinned `lxml == 6.1.2`; drop the pin once PreTeXt parses stylesheets with `resolve_entities=True` |
 
 ## Mobile request recipes
 
