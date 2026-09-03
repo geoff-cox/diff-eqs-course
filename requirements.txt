@@ -1,2 +1,32 @@
 # This file was automatically generated with PreTeXt 2.52.2.
 pretext == 2.52.2
+
+# TEMPORARY PIN -- do not drop without testing a build first.
+#
+# lxml 6.1.3 (2026-09-02) fixed LP#2165901: "External parameter entity
+# parsing was allowed by default (with resolve_entities='internal')".
+# That is a deliberate security hardening, and it is not coming back.
+#
+# PreTeXt's own core stylesheets rely on the old behaviour.  Every one of
+# them opens with an internal DTD subset that pulls in the shared entity
+# file, e.g. xsl/utilities/report-publisher-variables.xsl:
+#
+#     <!DOCTYPE xsl:stylesheet [
+#         <!ENTITY % entities SYSTEM "../entities.ent">
+#         %entities;
+#     ]>
+#
+# and pretext/core/common.py:283 parses the stylesheet with lxml's default
+# parser (`xsl_tree = ET.parse(xsl)`), which no longer expands that external
+# parameter entity.  So on lxml 6.1.3 every `pretext build` dies with
+#
+#     fatal: Entity 'entities' not defined, line 25, column 15
+#
+# before writing a single page.  This affects all current PreTeXt releases
+# (verified on 2.49.1, 2.52.2 and 2.52.3.dev20260903104539), so pinning lxml
+# is the only fix available on our side today.
+#
+# Remove this pin once PreTeXt parses its stylesheets with a parser that
+# opts in explicitly (resolve_entities=True), or once upstream drops the
+# external-entity DOCTYPE from the core XSL.
+lxml == 6.1.2
