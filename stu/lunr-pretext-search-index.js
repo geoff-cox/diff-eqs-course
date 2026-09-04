@@ -361,6 +361,114 @@ var ptx_lunr_docs = [
   "body": "Looking ahead. "
 },
 {
+  "id": "ws-direct-integration",
+  "level": "1",
+  "url": "ws-direct-integration.html",
+  "type": "Worksheet",
+  "number": "1.4",
+  "title": "Solving by Direct Integration",
+  "body": " Solving by Direct Integration    Recognize that finding an antiderivative is already solving a differential equation.  Solve equations of the forms and .  Combine constants of integration and solve an initial-value problem from start to finish.        You have been solving differential equations since Calculus 2.  Every antiderivative you have ever computed answers the question which function has this derivative? . The answer solves a differential equation of the form . The your calculus instructor insisted on is precisely the arbitrary constant that makes the answer a general solution.    Reading check. Fill in each blank from your reading.   Solving amounts to finding an of ; if is one antiderivative, the general solution is  .    Direct integration applies only when the side opposite the derivative contains just the variable.      True or False   Every time you compute an antiderivative, you are solving a differential equation.       Find the general solution of        Solve the initial-value problem    The initial condition selects the constant:   so the particular solution is .         Freeing a trapped .  Direct integration also handles equations where is locked inside a derivative, : integrating both sides removes the derivative, and then algebra finishes the job.   Reading check.    After integrating both sides, the two constants of integration are into a single constant, and the last step is to for .       For , find the general solution of       True or False   .       For each equation, decide whether direct integration applies. Explain your reasoning.           "
+},
+{
+  "id": "ws-direct-integration-2",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-direct-integration-2",
+  "type": "🎯 Learning Objectives",
+  "number": "1.4",
+  "title": "",
+  "body": "  Recognize that finding an antiderivative is already solving a differential equation.  Solve equations of the forms and .  Combine constants of integration and solve an initial-value problem from start to finish.   "
+},
+{
+  "id": "ws-direct-integration-3-1",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-direct-integration-3-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "You have been solving differential equations since Calculus 2. "
+},
+{
+  "id": "ws-direct-integration-3-3",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-direct-integration-3-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Reading check. "
+},
+{
+  "id": "ws-di-tf-antideriv",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-di-tf-antideriv",
+  "type": "Worksheet Exercise",
+  "number": "1.4.1",
+  "title": "True or False.",
+  "body": " True or False   Every time you compute an antiderivative, you are solving a differential equation.    "
+},
+{
+  "id": "ws-di-ex-basic",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-di-ex-basic",
+  "type": "Worksheet Exercise",
+  "number": "1.4.2",
+  "title": "",
+  "body": "  Find the general solution of     "
+},
+{
+  "id": "ws-di-ex-ivp",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-di-ex-ivp",
+  "type": "Worksheet Exercise",
+  "number": "1.4.3",
+  "title": "",
+  "body": "  Solve the initial-value problem    The initial condition selects the constant:   so the particular solution is .   "
+},
+{
+  "id": "ws-direct-integration-4-1",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-direct-integration-4-1",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Freeing a trapped . "
+},
+{
+  "id": "ws-direct-integration-4-3",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-direct-integration-4-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Reading check. "
+},
+{
+  "id": "ws-di-ex-trapped",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-di-ex-trapped",
+  "type": "Worksheet Exercise",
+  "number": "1.4.4",
+  "title": "",
+  "body": "  For , find the general solution of     "
+},
+{
+  "id": "ws-di-tf-integrate-y",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-di-tf-integrate-y",
+  "type": "Worksheet Exercise",
+  "number": "1.4.5",
+  "title": "True or False.",
+  "body": " True or False   .    "
+},
+{
+  "id": "ws-di-ex-applies",
+  "level": "2",
+  "url": "ws-direct-integration.html#ws-di-ex-applies",
+  "type": "Worksheet Exercise",
+  "number": "1.4.6",
+  "title": "",
+  "body": "  For each equation, decide whether direct integration applies. Explain your reasoning.     "
+},
+{
   "id": "ma311-general-info",
   "level": "1",
   "url": "ma311-general-info.html",
