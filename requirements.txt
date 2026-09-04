@@ -1,5 +1,5 @@
-# This file was automatically generated with PreTeXt 2.52.2.
-pretext == 2.52.2
+# This file was automatically generated with PreTeXt 2.52.3.
+pretext == 2.52.3
 
 # TEMPORARY PIN -- do not drop without testing a build first.
 #

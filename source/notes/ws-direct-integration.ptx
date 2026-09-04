@@ -23,15 +23,14 @@
 	  * <page> = vertical print space, not topics; headings are
 	    <p><term>...</term></p>; display math uses <md>.
 -->
-	<worksheet component="draft" xml:id="ws-direct-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
-		<title>Solving by Direct Integration</title>
+<worksheet xml:id="ws-direct-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Solving by Direct Integration</title>
 
 	<objectives>
 		<ul>
 			<li><p><term>Recognize</term> that finding an antiderivative is already solving a differential equation.</p></li>
-			<li><p><term>Solve</term> equations of the forms <m>y' = f(x)</m> and <m>\frac{d}{dx}\left[g(x,y)\right] = f(x)</m> by integrating both sides.</p></li>
-			<li><p><term>Decide</term> when direct integration applies and explain why it fails when the dependent variable appears on the right side.</p></li>
-			<li><p><term>Combine</term> constants of integration and finish an initial-value problem started by direct integration.</p></li>
+			<li><p><term>Solve</term> equations of the forms <m>y' = f(x)</m> and <m>\frac{d}{dx}\left[g(x,y)\right] = f(x)</m>.</p></li>
+			<li><p><term>Combine</term> constants of integration and solve an initial-value problem from start to finish.</p></li>
 		</ul>
 	</objectives>
 
@@ -40,12 +39,12 @@
 	<!-- ==================================================================== -->
 
 	<page>
-		<p><term>You have been solving differential equations since Calculus 1.</term></p>
+		<p><term>You have been solving differential equations since Calculus 2.</term></p>
 
 		<p>
 			Every antiderivative you have ever computed answers the question
-			<q>which function has this derivative?</q><mdash />and that is exactly
-			what a differential equation of the form <m>y' = f(x)</m> asks. The
+			<q>which function has this derivative?</q>. The answer solves a 
+			differential equation of the form <m>y' = f(x)</m>. The
 			<m>+C</m> your calculus instructor insisted on is precisely the
 			arbitrary constant that makes the answer a <em>general</em> solution.
 		</p>
@@ -57,7 +56,7 @@
 				<li>
 					<p component="stu">
 						Solving <m>y' = f(x)</m> amounts to finding an
-						<fillin characters="14"/> of <m>f(x)</m>; if <m>F(x)</m> is one
+						<fillin characters="24"/> of <m>f(x)</m>; if <m>F(x)</m> is one
 						antiderivative, the general solution is <m>y = F(x) + </m>
 						<fillin characters="4"/>.
 					</p>
@@ -71,7 +70,7 @@
 				<li>
 					<p component="stu">
 						Direct integration applies only when the side opposite the
-						derivative contains just the <fillin characters="12"/> variable.
+						derivative contains just the <fillin characters="20"/> variable.
 					</p>
 					<p component="key">
 						Direct integration applies only when the side opposite the
@@ -86,11 +85,10 @@
 			<title>True or False</title>
 			<statement>
 				<p>Every time you compute an antiderivative, you are solving a differential equation.</p>
-				<p component="stu" workspace="1in"/>
+				<p component="stu" workspace="0.2in"/>
 				<p component="key">
 					True. Computing <m>\int f(x)\,dx</m> is answering <q>find <m>y</m>
-					with <m>y' = f(x)</m></q><mdash />a differential equation. Calculus 1
-					just never called it that.
+					with <m>y' = f(x)</m></q>.
 				</p>
 			</statement>
 		</exercise>
@@ -102,19 +100,15 @@
 					<md>
 						<mrow> 3y' + 6x^2 = 12. </mrow>
 					</md>
-					(Isolate <m>y'</m> first.)
 				</p>
 				<p component="stu" workspace="1.9in"/>
 				<p component="key">
-					Isolating the derivative: <m>3y' = 12 - 6x^2</m>, so
-					<m>y' = 4 - 2x^2</m>. Integrating both sides with respect to
+					Isolate and Integrate both sides with respect to
 					<m>x</m>:
 					<md>
-						<mrow> y \amp = \int \left(4 - 2x^2\right) dx = 4x - \frac{2}{3}x^3 + c. </mrow>
+						<mrow> y' \amp = 4 - 2x^2 </mrow>
+						<mrow> y	\amp = \int \left(4 - 2x^2\right) dx = 4x - \frac{2}{3}x^3 + c. </mrow>
 					</md>
-					Isolate first, then integrate<mdash />integrating
-					<m>12 - 6x^2</m> without dividing by <m>3</m> first produces a
-					function whose derivative is <m>3y'</m>, not <m>y'</m>.
 				</p>
 			</statement>
 		</exercise>
@@ -129,15 +123,20 @@
 				</p>
 				<p component="stu" workspace="1.9in"/>
 				<p component="key">
-					Integrating gives the general solution
-					<m>s = 3t^3 - 4t + c</m>. The initial condition selects the
+					Integrating gives the general solution:
+					<m>
+						\quad s = 3t^3 - 4t + c
+					</m>.
+				</p>
+				<p>
+					The initial condition selects the
 					constant:
-					<md>
-						<mrow> s(1) = 3 - 4 + c = 2 \quad\Rightarrow\quad c = 3, </mrow>
-					</md>
-					so the particular solution is <m>s = 3t^3 - 4t + 3</m>. This is the
-					same two-step rhythm as the last worksheet: general solution first,
-					then the initial condition picks one member of the family.
+					<m>
+						\quad s(1) = 3 - 4 + c = 2 \quad\Rightarrow\quad c = 3,
+					</m>
+				</p>
+				<p>
+					so the particular solution is <m>s = 3t^3 - 4t + 3</m>.
 				</p>
 			</statement>
 		</exercise>
@@ -163,8 +162,8 @@
 				<li>
 					<p component="stu">
 						After integrating both sides, the two constants of integration are
-						<fillin characters="9"/> into a single constant, and the last step
-						is to <fillin characters="6"/> for <m>y</m>.
+						<fillin characters="14"/> into a single constant, and the last step
+						is to <fillin characters="12"/> for <m>y</m>.
 					</p>
 					<p component="key">
 						After integrating both sides, the two constants of integration are
@@ -179,12 +178,10 @@
 		<exercise xml:id="ws-di-ex-trapped">
 			<statement>
 				<p>
-					For <m>x > 0</m>, find the general solution of
+					For <m>x &gt; 0</m>, find the general solution of
 					<md>
 						<mrow> \frac{1}{x}\,\frac{d}{dx}\left[x^2\,y\right] = 6. </mrow>
 					</md>
-					Why is it legitimate to write a single constant <m>c</m> even though
-					both integrals produce one?
 				</p>
 				<p component="stu" workspace="2.4in"/>
 				<p component="key">
@@ -195,8 +192,7 @@
 						<mrow> y \amp = 3 + \frac{c}{x^2}, </mrow>
 					</md>
 					where <m>c = c_2 - c_1</m>. A difference of two arbitrary constants
-					is just another arbitrary constant, so merging them loses nothing;
-					dividing by <m>x^2</m> then frees the solution.
+					is just another arbitrary constant.
 				</p>
 			</statement>
 		</exercise>
@@ -205,14 +201,12 @@
 			<title>True or False</title>
 			<statement>
 				<p><m>\displaystyle\int y\ dx = \frac{y^2}{2} + c</m>.</p>
-				<p component="stu" workspace="1in"/>
+				<p component="stu" workspace="0.1in"/>
 				<p component="key">
 					False. The variable of integration is <m>x</m>, and <m>y</m> is an
-					unknown <em>function</em> of <m>x</m><mdash />not the integration
-					variable. Until we know which function <m>y</m> is, the integral
-					<m>\int y\,dx</m> simply cannot be computed. (The formula
-					<m>\frac{y^2}{2} + c</m> would be the answer to the different
-					problem <m>\int y\,dy</m>.)
+					unknown <em>function</em> of <m>x</m>. Unless we know the function 
+					<m>y</m>, the integral simply cannot be computed. This statement 
+					could be made true by changing <m>dx</m> to <m>dy</m>.
 				</p>
 			</statement>
 		</exercise>
@@ -220,10 +214,8 @@
 		<exercise xml:id="ws-di-ex-applies">
 			<statement>
 				<p>
-					For each equation, decide whether direct integration applies. If it
-					does, name the form (<m>y' = f(x)</m> or
-					<m>\frac{d}{dx}[g(x,y)] = f(x)</m>); if not, explain what goes
-					wrong.
+					For each equation, decide whether direct integration applies.
+					Explain your reasoning.
 					<md>
 						<mrow> \text{(a)}\ y' = 7x\cos x \qquad
 						       \text{(b)}\ y' - y = 5x^2 \qquad
@@ -239,7 +231,7 @@
 				<p component="key">
 					(b) No: isolating the derivative gives <m>y' = 5x^2 + y</m>, and the
 					right side contains the dependent variable. Integrating would leave
-					the uncomputable <m>\int y\,dx</m> behind<mdash />we are stuck.
+					the uncomputable <m>\int y\,dx</m> behind.
 				</p>
 				<p component="key">
 					(c) Yes: this is the trapped-derivative form
@@ -255,15 +247,13 @@
 	<!-- PAGE 3 : Integrating twice; a modeling extension                     -->
 	<!-- ==================================================================== -->
 
-	<page>
+	<!-- <page>
 		<p><term>Integrating more than once.</term></p>
 
 		<p>
 			Nothing stops us from applying direct integration repeatedly: a
-			second-order equation <m>y'' = f(t)</m> surrenders after two
-			integrations<mdash />and each integration contributes its own arbitrary
-			constant, which is exactly why the general solution carries two of
-			them.
+			second-order equation <m>y'' = f(t)</m> surrenders <m>y</m> after two
+			integrations.
 		</p>
 
 		<exercise xml:id="ws-di-ex-ball">
@@ -300,16 +290,5 @@
 				</p>
 			</statement>
 		</exercise>
-
-		<conclusion>
-			<title>Looking ahead</title>
-			<p>
-				Direct integration demands a right-hand side free of the dependent
-				variable<mdash />equations like <m>y' = 5x^2 + y</m> defeat it. The next
-				worksheet develops <em>separation of variables</em>, our first
-				technique for equations where the dependent variable refuses to stay
-				out of the way.
-			</p>
-		</conclusion>
-	</page>
+	</page> -->
 </worksheet>
