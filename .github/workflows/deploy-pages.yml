@@ -65,13 +65,35 @@ jobs:
           pretext --version
 
       - name: Build deploy targets
-        run: pretext build --deploys 2>&1 | grep -v 'asset directories' || true
+        run: |
+          # Do NOT pipe pretext straight into grep: a shell pipeline exits with
+          # the status of the LAST command, so `pretext | grep` reports grep's
+          # status and a failed build looks green.  (The old `|| true` on the
+          # end discarded the status a second time.)  That is exactly how a
+          # build that died on the first stylesheet still got deployed — as an
+          # empty stu/ directory, so every content URL on the site 404'd.
+          # Run the build on its own, keep its status, filter for display only.
+          pretext build --deploys > build.log 2>&1 || build_failed=1
+          grep -v 'asset directories' build.log || true
+          if [ -n "${build_failed:-}" ]; then
+            echo "::error::pretext build --deploys failed — see the log above"
+            exit 1
+          fi
 
       - name: Stage site
         run: |
           pretext deploy --stage-only
           # `pretext deploy --stage-only` stages into output/stage by default.
           test -d output/stage || { echo "::error::pretext deploy produced no output/stage — check project.ptx"; exit 1; }
+          # A staged target directory is created even when the build wrote
+          # nothing into it, so "output/stage exists" is not enough: check that
+          # some target actually produced a page.  -mindepth 2 skips the
+          # landing page copied in from site/, which is present regardless.
+          # Target-name agnostic, so this stays correct as deploy-dirs change.
+          if [ -z "$(find output/stage -mindepth 2 -name index.html -print -quit)" ]; then
+            echo "::error::no target index.html under output/stage — the build produced nothing to deploy"
+            exit 1
+          fi
           # Stamp the build so previews are unambiguous when reviewing.
           echo "Built from ${GITHUB_REF_NAME} @ ${GITHUB_SHA} on $(date -u '+%Y-%m-%d %H:%M UTC')" > output/stage/build-info.txt
 
